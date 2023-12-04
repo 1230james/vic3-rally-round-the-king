@@ -1,0 +1,27 @@
+﻿#            | existing country | releasing a country | country formation |
+# |==========|==================|=====================|===================|
+# |root      | definition       | definition          | definition        |
+# |----------|------------------|---------------------|-------------------|
+# |target    | country          | N/A                 | N/A               |
+# |----------|------------------|---------------------|-------------------|
+# |initiator | N/A              | player              | player            |
+# |----------|------------------|---------------------|-------------------|
+# |actor     | country          | player              | player            |
+# |----------|------------------|---------------------|-------------------|
+# |          | country's        |                     | player's          |
+# |overlord  | direct overlord  | player              | direct overlord   |
+# |          | if it exists     |                     | if it exists      |
+# |----------|------------------|---------------------|-------------------|
+
+### scope is COUNTRY ###
+
+# [Gov+] Replacement definitions only
+
+coa_republic_trigger = {
+    OR = {
+        # has_law = law_type:law_presidential_republic
+        # has_law = law_type:law_parliamentary_republic
+        has_law = law_type:GovPlus_law_republic
+        has_law = law_type:law_council_republic
+    }
+}

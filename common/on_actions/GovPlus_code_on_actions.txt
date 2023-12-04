@@ -1,0 +1,22 @@
+﻿# Root = owner Country of the Law
+# Executed when enactment of any law begins
+on_law_enactment_started = {
+	effect = {
+		if = {
+			limit = {
+				has_law = law_type:law_monarchy
+				OR = {
+					# is_enacting_law = law_type:law_presidential_republic
+					# is_enacting_law = law_type:law_parliamentary_republic
+                    is_enacting_law = law_type:GovPlus_law_republic
+					is_enacting_law = law_type:law_council_republic
+				}
+			}
+			set_variable = {
+				name = abolishing_monarchy_var
+				value = 0
+			}
+			add_journal_entry = { type =  je_abolish_monarchy }
+		}
+	}
+}

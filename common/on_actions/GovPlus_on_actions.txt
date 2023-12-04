@@ -1,0 +1,185 @@
+﻿# Root = Country
+GovPlus_oa_on_reform = {
+    effect = {
+        if = {
+            limit = {
+                GovPlus_st_is_parliamentary_monarchy = yes
+            }
+            GovPlus_se_set_prime_minister = yes
+        }
+        else_if = {
+            limit = {
+                GovPlus_st_is_presidential_monarchy = yes
+            }
+            GovPlus_se_update_head_of_gov_modifier = yes
+        }
+    }
+}
+on_government_reformed = {
+	on_actions = {
+        GovPlus_oa_on_reform
+    }
+}
+
+# ==================================================================================================================== #
+
+# Root = Interest Group
+GovPlus_oa_on_resign = {
+    effect = {
+        owner = {
+            if = {
+                limit = {
+                    GovPlus_st_is_parliamentary_monarchy = yes
+                }
+                GovPlus_se_set_prime_minister = yes
+                GovPlus_se_update_head_of_gov_modifier = yes
+            }
+            else_if = {
+                limit = {
+                    GovPlus_st_is_presidential_monarchy = yes
+                }
+                GovPlus_se_set_premier = yes
+                GovPlus_se_update_head_of_gov_modifier = yes
+            }
+        }
+    }
+}
+on_ig_resigned_government = {
+	on_actions = {
+        GovPlus_oa_on_reform
+    }
+}
+
+# ==================================================================================================================== #
+
+# Root = Country
+GovPlus_oa_on_election = {
+    effect = {
+        if = {
+            limit = {
+                GovPlus_st_is_presidential_monarchy = yes
+            }
+            # GovPlus_se_set_premier = yes # campaign end on action does not work in 1.4; will work in 1.5
+            # GovPlus_se_update_head_of_gov_modifier = yes
+            add_journal_entry = {
+                type = GovPlus_je_premier_election
+            }
+        }
+    }
+}
+
+on_election_campaign_start = {
+    on_actions = {
+        GovPlus_oa_on_election
+    }
+}
+
+# on_election_campaign_end = { # Broken in 1.4, will be fixed in 1.5
+	# on_actions = {
+        # GovPlus_oa_on_election
+    # }
+# }
+
+# ==================================================================================================================== #
+
+# Root owner Country of the Law
+# executed when the law is activated for any reason. It's usually because it
+# has been enacted, but script can activate laws directly without going through
+# the enactment process. Normally, it's immediately preceded by
+# on_law_enactment_ended, but if a law is directly set by script, thus
+# bypassing the enactment process, this will execute while
+# on_law_enactment_ended will not
+#
+# NOTE: unlike the other on_law_<something> on-actions, at the point in time
+# when this is triggered the law that was enacted is no longer considered being
+# enacted. Therefore using the `currently_enacting_law` link will return the
+# null law
+GovPlus_oa_on_law_activated = {
+    effect = {
+        # Govt. Principles passed
+        if = {
+            limit = {
+                type = {
+                    is_same_law_group_as = law_type:law_monarchy
+                }
+            }
+            # Monarchy passed
+            if = {
+                limit = {
+                    type = law_type:law_monarchy
+                }
+                owner = {
+                    # Set default head of gov if we just turned into a conmon
+                    if = {
+                        limit = {
+                            GovPlus_st_is_constitutional_monarchy = yes
+                            NOT = {
+                                has_variable = GovPlus_head_of_gov
+                            }
+                        }
+                        GovPlus_se_set_prime_minister = yes
+                    }
+                    else_if = {
+                        limit = {
+                            GovPlus_st_is_constitutional_monarchy = no
+                            has_variable = GovPlus_head_of_gov
+                        }
+                        remove_variable = GovPlus_head_of_gov
+                    }
+                    
+                    # Remove Head of Gov in government modifier (scripted effect handles removing)
+                    GovPlus_se_update_head_of_gov_modifier = yes
+                }
+            }
+            # Monarchy abolished
+            else = {
+                owner = {
+                    if = {
+                        limit = {
+                            has_variable = GovPlus_head_of_gov
+                        }
+                        remove_variable = GovPlus_head_of_gov
+                    }
+                    GovPlus_se_update_head_of_gov_modifier = yes
+                }
+            }
+        }
+        
+        # Distr. of Power passed
+        else_if = {
+            limit = {
+                type = {
+                    is_same_law_group_as = law_type:law_parliamentary_republic
+                }
+            }
+            owner = {
+                # Set default head of gov if became conmon
+                if = {
+                    limit = {
+                        has_law = law_type:law_monarchy
+                        GovPlus_st_is_constitutional_monarchy = yes
+                        NOT = {
+                            has_variable = GovPlus_head_of_gov
+                        }
+                    }
+                    GovPlus_se_set_prime_minister = yes
+                    GovPlus_se_update_head_of_gov_modifier = yes
+                }
+                # Constitutionalism? More like uhhhhhhhh crap!
+                else_if = {
+                    limit = {
+                        GovPlus_st_is_constitutional_monarchy = no
+                        has_variable = GovPlus_head_of_gov
+                    }
+                    remove_variable = GovPlus_head_of_gov
+                    GovPlus_se_update_head_of_gov_modifier = yes
+                }
+            }
+        }
+    }
+}
+on_law_activated = {
+    on_actions = {
+        GovPlus_oa_on_law_activated
+    }
+}

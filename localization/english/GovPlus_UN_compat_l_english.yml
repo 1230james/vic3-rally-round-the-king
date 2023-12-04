@@ -1,0 +1,8 @@
+﻿l_english:
+    GovPlus_UN_full_name:           "[ROOT.GetCharacter.GetFullName]"
+    GovPlus_UN_title_ruler:         "[ROOT.GetCharacter.GetCountry.GetRuler.GetPrimaryRoleTitle] "
+    GovPlus_UN_title_heir:          "[ROOT.GetCharacter.GetPrimaryRoleTitle] "
+    GovPlus_UN_title_general:       "$concept_general$ "
+    GovPlus_UN_title_admiral:       "$concept_admiral$ "
+    GovPlus_UN_title_none:          ""
+    GovPlus_UN_full_name_no_format: "[ROOT.GetCharacter.GetFullNameNoFormatting]"

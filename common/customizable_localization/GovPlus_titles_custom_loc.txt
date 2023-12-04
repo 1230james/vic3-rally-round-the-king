@@ -1,0 +1,82 @@
+﻿# Scripted locs for possible future expansion of more flavorful titles
+
+GovPlus_cl_head_of_gov_title = {
+    type = country
+    
+    text = {
+        localization_key = GovPlus_title_pres_mon
+        trigger = {
+            GovPlus_st_is_presidential_monarchy = yes
+        }
+    }
+    text = {
+        localization_key = GovPlus_title_parl_mon
+        trigger = {
+            GovPlus_st_is_parliamentary_monarchy = yes
+        }
+    }
+    text = { # Fallback
+        localization_key = GovPlus_prime_minister
+        trigger = {
+            always = yes
+        }
+    }
+}
+
+GovPlus_cl_head_of_gov_title_character = {
+    type = character
+    
+    text = {
+        localization_key = GovPlus_title_pres_mon_char
+        trigger = {
+            owner ?= {
+                GovPlus_st_is_presidential_monarchy = yes
+            }
+        }
+    }
+    text = {
+        localization_key = GovPlus_title_parl_mon_char
+        trigger = {
+            owner ?= {
+                GovPlus_st_is_parliamentary_monarchy = yes
+            }
+        }
+    }
+    text = { # Fallback
+        localization_key = GovPlus_prime_minister
+        trigger = {
+            always = yes
+        }
+    }
+}
+
+GovPlus_cl_premier_title = {
+    type = country
+    
+    text = { # 1824 Constitution; position was officially created in 1847 but whatever
+        localization_key = GovPlus_prime_minister
+        trigger = {
+            OR = {
+                this ?= c:BRZ
+                was_formed_from = BRZ
+            }
+        }
+    }
+    text = {
+        localization_key = GovPlus_premier
+        trigger = {
+            always = yes
+        }
+    }
+}
+
+GovPlus_cl_prime_minister_title = {
+    type = country
+    
+    text = {
+        localization_key = GovPlus_prime_minister
+        trigger = {
+            always = yes
+        }
+    }
+}

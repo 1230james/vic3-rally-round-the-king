@@ -1,0 +1,253 @@
+types RRK_types {
+    type RRK_monarch_button = button_icon_round {
+		parentanchor = right
+		size = { 44 44 }
+		blockoverride "icon" {
+			texture = "gfx/interface/buttons/button_icons/reset.dds"
+		}
+		onclick = "[GetVariableSystem.Toggle('RRK_view_monarch')]"
+		tooltip = "CHANGE"
+		using = tooltip_above
+	}
+    
+    # character_with_background - commander_panel.gui
+    type RRK_character_widget = widget {
+		
+		# background
+		widget = {
+			size = { 100% 100% }
+			position = { 0 1 }
+			using = Animation_Character_Panel_Refresh
+			
+			# Ruler
+			widget = {
+				size = { 100% 100% }
+				
+				background = {
+					texture = "gfx/interface/character_panel/backgrounds/char_role_politician.dds"
+					fittype = centercrop
+				}
+
+				# VFX
+				vfx = {
+					blockoverride "entity_instance" {
+						entity_instance = vfx_entity_ui_bg_char_ruler
+					}
+				}
+
+				vfx = {
+					blockoverride "entity_instance" {
+						entity_instance = vfx_entity_ui_bg_char_ruler_smoke
+					}
+				}
+			}
+		}
+
+		widget = {
+			size = { 100% 100% }
+			
+			background = {
+				texture = "gfx/interface/character_panel/char_bg_frame.dds"
+				margin_left = 18
+				margin_right = 10
+				margin_bottom = 10
+				spriteType = Corneredtiled
+				
+				spriteborder_left = 200
+				spriteborder_right = 60
+				spriteborder_top = 170
+				spriteborder_bottom = 180
+				
+				texture_density = 2
+			}
+		}
+
+		# character
+		character_portrait_base_no_mask = {
+			ignore_in_debug_draw = yes
+			parentanchor = left|bottom
+			
+			block "character_layout" {
+				position = { 50 50 }
+				size = { 250 400 }
+			}
+
+			blockoverride "portrait_size" {
+				block "character_portrait_size" {
+					size = { 620 620 }
+				}
+			}
+
+			blockoverride "portrait_texture" {
+				portrait_texture = "[Character.GetAnimatedPortrait('ruler_environment', 'camera_leader', 'idle', PdxGetWidgetScreenSize(PdxGuiWidget.Self))]"
+			}
+
+			blockoverride "portrait_icons" {}
+			blockoverride "tooltip" {}
+			blockoverride "show_hat" {}
+		}
+		icon = {
+			using = dark_area
+			parentanchor = bottom|hcenter
+			size = { 100% 50% }
+			alpha = 0.85
+			position = { 0 2 }
+
+			modify_texture = {
+				texture = "gfx/interface/masks/fade_vertical_top.dds"
+				spriteType = Corneredstretched
+				spriteborder = { 0 0 }
+				blend_mode = alphamultiply
+			}
+		}
+
+		character_interactions_button = {
+			name = "tutorial_highlight_character_panel_promote_button"
+		}
+        
+        RRK_monarch_button = {
+            parentanchor = top|right
+            size = { 50 50 }
+            position = { -20 20 }
+            visible = "[GetScriptedGui('RRK_sg_monarch_check').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+        }
+
+		# Heir Portrait
+		widget = {
+			datacontext = "[Character.AccessInterestGroup.AccessCountry]"
+			visible = "[GetScriptedGui('RRK_sg_heir_check').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+			parentanchor = left|bottom
+			size = { 110 110 }
+			position = { 10 -10 }
+			
+			character_portrait_large = {
+				size = { 100% 100% }
+				datacontext = "[Country.MakeScope.Var('RRK_heir').GetCharacter]"
+
+				blockoverride "show_hat" {}
+				blockoverride "highlight" {}
+			}
+		}
+	}
+    
+    type RRK_monarch_view = RRK_character_widget {
+        visible = "[And(Country.HasRuler, GetVariableSystem.Exists('RRK_view_monarch'))]"
+        datacontext = "[Country.MakeScope.Var('RRK_monarch').GetCharacter]"
+        layoutpolicy_horizontal = expanding
+        layoutpolicy_vertical = expanding
+        minimumsize = { -1 340 }
+        using = default_fade_in_out
+        
+        blockoverride "character_layout" {
+            position = { 0 0 }
+            size = { 70% 100% }
+        }
+        blockoverride "character_portrait_size" {
+            size = { 110% 110% }
+        }
+        
+        # ruler stats
+        flowcontainer = {
+            parentanchor = right|bottom
+            position = { -5 -15 }
+            margin = { 0 10 }
+            margin_right = 10
+            direction = vertical
+            spacing = 5
+            
+            background = {
+                using = dark_area
+                alpha = 0.75
+                
+                modify_texture = {
+                    texture = "gfx/interface/masks/fade_horizontal_left_full.dds"
+                    blend_mode = alphamultiply
+                }
+            }
+        
+            ### ROLE
+            ruler_stats_entry = {
+                tooltip = "CHARACTER_PRIMARY_ROLE_TOOLTIP"
+
+                blockoverride "ruler_icon" {
+                    widget = {
+                        size = { 35 35 }
+                        icon = {
+                            size = { 100% 100% }
+                            texture = "gfx/interface/icons/character_role_icons/heir.dds"
+                        }
+                    }
+                }
+                blockoverride "label" {
+                    # TODO
+                    text = "[Concept('concept_ruler', 'King')]"
+                }
+                blockoverride "text" {
+                    # text = "[Character.GetCustom('GetUniversalFullName')]"
+                    text = "[Character.GetFullName]"
+                }
+            }
+            ### INTEREST GROUP
+            ruler_stats_entry = {
+                datacontext = "[Character.AccessInterestGroup]"
+
+                blockoverride "ruler_icon" {
+                    character_ig_button = {
+                        size = { 35 35 }
+                        blockoverride "in_government_icon" {}
+                    }
+                }
+
+                tooltipwidget = {
+                    FancyTooltip_IG = {}
+                }
+
+                blockoverride "label" {
+                    text = "INTEREST_GROUP"
+                }
+                blockoverride "text" {
+                    raw_text = "#v [Character.AccessInterestGroup.GetNameNoFormatting]#!"
+                }
+            }
+
+            ### IDEOLOGY
+            ruler_stats_entry = {
+                datacontext = "[Character.GetIdeology]"
+
+                tooltipwidget = {
+                    FancyTooltip_Ideology = {}
+                }
+                blockoverride "icon_texture" {
+                    texture = "[Ideology.GetTexture]"
+                }
+                blockoverride "label" {
+                    text = "IDEOLOGY_CONCEPT"
+                }
+                blockoverride "text" {
+                    text = "CHARACTER_IDEOLOGY"
+                }
+            }
+            #POPULARITY
+            ruler_stats_entry = {
+                tooltip = "POPULARITY_BREAKDOWN"
+
+                blockoverride "icon_texture" {
+                    texture = "gfx/interface/icons/generic_icons/popularity.dds"
+                }
+                blockoverride "label" {
+                    text = "POPULARITY"
+                }
+                blockoverride "text" {
+                    text = "CHARACTER_POPULARITY"
+                }
+            }
+            
+            widget = { size = { 5 5 }}
+            
+            ### TRAITS
+            character_traits_no_label = {
+                parentanchor = right
+            }
+        }
+    }
+}

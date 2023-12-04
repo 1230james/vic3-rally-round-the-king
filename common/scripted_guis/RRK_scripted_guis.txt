@@ -1,0 +1,17 @@
+﻿RRK_sg_monarch_check = {
+    scope = country
+    
+    is_shown = {
+        has_variable = RRK_monarch
+        exists = var:RRK_monarch
+    }
+}
+
+RRK_sg_heir_check = {
+    scope = country
+    
+    is_shown = {
+        has_variable = RRK_heir
+        exists = var:RRK_heir
+    }
+}

@@ -1,0 +1,63 @@
+﻿# Root = owner Country of the Law
+# Executed when an enacting law is passed by reaching the final enactment phase
+#
+# NOTE: at the point in time when this on-action is triggered, the law
+# is still considered being enacted, therefore the `currently_enacting_law` link
+# will work as expected, even though the enactment is _just_ about to end
+on_law_enactment_pass = {
+    on_actions = {
+        RRK_oa_on_monarchy_abolished
+    }
+}
+
+RRK_oa_on_monarchy_abolished = {
+    effect = {
+        if = {
+            limit = {
+                has_law = law_type:law_monarchy
+                currently_enacting_law.type = {
+                    is_same_law_group_as = law_type:law_monarchy
+                }
+            }
+            if = {
+                limit = {
+                    exists = heir
+                }
+                set_variable = {
+                    name  = RRK_monarch
+                    value = ruler
+                }
+                set_variable = {
+                    name  = RRK_heir
+                    value = heir
+                }
+                ruler = {
+                    place_character_in_void = 1200
+                }
+                heir = {
+                    place_character_in_void = 1200
+                }
+                trigger_event = {
+                    id    = RRK_ev.1
+                    popup = yes
+                }
+            }
+            else = {
+                set_variable = {
+                    name  = RRK_monarch
+                    value = ruler
+                }
+                set_variable = {
+                    name  = RRK_heir
+                }
+                ruler = {
+                    place_character_in_void = 1200
+                }
+                trigger_event = {
+                    id    = RRK_ev.2
+                    popup = yes
+                }
+            }
+        }
+    }
+}

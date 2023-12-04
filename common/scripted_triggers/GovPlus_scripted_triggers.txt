@@ -1,0 +1,28 @@
+﻿GovPlus_st_is_parliamentary_monarchy = {
+    has_law = law_type:law_monarchy
+    OR = {
+        has_law = law_type:law_parliamentary_republic
+        has_law = law_type:GovPlus_law_council_system
+    }
+}
+
+GovPlus_st_is_presidential_monarchy = {
+    has_law = law_type:law_monarchy
+    OR = {
+        has_law = law_type:law_single_party_state
+        has_law = law_type:law_presidential_republic
+    }
+}
+
+GovPlus_st_is_constitutional_monarchy = {
+    OR = {
+        GovPlus_st_is_parliamentary_monarchy = yes
+        GovPlus_st_is_presidential_monarchy = yes
+    }
+}
+
+GovPlus_st_is_absolute_monarchy = {
+    has_law = law_type:law_monarchy
+    has_law = law_type:law_autocracy
+    has_law = law_type:GovPlus_law_no_voting
+}

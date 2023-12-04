@@ -1,0 +1,10 @@
+﻿# USAGE:
+# Copy and paste this file into the common/scripted_triggers folder of any mod that has Gov+ interoperability.
+# Uncomment the definition for GovPlus_is_active_trigger below.
+#
+# If Gov+ is inactive, that trigger definition should be the one used by your mod, but if Gov+ is active, it should be
+# overwritten with the definition below, allowing you to tell when Gov+ is active or not dynamically.
+
+# GovPlus_is_active_trigger = {
+#     always = no
+# }

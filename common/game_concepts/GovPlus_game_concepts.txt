@@ -1,0 +1,3 @@
+﻿concept_GovPlus_head_of_gov = { # Won't work unless "concept_" is the prefix; did I do something wrong, or is this intended?
+    texture = "gfx/interface/icons/character_role_icons/ruler.dds"
+}

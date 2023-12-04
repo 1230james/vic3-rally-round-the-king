@@ -1,0 +1,90 @@
+﻿namespace = RRK_ev
+
+# Monarch's fate - has heir
+RRK_ev.1 = {
+    type      = country_event
+    placement = root
+    
+    title     = RRK_ev_1_title
+    desc      = RRK_ev_1_desc
+    flavor    = RRK_ev_1_flavor
+
+    duration = 3
+    
+    gui_window = event_window_2char
+    
+    left_icon  = var:RRK_monarch
+    right_icon = var:RRK_heir
+    
+    on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+    on_opened_soundeffect  = "event:/SFX/Events/misc/2Characters"
+
+    icon = "gfx/interface/icons/event_icons/event_default.dds"
+
+    trigger = {} # Triggered from journal entry
+    
+    immediate = {
+    }
+    
+    option = {
+        name = RRK_ev_1_a
+        default_option = yes
+        
+        var:RRK_monarch = {
+            add_character_role = politican
+        }
+        var:RRK_heir = {
+            add_character_role = politican
+            add_character_role = general
+        }
+    }
+    
+    option = {
+        name = RRK_ev_1_b
+        
+        var:RRK_monarch = {
+            kill_character = yes
+            free_character_from_void = no
+        }
+        var:RRK_heir = {
+            kill_character = yes
+            free_character_from_void = no
+        }
+    }
+}
+
+# Monarch's fate - No heir
+RRK_ev.2 = {
+    type      = country_event
+    placement = root
+    
+    title     = RRK_ev_2_title
+    desc      = RRK_ev_2_desc
+    flavor    = RRK_ev_2_flavor
+
+    duration = 3
+    
+    gui_window = event_window_1char_tabloid
+    
+    left_icon = var:RRK_monarch
+    
+    on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+    on_opened_soundeffect  = "event:/SFX/Events/misc/1Character_Banner"
+
+    icon = "gfx/interface/icons/event_icons/event_default.dds"
+    
+    option = {
+        name = RRK_ev_2_a
+        default_option = yes
+        
+    }
+    
+    option = {
+        name = RRK_ev_2_b
+        
+        var:RRK_monarch = {
+            kill_character = yes
+            free_character_from_void = no
+        }
+    }
+}

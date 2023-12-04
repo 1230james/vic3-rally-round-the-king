@@ -1,0 +1,90 @@
+﻿#icon					Path to icon for both right click menu and character panel buttons
+#clicksound				Clicksound for both right click menu and character panel buttons
+
+#						All scopes are character scopes with the interacting country stored as the actor
+#potential				Trigger to check if the interaction should be shown
+#possible 				Trigger to check if the interaction is available
+#effect					The effects of the interaction
+#cooldown				Scriptable duration that this interaction will be unavailable for the interacting country
+
+#show_requirements		Whether to always show requirements, similar to highlighted options in events
+#show_confirmation_box	Whether to require confirmation
+
+#ai_chance				Scriptable value for the chance (0-100) that the AI will use this interaction when available, default 0
+
+GovPlus_grant_premiership = {
+    icon = "gfx/interface/character_panel/grant_command_not.dds"
+    clicksound = "event:/SFX/DLC/1.3_ip1/UI/agitator_promote"
+    
+    show_requirements = yes
+    show_confirmation_box = yes
+
+    potential = {
+        owner ?= {
+            GovPlus_st_is_presidential_monarchy = yes
+            country_has_voting_franchise = no
+        }
+        has_role = politician
+        is_ruler = no
+        is_heir  = no
+        NOT = {
+            has_role = agitator
+        }
+    }
+
+    possible = {
+        # Including this part just for player visibility
+        owner ?= {
+            GovPlus_st_is_presidential_monarchy = yes
+            has_law = law_type:GovPlus_law_no_voting
+        }
+        
+        interest_group = {
+            is_in_government = yes
+            custom_tooltip = {
+                text = GovPlus_tt_not_premier
+                NOT = {
+                    owner.var:GovPlus_head_of_gov ?= this
+                }
+            }
+        }
+    }
+
+    effect = {
+        custom_tooltip = {
+			text = GovPlus_tt_premiership
+            interest_group = {
+                owner ?= {
+                    set_variable = {
+                        name  = GovPlus_head_of_gov
+                        value = prev
+                    }
+                }
+            }
+		}
+    }
+
+    cooldown = { months = 12 }
+
+    ai_chance = {
+        value = 0
+        if = {
+            limit = {
+                owner ?= {
+                    OR = {
+                        NOT = {
+                            has_variable = GovPlus_head_of_gov
+                        }
+                        var:GovPlus_head_of_gov ?= {
+                            is_in_government = no
+                        }
+                    }
+                }
+                interest_group = {
+                    is_strongest_ig_in_government = yes
+                }
+            }
+            add = 100
+        }
+    }
+}

@@ -1,0 +1,5 @@
+﻿GovPlus_md_head_of_gov_in_gov = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds
+    # country_legitimacy_govt_leader_clout_add = 10 # Apparently this ends up being 10 * the clout %; 10% clout => 100 legitimacy
+    country_legitimacy_base_add = 10
+}
