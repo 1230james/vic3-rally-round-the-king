@@ -12,5 +12,16 @@
                 days = 1
             }
         }
+        
+        # Mark all monarchies with the variable
+        if = {
+            limit = {
+                has_law = law_type:law_monarchy
+            }
+            set_variable = {
+                name  = RRK_preserve_monarchy
+                value = no
+            }
+        }
     }
 }

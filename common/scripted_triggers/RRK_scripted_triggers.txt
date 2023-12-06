@@ -24,8 +24,11 @@ RRK_st_is_crowned_republic = {
 }
 
 RRK_st_monarchy_preserved = {
-    has_variable = RRK_preserve_monarchy
-    var:RRK_preserve_monarchy ?= yes
+    custom_tooltip = {
+        text = RRK_tt_monarchy_preserved
+        has_variable = RRK_preserve_monarchy
+        var:RRK_preserve_monarchy ?= yes
+    }
 }
 
 RRK_st_is_constitutional_monarchy = {

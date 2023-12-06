@@ -19,44 +19,10 @@ RRK_oa_on_monarchy_abolished = {
                     is_same_law_group_as = law_type:law_monarchy
                 }
             }
-            if = {
-                limit = {
-                    exists = heir
-                }
-                set_variable = {
-                    name  = RRK_monarch
-                    value = ruler
-                }
-                set_variable = {
-                    name  = RRK_heir
-                    value = heir
-                }
-                ruler = {
-                    place_character_in_void = 1200
-                }
-                heir = {
-                    place_character_in_void = 1200
-                }
-                trigger_event = {
-                    id    = RRK_ev.1
-                    popup = yes
-                }
-            }
-            else = {
-                set_variable = {
-                    name  = RRK_monarch
-                    value = ruler
-                }
-                set_variable = {
-                    name  = RRK_heir
-                }
-                ruler = {
-                    place_character_in_void = 1200
-                }
-                trigger_event = {
-                    id    = RRK_ev.2
-                    popup = yes
-                }
+            # Set preserve monarchy variable (used by other on action for monarchy check - putting here as sort of failsafe)
+            set_variable = {
+                name  = RRK_preserve_monarchy
+                value = no
             }
         }
     }
@@ -125,26 +91,26 @@ RRK_oa_on_election = {
             limit = {
                 RRK_st_is_presidential_monarchy = yes
             }
-            # RRK_se_set_premier = yes # campaign end on action does not work in 1.4; will work in 1.5
-            # RRK_se_update_head_of_gov_modifier = yes
-            add_journal_entry = {
-                type = RRK_je_premier_election
-            }
+            RRK_se_set_premier = yes
+            RRK_se_update_head_of_gov_modifier = yes
+            # add_journal_entry = { # Was needed for 1.4 since on_election_campaign_end didn't work then
+                # type = RRK_je_premier_election
+            # }
         }
     }
 }
 
-on_election_campaign_start = {
-    on_actions = {
-        RRK_oa_on_election
-    }
-}
-
-# on_election_campaign_end = { # Broken in 1.4, will be fixed in 1.5
-	# on_actions = {
+# on_election_campaign_start = {
+    # on_actions = {
         # RRK_oa_on_election
     # }
 # }
+
+on_election_campaign_end = {
+	on_actions = {
+        RRK_oa_on_election
+    }
+}
 
 # ==================================================================================================================== #
 
@@ -178,7 +144,7 @@ RRK_oa_on_law_activated = { # TODO: Redo logic
                     # Set default head of gov if we just turned into a conmon
                     if = {
                         limit = {
-                            RRK_st_is_crowned_republic = yes
+                            RRK_st_is_constitutional_monarchy = yes
                             NOT = {
                                 has_variable = RRK_head_of_gov
                             }
@@ -187,7 +153,7 @@ RRK_oa_on_law_activated = { # TODO: Redo logic
                     }
                     else_if = {
                         limit = {
-                            RRK_st_is_crowned_republic = no
+                            RRK_st_is_constitutional_monarchy = no
                             has_variable = RRK_head_of_gov
                         }
                         remove_variable = RRK_head_of_gov
@@ -195,18 +161,35 @@ RRK_oa_on_law_activated = { # TODO: Redo logic
                     
                     # Remove Head of Gov in government modifier (scripted effect handles removing)
                     RRK_se_update_head_of_gov_modifier = yes
+                    
+                    # Set preserve monarchy variable (used to detect if we moved off from monarchy later)
+                    set_variable = {
+                        name  = RRK_preserve_monarchy
+                        value = no
+                    }
                 }
             }
-            # Monarchy abolished
+            
+            # Not Monarchy passed
             else = {
                 owner = {
+                    # Monarchy abolished
                     if = {
                         limit = {
-                            has_variable = RRK_head_of_gov
+                            has_variable = RRK_preserve_monarchy # Only monarchies will have this
+                            OR = { # Theocracy erasure
+                                has_law = law_type:law_presidential_republic
+                                has_law = law_type:law_parliamentary_republic
+                                has_law = law_type:law_council_republic # Certified New Jewel Movement moment
+                            }
                         }
-                        remove_variable = RRK_head_of_gov
+                        RRK_se_fire_monarch_fate_event = yes
                     }
-                    RRK_se_update_head_of_gov_modifier = yes
+                    
+                    # There was no monarchy
+                    else = {
+                        RRK_se_abolish_monarchy = yes # Runs the same things we'd run here anyway
+                    }
                 }
             }
         }
@@ -215,15 +198,14 @@ RRK_oa_on_law_activated = { # TODO: Redo logic
         else_if = {
             limit = {
                 type = {
-                    is_same_law_group_as = law_type:law_parliamentary_republic
+                    is_same_law_group_as = law_type:law_universal_suffrage
                 }
             }
             owner = {
                 # Set default head of gov if became conmon
                 if = {
                     limit = {
-                        has_law = law_type:law_monarchy
-                        RRK_st_is_crowned_republic = yes
+                        RRK_st_is_constitutional_monarchy = yes
                         NOT = {
                             has_variable = RRK_head_of_gov
                         }
@@ -234,7 +216,7 @@ RRK_oa_on_law_activated = { # TODO: Redo logic
                 # Constitutionalism? More like uhhhhhhhh crap!
                 else_if = {
                     limit = {
-                        RRK_st_is_crowned_republic = no
+                        RRK_st_is_constitutional_monarchy = no
                         has_variable = RRK_head_of_gov
                     }
                     remove_variable = RRK_head_of_gov

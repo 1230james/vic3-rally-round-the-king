@@ -24,9 +24,9 @@ RRK_ev.2 = {
     type      = country_event
     placement = root
     
-    title     = RRK_ev_1_title
-    desc      = RRK_ev_1_desc
-    flavor    = RRK_ev_1_flavor
+    title     = RRK_ev_2_title
+    desc      = RRK_ev_2_desc
+    flavor    = RRK_ev_2_flavor
 
     duration = 3
     
@@ -39,36 +39,20 @@ RRK_ev.2 = {
     on_opened_soundeffect  = "event:/SFX/Events/misc/2Characters"
 
     icon = "gfx/interface/icons/event_icons/event_default.dds"
-
-    trigger = {} # Triggered from journal entry
     
-    immediate = {
+    option = {
+        name = RRK_ev_2_a
+        RRK_se_save_monarchy = yes
+        remove_variable = RRK_monarch
+        remove_variable = RRK_heir
     }
     
     option = {
-        name = RRK_ev_1_a
+        name = RRK_ev_2_b
         default_option = yes
-        
-        var:RRK_monarch = {
-            add_character_role = politican
-        }
-        var:RRK_heir = {
-            add_character_role = politican
-            add_character_role = general
-        }
-    }
-    
-    option = {
-        name = RRK_ev_1_b
-        
-        var:RRK_monarch = {
-            kill_character = yes
-            free_character_from_void = no
-        }
-        var:RRK_heir = {
-            kill_character = yes
-            free_character_from_void = no
-        }
+        RRK_se_abolish_monarchy = yes
+        remove_variable = RRK_monarch
+        remove_variable = RRK_heir
     }
 }
 
@@ -77,9 +61,9 @@ RRK_ev.3 = {
     type      = country_event
     placement = root
     
-    title     = RRK_ev_2_title
-    desc      = RRK_ev_2_desc
-    flavor    = RRK_ev_2_flavor
+    title     = RRK_ev_3_title
+    desc      = RRK_ev_3_desc
+    flavor    = RRK_ev_3_flavor
 
     duration = 3
     
@@ -93,17 +77,15 @@ RRK_ev.3 = {
     icon = "gfx/interface/icons/event_icons/event_default.dds"
     
     option = {
-        name = RRK_ev_2_a
-        default_option = yes
-        
+        name = RRK_ev_3_a
+        RRK_se_save_monarchy = yes
+        remove_variable = RRK_monarch
     }
     
     option = {
-        name = RRK_ev_2_b
-        
-        var:RRK_monarch = {
-            kill_character = yes
-            free_character_from_void = no
-        }
+        name = RRK_ev_3_b
+        default_option = yes
+        RRK_se_abolish_monarchy = yes
+        remove_variable = RRK_monarch
     }
 }

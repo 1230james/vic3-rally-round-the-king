@@ -15,6 +15,12 @@
     # Modifiers
     RRK_md_head_of_gov_in_gov: "[concept_RRK_head_of_gov]'s [concept_interest_group] [concept_in_government]"
     
+    # Tooltips
+    RRK_tt_monarchy_preserved: "The monarchy has been preserved."
+    
+    RRK_tt_save_monarchy:    "The monarchy will be #v preserved#!, and [GetPlayer.MakeScope.GetVariable('RRK_monarch').GetCharacter.GetCustom('GetUniversalFullName')] will serve as a ceremonial [concept_head_of_state]."
+    RRK_tt_abolish_monarchy: "The monarchy will be #v abolished#!."
+    
     # Concepts
     concept_RRK_head_of_gov:      "Head of Government"
     concept_RRK_head_of_gov_desc: "In some [Concept('concept_government_type', '$concept_government_types$')], the [concept_head_of_state] is not the #italic de facto#! leader of the [Concept('concept_country','$concept_country_possessive$')] [concept_government], and instead, that role belongs to a different [concept_character]. Such a character does not share the same influence as the [concept_head_of_state], but rather serves as an indicator of which [concept_party] or [concept_interest_group] holds the most [concept_clout] [Concept('concept_in_government', 'within government')].$RRK_head_of_gov_conmon_desc$"
@@ -25,6 +31,7 @@
     RRK_pres_mon_desc: "\n\nUnder a [GetPlayer.GetGovernment.GetName] with the [GetPlayer.GetActiveLawFromGroup('lawgroup_distribution_of_power').GetLawType.GetName], the [concept_government] is led by a $RRK_title_pres_mon_player$, who is typically the [concept_leader] of the [concept_interest_group] with the most [concept_clout] at the end of each [concept_election]."
     
     # Titles
+    # These just call custom locs - see RRK_titles loc file for localization of actual titles
     RRK_title_pres_mon:        "[Country.GetCustom('RRK_cl_premier_title')]"
     RRK_title_parl_mon:        "[Country.GetCustom('RRK_cl_prime_minister_title')]"
     RRK_title_pres_mon_char:   "[Character.GetCountry.GetCustom('RRK_cl_premier_title')]"

@@ -1,4 +1,5 @@
-﻿# Root: Country
+﻿# Prime Minister handling effects
+# Root: Country
 RRK_se_set_prime_minister = {
     random_interest_group = {
         limit = {
@@ -70,5 +71,65 @@ RRK_se_update_head_of_gov_modifier = {
             has_modifier = RRK_md_head_of_gov_in_gov
         }
         remove_modifier = RRK_md_head_of_gov_in_gov
+    }
+}
+
+# Fate of monarchy event effects
+# Scope: Country
+RRK_se_fire_monarch_fate_event = {
+    set_variable = {
+        name  = RRK_preserve_monarchy
+        value = yes
+    }
+    if = {
+        limit = {
+            exists = heir
+        }
+        set_variable = {
+            name  = RRK_monarch
+            value = ruler
+        }
+        set_variable = {
+            name  = RRK_heir
+            value = heir
+        }
+        trigger_event = {
+            id    = RRK_ev.2
+            popup = yes
+        }
+    }
+    else = {
+        set_variable = {
+            name  = RRK_monarch
+            value = ruler
+        }
+        trigger_event = {
+            id    = RRK_ev.3
+            popup = yes
+        }
+    }
+}
+
+RRK_se_save_monarchy = {
+    custom_tooltip = {
+        text = RRK_tt_save_monarchy
+        
+        RRK_se_set_prime_minister = yes
+        RRK_se_update_head_of_gov_modifier = yes
+    }
+}
+
+RRK_se_abolish_monarchy = {
+    custom_tooltip = {
+        text = RRK_tt_abolish_monarchy
+        
+        remove_variable = RRK_preserve_monarchy
+        if = {
+            limit = {
+                has_variable = RRK_head_of_gov
+            }
+            remove_variable = RRK_head_of_gov
+        }
+        RRK_se_update_head_of_gov_modifier = yes
     }
 }
