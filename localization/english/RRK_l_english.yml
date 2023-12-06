@@ -24,15 +24,6 @@
     
     RRK_pres_mon_desc: "\n\nUnder a [GetPlayer.GetGovernment.GetName] with the [GetPlayer.GetActiveLawFromGroup('lawgroup_distribution_of_power').GetLawType.GetName], the [concept_government] is led by a $RRK_title_pres_mon_player$, who is typically the [concept_leader] of the [concept_interest_group] with the most [concept_clout] at the end of each [concept_election]."
     
-    # Government Types
-    RRK_txt_crowned_republic: "Crowned Republic"
-    
-    RRK_gov_parl_crowned_republic:      "$RRK_txt_crowned_republic$"
-    RRK_gov_parl_crowned_republic_desc: "This is a [concept_government_type] where the [concept_country] is ruled by a parliament and [concept_RRK_head_of_gov] separate from a figurehead [concept_head_of_state].\n\n$TRANSFER_OF_POWER_NAME_DESC$"
-    
-    RRK_gov_parl_crowned_republic:      "$RRK_txt_crowned_republic$"
-    RRK_gov_parl_crowned_republic_desc: "This is a [concept_government_type] where the [concept_country] is ruled by an elected or nominated [Concept('concept_RRK_head_of_gov', '$RRK_premier$')] separate from a figurehead [concept_head_of_state].\n\n$TRANSFER_OF_POWER_NAME_DESC$"
-    
     # Titles
     RRK_title_pres_mon:        "[Country.GetCustom('RRK_cl_premier_title')]"
     RRK_title_parl_mon:        "[Country.GetCustom('RRK_cl_prime_minister_title')]"
@@ -40,6 +31,3 @@
     RRK_title_parl_mon_char:   "[Character.GetCountry.GetCustom('RRK_cl_prime_minister_title')]"
     RRK_title_pres_mon_player: "[GetPlayer.GetCustom('RRK_cl_premier_title')]"
     RRK_title_parl_mon_player: "[GetPlayer.GetCustom('RRK_cl_prime_minister_title')]"
-    
-    RRK_premier:        "$RULER_PREMIER$"
-    RRK_prime_minister: "Prime Minister"

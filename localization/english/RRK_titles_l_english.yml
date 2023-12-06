@@ -1,0 +1,8 @@
+﻿l_english:
+    # Generic titles
+    RRK_premier:        "$RULER_PREMIER$"
+    RRK_prime_minister: "Prime Minister"
+    
+    # Flavored titles
+    # Remember to update custom loc logic
+    # Maybe Some Day:tm:

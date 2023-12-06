@@ -1,4 +1,5 @@
 ﻿# Scripted locs for possible future expansion of more flavorful titles
+# Scroll down for adding flavor titles
 
 RRK_cl_head_of_gov_title = {
     type = country
@@ -49,6 +50,10 @@ RRK_cl_head_of_gov_title_character = {
         }
     }
 }
+
+# ==================================================================================================================== #
+
+# Put flavor titles in these definitions
 
 RRK_cl_premier_title = {
     type = country

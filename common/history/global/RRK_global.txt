@@ -1,0 +1,16 @@
+﻿GLOBAL = {
+    every_country = {
+        # Set starting Prime Ministers
+        # Game needs to actually be started for starting governments to be applied or something, so we do it 1 day into
+        # the game.
+        if = {
+            limit = {
+                RRK_st_is_constitutional_monarchy = yes
+            }
+            trigger_event = {
+                id = RRK_ev.1
+                days = 1
+            }
+        }
+    }
+}

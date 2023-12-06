@@ -18,7 +18,7 @@ RRK_sg_is_conmon = {
     scope = country
     
     is_shown = {
-        RRK_st_is_crowned_republic = yes
+        RRK_st_is_constitutional_monarchy = yes
     }
 }
 
@@ -26,7 +26,7 @@ RRK_sg_is_not_conmon = {
     scope = country
     
     is_shown = {
-        RRK_st_is_crowned_republic = no
+        RRK_st_is_constitutional_monarchy = no
     }
 }
 

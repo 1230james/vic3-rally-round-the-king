@@ -8,13 +8,13 @@ RRK_ev.1 = {
     immediate = {
         if = {
             limit = {
-                GovPlus_st_is_constitutional_monarchy = yes
+                RRK_st_is_constitutional_monarchy = yes
                 NOT = {
-                    has_variable = GovPlus_head_of_gov
+                    has_variable = RRK_head_of_gov
                 }
             }
-            GovPlus_se_set_prime_minister = yes
-            GovPlus_se_update_head_of_gov_modifier = yes
+            RRK_se_set_prime_minister = yes
+            RRK_se_update_head_of_gov_modifier = yes
         }
     }
 }
