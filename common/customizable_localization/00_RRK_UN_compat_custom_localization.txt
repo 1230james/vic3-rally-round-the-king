@@ -1,4 +1,4 @@
-﻿# Gov+ & Universal Names Compatibility
+﻿# RRK & Universal Names Compatibility
 # These definitions are meant to be overwritten by UN if it is activated, but will be present for use by the rest of the
 # mod to prevent crashes or other issues to allow for seamless compatibility
 
@@ -12,7 +12,7 @@ GetUniversalFullName = {
         trigger = {
             always = yes
         }
-        localization_key = GovPlus_UN_full_name
+        localization_key = RRK_UN_full_name
     }
 }
 
@@ -24,25 +24,25 @@ GetUniversalTitle = {
         trigger = {
             is_ruler = yes
         }
-        localization_key = GovPlus_UN_title_ruler
+        localization_key = RRK_UN_title_ruler
     }
     text = {
         trigger = {
             is_heir = yes
         }
-        localization_key = GovPlus_UN_title_heir
+        localization_key = RRK_UN_title_heir
     }
     text = {
         trigger = {
             has_role = general
         }
-        localization_key = GovPlus_UN_title_general
+        localization_key = RRK_UN_title_general
     }
     text = {
         trigger = {
             has_role = admiral
         }
-        localization_key = GovPlus_UN_title_admiral
+        localization_key = RRK_UN_title_admiral
     }
     text = {
         trigger = { # logic is kind of broken without this for some reason?
@@ -53,7 +53,7 @@ GetUniversalTitle = {
                 has_role = admiral
             }
         }
-        localization_key = GovPlus_UN_title_none
+        localization_key = RRK_UN_title_none
     }
 }
 
@@ -65,6 +65,6 @@ GetUniversalFullNameNoFormatting = {
         trigger = {
             always = yes
         }
-        localization_key = GovPlus_UN_full_name_no_format
+        localization_key = RRK_UN_full_name_no_format
     }
 }

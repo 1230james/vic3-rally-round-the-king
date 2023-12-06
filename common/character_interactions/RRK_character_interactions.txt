@@ -12,7 +12,7 @@
 
 #ai_chance				Scriptable value for the chance (0-100) that the AI will use this interaction when available, default 0
 
-GovPlus_grant_premiership = {
+RRK_grant_premiership = {
     icon = "gfx/interface/character_panel/grant_command_not.dds"
     clicksound = "event:/SFX/DLC/1.3_ip1/UI/agitator_promote"
     
@@ -21,7 +21,7 @@ GovPlus_grant_premiership = {
 
     potential = {
         owner ?= {
-            GovPlus_st_is_presidential_monarchy = yes
+            RRK_st_is_presidential_monarchy = yes
             country_has_voting_franchise = no
         }
         has_role = politician
@@ -35,16 +35,16 @@ GovPlus_grant_premiership = {
     possible = {
         # Including this part just for player visibility
         owner ?= {
-            GovPlus_st_is_presidential_monarchy = yes
-            has_law = law_type:GovPlus_law_no_voting
+            RRK_st_is_presidential_monarchy = yes
+            has_law = law_type:RRK_law_no_voting
         }
         
         interest_group = {
             is_in_government = yes
             custom_tooltip = {
-                text = GovPlus_tt_not_premier
+                text = RRK_tt_not_premier
                 NOT = {
-                    owner.var:GovPlus_head_of_gov ?= this
+                    owner.var:RRK_head_of_gov ?= this
                 }
             }
         }
@@ -52,11 +52,11 @@ GovPlus_grant_premiership = {
 
     effect = {
         custom_tooltip = {
-			text = GovPlus_tt_premiership
+			text = RRK_tt_premiership
             interest_group = {
                 owner ?= {
                     set_variable = {
-                        name  = GovPlus_head_of_gov
+                        name  = RRK_head_of_gov
                         value = prev
                     }
                 }
@@ -73,9 +73,9 @@ GovPlus_grant_premiership = {
                 owner ?= {
                     OR = {
                         NOT = {
-                            has_variable = GovPlus_head_of_gov
+                            has_variable = RRK_head_of_gov
                         }
-                        var:GovPlus_head_of_gov ?= {
+                        var:RRK_head_of_gov ?= {
                             is_in_government = no
                         }
                     }

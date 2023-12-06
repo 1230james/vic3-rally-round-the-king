@@ -1,6 +1,0 @@
-﻿# Third-party modders:
-# See 00_GovPlus_active_trigger.txt for usage notes
-
-GovPlus_is_active_trigger = {
-    always = yes
-}

@@ -1,10 +1,14 @@
 {
     "name" : "Rally Round the King",
     "id" : "",
-    "version" : "0.1.0",
-    "supported_game_version" : "1.4.*",
+    "version" : "1.0.0",
+    "supported_game_version" : "1.5.*",
     "short_description" : "",
-    "tags" : [],
+    "tags" : [
+        "Events",
+        "Gameplay",
+        "Historical"
+    ],
     "relationships" : [],
     "game_custom_data" : {
         "multiplayer_synchronized" : true

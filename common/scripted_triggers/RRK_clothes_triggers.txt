@@ -1,0 +1,247 @@
+﻿# [RRK] Replacement definitions only
+
+japanese_imperial_clothes_trigger = {
+	exists = scope:character
+	scope:character = {
+		is_ruler = yes
+		exists = home_country
+     	home_country = {
+            OR = {
+                has_law = law_type:law_monarchy
+                RRK_st_is_crowned_republic = yes # RRK
+            }
+     	}
+		OR = {
+			AND = {
+				culture = {
+					has_discrimination_trait = yamato
+				}
+				OR = {
+					NOT = {
+						exists = c:JAP
+					}
+					AND = {
+						exists = c:JAP
+						NOT = { home_country = c:JAP }
+					}
+				}
+			}
+			AND = {
+				exists = c:JAP
+				home_country = {
+					this = c:JAP
+					NOT = { has_variable = meiji_restoration_complete }
+				}
+			}
+		}
+	}
+}
+
+chinese_imperial_clothes_trigger = {
+	exists = scope:character
+	scope:character = {
+		is_ruler = yes
+		exists = home_country
+     	home_country = {
+     		OR = {
+                has_law = law_type:law_monarchy
+                RRK_st_is_crowned_republic = yes # RRK
+            }
+     	}
+		OR = {
+			culture = {
+				has_discrimination_trait = han_chinese
+			}
+			AND = {
+				exists = c:CHI
+				home_country = c:CHI
+			}
+		}
+	}
+}
+
+arabic_fez_trigger = {
+	exists = scope:character
+	scope:character = {
+		exists = home_country
+		OR = {
+			home_country = {
+				OR = {
+					is_country_type = recognized
+					is_country_type = colonial
+				}	
+			}
+			home_country = {
+				top_overlord = {
+					OR = {
+						is_country_type = recognized
+						is_country_type = colonial
+					}	
+				}
+			}
+			home_country = {
+				exists = c:EGY
+				c:EGY = this
+				c:EGY = {
+                    OR = {
+                        has_law = law_type:law_monarchy
+                        RRK_st_is_crowned_republic = yes # RRK
+                    }
+                }
+			}
+		}
+	}       
+}
+
+arabic_military_fez_pop_trigger = {
+	exists = scope:pop
+	scope:pop = {
+		AND = {
+			OR = {
+				home_country = {
+					exists = c:EGY
+					c:EGY = this
+					c:EGY = {
+                        OR = {
+                            has_law = law_type:law_monarchy
+                            RRK_st_is_crowned_republic = yes # RRK
+                        }
+                    }
+				}
+				home_country = {
+					exists = c:TUR
+					c:TUR = this
+					c:TUR = {
+                        OR = {
+                            has_law = law_type:law_monarchy
+                            RRK_st_is_crowned_republic = yes # RRK
+                        }
+                    }
+				}
+				home_country = {
+					exists = c:TUN
+					c:TUN = this
+					c:TUN = {
+                        OR = {
+                            has_law = law_type:law_monarchy
+                            RRK_st_is_crowned_republic = yes # RRK
+                        }
+                    }
+				}
+				home_country = {
+					exists = c:MOR
+					c:MOR = this
+					c:MOR = {
+                        OR = {
+                            has_law = law_type:law_monarchy
+                            RRK_st_is_crowned_republic = yes # RRK
+                        }
+                    }
+				}
+			}
+			OR = {
+				culture = {
+					OR = {
+						has_discrimination_trait = middle_eastern_heritage
+						has_discrimination_trait = central_asian_heritage
+					}
+				}
+				AND = { # Albanian characters serving either the Ottomans or Egyptians should wear that country's clothing.
+					culture = cu:albanian
+					OR = {
+						home_country = {
+							exists = c:TUR
+							c:TUR = this
+							c:TUR = {
+                                OR = {
+                                    has_law = law_type:law_monarchy
+                                    RRK_st_is_crowned_republic = yes # RRK
+                                }
+                            }
+						}
+						home_country = {
+							exists = c:EGY
+							c:EGY = this
+							c:EGY = {
+                                OR = {
+                                    has_law = law_type:law_monarchy
+                                    RRK_st_is_crowned_republic = yes # RRK
+                                }
+                            }
+						}
+					}
+				}
+			}
+		}
+	}       
+}
+
+arabic_clothes_trigger = {
+	exists = scope:character
+	scope:character = {
+		OR = {
+			culture = {
+				OR = {
+					has_discrimination_trait = middle_eastern_heritage
+					has_discrimination_trait = central_asian_heritage #Currently no point having a different check
+				}
+			}
+			culture = cu:circassian
+			AND = { # Albanian characters serving either the Ottomans or Egyptians should wear that country's clothing.
+				culture = cu:albanian
+				exists = home_country
+				OR = {
+					home_country = {
+						exists = c:TUR
+						c:TUR = this
+						c:TUR = {
+                            OR = {
+                                has_law = law_type:law_monarchy
+                                RRK_st_is_crowned_republic = yes # RRK
+                            }
+                        }
+					}
+					home_country = {
+						exists = c:EGY
+						c:EGY = this
+						c:EGY = {
+                            OR = {
+                                has_law = law_type:law_monarchy
+                                RRK_st_is_crowned_republic = yes # RRK
+                            }
+                        }
+					}
+				}
+			}
+		}
+	}        
+}
+
+monarchy_clothes_trigger = {
+	exists = scope:character
+	scope:character = {
+		exists = home_country
+		OR = {
+	     	is_ruler = yes
+	     	is_heir = yes
+	     }
+     	home_country = {
+     		OR = {
+                has_law = law_type:law_monarchy
+                RRK_st_is_crowned_republic = yes # RRK
+            }
+     	}
+	}
+}
+
+republic_clothes_trigger = {
+	exists = scope:character
+	scope:character = {
+		exists = home_country
+		is_ruler = yes
+		home_country = {
+			NOT = { has_law = law_type:law_monarchy }
+            RRK_st_is_crowned_republic = no # RRK
+		}
+	}
+}

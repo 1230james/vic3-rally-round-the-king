@@ -1,7 +1,26 @@
 ﻿namespace = RRK_ev
 
-# Monarch's fate - has heir
+# Setup event (fired by history for initial setup)
 RRK_ev.1 = {
+    type = country_event
+    hidden = yes
+    
+    immediate = {
+        if = {
+            limit = {
+                GovPlus_st_is_constitutional_monarchy = yes
+                NOT = {
+                    has_variable = GovPlus_head_of_gov
+                }
+            }
+            GovPlus_se_set_prime_minister = yes
+            GovPlus_se_update_head_of_gov_modifier = yes
+        }
+    }
+}
+
+# Monarch's fate - has heir
+RRK_ev.2 = {
     type      = country_event
     placement = root
     
@@ -54,7 +73,7 @@ RRK_ev.1 = {
 }
 
 # Monarch's fate - No heir
-RRK_ev.2 = {
+RRK_ev.3 = {
     type      = country_event
     placement = root
     

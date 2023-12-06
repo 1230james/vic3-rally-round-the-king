@@ -401,8 +401,11 @@ types politics_panel_types
 		tooltipwidget = {
 			FancyTooltip_Character = {}
 		}
-
+        
+        RRK_head_of_gov = {} # RRK
 		hbox = {
+            visible = "[GetScriptedGui('RRK_sg_is_not_conmon').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+            
 			layoutpolicy_horizontal = expanding
 			layoutpolicy_vertical = expanding
 			spacing = 5
@@ -413,6 +416,7 @@ types politics_panel_types
 				using = tooltip_below
 				blockoverride "show_hat" {}
 				blockoverride "highlight" {}
+                blockoverride "commander_order_icon" {}
 			}
 			
 			vbox = {
@@ -440,7 +444,7 @@ types politics_panel_types
 					}
 					
 					textbox = {
-						raw_text = "#BOLD [Character.GetFullNameNoFormatting]#!"
+						raw_text = "#BOLD [Character.GetCustom('GetUniversalFullNameNoFormatting')]#!"
 						layoutpolicy_horizontal = expanding
 						size = { 0 20 }
 						fontsize_min = 14
@@ -769,9 +773,8 @@ types politics_panel_types
 								margin = { 4 0 }
 								
 								### RULER
-                                RRK_monarch_view = {} # RRK
 								character_with_background = {
-									visible = "[And(Country.HasRuler, Not(GetVariableSystem.Exists('RRK_view_monarch')))]" # RRK
+									visible = "[Country.HasRuler]"
 									datacontext = "[AccessPlayer.AccessRuler]"
 									layoutpolicy_horizontal = expanding
 									layoutpolicy_vertical = expanding
@@ -784,16 +787,6 @@ types politics_panel_types
 									blockoverride "character_portrait_size" {
 										size = { 110% 110% }
 									}
-                                    
-                                    # RRK
-                                    RRK_monarch_button = {
-                                        parentanchor = top|right
-                                        size = { 50 50 }
-                                        position = { -20 20 }
-                                        visible = "[GetScriptedGui('RRK_sg_monarch_check').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
-                                    }
-                                    using = default_fade_in_out
-                                    # RRK End
 									
 									# ruler stats
 									flowcontainer = {
@@ -852,7 +845,7 @@ types politics_panel_types
 												text = "[Concept('concept_ruler', Character.GetPrimaryRoleTitle)]"
 											}
 											blockoverride "text" {
-												text = "[Character.GetFullName]"
+												text = "[Character.GetCustom('GetUniversalFullName')]"
 											}
 										}
 										### INTEREST GROUP
@@ -1206,16 +1199,16 @@ types politics_panel_types
 										visible = "[GetVariableSystem.Exists('politics_piecharts')]"
 									}
 									blockoverride "icon_1" {
-										texture = "gfx/interface/buttons/button_icons/piecharts.dds"
-									}
-									blockoverride "icon_2" {
 										texture = "gfx/interface/buttons/button_icons/areacharts.dds"
 									}
+									blockoverride "icon_2" {
+										texture = "gfx/interface/buttons/button_icons/piecharts.dds"
+									}
 									blockoverride "tooltip_1" {
-										tooltip = "TOOLTIP_PIE_CHART"
+										tooltip = "TOOLTIP_AREA_CHART"
 									}
 									blockoverride "tooltip_2" {
-										tooltip = "TOOLTIP_AREA_CHART"
+										tooltip = "TOOLTIP_PIE_CHART"
 									}
 								}
 							}
@@ -1838,7 +1831,7 @@ types politics_panel_types
 																layoutpolicy_horizontal = expanding
 																size = { 0 30 }
 																align = right|nobaseline
-																raw_text = "[Party.GetCurrentVotingPower|Kv] ([Party.GetCurrentVotingPowerShare|%1])"
+																raw_text = "[Party.GetCurrentVotingPowerShare|%1]"
 																tooltip = "PARTY_ELECTION_TOOLTIP"
 															}
 														}

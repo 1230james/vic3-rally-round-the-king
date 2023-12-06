@@ -1,0 +1,21 @@
+﻿RRK_st_is_parliamentary_monarchy = {
+    has_law = law_type:law_parliamentary_republic
+    RRK_st_monarchy_preserved = yes
+}
+
+RRK_st_is_presidential_monarchy = {
+    has_law = law_type:law_presidential_republic
+    RRK_st_monarchy_preserved = yes
+}
+
+RRK_st_is_crowned_republic = {
+    OR = {
+        RRK_st_is_parliamentary_monarchy = yes
+        RRK_st_is_presidential_monarchy = yes
+    }
+}
+
+RRK_st_monarchy_preserved = {
+    has_variable = RRK_preserve_monarchy
+    var:RRK_preserve_monarchy ?= yes
+}
