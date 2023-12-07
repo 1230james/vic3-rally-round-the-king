@@ -42,15 +42,15 @@ RRK_ev.2 = {
     
     option = {
         name = RRK_ev_2_a
-        RRK_se_save_monarchy = yes
+        default_option = yes
+        RRK_se_abolish_monarchy = yes
         remove_variable = RRK_monarch
         remove_variable = RRK_heir
     }
     
     option = {
         name = RRK_ev_2_b
-        default_option = yes
-        RRK_se_abolish_monarchy = yes
+        RRK_se_save_monarchy = yes
         remove_variable = RRK_monarch
         remove_variable = RRK_heir
     }
@@ -78,14 +78,14 @@ RRK_ev.3 = {
     
     option = {
         name = RRK_ev_3_a
-        RRK_se_save_monarchy = yes
+        default_option = yes
+        RRK_se_abolish_monarchy = yes
         remove_variable = RRK_monarch
     }
     
     option = {
         name = RRK_ev_3_b
-        default_option = yes
-        RRK_se_abolish_monarchy = yes
+        RRK_se_save_monarchy = yes
         remove_variable = RRK_monarch
     }
 }

@@ -81,6 +81,8 @@ RRK_se_fire_monarch_fate_event = {
         name  = RRK_preserve_monarchy
         value = yes
     }
+    RRK_se_set_prime_minister = yes
+    RRK_se_update_head_of_gov_modifier = yes
     if = {
         limit = {
             exists = heir
@@ -113,9 +115,7 @@ RRK_se_fire_monarch_fate_event = {
 RRK_se_save_monarchy = {
     custom_tooltip = {
         text = RRK_tt_save_monarchy
-        
-        RRK_se_set_prime_minister = yes
-        RRK_se_update_head_of_gov_modifier = yes
+        # Just in case I need it
     }
 }
 
@@ -132,4 +132,31 @@ RRK_se_abolish_monarchy = {
         }
         RRK_se_update_head_of_gov_modifier = yes
     }
+    
+    if = {
+        limit = {
+            country_has_voting_franchise = no
+        }
+        custom_tooltip = RRK_tt_stay_as_president
+    }
+    else_if = {
+        limit = {
+            var:RRK_monarch.interest_group.leader = var:RRK_monarch
+        }
+        custom_tooltip = RRK_tt_stay_as_ig_leader
+    }
+}
+
+# Debug effects
+RRK_se_debug_1 = {
+    activate_law = law_type:law_universal_suffrage
+    activate_law = law_type:law_parliamentary_republic
+}
+RRK_se_debug_2 = {
+    activate_law = law_type:law_oligarchy
+    activate_law = law_type:law_presidential_republic
+}
+RRK_se_debug_3 = {
+    activate_law = law_type:law_autocracy
+    activate_law = law_type:law_monarchy
 }
