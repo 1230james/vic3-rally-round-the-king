@@ -13,7 +13,7 @@
 #ai_chance				Scriptable value for the chance (0-100) that the AI will use this interaction when available, default 0
 
 RRK_grant_premiership = {
-    icon = "gfx/interface/character_panel/grant_command_not.dds"
+    icon = "gfx/interface/icons/character_role_icons/ruler.dds"
     clicksound = "event:/SFX/DLC/1.3_ip1/UI/agitator_promote"
     
     show_requirements = yes
@@ -35,8 +35,13 @@ RRK_grant_premiership = {
     possible = {
         # Including this part just for player visibility
         owner ?= {
-            RRK_st_is_presidential_monarchy = yes
-            country_has_voting_franchise = no
+            # RRK_st_is_presidential_monarchy = yes
+            has_law = law_type:law_presidential_republic # Nicer tooltip
+            RRK_st_monarchy_preserved = yes
+            custom_tooltip = {
+                text = RRK_tt_char_has_no_voting
+                country_has_voting_franchise = no
+            }
         }
         
         interest_group = {

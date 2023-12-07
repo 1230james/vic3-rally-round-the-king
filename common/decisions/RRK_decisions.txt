@@ -1,0 +1,42 @@
+﻿RRK_de_abolish_monarchy = {
+    is_shown = {
+        RRK_st_is_crowned_republic = yes
+        NOT = {
+            has_variable = RRK_monarch # no abolishing the monarchy while the event to decide it is still up
+        }
+    }
+    
+    possible = {
+        always = yes
+    }
+    
+    when_taken = {
+        set_variable = {
+            name  = RRK_monarch
+            value = ruler
+        }
+        if = {
+            limit = {
+                exists = heir
+            }
+            set_variable = {
+                name  = RRK_heir
+                value = heir
+            }
+            trigger_event = {
+                id    = RRK_ev.4
+                popup = yes
+            }
+        }
+        else = {
+            trigger_event = {
+                id    = RRK_ev.5
+                popup = yes
+            }
+        }
+    }
+    
+    ai_chance = {
+        base = 0 # todo
+    }
+}

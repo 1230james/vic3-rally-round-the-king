@@ -89,3 +89,173 @@ RRK_ev.3 = {
         remove_variable = RRK_monarch
     }
 }
+
+# Monarchy abolished - has heir
+RRK_ev.4 = {
+    type      = country_event
+    placement = root
+    
+    title = RRK_ev_4_title
+    desc  = {
+        first_valid = {
+            triggered_desc = {
+                desc    = RRK_ev_4_desc_1
+                trigger = {
+                    var:RRK_monarch = {
+                        popularity <= define:NCharacters|POPULARITY_HATED_THRESHOLD
+                    }
+                }
+            }
+            triggered_desc = {
+                desc    = RRK_ev_4_desc_2
+                trigger = {
+                    var:RRK_monarch = {
+                        popularity > define:NCharacters|POPULARITY_HATED_THRESHOLD
+                        popularity < define:NCharacters|POPULARITY_LOVED_THRESHOLD
+                    }
+                }
+            }
+            triggered_desc = {
+                desc    = RRK_ev_4_desc_3
+                trigger = {
+                    var:RRK_monarch = {
+                        popularity >= define:NCharacters|POPULARITY_LOVED_THRESHOLD
+                    }
+                }
+            }
+        }
+    }
+    flavor = {
+        first_valid = {
+            triggered_desc = {
+                desc    = RRK_ev_4_flavor_1
+                trigger = {
+                    var:RRK_monarch = {
+                        popularity < define:NCharacters|POPULARITY_DISLIKED_THRESHOLD
+                    }
+                }
+            }
+            triggered_desc = {
+                desc    = RRK_ev_4_flavor_2
+                trigger = {
+                    var:RRK_monarch = {
+                        popularity >= define:NCharacters|POPULARITY_DISLIKED_THRESHOLD
+                        popularity <= define:NCharacters|POPULARITY_LIKED_THRESHOLD
+                    }
+                }
+            }
+            triggered_desc = {
+                desc    = RRK_ev_4_flavor_3
+                trigger = {
+                    var:RRK_monarch = {
+                        popularity > define:NCharacters|POPULARITY_LIKED_THRESHOLD
+                    }
+                }
+            }
+        }
+    }
+
+    duration = 3
+    
+    gui_window = event_window_2char
+    
+    left_icon  = var:RRK_monarch
+    right_icon = var:RRK_heir
+    
+    on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+    on_opened_soundeffect  = "event:/SFX/Events/misc/2Characters"
+
+    icon = "gfx/interface/icons/event_icons/event_default.dds"
+    
+    option = {
+        name = RRK_ev_4_a
+        default_option = yes
+        RRK_se_abolish_monarchy = yes
+        remove_variable = RRK_monarch
+        remove_variable = RRK_heir
+    }
+}
+
+# Monarchy abolished - no heir
+RRK_ev.5 = {
+    type      = country_event
+    placement = root
+    
+    title = RRK_ev_5_title
+    desc  = {
+        first_valid = {
+            triggered_desc = {
+                desc    = RRK_ev_5_desc_1
+                trigger = {
+                    var:RRK_monarch = {
+                        popularity <= define:NCharacters|POPULARITY_HATED_THRESHOLD
+                    }
+                }
+            }
+            triggered_desc = {
+                desc    = RRK_ev_5_desc_2
+                trigger = {
+                    var:RRK_monarch = {
+                        popularity > define:NCharacters|POPULARITY_HATED_THRESHOLD
+                        popularity < define:NCharacters|POPULARITY_LOVED_THRESHOLD
+                    }
+                }
+            }
+            triggered_desc = {
+                desc    = RRK_ev_5_desc_3
+                trigger = {
+                    var:RRK_monarch = {
+                        popularity >= define:NCharacters|POPULARITY_LOVED_THRESHOLD
+                    }
+                }
+            }
+        }
+    }
+    flavor = {
+        first_valid = {
+            triggered_desc = {
+                desc    = RRK_ev_5_flavor_1
+                trigger = {
+                    var:RRK_monarch = {
+                        popularity < define:NCharacters|POPULARITY_DISLIKED_THRESHOLD
+                    }
+                }
+            }
+            triggered_desc = {
+                desc    = RRK_ev_5_flavor_2
+                trigger = {
+                    var:RRK_monarch = {
+                        popularity >= define:NCharacters|POPULARITY_DISLIKED_THRESHOLD
+                        popularity <= define:NCharacters|POPULARITY_LIKED_THRESHOLD
+                    }
+                }
+            }
+            triggered_desc = {
+                desc    = RRK_ev_5_flavor_3
+                trigger = {
+                    var:RRK_monarch = {
+                        popularity > define:NCharacters|POPULARITY_LIKED_THRESHOLD
+                    }
+                }
+            }
+        }
+    }
+
+    duration = 3
+    
+    gui_window = event_window_1char_tabloid
+    
+    left_icon = var:RRK_monarch
+    
+    on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+    on_opened_soundeffect  = "event:/SFX/Events/misc/1Character_Banner"
+
+    icon = "gfx/interface/icons/event_icons/event_default.dds"
+    
+    option = {
+        name = RRK_ev_5_a
+        default_option = yes
+        RRK_se_abolish_monarchy = yes
+        remove_variable = RRK_monarch
+    }
+}
