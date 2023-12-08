@@ -1,5 +1,5 @@
 ﻿# Prime Minister handling effects
-# Root: Country
+# Scope: Country
 RRK_se_set_prime_minister = {
     random_interest_group = {
         limit = {
@@ -145,6 +145,8 @@ RRK_se_abolish_monarchy = {
         }
         custom_tooltip = RRK_tt_stay_as_ig_leader
     }
+    
+    
 }
 
 # Debug effects

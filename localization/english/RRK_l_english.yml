@@ -20,6 +20,7 @@
     RRK_md_head_of_gov_in_gov: "[concept_RRK_head_of_gov]'s [concept_interest_group] [concept_in_government]"
     
     # Tooltips
+    RRK_tt_player_has_voting:  "[GetPlayer.GetNameNoFlag] #bold has#! [Concept('concept_votes', '$concept_voting_rights$')]"
     RRK_tt_char_has_no_voting: "[Character.GetCountry.GetNameNoFlag] does #bold not#! have [Concept('concept_votes', '$concept_voting_rights$')]"
     
     RRK_tt_monarchy_preserved: "The monarchy has been preserved."
