@@ -18,6 +18,7 @@ RRK_oa_on_monarchy_abolished = {
                 currently_enacting_law.type = {
                     is_same_law_group_as = law_type:law_monarchy
                 }
+                game_date > 1836.1.1 # Prevent weird behavior as a result of loading history when starting new game
             }
             # Set preserve monarchy variable (used by other on action for monarchy check - putting here as sort of failsafe)
             set_variable = {
@@ -134,6 +135,7 @@ RRK_oa_on_law_activated = { # TODO: Redo logic
                 type = {
                     is_same_law_group_as = law_type:law_monarchy
                 }
+                game_date > 1836.1.1 # Prevent weird behavior as a result of loading history when starting new game
             }
             # Monarchy passed
             if = {
@@ -200,6 +202,7 @@ RRK_oa_on_law_activated = { # TODO: Redo logic
                 type = {
                     is_same_law_group_as = law_type:law_universal_suffrage
                 }
+                game_date > 1836.1.1
             }
             owner = {
                 # Set default head of gov if became conmon

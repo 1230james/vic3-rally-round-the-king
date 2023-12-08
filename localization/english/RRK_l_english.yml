@@ -24,10 +24,11 @@
     RRK_md_monarchy_abolished: "Monarchy Abolished"
     
     # Tooltips
-    RRK_tt_player_has_voting:  "[GetPlayer.GetNameNoFlag] #bold has#! [Concept('concept_votes', '$concept_voting_rights$')]"
+    RRK_tt_player_has_voting:  "[GetPlayer.GetNameNoFlag] has [Concept('concept_votes', '$concept_voting_rights$')]"
     RRK_tt_char_has_no_voting: "[Character.GetCountry.GetNameNoFlag] does #bold not#! have [Concept('concept_votes', '$concept_voting_rights$')]"
     
-    RRK_tt_monarchy_preserved: "The monarchy has been preserved."
+    RRK_tt_monarchy_preserved:     "The monarchy has been preserved"
+    RRK_tt_monarchy_not_preserved: "The monarchy has #bold not#! been preserved"
     
     RRK_tt_save_monarchy:    "The monarchy will be #v preserved#!, and [GetPlayer.MakeScope.GetVariable('RRK_monarch').GetCharacter.GetCustom('GetUniversalFullName')] will serve as a ceremonial [concept_head_of_state]."
     RRK_tt_abolish_monarchy: "The monarchy will be #v abolished#!."

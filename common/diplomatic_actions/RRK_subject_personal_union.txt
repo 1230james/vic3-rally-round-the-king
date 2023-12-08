@@ -1,0 +1,60 @@
+﻿personal_union = {
+	can_select = no
+
+	potential = { # Only created through diplomatic plays
+		always = no
+	}
+	
+	pact = {
+		cost = 25
+		has_junior_participant = yes
+		recipient_pays_maintenance = no
+		is_customs_union = yes
+		
+		relations_progress_per_day = 1
+		relations_improvement_max = 50
+		subject_type = subject_type_personal_union
+		
+		actor_can_break = {
+			is_diplomatic_play_committed_participant = no
+		}
+
+		target_can_break = { # Has to use diplomatic play to break
+			error_check = {
+				severity = invalid
+				always = no
+			}
+		}	
+		
+		should_invalidate = {
+			OR = {
+				NOR = {
+                    has_law = law_type:law_monarchy
+                    custom_tooltip = {
+                        text = RRK_tt_monarchy_not_preserved
+                        RRK_st_monarchy_preserved = yes
+                    }
+                }
+				scope:target_country = {
+                    NOR = {
+                        has_law = law_type:law_monarchy
+                        custom_tooltip = {
+                            text = RRK_tt_monarchy_not_preserved
+                            RRK_st_monarchy_preserved = yes
+                        }
+                    }
+                }
+			}	
+		}
+		
+		break_effect = {
+			create_truce = { country = scope:target_country months = 60 }
+		}
+	}
+	
+	ai = {
+		will_break = {
+			always = no			
+		}		
+	}
+}

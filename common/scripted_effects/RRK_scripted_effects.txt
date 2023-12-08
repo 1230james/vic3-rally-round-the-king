@@ -260,7 +260,7 @@ RRK_se_abolish_monarchy = {
     
     if = {
         limit = {
-            country_has_voting_franchise = no
+            RRK_st_has_voting = no
         }
         custom_tooltip = RRK_tt_stay_as_president
     }
@@ -269,6 +269,44 @@ RRK_se_abolish_monarchy = {
             var:RRK_monarch.interest_group.leader = var:RRK_monarch
         }
         custom_tooltip = RRK_tt_stay_as_ig_leader
+    }
+    
+    if = {
+        limit = {
+            NOR = {
+                has_variable      = stamped_out_monarchy_var
+                has_journal_entry = je_abolish_monarchy
+            }
+        }
+        if = {
+            limit = {
+                NOT = {
+                    has_variable = abolishing_monarchy_var
+                }
+            }
+            set_variable = {
+                name = abolishing_monarchy_var
+                value = 0
+            }
+            add_journal_entry = { type = je_abolish_monarchy }
+        }
+        else = { # Preserve progress, if any
+            set_local_variable = {
+                name  = stomp_out_prog
+                value = var:abolishing_monarchy_var
+            }
+            set_variable = {
+                name = abolishing_monarchy_var
+                value = 0
+            }
+            add_journal_entry = {
+                type = je_abolish_monarchy
+            }
+            set_variable = {
+                name  = abolishing_monarchy_var
+                value = local_var:stomp_out_prog
+            }
+        }
     }
 }
 

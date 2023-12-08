@@ -9,9 +9,6 @@ RRK_ev.1 = {
         if = {
             limit = {
                 RRK_st_is_constitutional_monarchy = yes
-                NOT = {
-                    has_variable = RRK_head_of_gov
-                }
             }
             RRK_se_set_prime_minister = yes
             RRK_se_update_head_of_gov_modifier = yes
