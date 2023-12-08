@@ -19,14 +19,5 @@
                 value = no
             }
         }
-        
-        # Unmark all non-monarches - necessary because apparently there is on action processing during history set up
-        # and we need to clear out the variable for any country where it was set as a result of starting laws being set
-        else_if = {
-            limit = {
-                has_variable = RRK_preserve_monarchy
-            }
-            remove_variable = RRK_preserve_monarchy
-        }
     }
 }

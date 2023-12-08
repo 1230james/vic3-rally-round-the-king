@@ -244,6 +244,7 @@ RRK_se_save_monarchy = {
     }
 }
 
+# TODO: Evaluate upstream effects of adding stamp out JE logic here (e.g. law activated on action)
 RRK_se_abolish_monarchy = {
     custom_tooltip = {
         text = RRK_tt_abolish_monarchy

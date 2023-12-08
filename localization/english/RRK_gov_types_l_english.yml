@@ -10,11 +10,11 @@
     RRK_gov_shogunate: "$RRK_txt_crowned_republic$"
     RRK_gov_shogunate_desc: "$RRK_txt_desc_start$ [Concept('concept_ruler','$RULER_TITLE_SHOGUN$')] $RRK_txt_desc_end$"
     
-    RRK_gov_hawaiian_monarchy_recognised: "$RRK_txt_crowned_republic$"
-    RRK_gov_hawaiian_monarchy_recognised_desc: "$RRK_txt_desc_start$ [Concept('concept_ruler','$RULER_TITLE_MOI$')] $RRK_txt_desc_end$"
+    RRK_gov_hawaiian_monarchy_recognised: "$RRK_txt_crowned_republic$" # No concept tooltip for Hawaii due to apostrophes in loc
+    RRK_gov_hawaiian_monarchy_recognised_desc: "$RRK_txt_desc_start$ $RULER_TITLE_MOI$ $RRK_txt_desc_end$"
     
-    RRK_gov_hawaiian_monarchy: "$RRK_txt_crowned_republic$"
-    RRK_gov_hawaiian_monarchy_desc: "$RRK_txt_desc_start$ [Concept('concept_ruler','$RULER_TITLE_ALII_NUI$')] $RRK_txt_desc_end$"
+    RRK_gov_hawaiian_monarchy: "$RRK_txt_crowned_republic$" # No concept tooltip for Hawaii due to apostrophes in loc
+    RRK_gov_hawaiian_monarchy_desc: "$RRK_txt_desc_start$ $RULER_TITLE_ALII_NUI$ $RRK_txt_desc_end$"
     
     RRK_gov_maharaja: "$RRK_txt_crowned_republic$"
     RRK_gov_maharaja_desc: "$RRK_txt_desc_start$ [Concept('concept_ruler','$RULER_TITLE_MAHARAJA$')] $RRK_txt_desc_end$"
@@ -80,7 +80,7 @@
     RRK_gov_confederation_of_the_rhine_desc: "$RRK_txt_desc_start$ [Concept('concept_ruler','$RULER_TITLE_PRINCE_PRIMATE$')] or [Concept('concept_ruler','$RULER_TITLE_PRINCESS_PRIMATE$')] $RRK_txt_desc_end$"
     
     RRK_gov_hm_gov: "$gov_hm_gov$" # Bri'ish
-    RRK_gov_hm_gov_desc: $gov_hm_gov_desc$"
+    RRK_gov_hm_gov_desc: "$gov_hm_gov_desc$"
     
     RRK_gov_fra_monarchy: "$gov_constitutional_kingdom$" # ohonhon
     RRK_gov_fra_monarchy_desc: "$RRK_txt_desc_start$ [Concept('concept_ruler','$RULER_TITLE_KING$')] or [Concept('concept_ruler','$RULER_TITLE_QUEEN$')] $RRK_txt_desc_end$"

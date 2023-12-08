@@ -79,6 +79,28 @@ RRK_cl_prime_minister_title = {
     type = country
     
     text = {
+        localization_key = RRK_chairman
+        trigger = {
+            has_law = law_type:law_council_republic
+            var:RRK_head_of_gov = {
+                leader = {
+                    is_female = no
+                }
+            }
+        }
+    }
+    text = {
+        localization_key = RRK_chairwoman
+        trigger = {
+            has_law = law_type:law_council_republic
+            var:RRK_head_of_gov = {
+                leader = {
+                    is_female = yes
+                }
+            }
+        }
+    }
+    text = {
         localization_key = RRK_prime_minister
         trigger = {
             always = yes
