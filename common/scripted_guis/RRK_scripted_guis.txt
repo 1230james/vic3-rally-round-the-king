@@ -58,3 +58,13 @@ RRK_sg_is_head_of_gov = {
         }
     }
 }
+
+RRK_sg_has_monarchy_preserved_modifier = {
+    scope = country
+    
+    is_shown = {
+        any_interest_group = {
+            has_modifier = RRK_md_monarchy_preserved
+        }
+    }
+}

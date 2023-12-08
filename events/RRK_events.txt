@@ -38,7 +38,7 @@ RRK_ev.2 = {
     on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
     on_opened_soundeffect  = "event:/SFX/Events/misc/2Characters"
 
-    icon = "gfx/interface/icons/event_icons/event_default.dds"
+    icon = "gfx/interface/icons/event_icons/event_portrait.dds"
     
     option = {
         name = RRK_ev_2_a
@@ -74,7 +74,7 @@ RRK_ev.3 = {
     on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
     on_opened_soundeffect  = "event:/SFX/Events/misc/1Character_Banner"
 
-    icon = "gfx/interface/icons/event_icons/event_default.dds"
+    icon = "gfx/interface/icons/event_icons/event_portrait.dds"
     
     option = {
         name = RRK_ev_3_a
@@ -165,7 +165,7 @@ RRK_ev.4 = {
     on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
     on_opened_soundeffect  = "event:/SFX/Events/misc/2Characters"
 
-    icon = "gfx/interface/icons/event_icons/event_default.dds"
+    icon = "gfx/interface/icons/event_icons/event_portrait.dds"
     
     option = {
         name = RRK_ev_4_a
@@ -173,6 +173,16 @@ RRK_ev.4 = {
         RRK_se_abolish_monarchy = yes
         remove_variable = RRK_monarch
         remove_variable = RRK_heir
+        
+        every_interest_group = {
+            limit = {
+                prefers_law = {
+                    law = law_type:law_monarchy
+                    comparison_law = prev.active_law:lawgroup_governance_principles.type
+                }
+            }
+            RRK_se_ig_apply_abolished_monarchy_disapproval = yes
+        }
     }
 }
 
@@ -250,12 +260,22 @@ RRK_ev.5 = {
     on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
     on_opened_soundeffect  = "event:/SFX/Events/misc/1Character_Banner"
 
-    icon = "gfx/interface/icons/event_icons/event_default.dds"
+    icon = "gfx/interface/icons/event_icons/event_portrait.dds"
     
     option = {
         name = RRK_ev_5_a
         default_option = yes
         RRK_se_abolish_monarchy = yes
         remove_variable = RRK_monarch
+        
+        every_interest_group = {
+            limit = {
+                prefers_law = {
+                    law = law_type:law_monarchy
+                    comparison_law = prev.active_law:lawgroup_governance_principles.type
+                }
+            }
+            RRK_se_ig_apply_abolished_monarchy_disapproval = yes
+        }
     }
 }

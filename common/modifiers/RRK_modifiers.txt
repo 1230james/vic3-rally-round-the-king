@@ -3,3 +3,13 @@
     # country_legitimacy_govt_leader_clout_add = 10 # Apparently this ends up being 10 * the clout %; 10% clout => 100 legitimacy
     country_legitimacy_base_add = 10
 }
+
+RRK_md_monarchy_preserved = {
+    icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds
+    interest_group_approval_add = 1
+}
+
+RRK_md_monarchy_abolished = {
+    icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds
+    interest_group_approval_add = -1
+}

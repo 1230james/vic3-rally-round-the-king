@@ -112,10 +112,135 @@ RRK_se_fire_monarch_fate_event = {
     }
 }
 
+RRK_se_ig_apply_preserved_monarch_approval = {
+    if = {
+        limit = {
+            law_stance = {
+                law = law_type:law_monarchy
+                value >= strongly_approve
+            }
+        }
+        add_modifier = {
+            name  = RRK_md_monarchy_preserved
+            years = 5
+            is_decaying = yes
+            multiplier  = {
+                add      = define:NPolitics|IG_APPROVAL_FROM_EXTREME_LAW_CHANGE
+                multiply = 0.5
+            }
+        }
+    }
+    else_if = {
+        limit = {
+            limit = {
+                law_stance = {
+                    law = law_type:law_monarchy
+                    value >= approve
+                }
+            }
+        }
+        add_modifier = {
+            name  = RRK_md_monarchy_preserved
+            years = 5
+            is_decaying = yes
+            multiplier  = {
+                add      = define:NPolitics|IG_APPROVAL_FROM_RADICAL_LAW_CHANGE
+                multiply = 0.5
+            }
+        }
+    }
+    else = {
+        add_modifier = {
+            name  = RRK_md_monarchy_preserved
+            years = 5
+            is_decaying = yes
+            multiplier  = {
+                add      = define:NPolitics|IG_APPROVAL_FROM_LAW_CHANGE
+                multiply = 0.5
+            }
+        }
+    }
+}
+
+RRK_se_ig_apply_abolished_monarchy_disapproval = {
+    if = {
+        limit = {
+            law_stance = {
+                law = law_type:law_monarchy
+                value >= strongly_approve
+            }
+        }
+        add_modifier = {
+            name  = RRK_md_monarchy_abolished
+            years = 5
+            is_decaying = yes
+            multiplier  = {
+                add = define:NPolitics|IG_APPROVAL_FROM_EXTREME_LAW_CHANGE
+                if = {
+                    limit = {
+                        NOT = { has_modifier = RRK_md_monarchy_preserved }
+                    }
+                    multiply = 0.5
+                }
+            }
+        }
+    }
+    else_if = {
+        limit = {
+            limit = {
+                law_stance = {
+                    law = law_type:law_monarchy
+                    value >= approve
+                }
+            }
+        }
+        add_modifier = {
+            name  = RRK_md_monarchy_abolished
+            years = 5
+            is_decaying = yes
+            multiplier  = {
+                add = define:NPolitics|IG_APPROVAL_FROM_RADICAL_LAW_CHANGE
+                if = {
+                    limit = {
+                        NOT = { has_modifier = RRK_md_monarchy_preserved }
+                    }
+                    multiply = 0.5
+                }
+            }
+        }
+    }
+    else = {
+        add_modifier = {
+            name  = RRK_md_monarchy_abolished
+            years = 5
+            is_decaying = yes
+            multiplier  = {
+                add = define:NPolitics|IG_APPROVAL_FROM_LAW_CHANGE
+                if = {
+                    limit = {
+                        NOT = { has_modifier = RRK_md_monarchy_preserved }
+                    }
+                    multiply = 0.5
+                }
+            }
+        }
+    }
+}
+
 RRK_se_save_monarchy = {
     custom_tooltip = {
         text = RRK_tt_save_monarchy
         # Just in case I need it
+    }
+    
+    every_interest_group = {
+        limit = {
+            prefers_law = {
+                law = law_type:law_monarchy
+                comparison_law = prev.active_law:lawgroup_governance_principles.type
+            }
+        }
+        RRK_se_ig_apply_preserved_monarch_approval = yes
     }
 }
 
@@ -145,8 +270,6 @@ RRK_se_abolish_monarchy = {
         }
         custom_tooltip = RRK_tt_stay_as_ig_leader
     }
-    
-    
 }
 
 # Debug effects

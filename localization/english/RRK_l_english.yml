@@ -14,10 +14,14 @@
     
     # Decisions
     RRK_de_abolish_monarchy:      "Abolish the Monarchy"
-    RRK_de_abolish_monarchy_desc: "While the [GetPlayer.GetRuler.GetPrimaryRoleTitle] currently enjoys the status of $concept_head_of_state$ in a ceremonial capacity, if we ever desire to become a fully-fledged [GetPlayer.GetActiveLawFromGroup('lawgroup_governance_principles').GetNameNoFormatting], we may choose to abolish the monarchy."
+    RRK_de_abolish_monarchy_desc: "While the [GetPlayer.GetRuler.GetPrimaryRoleTitle] currently enjoys the status of $concept_head_of_state$ in a ceremonial capacity, if we ever desire to become a fully-fledged [GetPlayer.GetActiveLawFromGroup('lawgroup_governance_principles').GetNameNoFormatting], we may choose to abolish the monarchy.[AddLocalizationIf(GetScriptedGui('RRK_sg_has_monarchy_preserved_modifier').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End), 'RRK_de_abolish_monarchy_warning')]"
+    
+    RRK_de_abolish_monarchy_warning: "\n\n@warning! Abolishing the monarchy after recently deciding to preserve it will make the [Concept('concept_interest_group', '$concept_interest_groups$')] supporting [GetLawType('law_monarchy').GetName] #n extra angry#!."
     
     # Modifiers
     RRK_md_head_of_gov_in_gov: "[concept_RRK_head_of_gov]'s [concept_interest_group] [concept_in_government]"
+    RRK_md_monarchy_preserved: "Monarchy Preserved"
+    RRK_md_monarchy_abolished: "Monarchy Abolished"
     
     # Tooltips
     RRK_tt_player_has_voting:  "[GetPlayer.GetNameNoFlag] #bold has#! [Concept('concept_votes', '$concept_voting_rights$')]"
@@ -63,7 +67,7 @@
     RRK_ev_3_b:      "$RRK_ev_2_b$"
     
     RRK_ev_4_title: "The End of the [ROOT.GetCountry.GetAdjectiveNoFormatting] Monarchy"
-    RRK_ev_4_a:     "And so begins a new chapter in the life of the [ROOT.GetCountry.GetAdjectiveNoFormatting] nation."
+    RRK_ev_4_a:     "And so begins a new chapter in the story of the [ROOT.GetCountry.GetAdjectiveNoFormatting] nation."
     
     RRK_ev_4_desc:   "The monarchy has officially been abolished, ending the [ROOT.GetCountry.GetRuler.GetPrimaryRoleTitle]'s status as a ceremonial $concept_head_of_state$."
     RRK_ev_4_desc_1: "$RRK_ev_4_desc$ [ROOT.GetCountry.GetAdjectiveNoFormatting] citizens take to the streets as former [ROOT.GetCountry.GetRuler.GetPrimaryRoleTitle] [GetPlayer.MakeScope.GetVariable('RRK_monarch').GetCharacter.GetCustom('GetUniversalFullName')] and [GetPlayer.MakeScope.GetVariable('RRK_heir').GetCharacter.GetCustom('GetUniversalFullName')] are escorted out of the royal palace."

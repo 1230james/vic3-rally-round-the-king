@@ -7,7 +7,7 @@
     }
     
     possible = {
-        always = yes
+        RRK_st_monarchy_preserved = yes # instead of `always = yes` for the tooltip
     }
     
     when_taken = {
