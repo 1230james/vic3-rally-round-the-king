@@ -3,9 +3,9 @@
 
 types RRK_types {
     
-    ################################
-    ### Monarch/Head of Gov view ###
-    ################################
+    ####################
+    ### Overview tab ###
+    ####################
     
     type RRK_overview_head_of_gov_button = button_icon_round {
 		parentanchor = right
@@ -139,7 +139,13 @@ types RRK_types {
 	}
     
     type RRK_overview_head_of_gov_view = RRK_character_widget {
-        visible = "[And(Country.HasRuler, GetVariableSystem.Exists('RRK_view_head_of_gov'))]"
+        visible = "[And(
+            Country.HasRuler,
+            And(
+                GetVariableSystem.Exists('RRK_view_head_of_gov'),
+                GetScriptedGui('RRK_sg_is_conmon').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)
+            )
+        )]"
         datacontext = "[Country.MakeScope.Var('RRK_head_of_gov').GetInterestGroup.GetLeader]"
         layoutpolicy_horizontal = expanding
         layoutpolicy_vertical = expanding

@@ -775,7 +775,13 @@ types politics_panel_types
 								### RULER
                                 RRK_overview_head_of_gov_view = {} # RRK                           
 								character_with_background = {
-									visible = "[And(Country.HasRuler, Not(GetVariableSystem.Exists('RRK_view_head_of_gov')))]" # RRK
+									visible = "[And(
+                                        Country.HasRuler,
+                                        Or(
+                                            Not(GetVariableSystem.Exists('RRK_view_head_of_gov')),
+                                            Not(GetScriptedGui('RRK_sg_is_conmon').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))
+                                        )
+                                    )]" # RRK
 									datacontext = "[AccessPlayer.AccessRuler]"
 									layoutpolicy_horizontal = expanding
 									layoutpolicy_vertical = expanding
