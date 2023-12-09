@@ -5,6 +5,7 @@
     # GUI Text
     RRK_gui_monarch_name_and_title: "#title [Character.GetPrimaryRoleTitle]#! #bold [Character.GetCustom('GetUniversalFullNameNoFormatting')]#!"
     RRK_gui_new_prime_minister:     "New $RRK_title_parl_mon$!"
+    RRK_gui_toggle: "Toggle [concept_head_of_state] / [concept_RRK_head_of_gov]"
     
     # Character Interactions
     RRK_grant_premiership: "Appoint as $concept_RRK_head_of_gov$"

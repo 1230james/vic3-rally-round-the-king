@@ -773,8 +773,9 @@ types politics_panel_types
 								margin = { 4 0 }
 								
 								### RULER
+                                RRK_overview_head_of_gov_view = {} # RRK                           
 								character_with_background = {
-									visible = "[Country.HasRuler]"
+									visible = "[And(Country.HasRuler, Not(GetVariableSystem.Exists('RRK_view_head_of_gov')))]" # RRK
 									datacontext = "[AccessPlayer.AccessRuler]"
 									layoutpolicy_horizontal = expanding
 									layoutpolicy_vertical = expanding
@@ -787,6 +788,15 @@ types politics_panel_types
 									blockoverride "character_portrait_size" {
 										size = { 110% 110% }
 									}
+                                    # RRK
+                                    RRK_overview_head_of_gov_button = {
+                                        parentanchor = top|right
+                                        size = { 50 50 }
+                                        position = { -20 20 }
+                                        visible = "[GetScriptedGui('RRK_sg_is_conmon').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+                                    }
+                                    using = default_fade_in_out
+                                    # RRK End
 									
 									# ruler stats
 									flowcontainer = {
