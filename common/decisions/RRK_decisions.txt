@@ -1,0 +1,98 @@
+﻿RRK_de_abolish_monarchy = {
+    is_shown = {
+        RRK_st_is_crowned_republic = yes
+        NOT = {
+            has_variable = RRK_monarch # no abolishing the monarchy while the event to decide it is still up
+        }
+    }
+    
+    possible = {
+        RRK_st_monarchy_preserved = yes # instead of `always = yes` for the tooltip
+    }
+    
+    when_taken = {
+        set_variable = {
+            name  = RRK_monarch
+            value = ruler
+        }
+        if = {
+            limit = {
+                exists = heir
+            }
+            set_variable = {
+                name  = RRK_heir
+                value = heir
+            }
+            trigger_event = {
+                id    = RRK_ev.4
+                popup = yes
+            }
+        }
+        else = {
+            trigger_event = {
+                id    = RRK_ev.5
+                popup = yes
+            }
+        }
+        set_variable = { # Prep for Stamp Out Monarchism JE restart
+            name = abolishing_monarchy_var
+            value = 0
+        }
+    }
+    
+    ai_chance = { # Mostly same as monarch fate decision weights but not exactly
+        base = 1 # very small random chance
+        modifier = {
+            add = 10
+            NOT = {
+                any_interest_group = {
+                    prefers_law = {
+                        law = law_type:law_monarchy
+                        comparison_law = prev.active_law:lawgroup_governance_principles.type
+                    }
+                    is_marginal = no
+                }
+            }
+        }
+        modifier = {
+            add = 10
+            has_law = law_type:law_council_republic
+            NOT = {
+                c:WIN ?= THIS # Grenada
+            }
+        }
+        
+        modifier = {
+            add = -1000
+            any_interest_group = {
+                has_modifier = RRK_md_monarchy_preserved
+            }
+        }
+        modifier = {
+            add = -1000
+            any_interest_group = {
+                prefers_law = {
+                    law = law_type:law_monarchy
+                    comparison_law = prev.active_law:lawgroup_governance_principles.type
+                }
+                ig_approval < 0
+                is_marginal = no
+            }
+        }
+        modifier = {
+            add = -1000
+            country_has_state_religion = rel:shinto
+        }
+        modifier = {
+            add = -1000
+            c:CHI ?= THIS
+            has_journal_entry = je_warlord_china
+            has_variable = china_warlord_explosion
+            var:china_warlord_explosion >= 3
+        }
+        modifier = {
+            add = -1000
+            c:GBR ?= THIS
+        }
+    }
+}

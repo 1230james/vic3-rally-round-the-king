@@ -1,0 +1,43 @@
+﻿#            | existing country | releasing a country | country formation |
+# |==========|==================|=====================|===================|
+# |root      | definition       | definition          | definition        |
+# |----------|------------------|---------------------|-------------------|
+# |target    | country          | N/A                 | N/A               |
+# |----------|------------------|---------------------|-------------------|
+# |initiator | N/A              | player              | player            |
+# |----------|------------------|---------------------|-------------------|
+# |actor     | country          | player              | player            |
+# |----------|------------------|---------------------|-------------------|
+# |          | country's        |                     | player's          |
+# |overlord  | direct overlord  | player              | direct overlord   |
+# |          | if it exists     |                     | if it exists      |
+# |----------|------------------|---------------------|-------------------|
+
+### scope is COUNTRY ###
+
+# [RRK] Replacement definitions only
+
+coa_monarchy_trigger = {
+	OR = {
+		has_law = law_type:law_chiefdom
+		has_law = law_type:law_monarchy
+        RRK_st_is_crowned_republic = yes # RRK
+	}
+}
+
+coa_absolute_monarchy_trigger = {
+	coa_monarchy_trigger = yes
+    RRK_st_is_crowned_republic = no # RRK
+	coa_autocracy_trigger = yes
+}
+
+# coa_undemocratic_monarchy_trigger # NO CHANGE - mentioned to explicitly affirm that vanilla definition is OK
+
+coa_republic_trigger = {
+	OR = {
+		has_law = law_type:law_presidential_republic
+		has_law = law_type:law_parliamentary_republic
+		has_law = law_type:law_council_republic
+	}
+    RRK_st_is_crowned_republic = no
+}

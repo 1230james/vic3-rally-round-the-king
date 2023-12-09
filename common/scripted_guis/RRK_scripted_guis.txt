@@ -1,17 +1,70 @@
-﻿RRK_sg_monarch_check = {
+﻿RRK_sg_is_parl_mon = {
     scope = country
     
     is_shown = {
-        has_variable = RRK_monarch
-        exists = var:RRK_monarch
+        RRK_st_is_parliamentary_monarchy = yes
     }
 }
 
-RRK_sg_heir_check = {
+RRK_sg_is_pres_mon = {
     scope = country
     
     is_shown = {
-        has_variable = RRK_heir
-        exists = var:RRK_heir
+        RRK_st_is_presidential_monarchy = yes
+    }
+}
+
+RRK_sg_is_conmon = {
+    scope = country
+    
+    is_shown = {
+        RRK_st_is_constitutional_monarchy = yes
+    }
+}
+
+RRK_sg_is_not_conmon = {
+    scope = country
+    
+    is_shown = {
+        RRK_st_is_constitutional_monarchy = no
+    }
+}
+
+RRK_sg_is_new_prime_minister = {
+    scope = country
+    saved_scopes = {
+        new_leading_ig
+    }
+    
+    is_shown = {
+        OR = {
+            NOT = {
+                has_variable = RRK_head_of_gov
+            }
+            NOT = {
+                var:RRK_head_of_gov ?= scope:new_leading_ig
+            }
+        }
+    }
+}
+
+RRK_sg_is_head_of_gov = {
+    scope = character
+    
+    is_shown = {
+        owner ?= {
+            has_variable = RRK_head_of_gov
+            var:RRK_head_of_gov ?= prev.interest_group
+        }
+    }
+}
+
+RRK_sg_has_monarchy_preserved_modifier = {
+    scope = country
+    
+    is_shown = {
+        any_interest_group = {
+            has_modifier = RRK_md_monarchy_preserved
+        }
     }
 }

@@ -18,46 +18,224 @@ RRK_oa_on_monarchy_abolished = {
                 currently_enacting_law.type = {
                     is_same_law_group_as = law_type:law_monarchy
                 }
+                game_date > 1836.1.1 # Prevent weird behavior as a result of loading history when starting new game
             }
+            # Set preserve monarchy variable (used by other on action for monarchy check - putting here as sort of failsafe)
+            set_variable = {
+                name  = RRK_preserve_monarchy
+                value = no
+            }
+        }
+    }
+}
+
+# ==================================================================================================================== #
+
+# Root = Country
+RRK_oa_on_reform = {
+    effect = {
+        if = {
+            limit = {
+                RRK_st_is_parliamentary_monarchy = yes
+            }
+            RRK_se_set_prime_minister = yes
+        }
+        else_if = {
+            limit = {
+                RRK_st_is_presidential_monarchy = yes
+            }
+            RRK_se_update_head_of_gov_modifier = yes
+        }
+    }
+}
+on_government_reformed = {
+	on_actions = {
+        RRK_oa_on_reform
+    }
+}
+
+# ==================================================================================================================== #
+
+# Root = Interest Group
+RRK_oa_on_resign = {
+    effect = {
+        owner = {
             if = {
                 limit = {
-                    exists = heir
+                    RRK_st_is_parliamentary_monarchy = yes
                 }
-                set_variable = {
-                    name  = RRK_monarch
-                    value = ruler
+                RRK_se_set_prime_minister = yes
+                RRK_se_update_head_of_gov_modifier = yes
+            }
+            else_if = {
+                limit = {
+                    RRK_st_is_presidential_monarchy = yes
                 }
-                set_variable = {
-                    name  = RRK_heir
-                    value = heir
+                RRK_se_set_premier = yes
+                RRK_se_update_head_of_gov_modifier = yes
+            }
+        }
+    }
+}
+on_ig_resigned_government = {
+	on_actions = {
+        RRK_oa_on_reform
+    }
+}
+
+# ==================================================================================================================== #
+
+# Root = Country
+RRK_oa_on_election = {
+    effect = {
+        if = {
+            limit = {
+                RRK_st_is_presidential_monarchy = yes
+            }
+            RRK_se_set_premier = yes
+            RRK_se_update_head_of_gov_modifier = yes
+            # add_journal_entry = { # Was needed for 1.4 since on_election_campaign_end didn't work then
+                # type = RRK_je_premier_election
+            # }
+        }
+    }
+}
+
+# on_election_campaign_start = {
+    # on_actions = {
+        # RRK_oa_on_election
+    # }
+# }
+
+on_election_campaign_end = {
+	on_actions = {
+        RRK_oa_on_election
+    }
+}
+
+# ==================================================================================================================== #
+
+# Root owner Country of the Law
+# executed when the law is activated for any reason. It's usually because it
+# has been enacted, but script can activate laws directly without going through
+# the enactment process. Normally, it's immediately preceded by
+# on_law_enactment_ended, but if a law is directly set by script, thus
+# bypassing the enactment process, this will execute while
+# on_law_enactment_ended will not
+#
+# NOTE: unlike the other on_law_<something> on-actions, at the point in time
+# when this is triggered the law that was enacted is no longer considered being
+# enacted. Therefore using the `currently_enacting_law` link will return the
+# null law
+RRK_oa_on_law_activated = {
+    effect = {
+        # Govt. Principles passed
+        if = {
+            limit = {
+                type = {
+                    is_same_law_group_as = law_type:law_monarchy
                 }
-                ruler = {
-                    place_character_in_void = 1200
+                game_date > 1836.1.1 # Prevent weird behavior as a result of loading history when starting new game
+            }
+            # Monarchy passed
+            if = {
+                limit = {
+                    type = law_type:law_monarchy
                 }
-                heir = {
-                    place_character_in_void = 1200
-                }
-                trigger_event = {
-                    id    = RRK_ev.1
-                    popup = yes
+                owner = {
+                    # Set default head of gov if we just turned into a conmon
+                    if = {
+                        limit = {
+                            RRK_st_is_constitutional_monarchy = yes
+                            NOT = {
+                                has_variable = RRK_head_of_gov
+                            }
+                        }
+                        RRK_se_set_prime_minister = yes
+                    }
+                    else_if = {
+                        limit = {
+                            RRK_st_is_constitutional_monarchy = no
+                            has_variable = RRK_head_of_gov
+                        }
+                        remove_variable = RRK_head_of_gov
+                    }
+                    
+                    # Remove Head of Gov in government modifier (scripted effect handles removing)
+                    RRK_se_update_head_of_gov_modifier = yes
+                    
+                    # Set preserve monarchy variable (used to detect if we moved off from monarchy later)
+                    set_variable = {
+                        name  = RRK_preserve_monarchy
+                        value = no
+                    }
                 }
             }
+            
+            # Not Monarchy passed
             else = {
-                set_variable = {
-                    name  = RRK_monarch
-                    value = ruler
-                }
-                set_variable = {
-                    name  = RRK_heir
-                }
-                ruler = {
-                    place_character_in_void = 1200
-                }
-                trigger_event = {
-                    id    = RRK_ev.2
-                    popup = yes
+                owner = {
+                    # Monarchy abolished
+                    if = {
+                        limit = {
+                            has_variable = RRK_preserve_monarchy # Only monarchies will have this
+                            OR = { # Theocracy erasure
+                                has_law = law_type:law_presidential_republic
+                                has_law = law_type:law_parliamentary_republic
+                                has_law = law_type:law_council_republic # Certified New Jewel Movement moment
+                            }
+                        }
+                        if = { # Ignore if we already chose to preserve the monarchy previously
+                            limit = {
+                                var:RRK_preserve_monarchy ?= no
+                            }
+                            RRK_se_fire_monarch_fate_event = yes
+                        }
+                    }
+                    
+                    # There was no monarchy
+                    else = {
+                        RRK_se_abolish_monarchy = yes # Runs the same things we'd run here anyway
+                    }
                 }
             }
         }
+        
+        # Distr. of Power passed
+        else_if = {
+            limit = {
+                type = {
+                    is_same_law_group_as = law_type:law_universal_suffrage
+                }
+                game_date > 1836.1.1
+            }
+            owner = {
+                # Set default head of gov if became conmon
+                if = {
+                    limit = {
+                        RRK_st_is_constitutional_monarchy = yes
+                        NOT = {
+                            has_variable = RRK_head_of_gov
+                        }
+                    }
+                    RRK_se_set_prime_minister = yes
+                    RRK_se_update_head_of_gov_modifier = yes
+                }
+                # Constitutionalism? More like uhhhhhhhh crap!
+                else_if = {
+                    limit = {
+                        RRK_st_is_constitutional_monarchy = no
+                        has_variable = RRK_head_of_gov
+                    }
+                    remove_variable = RRK_head_of_gov
+                    RRK_se_update_head_of_gov_modifier = yes
+                }
+            }
+        }
+    }
+}
+on_law_activated = {
+    on_actions = {
+        RRK_oa_on_law_activated
     }
 }

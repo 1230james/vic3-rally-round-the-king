@@ -1,0 +1,23 @@
+﻿GLOBAL = {
+    every_country = {
+        # Set starting Prime Ministers
+        # Game needs to actually be started for starting governments to be applied or something, so we do it 1 day into
+        # the game. Firing for all countries in case other mods come through and change starting laws such that more
+        # countries become conmons or crowned republics at game start.
+        trigger_event = {
+            id = RRK_ev.1
+            days = 1
+        }
+        
+        # Mark all monarchies with the variable
+        if = {
+            limit = {
+                has_law = law_type:law_monarchy
+            }
+            set_variable = {
+                name  = RRK_preserve_monarchy
+                value = no
+            }
+        }
+    }
+}

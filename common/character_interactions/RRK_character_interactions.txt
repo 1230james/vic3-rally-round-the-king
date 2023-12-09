@@ -1,0 +1,96 @@
+﻿#icon					Path to icon for both right click menu and character panel buttons
+#clicksound				Clicksound for both right click menu and character panel buttons
+
+#						All scopes are character scopes with the interacting country stored as the actor
+#potential				Trigger to check if the interaction should be shown
+#possible 				Trigger to check if the interaction is available
+#effect					The effects of the interaction
+#cooldown				Scriptable duration that this interaction will be unavailable for the interacting country
+
+#show_requirements		Whether to always show requirements, similar to highlighted options in events
+#show_confirmation_box	Whether to require confirmation
+
+#ai_chance				Scriptable value for the chance (0-100) that the AI will use this interaction when available, default 0
+
+RRK_grant_premiership = {
+    icon = "gfx/interface/icons/character_role_icons/ruler.dds"
+    clicksound = "event:/SFX/DLC/1.3_ip1/UI/agitator_promote"
+    
+    show_requirements = yes
+    show_confirmation_box = yes
+
+    potential = {
+        owner ?= {
+            RRK_st_is_presidential_monarchy = yes
+            country_has_voting_franchise = no
+        }
+        has_role = politician
+        is_ruler = no
+        is_heir  = no
+        NOT = {
+            has_role = agitator
+        }
+    }
+
+    possible = {
+        # Including this part just for player visibility
+        owner ?= {
+            # RRK_st_is_presidential_monarchy = yes
+            has_law = law_type:law_presidential_republic # Nicer tooltip
+            RRK_st_monarchy_preserved = yes
+            custom_tooltip = {
+                text = RRK_tt_char_has_no_voting
+                country_has_voting_franchise = no
+            }
+        }
+        
+        interest_group = {
+            is_in_government = yes
+            custom_tooltip = {
+                text = RRK_tt_not_premier
+                NOT = {
+                    owner.var:RRK_head_of_gov ?= this
+                }
+            }
+        }
+    }
+
+    effect = {
+        custom_tooltip = {
+			text = RRK_tt_premiership
+            interest_group = {
+                owner ?= {
+                    set_variable = {
+                        name  = RRK_head_of_gov
+                        value = prev
+                    }
+                }
+            }
+            RRK_se_update_head_of_gov_modifier = yes
+		}
+    }
+
+    cooldown = { months = 12 }
+
+    ai_chance = {
+        value = 0
+        if = {
+            limit = {
+                owner ?= {
+                    OR = {
+                        NOT = {
+                            has_variable = RRK_head_of_gov
+                        }
+                        var:RRK_head_of_gov ?= {
+                            is_in_government = no
+                        }
+                    }
+                }
+                interest_group = {
+                    is_strongest_ig_in_government = yes
+                }
+            }
+            add = 100
+        }
+    }
+}

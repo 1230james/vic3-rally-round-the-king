@@ -1,0 +1,109 @@
+﻿# Scripted locs for possible future expansion of more flavorful titles
+# Scroll down for adding flavor titles
+
+RRK_cl_head_of_gov_title = {
+    type = country
+    
+    text = {
+        localization_key = RRK_title_pres_mon
+        trigger = {
+            RRK_st_is_presidential_monarchy = yes
+        }
+    }
+    text = {
+        localization_key = RRK_title_parl_mon
+        trigger = {
+            RRK_st_is_parliamentary_monarchy = yes
+        }
+    }
+    text = { # Fallback
+        localization_key = RRK_prime_minister
+        trigger = {
+            always = yes
+        }
+    }
+}
+
+RRK_cl_head_of_gov_title_character = {
+    type = character
+    
+    text = {
+        localization_key = RRK_title_pres_mon_char
+        trigger = {
+            owner ?= {
+                RRK_st_is_presidential_monarchy = yes
+            }
+        }
+    }
+    text = {
+        localization_key = RRK_title_parl_mon_char
+        trigger = {
+            owner ?= {
+                RRK_st_is_parliamentary_monarchy = yes
+            }
+        }
+    }
+    text = { # Fallback
+        localization_key = RRK_prime_minister
+        trigger = {
+            always = yes
+        }
+    }
+}
+
+# ==================================================================================================================== #
+
+# Put flavor titles in these definitions
+
+RRK_cl_premier_title = {
+    type = country
+    
+    text = { # 1824 Constitution; position was officially created in 1847 but whatever
+        localization_key = RRK_prime_minister
+        trigger = {
+            OR = {
+                this ?= c:BRZ
+                was_formed_from = BRZ
+            }
+        }
+    }
+    text = {
+        localization_key = RRK_premier
+        trigger = {
+            always = yes
+        }
+    }
+}
+
+RRK_cl_prime_minister_title = {
+    type = country
+    
+    text = {
+        localization_key = RRK_chairman
+        trigger = {
+            has_law = law_type:law_council_republic
+            var:RRK_head_of_gov = {
+                leader = {
+                    is_female = no
+                }
+            }
+        }
+    }
+    text = {
+        localization_key = RRK_chairwoman
+        trigger = {
+            has_law = law_type:law_council_republic
+            var:RRK_head_of_gov = {
+                leader = {
+                    is_female = yes
+                }
+            }
+        }
+    }
+    text = {
+        localization_key = RRK_prime_minister
+        trigger = {
+            always = yes
+        }
+    }
+}

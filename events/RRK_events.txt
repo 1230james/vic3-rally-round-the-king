@@ -1,13 +1,29 @@
 ﻿namespace = RRK_ev
 
-# Monarch's fate - has heir
+# Setup event (fired by history for initial setup)
 RRK_ev.1 = {
+    type = country_event
+    hidden = yes
+    
+    immediate = {
+        if = {
+            limit = {
+                RRK_st_is_constitutional_monarchy = yes
+            }
+            RRK_se_set_prime_minister = yes
+            RRK_se_update_head_of_gov_modifier = yes
+        }
+    }
+}
+
+# Monarch's fate - has heir
+RRK_ev.2 = {
     type      = country_event
     placement = root
     
-    title     = RRK_ev_1_title
-    desc      = RRK_ev_1_desc
-    flavor    = RRK_ev_1_flavor
+    title     = RRK_ev_2_title
+    desc      = RRK_ev_2_desc
+    flavor    = RRK_ev_2_flavor
 
     duration = 3
     
@@ -19,48 +35,116 @@ RRK_ev.1 = {
     on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
     on_opened_soundeffect  = "event:/SFX/Events/misc/2Characters"
 
-    icon = "gfx/interface/icons/event_icons/event_default.dds"
-
-    trigger = {} # Triggered from journal entry
-    
-    immediate = {
-    }
+    icon = "gfx/interface/icons/event_icons/event_portrait.dds"
     
     option = {
-        name = RRK_ev_1_a
+        name = RRK_ev_2_a
         default_option = yes
+        RRK_se_abolish_monarchy = yes
+        remove_variable = RRK_monarch
+        remove_variable = RRK_heir
         
-        var:RRK_monarch = {
-            add_character_role = politican
-        }
-        var:RRK_heir = {
-            add_character_role = politican
-            add_character_role = general
+        ai_chance = {
+            base = 1
+            modifier = {
+                add = 1
+                NOT = {
+                    any_interest_group = {
+                        prefers_law = {
+                            law = law_type:law_monarchy
+                            comparison_law = prev.active_law:lawgroup_governance_principles.type
+                        }
+                        ig_approval < 0
+                        is_marginal = no
+                    }
+                }
+            }
+            modifier = {
+                add = 5
+                NOT = {
+                    any_interest_group = {
+                        prefers_law = {
+                            law = law_type:law_monarchy
+                            comparison_law = prev.active_law:lawgroup_governance_principles.type
+                        }
+                        is_marginal = no
+                    }
+                }
+            }
+            modifier = {
+                add = 5
+                is_country_type = colonial
+            }
+            modifier = {
+                add = 10
+                has_law = law_type:law_council_republic
+                NOT = {
+                    c:WIN ?= THIS # Grenada time
+                }
+            }
+            modifier = { # how did we get here
+                add = 10
+                c:USA ?= THIS
+            }
         }
     }
     
     option = {
-        name = RRK_ev_1_b
+        name = RRK_ev_2_b
+        RRK_se_save_monarchy = yes
+        remove_variable = RRK_monarch
+        remove_variable = RRK_heir
         
-        var:RRK_monarch = {
-            kill_character = yes
-            free_character_from_void = no
-        }
-        var:RRK_heir = {
-            kill_character = yes
-            free_character_from_void = no
+        ai_chance = {
+            base = 1
+            modifier = {
+                add = 5
+                any_interest_group = {
+                    prefers_law = {
+                        law = law_type:law_monarchy
+                        comparison_law = prev.active_law:lawgroup_governance_principles.type
+                    }
+                    is_powerful = yes
+                }
+            }
+            modifier = {
+                add = 5
+                any_interest_group = {
+                    prefers_law = {
+                        law = law_type:law_monarchy
+                        comparison_law = prev.active_law:lawgroup_governance_principles.type
+                    }
+                    ig_approval <= define:NPolitics|APPROVAL_THRESHOLD_UNHAPPY
+                    is_marginal = no
+                }
+            }
+            modifier = {
+                add = 10
+                country_has_state_religion = rel:shinto
+            }
+            modifier = {
+                add = 10
+                c:CHI ?= THIS
+                has_journal_entry = je_warlord_china
+                has_variable = china_warlord_explosion
+                var:china_warlord_explosion >= 3
+            }
+            modifier = { # god save the queen
+                add = 100
+                c:GBR ?= THIS
+            }
         }
     }
 }
 
 # Monarch's fate - No heir
-RRK_ev.2 = {
+RRK_ev.3 = {
     type      = country_event
     placement = root
     
-    title     = RRK_ev_2_title
-    desc      = RRK_ev_2_desc
-    flavor    = RRK_ev_2_flavor
+    title     = RRK_ev_3_title
+    desc      = RRK_ev_3_desc
+    flavor    = RRK_ev_3_flavor
 
     duration = 3
     
@@ -71,20 +155,288 @@ RRK_ev.2 = {
     on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
     on_opened_soundeffect  = "event:/SFX/Events/misc/1Character_Banner"
 
-    icon = "gfx/interface/icons/event_icons/event_default.dds"
+    icon = "gfx/interface/icons/event_icons/event_portrait.dds"
     
     option = {
-        name = RRK_ev_2_a
+        name = RRK_ev_3_a
         default_option = yes
+        RRK_se_abolish_monarchy = yes
+        remove_variable = RRK_monarch
         
+        ai_chance = {
+            base = 1
+            modifier = {
+                add = 1
+                NOT = {
+                    any_interest_group = {
+                        prefers_law = {
+                            law = law_type:law_monarchy
+                            comparison_law = prev.active_law:lawgroup_governance_principles.type
+                        }
+                        ig_approval < 0
+                        is_marginal = no
+                    }
+                }
+            }
+            modifier = {
+                add = 5
+                NOT = {
+                    any_interest_group = {
+                        prefers_law = {
+                            law = law_type:law_monarchy
+                            comparison_law = prev.active_law:lawgroup_governance_principles.type
+                        }
+                        is_marginal = no
+                    }
+                }
+            }
+            modifier = {
+                add = 5
+                is_country_type = colonial
+            }
+            modifier = {
+                add = 10
+                has_law = law_type:law_council_republic
+                NOT = {
+                    c:WIN ?= THIS # Grenada time
+                }
+            }
+            modifier = { # how did we get here
+                add = 10
+                c:USA ?= THIS
+            }
+        }
     }
     
     option = {
-        name = RRK_ev_2_b
+        name = RRK_ev_3_b
+        RRK_se_save_monarchy = yes
+        remove_variable = RRK_monarch
         
-        var:RRK_monarch = {
-            kill_character = yes
-            free_character_from_void = no
+        ai_chance = {
+            base = 1
+            modifier = {
+                add = 5
+                any_interest_group = {
+                    prefers_law = {
+                        law = law_type:law_monarchy
+                        comparison_law = prev.active_law:lawgroup_governance_principles.type
+                    }
+                    is_powerful = yes
+                }
+            }
+            modifier = {
+                add = 5
+                any_interest_group = {
+                    prefers_law = {
+                        law = law_type:law_monarchy
+                        comparison_law = prev.active_law:lawgroup_governance_principles.type
+                    }
+                    ig_approval <= define:NPolitics|APPROVAL_THRESHOLD_UNHAPPY
+                    is_marginal = no
+                }
+            }
+            modifier = {
+                add = 10
+                c:CHI ?= THIS
+                has_journal_entry = je_warlord_china
+                has_variable = china_warlord_explosion
+                var:china_warlord_explosion >= 3
+            }
+            modifier = { # god save the queen
+                add = 100
+                c:GBR ?= THIS
+            }
+        }
+    }
+}
+
+# Monarchy abolished - has heir
+RRK_ev.4 = {
+    type      = country_event
+    placement = root
+    
+    title = RRK_ev_4_title
+    desc  = {
+        first_valid = {
+            triggered_desc = {
+                desc    = RRK_ev_4_desc_1
+                trigger = {
+                    var:RRK_monarch = {
+                        popularity <= define:NCharacters|POPULARITY_HATED_THRESHOLD
+                    }
+                }
+            }
+            triggered_desc = {
+                desc    = RRK_ev_4_desc_2
+                trigger = {
+                    var:RRK_monarch = {
+                        popularity > define:NCharacters|POPULARITY_HATED_THRESHOLD
+                        popularity < define:NCharacters|POPULARITY_LOVED_THRESHOLD
+                    }
+                }
+            }
+            triggered_desc = {
+                desc    = RRK_ev_4_desc_3
+                trigger = {
+                    var:RRK_monarch = {
+                        popularity >= define:NCharacters|POPULARITY_LOVED_THRESHOLD
+                    }
+                }
+            }
+        }
+    }
+    flavor = {
+        first_valid = {
+            triggered_desc = {
+                desc    = RRK_ev_4_flavor_1
+                trigger = {
+                    var:RRK_monarch = {
+                        popularity < define:NCharacters|POPULARITY_DISLIKED_THRESHOLD
+                    }
+                }
+            }
+            triggered_desc = {
+                desc    = RRK_ev_4_flavor_2
+                trigger = {
+                    var:RRK_monarch = {
+                        popularity >= define:NCharacters|POPULARITY_DISLIKED_THRESHOLD
+                        popularity <= define:NCharacters|POPULARITY_LIKED_THRESHOLD
+                    }
+                }
+            }
+            triggered_desc = {
+                desc    = RRK_ev_4_flavor_3
+                trigger = {
+                    var:RRK_monarch = {
+                        popularity > define:NCharacters|POPULARITY_LIKED_THRESHOLD
+                    }
+                }
+            }
+        }
+    }
+
+    duration = 3
+    
+    gui_window = event_window_2char
+    
+    left_icon  = var:RRK_monarch
+    right_icon = var:RRK_heir
+    
+    on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+    on_opened_soundeffect  = "event:/SFX/Events/misc/2Characters"
+
+    icon = "gfx/interface/icons/event_icons/event_portrait.dds"
+    
+    option = {
+        name = RRK_ev_4_a
+        default_option = yes
+        RRK_se_abolish_monarchy = yes
+        remove_variable = RRK_monarch
+        remove_variable = RRK_heir
+        
+        every_interest_group = {
+            limit = {
+                prefers_law = {
+                    law = law_type:law_monarchy
+                    comparison_law = prev.active_law:lawgroup_governance_principles.type
+                }
+            }
+            RRK_se_ig_apply_abolished_monarchy_disapproval = yes
+        }
+    }
+}
+
+# Monarchy abolished - no heir
+RRK_ev.5 = {
+    type      = country_event
+    placement = root
+    
+    title = RRK_ev_5_title
+    desc  = {
+        first_valid = {
+            triggered_desc = {
+                desc    = RRK_ev_5_desc_1
+                trigger = {
+                    var:RRK_monarch = {
+                        popularity <= define:NCharacters|POPULARITY_HATED_THRESHOLD
+                    }
+                }
+            }
+            triggered_desc = {
+                desc    = RRK_ev_5_desc_2
+                trigger = {
+                    var:RRK_monarch = {
+                        popularity > define:NCharacters|POPULARITY_HATED_THRESHOLD
+                        popularity < define:NCharacters|POPULARITY_LOVED_THRESHOLD
+                    }
+                }
+            }
+            triggered_desc = {
+                desc    = RRK_ev_5_desc_3
+                trigger = {
+                    var:RRK_monarch = {
+                        popularity >= define:NCharacters|POPULARITY_LOVED_THRESHOLD
+                    }
+                }
+            }
+        }
+    }
+    flavor = {
+        first_valid = {
+            triggered_desc = {
+                desc    = RRK_ev_5_flavor_1
+                trigger = {
+                    var:RRK_monarch = {
+                        popularity < define:NCharacters|POPULARITY_DISLIKED_THRESHOLD
+                    }
+                }
+            }
+            triggered_desc = {
+                desc    = RRK_ev_5_flavor_2
+                trigger = {
+                    var:RRK_monarch = {
+                        popularity >= define:NCharacters|POPULARITY_DISLIKED_THRESHOLD
+                        popularity <= define:NCharacters|POPULARITY_LIKED_THRESHOLD
+                    }
+                }
+            }
+            triggered_desc = {
+                desc    = RRK_ev_5_flavor_3
+                trigger = {
+                    var:RRK_monarch = {
+                        popularity > define:NCharacters|POPULARITY_LIKED_THRESHOLD
+                    }
+                }
+            }
+        }
+    }
+
+    duration = 3
+    
+    gui_window = event_window_1char_tabloid
+    
+    left_icon = var:RRK_monarch
+    
+    on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+    on_opened_soundeffect  = "event:/SFX/Events/misc/1Character_Banner"
+
+    icon = "gfx/interface/icons/event_icons/event_portrait.dds"
+    
+    option = {
+        name = RRK_ev_5_a
+        default_option = yes
+        RRK_se_abolish_monarchy = yes
+        remove_variable = RRK_monarch
+        
+        every_interest_group = {
+            limit = {
+                prefers_law = {
+                    law = law_type:law_monarchy
+                    comparison_law = prev.active_law:lawgroup_governance_principles.type
+                }
+            }
+            RRK_se_ig_apply_abolished_monarchy_disapproval = yes
         }
     }
 }

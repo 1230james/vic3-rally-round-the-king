@@ -1,0 +1,6 @@
+﻿# Third-party modders:
+# See 00_RRK_active_trigger.txt for usage notes
+
+RRK_is_active_trigger = {
+    always = yes
+}
