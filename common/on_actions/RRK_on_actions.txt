@@ -185,7 +185,12 @@ RRK_oa_on_law_activated = { # TODO: Redo logic
                                 has_law = law_type:law_council_republic # Certified New Jewel Movement moment
                             }
                         }
-                        RRK_se_fire_monarch_fate_event = yes
+                        if = { # Ignore if we already chose to preserve the monarchy previously
+                            limit = {
+                                var:RRK_preserve_monarchy ?= no
+                            }
+                            RRK_se_fire_monarch_fate_event = yes
+                        }
                     }
                     
                     # There was no monarchy
