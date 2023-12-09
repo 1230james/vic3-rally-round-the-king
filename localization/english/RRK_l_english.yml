@@ -1,4 +1,7 @@
 ﻿l_english:
+    # Misc.
+    RRK_txt_RRK_feature: "#italic This is a feature of the #blue Rally Round the King#! mod.#!"
+    
     # GUI Text
     RRK_gui_monarch_name_and_title: "#title [Character.GetPrimaryRoleTitle]#! #bold [Character.GetCustom('GetUniversalFullNameNoFormatting')]#!"
     RRK_gui_new_prime_minister:     "New $RRK_title_parl_mon$!"
@@ -38,7 +41,7 @@
     
     # Concepts
     concept_RRK_head_of_gov:      "Head of Government"
-    concept_RRK_head_of_gov_desc: "In some [Concept('concept_government_type', '$concept_government_types$')], the [concept_head_of_state] is not the #italic de facto#! leader of the [Concept('concept_country','$concept_country_possessive$')] [concept_government], and instead, that role belongs to a different [concept_character]. Such a character does not share the same influence as the [concept_head_of_state], but rather serves as an indicator of which [concept_party] or [concept_interest_group] holds the most [concept_clout] [Concept('concept_in_government', 'within government')].$RRK_head_of_gov_conmon_desc$"
+    concept_RRK_head_of_gov_desc: "In some [Concept('concept_government_type', '$concept_government_types$')], the [concept_head_of_state] is not the #italic de facto#! leader of the [Concept('concept_country','$concept_country_possessive$')] [concept_government], and instead, that role belongs to a different [concept_character]. Such a character does not share the same influence as the [concept_head_of_state], but rather serves as an indicator of which [concept_party] or [concept_interest_group] holds the most [concept_clout] [Concept('concept_in_government', 'within government')].$RRK_head_of_gov_conmon_desc$\n\n$RRK_txt_RRK_feature$"
     RRK_head_of_gov_conmon_desc:  "[AddLocalizationIf(GetScriptedGui('RRK_sg_is_parl_mon').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End), 'RRK_parl_mon_desc')][AddLocalizationIf(GetScriptedGui('RRK_sg_is_pres_mon').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End), 'RRK_pres_mon_desc')]"
     
     RRK_parl_mon_desc: "\n\nIn a [GetPlayer.GetGovernment.GetName] with [GetPlayer.GetActiveLawFromGroup('lawgroup_governance_principles').GetLawType.GetName] and [GetPlayer.GetActiveLawFromGroup('lawgroup_distribution_of_power').GetLawType.GetName] enacted, the [concept_government] is led by a $RRK_title_parl_mon_player$, who is typically the [concept_leader] of the [concept_interest_group] in [concept_government_type] with the most [concept_clout].\n\nThe [GetPlayer.GetAdjectiveNoFlag] $concept_RRK_head_of_gov$ is #yellow #tooltip:[GetPlayer.MakeScope.GetVariable('RRK_head_of_gov').GetInterestGroup.GetLeader.GetTooltipTag],DATA_CHARACTER_NAME_TOOLTIP,CharacterTooltip $RRK_title_parl_mon_player$ #!#![GetPlayer.MakeScope.GetVariable('RRK_head_of_gov').GetInterestGroup.GetLeader.GetCustom('GetUniversalFullName')]."
