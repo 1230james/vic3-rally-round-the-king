@@ -66,6 +66,7 @@ RRK_grant_premiership = {
                     }
                 }
             }
+            RRK_se_update_head_of_gov_modifier = yes
 		}
     }
 
