@@ -274,6 +274,7 @@ RRK_se_abolish_monarchy = {
     
     if = {
         limit = {
+            has_variable = RRK_monarch # Only execute JE-related stuff if fired from one of the events
             NOR = {
                 has_variable      = stamped_out_monarchy_var
                 has_journal_entry = je_abolish_monarchy

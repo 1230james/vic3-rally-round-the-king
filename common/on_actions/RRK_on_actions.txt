@@ -127,7 +127,7 @@ on_election_campaign_end = {
 # when this is triggered the law that was enacted is no longer considered being
 # enacted. Therefore using the `currently_enacting_law` link will return the
 # null law
-RRK_oa_on_law_activated = { # TODO: Redo logic
+RRK_oa_on_law_activated = {
     effect = {
         # Govt. Principles passed
         if = {
