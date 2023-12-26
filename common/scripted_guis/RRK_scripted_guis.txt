@@ -52,6 +52,7 @@ RRK_sg_is_head_of_gov = {
     scope = character
     
     is_shown = {
+        interest_group.leader ?= this
         owner ?= {
             has_variable = RRK_head_of_gov
             var:RRK_head_of_gov ?= prev.interest_group
