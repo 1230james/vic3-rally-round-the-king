@@ -1,0 +1,506 @@
+﻿# [RRK] Replacement definitions only
+
+CHI = { # China
+	dynamic_country_name = {
+		name = dyn_c_great_qing
+		adjective = dyn_c_great_qing_adj
+		
+		is_main_tag_only = yes
+		priority = 0
+		
+		trigger = {
+			coa_def_monarchy_flag_trigger = yes
+			scope:actor = {
+				country_has_primary_culture = cu:manchu
+			}
+		}
+	}
+	dynamic_country_name = {
+		name = dyn_c_empire_of_china
+		adjective = dyn_c_empire_of_china_adj
+		
+		is_main_tag_only = yes
+		priority = 0
+		
+		trigger = {
+			scope:actor = {
+				NOT = { country_has_primary_culture = cu:manchu }
+				coa_monarchy_trigger = yes
+			}
+		}
+	}
+	dynamic_country_name = {
+		name = dyn_c_peoples_republic_of_china
+		adjective = CHI_ADJ
+		
+		is_main_tag_only = yes
+		priority = 0
+		
+		trigger = {
+			coa_def_communist_flag_trigger = yes
+		}
+	}
+}
+
+IDN = { # Majapahit
+	dynamic_country_name = {
+		name = dyn_c_majapahit
+		adjective = dyn_c_majapahit_adj
+		
+		is_main_tag_only = yes
+		priority = 0
+		
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				coa_monarchy_trigger = yes
+				ruler = {
+					has_culture = cu:javan
+				}
+			}
+		}
+	}
+
+	dynamic_country_name = { # Srivijaya
+		name = dyn_c_srivijaya 
+		adjective = dyn_c_srivijaya_adj
+		
+		is_main_tag_only = yes
+		priority = 0
+		
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				coa_monarchy_trigger = yes
+				ruler = {
+					OR = {
+						has_culture = cu:malay
+						has_culture = cu:sumatran
+					}
+				}
+			}
+		}
+	}
+}
+
+JAP = { # Japan
+	dynamic_country_name = {
+		name = dyn_c_japan_shogunate
+		adjective = dyn_c_japan_shogunate_adj
+
+		is_main_tag_only = yes
+		priority = 10
+
+		trigger = {
+			exists = scope:actor
+			scope:actor = { 
+				coa_monarchy_trigger = yes
+				NOT = { has_variable = meiji_var }
+			}
+		}
+	}
+	dynamic_country_name = {
+		name = dyn_c_empire_of_japan
+		adjective = dyn_c_empire_of_japan_adj
+
+		is_main_tag_only = yes
+		priority = 20
+
+		trigger = {
+			exists = scope:actor
+			scope:actor = { 
+				coa_monarchy_trigger = yes
+				has_variable = meiji_var
+			}
+		}
+	}
+}
+
+KOR = { # Korea
+	dynamic_country_name = { # Joseon
+		name = dyn_c_korea_joseon
+		adjective = dyn_c_korea_joseon_adj
+		
+		is_main_tag_only = yes
+		priority = 10
+		
+		trigger = {
+			exists = scope:actor
+			scope:actor = { coa_monarchy_trigger = yes }
+		}
+	}
+	dynamic_country_name = { # Korean Empire
+		name = dyn_c_empire_of_korea
+		adjective = dyn_c_empire_of_korea_adj
+		
+		is_main_tag_only = yes
+		priority = 25
+		
+		trigger = {
+			exists = scope:actor
+			scope:actor = { 
+				has_variable = KOR_korean_empire_declared
+				coa_monarchy_trigger = yes 
+			}
+		}
+	}
+}
+
+SUD = {
+	dynamic_country_name = { # Mahist State
+		name = dyn_c_mahdist_state
+		adjective = dyn_c_mahdist_state_adj
+		
+		is_main_tag_only = yes
+		priority = 0
+		
+		trigger = {
+			scope:actor = {
+				has_law = law_type:law_theocracy
+			}
+		}
+	}
+
+	dynamic_country_name = { # Funj
+		name = dyn_c_funj_state
+		adjective = dyn_c_funj_state_adj
+		
+		is_main_tag_only = yes
+		priority = 0
+		
+		trigger = {
+			scope:actor = {
+				coa_monarchy_trigger = yes
+			}
+		}
+	}
+}
+
+SCA = { # Scandinavia
+	dynamic_country_name = { # Danish Scandinavia
+		name = dyn_c_scandinavia_kalmar_union
+		adjective = SCA_ADJ
+		
+		is_main_tag_only = yes
+		priority = 0
+		
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				coa_monarchy_trigger = yes
+				was_formed_from = DEN
+			}
+		}
+	}
+
+	dynamic_country_name = { # Finnish Scandinavia, somehow
+		name = dyn_c_scandinavia_fennoscandia
+		adjective = FIN_ADJ
+		
+		is_main_tag_only = yes
+		priority = 0
+		
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				coa_monarchy_trigger = yes
+				ruler = {
+					has_culture = cu:finnish
+				}
+			}
+		}
+	}
+}
+
+ZAI = { # Azal (Zaidi State)
+	dynamic_country_name = { # Zaidi
+		name = dyn_c_qasimid_state
+		adjective = dyn_c_qasimid_state_adj
+		
+		is_main_tag_only = yes
+		priority = 0
+		
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				OR = {
+					coa_monarchy_trigger = yes
+					has_law = law_type:law_theocracy
+				}
+			}
+		}
+	}
+}
+
+KAZ = {
+	dynamic_country_name = { # Republic
+		name = dyn_c_kazakh_republic
+		adjective = dyn_c_kazakh_republic_adj
+		
+		is_main_tag_only = yes
+		priority = 0
+		
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				NOT = {
+					coa_monarchy_trigger = yes
+				}
+			}
+			coa_def_independent_trigger = yes
+		}
+	}
+	dynamic_country_name = { # Khanate
+		name = dyn_c_kazakh_khanate
+		adjective = dyn_c_kazakh_khanate_adj
+		
+		is_main_tag_only = yes
+		priority = 0
+		
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				coa_monarchy_trigger = yes
+			}
+			coa_def_independent_trigger = yes
+		}
+	}
+	dynamic_country_name = { # Autonomy
+		name = dyn_c_kazakh_alash_autonomy
+		adjective = dyn_c_kazakh_alash_autonomy_adj
+		
+		is_main_tag_only = yes
+		priority = 0
+		
+		trigger = {
+			exists = scope:actor
+			AND = {
+				exists = c:RUS
+				c:RUS = {
+					NOR = {
+						coa_monarchy_trigger = yes
+						has_law = law_type:law_council_republic
+					}
+					OR = {
+						has_diplomatic_pact = {
+							who = scope:actor
+							type = puppet
+							is_initiator = yes
+						}
+						has_diplomatic_pact = {
+							who = scope:actor
+							type = dominion
+							is_initiator = yes
+						}
+						has_diplomatic_pact = {
+							who = scope:actor
+							type = protectorate
+							is_initiator = yes
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+ALD = {
+	dynamic_country_name = {
+		name = dyn_c_regency_of_algiers
+		adjective = dyn_c_regency_of_algiers_adj
+
+		is_main_tag_only = yes
+		priority = 10
+		
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				coa_monarchy_trigger = yes
+				has_variable = algeria_deylik_restored
+			}
+		}
+	}
+	dynamic_country_name = {
+		name = dyn_c_barbary
+		adjective = dyn_c_barbary_adj
+
+		is_main_tag_only = yes
+		priority = 10
+		
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				has_variable = algeria_barbary_restored
+			}
+		}
+	}
+	dynamic_country_name = {
+		name = dyn_c_maghreb
+		adjective = dyn_c_maghreb_adj
+
+		is_main_tag_only = yes
+		priority = 10
+		
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				has_variable = algeria_maghreb_restored
+			}
+		}
+	}
+}
+
+FRA = {
+	dynamic_country_name = {
+		name = dyn_c_french_empire
+		adjective = dyn_c_french_empire_adj
+
+		is_main_tag_only = yes
+		priority = 10
+		
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				coa_monarchy_trigger = yes
+				has_variable = bonapartist_restoration_var
+				has_variable = one_true_french_dynasty
+			}
+		}
+	}
+	dynamic_country_name = {
+		name = dyn_c_french_republic
+		adjective = dyn_c_french_republic_adj
+
+		is_main_tag_only = yes
+		priority = 10
+		
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				OR = {
+					has_law = law_type:law_parliamentary_republic
+					has_law = law_type:law_presidential_republic
+				}
+			}
+		}
+	}
+	dynamic_country_name = {
+		name = dyn_c_french_kingdom
+		adjective = dyn_c_french_kingdom_adj
+
+		is_main_tag_only = yes
+		priority = 10
+		
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				coa_monarchy_trigger = yes
+				OR = {
+					has_variable = orleanist_restoration_var
+					has_variable = legitimist_restoration_var
+				}
+				has_variable = one_true_french_dynasty
+			}
+		}
+	}
+	dynamic_country_name = {
+		name = dyn_c_french_commune
+		adjective = dyn_c_french_commune_adj
+
+		is_main_tag_only = yes
+		priority = 10
+		
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				has_law = law_type:law_council_republic
+			}
+		}
+	}
+}
+
+HRE = {
+	dynamic_country_name = {
+		name = dyn_c_hre_monarchy
+		adjective = dyn_c_hre_monarchy_adj
+
+		is_main_tag_only = yes
+		priority = 10
+		
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				OR = {
+					coa_monarchy_trigger = yes
+					has_law = law_type:law_theocracy
+				}
+			}
+		}
+	}
+	dynamic_country_name = {
+		name = dyn_c_hre_republic
+		adjective = dyn_c_hre_republic_adj
+
+		is_main_tag_only = yes
+		priority = 10
+		
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				OR = {
+					has_law = law_type:law_parliamentary_republic
+					has_law = law_type:law_presidential_republic
+				}
+			}
+		}
+	}
+	dynamic_country_name = {
+		name = dyn_c_hre_communist
+		adjective = dyn_c_hre_communist_adj
+
+		is_main_tag_only = yes
+		priority = 10
+		
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				has_law = law_type:law_council_republic
+			}
+		}
+	}
+	
+	dynamic_country_name = {
+		name = dyn_c_hre_technate
+		adjective = dyn_c_hre_technate_adj
+		
+		is_main_tag_only = yes
+		priority = 20
+		
+		trigger = {
+			scope:actor = {
+				OR = {
+					has_law = law_type:law_parliamentary_republic
+					has_law = law_type:law_presidential_republic
+				}
+				has_law = law_type:law_technocracy
+			}
+		}
+	}
+	
+	dynamic_country_name = {
+		name = dyn_c_hre_fascist
+		adjective = dyn_c_hre_fascist_adj
+		
+		is_main_tag_only = yes
+		priority = 30
+		
+		trigger = {
+			scope:actor = {
+				coa_fascist_trigger = yes
+				NOT = {
+					has_law = law_type:law_council_republic
+				}
+			}
+		}
+	}
+}
