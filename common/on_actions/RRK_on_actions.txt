@@ -219,7 +219,6 @@ RRK_oa_on_law_activated = {
                         }
                     }
                     RRK_se_set_prime_minister = yes
-                    RRK_se_update_head_of_gov_modifier = yes
                 }
                 # Constitutionalism? More like uhhhhhhhh crap!
                 else_if = {
@@ -228,8 +227,10 @@ RRK_oa_on_law_activated = {
                         has_variable = RRK_head_of_gov
                     }
                     remove_variable = RRK_head_of_gov
-                    RRK_se_update_head_of_gov_modifier = yes
                 }
+                
+                # Update Head of Gov modifier handler (always wanted)
+                RRK_se_update_head_of_gov_modifier = yes
             }
         }
     }

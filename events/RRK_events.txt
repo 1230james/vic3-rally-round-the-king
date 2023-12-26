@@ -1,7 +1,7 @@
-﻿namespace = RRK_ev
+﻿namespace = RRK_hidden_ev
 
 # Setup event (fired by history for initial setup)
-RRK_ev.1 = {
+RRK_hidden_ev.1 = {
     type = country_event
     hidden = yes
     
@@ -15,6 +15,45 @@ RRK_ev.1 = {
         }
     }
 }
+
+# Adds Head of Gov legitimacy modifier
+# Done through firing a hidden event because for some reason there's certain points where calling the original scripted
+# effect would lead to a modifier of +0 because the math block was having scoping problems???
+RRK_hidden_ev.2 = {
+    type = country_event
+    hidden = yes
+    
+    immediate = {
+        add_modifier = {
+            name       = RRK_md_head_of_gov_in_gov
+            multiplier = { # modifier:country_legitimacy_headofstate_add # The output of this doesn't update fast enough :/
+                if = {
+                    limit = { THIS = { has_law = law_type:law_presidential_republic } }
+                    add   = 10
+                }
+                if = {
+                    limit = { has_law = law_type:law_autocracy }
+                    add   = 30
+                }
+                if = {
+                    limit = { has_law = law_type:law_technocracy }
+                    add   = 10
+                }
+                if = {
+                    limit = { has_law = law_type:law_oligarchy }
+                    add   = 10
+                }
+            }
+        }
+    }
+}
+
+# ==================================================================================================================== #
+
+namespace = RRK_ev
+
+# Moved to RRK_hidden_ev namespace; keeping here to explicitly indicate that the event ID is no longer in use
+# RRK_ev.1 = {}
 
 # Monarch's fate - has heir
 RRK_ev.2 = {
@@ -165,6 +204,12 @@ RRK_ev.3 = {
         
         ai_chance = {
             base = 1
+            modifier = {
+                add = 1000
+                any_interest_group = {
+                    has_modifier = regicide
+                }
+            }
             modifier = {
                 add = 1
                 NOT = {

@@ -64,9 +64,9 @@ RRK_grant_premiership = {
                         name  = RRK_head_of_gov
                         value = prev
                     }
+                    RRK_se_update_head_of_gov_modifier = yes
                 }
             }
-            RRK_se_update_head_of_gov_modifier = yes
 		}
     }
 

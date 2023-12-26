@@ -44,6 +44,15 @@ RRK_se_set_premier = {
 }
 
 RRK_se_update_head_of_gov_modifier = {
+    # Remove modifier if it exists already
+    if = {
+        limit = {
+            has_modifier = RRK_md_head_of_gov_in_gov
+        }
+        remove_modifier = RRK_md_head_of_gov_in_gov
+    }
+    
+    # Add modifier with new value if needed
     if = {
         limit = {
             RRK_st_is_presidential_monarchy = yes
@@ -55,22 +64,9 @@ RRK_se_update_head_of_gov_modifier = {
                 is_in_government = no
             }
         }
-        if = {
-            limit = {
-                NOT = {
-                    has_modifier = RRK_md_head_of_gov_in_gov
-                }
-            }
-            add_modifier = {
-                name = RRK_md_head_of_gov_in_gov
-            }
+        trigger_event = { # Done through event now because of stupid scoping problems
+            id = RRK_hidden_ev.2
         }
-    }
-    else_if = {
-        limit = {
-            has_modifier = RRK_md_head_of_gov_in_gov
-        }
-        remove_modifier = RRK_md_head_of_gov_in_gov
     }
 }
 
@@ -244,7 +240,6 @@ RRK_se_save_monarchy = {
     }
 }
 
-# TODO: Evaluate upstream effects of adding stamp out JE logic here (e.g. law activated on action)
 RRK_se_abolish_monarchy = {
     custom_tooltip = {
         text = RRK_tt_abolish_monarchy
