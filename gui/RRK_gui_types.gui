@@ -193,7 +193,6 @@ types RRK_types {
                     }
                 }
                 blockoverride "label" {
-                    # TODO
                     text = "[Concept('concept_RRK_head_of_gov', Character.GetCustom('RRK_cl_head_of_gov_title_character'))]"
                 }
                 blockoverride "text" {

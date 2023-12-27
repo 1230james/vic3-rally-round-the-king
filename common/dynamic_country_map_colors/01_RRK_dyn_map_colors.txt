@@ -1,0 +1,125 @@
+﻿#
+# Note: the triggers are checked at certain key points in the code, not all the time
+# color_key = {
+#    color = "black"      # the map color
+#    possible = { ... }   # the trigger to enable this color
+# }
+#
+
+# Example
+#dynamic_map_color_swedish_junta = {
+#    color = "black"
+#	
+#	possible = {
+#		exists = c:SWE # you /must/ check that a tag exists before doing anything else
+#		this = c:SWE
+#
+#        exists = ig:ig_armed_forces
+#        ig:ig_armed_forces = {
+#            is_in_government = yes
+#        }
+#	}
+#}
+
+# [RRK] Replacement definitions only
+
+kalmar_union = {
+	color = "kalmar_orange"
+
+	possible = {
+		exists = c:SCA
+		THIS = c:SCA
+		coa_monarchy_trigger = yes
+		ruler = {
+			has_culture = cu:danish
+		}
+	}
+}
+
+fennoscandia = {
+	color = "finnish_brown"
+
+	possible = {
+		exists = c:SCA
+		THIS = c:SCA
+		coa_monarchy_trigger = yes
+		ruler = {
+			has_culture = cu:finnish
+		}
+	}
+}
+
+imperial_korea = {
+	color = "korean_empire_purple"
+
+	possible = {
+		exists = c:KOR
+		THIS = c:KOR
+		coa_monarchy_trigger = yes
+		has_variable = KOR_korean_empire_declared
+	}
+}
+
+korea_monarchy_blue = {
+	color = "joseon_blue"
+	possible = {
+		exists = c:KOR
+		THIS = c:KOR
+		coa_monarchy_trigger = yes 
+		NOT = {
+			has_variable = KOR_korean_empire_declared
+		}
+	}
+}
+
+japanese_shogunate = {
+	color = "tokugawa_green"
+	possible = {
+		exists = c:JAP
+		THIS = c:JAP
+		coa_monarchy_trigger = yes 
+		NOT = { has_variable = meiji_var }
+	}
+}
+
+usa_monarchy = {
+	color = "usa_monarchy_blue"
+
+	possible = {
+		exists = c:USA
+		THIS = c:USA
+		coa_monarchy_trigger = yes
+	}
+}
+
+mexican_empire = {
+	color = "mexican_empire_green"
+	possible = {
+		exists = c:MEX
+		THIS = c:MEX
+		coa_monarchy_trigger = yes
+	}
+}
+
+han_imperial_china = {
+	color = "red_china"
+
+	possible = {
+		exists = c:CHI
+		THIS = c:CHI
+		NOT = { country_has_primary_culture = cu:manchu }
+		coa_monarchy_trigger = yes
+	}
+}
+
+empire_france = {
+	color = "bonapartist_blue"
+
+	possible = {
+		exists = c:FRA
+		THIS = c:FRA
+		coa_monarchy_trigger = yes
+		has_variable = bonapartist_restoration_var
+		has_variable = one_true_french_dynasty
+	}
+}
