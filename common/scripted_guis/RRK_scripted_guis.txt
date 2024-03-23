@@ -69,3 +69,11 @@ RRK_sg_has_monarchy_preserved_modifier = {
         }
     }
 }
+
+RRK_sg_is_crown_subject = {
+    scope = country
+    
+    is_shown = {
+        RRK_st_is_crown_subject = yes
+    }
+}

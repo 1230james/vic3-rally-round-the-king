@@ -74,3 +74,24 @@ RRK_st_has_voting = {
         }
     }
 }
+
+RRK_st_is_crown_subject = {
+    is_subject  = yes
+    overlord   ?= {
+        coa_monarchy_trigger = yes
+    }
+    NOR = {
+        has_diplomatic_pact = {
+            who  = overlord
+            type = protectorate
+        }
+        has_diplomatic_pact = {
+            who  = overlord
+            type = tributary
+        }
+        has_diplomatic_pact = {
+            who  = overlord
+            type = personal_union
+        }
+    }
+}
