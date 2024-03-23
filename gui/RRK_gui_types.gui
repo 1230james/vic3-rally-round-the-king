@@ -445,6 +445,191 @@ types RRK_types {
         }
     }
     
+    type RRK_head_of_gov_colony = hbox {
+        visible = "[And(
+            GetScriptedGui('RRK_sg_is_crown_subject').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End),
+            Not( GetVariableSystem.Exists('reform_government') )
+        )]"
+        datacontext = "[Country.GetRuler]"
+        
+        layoutpolicy_horizontal = expanding
+        layoutpolicy_vertical = expanding
+        spacing = 5
+        margin_left = 5
+        margin_right = 10
+    
+        character_portrait_medium_torso = {
+            using = tooltip_below
+            blockoverride "show_hat" {}
+            blockoverride "highlight" {}
+            blockoverride "commander_order_icon" {}
+        }
+        
+        vbox = {
+            layoutpolicy_horizontal = expanding
+            layoutpolicy_vertical = preferred
+
+            ### TITLE + NAME
+            vbox = {
+                layoutpolicy_horizontal = expanding
+                layoutpolicy_vertical = preferred
+                margin_top = 10
+                
+                hbox = {
+                    layoutpolicy_horizontal = expanding
+                    layoutpolicy_vertical = preferred
+                    
+                    textbox = {
+                        raw_text = "#title [Country.GetRuler.GetPrimaryRoleTitle]#!"
+                        layoutpolicy_horizontal = expanding
+                        size = { 0 16 }
+                        elide = right
+                        align = left|nobaseline
+                    }
+                    block "additional_info_top_right" {}
+                }
+                
+                textbox = {
+                    raw_text = "#BOLD [Character.GetCustom('GetUniversalFullNameNoFormatting')]#!"
+                    layoutpolicy_horizontal = expanding
+                    size = { 0 20 }
+                    fontsize_min = 14
+                    elide = right
+                    align = left|nobaseline
+                    using = fontsize_large
+                }
+            }
+            
+            ### ICONS
+            hbox = {
+                layoutpolicy_horizontal = expanding
+                layoutpolicy_vertical = preferred
+                spacing = 10
+                
+                ### TRAITS
+                flowcontainer = {
+                    datamodel = "[Character.AccessTraits]"
+                    spacing = 2
+
+                    item = {
+                        icon = {
+                            size = { 30 42 }
+                            texture = "[CharacterTrait.GetTexture]"
+                            using = tooltip_above
+
+                            tooltipwidget = {
+                                FancyTooltip_CharacterTrait = {}
+                            }
+                        }
+                    }
+                }
+                
+                ### IG ICON
+                character_ig_button = {
+                    size = { 40 40 }
+                    blockoverride "in_government_icon" {}
+                }
+                
+                ### IDEOLOGY
+                icon = {
+                    size = { 40 40 }
+                    datacontext = "[Character.GetIdeology]"					
+                    texture = "[Ideology.GetTexture]"
+                    tooltipwidget = {
+                        FancyTooltip_Ideology = {}
+                    }
+                }
+                
+                widget = {
+                    layoutpolicy_horizontal = expanding
+                    layoutpolicy_vertical = expanding
+                }
+            }
+        
+            ### MONARCH
+            hbox = {
+                layoutpolicy_horizontal = expanding
+                layoutpolicy_vertical = preferred
+                margin_bottom = 10
+                visible = "[Country.GetOverlord.HasRuler]"
+                datacontext = "[Country.GetOverlord.GetRuler]"
+                
+                # Portrait
+                character_portrait_small = {}
+                
+                # Title, Name, Icons
+                vbox = {
+                    layoutpolicy_horizontal = expanding
+                    layoutpolicy_vertical = preferred
+                    margin_left = 5
+                    
+                    # Title & Name
+                    textbox = {
+                        layoutpolicy_horizontal = expanding
+                        size = { 0 25 }
+                        text = "RRK_gui_monarch_name_and_title"
+                        align = left|nobaseline
+                    }
+                    
+                    ### ICONS
+                    hbox = {
+                        layoutpolicy_horizontal = expanding
+                        layoutpolicy_vertical = preferred
+                        spacing = 5
+                        
+                        ### TRAITS
+                        flowcontainer = {
+                            datamodel = "[Character.AccessTraits]"
+                            spacing = 2
+
+                            item = {
+                                icon = {
+                                    size = { 23 32 }
+                                    texture = "[CharacterTrait.GetTexture]"
+                                    using = tooltip_above
+
+                                    tooltipwidget = {
+                                        FancyTooltip_CharacterTrait = {}
+                                    }
+                                }
+                            }
+                        }
+                        
+                        ### IG ICON
+                        character_ig_button = {
+                            datacontext = "[Character.GetInterestGroup]"
+                            size = { 30 30 }
+                            blockoverride "in_government_icon" {}
+                        }
+                        
+                        ### IDEOLOGY
+                        icon = {
+                            size = { 30 30 }
+                            datacontext = "[Character.GetIdeology]"					
+                            texture = "[Ideology.GetTexture]"
+                            tooltipwidget = {
+                                FancyTooltip_Ideology = {}
+                            }
+                        }
+                        
+                        ### OVERLORD FLAG
+                        widget = { # spacer
+                            size = { 1 1 }
+                        }
+                        small_flag = {
+                            datacontext = "[Character.GetCountry]"
+                        }
+                        
+                        widget = {
+                            layoutpolicy_horizontal = expanding
+                            layoutpolicy_vertical = expanding
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
     type RRK_ruler_box = hbox {
         visible = "[Or(
             Or(
