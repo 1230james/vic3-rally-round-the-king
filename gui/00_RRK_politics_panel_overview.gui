@@ -23,14 +23,11 @@ types politics_panel_types
 		}
         
         RRK_head_of_gov = {} # RRK
-        RRK_head_of_gov_colony = {}
+        RRK_head_of_gov_subject = {}
 		hbox = {
             visible = "[And(
                 GetScriptedGui('RRK_sg_is_not_conmon').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End),
-                Not(And(
-                    GetScriptedGui('RRK_sg_is_crowned_subject').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End),
-                    Not( GetVariableSystem.Exists('reform_government') )
-                ))
+                Not( GetScriptedGui('RRK_sg_is_crown_subject').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End) )
             )]"
             
 			layoutpolicy_horizontal = expanding
