@@ -26,17 +26,22 @@
 			}
 		}	
 		
-		should_invalidate = {
-			OR = {
-				NOR = {
+		requirement_to_maintain = {
+			trigger = {
+                OR = {
                     has_law = law_type:law_monarchy
                     custom_tooltip = {
                         text = RRK_tt_monarchy_not_preserved
                         RRK_st_monarchy_preserved = yes
                     }
                 }
-				scope:target_country = {
-                    NOR = {
+            }
+		}
+		
+		requirement_to_maintain = {
+			trigger = {
+                scope:target_country = {
+                    OR = {
                         has_law = law_type:law_monarchy
                         custom_tooltip = {
                             text = RRK_tt_monarchy_not_preserved
@@ -44,12 +49,16 @@
                         }
                     }
                 }
-			}	
-		}
+            }
+		}	
 		
-		break_effect = {
+		manual_break_effect = {
 			create_truce = { country = scope:target_country months = 60 }
 		}
+		
+		auto_break_effect = {
+			create_truce = { country = scope:target_country months = 60 }
+		}		
 	}
 	
 	ai = {
