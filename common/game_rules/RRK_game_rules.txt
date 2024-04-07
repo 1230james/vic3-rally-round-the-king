@@ -1,0 +1,6 @@
+﻿RRK_gr_crowned_republic_name = {
+    default = RRK_gr_use_crowned_republic
+    
+    RRK_gr_use_crowned_republic = {}
+    RRK_gr_use_const_monarchy   = {}
+}
