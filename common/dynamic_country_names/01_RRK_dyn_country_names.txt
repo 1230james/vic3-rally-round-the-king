@@ -381,6 +381,7 @@ FRA = {
 					has_law = law_type:law_parliamentary_republic
 					has_law = law_type:law_presidential_republic
 				}
+                RRK_st_is_crowned_republic = no # RRK
 			}
 		}
 	}

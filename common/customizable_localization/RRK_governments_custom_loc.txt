@@ -1,0 +1,81 @@
+﻿# i hate france!!!!!!!!!!!!!!!!!!
+RRK_cl_france_crowned_republic_name = {
+    type = country
+    
+    text = {
+        localization_key = gov_french_2nd_republic_presidential
+        trigger = {
+            # Need to do it like this because gui/loc scoping problems are really f'ing annoying
+            trigger_if = {
+                limit = {
+                    exists = c:FRA
+                }
+                c:FRA ?= {
+                    save_temporary_scope_as = france
+                }
+            }
+            trigger_else = {
+                any_country = {
+                    country_has_primary_culture = cu:french
+                    save_temporary_scope_as = france
+                }
+            }
+            scope:france ?= {
+                has_variable = fra_republic_counter
+                var:fra_republic_counter ?= 2
+            }
+        }
+    }
+    text = {
+        localization_key = gov_french_3rd_republic_presidential
+        trigger = {
+            trigger_if = {
+                limit = {
+                    exists = c:FRA
+                }
+                c:FRA ?= {
+                    save_temporary_scope_as = france
+                }
+            }
+            trigger_else = {
+                any_country = {
+                    country_has_primary_culture = cu:french
+                    save_temporary_scope_as = france
+                }
+            }
+            scope:france ?= {
+                has_variable = fra_republic_counter
+                var:fra_republic_counter ?= 3
+            }
+        }
+    }
+    text = {
+        localization_key = gov_french_4th_republic_presidential
+        trigger = {
+            trigger_if = {
+                limit = {
+                    exists = c:FRA
+                }
+                c:FRA ?= {
+                    save_temporary_scope_as = france
+                }
+            }
+            trigger_else = {
+                any_country = {
+                    country_has_primary_culture = cu:french
+                    save_temporary_scope_as = france
+                }
+            }
+            scope:france ?= {
+                has_variable = fra_republic_counter
+                var:fra_republic_counter ?= 4
+            }
+        }
+    }
+    text = { # Fallback
+        localization_key = RRK_txt_crowned_republic
+        trigger = {
+            always = yes
+        }
+    }
+}
