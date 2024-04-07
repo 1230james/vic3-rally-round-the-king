@@ -82,8 +82,14 @@
     RRK_gov_hm_gov: "$gov_hm_gov$" # Bri'ish
     RRK_gov_hm_gov_desc: "$gov_hm_gov_desc$"
     
-    RRK_gov_fra_monarchy: "$gov_constitutional_kingdom$" # ohonhon
+    RRK_gov_fra_monarchy: "[GetPlayer.GetCustom('RRK_cl_france_crowned_republic_name')]" # ohonhon
     RRK_gov_fra_monarchy_desc: "$RRK_txt_desc_start$ [Concept('concept_ruler','$RULER_TITLE_KING$')] or [Concept('concept_ruler','$RULER_TITLE_QUEEN$')] $RRK_txt_desc_end$"
+    
+    RRK_gov_fra_monarchy_orleanist: "$RRK_gov_fra_monarchy$" # j'aime l'oignon frit a l'huile
+    RRK_gov_fra_monarchy_orleanist_desc: "$RRK_gov_fra_monarchy_desc$"
+    
+    RRK_gov_fra_monarchy_legitimist: "$RRK_gov_fra_monarchy$" # j'aime l'oignon quand il est bon
+    RRK_gov_fra_monarchy_legitimist_desc: "$RRK_gov_fra_monarchy_desc$"
     
     RRK_gov_princely_state_hindu: "$RRK_txt_crowned_republic$"
     RRK_gov_princely_state_hindu_desc: "$RRK_txt_desc_start$ [Concept('concept_ruler','$RULER_TITLE_RAJA$')] $RRK_txt_desc_end$"

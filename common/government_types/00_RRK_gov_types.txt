@@ -629,12 +629,62 @@ RRK_gov_fra_monarchy = {
 	male_ruler = "RULER_TITLE_KING"
 	female_ruler = "RULER_TITLE_QUEEN"
 	
+	male_heir = "RULER_TITLE_PRINCE"
+	female_heir = "RULER_TITLE_PRINCESS"
+	
+	possible = {
+		RRK_st_is_crowned_republic = yes # has_law = law_type:law_monarchy
+		country_has_primary_culture = cu:french
+        NOR = {
+            has_variable = orleanist_restoration_var
+            has_variable = legitimist_restoration_var
+        }
+	}
+
+	on_government_type_change = {
+		change_to_hereditary = yes
+	}
+	on_post_government_type_change = {
+		post_change_to_hereditary = yes
+	}
+}
+
+RRK_gov_fra_monarchy_orleanist = {
+    transfer_of_power = hereditary
+
+	male_ruler = "RULER_TITLE_KING"
+	female_ruler = "RULER_TITLE_QUEEN"
+	
 	male_heir = "RULER_TITLE_PRINCE_ROYAL"
 	female_heir = "RULER_TITLE_PRINCESS_ROYAL"
 	
 	possible = {
 		RRK_st_is_crowned_republic = yes # has_law = law_type:law_monarchy
 		country_has_primary_culture = cu:french
+        has_variable = orleanist_restoration_var
+	}
+
+	on_government_type_change = {
+		change_to_hereditary = yes
+	}
+	on_post_government_type_change = {
+		post_change_to_hereditary = yes
+	}
+}
+
+RRK_gov_fra_monarchy_legitimist = {
+    transfer_of_power = hereditary
+
+	male_ruler = "RULER_TITLE_KING"
+	female_ruler = "RULER_TITLE_QUEEN"
+	
+	male_heir = "RULER_TITLE_DAUPHIN"
+	female_heir = "RULER_TITLE_DAUPHINE"
+	
+	possible = {
+		RRK_st_is_crowned_republic = yes # has_law = law_type:law_monarchy
+		country_has_primary_culture = cu:french
+        has_variable = legitimist_restoration_var
 	}
 
 	on_government_type_change = {
