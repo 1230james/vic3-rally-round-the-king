@@ -27,6 +27,15 @@
     RRK_md_monarchy_preserved: "Monarchy Preserved"
     RRK_md_monarchy_abolished: "Monarchy Abolished"
     
+    # Game Rules
+    rule_RRK_gr_crowned_republic_name: "#yellow RRK#! | Names of Monarchy-Preserved Republics"
+    
+    setting_RRK_gr_use_crowned_republic: "$RRK_txt_crowned_republic$"
+    setting_RRK_gr_use_crowned_republic_desc: "A republic that preserves their monarchy will be called a #v $RRK_txt_crowned_republic$#!."
+    
+    setting_RRK_gr_use_const_monarchy: "$gov_constitutional_kingdom$"
+    setting_RRK_gr_use_const_monarchy_desc: "A republic that preserves their monarchy will be called a #v $gov_constitutional_kingdom$#!."
+    
     # Tooltips
     RRK_tt_player_has_voting:  "[GetPlayer.GetNameNoFlag] has [Concept('concept_votes', '$concept_voting_rights$')]"
     RRK_tt_char_has_no_voting: "[Character.GetCountry.GetNameNoFlag] does #bold not#! have [Concept('concept_votes', '$concept_voting_rights$')]"
