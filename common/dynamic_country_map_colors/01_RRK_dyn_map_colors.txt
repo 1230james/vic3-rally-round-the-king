@@ -92,12 +92,40 @@ usa_monarchy = {
 	}
 }
 
+turkish_republic = {
+	color = "turkish_republic_red"
+
+	possible = {
+		exists = c:TUR
+		THIS = c:TUR
+		OR = {
+			has_law = law_type:law_parliamentary_republic
+			has_law = law_type:law_presidential_republic
+			has_law = law_type:law_council_republic
+		}
+	}
+}
+
 mexican_empire = {
 	color = "mexican_empire_green"
 	possible = {
 		exists = c:MEX
 		THIS = c:MEX
 		coa_monarchy_trigger = yes
+	}
+}
+
+republican_china = {
+	color = "azure"
+
+	possible = {
+		exists = c:CHI
+		THIS = c:CHI
+		OR = {
+			has_law = law_type:law_parliamentary_republic
+			has_law = law_type:law_presidential_republic
+		}
+        RRK_st_is_crowned_republic = no # RRK
 	}
 }
 
@@ -109,6 +137,35 @@ han_imperial_china = {
 		THIS = c:CHI
 		NOT = { country_has_primary_culture = cu:manchu }
 		coa_monarchy_trigger = yes
+	}
+}
+
+republican_portugal = {
+	color = "green_dark"
+
+	possible = {
+		exists = c:POR
+		THIS = c:POR
+		OR = {
+			has_law = law_type:law_parliamentary_republic
+			has_law = law_type:law_presidential_republic
+		}
+        RRK_st_is_crowned_republic = no # RRK
+	}
+}
+
+roman_rome = {
+	color = "roman_red"
+
+	possible = {
+		exists = c:PAP
+		THIS = c:PAP
+		OR = {
+			has_law = law_type:law_parliamentary_republic
+			has_law = law_type:law_presidential_republic
+			has_law = law_type:law_council_republic
+		}
+        RRK_st_is_crowned_republic = no # RRK
 	}
 }
 
@@ -136,5 +193,87 @@ empire_france = {
 		coa_monarchy_trigger = yes
 		has_variable = bonapartist_restoration_var
 		has_variable = one_true_french_dynasty
+	}
+}
+
+republican_india = {
+	color = "orange_india"
+
+	possible = {
+		exists = c:BHT
+		THIS = c:BHT
+		OR = {
+			has_law = law_type:law_parliamentary_republic
+			has_law = law_type:law_presidential_republic
+			has_law = law_type:law_council_republic
+		}
+        RRK_st_is_crowned_republic = no # RRK
+	}
+}
+
+republican_hindustan = {
+	color = "hoi4_pakistan_blue"
+
+	possible = {
+		exists = c:HND
+		THIS = c:HND
+		OR = {
+			has_law = law_type:law_parliamentary_republic
+			has_law = law_type:law_presidential_republic
+			has_law = law_type:law_council_republic
+		}
+        RRK_st_is_crowned_republic = no # RRK
+	}
+}
+
+hre_republic = {
+	color = "european_blue"
+
+	possible = {
+		exists = c:HRE
+		THIS = c:HRE
+		OR = {
+			has_law = law_type:law_parliamentary_republic
+			has_law = law_type:law_presidential_republic
+		}
+		NOT = {
+			has_law = law_type:law_technocracy
+		}
+		NOT = {
+			coa_fascist_trigger = yes
+		}
+        RRK_st_is_crowned_republic = no # RRK
+	}
+}
+
+spain_republican = {
+	color = "republican_spain_purple"
+
+	possible = {
+		exists = c:SPA
+		THIS = c:SPA
+		OR = {
+			has_law = law_type:law_parliamentary_republic
+			has_law = law_type:law_presidential_republic
+		}
+        RRK_st_is_crowned_republic = no # RRK
+	}
+}
+
+brazil_republican = {
+	color = "republican_brazil_green"
+
+	possible = {
+		exists = c:BRZ
+		THIS = c:BRZ
+		OR = {
+			has_law = law_type:law_parliamentary_republic
+			has_law = law_type:law_presidential_republic
+			has_law = law_type:law_council_republic
+		}
+		NOT = {
+			coa_fascist_trigger = yes
+		}
+        RRK_st_is_crowned_republic = no # RRK
 	}
 }
