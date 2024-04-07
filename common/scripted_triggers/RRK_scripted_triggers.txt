@@ -76,8 +76,11 @@ RRK_st_has_voting = {
 }
 
 RRK_st_is_crown_subject = {
-    is_subject  = yes
-    overlord   ?= {
+    is_subject = yes
+    NOT = {
+        government_transfer_of_power = hereditary
+    }
+    overlord ?= {
         coa_monarchy_trigger = yes
     }
     NOR = {
