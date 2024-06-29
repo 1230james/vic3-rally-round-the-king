@@ -184,6 +184,9 @@ RRK_oa_on_law_activated = {
                                 has_law = law_type:law_parliamentary_republic
                                 has_law = law_type:law_council_republic # Certified New Jewel Movement moment
                             }
+                            NOT = { # Abolish monarchy if it changed due to a coup
+                                has_variable = government_couped
+                            }
                         }
                         if = { # Ignore if we already chose to preserve the monarchy previously
                             limit = {
