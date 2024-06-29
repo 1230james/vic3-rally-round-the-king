@@ -94,18 +94,16 @@ RRK_oa_on_election = {
             }
             RRK_se_set_premier = yes
             RRK_se_update_head_of_gov_modifier = yes
-            # add_journal_entry = { # Was needed for 1.4 since on_election_campaign_end didn't work then
-                # type = RRK_je_premier_election
-            # }
+        }
+        else_if = {
+            limit = {
+                RRK_st_is_parliamentary_monarchy = yes
+            }
+            RRK_se_set_prime_minister = yes
+            RRK_se_update_head_of_gov_modifier = yes
         }
     }
 }
-
-# on_election_campaign_start = {
-    # on_actions = {
-        # RRK_oa_on_election
-    # }
-# }
 
 on_election_campaign_end = {
 	on_actions = {
