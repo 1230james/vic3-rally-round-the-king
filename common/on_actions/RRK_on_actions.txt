@@ -187,6 +187,7 @@ RRK_oa_on_law_activated = {
                             NOT = { # Abolish monarchy if it changed due to a coup
                                 has_variable = government_couped
                             }
+                            RRK_st_cannot_be_crowned_republic = no # Not on blacklist
                         }
                         if = { # Ignore if we already chose to preserve the monarchy previously
                             limit = {

@@ -77,6 +77,7 @@ RRK_st_has_voting = {
 
 RRK_st_is_crown_subject = {
     is_subject = yes
+    RRK_st_cannot_be_crowned_republic = no
     NOT = {
         government_transfer_of_power = hereditary
     }
@@ -95,6 +96,22 @@ RRK_st_is_crown_subject = {
         has_diplomatic_pact = {
             who  = overlord
             type = personal_union
+        }
+    }
+}
+
+# A blacklist for countries to stop them from being treated as or becoming Crowned Republics to avoid weird edge cases
+RRK_st_cannot_be_crowned_republic = {
+    OR = {
+        # Baltic Governates
+        AND = {
+            country_tier = grand_principality
+            c:UBD ?= THIS
+            exists = c:RUS
+            is_subject_of = c:RUS
+            c:RUS ?= {
+                has_law = law_type:law_monarchy
+            }
         }
     }
 }
