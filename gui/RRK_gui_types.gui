@@ -87,7 +87,7 @@ types RRK_types {
 			}
 
 			blockoverride "portrait_texture" {
-				portrait_texture = "[Character.GetAnimatedPortrait('ruler_environment', 'camera_leader', 'idle', PdxGetWidgetScreenSize(PdxGuiWidget.Self))]"
+				portrait_texture = "[Character.GetAnimatedPortrait('politician_environment', 'camera_leader', 'idle', GetPortraitRenderSize(PdxGuiWidget.Self))]"
 			}
 
 			blockoverride "portrait_icons" {}
