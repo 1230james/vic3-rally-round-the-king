@@ -13,7 +13,7 @@
 	}
 
 	possible = {
-		ruler = {
+		ruler ?= {
 			OR = {
 				has_trait = cruel
 				has_trait = ambitious
