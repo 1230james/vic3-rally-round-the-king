@@ -1,0 +1,49 @@
+﻿je_splitting_oman = {
+	icon = "gfx/interface/icons/event_icons/event_portrait.dds"
+
+	group = je_group_historical_content
+
+	complete = {
+		custom_tooltip = {
+			text = said_bin_sultan_al_said_dies
+			ruler = {
+				NOT = { has_variable = is_said_bin_sultan }
+			}
+			OR = {
+                has_law = law_type:law_monarchy
+                RRK_st_is_crowned_republic = yes
+            }
+		}
+	}
+
+	on_complete = {
+		custom_tooltip = omani_realm_splits
+		if = {
+			limit = {
+				exists = c:OMA
+				c:OMA = ROOT
+			}
+			trigger_event = { id = zanzibar.1 }
+		}
+	}
+	
+	# no monthly pulse to kill the sultan.
+
+	invalid = {
+		OR = {
+			NOT = { exists = c:OMA }
+			NOR = {
+                has_law = law_type:law_monarchy
+                custom_tooltip = {
+                    text = RRK_tt_monarchy_not_preserved
+                    RRK_st_monarchy_preserved = yes
+                }
+            }
+			exists = c:ZAN
+		}
+	}
+
+	weight = 10
+
+	should_be_pinned_by_default = yes
+}
