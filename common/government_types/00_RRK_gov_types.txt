@@ -219,6 +219,30 @@ RRK_gov_hakimate = {
 	}
 }
 
+RRK_gov_chitrali_monarchy = {
+	transfer_of_power = hereditary
+	
+	male_ruler = "RULER_TITLE_MEHTAR"
+	female_ruler = "" # Empty on purpose
+
+	male_heir = "RULER_TITLE_PRINCE"
+	female_heir = "" # Empty on purpose
+	
+	possible = {
+		country_tier = principality
+		RRK_st_is_crowned_republic = yes # has_law = law_type:law_monarchy
+		exists = c:CHT
+		c:CHT = ROOT
+	}
+
+	on_government_type_change = {
+		change_to_hereditary = yes
+	}
+	on_post_government_type_change = {
+		post_change_to_hereditary = yes
+	}
+}
+
 RRK_gov_sheikhdom = {
 	transfer_of_power = hereditary
 	
@@ -233,6 +257,7 @@ RRK_gov_sheikhdom = {
 		RRK_st_is_crowned_republic = yes # has_law = law_type:law_monarchy
 		OR = {
 			AND = { exists = c:ABU c:ABU = ROOT }
+			AND = { exists = c:ARB c:ARB = ROOT }
 		}
 	}
 
@@ -750,6 +775,28 @@ RRK_gov_princely_state_muslim = {
 	}
 }
 
+RRK_gov_nawabate = {
+	transfer_of_power = hereditary
+
+	male_ruler = "RULER_TITLE_NAWAB"
+	female_ruler = "RULER_TITLE_BEGUM"
+	
+	male_heir = "RULER_TITLE_NAWABZADA"
+	female_heir = "RULER_TITLE_NAWABZADI"
+	
+	possible = {
+		RRK_st_is_crowned_republic = yes # has_law = law_type:law_monarchy
+		AND = { exists = c:BHW c:BHW = ROOT }
+	}
+
+	on_government_type_change = {
+		change_to_hereditary = yes
+	}
+	on_post_government_type_change = {
+		post_change_to_hereditary = yes
+	}
+}
+
 RRK_gov_khanate = {
 	transfer_of_power = hereditary
 
@@ -766,7 +813,36 @@ RRK_gov_khanate = {
 			AND = { exists = c:KOK c:KOK = ROOT }
 			AND = { exists = c:KAZ c:KAZ = ROOT }
 			AND = { exists = c:KAL c:KAL = ROOT }
+			AND = { exists = c:MAI c:MAI = ROOT }
+			AND = { exists = c:KUN c:KUN = ROOT }
+			AND = { exists = c:MAZ c:MAZ = ROOT }
 		}
+	}
+
+	on_government_type_change = {
+		change_to_hereditary = yes
+	}
+	on_post_government_type_change = {
+		post_change_to_hereditary = yes
+	}
+}
+
+RRK_gov_ilkhanate = {
+	transfer_of_power = hereditary
+
+	male_ruler = "RULER_TITLE_ILKHAN"
+	female_ruler = "" # Empty on purpose
+	
+	male_heir = "RULER_TITLE_PRINCE"
+	female_heir = "RULER_TITLE_PRINCESS"
+	
+	possible = {
+		RRK_st_is_crowned_republic = yes # has_law = law_type:law_monarchy
+		is_country_type = unrecognized
+		NOT = {
+			has_technology_researched = nationalism
+		}
+		AND = { exists = c:LUR c:LUR = ROOT }
 	}
 
 	on_government_type_change = {
