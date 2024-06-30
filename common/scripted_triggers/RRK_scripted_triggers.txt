@@ -100,6 +100,13 @@ RRK_st_is_crown_subject = {
     }
 }
 
+# If false, blocks country from changing their head of gov through normal means
+RRK_st_can_change_head_of_gov = {
+    NOT = {
+        has_modifier = RRK_md_appointed_head_of_gov_country
+    }
+}
+
 # A blacklist for countries to stop them from being treated as or becoming Crowned Republics to avoid weird edge cases
 RRK_st_cannot_be_crowned_republic = {
     OR = {

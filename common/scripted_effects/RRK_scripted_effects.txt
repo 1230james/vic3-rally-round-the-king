@@ -55,7 +55,7 @@ RRK_se_update_head_of_gov_modifier = {
     # Add modifier with new value if needed
     if = {
         limit = {
-            RRK_st_is_presidential_monarchy = yes
+            RRK_st_is_constitutional_monarchy = yes
             has_variable = RRK_head_of_gov
             var:RRK_head_of_gov ?= {
                 is_in_government = yes

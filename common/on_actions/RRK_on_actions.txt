@@ -36,15 +36,21 @@ RRK_oa_on_reform = {
     effect = {
         if = {
             limit = {
-                RRK_st_is_parliamentary_monarchy = yes
+                RRK_st_can_change_head_of_gov = yes
             }
-            RRK_se_set_prime_minister = yes
-        }
-        else_if = {
-            limit = {
-                RRK_st_is_presidential_monarchy = yes
+            if = {
+                limit = {
+                    RRK_st_is_parliamentary_monarchy = yes
+                }
+                RRK_se_set_prime_minister = yes
+                RRK_se_update_head_of_gov_modifier = yes
             }
-            RRK_se_update_head_of_gov_modifier = yes
+            else_if = {
+                limit = {
+                    RRK_st_is_presidential_monarchy = yes
+                }
+                RRK_se_update_head_of_gov_modifier = yes
+            }
         }
     }
 }
@@ -62,24 +68,29 @@ RRK_oa_on_resign = {
         owner = {
             if = {
                 limit = {
-                    RRK_st_is_parliamentary_monarchy = yes
+                    var:RRK_head_of_gov ?= PREV
                 }
-                RRK_se_set_prime_minister = yes
-                RRK_se_update_head_of_gov_modifier = yes
-            }
-            else_if = {
-                limit = {
-                    RRK_st_is_presidential_monarchy = yes
+                if = {
+                    limit = {
+                        RRK_st_is_parliamentary_monarchy = yes
+                    }
+                    RRK_se_set_prime_minister = yes
+                    RRK_se_update_head_of_gov_modifier = yes
                 }
-                RRK_se_set_premier = yes
-                RRK_se_update_head_of_gov_modifier = yes
+                else_if = {
+                    limit = {
+                        RRK_st_is_presidential_monarchy = yes
+                    }
+                    RRK_se_set_premier = yes
+                    RRK_se_update_head_of_gov_modifier = yes
+                }
             }
         }
     }
 }
 on_ig_resigned_government = {
 	on_actions = {
-        RRK_oa_on_reform
+        RRK_oa_on_resign
     }
 }
 
@@ -90,17 +101,22 @@ RRK_oa_on_election = {
     effect = {
         if = {
             limit = {
-                RRK_st_is_presidential_monarchy = yes
+                RRK_st_can_change_head_of_gov = yes
             }
-            RRK_se_set_premier = yes
-            RRK_se_update_head_of_gov_modifier = yes
-        }
-        else_if = {
-            limit = {
-                RRK_st_is_parliamentary_monarchy = yes
+            if = {
+                limit = {
+                    RRK_st_is_presidential_monarchy = yes
+                }
+                RRK_se_set_premier = yes
+                RRK_se_update_head_of_gov_modifier = yes
             }
-            RRK_se_set_prime_minister = yes
-            RRK_se_update_head_of_gov_modifier = yes
+            else_if = {
+                limit = {
+                    RRK_st_is_parliamentary_monarchy = yes
+                }
+                RRK_se_set_prime_minister = yes
+                RRK_se_update_head_of_gov_modifier = yes
+            }
         }
     }
 }

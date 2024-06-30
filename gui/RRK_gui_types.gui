@@ -453,9 +453,15 @@ types RRK_types {
                     Not(GetVariableSystem.Exists('reform_government')),
                     GetScriptedGui('RRK_sg_is_parl_mon').IsShown(GuiScope.SetRoot(Country.MakeScope).End)
                 ),
-                And(
-                    IsDataModelEmpty(ReformGovernment.GetAllStagedInterestGroups),
-                    GetScriptedGui('RRK_sg_is_parl_mon').IsShown(GuiScope.SetRoot(Country.MakeScope).End)
+                Or(
+                    And(
+                        IsDataModelEmpty(ReformGovernment.GetAllStagedInterestGroups),
+                        GetScriptedGui('RRK_sg_is_parl_mon').IsShown(GuiScope.SetRoot(Country.MakeScope).End)
+                    ),
+                    And(
+                        GetScriptedGui('RRK_sg_cannot_change_head_of_gov').IsShown(GuiScope.SetRoot(Country.MakeScope).End)
+                        GetScriptedGui('RRK_sg_is_parl_mon').IsShown(GuiScope.SetRoot(Country.MakeScope).End)
+                    )
                 )
             ),
             GetScriptedGui('RRK_sg_is_pres_mon').IsShown(GuiScope.SetRoot(Country.MakeScope).End)
@@ -771,7 +777,10 @@ types RRK_types {
     type RRK_parl_mon_reform_ruler_box = hbox {
         visible = "[And(
             GetVariableSystem.Exists('reform_government'),
-            GetScriptedGui('RRK_sg_is_parl_mon').IsShown(GuiScope.SetRoot(Country.MakeScope).End)
+            And(
+                GetScriptedGui('RRK_sg_is_parl_mon').IsShown(GuiScope.SetRoot(Country.MakeScope).End),
+                Not( GetScriptedGui('RRK_sg_cannot_change_head_of_gov').IsShown(GuiScope.SetRoot(Country.MakeScope).End) )
+            )
         )]"
         
         block "RRK_ruler_box_datamodel" {
