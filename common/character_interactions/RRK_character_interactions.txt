@@ -42,6 +42,7 @@ RRK_grant_premiership = {
                 text = RRK_tt_char_has_no_voting
                 country_has_voting_franchise = no
             }
+            RRK_st_can_change_head_of_gov = yes
         }
         
         interest_group = {

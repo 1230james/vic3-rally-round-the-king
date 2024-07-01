@@ -220,12 +220,12 @@ arabic_clothes_trigger = {
 monarchy_clothes_trigger = {
 	exists = scope:character
 	scope:character = {
-		exists = home_country
+		exists = owner
 		OR = {
 	     	is_ruler = yes
 	     	is_heir = yes
 	     }
-     	home_country = {
+     	owner = {
      		OR = {
                 has_law = law_type:law_monarchy
                 RRK_st_is_crowned_republic = yes # RRK

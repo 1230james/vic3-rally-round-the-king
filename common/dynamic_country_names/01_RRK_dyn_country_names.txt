@@ -255,14 +255,48 @@ KAZ = {
 		adjective = dyn_c_kazakh_khanate_adj
 		
 		is_main_tag_only = yes
-		priority = 0
+		priority = 3
 		
 		trigger = {
 			exists = scope:actor
-			scope:actor = {
+			scope:actor ?= {
 				coa_monarchy_trigger = yes
 			}
 			coa_def_independent_trigger = yes
+		}
+	}
+	dynamic_country_name = { # Autonomy
+		name = dyn_c_kazakh_steppe_governorate_general
+		adjective = dyn_c_kazakh_steppe_governorate_general_adj
+		
+		is_main_tag_only = yes
+		priority = 5
+		
+		trigger = {
+			exists = scope:actor
+			AND = {
+				exists = c:RUS
+				c:RUS = {
+					coa_monarchy_trigger = yes
+					OR = {
+						has_diplomatic_pact = {
+							who = scope:actor
+							type = puppet
+							is_initiator = yes
+						}
+						has_diplomatic_pact = {
+							who = scope:actor
+							type = dominion
+							is_initiator = yes
+						}
+						has_diplomatic_pact = {
+							who = scope:actor
+							type = protectorate
+							is_initiator = yes
+						}
+					}
+				}
+			}
 		}
 	}
 	dynamic_country_name = { # Autonomy
@@ -270,7 +304,7 @@ KAZ = {
 		adjective = dyn_c_kazakh_alash_autonomy_adj
 		
 		is_main_tag_only = yes
-		priority = 0
+		priority = 5
 		
 		trigger = {
 			exists = scope:actor
@@ -501,6 +535,24 @@ HRE = {
 				NOT = {
 					has_law = law_type:law_council_republic
 				}
+			}
+		}
+	}
+}
+
+AFG = {
+	dynamic_country_name = {
+		name = dyn_c_durrani_empire
+		adjective = dyn_c_durrani_empire_adj
+
+		is_main_tag_only = yes
+		priority = 1
+
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				coa_monarchy_trigger = yes
+				was_formed_from = HER
 			}
 		}
 	}

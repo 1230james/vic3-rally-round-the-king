@@ -1,0 +1,5 @@
+﻿# Only used for tooltip; nothing actually cares about it existing
+country_rrk_cant_change_head_of_gov_bool = {
+    color = bad
+    boolean = yes
+}

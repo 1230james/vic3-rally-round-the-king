@@ -28,7 +28,11 @@ RRK_hidden_ev.2 = {
             name       = RRK_md_head_of_gov_in_gov
             multiplier = { # modifier:country_legitimacy_headofstate_add # The output of this doesn't update fast enough :/
                 if = {
-                    limit = { THIS = { has_law = law_type:law_presidential_republic } }
+                    limit = { has_law = law_type:law_monarchy }
+                    add   = 20
+                }
+                if = {
+                    limit = { has_law = law_type:law_presidential_republic }
                     add   = 10
                 }
                 if = {
@@ -45,6 +49,32 @@ RRK_hidden_ev.2 = {
                 }
             }
         }
+    }
+}
+
+# Add IG to government
+RRK_hidden_ev.3 = {
+    type = country_event
+    hidden = yes
+    
+    immediate = {
+        var:RRK_new_ruling_ig ?= {
+            if = {
+                limit = {
+                    has_party = yes
+                }
+                party ?= {
+                    every_member = { # set_ruling_party doesn't seem to work
+                        add_ruling_interest_group = yes
+                    }
+                }
+            }
+            else = {
+                add_ruling_interest_group = yes
+            }
+        }
+        remove_variable = RRK_new_ruling_ig
+        RRK_se_update_head_of_gov_modifier = yes
     }
 }
 
@@ -482,6 +512,393 @@ RRK_ev.5 = {
                 }
             }
             RRK_se_ig_apply_abolished_monarchy_disapproval = yes
+        }
+    }
+}
+
+# Appointing head of gov for subject
+RRK_ev.6 = {
+    type      = country_event
+    placement = scope:target_country.capital
+    
+    title  = RRK_ev_6_title
+    desc   = RRK_ev_6_desc
+    flavor = RRK_ev_6_flavor
+    
+    duration = 3
+
+    event_image = {
+        video = "southamerica_aristocrats"
+    }
+
+    on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+    icon = "gfx/interface/icons/event_icons/waving_flag.dds"
+    
+    immediate = {
+        # Grab target
+        random_subject_or_below = {
+            limit = {
+				has_variable = gubernatorial_candidate
+			}
+            save_scope_as = target_country
+        }
+        
+        # Prep IG scopes
+        # Option 1: our ruling IG
+        random_interest_group = {
+            limit = {
+                is_in_government = yes
+                trigger_if = { # If there's powerful IGs in government, select only from them
+                    limit = {
+                        any_interest_group = {
+                            is_in_government = yes
+                            is_powerful = yes
+                        }
+                    }
+                    is_powerful = yes
+                }
+            }
+            save_scope_as = our_ruling_ig
+        }
+        
+        scope:target_country = { 
+            # Option 2: their ruling IG
+            random_interest_group = {
+                limit = {
+                    is_in_government = yes
+                    trigger_if = {
+                        limit = {
+                            any_interest_group = {
+                                is_in_government = yes
+                                is_powerful = yes
+                            }
+                        }
+                        is_powerful = yes
+                    }
+                }
+                save_scope_as = target_ruling_ig
+            }
+            
+            # Option 3: their most popular IG
+            ordered_interest_group = {
+                limit = {
+                    is_marginal = no
+                }
+                position = 0
+                order_by = interest_group_population
+                
+                save_scope_as = target_popular_ig
+            }
+        }
+	}
+    
+    # Scopes defined:
+    # target_country
+    # our_ruling_ig
+    # target_ruling_ig
+    # target_popular_ig
+    
+    # Option 1: Change to our ruling IG
+    option = {
+        name = RRK_ev_6_a
+        default_option = yes
+        
+        trigger = {
+            scope:our_ruling_ig != scope:target_popular_ig
+            scope:our_ruling_ig != scope:target_ruling_ig
+        }
+        
+        scope:target_country = {
+            if = { # Failsafe to stop from defining unneeded variables
+                limit = {
+                    has_variable = RRK_head_of_gov
+                }
+                random_interest_group = {
+                    limit = {
+                        is_same_interest_group_type = scope:our_ruling_ig
+                    }
+                    save_scope_as = their_our_ruling_ig
+                }
+                custom_tooltip = {
+                    text = RRK_tt_appoint_our_ruling_ig
+                    set_variable = {
+                        name  = RRK_head_of_gov
+                        value = scope:their_our_ruling_ig
+                    }
+                }
+                add_liberty_desire = 5
+                add_modifier = {
+                    name  = RRK_md_appointed_head_of_gov_country
+                    years = 5
+                }
+                scope:their_our_ruling_ig = {
+                    if = { # Demarginalize if needed
+                        limit = {
+                            is_marginal = yes
+                        }
+                        set_local_variable = {
+                            name  = booster_mult
+                            value = {
+                                add      = define:NPolitics|MARGINAL_IG_THRESHOLD
+                                multiply = 1.25
+                                divide   = ig_clout
+                                multiply = 10
+                                round    = yes
+                                multiply = 10
+                            }
+                        }
+                        add_modifier = {
+                            name  = RRK_md_appointed_ig_booster
+                            years = 5
+                            multiplier = local_var:booster_mult
+                        }
+                    }
+                    add_modifier = {
+                        name  = RRK_md_appointed_head_of_gov_ig
+                        years = 5
+                    }
+                    if = { # Add to gov
+                        limit = {
+                            is_in_government = no
+                        }
+                        show_as_tooltip = {
+                            if = {
+                                limit = {
+                                    has_party = yes
+                                }
+                                party ?= {
+                                    every_member = {
+                                        add_ruling_interest_group = yes
+                                    }
+                                }
+                            }
+                            else = {
+                                add_ruling_interest_group = yes
+                            }
+                        }
+                        owner ?= {
+                            hidden_effect = {
+                                set_variable = {
+                                    name  = RRK_new_ruling_ig
+                                    value = PREV
+                                }
+                                trigger_event = {
+                                    id   = RRK_hidden_ev.3
+                                    days = 2
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            remove_variable = gubernatorial_candidate
+        }
+        scope:our_ruling_ig = {
+            add_modifier = {
+				name = supporting_our_man
+				months = short_modifier_time
+			}
+        }
+    }
+    
+    # Option 2a: Change to one of their ruling IGs
+    option = {
+        name = RRK_ev_6_b
+        
+        trigger = {
+            scope:target_country = {
+                var:RRK_head_of_gov != scope:target_ruling_ig
+            }
+            scope:our_ruling_ig = {
+                NOT = {
+                    is_same_interest_group_type = scope:target_ruling_ig
+                }
+            }
+        }
+        
+        scope:target_country = {
+            if = { # Failsafe to stop from defining unneeded variables
+                limit = {
+                    has_variable = RRK_head_of_gov
+                }
+                custom_tooltip = {
+                    text = RRK_tt_appoint_target_ruling_ig
+                    set_variable = {
+                        name  = RRK_head_of_gov
+                        value = scope:target_ruling_ig
+                    }
+                }
+                add_modifier = {
+                    name  = RRK_md_appointed_head_of_gov_country
+                    years = 5
+                }
+                scope:target_ruling_ig = {
+                    add_modifier = {
+                        name  = RRK_md_appointed_head_of_gov_ig
+                        years = 5
+                    }
+                }
+            }
+            remove_variable = gubernatorial_candidate
+        }
+        random_interest_group = {
+            limit = {
+                is_same_interest_group_type = scope:target_ruling_ig
+            }
+            add_modifier = {
+				name = supporting_our_man
+				months = short_modifier_time
+			}
+        }
+    }
+    
+    # Option 2b: Bolster their ruling IG
+    option = {
+        name = RRK_ev_6_c
+        
+        trigger = {
+            scope:target_country = {
+                var:RRK_head_of_gov = scope:target_ruling_ig
+            }
+        }
+        
+        scope:target_country = {
+            if = { # Failsafe to stop from defining unneeded variables
+                limit = {
+                    has_variable = RRK_head_of_gov
+                }
+                add_modifier = {
+                    name  = RRK_md_appointed_bolstered_head_of_gov
+                    years = 5
+                }
+                scope:target_ruling_ig = {
+                    add_modifier = {
+                        name  = RRK_md_appointed_head_of_gov_ig
+                        years = 5
+                    }
+                }
+            }
+            remove_variable = gubernatorial_candidate
+        }
+        random_interest_group = {
+            limit = {
+                is_same_interest_group_type = scope:target_ruling_ig
+            }
+            add_modifier = {
+				name = supporting_our_man
+				months = short_modifier_time
+			}
+        }
+    }
+    
+    # Option 3: Change to their popular IG
+    option = {
+        name = RRK_ev_6_d
+        
+        trigger = {
+            scope:target_country = {
+                var:RRK_head_of_gov != scope:target_popular_ig
+            }
+        }
+        
+        scope:target_country = {
+            if = { # Failsafe to stop from defining unneeded variables
+                limit = {
+                    has_variable = RRK_head_of_gov
+                }
+                custom_tooltip = {
+                    text = RRK_tt_appoint_popular_ig
+                    set_variable = {
+                        name  = RRK_head_of_gov
+                        value = scope:target_popular_ig
+                    }
+                }
+                add_liberty_desire = -5
+                add_modifier = {
+                    name  = RRK_md_appointed_bolstered_head_of_gov
+                    years = 5
+                }
+                scope:target_popular_ig = {
+                    if = { # Demarginalize if needed
+                        limit = {
+                            is_marginal = yes
+                        }
+                        set_local_variable = {
+                            name  = booster_mult
+                            value = {
+                                add      = define:NPolitics|MARGINAL_IG_THRESHOLD
+                                multiply = 1.25
+                                divide   = ig_clout
+                                multiply = 10
+                                round    = yes
+                                multiply = 10
+                            }
+                        }
+                        add_modifier = {
+                            name  = RRK_md_appointed_ig_booster
+                            years = 5
+                            multiplier = local_var:booster_mult
+                        }
+                    }
+                    add_modifier = {
+                        name  = RRK_md_appointed_head_of_gov_ig
+                        years = 5
+                    }
+                    if = { # Add to gov
+                        limit = {
+                            is_in_government = no
+                        }
+                        show_as_tooltip = {
+                            if = {
+                                limit = {
+                                    has_party = yes
+                                }
+                                party ?= {
+                                    every_member = {
+                                        add_ruling_interest_group = yes
+                                    }
+                                }
+                            }
+                            else = {
+                                add_ruling_interest_group = yes
+                            }
+                        }
+                        owner ?= {
+                            hidden_effect = {
+                                set_variable = {
+                                    name  = RRK_new_ruling_ig
+                                    value = PREV
+                                }
+                                trigger_event = {
+                                    id   = RRK_hidden_ev.3
+                                    days = 2
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            remove_variable = gubernatorial_candidate
+        }
+        random_interest_group = {
+            limit = {
+                is_same_interest_group_type = scope:target_popular_ig
+            }
+            add_modifier = {
+				name = supporting_our_man
+				months = short_modifier_time
+			}
+        }
+    }
+    
+    # Cancel
+    option = {
+        name = RRK_ev_6_e
+        
+        scope:target_country = {
+            remove_variable = gubernatorial_candidate
+            remove_variable = gubernatorial_candidate_timed
         }
     }
 }

@@ -53,8 +53,7 @@ coa_fascist_trigger = {
     OR = {
         AND = { # Vanilla
             coa_dictatorship_trigger = yes
-            any_scope_character = {
-                is_ruler = yes
+            ruler ?= {
                 OR = {
                     has_ideology = ideology:ideology_fascist
                     has_ideology = ideology:ideology_integralist
@@ -71,6 +70,28 @@ coa_fascist_trigger = {
                     has_ideology = ideology:ideology_fascist
                     has_ideology = ideology:ideology_integralist
                 }
+            }
+        }
+    }
+}
+
+coa_nihilist_trigger = {
+	has_law = law_type:law_state_atheism
+	NOR = {
+		has_law = law_type:law_theocracy
+		has_law = law_type:law_monarchy
+		has_law = law_type:law_council_republic
+	}
+    OR = {
+        ruler ?= { # Vanilla
+            has_ideology = ideology:ideology_atheist
+        }
+        AND = { # RRK
+            has_variable = RRK_head_of_gov
+            any_scope_character = {
+                interest_group.leader    ?= this
+                prev.var:RRK_head_of_gov ?= interest_group
+                has_ideology = ideology:ideology_atheist
             }
         }
     }
