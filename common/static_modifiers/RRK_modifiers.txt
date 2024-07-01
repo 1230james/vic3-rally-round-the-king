@@ -23,6 +23,14 @@ RRK_md_appointed_head_of_gov_country = {
     interest_group_in_government_attraction_mult = -0.1
 }
 
+RRK_md_appointed_bolstered_head_of_gov = {
+    icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds
+    country_rrk_cant_change_head_of_gov_bool = yes
+    country_legitimacy_base_add = 5
+    interest_group_in_government_approval_add = 1
+    interest_group_in_government_attraction_mult = 0.1
+}
+
 RRK_md_appointed_head_of_gov_ig = {
     icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds
     interest_group_pol_str_mult = 0.25

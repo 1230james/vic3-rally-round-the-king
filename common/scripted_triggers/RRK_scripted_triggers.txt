@@ -102,8 +102,9 @@ RRK_st_is_crown_subject = {
 
 # If false, blocks country from changing their head of gov through normal means
 RRK_st_can_change_head_of_gov = {
-    NOT = {
+    NOR = {
         has_modifier = RRK_md_appointed_head_of_gov_country
+        has_modifier = RRK_md_appointed_bolstered_head_of_gov
     }
 }
 

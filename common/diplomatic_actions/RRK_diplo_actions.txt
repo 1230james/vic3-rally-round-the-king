@@ -13,18 +13,16 @@
     
     potential = {
         scope:target_country = {
-            NOT = { has_variable = gubernatorial_candidate }
-            NOT = { is_diplomatic_play_enemy_of = root }
             RRK_st_is_constitutional_monarchy = yes # RRK
         }
     }
     
     possible = {
+        NOT = { is_diplomatic_play_enemy_of = root }
         custom_tooltip = {
-            text = "APPOINT_COLONIAL_GOVERNOR_ON_COOLDOWN"
+            text = RRK_tt_recently_appointed_head_of_gov
             scope:target_country = {
-                NOR = { 
-                    has_variable = gubernatorial_candidate 
+                NOT = {
                     has_variable = gubernatorial_candidate_timed
                 }
             }
