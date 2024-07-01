@@ -7,10 +7,13 @@
     RRK_gui_new_prime_minister:     "New $RRK_title_parl_mon$!"
     RRK_gui_toggle: "Toggle [concept_head_of_state] / [concept_RRK_head_of_gov]"
     
-    # Character Interactions
+    # Character + Subject Interactions
     RRK_grant_premiership: "Appoint as $concept_RRK_head_of_gov$"
     RRK_tt_premiership:    "[Character.GetCustom('GetUniversalFullName')] becomes the [concept_RRK_head_of_gov] in [Character.GetCountry.GetName]."
     RRK_tt_not_premier:    "[Character.GetCustom('GetUniversalFullName')] is not already the [concept_RRK_head_of_gov] in [Character.GetCountry.GetName]"
+    
+    RRK_da_appoint_colonial_head_of_gov:      "Appoint $concept_RRK_head_of_gov$"
+    RRK_da_appoint_colonial_head_of_gov_desc: "Changes the [concept_RRK_head_of_gov] of a [concept_subject]. The chosen candidate's [concept_clout] may be artificially boosted if they are [concept_marginalized]. [concept_liberty_desire] may change depending on the candidate chosen."
     
     # Journal Entries
     RRK_je_premier_election: "The Next $concept_RRK_head_of_gov$"
@@ -26,6 +29,15 @@
     RRK_md_head_of_gov_in_gov: "[concept_RRK_head_of_gov]'s [concept_interest_group] [concept_in_government]"
     RRK_md_monarchy_preserved: "Monarchy Preserved"
     RRK_md_monarchy_abolished: "Monarchy Abolished"
+    
+    RRK_md_appointed_ig_booster:            "Supported by Overlord"
+    RRK_md_appointed_head_of_gov_ig:        "Appointed as Head of Government"
+    RRK_md_appointed_head_of_gov_country:   "Political Intervention"
+    RRK_md_appointed_bolstered_head_of_gov: "Sanctioned Government"
+    
+    # Modifier Types
+    country_rrk_cant_change_head_of_gov_bool:      "Cannot change [concept_RRK_head_of_gov]"
+    country_rrk_cant_change_head_of_gov_bool_desc: "The [concept_RRK_head_of_gov] is unable to be changed by normal means."
     
     # Game Rules
     rule_RRK_gr_crowned_republic_name: "#yellow RRK#! | Names of Monarchy-Preserved Republics"
@@ -48,6 +60,13 @@
     
     RRK_tt_stay_as_president: "[GetPlayer.MakeScope.GetVariable('RRK_monarch').GetCharacter.GetCustom('GetUniversalFullName')] will stay to become the first leader of the [GetPlayer.GetAdjectiveNoFormatting] [GetPlayer.GetActiveLawFromGroup('lawgroup_governance_principles').GetNameNoFormatting]."
     RRK_tt_stay_as_ig_leader: "[GetPlayer.MakeScope.GetVariable('RRK_monarch').GetCharacter.GetCustom('GetUniversalFullName')] will stay as the [concept_leader] of the [GetPlayer.MakeScope.GetVariable('RRK_monarch').GetCharacter.GetInterestGroup.GetName]."
+    
+    RRK_tt_already_appointing_governor:    "[SCOPE.GetRootScope.GetCountry.GetName] is already appointing a new government in another one of their [Concept('concept_subject', '$concept_subjects$')]"
+    RRK_tt_recently_appointed_head_of_gov: "The current [concept_RRK_head_of_gov] in [SCOPE.sCountry('target_country').GetName] was recently appointed by colonial mandate"
+    
+    RRK_tt_appoint_our_ruling_ig:    "[SCOPE.gsIG('their_our_ruling_ig').GetLeader.GetCustom('GetUniversalFullName')] ([SCOPE.gsIG('their_our_ruling_ig').GetTextIcon]) becomes the [concept_RRK_head_of_gov] in [SCOPE.sCountry('target_country').GetName]"
+    RRK_tt_appoint_target_ruling_ig: "[SCOPE.gsIG('target_ruling_ig').GetLeader.GetCustom('GetUniversalFullName')] ([SCOPE.gsIG('target_ruling_ig').GetTextIcon]) becomes the [concept_RRK_head_of_gov] in [SCOPE.sCountry('target_country').GetName]"
+    RRK_tt_appoint_popular_ig:       "[SCOPE.gsIG('target_popular_ig').GetLeader.GetCustom('GetUniversalFullName')] ([SCOPE.gsIG('target_popular_ig').GetTextIcon]) becomes the [concept_RRK_head_of_gov] in [SCOPE.sCountry('target_country').GetName]"
     
     # Concepts
     concept_RRK_head_of_gov:      "Head of Government"
@@ -102,3 +121,12 @@
     RRK_ev_5_desc_1: "$RRK_ev_5_desc$ [ROOT.GetCountry.GetAdjectiveNoFormatting] citizens take to the streets as former [ROOT.GetCountry.GetRuler.GetPrimaryRoleTitle] [GetPlayer.MakeScope.GetVariable('RRK_monarch').GetCharacter.GetCustom('GetUniversalFullName')] is escorted out of the royal palace."
     RRK_ev_5_desc_2: "$RRK_ev_5_desc$ Life under the [ROOT.GetCountry.GetAdjectiveNoFormatting] [ROOT.GetCountry.GetActiveLawFromGroup('lawgroup_governance_principles').GetName] [ROOT.GetCountry.GetAdjectiveNoFormatting] begins as former [ROOT.GetCountry.GetRuler.GetPrimaryRoleTitle] [GetPlayer.MakeScope.GetVariable('RRK_monarch').GetCharacter.GetCustom('GetUniversalFullName')] is escorted out of the royal palace."
     RRK_ev_5_desc_3: "$RRK_ev_5_desc$ The people of [ROOT.GetCountry.GetNameNoFormatting] watch with bated breaths as former [ROOT.GetCountry.GetRuler.GetPrimaryRoleTitle] [GetPlayer.MakeScope.GetVariable('RRK_monarch').GetCharacter.GetCustom('GetUniversalFullName')] is escorted out of the royal palace."
+    
+    RRK_ev_6_title:  "Appointing a Head of Government"
+    RRK_ev_6_desc:   "$subject_interactions.1.d$"
+    RRK_ev_6_flavor: "$subject_interactions.1.f$"
+    RRK_ev_6_a:      "Someone who shares our own interests ought to do them good."
+    RRK_ev_6_b:      "Back someone new in the local government."
+    RRK_ev_6_c:      "We should bolster the current government to appease the locals."
+    RRK_ev_6_d:      "Find someone popular among the local populace."
+    RRK_ev_6_e:      "Actually, never mind."
