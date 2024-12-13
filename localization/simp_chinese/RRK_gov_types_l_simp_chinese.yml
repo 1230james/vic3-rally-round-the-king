@@ -1,10 +1,10 @@
 ﻿l_simp_chinese:
     # Templates
-    RRK_txt_crowned_republic: "Crowned Republic"
+    RRK_txt_crowned_republic: "王冠共和国"
     
-    RRK_txt_desc_start: "This is a [concept_government_type] where the [concept_country] functions as a republic ruled by an elected or nominated [concept_RRK_head_of_gov], but keeps the"
+    RRK_txt_desc_start: "这是一个[concept_government_type]，其中[concept_country]作为一个共和国运作，由选举或提名的[concept_RRK_head_of_gov]统治，但保留了"
     
-    RRK_txt_desc_end: "as a ceremonial [concept_head_of_state].\n\n$TRANSFER_OF_POWER_NAME_DESC$"
+    RRK_txt_desc_end: "一位礼仪性的[concept_head_of_state]。\n\n$TRANSFER_OF_POWER_NAME_DESC$"
     
     # Technical (nothing to translate)
     RRK_txt_crowned_republic_custom: "[AddLocalizationIf( EqualTo_string(AccessGameRules.AccessNamedGameRule('RRK_gr_crowned_republic_name').GetSetting.GetKey, 'RRK_gr_use_crowned_republic'), 'RRK_txt_crowned_republic')][AddLocalizationIf( EqualTo_string(AccessGameRules.AccessNamedGameRule('RRK_gr_crowned_republic_name').GetSetting.GetKey, 'RRK_gr_use_const_monarchy'), 'gov_constitutional_kingdom')]"
