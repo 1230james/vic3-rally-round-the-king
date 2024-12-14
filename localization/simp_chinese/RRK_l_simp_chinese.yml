@@ -1,32 +1,33 @@
 ﻿l_simp_chinese:
+    # Tested
     # Misc.
     RRK_txt_RRK_feature: "#italic 这是 #blue Rally Round the King#! 模组的功能。#!"
     
     # GUI Text
     RRK_gui_monarch_name_and_title: "#title [Character.GetPrimaryRoleTitle]#! #bold [Character.GetCustom('GetUniversalFullNameNoFormatting')]#!"
-    RRK_gui_new_prime_minister:     "新 $RRK_title_parl_mon$!"
+    RRK_gui_new_prime_minister:     "新$RRK_title_parl_mon$!"
     RRK_gui_toggle: "Toggle [concept_head_of_state] / [concept_RRK_head_of_gov]"
     
     # Character + Subject Interactions
-    RRK_grant_premiership: "A任命为 $concept_RRK_head_of_gov$"
-    RRK_tt_premiership:    "[Character.GetCustom('GetUniversalFullName')] 成为 [concept_RRK_head_of_gov] 于 [Character.GetCountry.GetName]."
-    RRK_tt_not_premier:    "[Character.GetCustom('GetUniversalFullName')] 尚不是 [concept_RRK_head_of_gov] 于 [Character.GetCountry.GetName]"
+    RRK_grant_premiership: "A任命为$concept_RRK_head_of_gov$"
+    RRK_tt_premiership:    "[Character.GetCustom('GetUniversalFullName')]成为[concept_RRK_head_of_gov]于[Character.GetCountry.GetName]。"
+    RRK_tt_not_premier:    "[Character.GetCustom('GetUniversalFullName')]尚不是[concept_RRK_head_of_gov]于[Character.GetCountry.GetName]"
     
-    RRK_da_appoint_colonial_head_of_gov:      "任命 $concept_RRK_head_of_gov$"
+    RRK_da_appoint_colonial_head_of_gov:      "任命$concept_RRK_head_of_gov$"
     RRK_da_appoint_colonial_head_of_gov_desc: "更改[concept_subject]的[concept_RRK_head_of_gov]。如果候选人是[concept_marginalized]，其[concept_clout]可能会被人为提升。根据选择的候选人，[concept_liberty_desire]可能会发生变化。"
     
     # Journal Entries
-    RRK_je_premier_election: "下一个 $concept_RRK_head_of_gov$"
+    RRK_je_premier_election: "下一个$concept_RRK_head_of_gov$"
     RRK_je_premier_election_reason: "随着[concept_election]的逼近，[Country.GetName]的人民们正热切关注谁将成为下一任[Concept('concept_RRK_head_of_gov', Country.GetCustom('RRK_cl_head_of_gov_title'))]。\n\n来自[JournalEntry.GetCountry.MakeScope.Var('RRK_prospective_premier').GetInterestGroup.GetName]的[JournalEntry.GetCountry.MakeScope.Var('RRK_prospective_premier').GetInterestGroup.GetLeader.GetCustom('GetUniversalFullName')]将根据最近的投票被任命。"
     
     # Decisions
     RRK_de_abolish_monarchy:      "废除君主制"
     RRK_de_abolish_monarchy_desc: "尽管[GetPlayer.GetRuler.GetPrimaryRoleTitle]目前满意以礼仪身份担任$concept_head_of_state$，但如果我们想要成为一个完全成熟的[GetPlayer.GetActiveLawFromGroup('lawgroup_governance_principles').GetNameNoFormatting]，我们可以废除君主制。[AddLocalizationIf(GetScriptedGui('RRK_sg_has_monarchy_preserved_modifier').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End), 'RRK_de_abolish_monarchy_warning')]"
     
-    RRK_de_abolish_monarchy_warning: "\n\n@warning! 决定保留后再废除君主制将让支持[GetLawType('law_monarchy').GetName]的[Concept('concept_interest_group', '$concept_interest_groups$')] #n 非常愤怒#!。"
+    RRK_de_abolish_monarchy_warning: "\n\n@warning! 出尔反尔地废除君主制将让支持[GetLawType('law_monarchy').GetName]的[Concept('concept_interest_group', '$concept_interest_groups$')] #n 非常愤怒#!。"
     
     # Modifiers
-    RRK_md_head_of_gov_in_gov: "[concept_RRK_head_of_gov]的[concept_interest_group] [concept_in_government]"
+    RRK_md_head_of_gov_in_gov: "[concept_RRK_head_of_gov]的[concept_interest_group][concept_in_government]"
     RRK_md_monarchy_preserved: "君主制已保留"
     RRK_md_monarchy_abolished: "君主制已废除"
     
@@ -40,26 +41,26 @@
     country_rrk_cant_change_head_of_gov_bool_desc: "[concept_RRK_head_of_gov]无法通过正常手段更改。"
     
     # Game Rules
-    rule_RRK_gr_crowned_republic_name: "#yellow RRK#! | 保留君主制的共和国之名称"
+    rule_RRK_gr_crowned_republic_name: "#yellow RRK#! | 保留君主共和国的名称"
     
     setting_RRK_gr_use_crowned_republic: "$RRK_txt_crowned_republic$"
-    setting_RRK_gr_use_crowned_republic_desc: "一个保留君主制的共和国将被称为 #v $RRK_txt_crowned_republic$#!。"
+    setting_RRK_gr_use_crowned_republic_desc: "一个保留君主制的共和国将被称为#v $RRK_txt_crowned_republic$#!。"
     
     setting_RRK_gr_use_const_monarchy: "$gov_constitutional_kingdom$"
-    setting_RRK_gr_use_const_monarchy_desc: "一个保留君主制的共和国将被称为 #v $gov_constitutional_kingdom$#!。"
+    setting_RRK_gr_use_const_monarchy_desc: "一个保留君主制的共和国将被称为#v $gov_constitutional_kingdom$#!。"
     
     # Tooltips
     RRK_tt_player_has_voting:  "[GetPlayer.GetNameNoFlag]拥有[Concept('concept_votes', '$concept_voting_rights$')]"
     RRK_tt_char_has_no_voting: "[Character.GetCountry.GetNameNoFlag] #bold 并未#! 拥有[Concept('concept_votes', '$concept_voting_rights$')]"
     
     RRK_tt_monarchy_preserved:     "君主制已保留"
-    RRK_tt_monarchy_not_preserved: "君主制 #bold 未#! 保留"
+    RRK_tt_monarchy_not_preserved: "君主制#bold 未#!保留"
     
-    RRK_tt_save_monarchy:    "君主制将被 #v 保留#!，[GetPlayer.MakeScope.GetVariable('RRK_monarch').GetCharacter.GetCustom('GetUniversalFullName')]将成为礼仪性的[concept_head_of_state]。"
+    RRK_tt_save_monarchy:    "君主制将被#v 保留#!，[GetPlayer.MakeScope.GetVariable('RRK_monarch').GetCharacter.GetCustom('GetUniversalFullName')]将成为礼仪性的[concept_head_of_state]。"
     RRK_tt_abolish_monarchy: "君主制将被#v 废除#!"
     
-    RRK_tt_stay_as_president: "[GetPlayer.MakeScope.GetVariable('RRK_monarch').GetCharacter.GetCustom('GetUniversalFullName')] will stay to become the first leader of the [GetPlayer.GetAdjectiveNoFormatting] [GetPlayer.GetActiveLawFromGroup('lawgroup_governance_principles').GetNameNoFormatting]."
-    RRK_tt_stay_as_ig_leader: "[GetPlayer.MakeScope.GetVariable('RRK_monarch').GetCharacter.GetCustom('GetUniversalFullName')] will stay as the [concept_leader] of the [GetPlayer.MakeScope.GetVariable('RRK_monarch').GetCharacter.GetInterestGroup.GetName]."
+    RRK_tt_stay_as_president: "[GetPlayer.MakeScope.GetVariable('RRK_monarch').GetCharacter.GetCustom('GetUniversalFullName')]将继续担任[GetPlayer.GetAdjectiveNoFormatting][GetPlayer.GetActiveLawFromGroup('lawgroup_governance_principles').GetNameNoFormatting]的首任领导人。"
+    RRK_tt_stay_as_ig_leader: "[GetPlayer.MakeScope.GetVariable('RRK_monarch').GetCharacter.GetCustom('GetUniversalFullName')]将继续作为[GetPlayer.MakeScope.GetVariable('RRK_monarch').GetCharacter.GetInterestGroup.GetName]的[concept_leader]。"
     
     RRK_tt_already_appointing_governor:    "[SCOPE.GetRootScope.GetCountry.GetName]已在其另一个[Concept('concept_subject', '$concept_subjects$')]中任命新政府"
     RRK_tt_recently_appointed_head_of_gov: "[SCOPE.sCountry('target_country').GetName]当前的[concept_RRK_head_of_gov]最近由殖民地任务任命"
@@ -70,7 +71,7 @@
     
     # Concepts
     concept_RRK_head_of_gov:      "政府首脑"
-    concept_RRK_head_of_gov_desc: "在一些[Concept('concept_government_type', '$concept_government_types$')]中，[concept_head_of_state]并非[concept_country_possessive][concept_government]的 #italic 实际#! 领导人，而是由另一个[concept_character]担任。这样的角色并不拥有与[concept_head_of_state]相同的影响力，而是作为指示[concept_party]或[concept_interest_group]在政府中[concept_clout]的象征。$RRK_head_of_gov_conmon_desc$\n\n$RRK_txt_RRK_feature$"
+    concept_RRK_head_of_gov_desc: "在一些[Concept('concept_government_type', '$concept_government_types$')]中，[concept_head_of_state]并非[concept_country_possessive][concept_government]的#italic 实际#!领导人，而是由另一个[concept_character]担任。这样的角色并不拥有与[concept_head_of_state]相同的影响力，而是作为指示[concept_party]或[concept_interest_group]在政府中[concept_clout]的象征。$RRK_head_of_gov_conmon_desc$\n\n$RRK_txt_RRK_feature$"
     RRK_head_of_gov_conmon_desc:  "[AddLocalizationIf(GetScriptedGui('RRK_sg_is_parl_mon').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End), 'RRK_parl_mon_desc')][AddLocalizationIf(GetScriptedGui('RRK_sg_is_pres_mon').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End), 'RRK_pres_mon_desc')]"
     
     RRK_parl_mon_desc: "\n\n在拥有[GetPlayer.GetActiveLawFromGroup('lawgroup_governance_principles').GetLawType.GetName]和[GetPlayer.GetActiveLawFromGroup('lawgroup_distribution_of_power').GetLawType.GetName]的[GetPlayer.GetGovernment.GetName]中，[concept_government]通常由$RRK_title_parl_mon_player$领导，其通常是[concept_interest_group]中拥有最多[concept_clout]的[concept_leader]。\n\n[GetPlayer.GetAdjectiveNoFlag]的$concept_RRK_head_of_gov$是#yellow #tooltip:[GetPlayer.MakeScope.GetVariable('RRK_head_of_gov').GetInterestGroup.GetLeader.GetTooltipTag],DATA_CHARACTER_NAME_TOOLTIP,CharacterTooltip $RRK_title_parl_mon_player$ #!#![GetPlayer.MakeScope.GetVariable('RRK_head_of_gov').GetInterestGroup.GetLeader.GetCustom('GetUniversalFullName')]。"
@@ -88,8 +89,8 @@
     
     # Events
     RRK_ev_2_title:  "[ROOT.GetCountry.GetRuler.GetPrimaryRoleTitle]的命运"
-    RRK_ev_2_desc:   "随着[ROOT.GetCountry.GetNameNoFlag]成为[ROOT.GetCountry.GetActiveLawFromGroup('lawgroup_governance_principles').GetName]，君主制不再是我们政府的基础，一个不容忽视的问题浮出水面：[ROOT.GetCountry.GetRuler.GetPrimaryRoleTitle]要怎么办？"
-    RRK_ev_2_flavor: ""[ROOT.GetCountry.GetAdjectiveNoFormatting]的群众为了一个以人民为中心的政府已经奋斗了很久。我们不再需要[ROOT.GetCountry.GetRuler.GetPrimaryRoleTitle]他们代表的是已经不适应现代国家的旧体制。他们必须离开！"\n\n"[ROOT.GetCountry.GetRuler.GetPrimaryRoleTitle]和其家族多年掌控着国家事务，是国家认同与文化不可或缺的一部分，将人民团结在[ROOT.GetCountry.GetAdjectiveNoFormatting]的旗帜下。把他们赶走是荒谬的！""
+    RRK_ev_2_desc:   "随着[ROOT.GetCountry.GetNameNoFlag]改革为[ROOT.GetCountry.GetActiveLawFromGroup('lawgroup_governance_principles').GetName]，君主制不再是我们政府的基础，一个不容忽视的问题浮出水面：[ROOT.GetCountry.GetRuler.GetPrimaryRoleTitle]要怎么办？"
+    RRK_ev_2_flavor: ""[ROOT.GetCountry.GetAdjectiveNoFormatting]的群众为了一个以人民为中心的政府已经奋斗了很久。我们不再需要[ROOT.GetCountry.GetRuler.GetPrimaryRoleTitle]，因为他们代表的是已经不适应现代国家的旧体制。他们必须离开！"\n\n"[ROOT.GetCountry.GetRuler.GetPrimaryRoleTitle]和其家族多年掌控着国家事务，是国家认同与文化不可或缺的一部分，其将人民团结在[ROOT.GetCountry.GetAdjectiveNoFormatting]的旗帜下。把他们赶走是荒谬的！""
     RRK_ev_2_a:      "[ROOT.GetCountry.GetRuler.GetPrimaryRoleTitle]滚下台！"
     RRK_ev_2_b:      "愿[ROOT.GetCountry.GetRuler.GetPrimaryRoleTitle]长寿！"
     
@@ -104,7 +105,7 @@
     
     RRK_ev_4_desc:   "君主制正式被废除，结束了[ROOT.GetCountry.GetRuler.GetPrimaryRoleTitle]作为礼仪性$concept_head_of_state$的地位。"
     RRK_ev_4_desc_1: "$RRK_ev_4_desc$ [ROOT.GetCountry.GetAdjectiveNoFormatting]的公民们走上街头，前[ROOT.GetCountry.GetRuler.GetPrimaryRoleTitle][GetPlayer.MakeScope.GetVariable('RRK_monarch').GetCharacter.GetCustom('GetUniversalFullName')]和[GetPlayer.MakeScope.GetVariable('RRK_heir').GetCharacter.GetCustom('GetUniversalFullName')]被护送出皇宫。"
-    RRK_ev_4_desc_2: "$RRK_ev_4_desc$ 随着前 [ROOT.GetCountry.GetRuler.GetPrimaryRoleTitle] [GetPlayer.MakeScope.GetVariable('RRK_monarch').GetCharacter.GetCustom('GetUniversalFullName')]和[GetPlayer.MakeScope.GetVariable('RRK_heir').GetCharacter.GetCustom('GetUniversalFullName')]被护送出皇宫，[ROOT.GetCountry.GetNameNoFormatting]开启了新篇章。"
+    RRK_ev_4_desc_2: "$RRK_ev_4_desc$ 随着前[ROOT.GetCountry.GetRuler.GetPrimaryRoleTitle][GetPlayer.MakeScope.GetVariable('RRK_monarch').GetCharacter.GetCustom('GetUniversalFullName')]和[GetPlayer.MakeScope.GetVariable('RRK_heir').GetCharacter.GetCustom('GetUniversalFullName')]被护送出皇宫，[ROOT.GetCountry.GetNameNoFormatting]开启了新篇章。"
     RRK_ev_4_desc_3: "$RRK_ev_4_desc$ [ROOT.GetCountry.GetNameNoFormatting]人民屏息观看，前[ROOT.GetCountry.GetRuler.GetPrimaryRoleTitle][GetPlayer.MakeScope.GetVariable('RRK_monarch').GetCharacter.GetCustom('GetUniversalFullName')]和[GetPlayer.MakeScope.GetVariable('RRK_heir').GetCharacter.GetCustom('GetUniversalFullName')]被护送出皇宫。"
     
     RRK_ev_4_flavor_1: ""你听说了吗？他们正在废除君主制并强迫[ROOT.GetCountry.GetRuler.GetPrimaryRoleTitle]退位。[ROOT.GetCountry.GetNameNoFormatting]将成为真正的[ROOT.GetCountry.GetActiveLawFromGroup('lawgroup_governance_principles').GetNameNoFormatting]！"\n\n"早该如此了！[GetPlayer.MakeScope.GetVariable('RRK_monarch').GetCharacter.GetCustom('GetUniversalFullNameNoFormatting')]早就过时喽。再见，不送！""
