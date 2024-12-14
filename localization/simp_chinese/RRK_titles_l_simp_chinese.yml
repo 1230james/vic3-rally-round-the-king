@@ -1,7 +1,7 @@
 ﻿l_simp_chinese:
-    # Generic titles
+    # Generic titles PM按英国共识翻译为首相
     RRK_premier:        "$RULER_PREMIER$"
-    RRK_prime_minister: "Prime Minister"
+    RRK_prime_minister: "首相"
     RRK_chairman:       "$RULER_CHAIRMAN$"
     RRK_chairwoman:     "$RULER_CHAIRWOMAN$"
     
