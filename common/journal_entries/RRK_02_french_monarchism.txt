@@ -3,6 +3,10 @@
 
 	group = je_group_historical_content
 
+	modifiers_while_active = {
+		fra_republican_unrest
+	}
+
 	immediate = {
 		fra_set_divided_monarchist_variables = yes
 		random_law = {
@@ -101,10 +105,6 @@
 		}
 	}
 
-	modifiers_while_active = {
-		fra_republican_unrest
-	}
-
 	on_weekly_pulse = {
 		events = {
 			french_pretenders.5
@@ -113,7 +113,7 @@
 			if = {
 				limit = {
 					NOT = {
-						has_variable = fra_divided_monarchists_freeze #This variable stops iteration, and is granted by reaching 360 with one dynasty. It's reset when this JE is completed, or when je_cement_the_rightful_dynasty fails.
+						has_variable = fra_divided_monarchists_freeze #This variable stops iteration, and is granted by reaching 480 with one dynasty. It's reset when this JE is completed, or when je_cement_the_rightful_dynasty fails.
 					}
 				}
 				fra_weekly_pulse_legitimist_progress = yes #Calculates how much the Legitimists will get next month. Updates weekly, but is not added until the monthly.
@@ -133,9 +133,9 @@
                     }
 					scope:journal_entry = { 
 						OR = {
-							"scripted_bar_progress(divided_monarchists_orleanist_progress_bar)" >= 360
-							"scripted_bar_progress(divided_monarchists_legitimist_progress_bar)" >= 360
-							"scripted_bar_progress(divided_monarchists_bonapartist_progress_bar)" >= 360
+							"scripted_bar_progress(divided_monarchists_orleanist_progress_bar)" >= divided_monarchists_upper_bound
+							"scripted_bar_progress(divided_monarchists_legitimist_progress_bar)" >= divided_monarchists_upper_bound
+							"scripted_bar_progress(divided_monarchists_bonapartist_progress_bar)" >= divided_monarchists_upper_bound
 						}
 					}
 					NOT = {
@@ -213,23 +213,19 @@
 	}
 
 	fail = {
-		any_interest_group = {
-			is_marginal = no
-			law_stance = {
-				law = law_type:law_presidential_republic
-				value > neutral
-			}
-		}
-		capital = {
-			turmoil >= 0.25
+		any_political_movement = {
+			is_political_movement_type = movement_radical
+			is_insurrectionary = yes
 		}
 		OR = {
-			has_journal_entry = je_springtime_of_the_peoples
-			radical_fraction = {
-				value >= 0.25
-			}
 			any_civil_war = {
-				civil_war_progress > 0.75
+				is_civil_war_type = revolution
+				civil_war_progress >= 0.75
+			}
+			AND = {
+				capital = {
+					turmoil >= 0.25
+				}
 			}
 		}
 	}
