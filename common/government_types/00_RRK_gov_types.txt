@@ -1,5 +1,271 @@
 ﻿# This is gonna take a LOT of work...
 
+RRK_gov_princely_state_rawalate = {
+	transfer_of_power = hereditary
+
+	male_ruler = "RULER_TITLE_MAHARAWAL"
+	female_ruler = "RULER_TITLE_MAHARANI"
+	
+	male_heir = "RULER_TITLE_YUVARAJ"
+	female_heir = "RULER_TITLE_YUVARANI"
+	
+	possible = {
+		RRK_st_is_crowned_republic = yes
+		OR = {
+			AND = { exists = c:GBR is_subject_of = c:GBR }
+			AND = { exists = c:BIC is_subject_of = c:BIC }
+		}
+		exists = c:NAG 
+		c:NAG = ROOT
+	}
+
+	on_government_type_change = {
+		change_to_hereditary = yes
+	}
+	on_post_government_type_change = {
+		post_change_to_hereditary = yes
+	}
+}
+
+RRK_gov_princely_state_maharaja = {
+	transfer_of_power = hereditary
+	
+	male_ruler = "RULER_TITLE_MAHARAJA"
+	female_ruler = "RULER_TITLE_MAHARANI" 
+
+	male_heir = "RULER_TITLE_YUVARAJ"
+	female_heir = "RULER_TITLE_YUVARANI"
+	
+	possible = {
+		RRK_st_is_crowned_republic = yes
+		OR = {
+			AND = { exists = c:GBR is_subject_of = c:GBR }
+			AND = { exists = c:BIC is_subject_of = c:BIC }
+		}
+		OR = {
+			AND = { exists = c:NAG c:NAG = ROOT }
+			AND = { exists = c:MYS c:MYS = ROOT }
+			AND = { exists = c:GWA c:GWA = ROOT }
+			AND = { exists = c:BER c:BER = ROOT }
+			AND = { exists = c:MEW c:MEW = ROOT }
+			AND = { exists = c:JOD c:JOD = ROOT }
+			AND = { exists = c:JAI c:JAI = ROOT }
+			AND = { exists = c:PTA c:PTA = ROOT } # Maharaja-e Rajgan
+		}
+	}	
+
+	on_government_type_change = {
+		change_to_hereditary = yes
+	}
+	on_post_government_type_change = {
+		post_change_to_hereditary = yes
+	}
+}
+
+RRK_gov_princely_state_diwanate = {
+	transfer_of_power = hereditary
+	
+	male_ruler = "RULER_TITLE_DIWAN"
+	female_ruler = "RULER_TITLE_BEGUM" 
+
+	male_heir = "RULER_TITLE_WALI_AHAD"
+	female_heir = "RULER_TITLE_PRINCESS"
+	
+	possible = {
+		RRK_st_is_crowned_republic = yes
+		OR = {
+			AND = { exists = c:GBR is_subject_of = c:GBR }
+			AND = { exists = c:BIC is_subject_of = c:BIC }
+		}
+		OR = {
+			AND = { exists = c:PLP c:PLP = ROOT }
+		}
+	}	
+
+	on_government_type_change = {
+		change_to_hereditary = yes
+	}
+	on_post_government_type_change = {
+		post_change_to_hereditary = yes
+	}
+}
+
+RRK_gov_princely_state_khanate = {
+	transfer_of_power = hereditary
+
+	male_ruler = "RULER_TITLE_KHAN"
+	female_ruler = "RULER_TITLE_KHATUN"
+	
+	male_heir = "RULER_TITLE_PRINCE"
+	female_heir = "RULER_TITLE_PRINCESS"
+	
+	possible = {
+		RRK_st_is_crowned_republic = yes
+		OR = {
+			AND = { exists = c:GBR is_subject_of = c:GBR }
+			AND = { exists = c:BIC is_subject_of = c:BIC }
+		}
+		OR = {
+			AND = { exists = c:KAL c:KAL = ROOT }
+			AND = { exists = c:DIR c:DIR = ROOT }
+		}
+	}
+
+	on_government_type_change = {
+		change_to_hereditary = yes
+	}
+	on_post_government_type_change = {
+		post_change_to_hereditary = yes
+	}
+}
+
+RRK_gov_princely_state_nizamate = {
+	transfer_of_power = hereditary
+
+	male_ruler = "RULER_TITLE_NIZAM"
+	female_ruler = "RULER_TITLE_NAWAB_BEGUM"
+	
+	male_heir = "RULER_TITLE_WALI_AHAD"
+	female_heir = "RULER_TITLE_SHAHZADI"
+	
+	possible = {
+		RRK_st_is_crowned_republic = yes
+		OR = {
+			AND = { exists = c:GBR is_subject_of = c:GBR }
+			AND = { exists = c:BIC is_subject_of = c:BIC }
+		}
+		AND = { exists = c:HYD c:HYD = ROOT }
+	}
+
+	on_government_type_change = {
+		change_to_hereditary = yes
+	}
+	on_post_government_type_change = {
+		post_change_to_hereditary = yes
+	}
+}
+
+RRK_gov_princely_state_nawabate = {
+	transfer_of_power = hereditary
+
+	male_ruler = "RULER_TITLE_NAWAB"
+	female_ruler = "RULER_TITLE_NAWAB_BEGUM"
+	
+	male_heir = "RULER_TITLE_NAWABZADA"
+	female_heir = "RULER_TITLE_NAWABZADI"
+	
+	possible = {
+		RRK_st_is_crowned_republic = yes
+		OR = {
+			AND = { exists = c:GBR is_subject_of = c:GBR }
+			AND = { exists = c:BIC is_subject_of = c:BIC }
+		}
+		OR = {
+			AND = { exists = c:BHW c:BHW = ROOT }
+			AND = { exists = c:CAR c:CAR = ROOT }
+			AND = { exists = c:JUN c:JUN = ROOT }
+			AND = { exists = c:KHR c:KHR = ROOT }
+			AND = { exists = c:BGL c:BGL = ROOT }
+			AND = { exists = c:AWA c:AWA = ROOT }
+			AND = { exists = c:BHO c:BHO = ROOT }
+			AND = { exists = c:KNO c:KNO = ROOT }
+			AND = { exists = c:MAK c:MAK = ROOT }
+		}
+	}
+
+	on_government_type_change = {
+		change_to_hereditary = yes
+	}
+	on_post_government_type_change = {
+		post_change_to_hereditary = yes
+	}
+}
+
+RRK_gov_princely_state_maratha_raja = {
+	transfer_of_power = hereditary
+
+	male_ruler = "RULER_TITLE_RAJA_CHHATRAPATI"
+	female_ruler = "RULER_TITLE_RANI"
+	
+	male_heir = "RULER_TITLE_PRINCE"
+	female_heir = "RULER_TITLE_PRINCESS"
+	
+	possible = {
+		RRK_st_is_crowned_republic = yes
+		OR = {
+			AND = { exists = c:GBR is_subject_of = c:GBR }
+			AND = { exists = c:BIC is_subject_of = c:BIC }
+		}
+		OR = {
+			AND = { exists = c:SAT c:SAT = ROOT }
+			AND = { exists = c:KHP c:KHP = ROOT }
+		}
+		country_has_state_religion = rel:hindu
+	}
+
+	on_government_type_change = {
+		change_to_hereditary = yes
+	}
+	on_post_government_type_change = {
+		post_change_to_hereditary = yes
+	}
+}
+
+RRK_gov_princely_state_raja = {
+	transfer_of_power = hereditary
+
+	male_ruler = "RULER_TITLE_RAJA"
+	female_ruler = "RULER_TITLE_RANI"
+	
+	male_heir = "RULER_TITLE_PRINCE"
+	female_heir = "RULER_TITLE_PRINCESS"
+	
+	possible = {
+		RRK_st_is_crowned_republic = yes
+		OR = {
+			AND = { exists = c:GBR is_subject_of = c:GBR }
+			AND = { exists = c:BIC is_subject_of = c:BIC }
+		}
+		country_has_state_religion = rel:hindu
+	}
+
+	on_government_type_change = {
+		change_to_hereditary = yes
+	}
+	on_post_government_type_change = {
+		post_change_to_hereditary = yes
+	}
+}
+
+RRK_gov_princely_state_sultan = {
+	transfer_of_power = hereditary
+
+	male_ruler = "RULER_TITLE_SULTAN"
+	female_ruler = "RULER_TITLE_SULTANA"
+	
+	male_heir = "RULER_TITLE_PRINCE"
+	female_heir = "RULER_TITLE_PRINCESS"
+	
+	possible = {
+		RRK_st_is_crowned_republic = yes
+		OR = {
+			AND = { exists = c:GBR is_subject_of = c:GBR }
+			AND = { exists = c:BIC is_subject_of = c:BIC }
+		}
+		OR = {
+			country_has_state_religion = rel:sunni
+			country_has_state_religion = rel:shiite
+		}
+	}
+
+	on_government_type_change = {
+		change_to_hereditary = yes
+	}
+	on_post_government_type_change = {
+		post_change_to_hereditary = yes
+	}
+}
+
 RRK_gov_shogunate = {
 	transfer_of_power = hereditary
 	
@@ -72,6 +338,83 @@ RRK_gov_hawaiian_monarchy = {
 	}
 }
 
+RRK_gov_malikdom = {
+	transfer_of_power = hereditary
+	
+	male_ruler = "RULER_TITLE_MALIK"
+	female_ruler = "RULER_TITLE_MALIKA"
+
+	male_heir = "RULER_TITLE_PRINCE" # Empty on purpose
+	female_heir = "RULER_TITLE_PRINCESS" # Empty on purpose
+	
+	possible = {
+		RRK_st_is_crowned_republic = yes
+		OR = {
+			c:KAF ?= this
+			AND = {
+				c:AFG ?= this
+				was_formed_from = KAF		
+			}
+		}
+	}
+
+	on_government_type_change = {
+		change_to_hereditary = yes
+	}
+	on_post_government_type_change = {
+		post_change_to_hereditary = yes
+	}
+}
+
+RRK_gov_khalsa_state = {
+	transfer_of_power = hereditary
+	
+	male_ruler = "RULER_TITLE_MAHARAJA"
+	female_ruler = "RULER_TITLE_MAHARANI" 
+
+	male_heir = "RULER_TITLE_YUVARAJ"
+	female_heir = "RULER_TITLE_YUVARANI"
+	
+	possible = {
+		RRK_st_is_crowned_republic = yes
+		exists = c:PAN 
+		c:PAN = ROOT
+	}	
+
+	on_government_type_change = {
+		change_to_hereditary = yes
+	}
+	on_post_government_type_change = {
+		post_change_to_hereditary = yes
+	}
+}
+
+RRK_gov_maratha_rajya = {
+	transfer_of_power = hereditary
+
+	male_ruler = "RULER_TITLE_RAJA_CHHATRAPATI"
+	female_ruler = "RULER_TITLE_RANI"
+	
+	male_heir = "RULER_TITLE_PRINCE"
+	female_heir = "RULER_TITLE_PRINCESS"
+	
+	possible = {
+		RRK_st_is_crowned_republic = yes
+		OR = {
+			AND = { exists = c:SAT c:SAT = ROOT }
+			AND = { exists = c:KHP c:KHP = ROOT }
+		}
+		country_has_state_religion = rel:hindu
+	}
+
+	on_government_type_change = {
+		change_to_hereditary = yes
+	}
+	on_post_government_type_change = {
+		post_change_to_hereditary = yes
+	}
+}
+
 RRK_gov_maharaja = {
 	transfer_of_power = hereditary
 	
@@ -82,10 +425,64 @@ RRK_gov_maharaja = {
 	female_heir = "RULER_TITLE_YUVARANI"
 	
 	possible = {
-		RRK_st_is_crowned_republic = yes # has_law = law_type:law_monarchy
-		exists = c:PAN
-		c:PAN = ROOT
+		RRK_st_is_crowned_republic = yes
+		OR = {
+			AND = { exists = c:NAG c:NAG = ROOT }
+			AND = { exists = c:NEP c:NEP = ROOT }
+			AND = { exists = c:MYS c:MYS = ROOT }
+			AND = { exists = c:GWA c:GWA = ROOT }
+			AND = { exists = c:BER c:BER = ROOT }
+			AND = { exists = c:MEW c:MEW = ROOT }
+			AND = { exists = c:JOD c:JOD = ROOT }
+			AND = { exists = c:JAI c:JAI = ROOT }
+			AND = { exists = c:PTA c:PTA = ROOT } # Maharaja-e Rajgan
+		}
 	}	
+
+	on_government_type_change = {
+		change_to_hereditary = yes
+	}
+	on_post_government_type_change = {
+		post_change_to_hereditary = yes
+	}
+}
+
+RRK_gov_rawalate = {
+	transfer_of_power = hereditary
+
+	male_ruler = "RULER_TITLE_MAHARAWAL"
+	female_ruler = "RULER_TITLE_MAHARANI"
+	
+	male_heir = "RULER_TITLE_YUVARAJ"
+	female_heir = "RULER_TITLE_YUVARANI"
+	
+	possible = {
+		RRK_st_is_crowned_republic = yes
+		exists = c:JAS 
+		c:JAS = ROOT
+	}
+
+	on_government_type_change = {
+		change_to_hereditary = yes
+	}
+	on_post_government_type_change = {
+		post_change_to_hereditary = yes
+	}
+}
+
+RRK_gov_rajya = {
+	transfer_of_power = hereditary
+
+	male_ruler = "RULER_TITLE_RAJA"
+	female_ruler = "RULER_TITLE_RANI"
+	
+	male_heir = "RULER_TITLE_PRINCE"
+	female_heir = "RULER_TITLE_PRINCESS"
+	
+	possible = {
+		RRK_st_is_crowned_republic = yes
+		country_has_state_religion = rel:hindu
+	}
 
 	on_government_type_change = {
 		change_to_hereditary = yes
@@ -638,6 +1035,30 @@ RRK_gov_hm_gov = {
 	possible = {
 		RRK_st_is_crowned_republic = yes # has_law = law_type:law_monarchy
 		AND = { exists = c:GBR c:GBR = ROOT }
+		NOT = { has_global_variable = empire_of_great_britain }
+	}
+
+	on_government_type_change = {
+		change_to_hereditary = yes
+	}
+	on_post_government_type_change = {
+		post_change_to_hereditary = yes
+	}
+}
+
+RRK_gov_hm_gov_empire = {
+	transfer_of_power = hereditary
+
+	male_ruler = "RULER_TITLE_EMPEROR"
+	female_ruler = "RULER_TITLE_EMPRESS"
+	
+	male_heir = "RULER_TITLE_PRINCE"
+	female_heir = "RULER_TITLE_PRINCESS"
+	
+	possible = {
+		RRK_st_is_crowned_republic = yes
+		AND = { exists = c:GBR c:GBR = ROOT }
+		has_global_variable = empire_of_great_britain
 	}
 
 	on_government_type_change = {
@@ -720,73 +1141,98 @@ RRK_gov_fra_monarchy_legitimist = {
 	}
 }
 
-RRK_gov_princely_state_hindu = {
-	transfer_of_power = hereditary
-
-	male_ruler = "RULER_TITLE_RAJA"
-	female_ruler = "RULER_TITLE_RANI"
-	
-	male_heir = "RULER_TITLE_PRINCE"
-	female_heir = "RULER_TITLE_PRINCESS"
-	
-	possible = {
-		RRK_st_is_crowned_republic = yes # has_law = law_type:law_monarchy
-		OR = {
-			AND = { exists = c:GBR is_subject_of = c:GBR }
-			AND = { exists = c:BIC is_subject_of = c:BIC }
-		}
-		country_has_state_religion = rel:hindu
-	}
-
-	on_government_type_change = {
-		change_to_hereditary = yes
-	}
-	on_post_government_type_change = {
-		post_change_to_hereditary = yes
-	}
-}
-
-RRK_gov_princely_state_muslim = {
-	transfer_of_power = hereditary
-
-	male_ruler = "RULER_TITLE_SULTAN"
-	female_ruler = "RULER_TITLE_SULTANA"
-	
-	male_heir = "RULER_TITLE_PRINCE"
-	female_heir = "RULER_TITLE_PRINCESS"
-	
-	possible = {
-		RRK_st_is_crowned_republic = yes # has_law = law_type:law_monarchy
-		OR = {
-			AND = { exists = c:GBR is_subject_of = c:GBR }
-			AND = { exists = c:BIC is_subject_of = c:BIC }
-		}
-		OR = {
-			country_has_state_religion = rel:sunni
-			country_has_state_religion = rel:shiite
-		}
-	}
-
-	on_government_type_change = {
-		change_to_hereditary = yes
-	}
-	on_post_government_type_change = {
-		post_change_to_hereditary = yes
-	}
-}
-
 RRK_gov_nawabate = {
 	transfer_of_power = hereditary
 
 	male_ruler = "RULER_TITLE_NAWAB"
-	female_ruler = "RULER_TITLE_BEGUM"
+	female_ruler = "RULER_TITLE_NAWAB_BEGUM"
 	
 	male_heir = "RULER_TITLE_NAWABZADA"
 	female_heir = "RULER_TITLE_NAWABZADI"
 	
 	possible = {
-		RRK_st_is_crowned_republic = yes # has_law = law_type:law_monarchy
-		AND = { exists = c:BHW c:BHW = ROOT }
+		RRK_st_is_crowned_republic = yes
+		OR = {
+			AND = { exists = c:BHW c:BHW = ROOT }
+			AND = { exists = c:CAR c:CAR = ROOT }
+			AND = { exists = c:JUN c:JUN = ROOT }
+			AND = { exists = c:KHR c:KHR = ROOT }
+			AND = { exists = c:BGL c:BGL = ROOT }
+			AND = { exists = c:AWA c:AWA = ROOT }
+			AND = { exists = c:BHO c:BHO = ROOT }
+			AND = { exists = c:KNO c:KNO = ROOT }
+		}
+	}
+
+	on_government_type_change = {
+		change_to_hereditary = yes
+	}
+	on_post_government_type_change = {
+		post_change_to_hereditary = yes
+	}
+}
+
+RRK_gov_nizamate = {
+	transfer_of_power = hereditary
+
+	male_ruler = "RULER_TITLE_NIZAM"
+	female_ruler = "RULER_TITLE_NAWAB_BEGUM"
+	
+	male_heir = "RULER_TITLE_WALI_AHAD"
+	female_heir = "RULER_TITLE_SHAHZADI"
+	
+	possible = {
+		RRK_st_is_crowned_republic = yes
+		AND = { exists = c:HYD c:HYD = ROOT }
+	}
+
+	on_government_type_change = {
+		change_to_hereditary = yes
+	}
+	on_post_government_type_change = {
+		post_change_to_hereditary = yes
+	}
+}
+
+RRK_gov_diwanate = {
+	transfer_of_power = hereditary
+	
+	male_ruler = "RULER_TITLE_DIWAN"
+	female_ruler = "RULER_TITLE_BEGUM" 
+
+	male_heir = "RULER_TITLE_WALI_AHAD"
+	female_heir = "RULER_TITLE_PRINCESS"
+	
+	possible = {
+		RRK_st_is_crowned_republic = yes
+		OR = {
+			AND = { exists = c:PLP c:PLP = ROOT }
+		}
+	}	
+
+	on_government_type_change = {
+		change_to_hereditary = yes
+	}
+	on_post_government_type_change = {
+		post_change_to_hereditary = yes
+	}
+}
+
+RRK_gov_tibetan_kingdom = {
+	transfer_of_power = hereditary
+
+	male_ruler = "RULER_TITLE_GYALPO"
+	female_ruler = "RULER_TITLE_GYALMO"
+	
+	male_heir = "RULER_TITLE_GYALSRAS"
+	female_heir = "RULER_TITLE_GYALSMO"
+	
+	possible = {
+		RRK_st_is_crowned_republic = yes
+		OR = {
+			AND = { exists = c:TIB c:TIB = ROOT }
+			AND = { exists = c:LAD c:LAD = ROOT }
+		}
 	}
 
 	on_government_type_change = {
@@ -816,6 +1262,7 @@ RRK_gov_khanate = {
 			AND = { exists = c:MAI c:MAI = ROOT }
 			AND = { exists = c:KUN c:KUN = ROOT }
 			AND = { exists = c:MAZ c:MAZ = ROOT }
+			AND = { exists = c:DIR c:DIR = ROOT }
 		}
 	}
 
