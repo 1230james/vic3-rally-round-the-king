@@ -12,13 +12,14 @@ RRK_st_is_crowned_republic = {
         has_law = law_type:law_presidential_republic
         has_law = law_type:law_parliamentary_republic
         has_law = law_type:law_council_republic
+        has_law = law_type:law_corporate_state
     }
 }
 
 RRK_st_is_parliamentary_monarchy = {
     OR = {
         AND = {
-            RRK_st_is_crowned_republic = yes
+            RRK_st_monarchy_preserved = yes
             OR = {
                 has_law = law_type:law_parliamentary_republic
                 AND = { # Council Republic w/ voting except for SPS
@@ -38,9 +39,10 @@ RRK_st_is_parliamentary_monarchy = {
 }
 
 RRK_st_is_presidential_monarchy = {
-    RRK_st_is_crowned_republic = yes
+    RRK_st_monarchy_preserved = yes
     OR = {
         has_law = law_type:law_presidential_republic
+        has_law = law_type:law_corporate_state
         AND = { # Council Republic w/o voting or w/ SPS
             has_law = law_type:law_council_republic
             OR = {
@@ -103,8 +105,18 @@ RRK_st_is_crown_subject = {
 # If false, blocks country from changing their head of gov through normal means
 RRK_st_can_change_head_of_gov = {
     NOR = {
-        has_modifier = RRK_md_appointed_head_of_gov_country
-        has_modifier = RRK_md_appointed_bolstered_head_of_gov
+        trigger_if = {
+            limit = {
+                has_modifier = RRK_md_appointed_head_of_gov_country
+            }
+            has_modifier = RRK_md_appointed_head_of_gov_country
+        }
+        trigger_if = {
+            limit = {
+                has_modifier = RRK_md_appointed_bolstered_head_of_gov
+            }
+            has_modifier = RRK_md_appointed_bolstered_head_of_gov
+        }
     }
 }
 
