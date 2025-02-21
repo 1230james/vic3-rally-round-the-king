@@ -700,6 +700,10 @@ RRK_ev.6 = {
 				months = short_modifier_time
 			}
         }
+        
+        ai_chance = {
+            base  = 100
+        }
     }
     
     # Option 2a: Change to one of their ruling IGs
@@ -751,6 +755,16 @@ RRK_ev.6 = {
 				months = short_modifier_time
 			}
         }
+        
+        ai_chance = {
+            base  = 10
+            modifier = { # TODO
+                trigger = {
+                    always = no
+                }
+                add = 0
+            }
+        }
     }
     
     # Option 2b: Bolster their ruling IG
@@ -789,6 +803,10 @@ RRK_ev.6 = {
 				name = supporting_our_man
 				months = short_modifier_time
 			}
+        }
+        
+        ai_chance = {
+            base  = 0
         }
     }
     
@@ -890,6 +908,16 @@ RRK_ev.6 = {
 				months = short_modifier_time
 			}
         }
+        
+        ai_chance = {
+            base  = 10
+            modifier = { # TODO
+                trigger = {
+                    always = no
+                }
+                add = 0
+            }
+        }
     }
     
     # Cancel
@@ -899,6 +927,10 @@ RRK_ev.6 = {
         scope:target_country = {
             remove_variable = gubernatorial_candidate
             remove_variable = gubernatorial_candidate_timed
+        }
+        
+        ai_chance = {
+            base  = 0
         }
     }
 }

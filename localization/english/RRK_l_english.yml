@@ -15,6 +15,11 @@
     RRK_da_appoint_colonial_head_of_gov:      "Appoint $concept_RRK_head_of_gov$"
     RRK_da_appoint_colonial_head_of_gov_desc: "Changes the [concept_RRK_head_of_gov] of a [concept_subject]. The chosen candidate's [concept_clout] may be artificially boosted if they are [concept_marginalized]. [concept_liberty_desire] may change depending on the candidate chosen."
     
+    RRK_da_appoint_colonial_head_of_gov_action_notification_name: "[TARGET_COUNTRY.GetName] changes the $concept_RRK_head_of_gov$"
+    RRK_da_appoint_colonial_head_of_gov_action_notification_desc: "[INITIATOR_COUNTRY.GetName] has replaced the [concept_RRK_head_of_gov] of [TARGET_COUNTRY.GetName] with a new appointee"
+    RRK_da_appoint_colonial_head_of_gov_action_notification_third_party_name: "$rrk_da_appoint_colonial_head_of_gov_action_notification_name$"
+    RRK_da_appoint_colonial_head_of_gov_action_notification_third_party_desc: "$rrk_da_appoint_colonial_head_of_gov_action_notification_desc$"
+    
     # Journal Entries
     RRK_je_premier_election: "The Next $concept_RRK_head_of_gov$"
     RRK_je_premier_election_reason: "With the upcoming [concept_election], the people of [Country.GetName] eagerly watch and listen to see who the next [Concept('concept_RRK_head_of_gov', Country.GetCustom('RRK_cl_head_of_gov_title'))] will be.\n\n[JournalEntry.GetCountry.MakeScope.Var('RRK_prospective_premier').GetInterestGroup.GetLeader.GetCustom('GetUniversalFullName')] of the [JournalEntry.GetCountry.MakeScope.Var('RRK_prospective_premier').GetInterestGroup.GetName] will be the one appointed, based on the most recent polling."
