@@ -2,6 +2,8 @@
     # Misc.
     RRK_txt_RRK_feature: "#italic This is a feature of the #blue Rally Round the King#! mod.#!"
     
+    RRK_st_is_crowned_republic: "$TRIGGER_AND$" # This shows up in certain tooltips for some reason (e.g. in Divided Monarchst JE)
+    
     # GUI Text
     RRK_gui_monarch_name_and_title: "#title [Character.GetPrimaryRoleTitle]#! #bold [Character.GetCustom('GetUniversalFullNameNoFormatting')]#!"
     RRK_gui_new_prime_minister:     "New $RRK_title_parl_mon$!"
@@ -14,6 +16,11 @@
     
     RRK_da_appoint_colonial_head_of_gov:      "Appoint $concept_RRK_head_of_gov$"
     RRK_da_appoint_colonial_head_of_gov_desc: "Changes the [concept_RRK_head_of_gov] of a [concept_subject]. The chosen candidate's [concept_clout] may be artificially boosted if they are [concept_marginalized]. [concept_liberty_desire] may change depending on the candidate chosen."
+    
+    RRK_da_appoint_colonial_head_of_gov_action_notification_name: "[TARGET_COUNTRY.GetName] changes the $concept_RRK_head_of_gov$"
+    RRK_da_appoint_colonial_head_of_gov_action_notification_desc: "[INITIATOR_COUNTRY.GetName] has replaced the [concept_RRK_head_of_gov] of [TARGET_COUNTRY.GetName] with a new appointee"
+    RRK_da_appoint_colonial_head_of_gov_action_notification_third_party_name: "$rrk_da_appoint_colonial_head_of_gov_action_notification_name$"
+    RRK_da_appoint_colonial_head_of_gov_action_notification_third_party_desc: "$rrk_da_appoint_colonial_head_of_gov_action_notification_desc$"
     
     # Journal Entries
     RRK_je_premier_election: "The Next $concept_RRK_head_of_gov$"
