@@ -466,7 +466,7 @@ types RRK_types {
                         GetScriptedGui('RRK_sg_is_parl_mon').IsShown(GuiScope.SetRoot(Country.MakeScope).End)
                     ),
                     And(
-                        GetScriptedGui('RRK_sg_cannot_change_head_of_gov').IsShown(GuiScope.SetRoot(Country.MakeScope).End)
+                        GetScriptedGui('RRK_sg_cannot_change_head_of_gov').IsShown(GuiScope.SetRoot(Country.MakeScope).End),
                         GetScriptedGui('RRK_sg_is_parl_mon').IsShown(GuiScope.SetRoot(Country.MakeScope).End)
                     )
                 )
