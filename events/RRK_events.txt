@@ -114,45 +114,48 @@ RRK_ev.2 = {
         remove_variable = RRK_heir
         
         ai_chance = {
-            base = 1
+            base = 10
             modifier = {
-                add = 1
-                NOT = {
-                    any_interest_group = {
-                        prefers_law = {
-                            law = law_type:law_monarchy
-                            comparison_law = prev.active_law:lawgroup_governance_principles.type
+                add = 40
+                any_political_movement = {
+                    law_stance = {
+                        law    = law_type:law_monarchy
+                        value <= disapprove
+                    }
+                    OR = {
+                        is_insurrectionary = yes
+                        AND = {
+                            political_movement_radicalism >= define:NPolitics|RADICALISM_PROTESTING_THRESHOLD
+                            political_movement_support >= define:NPolitics|SUPPORT_SIGNIFICANT_THRESHOLD
                         }
-                        ig_approval < 0
-                        is_marginal = no
                     }
                 }
-            }
-            modifier = {
-                add = 5
-                NOT = {
-                    any_interest_group = {
-                        prefers_law = {
-                            law = law_type:law_monarchy
-                            comparison_law = prev.active_law:lawgroup_governance_principles.type
-                        }
-                        is_marginal = no
-                    }
-                }
-            }
-            modifier = {
-                add = 5
-                is_country_type = colonial
             }
             modifier = {
                 add = 10
+                any_interest_group = {
+                    NOT = {
+                        prefers_law = {
+                            law = law_type:law_monarchy
+                            comparison_law = prev.active_law:lawgroup_governance_principles.type
+                        }
+                    }
+                    is_powerful = yes
+                }
+            }
+            modifier = {
+                add = 10
+                is_country_type = colonial
+            }
+            modifier = {
+                add = 20
                 has_law = law_type:law_council_republic
                 NOT = {
                     c:WIN ?= THIS # Grenada time
                 }
             }
             modifier = { # how did we get here
-                add = 10
+                add = 20
                 c:USA ?= THIS
             }
         }
@@ -165,9 +168,25 @@ RRK_ev.2 = {
         remove_variable = RRK_heir
         
         ai_chance = {
-            base = 1
+            base = 10
             modifier = {
-                add = 5
+                add = 10
+                any_political_movement = {
+                    law_stance = {
+                        law    = law_type:law_monarchy
+                        value >= disapprove
+                    }
+                    OR = {
+                        is_insurrectionary = yes
+                        AND = {
+                            political_movement_radicalism >= define:NPolitics|RADICALISM_PROTESTING_THRESHOLD
+                            political_movement_support >= define:NPolitics|SUPPORT_SIGNIFICANT_THRESHOLD
+                        }
+                    }
+                }
+            }
+            modifier = {
+                add = 10
                 any_interest_group = {
                     prefers_law = {
                         law = law_type:law_monarchy
@@ -188,18 +207,18 @@ RRK_ev.2 = {
                 }
             }
             modifier = {
-                add = 10
+                add = 100
                 country_has_state_religion = rel:shinto
             }
             modifier = {
-                add = 10
+                add = 20
                 c:CHI ?= THIS
                 has_journal_entry = je_warlord_china
                 has_variable = china_warlord_explosion
-                var:china_warlord_explosion >= 3
+                var:china_warlord_explosion <= 2
             }
             modifier = { # god save the queen
-                add = 100
+                add = 500
                 c:GBR ?= THIS
             }
         }
@@ -233,7 +252,7 @@ RRK_ev.3 = {
         remove_variable = RRK_monarch
         
         ai_chance = {
-            base = 1
+            base = 10
             modifier = {
                 add = 1000
                 any_interest_group = {
@@ -241,43 +260,46 @@ RRK_ev.3 = {
                 }
             }
             modifier = {
-                add = 1
-                NOT = {
-                    any_interest_group = {
-                        prefers_law = {
-                            law = law_type:law_monarchy
-                            comparison_law = prev.active_law:lawgroup_governance_principles.type
+                add = 40
+                any_political_movement = {
+                    law_stance = {
+                        law    = law_type:law_monarchy
+                        value <= disapprove
+                    }
+                    OR = {
+                        is_insurrectionary = yes
+                        AND = {
+                            political_movement_radicalism >= define:NPolitics|RADICALISM_PROTESTING_THRESHOLD
+                            political_movement_support >= define:NPolitics|SUPPORT_SIGNIFICANT_THRESHOLD
                         }
-                        ig_approval < 0
-                        is_marginal = no
                     }
                 }
-            }
-            modifier = {
-                add = 5
-                NOT = {
-                    any_interest_group = {
-                        prefers_law = {
-                            law = law_type:law_monarchy
-                            comparison_law = prev.active_law:lawgroup_governance_principles.type
-                        }
-                        is_marginal = no
-                    }
-                }
-            }
-            modifier = {
-                add = 5
-                is_country_type = colonial
             }
             modifier = {
                 add = 10
+                any_interest_group = {
+                    NOT = {
+                        prefers_law = {
+                            law = law_type:law_monarchy
+                            comparison_law = prev.active_law:lawgroup_governance_principles.type
+                        }
+                    }
+                    is_powerful = yes
+                }
+            }
+            modifier = {
+                add = 10
+                is_country_type = colonial
+            }
+            modifier = {
+                add = 20
                 has_law = law_type:law_council_republic
                 NOT = {
                     c:WIN ?= THIS # Grenada time
                 }
             }
             modifier = { # how did we get here
-                add = 10
+                add = 20
                 c:USA ?= THIS
             }
         }
@@ -289,9 +311,25 @@ RRK_ev.3 = {
         remove_variable = RRK_monarch
         
         ai_chance = {
-            base = 1
+            base = 10
             modifier = {
-                add = 5
+                add = 10
+                any_political_movement = {
+                    law_stance = {
+                        law    = law_type:law_monarchy
+                        value >= disapprove
+                    }
+                    OR = {
+                        is_insurrectionary = yes
+                        AND = {
+                            political_movement_radicalism >= define:NPolitics|RADICALISM_PROTESTING_THRESHOLD
+                            political_movement_support >= define:NPolitics|SUPPORT_SIGNIFICANT_THRESHOLD
+                        }
+                    }
+                }
+            }
+            modifier = {
+                add = 10
                 any_interest_group = {
                     prefers_law = {
                         law = law_type:law_monarchy
@@ -312,14 +350,18 @@ RRK_ev.3 = {
                 }
             }
             modifier = {
-                add = 10
+                add = 100
+                country_has_state_religion = rel:shinto
+            }
+            modifier = {
+                add = 20
                 c:CHI ?= THIS
                 has_journal_entry = je_warlord_china
                 has_variable = china_warlord_explosion
-                var:china_warlord_explosion >= 3
+                var:china_warlord_explosion <= 2
             }
             modifier = { # god save the queen
-                add = 100
+                add = 500
                 c:GBR ?= THIS
             }
         }
