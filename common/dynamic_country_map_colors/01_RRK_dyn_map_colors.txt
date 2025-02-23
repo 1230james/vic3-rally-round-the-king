@@ -196,21 +196,6 @@ empire_france = {
 	}
 }
 
-republican_india = {
-	color = "orange_india"
-
-	possible = {
-		exists = c:BHT
-		THIS = c:BHT
-		OR = {
-			has_law = law_type:law_parliamentary_republic
-			has_law = law_type:law_presidential_republic
-			has_law = law_type:law_council_republic
-		}
-        RRK_st_is_crowned_republic = no # RRK
-	}
-}
-
 republican_hindustan = {
 	color = "hoi4_pakistan_blue"
 

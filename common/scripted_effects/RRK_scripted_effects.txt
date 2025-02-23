@@ -56,6 +56,9 @@ RRK_se_update_head_of_gov_modifier = {
     if = {
         limit = {
             RRK_st_is_constitutional_monarchy = yes
+            NOT = { # the king still rules
+                has_law = law_type:law_monarchy
+            }
             has_variable = RRK_head_of_gov
             var:RRK_head_of_gov ?= {
                 is_in_government = yes

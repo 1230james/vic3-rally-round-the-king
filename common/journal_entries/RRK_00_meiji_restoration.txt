@@ -18,8 +18,14 @@
             has_law = law_type:law_monarchy
             RRK_st_is_crowned_republic = yes
         }
+        NOT = { has_modifier = declared_bankruptcy }
 		ig:ig_landowners = {
 			is_in_government = no
+		}
+		OR = {
+			government_legitimacy >= 50
+			ig:ig_landowners = { is_marginal = yes }
+			has_revolution = yes						
 		}
 	}
 
@@ -29,17 +35,16 @@
 			value = 0
 		}
 	}
+
+	is_progressing = {
+		meiji_completion_trigger = yes
+	}
+
 	on_monthly_pulse = {
 		effect = {
 			if = {
 				limit = {
-					ig:ig_landowners = {
-						is_powerful = no
-						is_in_government = no
-					}
-					has_insurrectionary_interest_groups = no
-					is_at_war = no
-					owns_entire_state_region = STATE_KANTO
+					meiji_completion_trigger = yes
 				}
 				change_variable = {
 					name = shogunate_var
@@ -58,34 +63,66 @@
 					text = defeat_shogunate_civil_war_tt
 					scope:journal_entry = { is_goal_complete = yes }
 				}
-				scope:journal_entry = { is_goal_complete = yes }
+				AND = {
+					scope:journal_entry = { is_goal_complete = yes }
+					meiji_completion_trigger = yes
+				}	
 			}
 		}
 		trigger_else = {
 			custom_tooltip = je_meiji_restoration_goal
+			OR = {
+				custom_tooltip = defeat_shogunate_civil_war_tt
+				meiji_completion_trigger = yes	
+			}
 		}
-		ig:ig_landowners = {
-			is_powerful = no
-			is_in_government = no
-		}
-		has_insurrectionary_interest_groups = no
-		is_at_war = no
-		owns_entire_state_region = STATE_KANTO
 	}
 
 	on_complete = {
-		set_variable = meiji_restoration_complete
 		trigger_event = {
 			id = meiji.1
+		}
+		set_variable = meiji_restoration_complete
+		if = {
+			limit = { has_modifier = shogun_ig_forced_to_open_market }
+			remove_modifier = shogun_ig_forced_to_open_market
+		}
+		if = {
+			limit = { has_modifier = hokkaido_colonization_modifier }
+			remove_modifier = hokkaido_colonization_modifier
+		}	
+		s:STATE_SAKHALIN = {
+			add_claim = root
+		}
+	}
+	
+	on_fail = {
+		if = {
+			limit = { has_modifier = shogun_ig_forced_to_open_market }
+			remove_modifier = shogun_ig_forced_to_open_market
+		}
+		if = {
+			limit = { has_law = law_type:law_monarchy }		
+			add_modifier = {
+				name = honorable_restoration_failed
+				months = very_long_modifier_time
+				is_decaying = yes
+			}
 		}
 	}
 
 	fail = {
-		NOR = {
-			has_law = law_type:law_monarchy
-            custom_tooltip = {
-                text = RRK_tt_monarchy_not_preserved
-                RRK_st_monarchy_preserved = yes
+		OR = {
+			has_modifier = declared_bankruptcy
+			ig:ig_landowners = {
+				is_in_government = yes
+			}
+			NOR = {
+                has_law = law_type:law_monarchy
+                custom_tooltip = {
+                    text = RRK_tt_monarchy_not_preserved
+                    RRK_st_monarchy_preserved = yes
+                }
             }
 		}
 	}

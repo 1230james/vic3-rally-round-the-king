@@ -18,7 +18,7 @@ RRK_oa_on_monarchy_abolished = {
                 currently_enacting_law.type = {
                     is_same_law_group_as = law_type:law_monarchy
                 }
-                game_date > 1836.1.1 # Prevent weird behavior as a result of loading history when starting new game
+                has_game_started = yes # Prevent weird behavior as a result of loading history when starting new game
             }
             # Set preserve monarchy variable (used by other on action for monarchy check - putting here as sort of failsafe)
             set_variable = {
@@ -149,7 +149,7 @@ RRK_oa_on_law_activated = {
                 type = {
                     is_same_law_group_as = law_type:law_monarchy
                 }
-                game_date > 1836.1.1 # Prevent weird behavior as a result of loading history when starting new game
+                has_game_started = yes # Prevent weird behavior as a result of loading history when starting new game
             }
             # Monarchy passed
             if = {
@@ -197,10 +197,13 @@ RRK_oa_on_law_activated = {
                                 has_law = law_type:law_presidential_republic
                                 has_law = law_type:law_parliamentary_republic
                                 has_law = law_type:law_council_republic # Certified New Jewel Movement moment
+                                has_law = law_type:law_corporate_state
                             }
                             NOT = { # Abolish monarchy if it changed due to a coup
                                 has_variable = government_couped
                             }
+                            is_revolutionary = no # Revolutions by definition are abandoning the king
+                            is_secessionist  = no
                             RRK_st_cannot_be_crowned_republic = no # Not on blacklist
                         }
                         if = { # Ignore if we already chose to preserve the monarchy previously
@@ -225,7 +228,7 @@ RRK_oa_on_law_activated = {
                 type = {
                     is_same_law_group_as = law_type:law_universal_suffrage
                 }
-                game_date > 1836.1.1
+                has_game_started = yes
             }
             owner = {
                 # Set default head of gov if became conmon

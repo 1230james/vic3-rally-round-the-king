@@ -36,8 +36,11 @@ RRK_grant_premiership = {
         # Including this part just for player visibility
         owner ?= {
             # RRK_st_is_presidential_monarchy = yes
-            has_law = law_type:law_presidential_republic # Nicer tooltip
-            RRK_st_monarchy_preserved = yes
+            OR = { # Nicer tooltip + excluding SPS council republics
+                has_law = law_type:law_presidential_republic
+                has_law = law_type:law_corporate_state
+                has_law = law_type:law_council_republic
+            }
             custom_tooltip = {
                 text = RRK_tt_char_has_no_voting
                 country_has_voting_franchise = no

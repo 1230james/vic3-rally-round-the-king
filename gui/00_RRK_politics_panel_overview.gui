@@ -40,7 +40,7 @@ types politics_panel_types
 				using = tooltip_below
 				blockoverride "show_hat" {}
 				blockoverride "highlight" {}
-                blockoverride "commander_order_icon" {}
+				blockoverride "commander_order_icon" {}
 			}
 			
 			vbox = {
@@ -146,8 +146,8 @@ types politics_panel_types
 			}
 		}
 	}
-    
-	### POLITICS OVERVIEW CONTENT
+	
+    ### POLITICS OVERVIEW CONTENT
 	type politics_panel_overview_content = hbox {
 		datacontext = "[AccessPlayer]"
 		layoutpolicy_horizontal = expanding
@@ -904,6 +904,8 @@ types politics_panel_types
 
 										### POLITICAL MOVEMENTS
 										vbox = {
+											name = "tutorial_highlight_political_movements"
+										
 											layoutpolicy_horizontal = expanding
 											layoutpolicy_vertical = preferred
 											
@@ -924,7 +926,23 @@ types politics_panel_types
 												margin = { 10 10 }
 
 												item = {
-													politics_panel_political_movement_item = {}
+													politics_panel_political_movement_item = {
+														blockoverride "button_size" {
+															size = { 325 60 }
+														}
+
+														blockoverride "button_size_revolutionary" {
+															size = { 325 110 }
+														}
+
+														blockoverride "revolution_progressbar_size" {
+															size = { 200 25 }
+														}
+
+														blockoverride "next_checkpoint_progress_text_visibility" {
+															visible = no
+														}
+													}
 												}
 											}
 											
@@ -1512,30 +1530,6 @@ types politics_panel_types
 											}
 										}
 									}
-								}
-
-								vbox = {
-									visible = "[And(Not(GetVariableSystem.Exists('politics_overview_exile_pool')), Not(IsDataModelEmpty(AccessPlayer.AccessSecessions)))]"
-									layoutpolicy_horizontal = expanding
-									layoutpolicy_vertical = preferred
-									using = default_fade_in_out
-									spacing = 10
-									margin_bottom = 10
-
-									default_header_clean_faded = {
-										layoutpolicy_horizontal = expanding
-										size = { 0 44 }
-										blockoverride "text" {
-											text = "SECESSIONS"
-										}
-									}
-
-									datamodel = "[AccessPlayer.AccessSecessions]"
-
-									item = {
-										politics_panel_secession = {}
-									}
-
 								}
 
 								### EXILE POOL

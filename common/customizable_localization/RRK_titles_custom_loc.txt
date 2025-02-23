@@ -67,6 +67,24 @@ RRK_cl_premier_title = {
             }
         }
     }
+    text = { # Fascist Italy - Benito Mussolini was historically the prime minister of Italy
+        localization_key = RRK_prime_minister
+        trigger = {
+            has_law = law_type:law_corporate_state
+            OR = {
+                this ?= c:ITA
+                was_formed_from = ITA
+            }
+        }
+    }
+    text = { # German Chancellor
+        localization_key = RULER_TITLE_CHANCELLOR
+        trigger = {
+            any_primary_culture = {
+                has_discrimination_trait = german_speaking
+            }
+        }
+    }
     text = {
         localization_key = RRK_premier
         trigger = {
@@ -97,6 +115,14 @@ RRK_cl_prime_minister_title = {
                 leader = {
                     is_female = yes
                 }
+            }
+        }
+    }
+    text = { # German Chancellor
+        localization_key = RULER_TITLE_CHANCELLOR
+        trigger = {
+            any_primary_culture = {
+                has_discrimination_trait = german_speaking
             }
         }
     }

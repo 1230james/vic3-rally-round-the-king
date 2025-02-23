@@ -10,6 +10,33 @@
     RRK_txt_crowned_republic_custom: "[AddLocalizationIf( EqualTo_string(AccessGameRules.AccessNamedGameRule('RRK_gr_crowned_republic_name').GetSetting.GetKey, 'RRK_gr_use_crowned_republic'), 'RRK_txt_crowned_republic')][AddLocalizationIf( EqualTo_string(AccessGameRules.AccessNamedGameRule('RRK_gr_crowned_republic_name').GetSetting.GetKey, 'RRK_gr_use_const_monarchy'), 'gov_constitutional_kingdom')]"
     
     # Gov Types
+    RRK_gov_princely_state_rawalate:      "$RRK_txt_crowned_republic_custom$"
+    RRK_gov_princely_state_rawalate_desc: "$RRK_txt_desc_start$ [Concept('concept_ruler','$RULER_TITLE_MAHARAWAL$')] $RRK_txt_desc_end$"
+
+    RRK_gov_princely_state_maharaja:      "$RRK_txt_crowned_republic_custom$"
+    RRK_gov_princely_state_maharaja_desc: "$RRK_txt_desc_start$ [Concept('concept_ruler','$RULER_TITLE_MAHARAJA$')] $RRK_txt_desc_end$"
+
+    RRK_gov_princely_state_diwanate:      "$RRK_txt_crowned_republic_custom$"
+    RRK_gov_princely_state_diwanate_desc: "$RRK_txt_desc_start$ [Concept('concept_ruler','$RULER_TITLE_DIWAN$')] $RRK_txt_desc_end$"
+
+    RRK_gov_princely_state_khanate:      "$RRK_txt_crowned_republic_custom$"
+    RRK_gov_princely_state_khanate_desc: "$RRK_txt_desc_start$ [Concept('concept_ruler','$RULER_TITLE_KHAN$')] $RRK_txt_desc_end$"
+
+    RRK_gov_princely_state_nizamate:      "$RRK_txt_crowned_republic_custom$"
+    RRK_gov_princely_state_nizamate_desc: "$RRK_txt_desc_start$ [Concept('concept_ruler','$RULER_TITLE_NIZAM$')] $RRK_txt_desc_end$"
+
+    RRK_gov_princely_state_nawabate:      "$RRK_txt_crowned_republic_custom$"
+    RRK_gov_princely_state_nawabate_desc: "$RRK_txt_desc_start$ [Concept('concept_ruler','$RULER_TITLE_NAWAB$')] $RRK_txt_desc_end$"
+
+    RRK_gov_princely_state_maratha_raja:      "$RRK_txt_crowned_republic_custom$"
+    RRK_gov_princely_state_maratha_raja_desc: "$RRK_txt_desc_start$ [Concept('concept_ruler','$RULER_TITLE_RAJA_CHHATRAPATI$')] $RRK_txt_desc_end$"
+
+    RRK_gov_princely_state_raja:      "$RRK_txt_crowned_republic_custom$"
+    RRK_gov_princely_state_raja_desc: "$RRK_txt_desc_start$ [Concept('concept_ruler','$RULER_TITLE_RAJA$')] $RRK_txt_desc_end$"
+
+    RRK_gov_princely_state_sultan:      "$RRK_txt_crowned_republic_custom$"
+    RRK_gov_princely_state_sultan_desc: "$RRK_txt_desc_start$ [Concept('concept_ruler','$RULER_TITLE_SULTAN$')] $RRK_txt_desc_end$"
+    
     RRK_gov_shogunate: "$RRK_txt_crowned_republic_custom$"
     RRK_gov_shogunate_desc: "$RRK_txt_desc_start$ [Concept('concept_ruler','$RULER_TITLE_SHOGUN$')] $RRK_txt_desc_end$"
     
@@ -19,8 +46,23 @@
     RRK_gov_hawaiian_monarchy: "$RRK_txt_crowned_republic_custom$" # No concept tooltip for Hawaii due to apostrophes in loc
     RRK_gov_hawaiian_monarchy_desc: "$RRK_txt_desc_start$ $RULER_TITLE_ALII_NUI$ $RRK_txt_desc_end$"
     
-    RRK_gov_maharaja: "$RRK_txt_crowned_republic_custom$"
+    RRK_gov_malikdom:      "$RRK_txt_crowned_republic_custom$"
+    RRK_gov_malikdom_desc: "$RRK_txt_desc_start$ [Concept('concept_ruler','$RULER_TITLE_MALIK$')] or [Concept('concept_ruler','$RULER_TITLE_MALIKA$')] $RRK_txt_desc_end$"
+
+    RRK_gov_khalsa_state:      "$RRK_txt_crowned_republic_custom$"
+    RRK_gov_khalsa_state_desc: "$RRK_txt_desc_start$ [Concept('concept_ruler','$RULER_TITLE_MAHARAJA$')] $RRK_txt_desc_end$"
+
+    RRK_gov_maratha_rajya:      "$RRK_txt_crowned_republic_custom$"
+    RRK_gov_maratha_rajya_desc: "$RRK_txt_desc_start$ [Concept('concept_ruler','$RULER_TITLE_RAJA_CHHATRAPATI$')] $RRK_txt_desc_end$"
+    
+    RRK_gov_maharaja:      "$RRK_txt_crowned_republic_custom$"
     RRK_gov_maharaja_desc: "$RRK_txt_desc_start$ [Concept('concept_ruler','$RULER_TITLE_MAHARAJA$')] $RRK_txt_desc_end$"
+    
+    RRK_gov_rawalate:      "$RRK_txt_crowned_republic_custom$"
+    RRK_gov_rawalate_desc: "$RRK_txt_desc_start$ [Concept('concept_ruler','$RULER_TITLE_MAHARAWAL$')] $RRK_txt_desc_end$"
+
+    RRK_gov_rajya:      "$RRK_txt_crowned_republic_custom$"
+    RRK_gov_rajya_desc: "$RRK_txt_desc_start$ [Concept('concept_ruler','$RULER_TITLE_RAJA$')] $RRK_txt_desc_end$"
     
     RRK_gov_tsardom: "$RRK_txt_crowned_republic_custom$"
     RRK_gov_tsardom_desc: "$RRK_txt_desc_start$ [Concept('concept_ruler','$RULER_TITLE_TSAR$')] or [Concept('concept_ruler','$RULER_TITLE_TSARINA$')] $RRK_txt_desc_end$"
@@ -53,7 +95,7 @@
     RRK_gov_sikkimese_monarchy_desc: "$RRK_txt_desc_start$ [Concept('concept_ruler','$RULER_TITLE_DHARMA_KING$')] or [Concept('concept_ruler','$RULER_TITLE_DHARMA_QUEEN$')] $RRK_txt_desc_end$"
     
     RRK_gov_bhutanese_monarchy: "$RRK_txt_crowned_republic_custom$"
-    RRK_gov_bhutanese_monarchy_desc: "$RRK_txt_desc_start$ [Concept('concept_ruler','$RULER_TITLE_DRAGON_KING$')] or [Concept('concept_ruler','$RULER_TITLE_DRAGON_KING$')] $RRK_txt_desc_end$"
+    RRK_gov_bhutanese_monarchy_desc: "$RRK_txt_desc_start$ [Concept('concept_ruler','$RULER_TITLE_DRAGON_KING$')] or [Concept('concept_ruler','$RULER_TITLE_DRAGON_QUEEN$')] $RRK_txt_desc_end$"
     
     RRK_gov_mughal_empire: "$RRK_txt_crowned_republic_custom$"
     RRK_gov_mughal_empire_desc: "$RRK_txt_desc_start$ [Concept('concept_ruler','$RULER_TITLE_PADISHAH$')] $RRK_txt_desc_end$"
@@ -85,8 +127,11 @@
     RRK_gov_confederation_of_the_rhine: "$RRK_txt_crowned_republic_custom$"
     RRK_gov_confederation_of_the_rhine_desc: "$RRK_txt_desc_start$ [Concept('concept_ruler','$RULER_TITLE_PRINCE_PRIMATE$')] or [Concept('concept_ruler','$RULER_TITLE_PRINCESS_PRIMATE$')] $RRK_txt_desc_end$"
     
-    RRK_gov_hm_gov: "$gov_hm_gov$" # Bri'ish
+    RRK_gov_hm_gov:      "$gov_hm_gov$" # Bri'ish
     RRK_gov_hm_gov_desc: "$gov_hm_gov_desc$"
+    
+    RRK_gov_hm_gov_empire:      "$gov_hm_gov$"
+    RRK_gov_hm_gov_empire_desc: "$gov_hm_gov_desc$"
     
     RRK_gov_fra_monarchy: "[GetPlayer.GetCustom('RRK_cl_france_crowned_republic_name')]" # ohonhon
     RRK_gov_fra_monarchy_desc: "$RRK_txt_desc_start$ [Concept('concept_ruler','$RULER_TITLE_KING$')] or [Concept('concept_ruler','$RULER_TITLE_QUEEN$')] $RRK_txt_desc_end$"
@@ -97,14 +142,17 @@
     RRK_gov_fra_monarchy_legitimist: "$RRK_gov_fra_monarchy$" # j'aime l'oignon quand il est bon
     RRK_gov_fra_monarchy_legitimist_desc: "$RRK_gov_fra_monarchy_desc$"
     
-    RRK_gov_princely_state_hindu: "$RRK_txt_crowned_republic_custom$"
-    RRK_gov_princely_state_hindu_desc: "$RRK_txt_desc_start$ [Concept('concept_ruler','$RULER_TITLE_RAJA$')] $RRK_txt_desc_end$"
-    
-    RRK_gov_princely_state_muslim: "$RRK_txt_crowned_republic_custom$"
-    RRK_gov_princely_state_muslim_desc: "$RRK_txt_desc_start$ [Concept('concept_ruler','$RULER_TITLE_SULTAN$')] $RRK_txt_desc_end$"
-    
     RRK_gov_nawabate: "$RRK_txt_crowned_republic_custom$"
     RRK_gov_nawabate_desc: "$RRK_txt_desc_start$ [Concept('concept_ruler','$RULER_TITLE_NAWAB$')] or [Concept('concept_ruler','$RULER_TITLE_BEGUM$')] $RRK_txt_desc_end$"
+    
+    RRK_gov_nizamate:      "$RRK_txt_crowned_republic_custom$"
+    RRK_gov_nizamate_desc: "$RRK_txt_desc_start$ [Concept('concept_ruler','$RULER_TITLE_NIZAM$')] $RRK_txt_desc_end$"
+
+    RRK_gov_diwanate:      "$RRK_txt_crowned_republic_custom$"
+    RRK_gov_diwanate_desc: "$RRK_txt_desc_start$ [Concept('concept_ruler','$RULER_TITLE_DIWAN$')] $RRK_txt_desc_end$"
+
+    RRK_gov_tibetan_kingdom:      "$RRK_txt_crowned_republic_custom$"
+    RRK_gov_tibetan_kingdom_desc: "$RRK_txt_desc_start$ [Concept('concept_ruler','$RULER_TITLE_GYALPO$')] $RRK_txt_desc_end$"
     
     RRK_gov_khanate: "$RRK_txt_crowned_republic_custom$"
     RRK_gov_khanate_desc: "$RRK_txt_desc_start$ [Concept('concept_ruler','$RULER_TITLE_KHAN$')] $RRK_txt_desc_end$"
