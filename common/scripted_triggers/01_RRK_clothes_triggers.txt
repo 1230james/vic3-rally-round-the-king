@@ -60,6 +60,40 @@ chinese_imperial_clothes_trigger = {
 	}
 }
 
+chinese_court_clothes_trigger = {
+	exists = scope:character
+	scope:character = {
+		NOT = {
+			AND = {
+				exists = home_country
+				is_ruler = yes
+				culture = {
+					has_discrimination_trait = tai
+					has_discrimination_trait = southeast_asian_heritage
+				}
+		     	home_country = {
+		     		OR = {
+			     		has_law = law_type:law_monarchy
+                        RRK_st_is_crowned_republic = yes # RRK
+			     		has_law = law_type:law_theocracy
+			     	}
+		     	}			
+			}
+		}
+		culture = {
+			NOT = { this = cu:kalmyk }
+			OR = {
+				has_discrimination_trait = sinosphere
+				has_discrimination_trait = han_chinese
+				has_discrimination_trait = tibetan_language
+				has_discrimination_trait = mongol_language
+				has_discrimination_trait = tai
+				has_discrimination_trait = hmong_mien_language
+			}
+		}
+	}	
+}
+
 arabic_fez_trigger = {
 	exists = scope:character
 	scope:character = {
