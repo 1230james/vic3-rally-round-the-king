@@ -799,13 +799,7 @@ RRK_ev.6 = {
         }
         
         ai_chance = {
-            base  = 10
-            modifier = { # TODO
-                trigger = {
-                    always = no
-                }
-                add = 0
-            }
+            base  = 25
         }
     }
     
@@ -953,11 +947,13 @@ RRK_ev.6 = {
         
         ai_chance = {
             base  = 10
-            modifier = { # TODO
+            modifier = {
                 trigger = {
-                    always = no
+                    scope:target_country = {
+                        liberty_desire >= 75
+                    }
                 }
-                add = 0
+                add = 90
             }
         }
     }
