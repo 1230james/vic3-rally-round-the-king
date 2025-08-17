@@ -55,7 +55,7 @@
     RRK_gov_maratha_rajya:      "$RRK_txt_crowned_republic_custom$"
     RRK_gov_maratha_rajya_desc: "$RRK_txt_desc_start$ [Concept('concept_ruler','$RULER_TITLE_RAJA_CHHATRAPATI$')] $RRK_txt_desc_end$"
     
-    RRK_gov_maharaja: "$RRK_txt_crowned_republic_custom$"
+    RRK_gov_maharaja:      "$RRK_txt_crowned_republic_custom$"
     RRK_gov_maharaja_desc: "$RRK_txt_desc_start$ [Concept('concept_ruler','$RULER_TITLE_MAHARAJA$')] $RRK_txt_desc_end$"
     
     RRK_gov_rawalate:      "$RRK_txt_crowned_republic_custom$"

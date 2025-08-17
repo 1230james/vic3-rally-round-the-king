@@ -20,8 +20,8 @@
     
     RRK_da_appoint_colonial_head_of_gov_action_notification_name: "[TARGET_COUNTRY.GetName] changes the $concept_RRK_head_of_gov$"
     RRK_da_appoint_colonial_head_of_gov_action_notification_desc: "[INITIATOR_COUNTRY.GetName] has replaced the [concept_RRK_head_of_gov] of [TARGET_COUNTRY.GetName] with a new appointee"
-    RRK_da_appoint_colonial_head_of_gov_action_notification_third_party_name: "$rrk_da_appoint_colonial_head_of_gov_action_notification_name$"
-    RRK_da_appoint_colonial_head_of_gov_action_notification_third_party_desc: "$rrk_da_appoint_colonial_head_of_gov_action_notification_desc$"
+    RRK_da_appoint_colonial_head_of_gov_action_notification_third_party_name: "$RRK_da_appoint_colonial_head_of_gov_action_notification_name$"
+    RRK_da_appoint_colonial_head_of_gov_action_notification_third_party_desc: "$RRK_da_appoint_colonial_head_of_gov_action_notification_desc$"
     
     # Journal Entries
     RRK_je_premier_election: "下一个$concept_RRK_head_of_gov$"
