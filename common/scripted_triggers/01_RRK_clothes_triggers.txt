@@ -5,12 +5,12 @@ japanese_imperial_clothes_trigger = {
 	scope:character = {
 		is_ruler = yes
 		exists = home_country
-     	home_country = {
-            OR = {
-                has_law = law_type:law_monarchy
-                RRK_st_is_crowned_republic = yes # RRK
-            }
-     	}
+		home_country = {
+			OR = {
+				has_law = law_type:law_monarchy
+				RRK_st_is_crowned_republic = yes # RRK
+			}
+		}
 		OR = {
 			AND = {
 				culture = {
@@ -42,12 +42,12 @@ chinese_imperial_clothes_trigger = {
 	scope:character = {
 		is_ruler = yes
 		exists = home_country
-     	home_country = {
-     		OR = {
-                has_law = law_type:law_monarchy
-                RRK_st_is_crowned_republic = yes # RRK
-            }
-     	}
+		home_country = {
+			OR = {
+				has_law = law_type:law_monarchy
+				RRK_st_is_crowned_republic = yes # RRK
+			}
+		}
 		OR = {
 			culture = {
 				has_discrimination_trait = han_chinese
@@ -74,10 +74,10 @@ chinese_court_clothes_trigger = {
 		     	home_country = {
 		     		OR = {
 			     		has_law = law_type:law_monarchy
-                        RRK_st_is_crowned_republic = yes # RRK
+						RRK_st_is_crowned_republic = yes # RRK
 			     		has_law = law_type:law_theocracy
 			     	}
-		     	}			
+		     	}
 			}
 		}
 		culture = {
@@ -91,7 +91,7 @@ chinese_court_clothes_trigger = {
 				has_discrimination_trait = hmong_mien_language
 			}
 		}
-	}	
+	}
 }
 
 arabic_fez_trigger = {
@@ -103,28 +103,28 @@ arabic_fez_trigger = {
 				OR = {
 					is_country_type = recognized
 					is_country_type = colonial
-				}	
+				}
 			}
 			home_country = {
 				top_overlord = {
 					OR = {
 						is_country_type = recognized
 						is_country_type = colonial
-					}	
+					}
 				}
 			}
 			home_country = {
 				exists = c:EGY
 				c:EGY = this
 				c:EGY = {
-                    OR = {
-                        has_law = law_type:law_monarchy
-                        RRK_st_is_crowned_republic = yes # RRK
-                    }
-                }
+					OR = {
+						has_law = law_type:law_monarchy
+						RRK_st_is_crowned_republic = yes # RRK
+					}
+				}
 			}
 		}
-	}       
+	}
 }
 
 arabic_military_fez_pop_trigger = {
@@ -136,41 +136,41 @@ arabic_military_fez_pop_trigger = {
 					exists = c:EGY
 					c:EGY = this
 					c:EGY = {
-                        OR = {
-                            has_law = law_type:law_monarchy
-                            RRK_st_is_crowned_republic = yes # RRK
-                        }
-                    }
+						OR = {
+							has_law = law_type:law_monarchy
+							RRK_st_is_crowned_republic = yes # RRK
+						}
+					}
 				}
 				home_country = {
 					exists = c:TUR
 					c:TUR = this
 					c:TUR = {
-                        OR = {
-                            has_law = law_type:law_monarchy
-                            RRK_st_is_crowned_republic = yes # RRK
-                        }
-                    }
+						OR = {
+							has_law = law_type:law_monarchy
+							RRK_st_is_crowned_republic = yes # RRK
+						}
+					}
 				}
 				home_country = {
 					exists = c:TUN
 					c:TUN = this
 					c:TUN = {
-                        OR = {
-                            has_law = law_type:law_monarchy
-                            RRK_st_is_crowned_republic = yes # RRK
-                        }
-                    }
+						OR = {
+							has_law = law_type:law_monarchy
+							RRK_st_is_crowned_republic = yes # RRK
+						}
+					}
 				}
 				home_country = {
 					exists = c:MOR
 					c:MOR = this
 					c:MOR = {
-                        OR = {
-                            has_law = law_type:law_monarchy
-                            RRK_st_is_crowned_republic = yes # RRK
-                        }
-                    }
+						OR = {
+							has_law = law_type:law_monarchy
+							RRK_st_is_crowned_republic = yes # RRK
+						}
+					}
 				}
 			}
 			OR = {
@@ -187,27 +187,27 @@ arabic_military_fez_pop_trigger = {
 							exists = c:TUR
 							c:TUR = this
 							c:TUR = {
-                                OR = {
-                                    has_law = law_type:law_monarchy
-                                    RRK_st_is_crowned_republic = yes # RRK
-                                }
-                            }
+								OR = {
+									has_law = law_type:law_monarchy
+									RRK_st_is_crowned_republic = yes # RRK
+								}
+							}
 						}
 						home_country = {
 							exists = c:EGY
 							c:EGY = this
 							c:EGY = {
-                                OR = {
-                                    has_law = law_type:law_monarchy
-                                    RRK_st_is_crowned_republic = yes # RRK
-                                }
-                            }
+								OR = {
+									has_law = law_type:law_monarchy
+									RRK_st_is_crowned_republic = yes # RRK
+								}
+							}
 						}
 					}
 				}
 			}
 		}
-	}       
+	}
 }
 
 arabic_clothes_trigger = {
@@ -229,26 +229,26 @@ arabic_clothes_trigger = {
 						exists = c:TUR
 						c:TUR = this
 						c:TUR = {
-                            OR = {
-                                has_law = law_type:law_monarchy
-                                RRK_st_is_crowned_republic = yes # RRK
-                            }
-                        }
+							OR = {
+								has_law = law_type:law_monarchy
+								RRK_st_is_crowned_republic = yes # RRK
+							}
+						}
 					}
 					home_country = {
 						exists = c:EGY
 						c:EGY = this
 						c:EGY = {
-                            OR = {
-                                has_law = law_type:law_monarchy
-                                RRK_st_is_crowned_republic = yes # RRK
-                            }
-                        }
+							OR = {
+								has_law = law_type:law_monarchy
+								RRK_st_is_crowned_republic = yes # RRK
+							}
+						}
 					}
 				}
 			}
 		}
-	}        
+	}
 }
 
 monarchy_clothes_trigger = {
@@ -259,12 +259,12 @@ monarchy_clothes_trigger = {
 	     	is_ruler = yes
 	     	is_heir = yes
 	     }
-     	owner = {
-     		OR = {
-                has_law = law_type:law_monarchy
-                RRK_st_is_crowned_republic = yes # RRK
-            }
-     	}
+		owner = {
+			OR = {
+				has_law = law_type:law_monarchy
+				RRK_st_is_crowned_republic = yes # RRK
+			}
+		}
 	}
 }
 
@@ -275,7 +275,7 @@ republic_clothes_trigger = {
 		is_ruler = yes
 		home_country = {
 			NOT = { has_law = law_type:law_monarchy }
-            RRK_st_is_crowned_republic = no # RRK
+			RRK_st_is_crowned_republic = no # RRK
 		}
 	}
 }
