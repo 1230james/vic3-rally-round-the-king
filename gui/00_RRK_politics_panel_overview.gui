@@ -15,13 +15,13 @@ types politics_panel_types
 		block "datacontext" {
 			datacontext = "[AccessPlayer.AccessRuler]"
 		}
-		
+
 		using = entry_bg_fancy
 
 		tooltipwidget = {
 			FancyTooltip_Character = {}
 		}
-        
+
         RRK_head_of_gov = {} # RRK
         RRK_head_of_gov_subject = {}
 		hbox = {
@@ -29,20 +29,20 @@ types politics_panel_types
                 GetScriptedGui('RRK_sg_is_not_conmon').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End),
                 Not( GetScriptedGui('RRK_sg_is_crown_subject').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End) )
             )]"
-            
+
 			layoutpolicy_horizontal = expanding
 			layoutpolicy_vertical = expanding
 			spacing = 5
 			margin_left = 5
 			margin_right = 10
-		
+
 			character_portrait_medium_torso = {
 				using = tooltip_below
 				blockoverride "show_hat" {}
 				blockoverride "highlight" {}
 				blockoverride "commander_order_icon" {}
 			}
-			
+
 			vbox = {
 				layoutpolicy_horizontal = expanding
 				layoutpolicy_vertical = preferred
@@ -52,11 +52,11 @@ types politics_panel_types
 					layoutpolicy_horizontal = expanding
 					layoutpolicy_vertical = preferred
 					margin_top = 10
-					
+
 					hbox = {
 						layoutpolicy_horizontal = expanding
 						layoutpolicy_vertical = preferred
-						
+
 						textbox = {
 							raw_text = "#title [Country.GetRuler.GetPrimaryRoleTitle]#!"
 							layoutpolicy_horizontal = expanding
@@ -66,7 +66,7 @@ types politics_panel_types
 						}
 						block "additional_info_top_right" {}
 					}
-					
+
 					textbox = {
 						raw_text = "#BOLD [Character.GetCustom('GetUniversalFullNameNoFormatting')]#!"
 						layoutpolicy_horizontal = expanding
@@ -77,13 +77,13 @@ types politics_panel_types
 						using = fontsize_large
 					}
 				}
-				
+
 				### ICONS
 				hbox = {
 					layoutpolicy_horizontal = expanding
 					layoutpolicy_vertical = preferred
 					spacing = 10
-					
+
 					### TRAITS
 					flowcontainer = {
 						datamodel = "[Character.AccessTraits]"
@@ -101,36 +101,36 @@ types politics_panel_types
 							}
 						}
 					}
-					
+
 					### IG ICON
 					character_ig_button = {
 						size = { 40 40 }
 						blockoverride "in_government_icon" {}
 					}
-					
+
 					### IDEOLOGY
 					icon = {
 						size = { 40 40 }
-						datacontext = "[Character.GetIdeology]"					
+						datacontext = "[Character.GetIdeology]"
 						texture = "[Ideology.GetTexture]"
 						tooltipwidget = {
 							FancyTooltip_Ideology = {}
 						}
 					}
-					
+
 					widget = {
 						layoutpolicy_horizontal = expanding
 						layoutpolicy_vertical = expanding
 					}
 				}
-			
+
 				### HEIR
 				hbox = {
 					layoutpolicy_horizontal = expanding
 					layoutpolicy_vertical = preferred
 					margin_bottom = 10
 					visible = "[Country.HasHeir]"
-					
+
 					character_portrait_small = {
 						datacontext = "[AccessPlayer.AccessHeir]"
 					}
@@ -146,19 +146,19 @@ types politics_panel_types
 			}
 		}
 	}
-	
+
     ### POLITICS OVERVIEW CONTENT
 	type politics_panel_overview_content = hbox {
 		datacontext = "[AccessPlayer]"
 		layoutpolicy_horizontal = expanding
 		layoutpolicy_vertical = expanding
-		
+
 		vbox = {
 			layoutpolicy_horizontal = expanding
 			layoutpolicy_vertical = expanding
 			spacing = 10
 			margin = { 10 10 }
-			
+
 			### TOP IG BAR
 			hbox = {
 				layoutpolicy_horizontal = expanding
@@ -174,7 +174,7 @@ types politics_panel_types
 					margin = { 3 3 }
 					margin_left = 0
 					layoutstretchfactor_horizontal = "[FixedPointToInt(Multiply_CFixedPoint(Country.GetTotalGovernmentClout, '(CFixedPoint)100'))]"
-					
+
 					background = {
 						using = dark_area
 						margin_left = -18
@@ -183,10 +183,10 @@ types politics_panel_types
 						using = simple_frame
 						margin_left = -18
 					}
-					
+
 					widget = {
 						size = { 50 40 }
-						
+
 						icon = {
 							size = { 52 52 }
 							texture = "gfx/interface/icons/generic_icons/in_government_icon.dds"
@@ -198,20 +198,20 @@ types politics_panel_types
 					}
 
 					datamodel = "[Country.AccessInterestGroupsInGovernment]"
-					
+
 					item = {
 						ig_item_bar = {}
 					}
 				}
-				
+
 				# opposition
 				hbox = {
 					visible = "[Not(IsDataModelEmpty(Country.AccessInterestGroupsInOpposition))]"
 					layoutpolicy_horizontal = expanding
 					layoutpolicy_vertical = preferred
 					margin = { 2 0 }
-					layoutstretchfactor_horizontal = "[FixedPointToInt(Multiply_CFixedPoint(Country.GetTotalOppositionClout, '(CFixedPoint)100'))]" 
-					
+					layoutstretchfactor_horizontal = "[FixedPointToInt(Multiply_CFixedPoint(Country.GetTotalOppositionClout, '(CFixedPoint)100'))]"
+
 					icon = {
 						size = { 40 40 }
 						texture = "gfx/interface/icons/generic_icons/in_opposition_icon.dds"
@@ -221,7 +221,7 @@ types politics_panel_types
 					}
 
 					datamodel = "[Country.AccessInterestGroupsInOpposition]"
-					
+
 					item = {
 						ig_item_bar = {
 							margin = { 0 5 }
@@ -237,7 +237,7 @@ types politics_panel_types
 						}
 					}
 				}
-				
+
 				# marginilized
 				icon = {
 					visible = "[Not(IsDataModelEmpty(Country.AccessMarginalInterestGroups))]"
@@ -248,22 +248,22 @@ types politics_panel_types
 					using = marginalized_tooltip_with_graph
 				}
 			}
-			
+
 			### BOTTOM
 			hbox = {
 				layoutpolicy_horizontal = expanding
 				layoutpolicy_vertical = expanding
 				spacing = 5
-				
+
 				### GOVERNMENT / RULER
 				vbox = {
 					layoutstretchfactor_horizontal = 1
 					layoutpolicy_horizontal = expanding
 					layoutpolicy_vertical = expanding
 					margin_bottom = 10
-					
+
 					using = entry_bg_fancy
-					
+
 					default_header_clean = {
 						blockoverride "header_mask" {
 							using = frame_small_mask_top
@@ -276,10 +276,10 @@ types politics_panel_types
 							raw_text = "#tooltippable #tooltip:[Country.GetGovernment.GetTooltipTag],GOVERNMENT_TYPE_TOOLTIP_DESC [Country.GetGovernment.GetName]#!#!"
 						}
 					}
-					
+
 					politics_panel_legitimacy_item = {
 						margin = { 15 5 }
-						
+
 						blockoverride "text" {
 							textbox = {
 								autoresize = yes
@@ -290,15 +290,15 @@ types politics_panel_types
 							}
 						}
 					}
-					
+
 					fullscreen_scrollarea = {
-						
+
 						blockoverride "scrollarea_content" {
 							vbox = {
 								layoutpolicy_horizontal = expanding
 								layoutpolicy_vertical = expanding
 								margin = { 4 0 }
-								
+
 								### RULER
                                 RRK_overview_head_of_gov_view = {} # RRK
 								character_with_background = {
@@ -313,7 +313,7 @@ types politics_panel_types
 									layoutpolicy_horizontal = expanding
 									layoutpolicy_vertical = expanding
 									minimumsize = { -1 340 }
-									
+
 									blockoverride "character_layout" {
 										position = { 0 0 }
 										size = { 70% 100% }
@@ -330,7 +330,7 @@ types politics_panel_types
                                     }
                                     using = default_fade_in_out
                                     # RRK End
-									
+
 									# ruler stats
 									flowcontainer = {
 										parentanchor = right|bottom
@@ -339,17 +339,17 @@ types politics_panel_types
 										margin_right = 10
 										direction = vertical
 										spacing = 5
-										
+
 										background = {
 											using = dark_area
 											alpha = 0.75
-											
+
 											modify_texture = {
 												texture = "gfx/interface/masks/fade_horizontal_left_full.dds"
 												blend_mode = alphamultiply
 											}
 										}
-									
+
 										### ROLE
 										ruler_stats_entry = {
 											tooltip = "CHARACTER_PRIMARY_ROLE_TOOLTIP"
@@ -445,21 +445,21 @@ types politics_panel_types
 												text = "CHARACTER_POPULARITY"
 											}
 										}
-										
+
 										widget = { size = { 5 5 }}
-										
+
 										### TRAITS
 										character_traits_no_label = {
 											parentanchor = right
 										}
 									}
 								}
-								
+
 								### ACTIVE IG GROUP TRAITS
 								vbox = {
 									layoutpolicy_horizontal = expanding
 									layoutpolicy_vertical = preferred
-									
+
 									default_header = {
 										layoutpolicy_horizontal = expanding
 										size = { 0 44 }
@@ -476,7 +476,7 @@ types politics_panel_types
 										item = {
 											widget = {
 												size = { 76 100 }
-												
+
 												icon = {
 													texture = "[InterestGroupAndTraitPair.GetTrait.GetTexture]"
 													enabled = "[InterestGroupAndTraitPair.GetTrait.IsEnabled(InterestGroupAndTraitPair.GetInterestGroup)]"
@@ -493,7 +493,7 @@ types politics_panel_types
 												ig_button = {
 													parentanchor = bottom|right
 													size = { 35 35 }
-													
+
 													datacontext = "[InterestGroupAndTraitPair.AccessInterestGroup]"
 													blockoverride "tooltip" {
 														tooltipwidget = {
@@ -522,15 +522,15 @@ types politics_panel_types
 						}
 					}
 				}
-				
+
 				### LOYALISTS / RADICALS
 				vbox = {
 					layoutstretchfactor_horizontal = 1
 					layoutpolicy_horizontal = expanding
 					layoutpolicy_vertical = expanding
-					
+
 					using = entry_bg_fancy
-					
+
 					default_header_clean = {
 						blockoverride "header_mask" {
 							using = frame_small_mask_top
@@ -543,19 +543,19 @@ types politics_panel_types
 							text = "LOYALISTS_AND_RADICALS"
 						}
 					}
-						
+
 					# top info
 					hbox = {
 						layoutpolicy_horizontal = expanding
 						layoutpolicy_vertical = preferred
 						spacing = 20
 						margin = { 15 10 }
-					
+
 						vbox = {
 							layoutpolicy_horizontal = expanding
 							layoutpolicy_vertical = preferred
 							spacing = 10
-						
+
 							# loyalists
 							hbox = {
 								layoutpolicy_horizontal = expanding
@@ -564,20 +564,20 @@ types politics_panel_types
 								using = loyalists_tooltip_with_graph
 								margin = { 10 10 }
 								margin_bottom = 5
-								
+
 								background = {
 									using = entry_bg_simple
 								}
-								
+
 								icon = {
 									texture = "gfx/interface/icons/generic_icons/population_loyalist.dds"
 									size = { 50 50 }
 								}
-								
+
 								vbox = {
 									layoutpolicy_horizontal = expanding
 									layoutpolicy_vertical = preferred
-								
+
 									textbox = {
 										layoutpolicy_horizontal = expanding
 										size = { 0 20 }
@@ -603,7 +603,7 @@ types politics_panel_types
 									}
 								}
 							}
-							
+
 							# radicals
 							hbox = {
 								layoutpolicy_horizontal = expanding
@@ -612,20 +612,20 @@ types politics_panel_types
 								using = radicals_tooltip_with_graph
 								margin = { 10 10 }
 								margin_bottom = 5
-								
+
 								background = {
 									using = entry_bg_simple
 								}
-								
+
 								icon = {
 									texture = "gfx/interface/icons/generic_icons/population_radical.dds"
 									size = { 50 50 }
 								}
-								
+
 								vbox = {
 									layoutpolicy_horizontal = expanding
 									layoutpolicy_vertical = preferred
-								
+
 									textbox = {
 										layoutpolicy_horizontal = expanding
 										size = { 0 20 }
@@ -652,7 +652,7 @@ types politics_panel_types
 								}
 							}
 						}
-					
+
 						widget = {
 							onmousehierarchyenter = "[PdxGuiWidget.FindChild('politics_chart_button').InterruptThenTriggerAnimation('hide_chart_button','show_chart_button')]"
 							onmousehierarchyleave = "[PdxGuiWidget.FindChild('politics_chart_button').InterruptThenTriggerAnimation('show_chart_button','hide_chart_button')]"
@@ -664,14 +664,14 @@ types politics_panel_types
 								size = { 100% 100% }
 								texture = "gfx/interface/backgrounds/round_frame_dec.dds"
 							}
-								
+
 							piechart = {
 								visible = "[Not(GetVariableSystem.Exists('politics_piecharts'))]"
 								size = { 75% 75% }
 								parentanchor = center
 								position = { 0 -1 }
 								datamodel = "[GetLoyaltyTypes]"
-							
+
 								item = {
 									pieslice = {
 										using = loyalty_slice_tooltip_with_graph
@@ -730,7 +730,7 @@ types politics_panel_types
 								# grid/list toggle
 								button_icon_round_toggle = {
 									size = { 29 29 }
-									parentanchor = right|vcenter	
+									parentanchor = right|vcenter
 
 									blockoverride "on_click" {
 										onclick = "[GetVariableSystem.Toggle('politics_piecharts')]"
@@ -757,13 +757,13 @@ types politics_panel_types
 							}
 						}
 					}
-					
-					### list of IGs with number of loyalists/radicals/neutrals 
+
+					### list of IGs with number of loyalists/radicals/neutrals
 					vbox = {
 						margin = { 5 5 }
 						layoutpolicy_horizontal = expanding
 						layoutpolicy_vertical = expanding
-						
+
 						fullscreen_scrollarea = {
 							blockoverride "scrollarea_content" {
 								vbox = {
@@ -771,7 +771,7 @@ types politics_panel_types
 									layoutpolicy_vertical = expanding
 
 									datamodel = "[Country.AccessAllInterestGroups]"
-									
+
 									item = {
 										ig_item_loyalists_and_radicals = {}
 									}
@@ -779,7 +779,7 @@ types politics_panel_types
 							}
 						}
 					}
-					
+
 					### trends graph
 					vbox = {
 						visible = no
@@ -787,7 +787,7 @@ types politics_panel_types
 						layoutpolicy_vertical = expanding
 						margin = { 15 10 }
 						spacing = 10
-						
+
 						v3_plotline_hbox = {
 							blockoverride "header" {
 								text = "LOYALISTS_AND_RADICALS"
@@ -835,7 +835,7 @@ types politics_panel_types
 						}
 					}
 				}
-				
+
 				vbox = {
 					layoutstretchfactor_horizontal = 2
 					layoutpolicy_horizontal = expanding
@@ -860,7 +860,7 @@ types politics_panel_types
 						alpha = 0.5
 						fittype = centercrop
 						color = { 0.5 0.2 0.2 1.0 }
-						
+
 						modify_texture = {
 							texture = "gfx/interface/masks/fade_vertical_center.dds"
 							spriteType = Corneredstretched
@@ -869,15 +869,58 @@ types politics_panel_types
 						}
 					}
 
+					### SORTING
+					hbox = {
+						visible = "[GetVariableSystem.Exists('politics_overview_exile_pool')]"
+						layoutpolicy_horizontal = expanding
+						layoutpolicy_vertical = preferred
+						margin = { 20 5 }
+
+						sort_button = {
+							layoutpolicy_horizontal = expanding
+							size = { -1 30 }
+							text = "NAME"
+							onclick = "[GetExilePool.Sort('name')]"
+						}
+						
+						sort_button = {
+							layoutpolicy_horizontal = expanding
+							size = { -1 30 }
+							text = "concept_interest_group"
+							onclick = "[GetExilePool.Sort('interest_group')]"
+						}
+
+						sort_button = {
+							layoutpolicy_horizontal = expanding
+							size = { -1 30 }
+							text = "concept_ideology"
+							onclick = "[GetExilePool.Sort('ideology')]"
+						}
+						
+						sort_button = {
+							layoutpolicy_horizontal = expanding
+							size = { -1 30 }
+							text = "concept_popularity"
+							onclick = "[GetExilePool.Sort('popularity')]"
+						}
+
+						sort_button = {
+							layoutpolicy_horizontal = expanding
+							size = { -1 30 }
+							text = "concept_acceptance"
+							onclick = "[GetExilePool.Sort('acceptance')]"
+						}
+					}
+
 					### SCROLLABLE INFO RIGHT
 					fullscreen_scrollarea = {
 						layoutpolicy_horizontal = expanding
 						layoutpolicy_vertical = expanding
-						
+
 						blockoverride "scrollarea_content" {
 							vbox = {
 								layoutpolicy_vertical = expanding
-								
+
 								hbox = {
 									visible = "[Not(GetVariableSystem.Exists('politics_overview_exile_pool'))]"
 									layoutpolicy_horizontal = expanding
@@ -889,7 +932,7 @@ types politics_panel_types
 										alpha = 0.5
 										fittype = centercrop
 										color = { 0.5 0.2 0.2 1.0 }
-										
+
 										modify_texture = {
 											texture = "gfx/interface/masks/fade_vertical_center.dds"
 											spriteType = Corneredstretched
@@ -905,10 +948,10 @@ types politics_panel_types
 										### POLITICAL MOVEMENTS
 										vbox = {
 											name = "tutorial_highlight_political_movements"
-										
+
 											layoutpolicy_horizontal = expanding
 											layoutpolicy_vertical = preferred
-											
+
 											default_header_clean_faded = {
 												layoutpolicy_horizontal = expanding
 												size = { 0 44 }
@@ -916,7 +959,7 @@ types politics_panel_types
 													text = "POLITICAL_MOVEMENTS"
 												}
 											}
-											
+
 											vbox = {
 												layoutpolicy_horizontal = expanding
 												layoutpolicy_vertical = preferred
@@ -945,14 +988,14 @@ types politics_panel_types
 													}
 												}
 											}
-											
+
 											empty_state_dynamic_width = {
 												layoutpolicy_vertical = expanding
 												size = { 0 50 }
 												visible = "[IsDataModelEmpty(AccessPlayer.AccessPoliticalMovements)]"
 												text = "NO_POLITICAL_MOVEMENTS"
 											}
-											
+
 											widget = {
 												visible = "[Not(IsDataModelEmpty(AccessPlayer.AccessPoliticalMovements))]"
 												layoutpolicy_horizontal = expanding
@@ -965,7 +1008,7 @@ types politics_panel_types
 											name = "tutorial_highlight_lobbies_list"
 											layoutpolicy_horizontal = expanding
 											layoutpolicy_vertical = preferred
-											
+
 											default_header_clean_faded = {
 												layoutpolicy_horizontal = expanding
 												size = { 0 44 }
@@ -973,7 +1016,7 @@ types politics_panel_types
 													text = "POLITICAL_LOBBIES"
 												}
 											}
-											
+
 											vbox = {
 												layoutpolicy_horizontal = expanding
 												layoutpolicy_vertical = preferred
@@ -989,7 +1032,7 @@ types politics_panel_types
 													}
 												}
 											}
-											
+
 											empty_state_dynamic_width = {
 												layoutpolicy_vertical = expanding
 												size = { 0 50 }
@@ -997,7 +1040,7 @@ types politics_panel_types
 												visible = "[IsDataModelEmpty(AccessPlayer.GetPoliticalLobbies)]"
 												text = "NO_POLITICAL_LOBBIES"
 											}
-											
+
 											widget = {
 												visible = "[Not(IsDataModelEmpty(AccessPlayer.GetPoliticalLobbies))]"
 												layoutpolicy_horizontal = expanding
@@ -1006,20 +1049,20 @@ types politics_panel_types
 										}
 									}
 
-									
-									
+
+
 									vertical_divider_full = {
 										size = { 2 0 }
 										layoutpolicy_vertical = expanding
 									}
-									
+
 									### AGITATORS
 									vbox = {
 										layoutpolicy_horizontal = preferred
 										layoutpolicy_vertical = preferred
 										minimumsize = { 400 -1 }
 										spacing = 10
-										
+
 										default_header_clean_faded = {
 											layoutpolicy_horizontal = expanding
 											size = { 0 44 }
@@ -1027,11 +1070,11 @@ types politics_panel_types
 												text = "AGITATORS"
 											}
 										}
-										
+
 										vbox = {
 											layoutpolicy_horizontal = expanding
 											margin = { 25 0 }
-											
+
 											textbox = {
 												visible = "[GreaterThan_int32(Country.GetEmptyAgitatorSlots, '(int32)0')]"
 												layoutpolicy_horizontal = expanding
@@ -1066,7 +1109,7 @@ types politics_panel_types
 												default_format = "#title"
 											}
 										}
-										
+
 										fixedgridbox = {
 											visible = "[Not(IsDataModelEmpty(PoliticsPanel.GetAgitatorSlots))]"
 											datamodel = "[PoliticsPanel.GetAgitatorSlots]"
@@ -1074,12 +1117,12 @@ types politics_panel_types
 											addcolumn = 120
 											addrow = 120
 											flipdirection = yes
-											
+
 											item = {
 												widget = {
 													size = { 120 120 }
 													datacontext = "[AgitatorSlot.GetAgitator]"
-													
+
 													character_portrait_large = {
 														visible = "[Character.IsValid]"
 														parentanchor = center
@@ -1087,7 +1130,7 @@ types politics_panel_types
 
 														blockoverride "show_hat" {}
 														blockoverride "highlight" {}
-														
+
 														### IG ICON
 														character_ig_button = {
 															parentanchor = bottom|left
@@ -1095,7 +1138,7 @@ types politics_panel_types
 															position = { 2 0 }
 															blockoverride "in_government_icon" {}
 														}
-														
+
 														### IDEOLOGY
 														icon = {
 															parentanchor = bottom|right
@@ -1109,7 +1152,7 @@ types politics_panel_types
 															}
 														}
 													}
-													
+
 													add_character_button = {
 														visible = "[Not( Character.IsValid )]"
 														size = { 100% 100% }
@@ -1133,7 +1176,7 @@ types politics_panel_types
 											size = { 120 120 }
 											visible = "[IsDataModelEmpty(PoliticsPanel.GetAgitatorSlots)]"
 											tooltip = "CANNOT_SUPPORT_AGITATORS_TOOLTIP"
-												
+
 											add_character_button = {
 												size = { 100% 100% }
 												parentanchor = center
@@ -1158,9 +1201,26 @@ types politics_panel_types
 												clicksound = "event:/SFX/DLC/1.3_ip1/UI/exile_pool_open"
 												tooltip = "GO_TO_BUTTON_EXILED_AGITATORS"
 												using = tooltip_above
+												align = left|nobaseline
+												margin_left = 13
+
+												textbox = {
+													background = {
+														using = blurry_dark_background
+													}
+
+													autoresize = yes
+													align = hcenter|nobaseline
+													alpha = "[TransparentIfZero_int32(GetExilePool.GetNumInviteableExiles)]"
+													raw_text = "#variable [GetExilePool.GetNumInviteableExiles]#! / [GetDataModelSize(GetExilePool.GetAllExiles)|v]"
+													parentanchor = right|vcenter
+													margin = { 15 15 }
+													tooltip = "TOOLTIP_NUM_INVITEABLE_EXILES"
+													using = tooltip_below
+												}
 											}
 										}
-																				
+
 										widget = {
 											layoutpolicy_horizontal = expanding
 											layoutpolicy_vertical = expanding
@@ -1184,7 +1244,7 @@ types politics_panel_types
 											text = "ELECTION"
 										}
 									}
-									
+
 									### does not have elections
 									textbox = {
 										visible = "[Not(AccessPlayer.HasElections)]"
@@ -1198,7 +1258,7 @@ types politics_panel_types
 										fontsize_min = 14
 										using = empty_state_text_properties
 									}
-									
+
 									### have elections
 									hbox = {
 										visible = "[AccessPlayer.HasElections]"
@@ -1206,7 +1266,7 @@ types politics_panel_types
 										layoutpolicy_vertical = preferred
 										margin = { 10 10 }
 										spacing = 10
-										
+
 										### is not in campaign period
 										textbox = {
 											visible = "[Not(AccessPlayer.IsInElectionCampaignPeriod)]"
@@ -1220,7 +1280,7 @@ types politics_panel_types
 											fontsize_min = 14
 											using = empty_state_text_properties
 										}
-										
+
 										### is in campaign period
 										vbox = {
 											visible = "[AccessPlayer.IsInElectionCampaignPeriod]"
@@ -1231,7 +1291,7 @@ types politics_panel_types
 												layoutpolicy_horizontal = expanding
 												size = { 0 45 }
 												using = default_button
-												
+
 												onclick = "[InformationPanelBar.OpenElectionPanel(AccessPlayer)]"
 												tooltip = "[AccessPlayer.GetElectionPollTooltip]"
 
@@ -1259,16 +1319,16 @@ types politics_panel_types
 													}
 												}
 											}
-											
+
 											hbox = {
 												layoutpolicy_horizontal = expanding
 												layoutpolicy_vertical = preferred
 												margin = { 10 10 }
-												
+
 												vbox = {
 													layoutpolicy_horizontal = expanding
 													layoutpolicy_vertical = preferred
-													
+
 													# total voters
 													textbox = {
 														layoutpolicy_horizontal = expanding
@@ -1284,9 +1344,9 @@ types politics_panel_types
 														using = fontsize_large
 														default_format = "#variable"
 													}
-													
+
 													widget = { size = { 10 15 }}
-													
+
 													# Politically Unaligned
 													textbox = {
 														layoutpolicy_horizontal = expanding
@@ -1306,10 +1366,10 @@ types politics_panel_types
 
 													expand = {}
 												}
-												
+
 												v3_plotline_hbox = {
 													minimumsize = { 0 200 }
-													
+
 													blockoverride "header" {
 														text = "VOTES_GRAPH_TITLE"
 													}
@@ -1336,7 +1396,7 @@ types politics_panel_types
 														text = "[Election.GetVotesGraphDateEnd]"
 													}
 													blockoverride "singleitem" {}
-												
+
 													blockoverride "tooltip" {
 														tooltipwidget = {
 															FancyTooltip_Party = {}
@@ -1368,7 +1428,7 @@ types politics_panel_types
 											elide = right
 											fontsize_min = 14
 											using = empty_state_text_properties
-										}										
+										}
 
 										# previous election results
 										vbox = {
@@ -1376,7 +1436,7 @@ types politics_panel_types
 											layoutpolicy_horizontal = expanding
 											layoutpolicy_vertical = preferred
 											margin = { 15 10 }
-											
+
 											background = {
 												using = entry_bg_simple
 											}
@@ -1389,7 +1449,7 @@ types politics_panel_types
 												align = hcenter|nobaseline
 												default_format = "#title"
 											}
-											
+
 											textbox = {
 												layoutpolicy_horizontal = expanding
 												size = { 0 25 }
@@ -1397,24 +1457,24 @@ types politics_panel_types
 												elide = right
 												align = hcenter|nobaseline
 											}
-										
+
 											vbox = {
 												layoutpolicy_horizontal = expanding
 												layoutpolicy_vertical = preferred
 												datamodel = "[AccessPlayer.AccessLastElectionParties]"
 												margin = { 0 5 }
-												
+
 												item = {
 													widget = {
 														layoutpolicy_horizontal = expanding
 														size = { 0 35 }
-														
+
 														background = {
 															texture = "gfx/interface/tooltip/tooltip_title_bg.dds"
 															color = "[Party.GetColor]"
 															alpha = 0.5
 															mirror = horizontal
-															
+
 															modify_texture = {
 																using = texture_velvet
 															}
@@ -1430,7 +1490,7 @@ types politics_panel_types
 															margin_left = 10
 															margin_right = 15
 															spacing = 5
-															
+
 															icon = {
 																texture = "[Party.GetIcon]"
 																size = { 30 30 }
@@ -1454,7 +1514,7 @@ types politics_panel_types
 													}
 												}
 											}
-											
+
 											vbox = {
 												layoutpolicy_horizontal = expanding
 												layoutpolicy_vertical = preferred
@@ -1471,7 +1531,7 @@ types politics_panel_types
 												widget = {
 													size = { 10 10 }
 												}
-												
+
 												hbox = {
 													layoutpolicy_horizontal = expanding
 													spacing = 10
@@ -1480,7 +1540,7 @@ types politics_panel_types
 													vbox = {
 														layoutpolicy_horizontal = expanding
 														tooltip = "POLITICALLY_INVOLVED_POPULATION_TOOLTIP"
-														
+
 														textbox = {
 															layoutpolicy_horizontal = expanding
 															size = { 0 25 }
@@ -1502,12 +1562,12 @@ types politics_panel_types
 														size = { 2 0 }
 														layoutpolicy_vertical = preferred
 													}
-													
+
 													# Politically Unaligned
 													vbox = {
 														layoutpolicy_horizontal = expanding
 														tooltip = "POLITICALLY_UNALIGNED_POPULATION_TOOLTIP"
-														
+
 														textbox = {
 															layoutpolicy_horizontal = expanding
 															size = { 0 25 }
@@ -1568,9 +1628,9 @@ types politics_panel_types
 											onclick = "[GetVariableSystem.Toggle('politics_overview_exile_pool_show_available')]"
 											checked = "[GetVariableSystem.Exists('politics_overview_exile_pool_show_available')]"
 											tooltip = "ONLY_SHOW_AVAILABLE_EXILED_AGITATORS_TOOLTIP"
-										}	
+										}
 									}
-									
+
 									vbox = {
 										layoutpolicy_horizontal = expanding
 										spacing = 10
@@ -1605,7 +1665,7 @@ types politics_panel_types
 						spacing = 25
 						layoutpolicy_horizontal = expanding
 						layoutpolicy_vertical = preferred
-						
+
 						button = {
 							size = { 400 45 }
 							using = default_button_primary
