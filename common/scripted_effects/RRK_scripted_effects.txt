@@ -131,11 +131,9 @@ RRK_se_ig_apply_preserved_monarch_approval = {
     }
     else_if = {
         limit = {
-            limit = {
-                law_stance = {
-                    law = law_type:law_monarchy
-                    value >= approve
-                }
+            law_stance = {
+                law = law_type:law_monarchy
+                value >= approve
             }
         }
         add_modifier = {
@@ -186,11 +184,9 @@ RRK_se_ig_apply_abolished_monarchy_disapproval = {
     }
     else_if = {
         limit = {
-            limit = {
-                law_stance = {
-                    law = law_type:law_monarchy
-                    value >= approve
-                }
+            law_stance = {
+                law = law_type:law_monarchy
+                value >= approve
             }
         }
         add_modifier = {

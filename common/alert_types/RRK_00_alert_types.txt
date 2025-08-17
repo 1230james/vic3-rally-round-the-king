@@ -40,16 +40,20 @@ can_abdicate_alert = {
 	valid = {
 		has_dlc_feature = voice_of_the_people_content
 		OR = {
-            has_law = law_type:law_monarchy
-            RRK_st_monarchy_preserved = yes
-        }
+			has_law = law_type:law_monarchy
+			RRK_st_monarchy_preserved = yes
+		}
 		exists = heir
 		ruler = {
 			is_immortal = no
 		}
 		owner = {
 			any_political_movement = {
-				movement_supports_enaction = yes
+				# movement_supports_enaction = yes
+				law_enactment_stance = { # [RRK] Fixing scope bug; logic copied from 00_scripted_triggers > movement_supports_enaction
+					law = owner.currently_enacting_law.type
+					value > neutral
+				}
 				is_insurrectionary = yes
 				civil_war ?= {
 					civil_war_progress >= 0.5
@@ -72,7 +76,7 @@ can_resign_alert = {
 		has_dlc_feature = voice_of_the_people_content
 		NOR = {
 			has_law = law_type:law_monarchy
-            custom_tooltip = {
+			custom_tooltip = {
 				text = RRK_tt_monarchy_not_preserved
 				RRK_st_monarchy_preserved = yes
 			}
@@ -83,7 +87,11 @@ can_resign_alert = {
 		}
 		owner = {
 			any_political_movement = {
-				movement_supports_enaction = yes
+				# movement_supports_enaction = yes
+				law_enactment_stance = { # [RRK] Fixing scope bug; logic copied from 00_scripted_triggers > movement_supports_enaction
+					law = owner.currently_enacting_law.type
+					value > neutral
+				}
 				is_insurrectionary = yes
 				civil_war ?= {
 					civil_war_progress >= 0.5
