@@ -161,7 +161,7 @@ coup.2 = {
 			}
 			add_modifier = {
 				name = modifier_unrivaled_in_government
-				months = long_modifier_time
+				days = long_modifier_time
 				is_decaying = yes
 			}
 		}
@@ -303,7 +303,7 @@ coup.2 = {
 			}
 			add_modifier = {
 				name = modifier_unrivaled_in_government
-				months = long_modifier_time
+				days = long_modifier_time
 				is_decaying = yes
 			}
 		}
@@ -374,7 +374,7 @@ coup.2 = {
 			}
 			add_modifier = {
 				name = modifier_unrivaled_in_government
-				months = long_modifier_time
+				days = long_modifier_time
 				is_decaying = yes
 			}
 		}
@@ -531,7 +531,7 @@ coup.2 = {
 			}
 			add_modifier = {
 				name = modifier_unrivaled_in_government
-				months = long_modifier_time
+				days = long_modifier_time
 				is_decaying = yes
 			}
 		}
@@ -590,7 +590,7 @@ coup.2 = {
 			}
 			add_modifier = {
 				name = modifier_unrivaled_in_government
-				months = long_modifier_time
+				days = long_modifier_time
 				is_decaying = yes
 			}
 		}
@@ -640,7 +640,7 @@ coup.2 = {
 			}
 			add_modifier = {
 				name = modifier_unrivaled_in_government
-				months = long_modifier_time
+				days = long_modifier_time
 				is_decaying = yes
 			}
 		}
