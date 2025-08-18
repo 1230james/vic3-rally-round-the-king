@@ -444,6 +444,82 @@
   "severity": "warning"
 },
 {
+  "confidence": "weak",
+  "info": null,
+  "key": "logic",
+  "locations": [
+    {
+      "column": 26,
+      "from": "MOD",
+      "fullpath": ".\\gfx\\portraits\\portrait_modifiers\\01_accessories.txt",
+      "length": 1,
+      "line": "                    OR = {",
+      "linenr": 413,
+      "path": "gfx\\portraits\\portrait_modifiers\\01_accessories.txt",
+      "tag": null
+    }
+  ],
+  "message": "OR with only one item inside is probably not what you intended",
+  "severity": "warning"
+},
+{
+  "confidence": "weak",
+  "info": null,
+  "key": "logic",
+  "locations": [
+    {
+      "column": 26,
+      "from": "MOD",
+      "fullpath": ".\\gfx\\portraits\\portrait_modifiers\\01_clothes.txt",
+      "length": 1,
+      "line": "                    OR = {",
+      "linenr": 5324,
+      "path": "gfx\\portraits\\portrait_modifiers\\01_clothes.txt",
+      "tag": null
+    }
+  ],
+  "message": "OR with only one item inside is probably not what you intended",
+  "severity": "warning"
+},
+{
+  "confidence": "weak",
+  "info": "This closing brace is at the start of the line but does not close a top-level block.",
+  "key": "brace-placement",
+  "locations": [
+    {
+      "column": 1,
+      "from": "MOD",
+      "fullpath": ".\\gfx\\portraits\\portrait_modifiers\\01_clothes.txt",
+      "length": 1,
+      "line": "}",
+      "linenr": 6926,
+      "path": "gfx\\portraits\\portrait_modifiers\\01_clothes.txt",
+      "tag": null
+    }
+  ],
+  "message": "possible brace error",
+  "severity": "warning"
+},
+{
+  "confidence": "weak",
+  "info": null,
+  "key": "logic",
+  "locations": [
+    {
+      "column": 26,
+      "from": "MOD",
+      "fullpath": ".\\gfx\\portraits\\portrait_modifiers\\01_headgear.txt",
+      "length": 1,
+      "line": "                    OR = {",
+      "linenr": 3054,
+      "path": "gfx\\portraits\\portrait_modifiers\\01_headgear.txt",
+      "tag": null
+    }
+  ],
+  "message": "OR with only one item inside is probably not what you intended",
+  "severity": "warning"
+},
+{
   "confidence": "reasonable",
   "info": "you can remove the AND and just have the item there",
   "key": "performance",
@@ -456,6 +532,196 @@
       "line": "\t\t\tAND = {",
       "linenr": 228,
       "path": "common\\journal_entries\\RRK_01_french_monarchism.txt",
+      "tag": null
+    }
+  ],
+  "message": "AND with only one item inside is useless",
+  "severity": "tips"
+},
+{
+  "confidence": "reasonable",
+  "info": "you can remove the AND and just have the item there",
+  "key": "performance",
+  "locations": [
+    {
+      "column": 31,
+      "from": "MOD",
+      "fullpath": ".\\gfx\\portraits\\portrait_modifiers\\01_accessories.txt",
+      "length": 1,
+      "line": "                        AND = {",
+      "linenr": 185,
+      "path": "gfx\\portraits\\portrait_modifiers\\01_accessories.txt",
+      "tag": null
+    }
+  ],
+  "message": "AND with only one item inside is useless",
+  "severity": "tips"
+},
+{
+  "confidence": "reasonable",
+  "info": "you can remove the AND and just have the item there",
+  "key": "performance",
+  "locations": [
+    {
+      "column": 27,
+      "from": "MOD",
+      "fullpath": ".\\gfx\\portraits\\portrait_modifiers\\01_clothes.txt",
+      "length": 1,
+      "line": "                    AND = {",
+      "linenr": 1977,
+      "path": "gfx\\portraits\\portrait_modifiers\\01_clothes.txt",
+      "tag": null
+    }
+  ],
+  "message": "AND with only one item inside is useless",
+  "severity": "tips"
+},
+{
+  "confidence": "reasonable",
+  "info": "you can remove the AND and just have the item there",
+  "key": "performance",
+  "locations": [
+    {
+      "column": 27,
+      "from": "MOD",
+      "fullpath": ".\\gfx\\portraits\\portrait_modifiers\\01_clothes.txt",
+      "length": 1,
+      "line": "                    AND = {",
+      "linenr": 4111,
+      "path": "gfx\\portraits\\portrait_modifiers\\01_clothes.txt",
+      "tag": null
+    }
+  ],
+  "message": "AND with only one item inside is useless",
+  "severity": "tips"
+},
+{
+  "confidence": "reasonable",
+  "info": "you can remove the AND and just have the item there",
+  "key": "performance",
+  "locations": [
+    {
+      "column": 27,
+      "from": "MOD",
+      "fullpath": ".\\gfx\\portraits\\portrait_modifiers\\01_clothes.txt",
+      "length": 1,
+      "line": "                    AND = {",
+      "linenr": 4927,
+      "path": "gfx\\portraits\\portrait_modifiers\\01_clothes.txt",
+      "tag": null
+    }
+  ],
+  "message": "AND with only one item inside is useless",
+  "severity": "tips"
+},
+{
+  "confidence": "reasonable",
+  "info": "you can remove the AND and just have the item there",
+  "key": "performance",
+  "locations": [
+    {
+      "column": 27,
+      "from": "MOD",
+      "fullpath": ".\\gfx\\portraits\\portrait_modifiers\\01_clothes.txt",
+      "length": 1,
+      "line": "                    AND = {",
+      "linenr": 7215,
+      "path": "gfx\\portraits\\portrait_modifiers\\01_clothes.txt",
+      "tag": null
+    }
+  ],
+  "message": "AND with only one item inside is useless",
+  "severity": "tips"
+},
+{
+  "confidence": "reasonable",
+  "info": "you can remove the AND and just have the item there",
+  "key": "performance",
+  "locations": [
+    {
+      "column": 27,
+      "from": "MOD",
+      "fullpath": ".\\gfx\\portraits\\portrait_modifiers\\01_clothes.txt",
+      "length": 1,
+      "line": "                    AND = {",
+      "linenr": 9155,
+      "path": "gfx\\portraits\\portrait_modifiers\\01_clothes.txt",
+      "tag": null
+    }
+  ],
+  "message": "AND with only one item inside is useless",
+  "severity": "tips"
+},
+{
+  "confidence": "reasonable",
+  "info": "you can remove the AND and just have the item there",
+  "key": "performance",
+  "locations": [
+    {
+      "column": 27,
+      "from": "MOD",
+      "fullpath": ".\\gfx\\portraits\\portrait_modifiers\\01_clothes.txt",
+      "length": 1,
+      "line": "                    AND = {",
+      "linenr": 9631,
+      "path": "gfx\\portraits\\portrait_modifiers\\01_clothes.txt",
+      "tag": null
+    }
+  ],
+  "message": "AND with only one item inside is useless",
+  "severity": "tips"
+},
+{
+  "confidence": "reasonable",
+  "info": "you can remove the AND and just have the item there",
+  "key": "performance",
+  "locations": [
+    {
+      "column": 23,
+      "from": "MOD",
+      "fullpath": ".\\gfx\\portraits\\portrait_modifiers\\01_headgear.txt",
+      "length": 1,
+      "line": "                AND = {",
+      "linenr": 2202,
+      "path": "gfx\\portraits\\portrait_modifiers\\01_headgear.txt",
+      "tag": null
+    }
+  ],
+  "message": "AND with only one item inside is useless",
+  "severity": "tips"
+},
+{
+  "confidence": "reasonable",
+  "info": "you can remove the AND and just have the item there",
+  "key": "performance",
+  "locations": [
+    {
+      "column": 27,
+      "from": "MOD",
+      "fullpath": ".\\gfx\\portraits\\portrait_modifiers\\01_headgear.txt",
+      "length": 1,
+      "line": "                    AND = {",
+      "linenr": 2247,
+      "path": "gfx\\portraits\\portrait_modifiers\\01_headgear.txt",
+      "tag": null
+    }
+  ],
+  "message": "AND with only one item inside is useless",
+  "severity": "tips"
+},
+{
+  "confidence": "reasonable",
+  "info": "you can remove the AND and just have the item there",
+  "key": "performance",
+  "locations": [
+    {
+      "column": 27,
+      "from": "MOD",
+      "fullpath": ".\\gfx\\portraits\\portrait_modifiers\\01_headgear.txt",
+      "length": 1,
+      "line": "                    AND = {",
+      "linenr": 2729,
+      "path": "gfx\\portraits\\portrait_modifiers\\01_headgear.txt",
       "tag": null
     }
   ],
