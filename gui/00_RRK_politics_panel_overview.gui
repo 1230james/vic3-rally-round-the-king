@@ -882,7 +882,7 @@ types politics_panel_types
 							text = "NAME"
 							onclick = "[GetExilePool.Sort('name')]"
 						}
-						
+
 						sort_button = {
 							layoutpolicy_horizontal = expanding
 							size = { -1 30 }
@@ -896,7 +896,7 @@ types politics_panel_types
 							text = "concept_ideology"
 							onclick = "[GetExilePool.Sort('ideology')]"
 						}
-						
+
 						sort_button = {
 							layoutpolicy_horizontal = expanding
 							size = { -1 30 }
