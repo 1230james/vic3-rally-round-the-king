@@ -58,7 +58,7 @@
 	}
 
 	ai_chance = {
-		base = 10
+		value = 10
 	}
 }
 

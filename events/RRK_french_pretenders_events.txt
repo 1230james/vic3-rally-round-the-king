@@ -20,7 +20,7 @@ french_pretenders.6 = { # Second Republic
 
 	dlc = dlc004
 
-	cooldown = { months = normal_modifier_time }
+	cooldown = { days = normal_modifier_time }
 
 	trigger = {
 		# Triggered by JE

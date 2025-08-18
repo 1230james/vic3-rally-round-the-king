@@ -1,0 +1,58 @@
+﻿je_marea_unire = {
+	name = "je_marea_unire_button"
+	desc = "je_marea_unire_button_desc"
+
+	visible = {
+		exists = c:TRS
+		NOR = {
+			c:TRS ?= ROOT
+			c:TRS ?= {
+				is_subject_of = ROOT
+			}
+		}
+		c:TRS ?= {
+			is_player = no
+		}
+	}
+
+	ai_chance = {
+		value = 100
+	}
+
+	possible = {
+		is_at_war = no
+
+		c:TRS ?= {
+			is_subject = no
+			relations:root >= 25
+			is_at_war = no
+		}
+	}
+
+	effect = {
+		if = {
+			limit = {
+				OR = {
+					has_law = law_type:law_monarchy
+					RRK_st_monarchy_preserved = yes
+				}
+				c:TRS ?= {
+					OR = {
+						has_law = law_type:law_monarchy
+						RRK_st_monarchy_preserved = yes
+					}
+				}
+			}
+			create_diplomatic_pact = {
+				country = c:TRS
+				type = personal_union
+			}
+		}
+		else = {
+			create_diplomatic_pact = {
+				country = c:TRS
+				type = puppet
+			}
+		}
+	}
+}

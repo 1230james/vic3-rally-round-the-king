@@ -95,13 +95,21 @@ coa_nihilist_trigger = {
 	}
     OR = {
         ruler ?= { # Vanilla
-            has_ideology = ideology:ideology_atheist
+            has_ideology = ideology:ideology_nihilist
         }
         AND = { # RRK
             has_variable = RRK_head_of_gov
             var:RRK_head_of_gov.leader ?= {
-                has_ideology = ideology:ideology_atheist
+                has_ideology = ideology:ideology_nihilist
             }
         }
     }
+}
+
+coa_def_kalmar_flag_trigger = {
+	exists = scope:actor
+	scope:actor ?= {
+		coa_monarchy_trigger = yes
+		was_formed_from = DEN
+	}
 }

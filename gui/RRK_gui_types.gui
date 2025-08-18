@@ -2,11 +2,11 @@
 # Huge thanks to Dementive for tips
 
 types RRK_types {
-    
+
     ####################
     ### Overview tab ###
     ####################
-    
+
     type RRK_overview_head_of_gov_button = button_icon_round {
 		parentanchor = right
 		size = { 44 44 }
@@ -17,20 +17,20 @@ types RRK_types {
 		tooltip = "RRK_gui_toggle"
 		using = tooltip_above
 	}
-    
+
     # character_with_background - commander_panel.gui
     type RRK_character_widget = widget {
-        
+
         # background
         widget = {
             size = { 100% 100% }
             position = { 0 1 }
             using = Animation_Character_Panel_Refresh
-            
+
             # Politician
             widget = {
                 size = { 100% 100% }
-                
+
                 background = {
                     texture = "gfx/interface/character_panel/backgrounds/char_role_politician.dds"
                     fittype = centercrop
@@ -48,7 +48,7 @@ types RRK_types {
                         entity_instance = vfx_entity_ui_bg_politician_candles
                     }
                 }
-                
+
                 vfx = {
                     blockoverride "entity_instance" {
                         entity_instance = vfx_entity_ui_bg_char_ruler_smoke
@@ -56,12 +56,12 @@ types RRK_types {
                 }
             }
         }
-        
+
         # character
         character_portrait_base_no_mask = {
             ignore_in_debug_draw = yes
             parentanchor = left|bottom
-            
+
             block "character_layout" {
                 position = { 50 10 }
                 size = { 250 400 }
@@ -81,7 +81,7 @@ types RRK_types {
             blockoverride "tooltip" {}
             blockoverride "show_hat" {}
         }
-        
+
         icon = {
             using = dark_area
             parentanchor = bottom|hcenter
@@ -99,27 +99,56 @@ types RRK_types {
 
         widget = {
             size = { 100% 100% }
-            
+
             background = {
                 texture = "gfx/interface/character_panel/char_bg_frame.dds"
                 margin_left = 18
                 margin_right = 10
                 margin_bottom = 10
                 spriteType = Corneredtiled
-                
+
                 spriteborder_left = 200
                 spriteborder_right = 60
                 spriteborder_top = 170
                 spriteborder_bottom = 180
-                
+
                 texture_density = 2
             }
         }
 
-        character_interactions_button = {
-            name = "tutorial_highlight_character_panel_interactions_button_1"
+        # character_interactions_button = {
+        #    name = "tutorial_highlight_character_panel_interactions_button_1"
+        # }
+
+        # RRK - Very disgusting alternative to have a const reference for the character interactions button since
+        # `RightClickMenuManager.ShowForCharacter` seems to only accept const references
+        widget = {
+            parentanchor = left|top
+            position = { 20 20 }
+            size = { 50 500 }
+            max_update_rate = 100 # Limit processing load
+
+            flowcontainer = {
+                datamodel = "[AccessPlayer.AccessAllInterestGroups]"
+
+                item = {
+                    character_interactions_button = {
+                        datacontext = "[InterestGroup.AccessLeader]"
+
+                        visible = "[EqualTo_string(
+                            InterestGroup.GetNameNoFormatting,
+                            GetPlayer.MakeScope.Var('RRK_head_of_gov').GetInterestGroup.GetNameNoFormatting
+                        )]"
+
+                        name = "tutorial_highlight_character_panel_interactions_button_1"
+                        blockoverride "onclick" {
+                            onclick = "[RightClickMenuManager.ShowForCharacter(InterestGroup.AccessLeader.AccessSelf)]"
+                        }
+                    }
+                }
+            }
         }
-        
+
         RRK_overview_head_of_gov_button = {
             parentanchor = top|right
             size = { 50 50 }
@@ -134,7 +163,7 @@ types RRK_types {
             parentanchor = left|bottom
             size = { 110 110 }
             position = { 10 -10 }
-            
+
             character_portrait_large = {
                 size = { 100% 100% }
                 datacontext = "[Country.GetRuler]"
@@ -144,7 +173,7 @@ types RRK_types {
             }
         }
     }
-    
+
     type RRK_overview_head_of_gov_view = RRK_character_widget {
         visible = "[And(
             Country.HasRuler,
@@ -153,12 +182,12 @@ types RRK_types {
                 GetScriptedGui('RRK_sg_is_conmon').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)
             )
         )]"
-        datacontext = "[Country.MakeScope.Var('RRK_head_of_gov').GetInterestGroup.GetLeader]"
+        datacontext = "[GetPlayer.MakeScope.Var('RRK_head_of_gov').GetInterestGroup.GetLeader]"
         layoutpolicy_horizontal = expanding
         layoutpolicy_vertical = expanding
         minimumsize = { -1 340 }
         using = default_fade_in_out
-        
+
         blockoverride "character_layout" {
             position = { 0 0 }
             size = { 70% 100% }
@@ -166,7 +195,7 @@ types RRK_types {
         blockoverride "character_portrait_size" {
             size = { 110% 110% }
         }
-        
+
         # ruler stats
         flowcontainer = {
             parentanchor = right|bottom
@@ -175,17 +204,17 @@ types RRK_types {
             margin_right = 10
             direction = vertical
             spacing = 5
-            
+
             background = {
                 using = dark_area
                 alpha = 0.75
-                
+
                 modify_texture = {
                     texture = "gfx/interface/masks/fade_horizontal_left_full.dds"
                     blend_mode = alphamultiply
                 }
             }
-        
+
             ### ROLE
             ruler_stats_entry = {
                 tooltip = "CHARACTER_PRIMARY_ROLE_TOOLTIP"
@@ -208,12 +237,15 @@ types RRK_types {
             }
             ### INTEREST GROUP
             ruler_stats_entry = {
-                datacontext = "[Character.AccessInterestGroup]"
+                datacontext = "[Character.GetInterestGroup]"
 
                 blockoverride "ruler_icon" {
                     character_ig_button = {
                         size = { 35 35 }
                         blockoverride "in_government_icon" {}
+                        blockoverride "interestgroup_datacontext" {
+                            datacontext = "[Character.GetInterestGroup]"
+                        }
                     }
                 }
 
@@ -225,7 +257,7 @@ types RRK_types {
                     text = "INTEREST_GROUP"
                 }
                 blockoverride "text" {
-                    raw_text = "#v [Character.AccessInterestGroup.GetNameNoFormatting]#!"
+                    raw_text = "#v [Character.GetInterestGroup.GetNameNoFormatting]#!"
                 }
             }
 
@@ -260,42 +292,42 @@ types RRK_types {
                     text = "CHARACTER_POPULARITY"
                 }
             }
-            
+
             widget = { size = { 5 5 }}
-            
+
             ### TRAITS
-            character_traits_no_label = {
-                parentanchor = right
-            }
+            # character_traits_no_label = {
+                # parentanchor = right
+            # }
         }
     }
-    
+
     # ============================================================================================================ #
-    
+
     #######################
     ### Government tab  ###
     #######################
-    
+
     # Crowned republics
     type RRK_head_of_gov = hbox {
         block "RRK_head_of_gov_datacontext" {
-            datacontext = "[Country.MakeScope.Var('RRK_head_of_gov').GetInterestGroup.GetLeader]"
+            datacontext = "[GetPlayer.MakeScope.Var('RRK_head_of_gov').GetInterestGroup.GetLeader]"
         }
         visible = "[GetScriptedGui('RRK_sg_is_conmon').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
-        
+
         layoutpolicy_horizontal = expanding
         layoutpolicy_vertical = expanding
         spacing = 5
         margin_left = 5
         margin_right = 10
-    
+
         character_portrait_medium_torso = {
             using = tooltip_below
             blockoverride "show_hat" {}
             blockoverride "highlight" {}
             blockoverride "commander_order_icon" {}
         }
-        
+
         vbox = {
             layoutpolicy_horizontal = expanding
             layoutpolicy_vertical = preferred
@@ -305,11 +337,11 @@ types RRK_types {
                 layoutpolicy_horizontal = expanding
                 layoutpolicy_vertical = preferred
                 margin_top = 10
-                
+
                 hbox = {
                     layoutpolicy_horizontal = expanding
                     layoutpolicy_vertical = preferred
-                    
+
                     textbox = {
                         raw_text = "#title [Country.GetCustom('RRK_cl_head_of_gov_title')]#!"
                         layoutpolicy_horizontal = expanding
@@ -319,7 +351,7 @@ types RRK_types {
                     }
                     block "additional_info_top_right" {}
                 }
-                
+
                 textbox = {
                     raw_text = "#BOLD [Character.GetCustom('GetUniversalFullNameNoFormatting')]#!"
                     layoutpolicy_horizontal = expanding
@@ -330,53 +362,57 @@ types RRK_types {
                     using = fontsize_large
                 }
             }
-            
-            ### ICONS
+
+            # ### ICONS
             hbox = {
                 layoutpolicy_horizontal = expanding
                 layoutpolicy_vertical = preferred
                 spacing = 10
-                
+
                 ### TRAITS
-                flowcontainer = {
-                    datamodel = "[Character.AccessTraits]"
-                    spacing = 2
+                # [RRK] As of 1.9 cannot keep this here due to const collision
+                # flowcontainer = {
+                    # datamodel = "[Character.AccessTraits]"
+                    # spacing = 2
 
-                    item = {
-                        icon = {
-                            size = { 30 42 }
-                            texture = "[CharacterTrait.GetTexture]"
-                            using = tooltip_above
+                    # item = {
+                        # icon = {
+                            # size = { 30 42 }
+                            # texture = "[CharacterTrait.GetTexture]"
+                            # using = tooltip_above
 
-                            tooltipwidget = {
-                                FancyTooltip_CharacterTrait = {}
-                            }
-                        }
-                    }
-                }
-                
+                            # tooltipwidget = {
+                                # FancyTooltip_CharacterTrait = {}
+                            # }
+                        # }
+                    # }
+                # }
+
                 ### IG ICON
                 character_ig_button = {
                     size = { 40 40 }
                     blockoverride "in_government_icon" {}
+                    blockoverride "interestgroup_datacontext" {
+                        datacontext = "[Character.GetInterestGroup]"
+                    }
                 }
-                
+
                 ### IDEOLOGY
                 icon = {
                     size = { 40 40 }
-                    datacontext = "[Character.GetIdeology]"					
+                    datacontext = "[Character.GetIdeology]"
                     texture = "[Ideology.GetTexture]"
                     tooltipwidget = {
                         FancyTooltip_Ideology = {}
                     }
                 }
-                
+
                 widget = {
                     layoutpolicy_horizontal = expanding
                     layoutpolicy_vertical = expanding
                 }
             }
-        
+
             ### MONARCH
             hbox = {
                 layoutpolicy_horizontal = expanding
@@ -384,16 +420,16 @@ types RRK_types {
                 margin_bottom = 10
                 visible = "[Country.HasRuler]"
                 datacontext = "[AccessPlayer.AccessRuler]"
-                
+
                 # Portrait
                 character_portrait_small = {}
-                
+
                 # Title, Name, Icons
                 vbox = {
                     layoutpolicy_horizontal = expanding
                     layoutpolicy_vertical = preferred
                     margin_left = 5
-                    
+
                     # Title & Name
                     textbox = {
                         layoutpolicy_horizontal = expanding
@@ -401,13 +437,13 @@ types RRK_types {
                         text = "RRK_gui_monarch_name_and_title"
                         align = left|nobaseline
                     }
-                    
+
                     ### ICONS
                     hbox = {
                         layoutpolicy_horizontal = expanding
                         layoutpolicy_vertical = preferred
                         spacing = 5
-                        
+
                         ### TRAITS
                         flowcontainer = {
                             datamodel = "[Character.AccessTraits]"
@@ -425,24 +461,24 @@ types RRK_types {
                                 }
                             }
                         }
-                        
+
                         ### IG ICON
                         character_ig_button = {
                             datacontext = "[Character.GetInterestGroup]"
                             size = { 30 30 }
                             blockoverride "in_government_icon" {}
                         }
-                        
+
                         ### IDEOLOGY
                         icon = {
                             size = { 30 30 }
-                            datacontext = "[Character.GetIdeology]"					
+                            datacontext = "[Character.GetIdeology]"
                             texture = "[Ideology.GetTexture]"
                             tooltipwidget = {
                                 FancyTooltip_Ideology = {}
                             }
                         }
-                        
+
                         widget = {
                             layoutpolicy_horizontal = expanding
                             layoutpolicy_vertical = expanding
@@ -452,7 +488,7 @@ types RRK_types {
             }
         }
     }
-    
+
     type RRK_ruler_box = hbox {
         visible = "[Or(
             Or(
@@ -473,30 +509,30 @@ types RRK_types {
             ),
             GetScriptedGui('RRK_sg_is_pres_mon').IsShown(GuiScope.SetRoot(Country.MakeScope).End)
         )]"
-        
+
         layoutpolicy_horizontal = expanding
         layoutpolicy_vertical = preferred
         spacing = 10
         margin_bottom = 10
-        
+
         ### HAS LEADER IN REFORM
         hbox = {
             layoutpolicy_horizontal = expanding
             layoutpolicy_vertical = preferred
-            
+
             politics_panel_ruler_item = {
 
                 blockoverride "visible" {
                     visible = "[EqualTo_int32('(int32)0', '(int32)0')]"
                 }
-                
+
                 blockoverride "datacontext" {
                     datacontext = "[ReformGovernment.GetPredictedNewRuler( GetVariableSystem.Exists('reform_government') )]"
                     #datacontext = "[InterestGroup.GetLeader]"
                 }
 
                 layoutstretchfactor_horizontal = 3
-                
+
                 blockoverride "additional_info_top_right" {
                     textbox = {
                         visible = "[And( ReformGovernment.WouldGetNewRuler, And( ReformGovernment.HasStagedGroup, GetVariableSystem.Exists('reform_government')) )]"
@@ -507,13 +543,13 @@ types RRK_types {
                         align = nobaseline
                         using = fontsize_large
                         margin = { 15 0 }
-                        
+
                         using = look_at_me_text_animation
-                        
+
                         background = {
                             using = dark_area
                             margin = { 10 5 }
-                            
+
                             modify_texture = {
                                 texture = "gfx/interface/masks/fade_horizontal_center.dds"
                                 spriteType = Corneredstretched
@@ -524,37 +560,37 @@ types RRK_types {
                     }
                 }
             }
-            
+
             ### NO NEW LEADER POSSIBLE IN REFORM - Not needed here
             # politics_panel_reform_no_ruler_item = {
 
                 # blockoverride "visible" {
                     # visible = "[And( Not(ReformGovernment.HasStagedGroup), GetVariableSystem.Exists('reform_government')) ]"
                 # }
-                
+
                 # blockoverride "datacontext" {
                     # datacontext = "[InterestGroup.GetLeader]"
                 # }
 
                 # layoutstretchfactor_horizontal = 3
-                
+
             # }
-            
+
             vbox = {
                 layoutstretchfactor_horizontal = 2
                 layoutpolicy_horizontal = expanding
                 layoutpolicy_vertical = preferred
                 margin = { 10 10 }
-                
+
                 background = {
                     using = entry_bg_simple
                 }
-                
+
                 # legitimacy
                 politics_panel_legitimacy_item = {
                     visible = "[Not(GetVariableSystem.Exists('reform_government'))]"
                 }
-                
+
                 # legitimacy when reforming
                 vbox = {
                     visible = "[GetVariableSystem.Exists('reform_government')]"
@@ -562,13 +598,13 @@ types RRK_types {
                     layoutpolicy_horizontal = expanding
                     layoutpolicy_vertical = preferred
                     spacing = 5
-                    
+
                     hbox = {
                         layoutpolicy_horizontal = expanding
                         spacing = 10
                         datacontext = "[ReformGovernment.GetPredictedLegitimacyLevel]"
                         tooltip = "LEGITIMACY_LEVEL_PREDICTED_TOOLTIP"
-                            
+
                         textbox = {
                             autoresize = yes
                             text = "[LegitimacyLevel.GetNameNoFormatting|v]"
@@ -582,13 +618,13 @@ types RRK_types {
                             align = left|nobaseline
                             elide = right
                         }
-                        
+
                         # changed value plus
                         widget = {
                             layoutpolicy_horizontal = expanding
                             size = { 0 20 }
                             visible = "[GreaterThan_int32(ReformGovernment.GetPredictedLegitimacyDelta, '(int32)0')]"
-                            
+
                             icon = {
                                 position = { 35 0 }
                                 alpha = 0.5
@@ -596,7 +632,7 @@ types RRK_types {
                                 size = { 100 100 }
                                 parentanchor = right|vcenter
                             }
-                            
+
                             textbox = {
                                 size = { 100% 100% }
                                 text = "[ReformGovernment.GetPredictedLegitimacyDelta|=p]"
@@ -605,13 +641,13 @@ types RRK_types {
                                 using = fontsize_large
                             }
                         }
-                        
+
                         # changed value minus
                         widget = {
                             layoutpolicy_horizontal = expanding
                             size = { 0 20 }
                             visible = "[LessThan_int32(ReformGovernment.GetPredictedLegitimacyDelta, '(int32)0')]"
-                            
+
                             icon = {
                                 position = { 35 0 }
                                 alpha = 1
@@ -622,7 +658,7 @@ types RRK_types {
                                 size = { 100 100 }
                                 parentanchor = right|vcenter
                             }
-                            
+
                             textbox = {
                                 size = { 100% 100% }
                                 text = "[ReformGovernment.GetPredictedLegitimacyDelta|r]"
@@ -632,10 +668,10 @@ types RRK_types {
                             }
                         }
                     }
-                    
+
                     levels_progressbar = {
                         datamodel = "[GetLegitimacyLevels]"
-                        
+
                         blockoverride "item_properties" {
                             layoutstretchfactor_horizontal = "[LegitimacyLevel.GetWidth]"
                             tooltip = "[SelectLocalization( LegitimacyLevel.IsActive( ReformGovernment.GetPredictedLegitimacy ), 'LEGITIMACY_LEVEL_PREDICTED_TOOLTIP', 'LEGITIMACY_LEVEL_INACTIVE_TOOLTIP' )]"
@@ -669,12 +705,12 @@ types RRK_types {
                         }
                     }
                 }
-                
+
                 widget = {
                     layoutpolicy_horizontal = expanding
                     layoutpolicy_vertical = expanding
                 }
-                
+
                 # radicals
                 hbox = {
                     layoutpolicy_horizontal = expanding
@@ -682,7 +718,7 @@ types RRK_types {
                     spacing = 5
                     using = radicals_tooltip_with_graph
                     margin = { 5 0 }
-                    
+
                     textbox = {
                         layoutpolicy_horizontal = expanding
                         size = { 0 20 }
@@ -702,18 +738,18 @@ types RRK_types {
                     hbox = {
                         layoutpolicy_horizontal = expanding
                         layoutpolicy_vertical = preferred
-                        
+
                         widget = {
                             layoutpolicy_horizontal = expanding
                             size = { 0 20 }
                             visible = "[And(NotEqualTo_int64(ReformGovernment.GetPredictedRadicalsDelta, '(int64)0'),GetVariableSystem.Exists('reform_government'))]"
-                            
+
                             background = {
                                 using = dark_area_rounded
                                 margin = { 0 2 }
                                 margin_left = 15
                             }
-                            
+
                             textbox = {
                                 size = { 100% 100% }
                                 text = "[ReformGovernment.GetPredictedRadicalsDelta|D=-]"
@@ -725,7 +761,7 @@ types RRK_types {
                         }
                     }
                 }
-                
+
                 # loyalists
                 hbox = {
                     layoutpolicy_horizontal = expanding
@@ -733,7 +769,7 @@ types RRK_types {
                     spacing = 5
                     using = loyalists_tooltip_with_graph
                     margin = { 5 0 }
-                    
+
                     textbox = {
                         layoutpolicy_horizontal = expanding
                         size = { 0 20 }
@@ -750,22 +786,22 @@ types RRK_types {
                         raw_text = "#variable [Country.GetNumLoyalists|D]#!"
                         align = left|nobaseline
                     }
-                    
+
                     hbox = {
                         layoutpolicy_horizontal = expanding
                         layoutpolicy_vertical = preferred
-                        
+
                         widget = {
                             layoutpolicy_horizontal = expanding
                             size = { 0 20 }
                             visible = "[And(NotEqualTo_int64(ReformGovernment.GetPredictedLoyalistsDelta, '(int64)0'),GetVariableSystem.Exists('reform_government'))]"
-                            
+
                             background = {
                                 using = dark_area_rounded
                                 margin = { 0 2 }
                                 margin_left = 15
                             }
-                            
+
                             textbox = {
                                 size = { 100% 100% }
                                 text = "[ReformGovernment.GetPredictedLoyalistsDelta|D=+]"
@@ -780,7 +816,7 @@ types RRK_types {
             }
         }
     }
-    
+
     type RRK_parl_mon_reform_ruler_box = hbox {
         visible = "[And(
             GetVariableSystem.Exists('reform_government'),
@@ -789,24 +825,24 @@ types RRK_types {
                 Not( GetScriptedGui('RRK_sg_cannot_change_head_of_gov').IsShown(GuiScope.SetRoot(Country.MakeScope).End) )
             )
         )]"
-        
+
         block "RRK_ruler_box_datamodel" {
             datamodel = "[DataModelFirst( ReformGovernment.GetAllStagedInterestGroups, '(int32)1' )]"
         }
-        
+
         layoutpolicy_horizontal = expanding
         layoutpolicy_vertical = preferred
         spacing = 10
         margin_bottom = 10
-        
+
         ### HAS LEADER IN REFORM
         item = {
             hbox = {
                 layoutpolicy_horizontal = expanding
                 layoutpolicy_vertical = preferred
-                
+
                 politics_panel_ruler_item = {
-                    
+
                     blockoverride "RRK_head_of_gov_datacontext" {
                         datacontext = "[InterestGroup.GetLeader]"
                     }
@@ -814,13 +850,13 @@ types RRK_types {
                     blockoverride "visible" {
                         visible = "[EqualTo_int32('(int32)0', '(int32)0')]"
                     }
-                    
+
                     blockoverride "datacontext" {
                         datacontext = "[InterestGroup.GetLeader]"
                     }
 
                     layoutstretchfactor_horizontal = 3
-                    
+
                     blockoverride "additional_info_top_right" {
                         textbox = {
                             visible = "[And(
@@ -837,13 +873,13 @@ types RRK_types {
                             align = nobaseline
                             using = fontsize_large
                             margin = { 15 0 }
-                            
+
                             using = look_at_me_text_animation
-                            
+
                             background = {
                                 using = dark_area
                                 margin = { 10 5 }
-                                
+
                                 modify_texture = {
                                     texture = "gfx/interface/masks/fade_horizontal_center.dds"
                                     spriteType = Corneredstretched
@@ -854,22 +890,22 @@ types RRK_types {
                         }
                     }
                 }
-                
+
                 vbox = {
                     layoutstretchfactor_horizontal = 2
                     layoutpolicy_horizontal = expanding
                     layoutpolicy_vertical = preferred
                     margin = { 10 10 }
-                    
+
                     background = {
                         using = entry_bg_simple
                     }
-                    
+
                     # legitimacy
                     politics_panel_legitimacy_item = {
                         visible = "[Not(GetVariableSystem.Exists('reform_government'))]"
                     }
-                    
+
                     # legitimacy when reforming
                     vbox = {
                         visible = "[GetVariableSystem.Exists('reform_government')]"
@@ -877,13 +913,13 @@ types RRK_types {
                         layoutpolicy_horizontal = expanding
                         layoutpolicy_vertical = preferred
                         spacing = 5
-                        
+
                         hbox = {
                             layoutpolicy_horizontal = expanding
                             spacing = 10
                             datacontext = "[ReformGovernment.GetPredictedLegitimacyLevel]"
                             tooltip = "LEGITIMACY_LEVEL_PREDICTED_TOOLTIP"
-                                
+
                             textbox = {
                                 autoresize = yes
                                 text = "[LegitimacyLevel.GetNameNoFormatting|v]"
@@ -897,13 +933,13 @@ types RRK_types {
                                 align = left|nobaseline
                                 elide = right
                             }
-                            
+
                             # changed value plus
                             widget = {
                                 layoutpolicy_horizontal = expanding
                                 size = { 0 20 }
                                 visible = "[GreaterThan_int32(ReformGovernment.GetPredictedLegitimacyDelta, '(int32)0')]"
-                                
+
                                 icon = {
                                     position = { 35 0 }
                                     alpha = 0.5
@@ -911,7 +947,7 @@ types RRK_types {
                                     size = { 100 100 }
                                     parentanchor = right|vcenter
                                 }
-                                
+
                                 textbox = {
                                     size = { 100% 100% }
                                     text = "[ReformGovernment.GetPredictedLegitimacyDelta|=p]"
@@ -920,13 +956,13 @@ types RRK_types {
                                     using = fontsize_large
                                 }
                             }
-                            
+
                             # changed value minus
                             widget = {
                                 layoutpolicy_horizontal = expanding
                                 size = { 0 20 }
                                 visible = "[LessThan_int32(ReformGovernment.GetPredictedLegitimacyDelta, '(int32)0')]"
-                                
+
                                 icon = {
                                     position = { 35 0 }
                                     alpha = 1
@@ -937,7 +973,7 @@ types RRK_types {
                                     size = { 100 100 }
                                     parentanchor = right|vcenter
                                 }
-                                
+
                                 textbox = {
                                     size = { 100% 100% }
                                     text = "[ReformGovernment.GetPredictedLegitimacyDelta|r]"
@@ -947,10 +983,10 @@ types RRK_types {
                                 }
                             }
                         }
-                        
+
                         levels_progressbar = {
                             datamodel = "[GetLegitimacyLevels]"
-                            
+
                             blockoverride "item_properties" {
                                 layoutstretchfactor_horizontal = "[LegitimacyLevel.GetWidth]"
                                 tooltip = "[SelectLocalization( LegitimacyLevel.IsActive( ReformGovernment.GetPredictedLegitimacy ), 'LEGITIMACY_LEVEL_PREDICTED_TOOLTIP', 'LEGITIMACY_LEVEL_INACTIVE_TOOLTIP' )]"
@@ -984,12 +1020,12 @@ types RRK_types {
                             }
                         }
                     }
-                    
+
                     widget = {
                         layoutpolicy_horizontal = expanding
                         layoutpolicy_vertical = expanding
                     }
-                    
+
                     # radicals
                     hbox = {
                         layoutpolicy_horizontal = expanding
@@ -997,7 +1033,7 @@ types RRK_types {
                         spacing = 5
                         using = radicals_tooltip_with_graph
                         margin = { 5 0 }
-                        
+
                         textbox = {
                             layoutpolicy_horizontal = expanding
                             size = { 0 20 }
@@ -1017,18 +1053,18 @@ types RRK_types {
                         hbox = {
                             layoutpolicy_horizontal = expanding
                             layoutpolicy_vertical = preferred
-                            
+
                             widget = {
                                 layoutpolicy_horizontal = expanding
                                 size = { 0 20 }
                                 visible = "[And(NotEqualTo_int64(ReformGovernment.GetPredictedRadicalsDelta, '(int64)0'),GetVariableSystem.Exists('reform_government'))]"
-                                
+
                                 background = {
                                     using = dark_area_rounded
                                     margin = { 0 2 }
                                     margin_left = 15
                                 }
-                                
+
                                 textbox = {
                                     size = { 100% 100% }
                                     text = "[ReformGovernment.GetPredictedRadicalsDelta|D=-]"
@@ -1040,7 +1076,7 @@ types RRK_types {
                             }
                         }
                     }
-                    
+
                     # loyalists
                     hbox = {
                         layoutpolicy_horizontal = expanding
@@ -1048,7 +1084,7 @@ types RRK_types {
                         spacing = 5
                         using = loyalists_tooltip_with_graph
                         margin = { 5 0 }
-                        
+
                         textbox = {
                             layoutpolicy_horizontal = expanding
                             size = { 0 20 }
@@ -1065,22 +1101,22 @@ types RRK_types {
                             raw_text = "#variable [Country.GetNumLoyalists|D]#!"
                             align = left|nobaseline
                         }
-                        
+
                         hbox = {
                             layoutpolicy_horizontal = expanding
                             layoutpolicy_vertical = preferred
-                            
+
                             widget = {
                                 layoutpolicy_horizontal = expanding
                                 size = { 0 20 }
                                 visible = "[And(NotEqualTo_int64(ReformGovernment.GetPredictedLoyalistsDelta, '(int64)0'),GetVariableSystem.Exists('reform_government'))]"
-                                
+
                                 background = {
                                     using = dark_area_rounded
                                     margin = { 0 2 }
                                     margin_left = 15
                                 }
-                                
+
                                 textbox = {
                                     size = { 100% 100% }
                                     text = "[ReformGovernment.GetPredictedLoyalistsDelta|D=+]"
@@ -1096,27 +1132,27 @@ types RRK_types {
             }
         }
     }
-    
+
     # Crown subjects
     type RRK_head_of_gov_subject = hbox {
         block "RRK_head_of_gov_datacontext" {
             datacontext = "[Country.GetRuler]"
         }
         visible = "[GetScriptedGui('RRK_sg_is_crown_subject').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
-        
+
         layoutpolicy_horizontal = expanding
         layoutpolicy_vertical = expanding
         spacing = 5
         margin_left = 5
         margin_right = 10
-    
+
         character_portrait_medium_torso = {
             using = tooltip_below
             blockoverride "show_hat" {}
             blockoverride "highlight" {}
             blockoverride "commander_order_icon" {}
         }
-        
+
         vbox = {
             layoutpolicy_horizontal = expanding
             layoutpolicy_vertical = preferred
@@ -1126,11 +1162,11 @@ types RRK_types {
                 layoutpolicy_horizontal = expanding
                 layoutpolicy_vertical = preferred
                 margin_top = 10
-                
+
                 hbox = {
                     layoutpolicy_horizontal = expanding
                     layoutpolicy_vertical = preferred
-                    
+
                     textbox = {
                         raw_text = "#title [Country.GetRuler.GetPrimaryRoleTitle]#!"
                         layoutpolicy_horizontal = expanding
@@ -1140,7 +1176,7 @@ types RRK_types {
                     }
                     block "additional_info_top_right" {}
                 }
-                
+
                 textbox = {
                     raw_text = "#BOLD [Character.GetCustom('GetUniversalFullNameNoFormatting')]#!"
                     layoutpolicy_horizontal = expanding
@@ -1151,13 +1187,13 @@ types RRK_types {
                     using = fontsize_large
                 }
             }
-            
+
             ### ICONS
             hbox = {
                 layoutpolicy_horizontal = expanding
                 layoutpolicy_vertical = preferred
                 spacing = 10
-                
+
                 ### TRAITS
                 flowcontainer = {
                     datamodel = "[Character.AccessTraits]"
@@ -1175,46 +1211,46 @@ types RRK_types {
                         }
                     }
                 }
-                
+
                 ### IG ICON
                 character_ig_button = {
                     size = { 40 40 }
                     blockoverride "in_government_icon" {}
                 }
-                
+
                 ### IDEOLOGY
                 icon = {
                     size = { 40 40 }
-                    datacontext = "[Character.GetIdeology]"					
+                    datacontext = "[Character.GetIdeology]"
                     texture = "[Ideology.GetTexture]"
                     tooltipwidget = {
                         FancyTooltip_Ideology = {}
                     }
                 }
-                
+
                 widget = {
                     layoutpolicy_horizontal = expanding
                     layoutpolicy_vertical = expanding
                 }
             }
-        
+
             ### MONARCH
             hbox = {
                 layoutpolicy_horizontal = expanding
                 layoutpolicy_vertical = preferred
                 margin_bottom = 10
-                visible = "[Country.GetOverlord.HasRuler]"
-                datacontext = "[Country.GetOverlord.GetRuler]"
-                
+                visible = "[Country.AccessOverlord.HasRuler]"
+                datacontext = "[Country.AccessOverlord.AccessRuler]"
+
                 # Portrait
                 character_portrait_small = {}
-                
+
                 # Title, Name, Icons
                 vbox = {
                     layoutpolicy_horizontal = expanding
                     layoutpolicy_vertical = preferred
                     margin_left = 5
-                    
+
                     # Title & Name
                     textbox = {
                         layoutpolicy_horizontal = expanding
@@ -1222,13 +1258,13 @@ types RRK_types {
                         text = "RRK_gui_monarch_name_and_title"
                         align = left|nobaseline
                     }
-                    
+
                     ### ICONS
                     hbox = {
                         layoutpolicy_horizontal = expanding
                         layoutpolicy_vertical = preferred
                         spacing = 5
-                        
+
                         ### TRAITS
                         flowcontainer = {
                             datamodel = "[Character.AccessTraits]"
@@ -1246,24 +1282,24 @@ types RRK_types {
                                 }
                             }
                         }
-                        
+
                         ### IG ICON
                         character_ig_button = {
                             datacontext = "[Character.GetInterestGroup]"
                             size = { 30 30 }
                             blockoverride "in_government_icon" {}
                         }
-                        
+
                         ### IDEOLOGY
                         icon = {
                             size = { 30 30 }
-                            datacontext = "[Character.GetIdeology]"					
+                            datacontext = "[Character.GetIdeology]"
                             texture = "[Ideology.GetTexture]"
                             tooltipwidget = {
                                 FancyTooltip_Ideology = {}
                             }
                         }
-                        
+
                         ### OVERLORD FLAG
                         widget = { # spacer
                             size = { 1 1 }
@@ -1271,7 +1307,7 @@ types RRK_types {
                         small_flag = {
                             datacontext = "[Character.GetCountry]"
                         }
-                        
+
                         widget = {
                             layoutpolicy_horizontal = expanding
                             layoutpolicy_vertical = expanding
@@ -1281,20 +1317,20 @@ types RRK_types {
             }
         }
     }
-    
+
     type RRK_ruler_box_subject = hbox {
         visible = "[GetScriptedGui('RRK_sg_is_crown_subject').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
-        
+
         layoutpolicy_horizontal = expanding
         layoutpolicy_vertical = preferred
         spacing = 10
         margin_bottom = 10
-        
+
         ### HAS LEADER IN REFORM
         hbox = {
             layoutpolicy_horizontal = expanding
             layoutpolicy_vertical = preferred
-            
+
             politics_panel_ruler_item = {
 
                 blockoverride "visible" {
@@ -1302,19 +1338,19 @@ types RRK_types {
                     And(
                         Country.HasRuler,
                         Not( GetVariableSystem.Exists('reform_government')) ),
-                        And( 
+                        And(
                             ReformGovernment.HasStagedGroup,
                             GetVariableSystem.Exists('reform_government')
                         )
                     )]"
                 }
-                
+
                 blockoverride "RRK_head_of_gov_datacontext" {
                     datacontext = "[ReformGovernment.GetPredictedNewRuler( GetVariableSystem.Exists('reform_government') )]"
                 }
 
                 layoutstretchfactor_horizontal = 3
-                
+
                 blockoverride "additional_info_top_right" {
                     textbox = {
                         visible = "[And( ReformGovernment.WouldGetNewRuler, And( ReformGovernment.HasStagedGroup, GetVariableSystem.Exists('reform_government')) )]"
@@ -1325,13 +1361,13 @@ types RRK_types {
                         align = nobaseline
                         using = fontsize_large
                         margin = { 15 0 }
-                        
+
                         using = look_at_me_text_animation
-                        
+
                         background = {
                             using = dark_area
                             margin = { 10 5 }
-                            
+
                             modify_texture = {
                                 texture = "gfx/interface/masks/fade_horizontal_center.dds"
                                 spriteType = Corneredstretched
@@ -1342,37 +1378,37 @@ types RRK_types {
                     }
                 }
             }
-            
+
             ### NO NEW LEADER POSSIBLE IN REFORM
             politics_panel_reform_no_ruler_item = {
 
                 blockoverride "visible" {
                     visible = "[And( Not(ReformGovernment.HasStagedGroup), GetVariableSystem.Exists('reform_government')) ]"
                 }
-                
+
                 blockoverride "datacontext" {
                     datacontext = "[ReformGovernment.GetPredictedNewRuler( GetVariableSystem.Exists('reform_government') )]"
                 }
 
                 layoutstretchfactor_horizontal = 3
-                
+
             }
-            
+
             vbox = {
                 layoutstretchfactor_horizontal = 2
                 layoutpolicy_horizontal = expanding
                 layoutpolicy_vertical = preferred
                 margin = { 10 10 }
-                
+
                 background = {
                     using = entry_bg_simple
                 }
-                
+
                 # legitimacy
                 politics_panel_legitimacy_item = {
                     visible = "[Not(GetVariableSystem.Exists('reform_government'))]"
                 }
-                
+
                 # legitimacy when reforming
                 vbox = {
                     visible = "[GetVariableSystem.Exists('reform_government')]"
@@ -1380,13 +1416,13 @@ types RRK_types {
                     layoutpolicy_horizontal = expanding
                     layoutpolicy_vertical = preferred
                     spacing = 5
-                    
+
                     hbox = {
                         layoutpolicy_horizontal = expanding
                         spacing = 10
                         datacontext = "[ReformGovernment.GetPredictedLegitimacyLevel]"
                         tooltip = "LEGITIMACY_LEVEL_PREDICTED_TOOLTIP"
-                            
+
                         textbox = {
                             autoresize = yes
                             text = "[LegitimacyLevel.GetNameNoFormatting|v]"
@@ -1400,13 +1436,13 @@ types RRK_types {
                             align = left|nobaseline
                             elide = right
                         }
-                        
+
                         # changed value plus
                         widget = {
                             layoutpolicy_horizontal = expanding
                             size = { 0 20 }
                             visible = "[GreaterThan_int32(ReformGovernment.GetPredictedLegitimacyDelta, '(int32)0')]"
-                            
+
                             icon = {
                                 position = { 35 0 }
                                 alpha = 0.5
@@ -1414,7 +1450,7 @@ types RRK_types {
                                 size = { 100 100 }
                                 parentanchor = right|vcenter
                             }
-                            
+
                             textbox = {
                                 size = { 100% 100% }
                                 text = "[ReformGovernment.GetPredictedLegitimacyDelta|=p]"
@@ -1423,13 +1459,13 @@ types RRK_types {
                                 using = fontsize_large
                             }
                         }
-                        
+
                         # changed value minus
                         widget = {
                             layoutpolicy_horizontal = expanding
                             size = { 0 20 }
                             visible = "[LessThan_int32(ReformGovernment.GetPredictedLegitimacyDelta, '(int32)0')]"
-                            
+
                             icon = {
                                 position = { 35 0 }
                                 alpha = 1
@@ -1440,7 +1476,7 @@ types RRK_types {
                                 size = { 100 100 }
                                 parentanchor = right|vcenter
                             }
-                            
+
                             textbox = {
                                 size = { 100% 100% }
                                 text = "[ReformGovernment.GetPredictedLegitimacyDelta|r]"
@@ -1450,10 +1486,10 @@ types RRK_types {
                             }
                         }
                     }
-                    
+
                     levels_progressbar = {
                         datamodel = "[GetLegitimacyLevels]"
-                        
+
                         blockoverride "item_properties" {
                             layoutstretchfactor_horizontal = "[LegitimacyLevel.GetWidth]"
                             tooltip = "[SelectLocalization( LegitimacyLevel.IsActive( ReformGovernment.GetPredictedLegitimacy ), 'LEGITIMACY_LEVEL_PREDICTED_TOOLTIP', 'LEGITIMACY_LEVEL_INACTIVE_TOOLTIP' )]"
@@ -1487,12 +1523,12 @@ types RRK_types {
                         }
                     }
                 }
-                
+
                 widget = {
                     layoutpolicy_horizontal = expanding
                     layoutpolicy_vertical = expanding
                 }
-                
+
                 # radicals
                 hbox = {
                     layoutpolicy_horizontal = expanding
@@ -1500,7 +1536,7 @@ types RRK_types {
                     spacing = 5
                     using = radicals_tooltip_with_graph
                     margin = { 5 0 }
-                    
+
                     textbox = {
                         layoutpolicy_horizontal = expanding
                         size = { 0 20 }
@@ -1520,18 +1556,18 @@ types RRK_types {
                     hbox = {
                         layoutpolicy_horizontal = expanding
                         layoutpolicy_vertical = preferred
-                        
+
                         widget = {
                             layoutpolicy_horizontal = expanding
                             size = { 0 20 }
                             visible = "[And(NotEqualTo_int64(ReformGovernment.GetPredictedRadicalsDelta, '(int64)0'),GetVariableSystem.Exists('reform_government'))]"
-                            
+
                             background = {
                                 using = dark_area_rounded
                                 margin = { 0 2 }
                                 margin_left = 15
                             }
-                            
+
                             textbox = {
                                 size = { 100% 100% }
                                 text = "[ReformGovernment.GetPredictedRadicalsDelta|D=-]"
@@ -1543,7 +1579,7 @@ types RRK_types {
                         }
                     }
                 }
-                
+
                 # loyalists
                 hbox = {
                     layoutpolicy_horizontal = expanding
@@ -1551,7 +1587,7 @@ types RRK_types {
                     spacing = 5
                     using = loyalists_tooltip_with_graph
                     margin = { 5 0 }
-                    
+
                     textbox = {
                         layoutpolicy_horizontal = expanding
                         size = { 0 20 }
@@ -1568,22 +1604,22 @@ types RRK_types {
                         raw_text = "#variable [Country.GetNumLoyalists|D]#!"
                         align = left|nobaseline
                     }
-                    
+
                     hbox = {
                         layoutpolicy_horizontal = expanding
                         layoutpolicy_vertical = preferred
-                        
+
                         widget = {
                             layoutpolicy_horizontal = expanding
                             size = { 0 20 }
                             visible = "[And(NotEqualTo_int64(ReformGovernment.GetPredictedLoyalistsDelta, '(int64)0'),GetVariableSystem.Exists('reform_government'))]"
-                            
+
                             background = {
                                 using = dark_area_rounded
                                 margin = { 0 2 }
                                 margin_left = 15
                             }
-                            
+
                             textbox = {
                                 size = { 100% 100% }
                                 text = "[ReformGovernment.GetPredictedLoyalistsDelta|D=+]"
@@ -1598,5 +1634,5 @@ types RRK_types {
             }
         }
     }
-    
+
 }

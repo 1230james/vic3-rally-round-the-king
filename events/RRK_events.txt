@@ -593,9 +593,11 @@ RRK_ev.6 = {
                 is_in_government = yes
                 trigger_if = { # If there's powerful IGs in government, select only from them
                     limit = {
-                        any_interest_group = {
-                            is_in_government = yes
-                            is_powerful = yes
+                        PREV = {
+                            any_interest_group = {
+                                is_in_government = yes
+                                is_powerful = yes
+                            }
                         }
                     }
                     is_powerful = yes
@@ -611,9 +613,11 @@ RRK_ev.6 = {
                     is_in_government = yes
                     trigger_if = {
                         limit = {
-                            any_interest_group = {
-                                is_in_government = yes
-                                is_powerful = yes
+                            PREV = {
+                                any_interest_group = {
+                                    is_in_government = yes
+                                    is_powerful = yes
+                                }
                             }
                         }
                         is_powerful = yes
@@ -739,7 +743,7 @@ RRK_ev.6 = {
         scope:our_ruling_ig = {
             add_modifier = {
 				name = supporting_our_man
-				months = short_modifier_time
+				days = short_modifier_time
 			}
         }
         
@@ -794,7 +798,7 @@ RRK_ev.6 = {
             }
             add_modifier = {
 				name = supporting_our_man
-				months = short_modifier_time
+				days = short_modifier_time
 			}
         }
         
@@ -837,7 +841,7 @@ RRK_ev.6 = {
             }
             add_modifier = {
 				name = supporting_our_man
-				months = short_modifier_time
+				days = short_modifier_time
 			}
         }
         
@@ -941,7 +945,7 @@ RRK_ev.6 = {
             }
             add_modifier = {
 				name = supporting_our_man
-				months = short_modifier_time
+				days = short_modifier_time
 			}
         }
         
