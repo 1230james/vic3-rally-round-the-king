@@ -82,6 +82,27 @@ RRK_se_fire_monarch_fate_event = {
     }
     RRK_se_set_prime_minister = yes
     RRK_se_update_head_of_gov_modifier = yes
+    
+    # Clean up regencies
+    if = {
+        limit = {
+            has_gov_regency = yes
+        }
+        remove_regency_modifier = yes
+        ruler ?= {
+            if = {
+                limit = {
+                    is_immortal = yes
+                }
+                set_character_immortal = no
+            }
+        }
+        heir ?= {
+            set_character_as_ruler = yes
+        }
+    }
+    
+    # Fire the event
     if = {
         limit = {
             exists = heir

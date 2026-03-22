@@ -129,7 +129,8 @@ on_election_campaign_end = {
 
 # ==================================================================================================================== #
 
-# Root owner Country of the Law
+# owner = owner country of the Law
+# root = law
 # executed when the law is activated for any reason. It's usually because it
 # has been enacted, but script can activate laws directly without going through
 # the enactment process. Normally, it's immediately preceded by
