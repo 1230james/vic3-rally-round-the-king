@@ -17,20 +17,20 @@
 
 # [RRK] Replacement definitions only
 
-coa_monarchy_trigger = {
+REPLACE:coa_monarchy_trigger = {
 	OR = {
 		trigger_if = {
 			limit = {
 				is_country_type = decentralized
 			}
-			has_law = law_type:law_chiefdom
+			has_law_or_variant = law_type:law_chiefdom
 		}
 		has_law = law_type:law_monarchy
 		RRK_st_is_crowned_republic = yes # RRK
 	}
 }
 
-coa_absolute_monarchy_trigger = {
+REPLACE:coa_absolute_monarchy_trigger = {
 	coa_monarchy_trigger = yes
 	RRK_st_is_crowned_republic = no # RRK
 	coa_autocracy_trigger = yes
@@ -38,17 +38,17 @@ coa_absolute_monarchy_trigger = {
 
 # coa_undemocratic_monarchy_trigger # NO CHANGE - mentioned to explicitly affirm that vanilla definition is OK
 
-coa_republic_trigger = {
+REPLACE:coa_republic_trigger = {
 	OR = {
-		has_law = law_type:law_corporate_state
-		has_law = law_type:law_presidential_republic
-		has_law = law_type:law_parliamentary_republic
-		has_law = law_type:law_council_republic
+		has_law_or_variant = law_type:law_corporate_state
+		has_law_or_variant = law_type:law_presidential_republic
+		has_law_or_variant = law_type:law_parliamentary_republic
+		has_law_or_variant = law_type:law_council_republic
 	}
 	RRK_st_is_crowned_republic = no
 }
 
-coa_fascist_trigger = {
+REPLACE:coa_fascist_trigger = {
     # A fascist can lead a monarchy or a theocracy without the government changing form. The Papal State should retain the same flag even if the Pope's a fascist, for example.
     # A fascist can also lead a democracy without the democracy immediately becoming fascist. If the fascist successfully implements his wildest dreams and becomes a dictatorship, then sure the government will become Fascist, but while there's still voting the government shouldn't count as (fully) fascist yet.
     OR = {
@@ -58,7 +58,7 @@ coa_fascist_trigger = {
                 coa_dictatorship_trigger = yes
             }
             OR = {
-                has_law = law_type:law_corporate_state
+                has_law_or_variant = law_type:law_corporate_state
                 ruler ?= {
                     OR = {
                         has_ideology = ideology:ideology_fascist
@@ -74,7 +74,7 @@ coa_fascist_trigger = {
             }
             has_variable = RRK_head_of_gov
             OR = {
-                has_law = law_type:law_corporate_state
+                has_law_or_variant = law_type:law_corporate_state
                 var:RRK_head_of_gov.leader ?= {
                     OR = {
                         has_ideology = ideology:ideology_fascist
@@ -86,12 +86,12 @@ coa_fascist_trigger = {
     }
 }
 
-coa_nihilist_trigger = {
-	has_law = law_type:law_state_atheism
+REPLACE:coa_nihilist_trigger = {
+	has_law_or_variant = law_type:law_state_atheism
 	NOR = {
-		has_law = law_type:law_theocracy
+		has_law_or_variant = law_type:law_theocracy
 		has_law = law_type:law_monarchy
-		has_law = law_type:law_council_republic
+		has_law_or_variant = law_type:law_council_republic
 	}
     OR = {
         ruler ?= { # Vanilla
@@ -106,7 +106,7 @@ coa_nihilist_trigger = {
     }
 }
 
-coa_def_kalmar_flag_trigger = {
+REPLACE:coa_def_kalmar_flag_trigger = {
 	exists = scope:actor
 	scope:actor ?= {
 		coa_monarchy_trigger = yes
