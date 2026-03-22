@@ -33,7 +33,7 @@
 ### and then ask art to make an icon, you can also check the unused folder if anything fits, you can also use ANY icon in the game if it would fit
 ### but always check with art to verify it is looking good
 
-can_abdicate_alert = {
+REPLACE:can_abdicate_alert = {
 	script_context = player_country
 	texture = "gfx/interface/icons/alert_icons/radicalized.dds"
 
@@ -68,7 +68,7 @@ can_abdicate_alert = {
 	color = yellow
 }
 
-can_resign_alert = {
+REPLACE:can_resign_alert = {
 	script_context = player_country
 	texture = "gfx/interface/icons/alert_icons/radicalized.dds"
 
@@ -80,7 +80,7 @@ can_resign_alert = {
 				text = RRK_tt_monarchy_not_preserved
 				RRK_st_monarchy_preserved = yes
 			}
-			has_law = law_type:law_theocracy
+			has_law_or_variant = law_type:law_theocracy
 		}
 		ruler = {
 			is_immortal = no

@@ -82,7 +82,7 @@ REPLACE:chinese_court_clothes_trigger = {
 		}
 		culture = {
 			NOT = { this = cu:kalmyk }
-            NOT = { this = cu:korean }
+			NOT = { this = cu:korean }
 			OR = {
 				has_discrimination_trait = tradition_sinosphere
 				has_discrimination_trait = heritage_han
@@ -293,7 +293,7 @@ REPLACE:republic_clothes_trigger = {
 			culture = cu:griqua
 			home_country = {
 				NOT = { has_law_or_variant = law_type:law_monarchy }
-                RRK_st_is_crowned_republic = no # RRK
+				RRK_st_is_crowned_republic = no # RRK
 			}
 		}
 	}
