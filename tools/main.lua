@@ -12,6 +12,9 @@
 
 local LOG_FILE -- Defined below
 
+-- Replace all `has_law = law_type:law_monarchy` with this string
+local NEW_MONARCHY_TRIGGER = "RRK_st_has_monarchy = yes"
+
 -- ================================================================================================================== --
 
 local function print_log(msg)
@@ -95,7 +98,7 @@ local function read_next_block(file)
     return arr, eof
 end
 
-local function parse_script_file(file)
+local function parse_script_file(filepath)
    -- TODO 
 end
 
@@ -169,8 +172,15 @@ do
     while true do
         local block, eof = read_next_block(THE_FILE)
         for i, line in pairs(block) do
-            print_log(line)
-            OUT_FILE:write(line)
+            if line:find("has_law") and line:find("law_monarchy") then
+                for j, w_line in pairs(block) do
+                    -- Substitute law check
+                    w_line = w_line:gsub("has_law.*=.*law_monarchy", NEW_MONARCHY_TRIGGER)
+                    print_log(w_line)
+                    OUT_FILE:write(w_line)
+                end
+                break
+            end
         end
         if eof then
             break
