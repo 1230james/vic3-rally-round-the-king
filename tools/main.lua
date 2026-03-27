@@ -50,6 +50,18 @@ local function get_filename(filepath)
     return b
 end
 
+-- https://stackoverflow.com/a/7615129
+local function split_string(str, delim)
+    if delim == nil then
+        delim = "%s"
+    end
+    local t = {}
+    for str in string.gmatch(str, "([^"..delim.."]+)") do
+        table.insert(t, str)
+    end
+    return t
+end
+
 local function count_braces(str)
     local opening, closing = 0, 0
     for i = 1, #str, 1 do
@@ -72,7 +84,37 @@ local function set_platform()
     end
 end
 
-
+local function find_files(path)
+    local t = {}
+    if PLATFORM == PLATFORM_TYPE.UNIX then
+        local STREAM = io.popen("find \"" .. path .. "\" -name '*.txt'")
+        while true do
+            local line = STREAM:read("l")
+            if not line then
+                break
+            end
+            line = line:gsub(path,".")
+            table.insert(t, line)
+        end
+        
+    elseif PLATFORM == PLATFORM_TYPE.WIN then
+        local STREAM = io.popen("forfiles /P \"" .. path:gsub("/","\\") .. "\" /S /M *.txt /C \"cmd /C echo @relpath\"")
+        while true do
+            local line = STREAM:read("l")
+            if not line then
+                break
+            end
+            if line ~= "" then
+                line = line:gsub("\\","/"):gsub('"',"")
+                table.insert(t, line)
+            end
+        end
+        
+    else
+        error("find_files: Platform type not set")
+    end
+    return t
+end
 
 -- ================================================================================================================== --
 
@@ -224,6 +266,9 @@ set_platform()
 
 -- TEMP
 -- parse_script_file(GAME_DIR .. "common/scripted_triggers/00_coa_triggers.txt", "./generated/RRK_00_coa_triggers.txt")
+for i,v in pairs(find_files(GAME_DIR .. "common/technology")) do
+    print(tostring(i).. ':' .. v)
+end
 
 -- Cleanup
 print_log('\nFinished!\nCheck the "generated" folder for the files.')
