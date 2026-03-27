@@ -13,6 +13,12 @@
 local LOG_FILE -- Defined below
 local GAME_DIR
 
+local PLATFORM
+local PLATFORM_TYPE = {
+    UNIX = 1,
+    WIN  = 2
+}
+
 -- Replace all `has_law = law_type:law_monarchy` with this string
 local NEW_MONARCHY_TRIGGER = "RRK_st_has_monarchy = yes"
 local NEW_MONARCHY_OR_VARIANT_TRIGGER = "RRK_st_has_monarchy_or_variant = yes"
@@ -56,6 +62,17 @@ local function count_braces(str)
     end
     return opening, closing
 end
+
+local function set_platform()
+    if os.execute("find --help > nul 2>&1") then
+        PLATFORM = PLATFORM_TYPE.UNIX
+        os.execute("rm -rf 1 nul")
+    else
+        PLATFORM = PLATFORM_TYPE.WIN
+    end
+end
+
+
 
 -- ================================================================================================================== --
 
@@ -202,8 +219,11 @@ end
 
 GAME_DIR = arg[1] .. "/game/"
 
+-- Platform check
+set_platform()
+
 -- TEMP
-parse_script_file(GAME_DIR .. "common/scripted_triggers/00_coa_triggers.txt", "./generated/RRK_00_coa_triggers.txt")
+-- parse_script_file(GAME_DIR .. "common/scripted_triggers/00_coa_triggers.txt", "./generated/RRK_00_coa_triggers.txt")
 
 -- Cleanup
 print_log('\nFinished!\nCheck the "generated" folder for the files.')
