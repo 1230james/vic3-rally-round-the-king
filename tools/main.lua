@@ -230,6 +230,9 @@ local function parse_script_file(in_filepath, out_filepath)
                 end
                 
                 for j, w_line in ipairs(block) do
+                    -- Strip out BOM chars
+                    w_line = w_line:gsub("\239\187\191", "")
+                    
                     -- Add REPLACE statement if needed
                     if use_INJECT and j == 1 then
                         w_line = "REPLACE:" .. w_line
