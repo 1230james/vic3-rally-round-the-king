@@ -533,8 +533,6 @@ types politics_panel_types
 				blockoverride "marginal_igs" {}
 			}
 
-			widget = { size = { 1 40 }}
-
 			# laws
 			laws_support_list = {
 				visible = "[Not(GetVariableSystem.Exists('reform_government'))]"
