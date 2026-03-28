@@ -2,4 +2,5 @@
 country_rrk_cant_change_head_of_gov_bool = {
     color = bad
     boolean = yes
+    script_only = yes
 }
