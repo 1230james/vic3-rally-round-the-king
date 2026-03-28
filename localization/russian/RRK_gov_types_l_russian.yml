@@ -1,4 +1,4 @@
-﻿l_russian:
+﻿l_english:
     # Templates
     RRK_txt_crowned_republic: "Crowned Republic"
     
@@ -10,6 +10,66 @@
     RRK_txt_crowned_republic_custom: "[AddLocalizationIf( EqualTo_string(AccessGameRules.AccessNamedGameRule('RRK_gr_crowned_republic_name').GetSetting.GetKey, 'RRK_gr_use_crowned_republic'), 'RRK_txt_crowned_republic')][AddLocalizationIf( EqualTo_string(AccessGameRules.AccessNamedGameRule('RRK_gr_crowned_republic_name').GetSetting.GetKey, 'RRK_gr_use_const_monarchy'), 'gov_constitutional_kingdom')]"
     
     # Gov Types
+    RRK_gov_united_kingdom_braz_por:      "$RRK_txt_crowned_republic_custom$"
+    RRK_gov_united_kingdom_braz_por_desc: "$RRK_txt_desc_start$ [Concept('concept_ruler','$RULER_TITLE_EMPEROR_KING$')] or [Concept('concept_ruler','$RULER_TITLE_EMPRESS_QUEEN$')] $RRK_txt_desc_end$"
+
+    RRK_gov_united_kingdom_braz_por_kingdom:      "$RRK_txt_crowned_republic_custom$"
+    RRK_gov_united_kingdom_braz_por_kingdom_desc: "$RRK_txt_desc_start$ [Concept('concept_ruler','$RULER_TITLE_KING$')] or [Concept('concept_ruler','$RULER_TITLE_QUEEN$')] $RRK_txt_desc_end$"
+
+    RRK_gov_united_kingdom_por_spa:      "$RRK_txt_crowned_republic_custom$"
+    RRK_gov_united_kingdom_por_spa_desc: "$RRK_txt_desc_start$ [Concept('concept_ruler','$RULER_TITLE_KING$')] or [Concept('concept_ruler','$RULER_TITLE_QUEEN$')] $RRK_txt_desc_end$"
+
+    RRK_gov_united_kingdom_braz_por_spa:      "$RRK_txt_crowned_republic_custom$"
+    RRK_gov_united_kingdom_braz_por_spa_desc: "$RRK_txt_desc_start$ [Concept('concept_ruler','$RULER_TITLE_EMPEROR_KING$')] or [Concept('concept_ruler','$RULER_TITLE_EMPRESS_QUEEN$')] $RRK_txt_desc_end$"
+
+    RRK_gov_united_kingdom_braz_por_spa_kingdom:      "$RRK_txt_crowned_republic_custom$"
+    RRK_gov_united_kingdom_braz_por_spa_kingdom_desc: "$RRK_txt_desc_start$ [Concept('concept_ruler','$RULER_TITLE_KING$')] or [Concept('concept_ruler','$RULER_TITLE_QUEEN$')] $RRK_txt_desc_end$"
+
+    RRK_gov_voivodeship:      "$RRK_txt_crowned_republic_custom$"
+    RRK_gov_voivodeship_desc: "$RRK_txt_desc_start$ [Concept('concept_ruler','$RULER_TITLE_VOIVODE$')] or [Concept('concept_ruler','$RULER_TITLE_VOIVODESS$')] $RRK_txt_desc_end$"
+
+    RRK_gov_crown_land_voivode:      "$RRK_txt_crowned_republic_custom$"
+    RRK_gov_crown_land_voivode_desc: "$RRK_txt_desc_start$ [Concept('concept_ruler','$RULER_TITLE_VOIVODE$')] or [Concept('concept_ruler','$RULER_TITLE_VOIVODESS$')] $RRK_txt_desc_end$"
+
+    RRK_gov_crown_land_palatine:      "$RRK_txt_crowned_republic_custom$"
+    RRK_gov_crown_land_palatine_desc: "$RRK_txt_desc_start$ [Concept('concept_ruler','$RULER_TITLE_PALATINE$')] or [Concept('concept_ruler','$RULER_TITLE_PALATINESS$')] $RRK_txt_desc_end$"
+
+    RRK_gov_crown_land_ban:      "$RRK_txt_crowned_republic_custom$"
+    RRK_gov_crown_land_ban_desc: "$RRK_txt_desc_start$ [Concept('concept_ruler','$RULER_TITLE_BAN$')] or [Concept('concept_ruler','$RULER_TITLE_BANICA$')] $RRK_txt_desc_end$"
+
+    RRK_gov_crown_land_governor_generic:      "$RRK_txt_crowned_republic_custom$"
+    RRK_gov_crown_land_governor_generic_desc: "$RRK_txt_desc_start$ [Concept('concept_ruler','$RULER_TITLE_GOVERNOR$')] or [Concept('concept_ruler','$RULER_TITLE_GOVERNESS$')] $RRK_txt_desc_end$"
+
+    RRK_gov_guberniya:      "$RRK_txt_crowned_republic_custom$"
+    RRK_gov_guberniya_desc: "$RRK_txt_desc_start$ [Concept('concept_ruler','$RULER_TITLE_GOVERNOR_GENERAL$')] $RRK_txt_desc_end$"
+
+    RRK_gov_triple_monarchy:      "$RRK_txt_crowned_republic_custom$"
+    RRK_gov_triple_monarchy_desc: "$RRK_txt_desc_start$ [Concept('concept_ruler','$RULER_TITLE_EMPEROR_KING$')] or [Concept('concept_ruler','$RULER_TITLE_EMPRESS_QUEEN$')] $RRK_txt_desc_end$"
+
+    RRK_gov_dual_monarchy:      "$RRK_txt_crowned_republic_custom$"
+    RRK_gov_dual_monarchy_desc: "$RRK_txt_desc_start$ [Concept('concept_ruler','$RULER_TITLE_EMPEROR_KING$')] or [Concept('concept_ruler','$RULER_TITLE_EMPRESS_QUEEN$')] $RRK_txt_desc_end$"
+
+    RRK_gov_danubian_federation:      "$RRK_txt_crowned_republic_custom$"
+    RRK_gov_danubian_federation_desc: "$RRK_txt_desc_start$ [Concept('concept_ruler','$RULER_TITLE_EMPEROR$')] or [Concept('concept_ruler','$RULER_TITLE_EMPRESS$')] $RRK_txt_desc_end$"
+
+    RRK_gov_danubian_federation_technocratic:      "$RRK_txt_crowned_republic_custom$"
+    RRK_gov_danubian_federation_technocratic_desc: "$RRK_txt_desc_start$ [Concept('concept_ruler','$RULER_TITLE_EMPEROR$')] or [Concept('concept_ruler','$RULER_TITLE_EMPRESS$')] $RRK_txt_desc_end$"
+
+    RRK_gov_danubian_federation_absolutist:      "$RRK_txt_crowned_republic_custom$"
+    RRK_gov_danubian_federation_absolutist_desc: "$RRK_txt_desc_start$ [Concept('concept_ruler','$RULER_TITLE_EMPEROR$')] or [Concept('concept_ruler','$RULER_TITLE_EMPRESS$')] $RRK_txt_desc_end$"
+
+    RRK_gov_ethiopia_empire:      "$RRK_txt_crowned_republic_custom$"
+    RRK_gov_ethiopia_empire_desc: "$RRK_txt_desc_start$ [Concept('concept_ruler','$RULER_TITLE_EMPEROR$')] or [Concept('concept_ruler','$RULER_TITLE_EMPRESS$')] $RRK_txt_desc_end$"
+
+    RRK_gov_ethiopia_ras:      "$RRK_txt_crowned_republic_custom$"
+    RRK_gov_ethiopia_ras_desc: "$RRK_txt_desc_start$ [Concept('concept_ruler','$RULER_TITLE_RAS$')] $RRK_txt_desc_end$"
+
+    RRK_gov_ethiopia_kingdom:      "$RRK_txt_crowned_republic_custom$"
+    RRK_gov_ethiopia_kingdom_desc: "$RRK_txt_desc_start$ [Concept('concept_ruler','$RULER_TITLE_KING$')] or [Concept('concept_ruler','$RULER_TITLE_QUEEN$')] $RRK_txt_desc_end$"
+
+    RRK_gov_griqua_captaincy:      "$RRK_txt_crowned_republic_custom$"
+    RRK_gov_griqua_captaincy_desc: "$RRK_txt_desc_start$ [Concept('concept_ruler','$RULER_TITLE_CAPTAIN$')] $RRK_txt_desc_end$"
+
     RRK_gov_princely_state_rawalate:      "$RRK_txt_crowned_republic_custom$"
     RRK_gov_princely_state_rawalate_desc: "$RRK_txt_desc_start$ [Concept('concept_ruler','$RULER_TITLE_MAHARAWAL$')] $RRK_txt_desc_end$"
 
@@ -36,9 +96,15 @@
 
     RRK_gov_princely_state_sultan:      "$RRK_txt_crowned_republic_custom$"
     RRK_gov_princely_state_sultan_desc: "$RRK_txt_desc_start$ [Concept('concept_ruler','$RULER_TITLE_SULTAN$')] $RRK_txt_desc_end$"
+
+    RRK_gov_enlightened_despotate:      "$RRK_txt_crowned_republic_custom$"
+    RRK_gov_enlightened_despotate_desc: "$RRK_txt_desc_start$ [Concept('concept_ruler','$RULER_TITLE_PHILOSOPHER_KING$')] or [Concept('concept_ruler','$RULER_TITLE_PHILOSOPHER_QUEEN$')] $RRK_txt_desc_end$"
     
     RRK_gov_shogunate: "$RRK_txt_crowned_republic_custom$"
     RRK_gov_shogunate_desc: "$RRK_txt_desc_start$ [Concept('concept_ruler','$RULER_TITLE_SHOGUN$')] $RRK_txt_desc_end$"
+
+    RRK_gov_massina_empire:      "$RRK_txt_crowned_republic_custom$"
+    RRK_gov_massina_empire_desc: "$RRK_txt_desc_start$ [Concept('concept_ruler','$RULER_TITLE_ALMAMI$')] $RRK_txt_desc_end$"
     
     RRK_gov_hawaiian_monarchy_recognised: "$RRK_txt_crowned_republic_custom$" # No concept tooltip for Hawaii due to apostrophes in loc
     RRK_gov_hawaiian_monarchy_recognised_desc: "$RRK_txt_desc_start$ $RULER_TITLE_MOI$ $RRK_txt_desc_end$"
@@ -69,6 +135,12 @@
     
     RRK_gov_dey: "$RRK_txt_crowned_republic_custom$"
     RRK_gov_dey_desc: "$RRK_txt_desc_start$ [Concept('concept_ruler','$RULER_TITLE_DEY$')] $RRK_txt_desc_end$"
+    
+    RRK_gov_wilayah:      "$RRK_txt_crowned_republic_custom$"
+    RRK_gov_wilayah_desc: "$RRK_txt_desc_start$ [Concept('concept_ruler','$RULER_TITLE_LIWALI$')] $RRK_txt_desc_end$"
+    
+    RRK_gov_swahili_sultanate:      "$RRK_txt_crowned_republic_custom$"
+    RRK_gov_swahili_sultanate_desc: "$RRK_txt_desc_start$ [Concept('concept_ruler','$RULER_TITLE_SULTAN$')] or [Concept('concept_ruler','$RULER_TITLE_SULTANA$')] $RRK_txt_desc_end$"
     
     RRK_gov_sultanate: "$RRK_txt_crowned_republic_custom$"
     RRK_gov_sultanate_desc: "$RRK_txt_desc_start$ [Concept('concept_ruler','$RULER_TITLE_SULTAN$')] $RRK_txt_desc_end$"
@@ -126,6 +198,9 @@
     
     RRK_gov_confederation_of_the_rhine: "$RRK_txt_crowned_republic_custom$"
     RRK_gov_confederation_of_the_rhine_desc: "$RRK_txt_desc_start$ [Concept('concept_ruler','$RULER_TITLE_PRINCE_PRIMATE$')] or [Concept('concept_ruler','$RULER_TITLE_PRINCESS_PRIMATE$')] $RRK_txt_desc_end$"
+    
+    RRK_gov_decentralized_realm:      "$RRK_txt_crowned_republic_custom$"
+    RRK_gov_decentralized_realm_desc: "$RRK_txt_desc_start$ [Concept('concept_ruler','$RULER_TITLE_KING$')] or [Concept('concept_ruler','$RULER_TITLE_QUEEN$')] $RRK_txt_desc_end$"
     
     RRK_gov_hm_gov:      "$gov_hm_gov$" # Bri'ish
     RRK_gov_hm_gov_desc: "$gov_hm_gov_desc$"
