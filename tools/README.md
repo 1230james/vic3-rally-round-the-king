@@ -36,3 +36,10 @@ The following is a list of directories or specific files whose auto-generated co
 * `events/iberia_events/regency_events.txt`
 * `events/law_events`
 * `events/1848.txt`
+
+## Export Notes
+
+* Filename prefix changes to account for break from numeric prefixes:
+  * `common/character_templates` - Use `i!_` or later-loading prefix
+  * `common/decisions` - Use `l!_` or later-loading prefix
+  * `common/script_values` - Use `j!_` or later-loading prefix
