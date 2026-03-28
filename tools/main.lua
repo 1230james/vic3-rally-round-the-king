@@ -259,6 +259,11 @@ local function parse_game_dir(dirpath, out_dirpath, out_prefix)
         local out_dir     = out_dirpath
         local path_chunks = split_string(filepath, "/")
         local num_chunks  = #path_chunks
+        
+        if not filesys_exists(out_dir) then
+            print_log("Creating " .. out_dir .. " because it does not exist")
+            mkdir(out_dir)
+        end
         for j, path_chunk in pairs(path_chunks) do
             if j > 1 and j < num_chunks then -- skip the `.` & the actual filename
                 out_dir = out_dir .. "/" .. path_chunk
@@ -356,11 +361,18 @@ end
 GAME_DIR = arg[1] .. "/game/"
 
 -- Do the stuff
-print_log("Parsing " .. GAME_DIR .. "common")
-parse_game_dir(GAME_DIR .. "common", "./generated/common", "RRK_")
+local total_files, gen_count = 0, 0
+print_log("Searching " .. GAME_DIR .. "common")
+total_files = parse_game_dir(GAME_DIR .. "common", "./generated/common", "=!RRK_")
+print_log("Generated " .. tostring(total_files) .. " files from files in common")
+
+print_log("Searching " .. GAME_DIR .. "events")
+gen_count   = parse_game_dir(GAME_DIR .. "events", "./generated/events", "RRK_")
+total_files = total_files + gen_count
+print_log("Generated " .. tostring(gen_count) .. " files from files in events")
 
 -- Cleanup
-print_log('\nFinished!\nCheck the "generated" folder for the files.')
+print_log('\nFinished!\nGenerated ' .. tostring(total_files) .. ' files\nCheck the "generated" folder for the files.')
 if LOG_FILE then
     LOG_FILE:close()
 end
