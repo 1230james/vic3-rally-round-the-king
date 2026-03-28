@@ -12,7 +12,6 @@
 
 local INJECT_WHITELIST = require("inject_whitelist")
 
-local LOG_FILE -- Defined below
 local GAME_DIR
 
 local PLATFORM
@@ -26,13 +25,6 @@ local NEW_MONARCHY_TRIGGER = "RRK_st_has_monarchy = yes"
 local NEW_MONARCHY_OR_VARIANT_TRIGGER = "RRK_st_has_monarchy_or_variant = yes"
 
 -- ================================================================================================================== --
-
-local function print_log(msg)
-    if LOG_FILE then
-        LOG_FILE:write(msg .. "\n")
-    end
-    print(msg)
-end
 
 -- https://stackoverflow.com/questions/1340230/check-if-directory-exists-in-lua
 local function filesys_exists(path)
@@ -121,7 +113,7 @@ local function find_files(path)
             end
             line = line:gsub(path,".")
             table.insert(t, line)
-            print_log("  Found file: " .. line)
+            print("  Found file: " .. line)
         end
         
     elseif PLATFORM == PLATFORM_TYPE.WIN then
@@ -134,7 +126,7 @@ local function find_files(path)
             if line ~= "" then
                 line = line:gsub("\\","/"):gsub('"',"")
                 table.insert(t, line)
-                print_log("  Found file: " .. line)
+                print("  Found file: " .. line)
             end
         end
         
@@ -181,7 +173,7 @@ local function read_next_block(file)
             while run do
                 line = file:read("L")
                 if not line then
-                    print_log("!!! ERR !!! - Malformed file")
+                    print("!!! ERR !!! - Malformed file")
                     run, eof = false, true
                     break
                 end
@@ -204,7 +196,7 @@ local function parse_script_file(in_filepath, out_filepath)
     local IN_FILE  = io.open(in_filepath, "rb")
     local OUT_FILE
     
-    print_log("Parsing " .. in_filepath:gsub(GAME_DIR, "") .. "...")
+    print("Parsing " .. in_filepath:gsub(GAME_DIR, "") .. "...")
     
     local use_INJECT  = false
     local path_chunks = split_string(in_filepath:gsub(GAME_DIR, ""),"/")
@@ -226,7 +218,7 @@ local function parse_script_file(in_filepath, out_filepath)
         for i, line in pairs(block) do
             if line:find("has_law") and line:find("law_monarchy") then
                 local block_name = block[1]:sub(1, block[1]:find("=") - 1) -- sorta kinda; weird formatting notwithstanding
-                print_log("  Found Monarchy check in block: " .. block_name)
+                print("  Found Monarchy check in block: " .. block_name)
                 
                 if not OUT_FILE then
                     OUT_FILE = io.open(out_filepath, "w+b")
@@ -249,7 +241,7 @@ local function parse_script_file(in_filepath, out_filepath)
                     OUT_FILE:write(w_line)
                 end
                 OUT_FILE:write("\n") -- spacing newline
-                print_log("    Substituted & exported " .. block_name)
+                print("    Substituted & exported " .. block_name)
                 
                 break
             end
@@ -284,14 +276,14 @@ local function parse_game_dir(dirpath, out_dirpath, out_prefix)
         local num_chunks  = #path_chunks
         
         if not filesys_exists(out_dir) then
-            print_log("Creating " .. out_dir .. " because it does not exist")
+            print("Creating " .. out_dir .. " because it does not exist")
             mkdir(out_dir)
         end
         for j, path_chunk in ipairs(path_chunks) do
             if j > 1 and j < num_chunks then -- skip the `.` & the actual filename
                 out_dir = out_dir .. "/" .. path_chunk
                 if not filesys_exists(out_dir) then
-                    print_log("Creating " .. out_dir .. " because it does not exist")
+                    print("Creating " .. out_dir .. " because it does not exist")
                     mkdir(out_dir)
                 end
             end
@@ -315,7 +307,7 @@ local function parse_game_dir(dirpath, out_dirpath, out_prefix)
         if count == 0 then
             local success = os.execute("rmdir " .. out_dir:gsub("./","",1):gsub("\\", DIR_DELIM):gsub("/", DIR_DELIM))
             if not success then
-                print_log("  Failed to delete: " .. out_dir)
+                print("  Failed to delete: " .. out_dir)
             end
         end
     end
@@ -325,59 +317,30 @@ end
 
 -- ================================================================================================================== --
 
--- Set up log file
-do
-    LOG_FILE = io.open("generator_log.log", "a+")
-    local success
-    if LOG_FILE then
-        success = LOG_FILE:seek("end")
-    end
-    if success then
-        if LOG_FILE:seek() > 0 then
-            LOG_FILE:write("\n\n\n")
-        end
-        LOG_FILE:write("=== Execution start: " .. os.date("%Y-%m-%d %H:%M:%S") .. " ===\n\n")
-    else
-        print("! WARN ! - Unable to create or open file 'generator_log.log' for logging - no log will be saved.\n")
-        if LOG_FILE then
-            LOG_FILE:close()
-            LOG_FILE = nil
-        end
-    end
-end
-
 -- Platform check
+print("=== Execution start: " .. os.date("%Y-%m-%d %H:%M:%S") .. " ===\n\n")
 set_platform()
 
 -- Create output folder if it doesn't exist
 if not filesys_exists("./generated") then
-    print_log("Creating output directory...")
+    print("Creating output directory...")
     mkdir("generated")
-    print_log("Output directory created\n")
+    print("Output directory created\n")
 end
 
 -- Args check
 if not arg[1] then
-    print_log("Missing path to Victoria 3 directory - exiting")
-    if LOG_FILE then
-        LOG_FILE:close()
-    end
+    print("Missing path to Victoria 3 directory - exiting")
     os.exit()
 end
 
 if not filesys_exists(arg[1]) then
-    print_log("Specified path does not appear to lead anywhere - exiting")
-    if LOG_FILE then
-        LOG_FILE:close()
-    end
+    print("Specified path does not appear to lead anywhere - exiting")
     os.exit()
 end
 
 if not filesys_exists(arg[1] .. "/game") then
-    print_log("Specified path does not appear to be a Victoria 3 directory - exiting")
-    if LOG_FILE then
-        LOG_FILE:close()
-    end
+    print("Specified path does not appear to be a Victoria 3 directory - exiting")
     os.exit()
 end
 
@@ -385,17 +348,14 @@ GAME_DIR = arg[1] .. "/game/"
 
 -- Do the stuff
 local total_files, gen_count = 0, 0
-print_log("Searching " .. GAME_DIR .. "common")
+print("Searching " .. GAME_DIR .. "common")
 total_files = parse_game_dir(GAME_DIR .. "common", "./generated/common", "=!RRK_")
-print_log("Generated " .. tostring(total_files) .. " files from files in common")
+print("Generated " .. tostring(total_files) .. " files from files in common")
 
-print_log("Searching " .. GAME_DIR .. "events")
+print("Searching " .. GAME_DIR .. "events")
 gen_count   = parse_game_dir(GAME_DIR .. "events", "./generated/events", "RRK_")
 total_files = total_files + gen_count
-print_log("Generated " .. tostring(gen_count) .. " files from files in events")
+print("Generated " .. tostring(gen_count) .. " files from files in events")
 
 -- Cleanup
-print_log('\nFinished!\nGenerated ' .. tostring(total_files) .. ' files\nCheck the "generated" folder for the files.')
-if LOG_FILE then
-    LOG_FILE:close()
-end
+print('\nFinished!\nGenerated ' .. tostring(total_files) .. ' files\nCheck the "generated" folder for the files.')
