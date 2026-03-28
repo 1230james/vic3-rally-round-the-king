@@ -1751,7 +1751,7 @@ RRK_gov_vilayet = {
 	male_ruler = "RULER_TITLE_VALI"			# Governor. This post would usually be appointed by the Ottoman Sultan, and not be hereditary.
 	female_ruler = "" # Empty on purpose
 
-	male_heir = "RULER_TITLE_MUTASARRIF"	# Governor of a Vilayet's subunit, the Sanjak, who would assume command in the Vali's absence
+	male_heir = "RULER_TITLE_MUTSARRIF"	# Governor of a Vilayet's subunit, the Sanjak, who would assume command in the Vali's absence
 	female_heir = "" # Empty on purpose
 
 	possible = {
