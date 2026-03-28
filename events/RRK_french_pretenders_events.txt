@@ -28,18 +28,53 @@ french_pretenders.6 = { # Second Republic
 	immediate = {
 		ruler = {
 			save_scope_as = old_ruler_scope
-			exile_character_with_martyrdom = yes
 		}
-        set_variable = { # RRK - Somewhat hacky way of preventing fate of the monarch event
+		springtime_save_conservative_laws = yes
+        set_variable = { # RRK - Somewhat hacky way of preventing RRK fate of the monarch event
             name = government_couped
             days = 1
         }
-		activate_law = law_type:law_presidential_republic
 		if = {
 			limit = {
-				has_law = law_type:law_hereditary_bureaucrats
+				NOT = {
+					has_law = law_type:law_parliamentary_republic
+				}
+			}
+			activate_law = law_type:law_parliamentary_republic
+		}
+		if = {
+			limit = {
+				NOT = {
+					has_law = law_type:law_universal_suffrage
+				}
+			}
+			activate_law = law_type:law_universal_suffrage
+		}
+		if = {
+			limit = {
+				NOT = {
+					has_law = law_type:law_right_of_assembly
+				}
+			}
+			activate_law = law_type:law_right_of_assembly
+		}
+		if = {
+			limit = {
+				NOT = {
+					has_law = law_type:law_national_guard
+				}
+			}
+			activate_law = law_type:law_national_guard
+		}
+		if = {
+			limit = {
+				has_law_or_variant = law_type:law_hereditary_bureaucrats
 			}
 			activate_law = law_type:law_appointed_bureaucrats
+		}
+		set_variable = had_springtime_revolution
+		scope:old_ruler_scope ?= {
+			exile_character_with_martyrdom = yes
 		}
 	}
 	option = {
@@ -51,7 +86,7 @@ french_pretenders.6 = { # Second Republic
 		set_variable = france_had_revolution
 		random_interest_group = {
 			limit = {
-				is_marginal = no
+				ig_counts_as_marginal = no
 				law_stance = {
 					law = law_type:law_presidential_republic
 					value > neutral
@@ -64,10 +99,12 @@ french_pretenders.6 = { # Second Republic
 		if = {
 			limit = {
 				country_has_voting_franchise = yes
+				in_election_campaign = no
 			}
 			call_election = {
-				months = 6
+				months = 3
 			}
 		}
+		trigger_event = { id = peoples_springtime.10 days = 7 popup = yes }
 	}
 }
