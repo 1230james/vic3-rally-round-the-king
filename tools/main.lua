@@ -168,9 +168,11 @@ local function read_next_block(file)
             table.insert(arr, line)
             
             -- Insert lines until closing brace
-            local closed = false
-            local braces = 1
-            while run do
+            local braces = 0
+            local opening, closing = count_braces(line)
+            braces = braces + opening - closing
+            
+            while braces > 0 do
                 line = file:read("L")
                 if not line then
                     print("!!! ERR !!! - Malformed file")
@@ -179,7 +181,7 @@ local function read_next_block(file)
                 end
                 
                 table.insert(arr, line)
-                local opening, closing = count_braces(line)
+                opening, closing = count_braces(line)
                 braces = braces + opening - closing
                 if closing > 0 and braces <= 0 then
                     run = false
