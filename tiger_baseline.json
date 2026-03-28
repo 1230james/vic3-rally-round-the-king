@@ -1,5 +1,658 @@
 [
 {
+  "confidence": "reasonable",
+  "info": null,
+  "key": "prefixes",
+  "locations": [
+    {
+      "column": 1,
+      "from": "MOD",
+      "fullpath": ".\\common\\customizable_localization\\=!RRK_02_events.txt",
+      "length": 19,
+      "line": "REPLACE:place_event = {",
+      "linenr": 4,
+      "path": "common\\customizable_localization\\=!RRK_02_events.txt",
+      "stage": null,
+      "tag": null
+    }
+  ],
+  "message": "cannot use prefixes with custom localization",
+  "severity": "error",
+  "wiki": null
+},
+{
+  "confidence": "reasonable",
+  "info": null,
+  "key": "prefixes",
+  "locations": [
+    {
+      "column": 1,
+      "from": "MOD",
+      "fullpath": ".\\common\\customizable_localization\\=!RRK_03_misc.txt",
+      "length": 25,
+      "line": "REPLACE:enactment_phase_0 = {",
+      "linenr": 4,
+      "path": "common\\customizable_localization\\=!RRK_03_misc.txt",
+      "stage": null,
+      "tag": null
+    }
+  ],
+  "message": "cannot use prefixes with custom localization",
+  "severity": "error",
+  "wiki": null
+},
+{
+  "confidence": "reasonable",
+  "info": null,
+  "key": "prefixes",
+  "locations": [
+    {
+      "column": 1,
+      "from": "MOD",
+      "fullpath": ".\\common\\customizable_localization\\=!RRK_03_misc.txt",
+      "length": 25,
+      "line": "REPLACE:enactment_phase_1 = {",
+      "linenr": 79,
+      "path": "common\\customizable_localization\\=!RRK_03_misc.txt",
+      "stage": null,
+      "tag": null
+    }
+  ],
+  "message": "cannot use prefixes with custom localization",
+  "severity": "error",
+  "wiki": null
+},
+{
+  "confidence": "reasonable",
+  "info": null,
+  "key": "prefixes",
+  "locations": [
+    {
+      "column": 1,
+      "from": "MOD",
+      "fullpath": ".\\common\\customizable_localization\\=!RRK_03_misc.txt",
+      "length": 25,
+      "line": "REPLACE:enactment_phase_2 = {",
+      "linenr": 154,
+      "path": "common\\customizable_localization\\=!RRK_03_misc.txt",
+      "stage": null,
+      "tag": null
+    }
+  ],
+  "message": "cannot use prefixes with custom localization",
+  "severity": "error",
+  "wiki": null
+},
+{
+  "confidence": "reasonable",
+  "info": null,
+  "key": "prefixes",
+  "locations": [
+    {
+      "column": 1,
+      "from": "MOD",
+      "fullpath": ".\\common\\customizable_localization\\=!RRK_04_units.txt",
+      "length": 23,
+      "line": "REPLACE:flotilla_prefix = {",
+      "linenr": 4,
+      "path": "common\\customizable_localization\\=!RRK_04_units.txt",
+      "stage": null,
+      "tag": null
+    }
+  ],
+  "message": "cannot use prefixes with custom localization",
+  "severity": "error",
+  "wiki": null
+},
+{
+  "confidence": "reasonable",
+  "info": null,
+  "key": "prefixes",
+  "locations": [
+    {
+      "column": 1,
+      "from": "MOD",
+      "fullpath": ".\\common\\customizable_localization\\=!RRK_99_ru_custom_loc.txt",
+      "length": 17,
+      "line": "REPLACE:RU_CL_END = {",
+      "linenr": 4,
+      "path": "common\\customizable_localization\\=!RRK_99_ru_custom_loc.txt",
+      "stage": null,
+      "tag": null
+    }
+  ],
+  "message": "cannot use prefixes with custom localization",
+  "severity": "error",
+  "wiki": null
+},
+{
+  "confidence": "reasonable",
+  "info": null,
+  "key": "prefixes",
+  "locations": [
+    {
+      "column": 1,
+      "from": "MOD",
+      "fullpath": ".\\common\\customizable_localization\\=!RRK_99_ru_custom_loc.txt",
+      "length": 21,
+      "line": "REPLACE:RU_CL_END_FEM = {",
+      "linenr": 17304,
+      "path": "common\\customizable_localization\\=!RRK_99_ru_custom_loc.txt",
+      "stage": null,
+      "tag": null
+    }
+  ],
+  "message": "cannot use prefixes with custom localization",
+  "severity": "error",
+  "wiki": null
+},
+{
+  "confidence": "reasonable",
+  "info": null,
+  "key": "prefixes",
+  "locations": [
+    {
+      "column": 1,
+      "from": "MOD",
+      "fullpath": ".\\common\\customizable_localization\\=!RRK_99_ru_custom_loc.txt",
+      "length": 19,
+      "line": "REPLACE:RU_CL_END_T = {",
+      "linenr": 34580,
+      "path": "common\\customizable_localization\\=!RRK_99_ru_custom_loc.txt",
+      "stage": null,
+      "tag": null
+    }
+  ],
+  "message": "cannot use prefixes with custom localization",
+  "severity": "error",
+  "wiki": null
+},
+{
+  "confidence": "reasonable",
+  "info": null,
+  "key": "prefixes",
+  "locations": [
+    {
+      "column": 1,
+      "from": "MOD",
+      "fullpath": ".\\common\\customizable_localization\\=!RRK_99_ru_custom_loc.txt",
+      "length": 21,
+      "line": "REPLACE:RU_CL_END_GUT = {",
+      "linenr": 51842,
+      "path": "common\\customizable_localization\\=!RRK_99_ru_custom_loc.txt",
+      "stage": null,
+      "tag": null
+    }
+  ],
+  "message": "cannot use prefixes with custom localization",
+  "severity": "error",
+  "wiki": null
+},
+{
+  "confidence": "reasonable",
+  "info": null,
+  "key": "prefixes",
+  "locations": [
+    {
+      "column": 1,
+      "from": "MOD",
+      "fullpath": ".\\common\\customizable_localization\\=!RRK_99_ru_custom_loc.txt",
+      "length": 20,
+      "line": "REPLACE:RU_CL_END_UT = {",
+      "linenr": 69104,
+      "path": "common\\customizable_localization\\=!RRK_99_ru_custom_loc.txt",
+      "stage": null,
+      "tag": null
+    }
+  ],
+  "message": "cannot use prefixes with custom localization",
+  "severity": "error",
+  "wiki": null
+},
+{
+  "confidence": "reasonable",
+  "info": null,
+  "key": "prefixes",
+  "locations": [
+    {
+      "column": 1,
+      "from": "MOD",
+      "fullpath": ".\\common\\customizable_localization\\=!RRK_99_ru_custom_loc.txt",
+      "length": 17,
+      "line": "REPLACE:RU_ML_ADJ = {",
+      "linenr": 86366,
+      "path": "common\\customizable_localization\\=!RRK_99_ru_custom_loc.txt",
+      "stage": null,
+      "tag": null
+    }
+  ],
+  "message": "cannot use prefixes with custom localization",
+  "severity": "error",
+  "wiki": null
+},
+{
+  "confidence": "reasonable",
+  "info": null,
+  "key": "prefixes",
+  "locations": [
+    {
+      "column": 1,
+      "from": "MOD",
+      "fullpath": ".\\common\\customizable_localization\\=!RRK_agitators_custom_loc.txt",
+      "length": 25,
+      "line": "REPLACE:dynamic_ship_name = {",
+      "linenr": 4,
+      "path": "common\\customizable_localization\\=!RRK_agitators_custom_loc.txt",
+      "stage": null,
+      "tag": null
+    }
+  ],
+  "message": "cannot use prefixes with custom localization",
+  "severity": "error",
+  "wiki": null
+},
+{
+  "confidence": "reasonable",
+  "info": null,
+  "key": "prefixes",
+  "locations": [
+    {
+      "column": 1,
+      "from": "MOD",
+      "fullpath": ".\\common\\customizable_localization\\=!RRK_bp1_custom_loc.txt",
+      "length": 22,
+      "line": "REPLACE:royal_navy_loc = {",
+      "linenr": 4,
+      "path": "common\\customizable_localization\\=!RRK_bp1_custom_loc.txt",
+      "stage": null,
+      "tag": null
+    }
+  ],
+  "message": "cannot use prefixes with custom localization",
+  "severity": "error",
+  "wiki": null
+},
+{
+  "confidence": "reasonable",
+  "info": null,
+  "key": "prefixes",
+  "locations": [
+    {
+      "column": 1,
+      "from": "MOD",
+      "fullpath": ".\\common\\customizable_localization\\=!RRK_ip3_custom_loc.txt",
+      "length": 32,
+      "line": "REPLACE:country_legislature_name = {",
+      "linenr": 4,
+      "path": "common\\customizable_localization\\=!RRK_ip3_custom_loc.txt",
+      "stage": null,
+      "tag": null
+    }
+  ],
+  "message": "cannot use prefixes with custom localization",
+  "severity": "error",
+  "wiki": null
+},
+{
+  "confidence": "reasonable",
+  "info": null,
+  "key": "prefixes",
+  "locations": [
+    {
+      "column": 1,
+      "from": "MOD",
+      "fullpath": ".\\common\\customizable_localization\\=!RRK_ip3_custom_loc.txt",
+      "length": 23,
+      "line": "REPLACE:future_kuk_name = {",
+      "linenr": 181,
+      "path": "common\\customizable_localization\\=!RRK_ip3_custom_loc.txt",
+      "stage": null,
+      "tag": null
+    }
+  ],
+  "message": "cannot use prefixes with custom localization",
+  "severity": "error",
+  "wiki": null
+},
+{
+  "confidence": "reasonable",
+  "info": null,
+  "key": "prefixes",
+  "locations": [
+    {
+      "column": 1,
+      "from": "MOD",
+      "fullpath": ".\\common\\customizable_localization\\=!RRK_victoria_ip4_custom_loc.txt",
+      "length": 25,
+      "line": "REPLACE:iberia_union_name = {",
+      "linenr": 4,
+      "path": "common\\customizable_localization\\=!RRK_victoria_ip4_custom_loc.txt",
+      "stage": null,
+      "tag": null
+    }
+  ],
+  "message": "cannot use prefixes with custom localization",
+  "severity": "error",
+  "wiki": null
+},
+{
+  "confidence": "reasonable",
+  "info": null,
+  "key": "prefixes",
+  "locations": [
+    {
+      "column": 1,
+      "from": "MOD",
+      "fullpath": ".\\common\\customizable_localization\\=!RRK_victoria_ip4_custom_loc.txt",
+      "length": 25,
+      "line": "REPLACE:iberia_union_desc = {",
+      "linenr": 47,
+      "path": "common\\customizable_localization\\=!RRK_victoria_ip4_custom_loc.txt",
+      "stage": null,
+      "tag": null
+    }
+  ],
+  "message": "cannot use prefixes with custom localization",
+  "severity": "error",
+  "wiki": null
+},
+{
+  "confidence": "reasonable",
+  "info": null,
+  "key": "prefixes",
+  "locations": [
+    {
+      "column": 1,
+      "from": "MOD",
+      "fullpath": ".\\common\\customizable_localization\\=!RRK_victoria_ip4_custom_loc.txt",
+      "length": 25,
+      "line": "REPLACE:iberia_name_to_be = {",
+      "linenr": 86,
+      "path": "common\\customizable_localization\\=!RRK_victoria_ip4_custom_loc.txt",
+      "stage": null,
+      "tag": null
+    }
+  ],
+  "message": "cannot use prefixes with custom localization",
+  "severity": "error",
+  "wiki": null
+},
+{
+  "confidence": "reasonable",
+  "info": null,
+  "key": "prefixes",
+  "locations": [
+    {
+      "column": 1,
+      "from": "MOD",
+      "fullpath": ".\\common\\customizable_localization\\=!RRK_victoria_ip4_custom_loc.txt",
+      "length": 36,
+      "line": "REPLACE:iberian_union_political_text = {",
+      "linenr": 144,
+      "path": "common\\customizable_localization\\=!RRK_victoria_ip4_custom_loc.txt",
+      "stage": null,
+      "tag": null
+    }
+  ],
+  "message": "cannot use prefixes with custom localization",
+  "severity": "error",
+  "wiki": null
+},
+{
+  "confidence": "reasonable",
+  "info": null,
+  "key": "prefixes",
+  "locations": [
+    {
+      "column": 1,
+      "from": "MOD",
+      "fullpath": ".\\common\\diplomatic_actions\\RRK_subjects_appoint_governor.txt",
+      "length": 28,
+      "line": "da_appoint_colonial_governor = {",
+      "linenr": 1,
+      "path": "common\\diplomatic_actions\\RRK_subjects_appoint_governor.txt",
+      "stage": null,
+      "tag": null
+    },
+    {
+      "column": 1,
+      "from": "Vic3",
+      "fullpath": "C:\\Steam\\steamapps\\common\\Victoria 3\\game\\common\\diplomatic_actions\\35_subjects_appoint_governor.txt",
+      "length": 28,
+      "line": "da_appoint_colonial_governor = {",
+      "linenr": 1,
+      "path": "common\\diplomatic_actions\\35_subjects_appoint_governor.txt",
+      "stage": null,
+      "tag": "original here"
+    }
+  ],
+  "message": "must have a prefix such as `REPLACE:` to replace diplomatic action",
+  "severity": "error",
+  "wiki": null
+},
+{
+  "confidence": "reasonable",
+  "info": null,
+  "key": "unknown-field",
+  "locations": [
+    {
+      "column": 3,
+      "from": "MOD",
+      "fullpath": ".\\common\\government_types\\00_RRK_gov_types.txt",
+      "length": 20,
+      "line": "\t\tcountry_is_in_europe = no",
+      "linenr": 1352,
+      "path": "common\\government_types\\00_RRK_gov_types.txt",
+      "stage": null,
+      "tag": null
+    }
+  ],
+  "message": "unknown token `country_is_in_europe`",
+  "severity": "error",
+  "wiki": null
+},
+{
+  "confidence": "reasonable",
+  "info": null,
+  "key": "unknown-field",
+  "locations": [
+    {
+      "column": 3,
+      "from": "MOD",
+      "fullpath": ".\\common\\government_types\\00_RRK_gov_types.txt",
+      "length": 20,
+      "line": "\t\tcountry_is_in_europe = yes",
+      "linenr": 1433,
+      "path": "common\\government_types\\00_RRK_gov_types.txt",
+      "stage": null,
+      "tag": null
+    }
+  ],
+  "message": "unknown token `country_is_in_europe`",
+  "severity": "error",
+  "wiki": null
+},
+{
+  "confidence": "reasonable",
+  "info": null,
+  "key": "unknown-field",
+  "locations": [
+    {
+      "column": 3,
+      "from": "MOD",
+      "fullpath": ".\\common\\government_types\\00_RRK_gov_types.txt",
+      "length": 20,
+      "line": "\t\tcountry_is_in_europe = yes",
+      "linenr": 1460,
+      "path": "common\\government_types\\00_RRK_gov_types.txt",
+      "stage": null,
+      "tag": null
+    }
+  ],
+  "message": "unknown token `country_is_in_europe`",
+  "severity": "error",
+  "wiki": null
+},
+{
+  "confidence": "reasonable",
+  "info": null,
+  "key": "unknown-field",
+  "locations": [
+    {
+      "column": 3,
+      "from": "MOD",
+      "fullpath": ".\\common\\government_types\\00_RRK_gov_types.txt",
+      "length": 20,
+      "line": "\t\tcountry_is_in_europe = no",
+      "linenr": 1484,
+      "path": "common\\government_types\\00_RRK_gov_types.txt",
+      "stage": null,
+      "tag": null
+    }
+  ],
+  "message": "unknown token `country_is_in_europe`",
+  "severity": "error",
+  "wiki": null
+},
+{
+  "confidence": "reasonable",
+  "info": null,
+  "key": "unknown-field",
+  "locations": [
+    {
+      "column": 3,
+      "from": "MOD",
+      "fullpath": ".\\common\\government_types\\00_RRK_gov_types.txt",
+      "length": 20,
+      "line": "\t\tcountry_is_in_europe = yes",
+      "linenr": 1509,
+      "path": "common\\government_types\\00_RRK_gov_types.txt",
+      "stage": null,
+      "tag": null
+    }
+  ],
+  "message": "unknown token `country_is_in_europe`",
+  "severity": "error",
+  "wiki": null
+},
+{
+  "confidence": "reasonable",
+  "info": null,
+  "key": "unknown-field",
+  "locations": [
+    {
+      "column": 3,
+      "from": "MOD",
+      "fullpath": ".\\common\\government_types\\00_RRK_gov_types.txt",
+      "length": 20,
+      "line": "\t\tcountry_is_in_europe = no",
+      "linenr": 1532,
+      "path": "common\\government_types\\00_RRK_gov_types.txt",
+      "stage": null,
+      "tag": null
+    }
+  ],
+  "message": "unknown token `country_is_in_europe`",
+  "severity": "error",
+  "wiki": null
+},
+{
+  "confidence": "weak",
+  "info": null,
+  "key": "strict-scopes",
+  "locations": [
+    {
+      "column": 9,
+      "from": "MOD",
+      "fullpath": ".\\common\\treaty_articles\\=!RRK_27_amend_succession.txt",
+      "length": 19,
+      "line": "        scope:other_country = {",
+      "linenr": 25,
+      "path": "common\\treaty_articles\\=!RRK_27_amend_succession.txt",
+      "stage": null,
+      "tag": null
+    },
+    {
+      "column": 2,
+      "from": "MOD",
+      "fullpath": ".\\common\\treaty_articles\\=!RRK_27_amend_succession.txt",
+      "length": 7,
+      "line": "\tvisible = {",
+      "linenr": 22,
+      "path": "common\\treaty_articles\\=!RRK_27_amend_succession.txt",
+      "stage": null,
+      "tag": "scopes initialized here"
+    }
+  ],
+  "message": "scope:other_country might not be available here",
+  "severity": "error",
+  "wiki": null
+},
+{
+  "confidence": "weak",
+  "info": null,
+  "key": "strict-scopes",
+  "locations": [
+    {
+      "column": 42,
+      "from": "MOD",
+      "fullpath": ".\\events\\RRK_events.txt",
+      "length": 22,
+      "line": "                            multiplier = local_var:booster_mult",
+      "linenr": 700,
+      "path": "events\\RRK_events.txt",
+      "stage": null,
+      "tag": null
+    },
+    {
+      "column": 29,
+      "from": "MOD",
+      "fullpath": ".\\events\\RRK_events.txt",
+      "length": 10,
+      "line": "                            multiplier = local_var:booster_mult",
+      "linenr": 700,
+      "path": "events\\RRK_events.txt",
+      "stage": null,
+      "tag": "scopes initialized here"
+    }
+  ],
+  "message": "local_var:booster_mult might not be available here",
+  "severity": "error",
+  "wiki": null
+},
+{
+  "confidence": "weak",
+  "info": null,
+  "key": "strict-scopes",
+  "locations": [
+    {
+      "column": 42,
+      "from": "MOD",
+      "fullpath": ".\\events\\RRK_events.txt",
+      "length": 22,
+      "line": "                            multiplier = local_var:booster_mult",
+      "linenr": 899,
+      "path": "events\\RRK_events.txt",
+      "stage": null,
+      "tag": null
+    },
+    {
+      "column": 29,
+      "from": "MOD",
+      "fullpath": ".\\events\\RRK_events.txt",
+      "length": 10,
+      "line": "                            multiplier = local_var:booster_mult",
+      "linenr": 899,
+      "path": "events\\RRK_events.txt",
+      "stage": null,
+      "tag": "scopes initialized here"
+    }
+  ],
+  "message": "local_var:booster_mult might not be available here",
+  "severity": "error",
+  "wiki": null
+},
+{
   "confidence": "weak",
   "info": "available names are brazil_scope, heir_scope, intelligentsia_ig, journal_entry, pedro_scope or target",
   "key": "strict-scopes",
@@ -10,33 +663,37 @@
       "fullpath": "C:\\Steam\\steamapps\\common\\Victoria 3\\game\\events\\brazil\\pedro_brazil_events.txt",
       "length": 18,
       "line": "\t\tadd_journal_entry = { type = je_isabel target = scope:isabel_scope }",
-      "linenr": 935,
+      "linenr": 965,
       "path": "events\\brazil\\pedro_brazil_events.txt",
+      "stage": null,
       "tag": null
     },
     {
       "column": 9,
       "from": "MOD",
-      "fullpath": ".\\common\\journal_entries\\RRK_02_pedro_brazil.txt",
+      "fullpath": ".\\common\\journal_entries\\=!RRK_02_pedro_brazil.txt",
       "length": 8,
       "line": "\t\t\t10 = pedro.12 # Death of Pedro's heirs",
-      "linenr": 24,
-      "path": "common\\journal_entries\\RRK_02_pedro_brazil.txt",
+      "linenr": 30,
+      "path": "common\\journal_entries\\=!RRK_02_pedro_brazil.txt",
+      "stage": null,
       "tag": "triggered from here"
     },
     {
-      "column": 1,
+      "column": 9,
       "from": "MOD",
-      "fullpath": ".\\common\\journal_entries\\RRK_02_pedro_brazil.txt",
+      "fullpath": ".\\common\\journal_entries\\=!RRK_02_pedro_brazil.txt",
       "length": 15,
-      "line": "je_pedro_brazil = {",
-      "linenr": 1,
-      "path": "common\\journal_entries\\RRK_02_pedro_brazil.txt",
+      "line": "REPLACE:je_pedro_brazil = {",
+      "linenr": 4,
+      "path": "common\\journal_entries\\=!RRK_02_pedro_brazil.txt",
+      "stage": null,
       "tag": "scopes initialized here"
     }
   ],
   "message": "scope:isabel_scope might not be available here",
-  "severity": "error"
+  "severity": "error",
+  "wiki": null
 },
 {
   "confidence": "reasonable",
@@ -45,251 +702,320 @@
   "locations": [
     {
       "column": 5,
-      "from": "Vic3",
-      "fullpath": "C:\\Steam\\steamapps\\common\\Victoria 3\\game\\common\\customizable_localization\\99_ru_custom_loc.txt",
-      "length": 8,
-      "line": "\t\t\t\tis_ruler = yes",
-      "linenr": 4098,
-      "path": "common\\customizable_localization\\99_ru_custom_loc.txt",
+      "from": "MOD",
+      "fullpath": ".\\common\\alert_types\\=!RRK_00_alert_types.txt",
+      "length": 26,
+      "line": "\t\t\t\tmovement_supports_enaction = yes",
+      "linenr": 17,
+      "path": "common\\alert_types\\=!RRK_00_alert_types.txt",
+      "stage": null,
       "tag": null
     },
     {
+      "column": 11,
+      "from": "Vic3",
+      "fullpath": "C:\\Steam\\steamapps\\common\\Victoria 3\\game\\common\\scripted_triggers\\00_scripted_triggers.txt",
+      "length": 22,
+      "line": "\texists = currently_enacting_law",
+      "linenr": 1297,
+      "path": "common\\scripted_triggers\\00_scripted_triggers.txt",
+      "stage": null,
+      "tag": "expected scope was deduced from `currently_enacting_law` here"
+    },
+    {
+      "column": 4,
+      "from": "MOD",
+      "fullpath": ".\\common\\alert_types\\=!RRK_00_alert_types.txt",
+      "length": 22,
+      "line": "\t\t\tany_political_movement = {",
+      "linenr": 16,
+      "path": "common\\alert_types\\=!RRK_00_alert_types.txt",
+      "stage": null,
+      "tag": "actual scope was deduced from `any_political_movement` here"
+    }
+  ],
+  "message": "`movement_supports_enaction` expects scope to be country but scope seems to be political movement",
+  "severity": "warning",
+  "wiki": null
+},
+{
+  "confidence": "reasonable",
+  "info": null,
+  "key": "scopes",
+  "locations": [
+    {
       "column": 5,
       "from": "MOD",
-      "fullpath": ".\\common\\scripted_triggers\\01_RRK_coa_triggers.txt",
+      "fullpath": ".\\common\\alert_types\\=!RRK_00_alert_types.txt",
+      "length": 26,
+      "line": "\t\t\t\tmovement_supports_enaction = yes",
+      "linenr": 47,
+      "path": "common\\alert_types\\=!RRK_00_alert_types.txt",
+      "stage": null,
+      "tag": null
+    },
+    {
+      "column": 11,
+      "from": "Vic3",
+      "fullpath": "C:\\Steam\\steamapps\\common\\Victoria 3\\game\\common\\scripted_triggers\\00_scripted_triggers.txt",
+      "length": 22,
+      "line": "\texists = currently_enacting_law",
+      "linenr": 1297,
+      "path": "common\\scripted_triggers\\00_scripted_triggers.txt",
+      "stage": null,
+      "tag": "expected scope was deduced from `currently_enacting_law` here"
+    },
+    {
+      "column": 4,
+      "from": "MOD",
+      "fullpath": ".\\common\\alert_types\\=!RRK_00_alert_types.txt",
+      "length": 22,
+      "line": "\t\t\tany_political_movement = {",
+      "linenr": 46,
+      "path": "common\\alert_types\\=!RRK_00_alert_types.txt",
+      "stage": null,
+      "tag": "actual scope was deduced from `any_political_movement` here"
+    }
+  ],
+  "message": "`movement_supports_enaction` expects scope to be country but scope seems to be political movement",
+  "severity": "warning",
+  "wiki": null
+},
+{
+  "confidence": "reasonable",
+  "info": null,
+  "key": "strict-scopes",
+  "locations": [
+    {
+      "column": 5,
+      "from": "Vic3",
+      "fullpath": "C:\\Steam\\steamapps\\common\\Victoria 3\\game\\common\\character_interactions\\00_character_interactions.txt",
+      "length": 32,
+      "line": "\t\t\t\tcharacter_execute_immediate_coup = yes",
+      "linenr": 620,
+      "path": "common\\character_interactions\\00_character_interactions.txt",
+      "stage": null,
+      "tag": null
+    },
+    {
+      "column": 3,
+      "from": "MOD",
+      "fullpath": ".\\common\\scripted_effects\\=!RRK_00_victoria_ip4_scripted_effects.txt",
+      "length": 17,
+      "line": "\t\tscope:golpista_ig.leader ?= {",
+      "linenr": 92,
+      "path": "common\\scripted_effects\\=!RRK_00_victoria_ip4_scripted_effects.txt",
+      "stage": null,
+      "tag": "here"
+    },
+    {
+      "column": 1,
+      "from": "Vic3",
+      "fullpath": "C:\\Steam\\steamapps\\common\\Victoria 3\\game\\common\\character_interactions\\00_character_interactions.txt",
       "length": 15,
-      "line": "\t\t\t\tis_country_type = decentralized",
-      "linenr": 24,
-      "path": "common\\scripted_triggers\\01_RRK_coa_triggers.txt",
-      "tag": "scope was deduced from `is_country_type` here"
+      "line": "exile_character = {",
+      "linenr": 489,
+      "path": "common\\character_interactions\\00_character_interactions.txt",
+      "stage": null,
+      "tag": "scopes initialized here"
     }
   ],
-  "message": "`is_ruler` is for character but scope seems to be country",
-  "severity": "warning"
+  "message": "`character_execute_immediate_coup` expects scope:golpista_ig to be set",
+  "severity": "warning",
+  "wiki": null
 },
 {
   "confidence": "reasonable",
   "info": null,
-  "key": "scopes",
+  "key": "strict-scopes",
   "locations": [
     {
       "column": 5,
       "from": "Vic3",
-      "fullpath": "C:\\Steam\\steamapps\\common\\Victoria 3\\game\\common\\customizable_localization\\99_ru_custom_loc.txt",
-      "length": 12,
-      "line": "\t\t\t\thas_template = ARG_Juan_Manuel_de_Rosas",
-      "linenr": 4099,
-      "path": "common\\customizable_localization\\99_ru_custom_loc.txt",
-      "tag": null
-    },
-    {
-      "column": 5,
-      "from": "MOD",
-      "fullpath": ".\\common\\scripted_triggers\\01_RRK_coa_triggers.txt",
-      "length": 15,
-      "line": "\t\t\t\tis_country_type = decentralized",
-      "linenr": 24,
-      "path": "common\\scripted_triggers\\01_RRK_coa_triggers.txt",
-      "tag": "scope was deduced from `is_country_type` here"
-    }
-  ],
-  "message": "`has_template` is for character but scope seems to be country",
-  "severity": "warning"
-},
-{
-  "confidence": "reasonable",
-  "info": null,
-  "key": "scopes",
-  "locations": [
-    {
-      "column": 8,
-      "from": "Vic3",
-      "fullpath": "C:\\Steam\\steamapps\\common\\Victoria 3\\game\\common\\customizable_localization\\99_ru_custom_loc.txt",
-      "length": 20,
-      "line": "\t\t\t\t\t\t\tcoa_republic_trigger = yes\t\t\t\t\t\t\t",
-      "linenr": 6125,
-      "path": "common\\customizable_localization\\99_ru_custom_loc.txt",
+      "fullpath": "C:\\Steam\\steamapps\\common\\Victoria 3\\game\\common\\character_interactions\\00_character_interactions.txt",
+      "length": 32,
+      "line": "\t\t\t\tcharacter_execute_immediate_coup = yes",
+      "linenr": 1208,
+      "path": "common\\character_interactions\\00_character_interactions.txt",
+      "stage": null,
       "tag": null
     },
     {
       "column": 3,
       "from": "MOD",
-      "fullpath": ".\\common\\scripted_triggers\\01_RRK_coa_triggers.txt",
-      "length": 7,
-      "line": "\t\thas_law = law_type:law_corporate_state",
-      "linenr": 43,
-      "path": "common\\scripted_triggers\\01_RRK_coa_triggers.txt",
-      "tag": "expected scope was deduced from `has_law` here"
+      "fullpath": ".\\common\\scripted_effects\\=!RRK_00_victoria_ip4_scripted_effects.txt",
+      "length": 17,
+      "line": "\t\tscope:golpista_ig.leader ?= {",
+      "linenr": 92,
+      "path": "common\\scripted_effects\\=!RRK_00_victoria_ip4_scripted_effects.txt",
+      "stage": null,
+      "tag": "here"
     },
     {
-      "column": 6,
+      "column": 1,
       "from": "Vic3",
-      "fullpath": "C:\\Steam\\steamapps\\common\\Victoria 3\\game\\common\\customizable_localization\\99_ru_custom_loc.txt",
-      "length": 19,
-      "line": "\t\t\t\t\tany_diplomatic_play = {",
-      "linenr": 6118,
-      "path": "common\\customizable_localization\\99_ru_custom_loc.txt",
-      "tag": "actual scope was deduced from `any_diplomatic_play` here"
+      "fullpath": "C:\\Steam\\steamapps\\common\\Victoria 3\\game\\common\\character_interactions\\00_character_interactions.txt",
+      "length": 16,
+      "line": "retire_commander = {",
+      "linenr": 1147,
+      "path": "common\\character_interactions\\00_character_interactions.txt",
+      "stage": null,
+      "tag": "scopes initialized here"
     }
   ],
-  "message": "`coa_republic_trigger` expects scope to be country but scope seems to be diplomatic play",
-  "severity": "warning"
+  "message": "`character_execute_immediate_coup` expects scope:golpista_ig to be set",
+  "severity": "warning",
+  "wiki": null
 },
 {
   "confidence": "reasonable",
   "info": null,
-  "key": "scopes",
+  "key": "strict-scopes",
   "locations": [
     {
       "column": 8,
       "from": "Vic3",
-      "fullpath": "C:\\Steam\\steamapps\\common\\Victoria 3\\game\\common\\customizable_localization\\99_ru_custom_loc.txt",
-      "length": 20,
-      "line": "\t\t\t\t\t\t\tcoa_republic_trigger = yes\t\t\t\t\t\t\t",
-      "linenr": 22944,
-      "path": "common\\customizable_localization\\99_ru_custom_loc.txt",
+      "fullpath": "C:\\Steam\\steamapps\\common\\Victoria 3\\game\\common\\character_interactions\\01_additional_interactions.txt",
+      "length": 32,
+      "line": "\t\t\t\t\t\t\tcharacter_execute_immediate_coup = yes",
+      "linenr": 169,
+      "path": "common\\character_interactions\\01_additional_interactions.txt",
+      "stage": null,
       "tag": null
     },
     {
       "column": 3,
       "from": "MOD",
-      "fullpath": ".\\common\\scripted_triggers\\01_RRK_coa_triggers.txt",
-      "length": 7,
-      "line": "\t\thas_law = law_type:law_corporate_state",
-      "linenr": 43,
-      "path": "common\\scripted_triggers\\01_RRK_coa_triggers.txt",
-      "tag": "expected scope was deduced from `has_law` here"
+      "fullpath": ".\\common\\scripted_effects\\=!RRK_00_victoria_ip4_scripted_effects.txt",
+      "length": 17,
+      "line": "\t\tscope:golpista_ig.leader ?= {",
+      "linenr": 92,
+      "path": "common\\scripted_effects\\=!RRK_00_victoria_ip4_scripted_effects.txt",
+      "stage": null,
+      "tag": "here"
     },
     {
-      "column": 6,
+      "column": 1,
       "from": "Vic3",
-      "fullpath": "C:\\Steam\\steamapps\\common\\Victoria 3\\game\\common\\customizable_localization\\99_ru_custom_loc.txt",
-      "length": 19,
-      "line": "\t\t\t\t\tany_diplomatic_play = {",
-      "linenr": 22937,
-      "path": "common\\customizable_localization\\99_ru_custom_loc.txt",
-      "tag": "actual scope was deduced from `any_diplomatic_play` here"
+      "fullpath": "C:\\Steam\\steamapps\\common\\Victoria 3\\game\\common\\character_interactions\\01_additional_interactions.txt",
+      "length": 16,
+      "line": "arrange_accident = {",
+      "linenr": 15,
+      "path": "common\\character_interactions\\01_additional_interactions.txt",
+      "stage": null,
+      "tag": "scopes initialized here"
     }
   ],
-  "message": "`coa_republic_trigger` expects scope to be country but scope seems to be diplomatic play",
-  "severity": "warning"
+  "message": "`character_execute_immediate_coup` expects scope:golpista_ig to be set",
+  "severity": "warning",
+  "wiki": null
 },
 {
   "confidence": "reasonable",
   "info": null,
-  "key": "scopes",
+  "key": "strict-scopes",
   "locations": [
     {
       "column": 8,
       "from": "Vic3",
-      "fullpath": "C:\\Steam\\steamapps\\common\\Victoria 3\\game\\common\\customizable_localization\\99_ru_custom_loc.txt",
-      "length": 20,
-      "line": "\t\t\t\t\t\t\tcoa_republic_trigger = yes\t\t\t\t\t\t\t",
-      "linenr": 40259,
-      "path": "common\\customizable_localization\\99_ru_custom_loc.txt",
+      "fullpath": "C:\\Steam\\steamapps\\common\\Victoria 3\\game\\common\\character_interactions\\01_additional_interactions.txt",
+      "length": 32,
+      "line": "\t\t\t\t\t\t\tcharacter_execute_immediate_coup = yes",
+      "linenr": 236,
+      "path": "common\\character_interactions\\01_additional_interactions.txt",
+      "stage": null,
       "tag": null
     },
     {
       "column": 3,
       "from": "MOD",
-      "fullpath": ".\\common\\scripted_triggers\\01_RRK_coa_triggers.txt",
-      "length": 7,
-      "line": "\t\thas_law = law_type:law_corporate_state",
-      "linenr": 43,
-      "path": "common\\scripted_triggers\\01_RRK_coa_triggers.txt",
-      "tag": "expected scope was deduced from `has_law` here"
+      "fullpath": ".\\common\\scripted_effects\\=!RRK_00_victoria_ip4_scripted_effects.txt",
+      "length": 17,
+      "line": "\t\tscope:golpista_ig.leader ?= {",
+      "linenr": 92,
+      "path": "common\\scripted_effects\\=!RRK_00_victoria_ip4_scripted_effects.txt",
+      "stage": null,
+      "tag": "here"
     },
     {
-      "column": 6,
+      "column": 1,
       "from": "Vic3",
-      "fullpath": "C:\\Steam\\steamapps\\common\\Victoria 3\\game\\common\\customizable_localization\\99_ru_custom_loc.txt",
-      "length": 19,
-      "line": "\t\t\t\t\tany_diplomatic_play = {",
-      "linenr": 40252,
-      "path": "common\\customizable_localization\\99_ru_custom_loc.txt",
-      "tag": "actual scope was deduced from `any_diplomatic_play` here"
+      "fullpath": "C:\\Steam\\steamapps\\common\\Victoria 3\\game\\common\\character_interactions\\01_additional_interactions.txt",
+      "length": 16,
+      "line": "arrange_accident = {",
+      "linenr": 15,
+      "path": "common\\character_interactions\\01_additional_interactions.txt",
+      "stage": null,
+      "tag": "scopes initialized here"
     }
   ],
-  "message": "`coa_republic_trigger` expects scope to be country but scope seems to be diplomatic play",
-  "severity": "warning"
+  "message": "`character_execute_immediate_coup` expects scope:golpista_ig to be set",
+  "severity": "warning",
+  "wiki": null
 },
 {
   "confidence": "reasonable",
   "info": null,
-  "key": "scopes",
+  "key": "duplicate-field",
   "locations": [
     {
-      "column": 8,
-      "from": "Vic3",
-      "fullpath": "C:\\Steam\\steamapps\\common\\Victoria 3\\game\\common\\customizable_localization\\99_ru_custom_loc.txt",
-      "length": 20,
-      "line": "\t\t\t\t\t\t\tcoa_republic_trigger = yes\t\t\t\t\t\t\t",
-      "linenr": 57520,
-      "path": "common\\customizable_localization\\99_ru_custom_loc.txt",
+      "column": 3,
+      "from": "MOD",
+      "fullpath": ".\\common\\flag_definitions\\=!RRK_00_flag_definitions.txt",
+      "length": 1,
+      "line": "\t\tsubject_canton = CHI_theocracy",
+      "linenr": 179,
+      "path": "common\\flag_definitions\\=!RRK_00_flag_definitions.txt",
+      "stage": null,
       "tag": null
     },
     {
       "column": 3,
       "from": "MOD",
-      "fullpath": ".\\common\\scripted_triggers\\01_RRK_coa_triggers.txt",
-      "length": 7,
-      "line": "\t\thas_law = law_type:law_corporate_state",
-      "linenr": 43,
-      "path": "common\\scripted_triggers\\01_RRK_coa_triggers.txt",
-      "tag": "expected scope was deduced from `has_law` here"
-    },
-    {
-      "column": 6,
-      "from": "Vic3",
-      "fullpath": "C:\\Steam\\steamapps\\common\\Victoria 3\\game\\common\\customizable_localization\\99_ru_custom_loc.txt",
-      "length": 19,
-      "line": "\t\t\t\t\tany_diplomatic_play = {",
-      "linenr": 57513,
-      "path": "common\\customizable_localization\\99_ru_custom_loc.txt",
-      "tag": "actual scope was deduced from `any_diplomatic_play` here"
+      "fullpath": ".\\common\\flag_definitions\\=!RRK_00_flag_definitions.txt",
+      "length": 1,
+      "line": "\t\tsubject_canton = CHI_absolute_monarchy",
+      "linenr": 180,
+      "path": "common\\flag_definitions\\=!RRK_00_flag_definitions.txt",
+      "stage": null,
+      "tag": "the other one is here"
     }
   ],
-  "message": "`coa_republic_trigger` expects scope to be country but scope seems to be diplomatic play",
-  "severity": "warning"
+  "message": "`subject_canton` is redefined in a following line",
+  "severity": "warning",
+  "wiki": null
 },
 {
   "confidence": "reasonable",
   "info": null,
-  "key": "scopes",
+  "key": "duplicate-field",
   "locations": [
     {
-      "column": 8,
-      "from": "Vic3",
-      "fullpath": "C:\\Steam\\steamapps\\common\\Victoria 3\\game\\common\\customizable_localization\\99_ru_custom_loc.txt",
-      "length": 20,
-      "line": "\t\t\t\t\t\t\tcoa_republic_trigger = yes\t\t\t\t\t\t\t",
-      "linenr": 74564,
-      "path": "common\\customizable_localization\\99_ru_custom_loc.txt",
+      "column": 3,
+      "from": "MOD",
+      "fullpath": ".\\common\\flag_definitions\\=!RRK_00_flag_definitions.txt",
+      "length": 1,
+      "line": "\t\tsubject_canton = CHI_theocracy",
+      "linenr": 739,
+      "path": "common\\flag_definitions\\=!RRK_00_flag_definitions.txt",
+      "stage": null,
       "tag": null
     },
     {
       "column": 3,
       "from": "MOD",
-      "fullpath": ".\\common\\scripted_triggers\\01_RRK_coa_triggers.txt",
-      "length": 7,
-      "line": "\t\thas_law = law_type:law_corporate_state",
-      "linenr": 43,
-      "path": "common\\scripted_triggers\\01_RRK_coa_triggers.txt",
-      "tag": "expected scope was deduced from `has_law` here"
-    },
-    {
-      "column": 6,
-      "from": "Vic3",
-      "fullpath": "C:\\Steam\\steamapps\\common\\Victoria 3\\game\\common\\customizable_localization\\99_ru_custom_loc.txt",
-      "length": 19,
-      "line": "\t\t\t\t\tany_diplomatic_play = {",
-      "linenr": 74557,
-      "path": "common\\customizable_localization\\99_ru_custom_loc.txt",
-      "tag": "actual scope was deduced from `any_diplomatic_play` here"
+      "fullpath": ".\\common\\flag_definitions\\=!RRK_00_flag_definitions.txt",
+      "length": 1,
+      "line": "\t\tsubject_canton = CHI_absolute_monarchy",
+      "linenr": 740,
+      "path": "common\\flag_definitions\\=!RRK_00_flag_definitions.txt",
+      "stage": null,
+      "tag": "the other one is here"
     }
   ],
-  "message": "`coa_republic_trigger` expects scope to be country but scope seems to be diplomatic play",
-  "severity": "warning"
+  "message": "`subject_canton` is redefined in a following line",
+  "severity": "warning",
+  "wiki": null
 },
 {
   "confidence": "reasonable",
@@ -304,11 +1030,3375 @@
       "line": "\tmale_heir = \"RULER_TITLE_MUTASARRIF\"\t# Governor of a Vilayet's subunit, the Sanjak, who would assume command in the Vali's absence",
       "linenr": 870,
       "path": "common\\government_types\\00_RRK_gov_types.txt",
+      "stage": null,
       "tag": null
     }
   ],
   "message": "missing english, spanish, french, german, russian, korean, simp_chinese, braz_por, japanese, polish and turkish localization key RULER_TITLE_MUTASARRIF",
-  "severity": "warning"
+  "severity": "warning",
+  "wiki": null
+},
+{
+  "confidence": "reasonable",
+  "info": null,
+  "key": "scopes",
+  "locations": [
+    {
+      "column": 13,
+      "from": "MOD",
+      "fullpath": ".\\common\\ideologies\\=!RRK_01_character_ideologies.txt",
+      "length": 14,
+      "line": "\t\t\t\tvalue = interest_group.ig_approval",
+      "linenr": 114,
+      "path": "common\\ideologies\\=!RRK_01_character_ideologies.txt",
+      "stage": null,
+      "tag": null
+    },
+    {
+      "column": 2,
+      "from": "MOD",
+      "fullpath": ".\\common\\ideologies\\=!RRK_01_character_ideologies.txt",
+      "length": 28,
+      "line": "\tinterest_group_leader_weight = {",
+      "linenr": 69,
+      "path": "common\\ideologies\\=!RRK_01_character_ideologies.txt",
+      "stage": null,
+      "tag": "scope was supplied by the game engine"
+    }
+  ],
+  "message": "`interest_group` is for character but scope seems to be interest group",
+  "severity": "warning",
+  "wiki": null
+},
+{
+  "confidence": "reasonable",
+  "info": null,
+  "key": "scopes",
+  "locations": [
+    {
+      "column": 5,
+      "from": "MOD",
+      "fullpath": ".\\common\\ideologies\\=!RRK_01_character_ideologies.txt",
+      "length": 11,
+      "line": "\t\t\t\tig_approval >= 5",
+      "linenr": 1959,
+      "path": "common\\ideologies\\=!RRK_01_character_ideologies.txt",
+      "stage": null,
+      "tag": null
+    },
+    {
+      "column": 2,
+      "from": "MOD",
+      "fullpath": ".\\common\\ideologies\\=!RRK_01_character_ideologies.txt",
+      "length": 32,
+      "line": "\tnon_interest_group_leader_weight = {",
+      "linenr": 1883,
+      "path": "common\\ideologies\\=!RRK_01_character_ideologies.txt",
+      "stage": null,
+      "tag": "scope was supplied by the game engine"
+    }
+  ],
+  "message": "`ig_approval` is for interest group but scope seems to be character",
+  "severity": "warning",
+  "wiki": null
+},
+{
+  "confidence": "reasonable",
+  "info": null,
+  "key": "scopes",
+  "locations": [
+    {
+      "column": 5,
+      "from": "MOD",
+      "fullpath": ".\\common\\ideologies\\=!RRK_01_character_ideologies.txt",
+      "length": 16,
+      "line": "\t\t\t\tis_in_government = yes",
+      "linenr": 1994,
+      "path": "common\\ideologies\\=!RRK_01_character_ideologies.txt",
+      "stage": null,
+      "tag": null
+    },
+    {
+      "column": 2,
+      "from": "MOD",
+      "fullpath": ".\\common\\ideologies\\=!RRK_01_character_ideologies.txt",
+      "length": 32,
+      "line": "\tnon_interest_group_leader_weight = {",
+      "linenr": 1883,
+      "path": "common\\ideologies\\=!RRK_01_character_ideologies.txt",
+      "stage": null,
+      "tag": "scope was supplied by the game engine"
+    }
+  ],
+  "message": "`is_in_government` is for interest group but scope seems to be character",
+  "severity": "warning",
+  "wiki": null
+},
+{
+  "confidence": "reasonable",
+  "info": null,
+  "key": "scopes",
+  "locations": [
+    {
+      "column": 5,
+      "from": "MOD",
+      "fullpath": ".\\common\\ideologies\\=!RRK_01_character_ideologies.txt",
+      "length": 16,
+      "line": "\t\t\t\tis_in_government = yes",
+      "linenr": 2404,
+      "path": "common\\ideologies\\=!RRK_01_character_ideologies.txt",
+      "stage": null,
+      "tag": null
+    },
+    {
+      "column": 2,
+      "from": "MOD",
+      "fullpath": ".\\common\\ideologies\\=!RRK_01_character_ideologies.txt",
+      "length": 32,
+      "line": "\tnon_interest_group_leader_weight = {",
+      "linenr": 2344,
+      "path": "common\\ideologies\\=!RRK_01_character_ideologies.txt",
+      "stage": null,
+      "tag": "scope was supplied by the game engine"
+    }
+  ],
+  "message": "`is_in_government` is for interest group but scope seems to be character",
+  "severity": "warning",
+  "wiki": null
+},
+{
+  "confidence": "reasonable",
+  "info": "try `exists = this`",
+  "key": "scopes",
+  "locations": [
+    {
+      "column": 14,
+      "from": "MOD",
+      "fullpath": ".\\common\\journal_entries\\=!RRK_00_zanzibar.txt",
+      "length": 3,
+      "line": "\t\t\t\texists = yes",
+      "linenr": 17,
+      "path": "common\\journal_entries\\=!RRK_00_zanzibar.txt",
+      "stage": null,
+      "tag": null
+    }
+  ],
+  "message": "`exists = yes/no` does not work",
+  "severity": "warning",
+  "wiki": null
+},
+{
+  "confidence": "reasonable",
+  "info": null,
+  "key": "strict-scopes",
+  "locations": [
+    {
+      "column": 14,
+      "from": "MOD",
+      "fullpath": ".\\common\\laws\\=!RRK_00_distribution_of_power.txt",
+      "length": 44,
+      "line": "\t\t\tlimit = { ai_has_enact_weight_modifier_journal_entries = yes }",
+      "linenr": 57,
+      "path": "common\\laws\\=!RRK_00_distribution_of_power.txt",
+      "stage": null,
+      "tag": null
+    },
+    {
+      "column": 17,
+      "from": "Vic3",
+      "fullpath": "C:\\Steam\\steamapps\\common\\Victoria 3\\game\\common\\scripted_triggers\\00_ai_triggers.txt",
+      "length": 27,
+      "line": "\t\t\t\tscope:law = scope:donghak_desired_law_1",
+      "linenr": 145,
+      "path": "common\\scripted_triggers\\00_ai_triggers.txt",
+      "stage": null,
+      "tag": "here"
+    },
+    {
+      "column": 2,
+      "from": "MOD",
+      "fullpath": ".\\common\\laws\\=!RRK_00_distribution_of_power.txt",
+      "length": 24,
+      "line": "\tai_enact_weight_modifier = { #Petitions",
+      "linenr": 53,
+      "path": "common\\laws\\=!RRK_00_distribution_of_power.txt",
+      "stage": null,
+      "tag": "scopes initialized here"
+    }
+  ],
+  "message": "`ai_has_enact_weight_modifier_journal_entries` expects scope:donghak_desired_law_1 to be set",
+  "severity": "warning",
+  "wiki": null
+},
+{
+  "confidence": "reasonable",
+  "info": null,
+  "key": "strict-scopes",
+  "locations": [
+    {
+      "column": 14,
+      "from": "MOD",
+      "fullpath": ".\\common\\laws\\=!RRK_00_distribution_of_power.txt",
+      "length": 44,
+      "line": "\t\t\tlimit = { ai_has_enact_weight_modifier_journal_entries = yes }",
+      "linenr": 57,
+      "path": "common\\laws\\=!RRK_00_distribution_of_power.txt",
+      "stage": null,
+      "tag": null
+    },
+    {
+      "column": 17,
+      "from": "Vic3",
+      "fullpath": "C:\\Steam\\steamapps\\common\\Victoria 3\\game\\common\\scripted_triggers\\00_ai_triggers.txt",
+      "length": 27,
+      "line": "\t\t\t\tscope:law = scope:donghak_desired_law_2",
+      "linenr": 146,
+      "path": "common\\scripted_triggers\\00_ai_triggers.txt",
+      "stage": null,
+      "tag": "here"
+    },
+    {
+      "column": 2,
+      "from": "MOD",
+      "fullpath": ".\\common\\laws\\=!RRK_00_distribution_of_power.txt",
+      "length": 24,
+      "line": "\tai_enact_weight_modifier = { #Petitions",
+      "linenr": 53,
+      "path": "common\\laws\\=!RRK_00_distribution_of_power.txt",
+      "stage": null,
+      "tag": "scopes initialized here"
+    }
+  ],
+  "message": "`ai_has_enact_weight_modifier_journal_entries` expects scope:donghak_desired_law_2 to be set",
+  "severity": "warning",
+  "wiki": null
+},
+{
+  "confidence": "reasonable",
+  "info": null,
+  "key": "strict-scopes",
+  "locations": [
+    {
+      "column": 14,
+      "from": "MOD",
+      "fullpath": ".\\common\\laws\\=!RRK_00_distribution_of_power.txt",
+      "length": 44,
+      "line": "\t\t\tlimit = { ai_has_enact_weight_modifier_journal_entries = yes }",
+      "linenr": 57,
+      "path": "common\\laws\\=!RRK_00_distribution_of_power.txt",
+      "stage": null,
+      "tag": null
+    },
+    {
+      "column": 17,
+      "from": "Vic3",
+      "fullpath": "C:\\Steam\\steamapps\\common\\Victoria 3\\game\\common\\scripted_triggers\\00_ai_triggers.txt",
+      "length": 27,
+      "line": "\t\t\t\tscope:law = scope:donghak_desired_law_3",
+      "linenr": 147,
+      "path": "common\\scripted_triggers\\00_ai_triggers.txt",
+      "stage": null,
+      "tag": "here"
+    },
+    {
+      "column": 2,
+      "from": "MOD",
+      "fullpath": ".\\common\\laws\\=!RRK_00_distribution_of_power.txt",
+      "length": 24,
+      "line": "\tai_enact_weight_modifier = { #Petitions",
+      "linenr": 53,
+      "path": "common\\laws\\=!RRK_00_distribution_of_power.txt",
+      "stage": null,
+      "tag": "scopes initialized here"
+    }
+  ],
+  "message": "`ai_has_enact_weight_modifier_journal_entries` expects scope:donghak_desired_law_3 to be set",
+  "severity": "warning",
+  "wiki": null
+},
+{
+  "confidence": "reasonable",
+  "info": null,
+  "key": "strict-scopes",
+  "locations": [
+    {
+      "column": 14,
+      "from": "MOD",
+      "fullpath": ".\\common\\laws\\=!RRK_00_distribution_of_power.txt",
+      "length": 44,
+      "line": "\t\t\tlimit = { ai_has_enact_weight_modifier_journal_entries = yes }",
+      "linenr": 157,
+      "path": "common\\laws\\=!RRK_00_distribution_of_power.txt",
+      "stage": null,
+      "tag": null
+    },
+    {
+      "column": 17,
+      "from": "Vic3",
+      "fullpath": "C:\\Steam\\steamapps\\common\\Victoria 3\\game\\common\\scripted_triggers\\00_ai_triggers.txt",
+      "length": 27,
+      "line": "\t\t\t\tscope:law = scope:donghak_desired_law_1",
+      "linenr": 145,
+      "path": "common\\scripted_triggers\\00_ai_triggers.txt",
+      "stage": null,
+      "tag": "here"
+    },
+    {
+      "column": 2,
+      "from": "MOD",
+      "fullpath": ".\\common\\laws\\=!RRK_00_distribution_of_power.txt",
+      "length": 24,
+      "line": "\tai_enact_weight_modifier = { #Petitions",
+      "linenr": 153,
+      "path": "common\\laws\\=!RRK_00_distribution_of_power.txt",
+      "stage": null,
+      "tag": "scopes initialized here"
+    }
+  ],
+  "message": "`ai_has_enact_weight_modifier_journal_entries` expects scope:donghak_desired_law_1 to be set",
+  "severity": "warning",
+  "wiki": null
+},
+{
+  "confidence": "reasonable",
+  "info": null,
+  "key": "strict-scopes",
+  "locations": [
+    {
+      "column": 14,
+      "from": "MOD",
+      "fullpath": ".\\common\\laws\\=!RRK_00_distribution_of_power.txt",
+      "length": 44,
+      "line": "\t\t\tlimit = { ai_has_enact_weight_modifier_journal_entries = yes }",
+      "linenr": 157,
+      "path": "common\\laws\\=!RRK_00_distribution_of_power.txt",
+      "stage": null,
+      "tag": null
+    },
+    {
+      "column": 17,
+      "from": "Vic3",
+      "fullpath": "C:\\Steam\\steamapps\\common\\Victoria 3\\game\\common\\scripted_triggers\\00_ai_triggers.txt",
+      "length": 27,
+      "line": "\t\t\t\tscope:law = scope:donghak_desired_law_2",
+      "linenr": 146,
+      "path": "common\\scripted_triggers\\00_ai_triggers.txt",
+      "stage": null,
+      "tag": "here"
+    },
+    {
+      "column": 2,
+      "from": "MOD",
+      "fullpath": ".\\common\\laws\\=!RRK_00_distribution_of_power.txt",
+      "length": 24,
+      "line": "\tai_enact_weight_modifier = { #Petitions",
+      "linenr": 153,
+      "path": "common\\laws\\=!RRK_00_distribution_of_power.txt",
+      "stage": null,
+      "tag": "scopes initialized here"
+    }
+  ],
+  "message": "`ai_has_enact_weight_modifier_journal_entries` expects scope:donghak_desired_law_2 to be set",
+  "severity": "warning",
+  "wiki": null
+},
+{
+  "confidence": "reasonable",
+  "info": null,
+  "key": "strict-scopes",
+  "locations": [
+    {
+      "column": 14,
+      "from": "MOD",
+      "fullpath": ".\\common\\laws\\=!RRK_00_distribution_of_power.txt",
+      "length": 44,
+      "line": "\t\t\tlimit = { ai_has_enact_weight_modifier_journal_entries = yes }",
+      "linenr": 157,
+      "path": "common\\laws\\=!RRK_00_distribution_of_power.txt",
+      "stage": null,
+      "tag": null
+    },
+    {
+      "column": 17,
+      "from": "Vic3",
+      "fullpath": "C:\\Steam\\steamapps\\common\\Victoria 3\\game\\common\\scripted_triggers\\00_ai_triggers.txt",
+      "length": 27,
+      "line": "\t\t\t\tscope:law = scope:donghak_desired_law_3",
+      "linenr": 147,
+      "path": "common\\scripted_triggers\\00_ai_triggers.txt",
+      "stage": null,
+      "tag": "here"
+    },
+    {
+      "column": 2,
+      "from": "MOD",
+      "fullpath": ".\\common\\laws\\=!RRK_00_distribution_of_power.txt",
+      "length": 24,
+      "line": "\tai_enact_weight_modifier = { #Petitions",
+      "linenr": 153,
+      "path": "common\\laws\\=!RRK_00_distribution_of_power.txt",
+      "stage": null,
+      "tag": "scopes initialized here"
+    }
+  ],
+  "message": "`ai_has_enact_weight_modifier_journal_entries` expects scope:donghak_desired_law_3 to be set",
+  "severity": "warning",
+  "wiki": null
+},
+{
+  "confidence": "reasonable",
+  "info": null,
+  "key": "strict-scopes",
+  "locations": [
+    {
+      "column": 14,
+      "from": "MOD",
+      "fullpath": ".\\common\\laws\\=!RRK_00_distribution_of_power.txt",
+      "length": 44,
+      "line": "\t\t\tlimit = { ai_has_enact_weight_modifier_journal_entries = yes }",
+      "linenr": 294,
+      "path": "common\\laws\\=!RRK_00_distribution_of_power.txt",
+      "stage": null,
+      "tag": null
+    },
+    {
+      "column": 17,
+      "from": "Vic3",
+      "fullpath": "C:\\Steam\\steamapps\\common\\Victoria 3\\game\\common\\scripted_triggers\\00_ai_triggers.txt",
+      "length": 27,
+      "line": "\t\t\t\tscope:law = scope:donghak_desired_law_1",
+      "linenr": 145,
+      "path": "common\\scripted_triggers\\00_ai_triggers.txt",
+      "stage": null,
+      "tag": "here"
+    },
+    {
+      "column": 2,
+      "from": "MOD",
+      "fullpath": ".\\common\\laws\\=!RRK_00_distribution_of_power.txt",
+      "length": 24,
+      "line": "\tai_enact_weight_modifier = { #Petitions",
+      "linenr": 290,
+      "path": "common\\laws\\=!RRK_00_distribution_of_power.txt",
+      "stage": null,
+      "tag": "scopes initialized here"
+    }
+  ],
+  "message": "`ai_has_enact_weight_modifier_journal_entries` expects scope:donghak_desired_law_1 to be set",
+  "severity": "warning",
+  "wiki": null
+},
+{
+  "confidence": "reasonable",
+  "info": null,
+  "key": "strict-scopes",
+  "locations": [
+    {
+      "column": 14,
+      "from": "MOD",
+      "fullpath": ".\\common\\laws\\=!RRK_00_distribution_of_power.txt",
+      "length": 44,
+      "line": "\t\t\tlimit = { ai_has_enact_weight_modifier_journal_entries = yes }",
+      "linenr": 294,
+      "path": "common\\laws\\=!RRK_00_distribution_of_power.txt",
+      "stage": null,
+      "tag": null
+    },
+    {
+      "column": 17,
+      "from": "Vic3",
+      "fullpath": "C:\\Steam\\steamapps\\common\\Victoria 3\\game\\common\\scripted_triggers\\00_ai_triggers.txt",
+      "length": 27,
+      "line": "\t\t\t\tscope:law = scope:donghak_desired_law_2",
+      "linenr": 146,
+      "path": "common\\scripted_triggers\\00_ai_triggers.txt",
+      "stage": null,
+      "tag": "here"
+    },
+    {
+      "column": 2,
+      "from": "MOD",
+      "fullpath": ".\\common\\laws\\=!RRK_00_distribution_of_power.txt",
+      "length": 24,
+      "line": "\tai_enact_weight_modifier = { #Petitions",
+      "linenr": 290,
+      "path": "common\\laws\\=!RRK_00_distribution_of_power.txt",
+      "stage": null,
+      "tag": "scopes initialized here"
+    }
+  ],
+  "message": "`ai_has_enact_weight_modifier_journal_entries` expects scope:donghak_desired_law_2 to be set",
+  "severity": "warning",
+  "wiki": null
+},
+{
+  "confidence": "reasonable",
+  "info": null,
+  "key": "strict-scopes",
+  "locations": [
+    {
+      "column": 14,
+      "from": "MOD",
+      "fullpath": ".\\common\\laws\\=!RRK_00_distribution_of_power.txt",
+      "length": 44,
+      "line": "\t\t\tlimit = { ai_has_enact_weight_modifier_journal_entries = yes }",
+      "linenr": 294,
+      "path": "common\\laws\\=!RRK_00_distribution_of_power.txt",
+      "stage": null,
+      "tag": null
+    },
+    {
+      "column": 17,
+      "from": "Vic3",
+      "fullpath": "C:\\Steam\\steamapps\\common\\Victoria 3\\game\\common\\scripted_triggers\\00_ai_triggers.txt",
+      "length": 27,
+      "line": "\t\t\t\tscope:law = scope:donghak_desired_law_3",
+      "linenr": 147,
+      "path": "common\\scripted_triggers\\00_ai_triggers.txt",
+      "stage": null,
+      "tag": "here"
+    },
+    {
+      "column": 2,
+      "from": "MOD",
+      "fullpath": ".\\common\\laws\\=!RRK_00_distribution_of_power.txt",
+      "length": 24,
+      "line": "\tai_enact_weight_modifier = { #Petitions",
+      "linenr": 290,
+      "path": "common\\laws\\=!RRK_00_distribution_of_power.txt",
+      "stage": null,
+      "tag": "scopes initialized here"
+    }
+  ],
+  "message": "`ai_has_enact_weight_modifier_journal_entries` expects scope:donghak_desired_law_3 to be set",
+  "severity": "warning",
+  "wiki": null
+},
+{
+  "confidence": "reasonable",
+  "info": null,
+  "key": "strict-scopes",
+  "locations": [
+    {
+      "column": 14,
+      "from": "MOD",
+      "fullpath": ".\\common\\laws\\=!RRK_00_distribution_of_power.txt",
+      "length": 44,
+      "line": "\t\t\tlimit = { ai_has_enact_weight_modifier_journal_entries = yes }",
+      "linenr": 425,
+      "path": "common\\laws\\=!RRK_00_distribution_of_power.txt",
+      "stage": null,
+      "tag": null
+    },
+    {
+      "column": 17,
+      "from": "Vic3",
+      "fullpath": "C:\\Steam\\steamapps\\common\\Victoria 3\\game\\common\\scripted_triggers\\00_ai_triggers.txt",
+      "length": 27,
+      "line": "\t\t\t\tscope:law = scope:donghak_desired_law_1",
+      "linenr": 145,
+      "path": "common\\scripted_triggers\\00_ai_triggers.txt",
+      "stage": null,
+      "tag": "here"
+    },
+    {
+      "column": 2,
+      "from": "MOD",
+      "fullpath": ".\\common\\laws\\=!RRK_00_distribution_of_power.txt",
+      "length": 24,
+      "line": "\tai_enact_weight_modifier = { #Petitions",
+      "linenr": 421,
+      "path": "common\\laws\\=!RRK_00_distribution_of_power.txt",
+      "stage": null,
+      "tag": "scopes initialized here"
+    }
+  ],
+  "message": "`ai_has_enact_weight_modifier_journal_entries` expects scope:donghak_desired_law_1 to be set",
+  "severity": "warning",
+  "wiki": null
+},
+{
+  "confidence": "reasonable",
+  "info": null,
+  "key": "strict-scopes",
+  "locations": [
+    {
+      "column": 14,
+      "from": "MOD",
+      "fullpath": ".\\common\\laws\\=!RRK_00_distribution_of_power.txt",
+      "length": 44,
+      "line": "\t\t\tlimit = { ai_has_enact_weight_modifier_journal_entries = yes }",
+      "linenr": 425,
+      "path": "common\\laws\\=!RRK_00_distribution_of_power.txt",
+      "stage": null,
+      "tag": null
+    },
+    {
+      "column": 17,
+      "from": "Vic3",
+      "fullpath": "C:\\Steam\\steamapps\\common\\Victoria 3\\game\\common\\scripted_triggers\\00_ai_triggers.txt",
+      "length": 27,
+      "line": "\t\t\t\tscope:law = scope:donghak_desired_law_2",
+      "linenr": 146,
+      "path": "common\\scripted_triggers\\00_ai_triggers.txt",
+      "stage": null,
+      "tag": "here"
+    },
+    {
+      "column": 2,
+      "from": "MOD",
+      "fullpath": ".\\common\\laws\\=!RRK_00_distribution_of_power.txt",
+      "length": 24,
+      "line": "\tai_enact_weight_modifier = { #Petitions",
+      "linenr": 421,
+      "path": "common\\laws\\=!RRK_00_distribution_of_power.txt",
+      "stage": null,
+      "tag": "scopes initialized here"
+    }
+  ],
+  "message": "`ai_has_enact_weight_modifier_journal_entries` expects scope:donghak_desired_law_2 to be set",
+  "severity": "warning",
+  "wiki": null
+},
+{
+  "confidence": "reasonable",
+  "info": null,
+  "key": "strict-scopes",
+  "locations": [
+    {
+      "column": 14,
+      "from": "MOD",
+      "fullpath": ".\\common\\laws\\=!RRK_00_distribution_of_power.txt",
+      "length": 44,
+      "line": "\t\t\tlimit = { ai_has_enact_weight_modifier_journal_entries = yes }",
+      "linenr": 425,
+      "path": "common\\laws\\=!RRK_00_distribution_of_power.txt",
+      "stage": null,
+      "tag": null
+    },
+    {
+      "column": 17,
+      "from": "Vic3",
+      "fullpath": "C:\\Steam\\steamapps\\common\\Victoria 3\\game\\common\\scripted_triggers\\00_ai_triggers.txt",
+      "length": 27,
+      "line": "\t\t\t\tscope:law = scope:donghak_desired_law_3",
+      "linenr": 147,
+      "path": "common\\scripted_triggers\\00_ai_triggers.txt",
+      "stage": null,
+      "tag": "here"
+    },
+    {
+      "column": 2,
+      "from": "MOD",
+      "fullpath": ".\\common\\laws\\=!RRK_00_distribution_of_power.txt",
+      "length": 24,
+      "line": "\tai_enact_weight_modifier = { #Petitions",
+      "linenr": 421,
+      "path": "common\\laws\\=!RRK_00_distribution_of_power.txt",
+      "stage": null,
+      "tag": "scopes initialized here"
+    }
+  ],
+  "message": "`ai_has_enact_weight_modifier_journal_entries` expects scope:donghak_desired_law_3 to be set",
+  "severity": "warning",
+  "wiki": null
+},
+{
+  "confidence": "reasonable",
+  "info": null,
+  "key": "strict-scopes",
+  "locations": [
+    {
+      "column": 14,
+      "from": "MOD",
+      "fullpath": ".\\common\\laws\\=!RRK_00_distribution_of_power.txt",
+      "length": 44,
+      "line": "\t\t\tlimit = { ai_has_enact_weight_modifier_journal_entries = yes }",
+      "linenr": 552,
+      "path": "common\\laws\\=!RRK_00_distribution_of_power.txt",
+      "stage": null,
+      "tag": null
+    },
+    {
+      "column": 17,
+      "from": "Vic3",
+      "fullpath": "C:\\Steam\\steamapps\\common\\Victoria 3\\game\\common\\scripted_triggers\\00_ai_triggers.txt",
+      "length": 27,
+      "line": "\t\t\t\tscope:law = scope:donghak_desired_law_1",
+      "linenr": 145,
+      "path": "common\\scripted_triggers\\00_ai_triggers.txt",
+      "stage": null,
+      "tag": "here"
+    },
+    {
+      "column": 2,
+      "from": "MOD",
+      "fullpath": ".\\common\\laws\\=!RRK_00_distribution_of_power.txt",
+      "length": 24,
+      "line": "\tai_enact_weight_modifier = { #Petitions",
+      "linenr": 548,
+      "path": "common\\laws\\=!RRK_00_distribution_of_power.txt",
+      "stage": null,
+      "tag": "scopes initialized here"
+    }
+  ],
+  "message": "`ai_has_enact_weight_modifier_journal_entries` expects scope:donghak_desired_law_1 to be set",
+  "severity": "warning",
+  "wiki": null
+},
+{
+  "confidence": "reasonable",
+  "info": null,
+  "key": "strict-scopes",
+  "locations": [
+    {
+      "column": 14,
+      "from": "MOD",
+      "fullpath": ".\\common\\laws\\=!RRK_00_distribution_of_power.txt",
+      "length": 44,
+      "line": "\t\t\tlimit = { ai_has_enact_weight_modifier_journal_entries = yes }",
+      "linenr": 552,
+      "path": "common\\laws\\=!RRK_00_distribution_of_power.txt",
+      "stage": null,
+      "tag": null
+    },
+    {
+      "column": 17,
+      "from": "Vic3",
+      "fullpath": "C:\\Steam\\steamapps\\common\\Victoria 3\\game\\common\\scripted_triggers\\00_ai_triggers.txt",
+      "length": 27,
+      "line": "\t\t\t\tscope:law = scope:donghak_desired_law_2",
+      "linenr": 146,
+      "path": "common\\scripted_triggers\\00_ai_triggers.txt",
+      "stage": null,
+      "tag": "here"
+    },
+    {
+      "column": 2,
+      "from": "MOD",
+      "fullpath": ".\\common\\laws\\=!RRK_00_distribution_of_power.txt",
+      "length": 24,
+      "line": "\tai_enact_weight_modifier = { #Petitions",
+      "linenr": 548,
+      "path": "common\\laws\\=!RRK_00_distribution_of_power.txt",
+      "stage": null,
+      "tag": "scopes initialized here"
+    }
+  ],
+  "message": "`ai_has_enact_weight_modifier_journal_entries` expects scope:donghak_desired_law_2 to be set",
+  "severity": "warning",
+  "wiki": null
+},
+{
+  "confidence": "reasonable",
+  "info": null,
+  "key": "strict-scopes",
+  "locations": [
+    {
+      "column": 14,
+      "from": "MOD",
+      "fullpath": ".\\common\\laws\\=!RRK_00_distribution_of_power.txt",
+      "length": 44,
+      "line": "\t\t\tlimit = { ai_has_enact_weight_modifier_journal_entries = yes }",
+      "linenr": 552,
+      "path": "common\\laws\\=!RRK_00_distribution_of_power.txt",
+      "stage": null,
+      "tag": null
+    },
+    {
+      "column": 17,
+      "from": "Vic3",
+      "fullpath": "C:\\Steam\\steamapps\\common\\Victoria 3\\game\\common\\scripted_triggers\\00_ai_triggers.txt",
+      "length": 27,
+      "line": "\t\t\t\tscope:law = scope:donghak_desired_law_3",
+      "linenr": 147,
+      "path": "common\\scripted_triggers\\00_ai_triggers.txt",
+      "stage": null,
+      "tag": "here"
+    },
+    {
+      "column": 2,
+      "from": "MOD",
+      "fullpath": ".\\common\\laws\\=!RRK_00_distribution_of_power.txt",
+      "length": 24,
+      "line": "\tai_enact_weight_modifier = { #Petitions",
+      "linenr": 548,
+      "path": "common\\laws\\=!RRK_00_distribution_of_power.txt",
+      "stage": null,
+      "tag": "scopes initialized here"
+    }
+  ],
+  "message": "`ai_has_enact_weight_modifier_journal_entries` expects scope:donghak_desired_law_3 to be set",
+  "severity": "warning",
+  "wiki": null
+},
+{
+  "confidence": "reasonable",
+  "info": null,
+  "key": "strict-scopes",
+  "locations": [
+    {
+      "column": 14,
+      "from": "MOD",
+      "fullpath": ".\\common\\laws\\=!RRK_00_distribution_of_power.txt",
+      "length": 44,
+      "line": "\t\t\tlimit = { ai_has_enact_weight_modifier_journal_entries = yes }",
+      "linenr": 729,
+      "path": "common\\laws\\=!RRK_00_distribution_of_power.txt",
+      "stage": null,
+      "tag": null
+    },
+    {
+      "column": 17,
+      "from": "Vic3",
+      "fullpath": "C:\\Steam\\steamapps\\common\\Victoria 3\\game\\common\\scripted_triggers\\00_ai_triggers.txt",
+      "length": 27,
+      "line": "\t\t\t\tscope:law = scope:donghak_desired_law_1",
+      "linenr": 145,
+      "path": "common\\scripted_triggers\\00_ai_triggers.txt",
+      "stage": null,
+      "tag": "here"
+    },
+    {
+      "column": 2,
+      "from": "MOD",
+      "fullpath": ".\\common\\laws\\=!RRK_00_distribution_of_power.txt",
+      "length": 24,
+      "line": "\tai_enact_weight_modifier = { #Petitions",
+      "linenr": 725,
+      "path": "common\\laws\\=!RRK_00_distribution_of_power.txt",
+      "stage": null,
+      "tag": "scopes initialized here"
+    }
+  ],
+  "message": "`ai_has_enact_weight_modifier_journal_entries` expects scope:donghak_desired_law_1 to be set",
+  "severity": "warning",
+  "wiki": null
+},
+{
+  "confidence": "reasonable",
+  "info": null,
+  "key": "strict-scopes",
+  "locations": [
+    {
+      "column": 14,
+      "from": "MOD",
+      "fullpath": ".\\common\\laws\\=!RRK_00_distribution_of_power.txt",
+      "length": 44,
+      "line": "\t\t\tlimit = { ai_has_enact_weight_modifier_journal_entries = yes }",
+      "linenr": 729,
+      "path": "common\\laws\\=!RRK_00_distribution_of_power.txt",
+      "stage": null,
+      "tag": null
+    },
+    {
+      "column": 17,
+      "from": "Vic3",
+      "fullpath": "C:\\Steam\\steamapps\\common\\Victoria 3\\game\\common\\scripted_triggers\\00_ai_triggers.txt",
+      "length": 27,
+      "line": "\t\t\t\tscope:law = scope:donghak_desired_law_2",
+      "linenr": 146,
+      "path": "common\\scripted_triggers\\00_ai_triggers.txt",
+      "stage": null,
+      "tag": "here"
+    },
+    {
+      "column": 2,
+      "from": "MOD",
+      "fullpath": ".\\common\\laws\\=!RRK_00_distribution_of_power.txt",
+      "length": 24,
+      "line": "\tai_enact_weight_modifier = { #Petitions",
+      "linenr": 725,
+      "path": "common\\laws\\=!RRK_00_distribution_of_power.txt",
+      "stage": null,
+      "tag": "scopes initialized here"
+    }
+  ],
+  "message": "`ai_has_enact_weight_modifier_journal_entries` expects scope:donghak_desired_law_2 to be set",
+  "severity": "warning",
+  "wiki": null
+},
+{
+  "confidence": "reasonable",
+  "info": null,
+  "key": "strict-scopes",
+  "locations": [
+    {
+      "column": 14,
+      "from": "MOD",
+      "fullpath": ".\\common\\laws\\=!RRK_00_distribution_of_power.txt",
+      "length": 44,
+      "line": "\t\t\tlimit = { ai_has_enact_weight_modifier_journal_entries = yes }",
+      "linenr": 729,
+      "path": "common\\laws\\=!RRK_00_distribution_of_power.txt",
+      "stage": null,
+      "tag": null
+    },
+    {
+      "column": 17,
+      "from": "Vic3",
+      "fullpath": "C:\\Steam\\steamapps\\common\\Victoria 3\\game\\common\\scripted_triggers\\00_ai_triggers.txt",
+      "length": 27,
+      "line": "\t\t\t\tscope:law = scope:donghak_desired_law_3",
+      "linenr": 147,
+      "path": "common\\scripted_triggers\\00_ai_triggers.txt",
+      "stage": null,
+      "tag": "here"
+    },
+    {
+      "column": 2,
+      "from": "MOD",
+      "fullpath": ".\\common\\laws\\=!RRK_00_distribution_of_power.txt",
+      "length": 24,
+      "line": "\tai_enact_weight_modifier = { #Petitions",
+      "linenr": 725,
+      "path": "common\\laws\\=!RRK_00_distribution_of_power.txt",
+      "stage": null,
+      "tag": "scopes initialized here"
+    }
+  ],
+  "message": "`ai_has_enact_weight_modifier_journal_entries` expects scope:donghak_desired_law_3 to be set",
+  "severity": "warning",
+  "wiki": null
+},
+{
+  "confidence": "reasonable",
+  "info": null,
+  "key": "strict-scopes",
+  "locations": [
+    {
+      "column": 14,
+      "from": "MOD",
+      "fullpath": ".\\common\\laws\\=!RRK_00_governance_principles.txt",
+      "length": 44,
+      "line": "\t\t\tlimit = { ai_has_enact_weight_modifier_journal_entries = yes }",
+      "linenr": 212,
+      "path": "common\\laws\\=!RRK_00_governance_principles.txt",
+      "stage": null,
+      "tag": null
+    },
+    {
+      "column": 17,
+      "from": "Vic3",
+      "fullpath": "C:\\Steam\\steamapps\\common\\Victoria 3\\game\\common\\scripted_triggers\\00_ai_triggers.txt",
+      "length": 27,
+      "line": "\t\t\t\tscope:law = scope:donghak_desired_law_1",
+      "linenr": 145,
+      "path": "common\\scripted_triggers\\00_ai_triggers.txt",
+      "stage": null,
+      "tag": "here"
+    },
+    {
+      "column": 2,
+      "from": "MOD",
+      "fullpath": ".\\common\\laws\\=!RRK_00_governance_principles.txt",
+      "length": 24,
+      "line": "\tai_enact_weight_modifier = { #Petitions",
+      "linenr": 208,
+      "path": "common\\laws\\=!RRK_00_governance_principles.txt",
+      "stage": null,
+      "tag": "scopes initialized here"
+    }
+  ],
+  "message": "`ai_has_enact_weight_modifier_journal_entries` expects scope:donghak_desired_law_1 to be set",
+  "severity": "warning",
+  "wiki": null
+},
+{
+  "confidence": "reasonable",
+  "info": null,
+  "key": "strict-scopes",
+  "locations": [
+    {
+      "column": 14,
+      "from": "MOD",
+      "fullpath": ".\\common\\laws\\=!RRK_00_governance_principles.txt",
+      "length": 44,
+      "line": "\t\t\tlimit = { ai_has_enact_weight_modifier_journal_entries = yes }",
+      "linenr": 212,
+      "path": "common\\laws\\=!RRK_00_governance_principles.txt",
+      "stage": null,
+      "tag": null
+    },
+    {
+      "column": 17,
+      "from": "Vic3",
+      "fullpath": "C:\\Steam\\steamapps\\common\\Victoria 3\\game\\common\\scripted_triggers\\00_ai_triggers.txt",
+      "length": 27,
+      "line": "\t\t\t\tscope:law = scope:donghak_desired_law_2",
+      "linenr": 146,
+      "path": "common\\scripted_triggers\\00_ai_triggers.txt",
+      "stage": null,
+      "tag": "here"
+    },
+    {
+      "column": 2,
+      "from": "MOD",
+      "fullpath": ".\\common\\laws\\=!RRK_00_governance_principles.txt",
+      "length": 24,
+      "line": "\tai_enact_weight_modifier = { #Petitions",
+      "linenr": 208,
+      "path": "common\\laws\\=!RRK_00_governance_principles.txt",
+      "stage": null,
+      "tag": "scopes initialized here"
+    }
+  ],
+  "message": "`ai_has_enact_weight_modifier_journal_entries` expects scope:donghak_desired_law_2 to be set",
+  "severity": "warning",
+  "wiki": null
+},
+{
+  "confidence": "reasonable",
+  "info": null,
+  "key": "strict-scopes",
+  "locations": [
+    {
+      "column": 14,
+      "from": "MOD",
+      "fullpath": ".\\common\\laws\\=!RRK_00_governance_principles.txt",
+      "length": 44,
+      "line": "\t\t\tlimit = { ai_has_enact_weight_modifier_journal_entries = yes }",
+      "linenr": 212,
+      "path": "common\\laws\\=!RRK_00_governance_principles.txt",
+      "stage": null,
+      "tag": null
+    },
+    {
+      "column": 17,
+      "from": "Vic3",
+      "fullpath": "C:\\Steam\\steamapps\\common\\Victoria 3\\game\\common\\scripted_triggers\\00_ai_triggers.txt",
+      "length": 27,
+      "line": "\t\t\t\tscope:law = scope:donghak_desired_law_3",
+      "linenr": 147,
+      "path": "common\\scripted_triggers\\00_ai_triggers.txt",
+      "stage": null,
+      "tag": "here"
+    },
+    {
+      "column": 2,
+      "from": "MOD",
+      "fullpath": ".\\common\\laws\\=!RRK_00_governance_principles.txt",
+      "length": 24,
+      "line": "\tai_enact_weight_modifier = { #Petitions",
+      "linenr": 208,
+      "path": "common\\laws\\=!RRK_00_governance_principles.txt",
+      "stage": null,
+      "tag": "scopes initialized here"
+    }
+  ],
+  "message": "`ai_has_enact_weight_modifier_journal_entries` expects scope:donghak_desired_law_3 to be set",
+  "severity": "warning",
+  "wiki": null
+},
+{
+  "confidence": "reasonable",
+  "info": null,
+  "key": "strict-scopes",
+  "locations": [
+    {
+      "column": 14,
+      "from": "MOD",
+      "fullpath": ".\\common\\laws\\=!RRK_00_governance_principles.txt",
+      "length": 44,
+      "line": "\t\t\tlimit = { ai_has_enact_weight_modifier_journal_entries = yes }",
+      "linenr": 386,
+      "path": "common\\laws\\=!RRK_00_governance_principles.txt",
+      "stage": null,
+      "tag": null
+    },
+    {
+      "column": 17,
+      "from": "Vic3",
+      "fullpath": "C:\\Steam\\steamapps\\common\\Victoria 3\\game\\common\\scripted_triggers\\00_ai_triggers.txt",
+      "length": 27,
+      "line": "\t\t\t\tscope:law = scope:donghak_desired_law_1",
+      "linenr": 145,
+      "path": "common\\scripted_triggers\\00_ai_triggers.txt",
+      "stage": null,
+      "tag": "here"
+    },
+    {
+      "column": 2,
+      "from": "MOD",
+      "fullpath": ".\\common\\laws\\=!RRK_00_governance_principles.txt",
+      "length": 24,
+      "line": "\tai_enact_weight_modifier = { #Petitions",
+      "linenr": 382,
+      "path": "common\\laws\\=!RRK_00_governance_principles.txt",
+      "stage": null,
+      "tag": "scopes initialized here"
+    }
+  ],
+  "message": "`ai_has_enact_weight_modifier_journal_entries` expects scope:donghak_desired_law_1 to be set",
+  "severity": "warning",
+  "wiki": null
+},
+{
+  "confidence": "reasonable",
+  "info": null,
+  "key": "strict-scopes",
+  "locations": [
+    {
+      "column": 14,
+      "from": "MOD",
+      "fullpath": ".\\common\\laws\\=!RRK_00_governance_principles.txt",
+      "length": 44,
+      "line": "\t\t\tlimit = { ai_has_enact_weight_modifier_journal_entries = yes }",
+      "linenr": 386,
+      "path": "common\\laws\\=!RRK_00_governance_principles.txt",
+      "stage": null,
+      "tag": null
+    },
+    {
+      "column": 17,
+      "from": "Vic3",
+      "fullpath": "C:\\Steam\\steamapps\\common\\Victoria 3\\game\\common\\scripted_triggers\\00_ai_triggers.txt",
+      "length": 27,
+      "line": "\t\t\t\tscope:law = scope:donghak_desired_law_2",
+      "linenr": 146,
+      "path": "common\\scripted_triggers\\00_ai_triggers.txt",
+      "stage": null,
+      "tag": "here"
+    },
+    {
+      "column": 2,
+      "from": "MOD",
+      "fullpath": ".\\common\\laws\\=!RRK_00_governance_principles.txt",
+      "length": 24,
+      "line": "\tai_enact_weight_modifier = { #Petitions",
+      "linenr": 382,
+      "path": "common\\laws\\=!RRK_00_governance_principles.txt",
+      "stage": null,
+      "tag": "scopes initialized here"
+    }
+  ],
+  "message": "`ai_has_enact_weight_modifier_journal_entries` expects scope:donghak_desired_law_2 to be set",
+  "severity": "warning",
+  "wiki": null
+},
+{
+  "confidence": "reasonable",
+  "info": null,
+  "key": "strict-scopes",
+  "locations": [
+    {
+      "column": 14,
+      "from": "MOD",
+      "fullpath": ".\\common\\laws\\=!RRK_00_governance_principles.txt",
+      "length": 44,
+      "line": "\t\t\tlimit = { ai_has_enact_weight_modifier_journal_entries = yes }",
+      "linenr": 386,
+      "path": "common\\laws\\=!RRK_00_governance_principles.txt",
+      "stage": null,
+      "tag": null
+    },
+    {
+      "column": 17,
+      "from": "Vic3",
+      "fullpath": "C:\\Steam\\steamapps\\common\\Victoria 3\\game\\common\\scripted_triggers\\00_ai_triggers.txt",
+      "length": 27,
+      "line": "\t\t\t\tscope:law = scope:donghak_desired_law_3",
+      "linenr": 147,
+      "path": "common\\scripted_triggers\\00_ai_triggers.txt",
+      "stage": null,
+      "tag": "here"
+    },
+    {
+      "column": 2,
+      "from": "MOD",
+      "fullpath": ".\\common\\laws\\=!RRK_00_governance_principles.txt",
+      "length": 24,
+      "line": "\tai_enact_weight_modifier = { #Petitions",
+      "linenr": 382,
+      "path": "common\\laws\\=!RRK_00_governance_principles.txt",
+      "stage": null,
+      "tag": "scopes initialized here"
+    }
+  ],
+  "message": "`ai_has_enact_weight_modifier_journal_entries` expects scope:donghak_desired_law_3 to be set",
+  "severity": "warning",
+  "wiki": null
+},
+{
+  "confidence": "reasonable",
+  "info": null,
+  "key": "scopes",
+  "locations": [
+    {
+      "column": 5,
+      "from": "MOD",
+      "fullpath": ".\\common\\on_actions\\=!RRK_hand_coded_00_code_on_actions.txt",
+      "length": 34,
+      "line": "\t\t\t\tgenerate_new_eic_government_leader = yes",
+      "linenr": 245,
+      "path": "common\\on_actions\\=!RRK_hand_coded_00_code_on_actions.txt",
+      "stage": null,
+      "tag": null
+    },
+    {
+      "column": 19,
+      "from": "Vic3",
+      "fullpath": "C:\\Steam\\steamapps\\common\\Victoria 3\\game\\common\\scripted_effects\\00_victoria_scripted_effects.txt",
+      "length": 12,
+      "line": "\t\t\t\tc:GBR ?= ROOT.top_overlord",
+      "linenr": 4569,
+      "path": "common\\scripted_effects\\00_victoria_scripted_effects.txt",
+      "stage": null,
+      "tag": "expected root was deduced from `top_overlord` here"
+    },
+    {
+      "column": 1,
+      "from": "MOD",
+      "fullpath": ".\\common\\on_actions\\=!RRK_hand_coded_00_code_on_actions.txt",
+      "length": 18,
+      "line": "on_character_death = {",
+      "linenr": 4,
+      "path": "common\\on_actions\\=!RRK_hand_coded_00_code_on_actions.txt",
+      "stage": null,
+      "tag": "actual root was supplied by the game engine"
+    }
+  ],
+  "message": "`generate_new_eic_government_leader` expects root to be country but root seems to be character",
+  "severity": "warning",
+  "wiki": null
+},
+{
+  "confidence": "reasonable",
+  "info": null,
+  "key": "scopes",
+  "locations": [
+    {
+      "column": 27,
+      "from": "MOD",
+      "fullpath": ".\\common\\on_actions\\=!RRK_hand_coded_00_code_on_actions.txt",
+      "length": 21,
+      "line": "\t\t\ttrigger_event = { id = mon_state_formation.6 popup = yes }",
+      "linenr": 300,
+      "path": "common\\on_actions\\=!RRK_hand_coded_00_code_on_actions.txt",
+      "stage": null,
+      "tag": null
+    },
+    {
+      "column": 1,
+      "from": "MOD",
+      "fullpath": ".\\common\\on_actions\\=!RRK_hand_coded_00_code_on_actions.txt",
+      "length": 18,
+      "line": "on_character_death = {",
+      "linenr": 4,
+      "path": "common\\on_actions\\=!RRK_hand_coded_00_code_on_actions.txt",
+      "stage": null,
+      "tag": "scope was supplied by the game engine"
+    }
+  ],
+  "message": "`mon_state_formation.6` is for country but scope seems to be character",
+  "severity": "warning",
+  "wiki": null
+},
+{
+  "confidence": "reasonable",
+  "info": null,
+  "key": "scopes",
+  "locations": [
+    {
+      "column": 6,
+      "from": "MOD",
+      "fullpath": ".\\common\\on_actions\\=!RRK_hand_coded_00_code_on_actions.txt",
+      "length": 34,
+      "line": "\t\t\t\t\tgenerate_new_eic_government_leader = yes",
+      "linenr": 419,
+      "path": "common\\on_actions\\=!RRK_hand_coded_00_code_on_actions.txt",
+      "stage": null,
+      "tag": null
+    },
+    {
+      "column": 19,
+      "from": "Vic3",
+      "fullpath": "C:\\Steam\\steamapps\\common\\Victoria 3\\game\\common\\scripted_effects\\00_victoria_scripted_effects.txt",
+      "length": 12,
+      "line": "\t\t\t\tc:GBR ?= ROOT.top_overlord",
+      "linenr": 4569,
+      "path": "common\\scripted_effects\\00_victoria_scripted_effects.txt",
+      "stage": null,
+      "tag": "expected root was deduced from `top_overlord` here"
+    },
+    {
+      "column": 1,
+      "from": "MOD",
+      "fullpath": ".\\common\\on_actions\\=!RRK_hand_coded_00_code_on_actions.txt",
+      "length": 12,
+      "line": "on_new_ruler = {",
+      "linenr": 337,
+      "path": "common\\on_actions\\=!RRK_hand_coded_00_code_on_actions.txt",
+      "stage": null,
+      "tag": "actual root was supplied by the game engine"
+    }
+  ],
+  "message": "`generate_new_eic_government_leader` expects root to be country but root seems to be character",
+  "severity": "warning",
+  "wiki": null
+},
+{
+  "confidence": "reasonable",
+  "info": null,
+  "key": "scopes",
+  "locations": [
+    {
+      "column": 11,
+      "from": "MOD",
+      "fullpath": ".\\common\\political_lobbies\\=!RRK_00_political_lobbies.txt",
+      "length": 15,
+      "line": "\t\tNOT = { is_country_type = decentralized }",
+      "linenr": 10,
+      "path": "common\\political_lobbies\\=!RRK_00_political_lobbies.txt",
+      "stage": null,
+      "tag": null
+    },
+    {
+      "column": 2,
+      "from": "MOD",
+      "fullpath": ".\\common\\political_lobbies\\=!RRK_00_political_lobbies.txt",
+      "length": 10,
+      "line": "\tcan_create = {",
+      "linenr": 9,
+      "path": "common\\political_lobbies\\=!RRK_00_political_lobbies.txt",
+      "stage": null,
+      "tag": "scope was supplied by the game engine"
+    }
+  ],
+  "message": "`is_country_type` is for country but scope seems to be interest group",
+  "severity": "warning",
+  "wiki": null
+},
+{
+  "confidence": "reasonable",
+  "info": null,
+  "key": "scopes",
+  "locations": [
+    {
+      "column": 49,
+      "from": "MOD",
+      "fullpath": ".\\common\\political_lobbies\\=!RRK_00_political_lobbies.txt",
+      "length": 12,
+      "line": "\t\tscope:target_country = { country_rank >= root.country_rank }",
+      "linenr": 13,
+      "path": "common\\political_lobbies\\=!RRK_00_political_lobbies.txt",
+      "stage": null,
+      "tag": null
+    },
+    {
+      "column": 2,
+      "from": "MOD",
+      "fullpath": ".\\common\\political_lobbies\\=!RRK_00_political_lobbies.txt",
+      "length": 10,
+      "line": "\tcan_create = {",
+      "linenr": 9,
+      "path": "common\\political_lobbies\\=!RRK_00_political_lobbies.txt",
+      "stage": null,
+      "tag": "scope was supplied by the game engine"
+    }
+  ],
+  "message": "`country_rank` is for country but scope seems to be interest group",
+  "severity": "warning",
+  "wiki": null
+},
+{
+  "confidence": "reasonable",
+  "info": null,
+  "key": "scopes",
+  "locations": [
+    {
+      "column": 18,
+      "from": "MOD",
+      "fullpath": ".\\common\\political_lobbies\\=!RRK_00_political_lobbies.txt",
+      "length": 4,
+      "line": "\t\t\t\t\t\t\trelations:root < relations_threshold:cordial",
+      "linenr": 684,
+      "path": "common\\political_lobbies\\=!RRK_00_political_lobbies.txt",
+      "stage": null,
+      "tag": null
+    },
+    {
+      "column": 2,
+      "from": "MOD",
+      "fullpath": ".\\common\\political_lobbies\\=!RRK_00_political_lobbies.txt",
+      "length": 11,
+      "line": "\tjoin_weight = {",
+      "linenr": 92,
+      "path": "common\\political_lobbies\\=!RRK_00_political_lobbies.txt",
+      "stage": null,
+      "tag": "scope was supplied by the game engine"
+    }
+  ],
+  "message": "`root` produces interest group but expected country",
+  "severity": "warning",
+  "wiki": null
+},
+{
+  "confidence": "reasonable",
+  "info": null,
+  "key": "scopes",
+  "locations": [
+    {
+      "column": 11,
+      "from": "MOD",
+      "fullpath": ".\\common\\political_lobbies\\=!RRK_00_political_lobbies.txt",
+      "length": 15,
+      "line": "\t\tNOT = { is_country_type = decentralized }",
+      "linenr": 803,
+      "path": "common\\political_lobbies\\=!RRK_00_political_lobbies.txt",
+      "stage": null,
+      "tag": null
+    },
+    {
+      "column": 2,
+      "from": "MOD",
+      "fullpath": ".\\common\\political_lobbies\\=!RRK_00_political_lobbies.txt",
+      "length": 10,
+      "line": "\tcan_create = {",
+      "linenr": 802,
+      "path": "common\\political_lobbies\\=!RRK_00_political_lobbies.txt",
+      "stage": null,
+      "tag": "scope was supplied by the game engine"
+    }
+  ],
+  "message": "`is_country_type` is for country but scope seems to be interest group",
+  "severity": "warning",
+  "wiki": null
+},
+{
+  "confidence": "reasonable",
+  "info": null,
+  "key": "scopes",
+  "locations": [
+    {
+      "column": 16,
+      "from": "MOD",
+      "fullpath": ".\\common\\political_lobbies\\=!RRK_00_political_lobbies.txt",
+      "length": 4,
+      "line": "\t\t\t\t\trelations:root < 0",
+      "linenr": 1167,
+      "path": "common\\political_lobbies\\=!RRK_00_political_lobbies.txt",
+      "stage": null,
+      "tag": null
+    },
+    {
+      "column": 2,
+      "from": "MOD",
+      "fullpath": ".\\common\\political_lobbies\\=!RRK_00_political_lobbies.txt",
+      "length": 11,
+      "line": "\tjoin_weight = {",
+      "linenr": 870,
+      "path": "common\\political_lobbies\\=!RRK_00_political_lobbies.txt",
+      "stage": null,
+      "tag": "scope was supplied by the game engine"
+    }
+  ],
+  "message": "`root` produces interest group but expected country",
+  "severity": "warning",
+  "wiki": null
+},
+{
+  "confidence": "reasonable",
+  "info": null,
+  "key": "field-missing",
+  "locations": [
+    {
+      "column": 14,
+      "from": "MOD",
+      "fullpath": ".\\common\\scripted_effects\\=!RRK_00_victoria_adversarial_scripted_effects.txt",
+      "length": 1,
+      "line": "\t\t\telse_if = {",
+      "linenr": 41,
+      "path": "common\\scripted_effects\\=!RRK_00_victoria_adversarial_scripted_effects.txt",
+      "stage": null,
+      "tag": null
+    }
+  ],
+  "message": "required field `limit` missing",
+  "severity": "warning",
+  "wiki": null
+},
+{
+  "confidence": "reasonable",
+  "info": null,
+  "key": "field-missing",
+  "locations": [
+    {
+      "column": 14,
+      "from": "MOD",
+      "fullpath": ".\\common\\scripted_effects\\=!RRK_00_victoria_adversarial_scripted_effects.txt",
+      "length": 1,
+      "line": "\t\t\telse_if = {",
+      "linenr": 104,
+      "path": "common\\scripted_effects\\=!RRK_00_victoria_adversarial_scripted_effects.txt",
+      "stage": null,
+      "tag": null
+    }
+  ],
+  "message": "required field `limit` missing",
+  "severity": "warning",
+  "wiki": null
+},
+{
+  "confidence": "reasonable",
+  "info": null,
+  "key": "scopes",
+  "locations": [
+    {
+      "column": 7,
+      "from": "MOD",
+      "fullpath": ".\\common\\scripted_effects\\=!RRK_00_victoria_ip4_scripted_effects.txt",
+      "length": 8,
+      "line": "\t\t\t\t\t\tis_ruler = yes",
+      "linenr": 223,
+      "path": "common\\scripted_effects\\=!RRK_00_victoria_ip4_scripted_effects.txt",
+      "stage": null,
+      "tag": null
+    },
+    {
+      "column": 9,
+      "from": "MOD",
+      "fullpath": ".\\common\\scripted_triggers\\RRK_scripted_triggers.txt",
+      "length": 7,
+      "line": "        has_law = law_type:law_monarchy",
+      "linenr": 146,
+      "path": "common\\scripted_triggers\\RRK_scripted_triggers.txt",
+      "stage": null,
+      "tag": "scope was deduced from `has_law` here"
+    }
+  ],
+  "message": "`is_ruler` is for character but scope seems to be country",
+  "severity": "warning",
+  "wiki": null
+},
+{
+  "confidence": "reasonable",
+  "info": null,
+  "key": "scopes",
+  "locations": [
+    {
+      "column": 7,
+      "from": "MOD",
+      "fullpath": ".\\common\\scripted_effects\\=!RRK_00_victoria_ip4_scripted_effects.txt",
+      "length": 29,
+      "line": "\t\t\t\t\t\tcleanup_ruler_character_roles = yes",
+      "linenr": 229,
+      "path": "common\\scripted_effects\\=!RRK_00_victoria_ip4_scripted_effects.txt",
+      "stage": null,
+      "tag": null
+    },
+    {
+      "column": 4,
+      "from": "Vic3",
+      "fullpath": "C:\\Steam\\steamapps\\common\\Victoria 3\\game\\common\\scripted_effects\\00_victoria_ip4_scripted_effects.txt",
+      "length": 8,
+      "line": "\t\t\thas_role = agitator",
+      "linenr": 2084,
+      "path": "common\\scripted_effects\\00_victoria_ip4_scripted_effects.txt",
+      "stage": null,
+      "tag": "expected scope was deduced from `has_role` here"
+    },
+    {
+      "column": 9,
+      "from": "MOD",
+      "fullpath": ".\\common\\scripted_triggers\\RRK_scripted_triggers.txt",
+      "length": 7,
+      "line": "        has_law = law_type:law_monarchy",
+      "linenr": 146,
+      "path": "common\\scripted_triggers\\RRK_scripted_triggers.txt",
+      "stage": null,
+      "tag": "actual scope was deduced from `has_law` here"
+    }
+  ],
+  "message": "`cleanup_ruler_character_roles` expects scope to be character but scope seems to be country",
+  "severity": "warning",
+  "wiki": null
+},
+{
+  "confidence": "reasonable",
+  "info": null,
+  "key": "scopes",
+  "locations": [
+    {
+      "column": 6,
+      "from": "MOD",
+      "fullpath": ".\\common\\scripted_effects\\=!RRK_00_victoria_ip4_scripted_effects.txt",
+      "length": 22,
+      "line": "\t\t\t\t\tset_character_as_ruler = yes",
+      "linenr": 231,
+      "path": "common\\scripted_effects\\=!RRK_00_victoria_ip4_scripted_effects.txt",
+      "stage": null,
+      "tag": null
+    },
+    {
+      "column": 9,
+      "from": "MOD",
+      "fullpath": ".\\common\\scripted_triggers\\RRK_scripted_triggers.txt",
+      "length": 7,
+      "line": "        has_law = law_type:law_monarchy",
+      "linenr": 146,
+      "path": "common\\scripted_triggers\\RRK_scripted_triggers.txt",
+      "stage": null,
+      "tag": "scope was deduced from `has_law` here"
+    }
+  ],
+  "message": "`set_character_as_ruler` is for character but scope seems to be country",
+  "severity": "warning",
+  "wiki": null
+},
+{
+  "confidence": "reasonable",
+  "info": null,
+  "key": "scopes",
+  "locations": [
+    {
+      "column": 37,
+      "from": "MOD",
+      "fullpath": ".\\common\\scripted_triggers\\=!RRK_00_ip4_victoria_scripted_triggers.txt",
+      "length": 8,
+      "line": "            is_primary_culture_of = overlord",
+      "linenr": 143,
+      "path": "common\\scripted_triggers\\=!RRK_00_ip4_victoria_scripted_triggers.txt",
+      "stage": null,
+      "tag": null
+    },
+    {
+      "column": 9,
+      "from": "MOD",
+      "fullpath": ".\\common\\scripted_triggers\\=!RRK_00_ip4_victoria_scripted_triggers.txt",
+      "length": 19,
+      "line": "        any_primary_culture = {",
+      "linenr": 142,
+      "path": "common\\scripted_triggers\\=!RRK_00_ip4_victoria_scripted_triggers.txt",
+      "stage": null,
+      "tag": "scope was deduced from `any_primary_culture` here"
+    }
+  ],
+  "message": "`overlord` is for country but scope seems to be culture",
+  "severity": "warning",
+  "wiki": null
+},
+{
+  "confidence": "reasonable",
+  "info": "valid modifiers are for battle, building, state, tax, unit (combat), goods",
+  "key": "modifiers",
+  "locations": [
+    {
+      "column": 2,
+      "from": "Vic3",
+      "fullpath": "C:\\Steam\\steamapps\\common\\Victoria 3\\game\\common\\static_modifiers\\02_event_modifiers.txt",
+      "length": 21,
+      "line": "\tcountry_prestige_mult = 0.1",
+      "linenr": 1996,
+      "path": "common\\static_modifiers\\02_event_modifiers.txt",
+      "stage": null,
+      "tag": null
+    },
+    {
+      "column": 12,
+      "from": "MOD",
+      "fullpath": ".\\events\\RRK_hawaii_events.txt",
+      "length": 25,
+      "line": "\t\t\t\tname = national_defence_modifier",
+      "linenr": 39,
+      "path": "events\\RRK_hawaii_events.txt",
+      "stage": null,
+      "tag": "from this temporary modifier"
+    },
+    {
+      "column": 3,
+      "from": "MOD",
+      "fullpath": ".\\events\\RRK_hawaii_events.txt",
+      "length": 17,
+      "line": "\t\tevery_scope_state = {",
+      "linenr": 36,
+      "path": "events\\RRK_hawaii_events.txt",
+      "stage": null,
+      "tag": "scope was deduced from `every_scope_state` here"
+    }
+  ],
+  "message": "`country_prestige_mult` is a modifier for country and will not flow from state scope",
+  "severity": "warning",
+  "wiki": "https://vic3.paradoxwikis.com/Modifier_types#Modifier_type_flow"
+},
+{
+  "confidence": "reasonable",
+  "info": "there are no valid modifiers for none scope",
+  "key": "modifiers",
+  "locations": [
+    {
+      "column": 2,
+      "from": "Vic3",
+      "fullpath": "C:\\Steam\\steamapps\\common\\Victoria 3\\game\\common\\static_modifiers\\unification.txt",
+      "length": 20,
+      "line": "\tcountry_prestige_add = 25",
+      "linenr": 3,
+      "path": "common\\static_modifiers\\unification.txt",
+      "stage": null,
+      "tag": null
+    },
+    {
+      "column": 11,
+      "from": "MOD",
+      "fullpath": ".\\events\\iberia_events\\RRK_iberian_union_events.txt",
+      "length": 20,
+      "line": "\t\t\tname = unification_prestige",
+      "linenr": 89,
+      "path": "events\\iberia_events\\RRK_iberian_union_events.txt",
+      "stage": null,
+      "tag": "from this temporary modifier"
+    },
+    {
+      "column": 1,
+      "from": "Vic3",
+      "fullpath": "C:\\Steam\\steamapps\\common\\Victoria 3\\game\\common\\journal_entries\\06_iberia.txt",
+      "length": 9,
+      "line": "je_iberia = {",
+      "linenr": 1,
+      "path": "common\\journal_entries\\06_iberia.txt",
+      "stage": null,
+      "tag": "scope was supplied by the game engine"
+    }
+  ],
+  "message": "`country_prestige_add` is a modifier for country and will not flow from none scope",
+  "severity": "warning",
+  "wiki": "https://vic3.paradoxwikis.com/Modifier_types#Modifier_type_flow"
+},
+{
+  "confidence": "reasonable",
+  "info": "there are no valid modifiers for none scope",
+  "key": "modifiers",
+  "locations": [
+    {
+      "column": 2,
+      "from": "Vic3",
+      "fullpath": "C:\\Steam\\steamapps\\common\\Victoria 3\\game\\common\\static_modifiers\\unification.txt",
+      "length": 20,
+      "line": "\tcountry_prestige_add = 25",
+      "linenr": 3,
+      "path": "common\\static_modifiers\\unification.txt",
+      "stage": null,
+      "tag": null
+    },
+    {
+      "column": 11,
+      "from": "MOD",
+      "fullpath": ".\\events\\iberia_events\\RRK_iberian_union_events.txt",
+      "length": 20,
+      "line": "\t\t\tname = unification_prestige",
+      "linenr": 105,
+      "path": "events\\iberia_events\\RRK_iberian_union_events.txt",
+      "stage": null,
+      "tag": "from this temporary modifier"
+    },
+    {
+      "column": 1,
+      "from": "Vic3",
+      "fullpath": "C:\\Steam\\steamapps\\common\\Victoria 3\\game\\common\\journal_entries\\06_iberia.txt",
+      "length": 9,
+      "line": "je_iberia = {",
+      "linenr": 1,
+      "path": "common\\journal_entries\\06_iberia.txt",
+      "stage": null,
+      "tag": "scope was supplied by the game engine"
+    }
+  ],
+  "message": "`country_prestige_add` is a modifier for country and will not flow from none scope",
+  "severity": "warning",
+  "wiki": "https://vic3.paradoxwikis.com/Modifier_types#Modifier_type_flow"
+},
+{
+  "confidence": "reasonable",
+  "info": "there are no valid modifiers for none scope",
+  "key": "modifiers",
+  "locations": [
+    {
+      "column": 2,
+      "from": "Vic3",
+      "fullpath": "C:\\Steam\\steamapps\\common\\Victoria 3\\game\\common\\static_modifiers\\unification.txt",
+      "length": 20,
+      "line": "\tcountry_prestige_add = 25",
+      "linenr": 3,
+      "path": "common\\static_modifiers\\unification.txt",
+      "stage": null,
+      "tag": null
+    },
+    {
+      "column": 11,
+      "from": "MOD",
+      "fullpath": ".\\events\\iberia_events\\RRK_iberian_union_events.txt",
+      "length": 20,
+      "line": "\t\t\tname = unification_prestige",
+      "linenr": 122,
+      "path": "events\\iberia_events\\RRK_iberian_union_events.txt",
+      "stage": null,
+      "tag": "from this temporary modifier"
+    },
+    {
+      "column": 1,
+      "from": "Vic3",
+      "fullpath": "C:\\Steam\\steamapps\\common\\Victoria 3\\game\\common\\journal_entries\\06_iberia.txt",
+      "length": 9,
+      "line": "je_iberia = {",
+      "linenr": 1,
+      "path": "common\\journal_entries\\06_iberia.txt",
+      "stage": null,
+      "tag": "scope was supplied by the game engine"
+    }
+  ],
+  "message": "`country_prestige_add` is a modifier for country and will not flow from none scope",
+  "severity": "warning",
+  "wiki": "https://vic3.paradoxwikis.com/Modifier_types#Modifier_type_flow"
+},
+{
+  "confidence": "reasonable",
+  "info": "there are no valid modifiers for none scope",
+  "key": "modifiers",
+  "locations": [
+    {
+      "column": 2,
+      "from": "Vic3",
+      "fullpath": "C:\\Steam\\steamapps\\common\\Victoria 3\\game\\common\\static_modifiers\\unification.txt",
+      "length": 20,
+      "line": "\tcountry_prestige_add = 25",
+      "linenr": 3,
+      "path": "common\\static_modifiers\\unification.txt",
+      "stage": null,
+      "tag": null
+    },
+    {
+      "column": 11,
+      "from": "MOD",
+      "fullpath": ".\\events\\iberia_events\\RRK_iberian_union_events.txt",
+      "length": 20,
+      "line": "\t\t\tname = unification_prestige",
+      "linenr": 151,
+      "path": "events\\iberia_events\\RRK_iberian_union_events.txt",
+      "stage": null,
+      "tag": "from this temporary modifier"
+    },
+    {
+      "column": 1,
+      "from": "Vic3",
+      "fullpath": "C:\\Steam\\steamapps\\common\\Victoria 3\\game\\common\\journal_entries\\06_iberia.txt",
+      "length": 9,
+      "line": "je_iberia = {",
+      "linenr": 1,
+      "path": "common\\journal_entries\\06_iberia.txt",
+      "stage": null,
+      "tag": "scope was supplied by the game engine"
+    }
+  ],
+  "message": "`country_prestige_add` is a modifier for country and will not flow from none scope",
+  "severity": "warning",
+  "wiki": "https://vic3.paradoxwikis.com/Modifier_types#Modifier_type_flow"
+},
+{
+  "confidence": "reasonable",
+  "info": "there are no valid modifiers for none scope",
+  "key": "modifiers",
+  "locations": [
+    {
+      "column": 2,
+      "from": "Vic3",
+      "fullpath": "C:\\Steam\\steamapps\\common\\Victoria 3\\game\\common\\static_modifiers\\unification.txt",
+      "length": 20,
+      "line": "\tcountry_prestige_add = 25",
+      "linenr": 13,
+      "path": "common\\static_modifiers\\unification.txt",
+      "stage": null,
+      "tag": null
+    },
+    {
+      "column": 11,
+      "from": "MOD",
+      "fullpath": ".\\events\\iberia_events\\RRK_iberian_union_events.txt",
+      "length": 30,
+      "line": "\t\t\tname = communist_unification_prestige",
+      "linenr": 136,
+      "path": "events\\iberia_events\\RRK_iberian_union_events.txt",
+      "stage": null,
+      "tag": "from this temporary modifier"
+    },
+    {
+      "column": 1,
+      "from": "Vic3",
+      "fullpath": "C:\\Steam\\steamapps\\common\\Victoria 3\\game\\common\\journal_entries\\06_iberia.txt",
+      "length": 9,
+      "line": "je_iberia = {",
+      "linenr": 1,
+      "path": "common\\journal_entries\\06_iberia.txt",
+      "stage": null,
+      "tag": "scope was supplied by the game engine"
+    }
+  ],
+  "message": "`country_prestige_add` is a modifier for country and will not flow from none scope",
+  "severity": "warning",
+  "wiki": "https://vic3.paradoxwikis.com/Modifier_types#Modifier_type_flow"
+},
+{
+  "confidence": "reasonable",
+  "info": null,
+  "key": "scopes",
+  "locations": [
+    {
+      "column": 35,
+      "from": "MOD",
+      "fullpath": ".\\common\\treaty_articles\\=!RRK_20_law_commitment.txt",
+      "length": 9,
+      "line": "                    exists = root.input_law",
+      "linenr": 73,
+      "path": "common\\treaty_articles\\=!RRK_20_law_commitment.txt",
+      "stage": null,
+      "tag": null
+    },
+    {
+      "column": 5,
+      "from": "MOD",
+      "fullpath": ".\\common\\treaty_articles\\=!RRK_20_law_commitment.txt",
+      "length": 10,
+      "line": "    can_ratify = {",
+      "linenr": 62,
+      "path": "common\\treaty_articles\\=!RRK_20_law_commitment.txt",
+      "stage": null,
+      "tag": "scope was supplied by the game engine"
+    }
+  ],
+  "message": "`input_law` is for treaty article or treaty article options but scope seems to be country",
+  "severity": "warning",
+  "wiki": null
+},
+{
+  "confidence": "reasonable",
+  "info": null,
+  "key": "scopes",
+  "locations": [
+    {
+      "column": 26,
+      "from": "MOD",
+      "fullpath": ".\\common\\treaty_articles\\=!RRK_20_law_commitment.txt",
+      "length": 9,
+      "line": "\t\t\t\t\t\t\t\tinput_law = root.input_law",
+      "linenr": 88,
+      "path": "common\\treaty_articles\\=!RRK_20_law_commitment.txt",
+      "stage": null,
+      "tag": null
+    },
+    {
+      "column": 5,
+      "from": "MOD",
+      "fullpath": ".\\common\\treaty_articles\\=!RRK_20_law_commitment.txt",
+      "length": 10,
+      "line": "    can_ratify = {",
+      "linenr": 62,
+      "path": "common\\treaty_articles\\=!RRK_20_law_commitment.txt",
+      "stage": null,
+      "tag": "scope was supplied by the game engine"
+    }
+  ],
+  "message": "`input_law` is for treaty article or treaty article options but scope seems to be country",
+  "severity": "warning",
+  "wiki": null
+},
+{
+  "confidence": "reasonable",
+  "info": null,
+  "key": "scopes",
+  "locations": [
+    {
+      "column": 42,
+      "from": "MOD",
+      "fullpath": ".\\common\\treaty_articles\\=!RRK_20_law_commitment.txt",
+      "length": 9,
+      "line": "                        input_law = root.input_law",
+      "linenr": 104,
+      "path": "common\\treaty_articles\\=!RRK_20_law_commitment.txt",
+      "stage": null,
+      "tag": null
+    },
+    {
+      "column": 5,
+      "from": "MOD",
+      "fullpath": ".\\common\\treaty_articles\\=!RRK_20_law_commitment.txt",
+      "length": 10,
+      "line": "    can_ratify = {",
+      "linenr": 62,
+      "path": "common\\treaty_articles\\=!RRK_20_law_commitment.txt",
+      "stage": null,
+      "tag": "scope was supplied by the game engine"
+    }
+  ],
+  "message": "`input_law` is for treaty article or treaty article options but scope seems to be country",
+  "severity": "warning",
+  "wiki": null
+},
+{
+  "confidence": "reasonable",
+  "info": null,
+  "key": "scopes",
+  "locations": [
+    {
+      "column": 46,
+      "from": "MOD",
+      "fullpath": ".\\common\\treaty_articles\\=!RRK_30_transfer_subject.txt",
+      "length": 13,
+      "line": "                        input_country = root.input_country",
+      "linenr": 35,
+      "path": "common\\treaty_articles\\=!RRK_30_transfer_subject.txt",
+      "stage": null,
+      "tag": null
+    },
+    {
+      "column": 2,
+      "from": "MOD",
+      "fullpath": ".\\common\\treaty_articles\\=!RRK_30_transfer_subject.txt",
+      "length": 10,
+      "line": "\tcan_ratify = {",
+      "linenr": 23,
+      "path": "common\\treaty_articles\\=!RRK_30_transfer_subject.txt",
+      "stage": null,
+      "tag": "scope was supplied by the game engine"
+    }
+  ],
+  "message": "`input_country` is for treaty article or treaty article options but scope seems to be country",
+  "severity": "warning",
+  "wiki": null
+},
+{
+  "confidence": "reasonable",
+  "info": null,
+  "key": "validation",
+  "locations": [
+    {
+      "column": 4,
+      "from": "MOD",
+      "fullpath": ".\\events\\RRK_bulgaria_events.txt",
+      "length": 16,
+      "line": "\t\t\tcreate_character = {",
+      "linenr": 209,
+      "path": "events\\RRK_bulgaria_events.txt",
+      "stage": null,
+      "tag": null
+    }
+  ],
+  "message": "character has `last_name` but no `first_name`",
+  "severity": "warning",
+  "wiki": null
+},
+{
+  "confidence": "reasonable",
+  "info": null,
+  "key": "field-missing",
+  "locations": [
+    {
+      "column": 13,
+      "from": "MOD",
+      "fullpath": ".\\events\\agitators_events\\RRK_algeria_events.txt",
+      "length": 1,
+      "line": "\t\telse_if = {",
+      "linenr": 95,
+      "path": "events\\agitators_events\\RRK_algeria_events.txt",
+      "stage": null,
+      "tag": null
+    }
+  ],
+  "message": "required field `limit` missing",
+  "severity": "warning",
+  "wiki": null
+},
+{
+  "confidence": "reasonable",
+  "info": null,
+  "key": "field-missing",
+  "locations": [
+    {
+      "column": 13,
+      "from": "MOD",
+      "fullpath": ".\\events\\agitators_events\\RRK_paris_commune_pulse_events.txt",
+      "length": 1,
+      "line": "\t\telse_if = {",
+      "linenr": 81,
+      "path": "events\\agitators_events\\RRK_paris_commune_pulse_events.txt",
+      "stage": null,
+      "tag": null
+    }
+  ],
+  "message": "required field `limit` missing",
+  "severity": "warning",
+  "wiki": null
+},
+{
+  "confidence": "reasonable",
+  "info": null,
+  "key": "field-missing",
+  "locations": [
+    {
+      "column": 13,
+      "from": "MOD",
+      "fullpath": ".\\events\\agitators_events\\RRK_paris_commune_pulse_events.txt",
+      "length": 1,
+      "line": "\t\telse_if = {",
+      "linenr": 150,
+      "path": "events\\agitators_events\\RRK_paris_commune_pulse_events.txt",
+      "stage": null,
+      "tag": null
+    }
+  ],
+  "message": "required field `limit` missing",
+  "severity": "warning",
+  "wiki": null
+},
+{
+  "confidence": "reasonable",
+  "info": null,
+  "key": "duplicate-item",
+  "locations": [
+    {
+      "column": 1,
+      "from": "MOD",
+      "fullpath": ".\\events\\balkans_events\\RRK_00_ip3_austria_events.txt",
+      "length": 16,
+      "line": "austria_events.1 = { #",
+      "linenr": 4,
+      "path": "events\\balkans_events\\RRK_00_ip3_austria_events.txt",
+      "stage": null,
+      "tag": null
+    },
+    {
+      "column": 1,
+      "from": "Vic3",
+      "fullpath": "C:\\Steam\\steamapps\\common\\Victoria 3\\game\\events\\balkans_events\\00_ip3_austria_events.txt",
+      "length": 16,
+      "line": "austria_events.1 = { #",
+      "linenr": 3,
+      "path": "events\\balkans_events\\00_ip3_austria_events.txt",
+      "stage": null,
+      "tag": "the other event is here"
+    }
+  ],
+  "message": "event is redefined by another event",
+  "severity": "warning",
+  "wiki": null
+},
+{
+  "confidence": "reasonable",
+  "info": null,
+  "key": "duplicate-item",
+  "locations": [
+    {
+      "column": 1,
+      "from": "MOD",
+      "fullpath": ".\\events\\balkans_events\\RRK_00_ip3_austria_events.txt",
+      "length": 16,
+      "line": "austria_events.4 = { #",
+      "linenr": 81,
+      "path": "events\\balkans_events\\RRK_00_ip3_austria_events.txt",
+      "stage": null,
+      "tag": null
+    },
+    {
+      "column": 1,
+      "from": "Vic3",
+      "fullpath": "C:\\Steam\\steamapps\\common\\Victoria 3\\game\\events\\balkans_events\\00_ip3_austria_events.txt",
+      "length": 16,
+      "line": "austria_events.4 = { #",
+      "linenr": 588,
+      "path": "events\\balkans_events\\00_ip3_austria_events.txt",
+      "stage": null,
+      "tag": "the other event is here"
+    }
+  ],
+  "message": "event is redefined by another event",
+  "severity": "warning",
+  "wiki": null
+},
+{
+  "confidence": "reasonable",
+  "info": null,
+  "key": "duplicate-item",
+  "locations": [
+    {
+      "column": 1,
+      "from": "MOD",
+      "fullpath": ".\\events\\balkans_events\\RRK_00_ip3_hungary_events.txt",
+      "length": 16,
+      "line": "hungary_events.2 = { # Serbian Revolt",
+      "linenr": 4,
+      "path": "events\\balkans_events\\RRK_00_ip3_hungary_events.txt",
+      "stage": null,
+      "tag": null
+    },
+    {
+      "column": 1,
+      "from": "Vic3",
+      "fullpath": "C:\\Steam\\steamapps\\common\\Victoria 3\\game\\events\\balkans_events\\00_ip3_hungary_events.txt",
+      "length": 16,
+      "line": "hungary_events.2 = { # Serbian Revolt",
+      "linenr": 76,
+      "path": "events\\balkans_events\\00_ip3_hungary_events.txt",
+      "stage": null,
+      "tag": "the other event is here"
+    }
+  ],
+  "message": "event is redefined by another event",
+  "severity": "warning",
+  "wiki": null
+},
+{
+  "confidence": "reasonable",
+  "info": null,
+  "key": "duplicate-item",
+  "locations": [
+    {
+      "column": 1,
+      "from": "MOD",
+      "fullpath": ".\\events\\balkans_events\\RRK_00_ip3_hungary_events.txt",
+      "length": 17,
+      "line": "hungary_events.13 = { # Crown of St. Stephen",
+      "linenr": 344,
+      "path": "events\\balkans_events\\RRK_00_ip3_hungary_events.txt",
+      "stage": null,
+      "tag": null
+    },
+    {
+      "column": 1,
+      "from": "Vic3",
+      "fullpath": "C:\\Steam\\steamapps\\common\\Victoria 3\\game\\events\\balkans_events\\00_ip3_hungary_events.txt",
+      "length": 17,
+      "line": "hungary_events.13 = { # Crown of St. Stephen",
+      "linenr": 1948,
+      "path": "events\\balkans_events\\00_ip3_hungary_events.txt",
+      "stage": null,
+      "tag": "the other event is here"
+    }
+  ],
+  "message": "event is redefined by another event",
+  "severity": "warning",
+  "wiki": null
+},
+{
+  "confidence": "reasonable",
+  "info": null,
+  "key": "duplicate-item",
+  "locations": [
+    {
+      "column": 1,
+      "from": "MOD",
+      "fullpath": ".\\events\\balkans_events\\RRK_04_ip3_austria_events.txt",
+      "length": 17,
+      "line": "austria_events.40 = {",
+      "linenr": 4,
+      "path": "events\\balkans_events\\RRK_04_ip3_austria_events.txt",
+      "stage": null,
+      "tag": null
+    },
+    {
+      "column": 1,
+      "from": "Vic3",
+      "fullpath": "C:\\Steam\\steamapps\\common\\Victoria 3\\game\\events\\balkans_events\\04_ip3_austria_events.txt",
+      "length": 17,
+      "line": "austria_events.40 = {",
+      "linenr": 6,
+      "path": "events\\balkans_events\\04_ip3_austria_events.txt",
+      "stage": null,
+      "tag": "the other event is here"
+    }
+  ],
+  "message": "event is redefined by another event",
+  "severity": "warning",
+  "wiki": null
+},
+{
+  "confidence": "reasonable",
+  "info": null,
+  "key": "scopes",
+  "locations": [
+    {
+      "column": 14,
+      "from": "MOD",
+      "fullpath": ".\\events\\balkans_events\\RRK_montenegro_events.txt",
+      "length": 4,
+      "line": "\tplacement = ROOT",
+      "linenr": 6,
+      "path": "events\\balkans_events\\RRK_montenegro_events.txt",
+      "stage": null,
+      "tag": null
+    },
+    {
+      "column": 1,
+      "from": "MOD",
+      "fullpath": ".\\common\\on_actions\\=!RRK_hand_coded_00_code_on_actions.txt",
+      "length": 18,
+      "line": "on_character_death = {",
+      "linenr": 4,
+      "path": "common\\on_actions\\=!RRK_hand_coded_00_code_on_actions.txt",
+      "stage": null,
+      "tag": "scope was supplied by the game engine"
+    }
+  ],
+  "message": "`ROOT` produces character but expected country, state or state region",
+  "severity": "warning",
+  "wiki": null
+},
+{
+  "confidence": "reasonable",
+  "info": null,
+  "key": "scopes",
+  "locations": [
+    {
+      "column": 14,
+      "from": "MOD",
+      "fullpath": ".\\events\\iberia_events\\RRK_iberian_union_events.txt",
+      "length": 4,
+      "line": "\tplacement = root",
+      "linenr": 6,
+      "path": "events\\iberia_events\\RRK_iberian_union_events.txt",
+      "stage": null,
+      "tag": null
+    },
+    {
+      "column": 1,
+      "from": "Vic3",
+      "fullpath": "C:\\Steam\\steamapps\\common\\Victoria 3\\game\\common\\journal_entries\\06_iberia.txt",
+      "length": 9,
+      "line": "je_iberia = {",
+      "linenr": 1,
+      "path": "common\\journal_entries\\06_iberia.txt",
+      "stage": null,
+      "tag": "scope was supplied by the game engine"
+    }
+  ],
+  "message": "`root` produces none but expected country, state or state region",
+  "severity": "warning",
+  "wiki": null
+},
+{
+  "confidence": "reasonable",
+  "info": null,
+  "key": "scopes",
+  "locations": [
+    {
+      "column": 6,
+      "from": "MOD",
+      "fullpath": ".\\events\\iberia_events\\RRK_iberian_union_events.txt",
+      "length": 7,
+      "line": "\t\t\t\t\thas_law = law_type:law_anarchy",
+      "linenr": 18,
+      "path": "events\\iberia_events\\RRK_iberian_union_events.txt",
+      "stage": null,
+      "tag": null
+    },
+    {
+      "column": 1,
+      "from": "Vic3",
+      "fullpath": "C:\\Steam\\steamapps\\common\\Victoria 3\\game\\common\\journal_entries\\06_iberia.txt",
+      "length": 9,
+      "line": "je_iberia = {",
+      "linenr": 1,
+      "path": "common\\journal_entries\\06_iberia.txt",
+      "stage": null,
+      "tag": "scope was supplied by the game engine"
+    }
+  ],
+  "message": "`has_law` is for country but scope seems to be none",
+  "severity": "warning",
+  "wiki": null
+},
+{
+  "confidence": "reasonable",
+  "info": null,
+  "key": "scopes",
+  "locations": [
+    {
+      "column": 6,
+      "from": "MOD",
+      "fullpath": ".\\events\\iberia_events\\RRK_iberian_union_events.txt",
+      "length": 18,
+      "line": "\t\t\t\t\thas_law_or_variant = law_type:law_council_republic",
+      "linenr": 24,
+      "path": "events\\iberia_events\\RRK_iberian_union_events.txt",
+      "stage": null,
+      "tag": null
+    },
+    {
+      "column": 1,
+      "from": "Vic3",
+      "fullpath": "C:\\Steam\\steamapps\\common\\Victoria 3\\game\\common\\journal_entries\\06_iberia.txt",
+      "length": 9,
+      "line": "je_iberia = {",
+      "linenr": 1,
+      "path": "common\\journal_entries\\06_iberia.txt",
+      "stage": null,
+      "tag": "scope was supplied by the game engine"
+    }
+  ],
+  "message": "`has_law_or_variant` is for country but scope seems to be none",
+  "severity": "warning",
+  "wiki": null
+},
+{
+  "confidence": "reasonable",
+  "info": null,
+  "key": "scopes",
+  "locations": [
+    {
+      "column": 6,
+      "from": "MOD",
+      "fullpath": ".\\events\\iberia_events\\RRK_iberian_union_events.txt",
+      "length": 19,
+      "line": "\t\t\t\t\tRRK_st_has_monarchy = yes",
+      "linenr": 30,
+      "path": "events\\iberia_events\\RRK_iberian_union_events.txt",
+      "stage": null,
+      "tag": null
+    },
+    {
+      "column": 9,
+      "from": "MOD",
+      "fullpath": ".\\common\\scripted_triggers\\RRK_scripted_triggers.txt",
+      "length": 7,
+      "line": "        has_law = law_type:law_monarchy",
+      "linenr": 146,
+      "path": "common\\scripted_triggers\\RRK_scripted_triggers.txt",
+      "stage": null,
+      "tag": "expected scope was deduced from `has_law` here"
+    },
+    {
+      "column": 1,
+      "from": "Vic3",
+      "fullpath": "C:\\Steam\\steamapps\\common\\Victoria 3\\game\\common\\journal_entries\\06_iberia.txt",
+      "length": 9,
+      "line": "je_iberia = {",
+      "linenr": 1,
+      "path": "common\\journal_entries\\06_iberia.txt",
+      "stage": null,
+      "tag": "actual scope was supplied by the game engine"
+    }
+  ],
+  "message": "`RRK_st_has_monarchy` expects scope to be country but scope seems to be none",
+  "severity": "warning",
+  "wiki": null
+},
+{
+  "confidence": "reasonable",
+  "info": null,
+  "key": "scopes",
+  "locations": [
+    {
+      "column": 6,
+      "from": "MOD",
+      "fullpath": ".\\events\\iberia_events\\RRK_iberian_union_events.txt",
+      "length": 7,
+      "line": "\t\t\t\t\thas_law = law_type:law_theocracy",
+      "linenr": 36,
+      "path": "events\\iberia_events\\RRK_iberian_union_events.txt",
+      "stage": null,
+      "tag": null
+    },
+    {
+      "column": 1,
+      "from": "Vic3",
+      "fullpath": "C:\\Steam\\steamapps\\common\\Victoria 3\\game\\common\\journal_entries\\06_iberia.txt",
+      "length": 9,
+      "line": "je_iberia = {",
+      "linenr": 1,
+      "path": "common\\journal_entries\\06_iberia.txt",
+      "stage": null,
+      "tag": "scope was supplied by the game engine"
+    }
+  ],
+  "message": "`has_law` is for country but scope seems to be none",
+  "severity": "warning",
+  "wiki": null
+},
+{
+  "confidence": "reasonable",
+  "info": null,
+  "key": "scopes",
+  "locations": [
+    {
+      "column": 3,
+      "from": "MOD",
+      "fullpath": ".\\events\\iberia_events\\RRK_iberian_union_events.txt",
+      "length": 7,
+      "line": "\t\tcapital = {",
+      "linenr": 58,
+      "path": "events\\iberia_events\\RRK_iberian_union_events.txt",
+      "stage": null,
+      "tag": null
+    },
+    {
+      "column": 1,
+      "from": "Vic3",
+      "fullpath": "C:\\Steam\\steamapps\\common\\Victoria 3\\game\\common\\journal_entries\\06_iberia.txt",
+      "length": 9,
+      "line": "je_iberia = {",
+      "linenr": 1,
+      "path": "common\\journal_entries\\06_iberia.txt",
+      "stage": null,
+      "tag": "scope was supplied by the game engine"
+    }
+  ],
+  "message": "`capital` is for country but scope seems to be none",
+  "severity": "warning",
+  "wiki": null
+},
+{
+  "confidence": "reasonable",
+  "info": null,
+  "key": "scopes",
+  "locations": [
+    {
+      "column": 3,
+      "from": "MOD",
+      "fullpath": ".\\events\\iberia_events\\RRK_iberian_union_events.txt",
+      "length": 25,
+      "line": "\t\thas_technology_researched = pan-nationalism",
+      "linenr": 61,
+      "path": "events\\iberia_events\\RRK_iberian_union_events.txt",
+      "stage": null,
+      "tag": null
+    },
+    {
+      "column": 1,
+      "from": "Vic3",
+      "fullpath": "C:\\Steam\\steamapps\\common\\Victoria 3\\game\\common\\journal_entries\\06_iberia.txt",
+      "length": 9,
+      "line": "je_iberia = {",
+      "linenr": 1,
+      "path": "common\\journal_entries\\06_iberia.txt",
+      "stage": null,
+      "tag": "scope was supplied by the game engine"
+    }
+  ],
+  "message": "`has_technology_researched` is for country but scope seems to be none",
+  "severity": "warning",
+  "wiki": null
+},
+{
+  "confidence": "reasonable",
+  "info": null,
+  "key": "scopes",
+  "locations": [
+    {
+      "column": 3,
+      "from": "MOD",
+      "fullpath": ".\\events\\iberia_events\\RRK_iberian_union_events.txt",
+      "length": 13,
+      "line": "\t\tsave_scope_as = formation_country",
+      "linenr": 70,
+      "path": "events\\iberia_events\\RRK_iberian_union_events.txt",
+      "stage": null,
+      "tag": null
+    },
+    {
+      "column": 1,
+      "from": "Vic3",
+      "fullpath": "C:\\Steam\\steamapps\\common\\Victoria 3\\game\\common\\journal_entries\\06_iberia.txt",
+      "length": 9,
+      "line": "je_iberia = {",
+      "linenr": 1,
+      "path": "common\\journal_entries\\06_iberia.txt",
+      "stage": null,
+      "tag": "scope was supplied by the game engine"
+    }
+  ],
+  "message": "`save_scope_as` is for any except none scope but scope seems to be none",
+  "severity": "warning",
+  "wiki": null
+},
+{
+  "confidence": "reasonable",
+  "info": null,
+  "key": "scopes",
+  "locations": [
+    {
+      "column": 32,
+      "from": "MOD",
+      "fullpath": ".\\events\\iberia_events\\RRK_iberian_union_events.txt",
+      "length": 4,
+      "line": "\t\t\t\thas_diplomatic_relevance = ROOT",
+      "linenr": 73,
+      "path": "events\\iberia_events\\RRK_iberian_union_events.txt",
+      "stage": null,
+      "tag": null
+    },
+    {
+      "column": 1,
+      "from": "Vic3",
+      "fullpath": "C:\\Steam\\steamapps\\common\\Victoria 3\\game\\common\\journal_entries\\06_iberia.txt",
+      "length": 9,
+      "line": "je_iberia = {",
+      "linenr": 1,
+      "path": "common\\journal_entries\\06_iberia.txt",
+      "stage": null,
+      "tag": "scope was supplied by the game engine"
+    }
+  ],
+  "message": "`ROOT` produces none but expected country",
+  "severity": "warning",
+  "wiki": null
+},
+{
+  "confidence": "reasonable",
+  "info": null,
+  "key": "scopes",
+  "locations": [
+    {
+      "column": 4,
+      "from": "MOD",
+      "fullpath": ".\\events\\iberia_events\\RRK_iberian_union_events.txt",
+      "length": 20,
+      "line": "\t\t\tcoa_republic_trigger = yes",
+      "linenr": 83,
+      "path": "events\\iberia_events\\RRK_iberian_union_events.txt",
+      "stage": null,
+      "tag": null
+    },
+    {
+      "column": 3,
+      "from": "Vic3",
+      "fullpath": "C:\\Steam\\steamapps\\common\\Victoria 3\\game\\common\\scripted_triggers\\00_coa_triggers.txt",
+      "length": 18,
+      "line": "\t\thas_law_or_variant = law_type:law_corporate_state",
+      "linenr": 41,
+      "path": "common\\scripted_triggers\\00_coa_triggers.txt",
+      "stage": null,
+      "tag": "expected scope was deduced from `has_law_or_variant` here"
+    },
+    {
+      "column": 1,
+      "from": "Vic3",
+      "fullpath": "C:\\Steam\\steamapps\\common\\Victoria 3\\game\\common\\journal_entries\\06_iberia.txt",
+      "length": 9,
+      "line": "je_iberia = {",
+      "linenr": 1,
+      "path": "common\\journal_entries\\06_iberia.txt",
+      "stage": null,
+      "tag": "actual scope was supplied by the game engine"
+    }
+  ],
+  "message": "`coa_republic_trigger` expects scope to be country but scope seems to be none",
+  "severity": "warning",
+  "wiki": null
+},
+{
+  "confidence": "reasonable",
+  "info": null,
+  "key": "scopes",
+  "locations": [
+    {
+      "column": 5,
+      "from": "MOD",
+      "fullpath": ".\\events\\iberia_events\\RRK_iberian_union_events.txt",
+      "length": 7,
+      "line": "\t\t\t\thas_law = law_type:law_council_republic",
+      "linenr": 85,
+      "path": "events\\iberia_events\\RRK_iberian_union_events.txt",
+      "stage": null,
+      "tag": null
+    },
+    {
+      "column": 1,
+      "from": "Vic3",
+      "fullpath": "C:\\Steam\\steamapps\\common\\Victoria 3\\game\\common\\journal_entries\\06_iberia.txt",
+      "length": 9,
+      "line": "je_iberia = {",
+      "linenr": 1,
+      "path": "common\\journal_entries\\06_iberia.txt",
+      "stage": null,
+      "tag": "scope was supplied by the game engine"
+    }
+  ],
+  "message": "`has_law` is for country but scope seems to be none",
+  "severity": "warning",
+  "wiki": null
+},
+{
+  "confidence": "reasonable",
+  "info": null,
+  "key": "scopes",
+  "locations": [
+    {
+      "column": 3,
+      "from": "MOD",
+      "fullpath": ".\\events\\iberia_events\\RRK_iberian_union_events.txt",
+      "length": 12,
+      "line": "\t\tadd_modifier = {",
+      "linenr": 88,
+      "path": "events\\iberia_events\\RRK_iberian_union_events.txt",
+      "stage": null,
+      "tag": null
+    },
+    {
+      "column": 1,
+      "from": "Vic3",
+      "fullpath": "C:\\Steam\\steamapps\\common\\Victoria 3\\game\\common\\journal_entries\\06_iberia.txt",
+      "length": 9,
+      "line": "je_iberia = {",
+      "linenr": 1,
+      "path": "common\\journal_entries\\06_iberia.txt",
+      "stage": null,
+      "tag": "scope was supplied by the game engine"
+    }
+  ],
+  "message": "`add_modifier` is for country, character, state, building, institution, interest group, journal entry, political movement or power bloc but scope seems to be none",
+  "severity": "warning",
+  "wiki": null
+},
+{
+  "confidence": "reasonable",
+  "info": null,
+  "key": "scopes",
+  "locations": [
+    {
+      "column": 3,
+      "from": "MOD",
+      "fullpath": ".\\events\\iberia_events\\RRK_iberian_union_events.txt",
+      "length": 25,
+      "line": "\t\tunification_claims_effect = yes",
+      "linenr": 92,
+      "path": "events\\iberia_events\\RRK_iberian_union_events.txt",
+      "stage": null,
+      "tag": null
+    },
+    {
+      "column": 3,
+      "from": "Vic3",
+      "fullpath": "C:\\Steam\\steamapps\\common\\Victoria 3\\game\\common\\scripted_effects\\00_scripted_effects.txt",
+      "length": 13,
+      "line": "\t\tadd_loyalists = {",
+      "linenr": 893,
+      "path": "common\\scripted_effects\\00_scripted_effects.txt",
+      "stage": null,
+      "tag": "expected scope was deduced from `add_loyalists` here"
+    },
+    {
+      "column": 1,
+      "from": "Vic3",
+      "fullpath": "C:\\Steam\\steamapps\\common\\Victoria 3\\game\\common\\journal_entries\\06_iberia.txt",
+      "length": 9,
+      "line": "je_iberia = {",
+      "linenr": 1,
+      "path": "common\\journal_entries\\06_iberia.txt",
+      "stage": null,
+      "tag": "actual scope was supplied by the game engine"
+    }
+  ],
+  "message": "`unification_claims_effect` expects scope to be country but scope seems to be none",
+  "severity": "warning",
+  "wiki": null
+},
+{
+  "confidence": "reasonable",
+  "info": null,
+  "key": "scopes",
+  "locations": [
+    {
+      "column": 4,
+      "from": "MOD",
+      "fullpath": ".\\events\\iberia_events\\RRK_iberian_union_events.txt",
+      "length": 20,
+      "line": "\t\t\tcoa_republic_trigger = yes",
+      "linenr": 99,
+      "path": "events\\iberia_events\\RRK_iberian_union_events.txt",
+      "stage": null,
+      "tag": null
+    },
+    {
+      "column": 3,
+      "from": "Vic3",
+      "fullpath": "C:\\Steam\\steamapps\\common\\Victoria 3\\game\\common\\scripted_triggers\\00_coa_triggers.txt",
+      "length": 18,
+      "line": "\t\thas_law_or_variant = law_type:law_corporate_state",
+      "linenr": 41,
+      "path": "common\\scripted_triggers\\00_coa_triggers.txt",
+      "stage": null,
+      "tag": "expected scope was deduced from `has_law_or_variant` here"
+    },
+    {
+      "column": 1,
+      "from": "Vic3",
+      "fullpath": "C:\\Steam\\steamapps\\common\\Victoria 3\\game\\common\\journal_entries\\06_iberia.txt",
+      "length": 9,
+      "line": "je_iberia = {",
+      "linenr": 1,
+      "path": "common\\journal_entries\\06_iberia.txt",
+      "stage": null,
+      "tag": "actual scope was supplied by the game engine"
+    }
+  ],
+  "message": "`coa_republic_trigger` expects scope to be country but scope seems to be none",
+  "severity": "warning",
+  "wiki": null
+},
+{
+  "confidence": "reasonable",
+  "info": null,
+  "key": "scopes",
+  "locations": [
+    {
+      "column": 5,
+      "from": "MOD",
+      "fullpath": ".\\events\\iberia_events\\RRK_iberian_union_events.txt",
+      "length": 7,
+      "line": "\t\t\t\thas_law = law_type:law_council_republic",
+      "linenr": 101,
+      "path": "events\\iberia_events\\RRK_iberian_union_events.txt",
+      "stage": null,
+      "tag": null
+    },
+    {
+      "column": 1,
+      "from": "Vic3",
+      "fullpath": "C:\\Steam\\steamapps\\common\\Victoria 3\\game\\common\\journal_entries\\06_iberia.txt",
+      "length": 9,
+      "line": "je_iberia = {",
+      "linenr": 1,
+      "path": "common\\journal_entries\\06_iberia.txt",
+      "stage": null,
+      "tag": "scope was supplied by the game engine"
+    }
+  ],
+  "message": "`has_law` is for country but scope seems to be none",
+  "severity": "warning",
+  "wiki": null
+},
+{
+  "confidence": "reasonable",
+  "info": null,
+  "key": "scopes",
+  "locations": [
+    {
+      "column": 3,
+      "from": "MOD",
+      "fullpath": ".\\events\\iberia_events\\RRK_iberian_union_events.txt",
+      "length": 12,
+      "line": "\t\tadd_modifier = {",
+      "linenr": 104,
+      "path": "events\\iberia_events\\RRK_iberian_union_events.txt",
+      "stage": null,
+      "tag": null
+    },
+    {
+      "column": 1,
+      "from": "Vic3",
+      "fullpath": "C:\\Steam\\steamapps\\common\\Victoria 3\\game\\common\\journal_entries\\06_iberia.txt",
+      "length": 9,
+      "line": "je_iberia = {",
+      "linenr": 1,
+      "path": "common\\journal_entries\\06_iberia.txt",
+      "stage": null,
+      "tag": "scope was supplied by the game engine"
+    }
+  ],
+  "message": "`add_modifier` is for country, character, state, building, institution, interest group, journal entry, political movement or power bloc but scope seems to be none",
+  "severity": "warning",
+  "wiki": null
+},
+{
+  "confidence": "reasonable",
+  "info": null,
+  "key": "scopes",
+  "locations": [
+    {
+      "column": 3,
+      "from": "MOD",
+      "fullpath": ".\\events\\iberia_events\\RRK_iberian_union_events.txt",
+      "length": 25,
+      "line": "\t\tunification_claims_effect = yes",
+      "linenr": 108,
+      "path": "events\\iberia_events\\RRK_iberian_union_events.txt",
+      "stage": null,
+      "tag": null
+    },
+    {
+      "column": 3,
+      "from": "Vic3",
+      "fullpath": "C:\\Steam\\steamapps\\common\\Victoria 3\\game\\common\\scripted_effects\\00_scripted_effects.txt",
+      "length": 13,
+      "line": "\t\tadd_loyalists = {",
+      "linenr": 893,
+      "path": "common\\scripted_effects\\00_scripted_effects.txt",
+      "stage": null,
+      "tag": "expected scope was deduced from `add_loyalists` here"
+    },
+    {
+      "column": 1,
+      "from": "Vic3",
+      "fullpath": "C:\\Steam\\steamapps\\common\\Victoria 3\\game\\common\\journal_entries\\06_iberia.txt",
+      "length": 9,
+      "line": "je_iberia = {",
+      "linenr": 1,
+      "path": "common\\journal_entries\\06_iberia.txt",
+      "stage": null,
+      "tag": "actual scope was supplied by the game engine"
+    }
+  ],
+  "message": "`unification_claims_effect` expects scope to be country but scope seems to be none",
+  "severity": "warning",
+  "wiki": null
+},
+{
+  "confidence": "reasonable",
+  "info": null,
+  "key": "scopes",
+  "locations": [
+    {
+      "column": 4,
+      "from": "MOD",
+      "fullpath": ".\\events\\iberia_events\\RRK_iberian_union_events.txt",
+      "length": 20,
+      "line": "\t\t\tcoa_republic_trigger = yes",
+      "linenr": 116,
+      "path": "events\\iberia_events\\RRK_iberian_union_events.txt",
+      "stage": null,
+      "tag": null
+    },
+    {
+      "column": 3,
+      "from": "Vic3",
+      "fullpath": "C:\\Steam\\steamapps\\common\\Victoria 3\\game\\common\\scripted_triggers\\00_coa_triggers.txt",
+      "length": 18,
+      "line": "\t\thas_law_or_variant = law_type:law_corporate_state",
+      "linenr": 41,
+      "path": "common\\scripted_triggers\\00_coa_triggers.txt",
+      "stage": null,
+      "tag": "expected scope was deduced from `has_law_or_variant` here"
+    },
+    {
+      "column": 1,
+      "from": "Vic3",
+      "fullpath": "C:\\Steam\\steamapps\\common\\Victoria 3\\game\\common\\journal_entries\\06_iberia.txt",
+      "length": 9,
+      "line": "je_iberia = {",
+      "linenr": 1,
+      "path": "common\\journal_entries\\06_iberia.txt",
+      "stage": null,
+      "tag": "actual scope was supplied by the game engine"
+    }
+  ],
+  "message": "`coa_republic_trigger` expects scope to be country but scope seems to be none",
+  "severity": "warning",
+  "wiki": null
+},
+{
+  "confidence": "reasonable",
+  "info": null,
+  "key": "scopes",
+  "locations": [
+    {
+      "column": 5,
+      "from": "MOD",
+      "fullpath": ".\\events\\iberia_events\\RRK_iberian_union_events.txt",
+      "length": 7,
+      "line": "\t\t\t\thas_law = law_type:law_council_republic",
+      "linenr": 118,
+      "path": "events\\iberia_events\\RRK_iberian_union_events.txt",
+      "stage": null,
+      "tag": null
+    },
+    {
+      "column": 1,
+      "from": "Vic3",
+      "fullpath": "C:\\Steam\\steamapps\\common\\Victoria 3\\game\\common\\journal_entries\\06_iberia.txt",
+      "length": 9,
+      "line": "je_iberia = {",
+      "linenr": 1,
+      "path": "common\\journal_entries\\06_iberia.txt",
+      "stage": null,
+      "tag": "scope was supplied by the game engine"
+    }
+  ],
+  "message": "`has_law` is for country but scope seems to be none",
+  "severity": "warning",
+  "wiki": null
+},
+{
+  "confidence": "reasonable",
+  "info": null,
+  "key": "scopes",
+  "locations": [
+    {
+      "column": 3,
+      "from": "MOD",
+      "fullpath": ".\\events\\iberia_events\\RRK_iberian_union_events.txt",
+      "length": 12,
+      "line": "\t\tadd_modifier = {",
+      "linenr": 121,
+      "path": "events\\iberia_events\\RRK_iberian_union_events.txt",
+      "stage": null,
+      "tag": null
+    },
+    {
+      "column": 1,
+      "from": "Vic3",
+      "fullpath": "C:\\Steam\\steamapps\\common\\Victoria 3\\game\\common\\journal_entries\\06_iberia.txt",
+      "length": 9,
+      "line": "je_iberia = {",
+      "linenr": 1,
+      "path": "common\\journal_entries\\06_iberia.txt",
+      "stage": null,
+      "tag": "scope was supplied by the game engine"
+    }
+  ],
+  "message": "`add_modifier` is for country, character, state, building, institution, interest group, journal entry, political movement or power bloc but scope seems to be none",
+  "severity": "warning",
+  "wiki": null
+},
+{
+  "confidence": "reasonable",
+  "info": null,
+  "key": "scopes",
+  "locations": [
+    {
+      "column": 3,
+      "from": "MOD",
+      "fullpath": ".\\events\\iberia_events\\RRK_iberian_union_events.txt",
+      "length": 25,
+      "line": "\t\tunification_claims_effect = yes",
+      "linenr": 125,
+      "path": "events\\iberia_events\\RRK_iberian_union_events.txt",
+      "stage": null,
+      "tag": null
+    },
+    {
+      "column": 3,
+      "from": "Vic3",
+      "fullpath": "C:\\Steam\\steamapps\\common\\Victoria 3\\game\\common\\scripted_effects\\00_scripted_effects.txt",
+      "length": 13,
+      "line": "\t\tadd_loyalists = {",
+      "linenr": 893,
+      "path": "common\\scripted_effects\\00_scripted_effects.txt",
+      "stage": null,
+      "tag": "expected scope was deduced from `add_loyalists` here"
+    },
+    {
+      "column": 1,
+      "from": "Vic3",
+      "fullpath": "C:\\Steam\\steamapps\\common\\Victoria 3\\game\\common\\journal_entries\\06_iberia.txt",
+      "length": 9,
+      "line": "je_iberia = {",
+      "linenr": 1,
+      "path": "common\\journal_entries\\06_iberia.txt",
+      "stage": null,
+      "tag": "actual scope was supplied by the game engine"
+    }
+  ],
+  "message": "`unification_claims_effect` expects scope to be country but scope seems to be none",
+  "severity": "warning",
+  "wiki": null
+},
+{
+  "confidence": "reasonable",
+  "info": null,
+  "key": "scopes",
+  "locations": [
+    {
+      "column": 4,
+      "from": "MOD",
+      "fullpath": ".\\events\\iberia_events\\RRK_iberian_union_events.txt",
+      "length": 21,
+      "line": "\t\t\tcoa_communist_trigger = yes",
+      "linenr": 133,
+      "path": "events\\iberia_events\\RRK_iberian_union_events.txt",
+      "stage": null,
+      "tag": null
+    },
+    {
+      "column": 2,
+      "from": "Vic3",
+      "fullpath": "C:\\Steam\\steamapps\\common\\Victoria 3\\game\\common\\scripted_triggers\\00_coa_triggers.txt",
+      "length": 18,
+      "line": "\thas_law_or_variant = law_type:law_council_republic",
+      "linenr": 82,
+      "path": "common\\scripted_triggers\\00_coa_triggers.txt",
+      "stage": null,
+      "tag": "expected scope was deduced from `has_law_or_variant` here"
+    },
+    {
+      "column": 1,
+      "from": "Vic3",
+      "fullpath": "C:\\Steam\\steamapps\\common\\Victoria 3\\game\\common\\journal_entries\\06_iberia.txt",
+      "length": 9,
+      "line": "je_iberia = {",
+      "linenr": 1,
+      "path": "common\\journal_entries\\06_iberia.txt",
+      "stage": null,
+      "tag": "actual scope was supplied by the game engine"
+    }
+  ],
+  "message": "`coa_communist_trigger` expects scope to be country but scope seems to be none",
+  "severity": "warning",
+  "wiki": null
+},
+{
+  "confidence": "reasonable",
+  "info": null,
+  "key": "scopes",
+  "locations": [
+    {
+      "column": 3,
+      "from": "MOD",
+      "fullpath": ".\\events\\iberia_events\\RRK_iberian_union_events.txt",
+      "length": 12,
+      "line": "\t\tadd_modifier = {",
+      "linenr": 135,
+      "path": "events\\iberia_events\\RRK_iberian_union_events.txt",
+      "stage": null,
+      "tag": null
+    },
+    {
+      "column": 1,
+      "from": "Vic3",
+      "fullpath": "C:\\Steam\\steamapps\\common\\Victoria 3\\game\\common\\journal_entries\\06_iberia.txt",
+      "length": 9,
+      "line": "je_iberia = {",
+      "linenr": 1,
+      "path": "common\\journal_entries\\06_iberia.txt",
+      "stage": null,
+      "tag": "scope was supplied by the game engine"
+    }
+  ],
+  "message": "`add_modifier` is for country, character, state, building, institution, interest group, journal entry, political movement or power bloc but scope seems to be none",
+  "severity": "warning",
+  "wiki": null
+},
+{
+  "confidence": "reasonable",
+  "info": null,
+  "key": "scopes",
+  "locations": [
+    {
+      "column": 3,
+      "from": "MOD",
+      "fullpath": ".\\events\\iberia_events\\RRK_iberian_union_events.txt",
+      "length": 25,
+      "line": "\t\tunification_claims_effect = yes",
+      "linenr": 139,
+      "path": "events\\iberia_events\\RRK_iberian_union_events.txt",
+      "stage": null,
+      "tag": null
+    },
+    {
+      "column": 3,
+      "from": "Vic3",
+      "fullpath": "C:\\Steam\\steamapps\\common\\Victoria 3\\game\\common\\scripted_effects\\00_scripted_effects.txt",
+      "length": 13,
+      "line": "\t\tadd_loyalists = {",
+      "linenr": 893,
+      "path": "common\\scripted_effects\\00_scripted_effects.txt",
+      "stage": null,
+      "tag": "expected scope was deduced from `add_loyalists` here"
+    },
+    {
+      "column": 1,
+      "from": "Vic3",
+      "fullpath": "C:\\Steam\\steamapps\\common\\Victoria 3\\game\\common\\journal_entries\\06_iberia.txt",
+      "length": 9,
+      "line": "je_iberia = {",
+      "linenr": 1,
+      "path": "common\\journal_entries\\06_iberia.txt",
+      "stage": null,
+      "tag": "actual scope was supplied by the game engine"
+    }
+  ],
+  "message": "`unification_claims_effect` expects scope to be country but scope seems to be none",
+  "severity": "warning",
+  "wiki": null
+},
+{
+  "confidence": "reasonable",
+  "info": null,
+  "key": "scopes",
+  "locations": [
+    {
+      "column": 5,
+      "from": "MOD",
+      "fullpath": ".\\events\\iberia_events\\RRK_iberian_union_events.txt",
+      "length": 21,
+      "line": "\t\t\t\tcoa_communist_trigger = yes",
+      "linenr": 146,
+      "path": "events\\iberia_events\\RRK_iberian_union_events.txt",
+      "stage": null,
+      "tag": null
+    },
+    {
+      "column": 2,
+      "from": "Vic3",
+      "fullpath": "C:\\Steam\\steamapps\\common\\Victoria 3\\game\\common\\scripted_triggers\\00_coa_triggers.txt",
+      "length": 18,
+      "line": "\thas_law_or_variant = law_type:law_council_republic",
+      "linenr": 82,
+      "path": "common\\scripted_triggers\\00_coa_triggers.txt",
+      "stage": null,
+      "tag": "expected scope was deduced from `has_law_or_variant` here"
+    },
+    {
+      "column": 1,
+      "from": "Vic3",
+      "fullpath": "C:\\Steam\\steamapps\\common\\Victoria 3\\game\\common\\journal_entries\\06_iberia.txt",
+      "length": 9,
+      "line": "je_iberia = {",
+      "linenr": 1,
+      "path": "common\\journal_entries\\06_iberia.txt",
+      "stage": null,
+      "tag": "actual scope was supplied by the game engine"
+    }
+  ],
+  "message": "`coa_communist_trigger` expects scope to be country but scope seems to be none",
+  "severity": "warning",
+  "wiki": null
+},
+{
+  "confidence": "reasonable",
+  "info": null,
+  "key": "scopes",
+  "locations": [
+    {
+      "column": 5,
+      "from": "MOD",
+      "fullpath": ".\\events\\iberia_events\\RRK_iberian_union_events.txt",
+      "length": 20,
+      "line": "\t\t\t\tcoa_republic_trigger = yes",
+      "linenr": 147,
+      "path": "events\\iberia_events\\RRK_iberian_union_events.txt",
+      "stage": null,
+      "tag": null
+    },
+    {
+      "column": 3,
+      "from": "Vic3",
+      "fullpath": "C:\\Steam\\steamapps\\common\\Victoria 3\\game\\common\\scripted_triggers\\00_coa_triggers.txt",
+      "length": 18,
+      "line": "\t\thas_law_or_variant = law_type:law_corporate_state",
+      "linenr": 41,
+      "path": "common\\scripted_triggers\\00_coa_triggers.txt",
+      "stage": null,
+      "tag": "expected scope was deduced from `has_law_or_variant` here"
+    },
+    {
+      "column": 1,
+      "from": "Vic3",
+      "fullpath": "C:\\Steam\\steamapps\\common\\Victoria 3\\game\\common\\journal_entries\\06_iberia.txt",
+      "length": 9,
+      "line": "je_iberia = {",
+      "linenr": 1,
+      "path": "common\\journal_entries\\06_iberia.txt",
+      "stage": null,
+      "tag": "actual scope was supplied by the game engine"
+    }
+  ],
+  "message": "`coa_republic_trigger` expects scope to be country but scope seems to be none",
+  "severity": "warning",
+  "wiki": null
+},
+{
+  "confidence": "reasonable",
+  "info": null,
+  "key": "scopes",
+  "locations": [
+    {
+      "column": 3,
+      "from": "MOD",
+      "fullpath": ".\\events\\iberia_events\\RRK_iberian_union_events.txt",
+      "length": 12,
+      "line": "\t\tadd_modifier = {",
+      "linenr": 150,
+      "path": "events\\iberia_events\\RRK_iberian_union_events.txt",
+      "stage": null,
+      "tag": null
+    },
+    {
+      "column": 1,
+      "from": "Vic3",
+      "fullpath": "C:\\Steam\\steamapps\\common\\Victoria 3\\game\\common\\journal_entries\\06_iberia.txt",
+      "length": 9,
+      "line": "je_iberia = {",
+      "linenr": 1,
+      "path": "common\\journal_entries\\06_iberia.txt",
+      "stage": null,
+      "tag": "scope was supplied by the game engine"
+    }
+  ],
+  "message": "`add_modifier` is for country, character, state, building, institution, interest group, journal entry, political movement or power bloc but scope seems to be none",
+  "severity": "warning",
+  "wiki": null
+},
+{
+  "confidence": "reasonable",
+  "info": null,
+  "key": "scopes",
+  "locations": [
+    {
+      "column": 3,
+      "from": "MOD",
+      "fullpath": ".\\events\\iberia_events\\RRK_iberian_union_events.txt",
+      "length": 25,
+      "line": "\t\tunification_claims_effect = yes",
+      "linenr": 154,
+      "path": "events\\iberia_events\\RRK_iberian_union_events.txt",
+      "stage": null,
+      "tag": null
+    },
+    {
+      "column": 3,
+      "from": "Vic3",
+      "fullpath": "C:\\Steam\\steamapps\\common\\Victoria 3\\game\\common\\scripted_effects\\00_scripted_effects.txt",
+      "length": 13,
+      "line": "\t\tadd_loyalists = {",
+      "linenr": 893,
+      "path": "common\\scripted_effects\\00_scripted_effects.txt",
+      "stage": null,
+      "tag": "expected scope was deduced from `add_loyalists` here"
+    },
+    {
+      "column": 1,
+      "from": "Vic3",
+      "fullpath": "C:\\Steam\\steamapps\\common\\Victoria 3\\game\\common\\journal_entries\\06_iberia.txt",
+      "length": 9,
+      "line": "je_iberia = {",
+      "linenr": 1,
+      "path": "common\\journal_entries\\06_iberia.txt",
+      "stage": null,
+      "tag": "actual scope was supplied by the game engine"
+    }
+  ],
+  "message": "`unification_claims_effect` expects scope to be country but scope seems to be none",
+  "severity": "warning",
+  "wiki": null
+},
+{
+  "confidence": "reasonable",
+  "info": null,
+  "key": "duplicate-item",
+  "locations": [
+    {
+      "column": 1,
+      "from": "MOD",
+      "fullpath": ".\\events\\soi_events\\RRK_00_lobbies_events_01.txt",
+      "length": 15,
+      "line": "lobby_events.23 = {",
+      "linenr": 4,
+      "path": "events\\soi_events\\RRK_00_lobbies_events_01.txt",
+      "stage": null,
+      "tag": null
+    },
+    {
+      "column": 1,
+      "from": "Vic3",
+      "fullpath": "C:\\Steam\\steamapps\\common\\Victoria 3\\game\\events\\soi_events\\00_lobbies_events_01.txt",
+      "length": 15,
+      "line": "lobby_events.23 = {",
+      "linenr": 441,
+      "path": "events\\soi_events\\00_lobbies_events_01.txt",
+      "stage": null,
+      "tag": "the other event is here"
+    }
+  ],
+  "message": "event is redefined by another event",
+  "severity": "warning",
+  "wiki": null
 },
 {
   "confidence": "reasonable",
@@ -323,11 +4413,13 @@
       "line": "    concept_government_type_ingame_added: 3 \"\\n\\nThe $concept_government_type$ in [GetPlayer.GetNameNoFlag] is #tooltippable #tooltip:[GetPlayer.GetGovernment.GetTooltipTag],GOVERNMENT_TYPE_TOOLTIP_DESC [GetPlayer.GetGovernment.GetName]#!#!,[AddLocalizationIf(GetScriptedGui('RRK_sg_is_conmon').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End),'RRK_gov_type_head_of_gov')] for the following reasons:\\n[GetPlayer.GetGovernment.GetPossibleTriggerDesc(AccessPlayer)]\"",
       "linenr": 3,
       "path": "localization\\english\\replace\\RRK_replace_l_english.yml",
+      "stage": null,
       "tag": null
     }
   ],
   "message": "Unexpected character `3`, expected `\"`",
-  "severity": "warning"
+  "severity": "warning",
+  "wiki": null
 },
 {
   "confidence": "weak",
@@ -342,11 +4434,13 @@
       "line": "\t\tOR = {",
       "linenr": 83,
       "path": "common\\government_types\\00_RRK_gov_types.txt",
+      "stage": null,
       "tag": null
     }
   ],
   "message": "OR with only one item inside is probably not what you intended",
-  "severity": "warning"
+  "severity": "warning",
+  "wiki": null
 },
 {
   "confidence": "weak",
@@ -361,11 +4455,13 @@
       "line": "\t\tOR = {",
       "linenr": 1219,
       "path": "common\\government_types\\00_RRK_gov_types.txt",
+      "stage": null,
       "tag": null
     }
   ],
   "message": "OR with only one item inside is probably not what you intended",
-  "severity": "warning"
+  "severity": "warning",
+  "wiki": null
 },
 {
   "confidence": "weak",
@@ -375,16 +4471,18 @@
     {
       "column": 12,
       "from": "MOD",
-      "fullpath": ".\\common\\journal_entries\\RRK_01_french_monarchism.txt",
+      "fullpath": ".\\common\\journal_entries\\=!RRK_01_french_monarchism.txt",
       "length": 1,
       "line": "\t\t\t\t\t\tOR = {",
-      "linenr": 402,
-      "path": "common\\journal_entries\\RRK_01_french_monarchism.txt",
+      "linenr": 393,
+      "path": "common\\journal_entries\\=!RRK_01_french_monarchism.txt",
+      "stage": null,
       "tag": null
     }
   ],
   "message": "OR with only one item inside is probably not what you intended",
-  "severity": "warning"
+  "severity": "warning",
+  "wiki": null
 },
 {
   "confidence": "weak",
@@ -394,16 +4492,18 @@
     {
       "column": 12,
       "from": "MOD",
-      "fullpath": ".\\common\\journal_entries\\RRK_01_french_monarchism.txt",
+      "fullpath": ".\\common\\journal_entries\\=!RRK_01_french_monarchism.txt",
       "length": 1,
       "line": "\t\t\t\t\t\tOR = {",
-      "linenr": 413,
-      "path": "common\\journal_entries\\RRK_01_french_monarchism.txt",
+      "linenr": 404,
+      "path": "common\\journal_entries\\=!RRK_01_french_monarchism.txt",
+      "stage": null,
       "tag": null
     }
   ],
   "message": "OR with only one item inside is probably not what you intended",
-  "severity": "warning"
+  "severity": "warning",
+  "wiki": null
 },
 {
   "confidence": "weak",
@@ -413,16 +4513,144 @@
     {
       "column": 12,
       "from": "MOD",
-      "fullpath": ".\\common\\journal_entries\\RRK_01_french_monarchism.txt",
+      "fullpath": ".\\common\\journal_entries\\=!RRK_01_french_monarchism.txt",
       "length": 1,
       "line": "\t\t\t\t\t\tOR = {",
-      "linenr": 424,
-      "path": "common\\journal_entries\\RRK_01_french_monarchism.txt",
+      "linenr": 415,
+      "path": "common\\journal_entries\\=!RRK_01_french_monarchism.txt",
+      "stage": null,
       "tag": null
     }
   ],
   "message": "OR with only one item inside is probably not what you intended",
-  "severity": "warning"
+  "severity": "warning",
+  "wiki": null
+},
+{
+  "confidence": "weak",
+  "info": null,
+  "key": "logic",
+  "locations": [
+    {
+      "column": 10,
+      "from": "MOD",
+      "fullpath": ".\\common\\laws\\=!RRK_00_distribution_of_power.txt",
+      "length": 1,
+      "line": "\t\t\t\tOR = {",
+      "linenr": 603,
+      "path": "common\\laws\\=!RRK_00_distribution_of_power.txt",
+      "stage": null,
+      "tag": null
+    }
+  ],
+  "message": "OR with only one item inside is probably not what you intended",
+  "severity": "warning",
+  "wiki": null
+},
+{
+  "confidence": "weak",
+  "info": null,
+  "key": "logic",
+  "locations": [
+    {
+      "column": 10,
+      "from": "MOD",
+      "fullpath": ".\\common\\scripted_buttons\\=!RRK_05_austria_buttons.txt",
+      "length": 1,
+      "line": "\t\t\t\tOR = {",
+      "linenr": 26,
+      "path": "common\\scripted_buttons\\=!RRK_05_austria_buttons.txt",
+      "stage": null,
+      "tag": null
+    }
+  ],
+  "message": "OR with only one item inside is probably not what you intended",
+  "severity": "warning",
+  "wiki": null
+},
+{
+  "confidence": "weak",
+  "info": null,
+  "key": "logic",
+  "locations": [
+    {
+      "column": 14,
+      "from": "MOD",
+      "fullpath": ".\\common\\scripted_effects\\=!RRK_00_victoria_scripted_effects.txt",
+      "length": 1,
+      "line": "\t\t\t\t\t\t\t\tOR = {",
+      "linenr": 923,
+      "path": "common\\scripted_effects\\=!RRK_00_victoria_scripted_effects.txt",
+      "stage": null,
+      "tag": null
+    }
+  ],
+  "message": "OR with only one item inside is probably not what you intended",
+  "severity": "warning",
+  "wiki": null
+},
+{
+  "confidence": "weak",
+  "info": null,
+  "key": "logic",
+  "locations": [
+    {
+      "column": 14,
+      "from": "MOD",
+      "fullpath": ".\\common\\scripted_effects\\=!RRK_00_victoria_scripted_effects.txt",
+      "length": 1,
+      "line": "\t\t\t\t\t\t\t\tOR = {",
+      "linenr": 950,
+      "path": "common\\scripted_effects\\=!RRK_00_victoria_scripted_effects.txt",
+      "stage": null,
+      "tag": null
+    }
+  ],
+  "message": "OR with only one item inside is probably not what you intended",
+  "severity": "warning",
+  "wiki": null
+},
+{
+  "confidence": "weak",
+  "info": null,
+  "key": "logic",
+  "locations": [
+    {
+      "column": 14,
+      "from": "MOD",
+      "fullpath": ".\\common\\scripted_effects\\=!RRK_00_victoria_scripted_effects.txt",
+      "length": 1,
+      "line": "\t\t\t\t\t\t\t\tOR = {",
+      "linenr": 976,
+      "path": "common\\scripted_effects\\=!RRK_00_victoria_scripted_effects.txt",
+      "stage": null,
+      "tag": null
+    }
+  ],
+  "message": "OR with only one item inside is probably not what you intended",
+  "severity": "warning",
+  "wiki": null
+},
+{
+  "confidence": "weak",
+  "info": null,
+  "key": "scopes",
+  "locations": [
+    {
+      "column": 24,
+      "from": "MOD",
+      "fullpath": ".\\common\\scripted_effects\\RRK_scripted_effects.txt",
+      "length": 15,
+      "line": "        set_variable = RRK_head_of_gov",
+      "linenr": 24,
+      "path": "common\\scripted_effects\\RRK_scripted_effects.txt",
+      "stage": null,
+      "tag": null
+    }
+  ],
+  "message": "var:RRK_head_of_gov was deduced to be interest group but scope seems to be bool",
+  "severity": "warning",
+  "wiki": null
 },
 {
   "confidence": "weak",
@@ -435,13 +4663,15 @@
       "fullpath": ".\\common\\scripted_triggers\\RRK_scripted_triggers.txt",
       "length": 1,
       "line": "    OR = {",
-      "linenr": 125,
+      "linenr": 128,
       "path": "common\\scripted_triggers\\RRK_scripted_triggers.txt",
+      "stage": null,
       "tag": null
     }
   ],
   "message": "OR with only one item inside is probably not what you intended",
-  "severity": "warning"
+  "severity": "warning",
+  "wiki": null
 },
 {
   "confidence": "weak",
@@ -454,13 +4684,15 @@
       "fullpath": ".\\gfx\\portraits\\portrait_modifiers\\01_accessories.txt",
       "length": 1,
       "line": "                    OR = {",
-      "linenr": 413,
+      "linenr": 1693,
       "path": "gfx\\portraits\\portrait_modifiers\\01_accessories.txt",
+      "stage": null,
       "tag": null
     }
   ],
   "message": "OR with only one item inside is probably not what you intended",
-  "severity": "warning"
+  "severity": "warning",
+  "wiki": null
 },
 {
   "confidence": "weak",
@@ -473,13 +4705,36 @@
       "fullpath": ".\\gfx\\portraits\\portrait_modifiers\\01_clothes.txt",
       "length": 1,
       "line": "                    OR = {",
-      "linenr": 5324,
+      "linenr": 6205,
       "path": "gfx\\portraits\\portrait_modifiers\\01_clothes.txt",
+      "stage": null,
       "tag": null
     }
   ],
   "message": "OR with only one item inside is probably not what you intended",
-  "severity": "warning"
+  "severity": "warning",
+  "wiki": null
+},
+{
+  "confidence": "weak",
+  "info": null,
+  "key": "logic",
+  "locations": [
+    {
+      "column": 22,
+      "from": "MOD",
+      "fullpath": ".\\gfx\\portraits\\portrait_modifiers\\01_clothes.txt",
+      "length": 1,
+      "line": "                OR = {",
+      "linenr": 10545,
+      "path": "gfx\\portraits\\portrait_modifiers\\01_clothes.txt",
+      "stage": null,
+      "tag": null
+    }
+  ],
+  "message": "OR with only one item inside is probably not what you intended",
+  "severity": "warning",
+  "wiki": null
 },
 {
   "confidence": "weak",
@@ -492,13 +4747,15 @@
       "fullpath": ".\\gfx\\portraits\\portrait_modifiers\\01_clothes.txt",
       "length": 1,
       "line": "}",
-      "linenr": 6926,
+      "linenr": 13815,
       "path": "gfx\\portraits\\portrait_modifiers\\01_clothes.txt",
+      "stage": null,
       "tag": null
     }
   ],
   "message": "possible brace error",
-  "severity": "warning"
+  "severity": "warning",
+  "wiki": null
 },
 {
   "confidence": "weak",
@@ -511,32 +4768,78 @@
       "fullpath": ".\\gfx\\portraits\\portrait_modifiers\\01_headgear.txt",
       "length": 1,
       "line": "                    OR = {",
-      "linenr": 3054,
+      "linenr": 5035,
       "path": "gfx\\portraits\\portrait_modifiers\\01_headgear.txt",
+      "stage": null,
       "tag": null
     }
   ],
   "message": "OR with only one item inside is probably not what you intended",
-  "severity": "warning"
+  "severity": "warning",
+  "wiki": null
 },
 {
   "confidence": "reasonable",
-  "info": "you can remove the AND and just have the item there",
-  "key": "performance",
+  "info": "normally you would use `else_if` instead.",
+  "key": "if-else",
   "locations": [
     {
-      "column": 10,
+      "column": 4,
       "from": "MOD",
-      "fullpath": ".\\common\\journal_entries\\RRK_01_french_monarchism.txt",
-      "length": 1,
-      "line": "\t\t\tAND = {",
-      "linenr": 228,
-      "path": "common\\journal_entries\\RRK_01_french_monarchism.txt",
+      "fullpath": ".\\common\\journal_entries\\=!RRK_05_danubian_federation.txt",
+      "length": 5,
+      "line": "\t\t\tlimit = {",
+      "linenr": 204,
+      "path": "common\\journal_entries\\=!RRK_05_danubian_federation.txt",
+      "stage": null,
       "tag": null
     }
   ],
-  "message": "AND with only one item inside is useless",
-  "severity": "tips"
+  "message": "`else` with a `limit` does work, but may indicate a mistake",
+  "severity": "tips",
+  "wiki": null
+},
+{
+  "confidence": "reasonable",
+  "info": "normally you would use `trigger_else_if` instead.",
+  "key": "if-else",
+  "locations": [
+    {
+      "column": 4,
+      "from": "MOD",
+      "fullpath": ".\\common\\journal_entries\\=!RRK_06_portugal_politics.txt",
+      "length": 5,
+      "line": "\t\t\tlimit = {",
+      "linenr": 40,
+      "path": "common\\journal_entries\\=!RRK_06_portugal_politics.txt",
+      "stage": null,
+      "tag": null
+    }
+  ],
+  "message": "`trigger_else` with a `limit` does work, but may indicate a mistake",
+  "severity": "tips",
+  "wiki": null
+},
+{
+  "confidence": "reasonable",
+  "info": "normally you would use `else_if` instead.",
+  "key": "if-else",
+  "locations": [
+    {
+      "column": 4,
+      "from": "MOD",
+      "fullpath": ".\\events\\balkans_events\\RRK_the_grand_collapse_events.txt",
+      "length": 5,
+      "line": "\t\t\tlimit = {",
+      "linenr": 111,
+      "path": "events\\balkans_events\\RRK_the_grand_collapse_events.txt",
+      "stage": null,
+      "tag": null
+    }
+  ],
+  "message": "`else` with a `limit` does work, but may indicate a mistake",
+  "severity": "tips",
+  "wiki": null
 },
 {
   "confidence": "reasonable",
@@ -549,13 +4852,15 @@
       "fullpath": ".\\gfx\\portraits\\portrait_modifiers\\01_accessories.txt",
       "length": 1,
       "line": "                        AND = {",
-      "linenr": 185,
+      "linenr": 188,
       "path": "gfx\\portraits\\portrait_modifiers\\01_accessories.txt",
+      "stage": null,
       "tag": null
     }
   ],
   "message": "AND with only one item inside is useless",
-  "severity": "tips"
+  "severity": "tips",
+  "wiki": null
 },
 {
   "confidence": "reasonable",
@@ -568,13 +4873,15 @@
       "fullpath": ".\\gfx\\portraits\\portrait_modifiers\\01_clothes.txt",
       "length": 1,
       "line": "                    AND = {",
-      "linenr": 1977,
+      "linenr": 1884,
       "path": "gfx\\portraits\\portrait_modifiers\\01_clothes.txt",
+      "stage": null,
       "tag": null
     }
   ],
   "message": "AND with only one item inside is useless",
-  "severity": "tips"
+  "severity": "tips",
+  "wiki": null
 },
 {
   "confidence": "reasonable",
@@ -587,13 +4894,15 @@
       "fullpath": ".\\gfx\\portraits\\portrait_modifiers\\01_clothes.txt",
       "length": 1,
       "line": "                    AND = {",
-      "linenr": 4111,
+      "linenr": 4707,
       "path": "gfx\\portraits\\portrait_modifiers\\01_clothes.txt",
+      "stage": null,
       "tag": null
     }
   ],
   "message": "AND with only one item inside is useless",
-  "severity": "tips"
+  "severity": "tips",
+  "wiki": null
 },
 {
   "confidence": "reasonable",
@@ -606,13 +4915,15 @@
       "fullpath": ".\\gfx\\portraits\\portrait_modifiers\\01_clothes.txt",
       "length": 1,
       "line": "                    AND = {",
-      "linenr": 4927,
+      "linenr": 5656,
       "path": "gfx\\portraits\\portrait_modifiers\\01_clothes.txt",
+      "stage": null,
       "tag": null
     }
   ],
   "message": "AND with only one item inside is useless",
-  "severity": "tips"
+  "severity": "tips",
+  "wiki": null
 },
 {
   "confidence": "reasonable",
@@ -625,13 +4936,15 @@
       "fullpath": ".\\gfx\\portraits\\portrait_modifiers\\01_clothes.txt",
       "length": 1,
       "line": "                    AND = {",
-      "linenr": 7215,
+      "linenr": 14098,
       "path": "gfx\\portraits\\portrait_modifiers\\01_clothes.txt",
+      "stage": null,
       "tag": null
     }
   ],
   "message": "AND with only one item inside is useless",
-  "severity": "tips"
+  "severity": "tips",
+  "wiki": null
 },
 {
   "confidence": "reasonable",
@@ -644,13 +4957,15 @@
       "fullpath": ".\\gfx\\portraits\\portrait_modifiers\\01_clothes.txt",
       "length": 1,
       "line": "                    AND = {",
-      "linenr": 9155,
+      "linenr": 16041,
       "path": "gfx\\portraits\\portrait_modifiers\\01_clothes.txt",
+      "stage": null,
       "tag": null
     }
   ],
   "message": "AND with only one item inside is useless",
-  "severity": "tips"
+  "severity": "tips",
+  "wiki": null
 },
 {
   "confidence": "reasonable",
@@ -663,32 +4978,15 @@
       "fullpath": ".\\gfx\\portraits\\portrait_modifiers\\01_clothes.txt",
       "length": 1,
       "line": "                    AND = {",
-      "linenr": 9631,
+      "linenr": 16507,
       "path": "gfx\\portraits\\portrait_modifiers\\01_clothes.txt",
+      "stage": null,
       "tag": null
     }
   ],
   "message": "AND with only one item inside is useless",
-  "severity": "tips"
-},
-{
-  "confidence": "reasonable",
-  "info": "you can remove the AND and just have the item there",
-  "key": "performance",
-  "locations": [
-    {
-      "column": 23,
-      "from": "MOD",
-      "fullpath": ".\\gfx\\portraits\\portrait_modifiers\\01_headgear.txt",
-      "length": 1,
-      "line": "                AND = {",
-      "linenr": 2202,
-      "path": "gfx\\portraits\\portrait_modifiers\\01_headgear.txt",
-      "tag": null
-    }
-  ],
-  "message": "AND with only one item inside is useless",
-  "severity": "tips"
+  "severity": "tips",
+  "wiki": null
 },
 {
   "confidence": "reasonable",
@@ -701,31 +4999,14 @@
       "fullpath": ".\\gfx\\portraits\\portrait_modifiers\\01_headgear.txt",
       "length": 1,
       "line": "                    AND = {",
-      "linenr": 2247,
+      "linenr": 4712,
       "path": "gfx\\portraits\\portrait_modifiers\\01_headgear.txt",
+      "stage": null,
       "tag": null
     }
   ],
   "message": "AND with only one item inside is useless",
-  "severity": "tips"
-},
-{
-  "confidence": "reasonable",
-  "info": "you can remove the AND and just have the item there",
-  "key": "performance",
-  "locations": [
-    {
-      "column": 27,
-      "from": "MOD",
-      "fullpath": ".\\gfx\\portraits\\portrait_modifiers\\01_headgear.txt",
-      "length": 1,
-      "line": "                    AND = {",
-      "linenr": 2729,
-      "path": "gfx\\portraits\\portrait_modifiers\\01_headgear.txt",
-      "tag": null
-    }
-  ],
-  "message": "AND with only one item inside is useless",
-  "severity": "tips"
+  "severity": "tips",
+  "wiki": null
 }
 ]

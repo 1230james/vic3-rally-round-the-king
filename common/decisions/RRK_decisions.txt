@@ -50,7 +50,7 @@
                             law = law_type:law_monarchy
                             comparison_law = prev.active_law:lawgroup_governance_principles.type
                         }
-                        is_marginal = no
+                        ig_counts_as_marginal = no
                     }
                 }
             }
@@ -82,7 +82,7 @@
                         comparison_law = prev.active_law:lawgroup_governance_principles.type
                     }
                     ig_approval < 0
-                    is_marginal = no
+                    ig_counts_as_marginal = no
                 }
             }
             add = -1000

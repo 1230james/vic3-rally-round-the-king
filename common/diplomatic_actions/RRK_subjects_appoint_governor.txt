@@ -1,6 +1,6 @@
 ﻿da_appoint_colonial_governor = {
 	groups= { overlord }
-	
+
 	requires_approval = no
 	should_notify_third_parties = yes
 	show_effect_in_tooltip = yes
@@ -10,21 +10,20 @@
 	selectable = {
 		has_dlc_feature = subject_and_bloc_actions
 	}
-	
+
 	potential = {
 		scope:target_country = {
 			NOT = { has_variable = gubernatorial_candidate }
 			NOT = { is_diplomatic_play_enemy_of = root }
-            RRK_st_is_constitutional_monarchy = no # RRK
 		}
 	}
-	
+
 	possible = {
 		custom_tooltip = {
 			text = "APPOINT_COLONIAL_GOVERNOR_ON_COOLDOWN"
 			scope:target_country = {
-				NOR = { 
-					has_variable = gubernatorial_candidate 
+				NOR = {
+					has_variable = gubernatorial_candidate
 					has_variable = gubernatorial_candidate_timed
 				}
 			}
@@ -32,10 +31,7 @@
 		is_revolutionary = no
 		scope:target_country = {
 			is_revolutionary = no
-			OR = {	# don't appoint colonial governor monarchies
-				has_law = law_type:law_presidential_republic
-				has_law = law_type:law_parliamentary_republic
-			}
+			has_law = law_type:law_colonial_administration
             custom_tooltip = {
                 text = RRK_tt_monarchy_not_preserved
                 RRK_st_monarchy_preserved = no
@@ -45,7 +41,7 @@
 			AND = {
 				OR = {
 					is_country_type = recognized
-					is_country_type = colonial
+					country_is_colonial_or_company = yes
 				}
 				scope:target_country = {
 					is_country_type = unrecognized
@@ -54,12 +50,12 @@
 			AND = {
 				OR = {
 					is_country_type = recognized
-					is_country_type = colonial
+					country_is_colonial_or_company = yes
 				}
 				scope:target_country = {
 					OR = {
 						is_country_type = recognized
-						is_country_type = colonial
+						country_is_colonial_or_company = yes
 					}
 					OR = {
 						is_subject_type = subject_type_chartered_company
@@ -67,6 +63,7 @@
 						is_subject_type = subject_type_puppet
 						is_subject_type = subject_type_dominion
 						is_subject_type = subject_type_vassal
+						is_subject_type = subject_type_crown_land
 					}
 				}
 			}
@@ -80,6 +77,7 @@
 						is_subject_type = subject_type_puppet
 						is_subject_type = subject_type_dominion
 						is_subject_type = subject_type_vassal
+						is_subject_type = subject_type_crown_land
 					}
 				}
 			}
@@ -91,35 +89,36 @@
 			set_variable = gubernatorial_candidate
 			set_variable = {
 				name = gubernatorial_candidate_timed
-				months = 61
+				days = normal_modifier_time
 			}
+			post_notification = appointed_new_governor_notification
 		}
 		trigger_event = { id = subject_interactions.1 popup = yes }
 	}
-	
+
 	ai = {
 		evaluation_chance = {
-			value = 0.25		
-		}		
-	
+			value = 0.25
+		}
+
 		propose_score = {
 			value = 10
 		}
-	
+
 		will_propose = {
 			"ai_ideological_opinion(scope:target_country)" <= -25
 			OR = {
-				scope:target_country = { liberty_desire < 25 }
+				scope:target_country = { liberty_desire < define:NDiplomacy|WAR_GOAL_INFAMY_LOW_LIBERTY_DESIRE_THRESHOLD }
 				has_attitude = {
 					who = scope:target_country
 					attitude = domineering
-				}						
+				}
 			}
 			OR = {
 				has_strategy = ai_strategy_maintain_power_balance
 				has_strategy = ai_strategy_anti_imperialism
 				has_strategy = ai_strategy_world_revolution
-			}		
-		}				
+			}
+		}
 	}
 }

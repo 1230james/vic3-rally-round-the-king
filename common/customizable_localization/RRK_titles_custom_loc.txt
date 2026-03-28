@@ -81,7 +81,7 @@ RRK_cl_premier_title = {
         localization_key = RULER_TITLE_CHANCELLOR
         trigger = {
             any_primary_culture = {
-                has_discrimination_trait = german_speaking
+                has_discrimination_trait = language_germanophone
             }
         }
     }
@@ -122,7 +122,7 @@ RRK_cl_prime_minister_title = {
         localization_key = RULER_TITLE_CHANCELLOR
         trigger = {
             any_primary_culture = {
-                has_discrimination_trait = german_speaking
+                has_discrimination_trait = language_germanophone
             }
         }
     }
