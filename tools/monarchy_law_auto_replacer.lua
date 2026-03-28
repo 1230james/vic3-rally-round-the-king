@@ -362,5 +362,10 @@ gen_count   = parse_game_dir(GAME_DIR .. "events", "./generated/events", "RRK_")
 total_files = total_files + gen_count
 print("Generated " .. tostring(gen_count) .. " files from files in events")
 
+print("Searching " .. GAME_DIR .. "gfx/portraits/portrait_modifiers")
+gen_count   = parse_game_dir(GAME_DIR .. "gfx/portraits/portrait_modifiers", "./generated/gfx/portraits/portrait_modifiers", "")
+total_files = total_files + gen_count
+print("Generated " .. tostring(gen_count) .. " files from files in portrait_modifiers")
+
 -- Cleanup
 print('\nFinished!\nGenerated ' .. tostring(total_files) .. ' files\nCheck the "generated" folder for the files.')

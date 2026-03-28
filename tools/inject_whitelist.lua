@@ -130,6 +130,6 @@ return {
     ["common/trigger_localization"]           = true,
     ["common/tutorial_lesson_chains"]         = true,
     ["common/tutorial_lessons"]               = true,
-    ["common/war_goal_types"]                 = true,
+    ["common/war_goal_types"]                 = true
     
 }
