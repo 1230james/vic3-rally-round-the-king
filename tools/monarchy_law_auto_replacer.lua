@@ -201,6 +201,7 @@ local function parse_script_file(in_filepath, out_filepath)
     print("Parsing " .. in_filepath:gsub(GAME_DIR, "") .. "...")
     
     local use_INJECT  = false
+    local is_event    = false
     local path_chunks = split_string(in_filepath:gsub(GAME_DIR, ""),"/")
     local num_chunks  = #path_chunks
     local check_path  = ""
@@ -213,6 +214,11 @@ local function parse_script_file(in_filepath, out_filepath)
     
     if INJECT_WHITELIST[check_path] then
         use_INJECT = true
+    end
+    
+    local namespace
+    if path_chunks[1] == "events" then
+        is_event = true
     end
     
     while true do
@@ -231,6 +237,15 @@ local function parse_script_file(in_filepath, out_filepath)
                     )
                 end
                 
+                if is_event then
+                    local block_namespace = block_name:sub(1, block_name:find("%.") - 1)
+                    if namespace ~= block_namespace then
+                        print("  Identified event namespace: " .. block_namespace)
+                        namespace = block_namespace
+                        OUT_FILE:write("namespace = " .. namespace .. "\n")
+                    end
+                end
+                
                 for j, w_line in ipairs(block) do
                     -- Strip out BOM chars
                     w_line = w_line:gsub("\239\187\191", "")
@@ -246,7 +261,7 @@ local function parse_script_file(in_filepath, out_filepath)
                     OUT_FILE:write(w_line)
                 end
                 OUT_FILE:write("\n") -- spacing newline
-                print("    Substituted & exported " .. block_name)
+                print("    Substituted law checks in & exported " .. block_name)
                 
                 break
             end
@@ -358,7 +373,7 @@ total_files = parse_game_dir(GAME_DIR .. "common", "./generated/common", "=!RRK_
 print("Generated " .. tostring(total_files) .. " files from files in common")
 
 print("Searching " .. GAME_DIR .. "events")
-gen_count   = parse_game_dir(GAME_DIR .. "events", "./generated/events", "RRK_")
+gen_count   = parse_game_dir(GAME_DIR .. "events", "./generated/events", "0!RRK_")
 total_files = total_files + gen_count
 print("Generated " .. tostring(gen_count) .. " files from files in events")
 
