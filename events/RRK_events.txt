@@ -1,20 +1,21 @@
 ﻿namespace = RRK_hidden_ev
 
 # Setup event (fired by history for initial setup)
-RRK_hidden_ev.1 = {
-    type = country_event
-    hidden = yes
-    
-    immediate = {
-        if = {
-            limit = {
-                RRK_st_is_constitutional_monarchy = yes
-            }
-            RRK_se_set_prime_minister = yes
-            RRK_se_update_head_of_gov_modifier = yes
-        }
-    }
-}
+# No longer used; keeping it like this until ID can be reused
+# RRK_hidden_ev.1 = {
+#     type = country_event
+#     hidden = yes
+#     
+#     immediate = {
+#         if = {
+#             limit = {
+#                 RRK_st_is_constitutional_monarchy = yes
+#             }
+#             RRK_se_set_prime_minister = yes
+#             RRK_se_update_head_of_gov_modifier = yes
+#         }
+#     }
+# }
 
 # Adds Head of Gov legitimacy modifier
 # Done through firing a hidden event because for some reason there's certain points where calling the original scripted

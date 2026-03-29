@@ -120,6 +120,15 @@ REPLACE_OR_CREATE:RRK_st_can_change_head_of_gov = {
             }
             has_modifier = RRK_md_appointed_bolstered_head_of_gov
         }
+        trigger_if = {
+            limit = {
+                modifier:country_block_government_reform_bool = yes
+            }
+            custom_tooltip = {
+                text = FORM_GOV_BLOCKED
+                modifier:country_block_government_reform_bool = yes
+            }
+        }
     }
 }
 

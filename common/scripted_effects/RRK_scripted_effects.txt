@@ -118,6 +118,7 @@ RRK_se_fire_monarch_fate_event = {
         trigger_event = {
             id    = RRK_ev.2
             popup = yes
+            days  = 1 # Delay 1 day to let ruler titles refresh in case we interrupted a regency
         }
     }
     else = {
@@ -128,6 +129,7 @@ RRK_se_fire_monarch_fate_event = {
         trigger_event = {
             id    = RRK_ev.3
             popup = yes
+            days  = 1
         }
     }
 }
