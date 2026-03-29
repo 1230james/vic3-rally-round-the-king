@@ -1,12 +1,12 @@
 {
     "name" : "Rally Round the King",
     "id" : "xyz.1230james.rally_round_the_king",
-    "version" : "1.2.3",
+    "version" : "1.3.0",
     "game_id" : "victoria3",
-    "supported_game_version" : "1.9.*",
+    "supported_game_version" : "1.12.*",
     "short_description" : "",
     "tags" : [
-        "1.9",
+        "1.12",
         "Events",
         "Expansion",
         "Gameplay",

@@ -129,7 +129,8 @@ on_election_campaign_end = {
 
 # ==================================================================================================================== #
 
-# Root owner Country of the Law
+# owner = owner country of the Law
+# root = law
 # executed when the law is activated for any reason. It's usually because it
 # has been enacted, but script can activate laws directly without going through
 # the enactment process. Normally, it's immediately preceded by
@@ -200,7 +201,7 @@ RRK_oa_on_law_activated = {
                                 has_law = law_type:law_corporate_state
                             }
                             NOT = { # Abolish monarchy if it changed due to a coup
-                                has_variable = government_couped
+                                has_modifier = modifier_government_recently_couped
                             }
                             is_revolutionary = no # Revolutions by definition are abandoning the king
                             is_secessionist  = no

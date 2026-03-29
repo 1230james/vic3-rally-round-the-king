@@ -1,0 +1,1468 @@
+﻿# MANUALLY-EDITED AFTER AUTOGEN
+# See the `tools` folder in the mod's root directory
+
+on_character_death = {
+	effect = {
+		if = { # Possibly generates replacement woman or minority IG leader
+			limit = {
+				has_role = politician
+				is_heir = no # cultural trends do not impact the monarchy's line of succession
+				NAND = {
+					is_ruler = yes
+					owner ?= {
+						RRK_st_has_monarchy = yes
+					}
+				}
+				interest_group_is_not_less_tolerant_than_current_citizenship_law = yes ## the IG must be at least okay with the status quo regarding cultures in order to potentially accept a minority culture character as a leader, and not want to move things back
+				accepted_cultural_minority_check_character_scope = yes # Check that the character's country has a non-primary culture homeland or cultural community for a culture that is accepted by the country
+			}
+			# If the country and the IG support women's rights, do combinations of woman and/or minority culture for character generation
+			if = {
+				limit = {
+					owner ?= {
+						has_law_or_variant = law_type:law_womens_suffrage
+					}
+					interest_group = {
+						law_stance = {
+							law = law_type:law_womens_suffrage
+							value >= approve
+						}
+	  				}
+				}
+				# 40/10/20/5 chance of primary culture man/woman as leader or of accepted minority culture man/woman as leader
+				random_list = {
+					40 = {
+						# Nothing special happens. Regular guy spawns as new leader.
+					}
+					10 = {
+						owner ?= {
+							accepted_cultural_minority_selector_owner_scope_save_scope_as_minority_culture = yes
+							if = {
+								limit = {
+									exists = scope:minority_culture
+								}
+								create_character = {
+									ig_leader = yes
+									culture = scope:minority_culture
+									interest_group = ROOT.interest_group
+								}
+							}
+							else = { # Fallback in the case of no minorities
+								create_character = {
+									ig_leader = yes
+									interest_group = ROOT.interest_group
+								}
+							}
+						}
+					}
+					20 = {
+						owner ?= {
+							create_character = {
+								ig_leader = yes
+								female = yes
+								interest_group = ROOT.interest_group
+							}
+						}
+					}
+					5 = {
+						owner ?= {
+							accepted_cultural_minority_selector_owner_scope_save_scope_as_minority_culture = yes
+							if = {
+								limit = {
+									exists = scope:minority_culture
+								}
+								create_character = {
+									ig_leader = yes
+									female = yes
+									culture = scope:minority_culture
+									interest_group = ROOT.interest_group
+								}
+							}
+							else = { # Fallback in the case of no minorities
+								create_character = {
+									ig_leader = yes
+									female = yes
+									interest_group = ROOT.interest_group
+								}
+							}
+						}
+					}
+				}
+			}
+			else = {
+				# 75/25 chance of primary culture leader spawning or of minority culture leader spawning
+				random_list = {
+					75 = {
+						# regular guy spawns as usual
+					}
+					25 = {
+						owner ?= {
+							accepted_cultural_minority_selector_owner_scope_save_scope_as_minority_culture = yes
+							if = {
+								limit = {
+									exists = scope:minority_culture
+								}
+								create_character = {
+									ig_leader = yes
+									culture = scope:minority_culture
+									interest_group = ROOT.interest_group
+								}
+							}
+							else = { # Fallback in the case of no minorities
+								create_character = {
+									ig_leader = yes
+									interest_group = ROOT.interest_group
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+
+		#JE about Hawaii triggered by an event
+		if = {
+			limit = {
+				is_ruler = yes
+				has_template = HAW_kamehameha_iii
+				exists = c:HAW
+				owner = c:HAW
+				owner = {
+					RRK_st_has_monarchy = yes
+					NOT = { has_variable = death_of_kamehameha }
+					NOT = { has_global_variable = gp_hawaii_interest }
+				}
+			}
+			owner = {
+				set_variable = death_of_kamehameha
+				add_journal_entry = { type = je_hawaii }
+			}
+		}
+
+		if = {
+			limit = {
+				has_variable = expedition_leader_var
+				owner = {
+					NOT = { has_variable = tibet_expedition_progress_var }
+				}
+			}
+			owner = {
+				trigger_event = expedition_events.110
+			}
+		}
+
+		### Force-generating French monarchs of the correct dynasty if something goes wrong
+		if = {
+			limit = {
+				is_ruler = yes
+				owner = {
+					RRK_st_has_monarchy = yes
+					NOT = {
+						exists = heir
+					}
+				}
+			}
+			if = {
+				limit = {
+					has_variable = legitimist_leader
+				}
+				owner = {
+					create_character = {
+						template = dynamic_legitimist_ruler_template
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					has_variable = house_orleans
+				}
+				owner = {
+					create_character = {
+						template = dynamic_orleanist_ruler_template
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					has_variable = house_bonaparte
+				}
+				owner = {
+					create_character = {
+						template = dynamic_bonapartist_ruler_template
+					}
+				}
+			}
+		}
+		### Caudillo Kingmaker
+		if = {
+			limit = {
+				NOT = { has_variable = caudillo_kingmaker }
+				has_role = politician
+				interest_group = {
+					is_interest_group_type = ig_armed_forces
+					ig_counts_as_marginal = no
+				}
+				owner = {
+					in_election_campaign = no
+					country_has_voting_franchise = yes
+					OR = {
+						has_journal_entry = je_caudillo
+						has_modifier = age_of_caudillos_modifier
+					}
+				}
+			}
+			owner = {
+				trigger_event = { id = caudillo.5 days = 1 }
+			}
+		}
+
+		### Garibaldi exist check
+		if = {
+			limit = {
+				has_template = garibaldi_character_template
+			}
+			remove_global_variable = garibaldi_is_alive_global_var
+		}
+		### Espartero exist check
+		if = {
+			limit = {
+				has_template = SPA_baldomero_espartero
+			}
+			set_global_variable = espartero_is_dead_var
+		}
+
+		if = { # Override to make the ruler of British India always an Industrialist
+			limit = {
+				is_ruler = yes
+				c:BIC ?= owner
+			}
+			owner = {
+				ig:ig_industrialists ?= {
+					leader = {
+						set_character_as_ruler = yes
+					}
+				}
+				generate_new_eic_government_leader = yes
+			}
+		}
+		# Ethiopian emperor succession pre-unification
+		if = {
+			limit = {
+				is_ruler = yes
+				owner ?= {
+					RRK_st_has_monarchy = yes
+					any_scope_character = {
+						is_heir = yes
+					}
+				}
+				has_variable = ethiopian_emperor
+			}
+			owner ?= {
+				random_scope_character = {
+					limit = {
+						is_heir = yes
+					}
+					set_variable = ethiopian_emperor
+				}
+			}
+			# non-ETH rulers in the ethiopian_emperor succession will continue to style themselves 'Emperor' even if another tag forms ETH. This is fine! The other tag is obviously an upstart, and we've created two competing claims for the title. This is what wwe in the biz call 'dynamic storytelling'.
+		}
+		if = { # if Franz Joseph I of Austria dies before The Mayerling Incident in 1889, making Rudolf Emperor
+			limit = {
+				owner = {
+					c:AUS ?= this
+				}
+				is_ruler = yes
+				has_template = aus_franz_josef_I_habsburg_template
+				AND = {
+					game_date > 1875.6.29
+					game_date < 1889.1.30
+				}
+			}
+			owner = {
+				create_character = {
+					template = aus_franz_ferdinand
+				}
+			}
+		}
+
+		if = {
+			limit = {
+				owner = {
+					c:MON ?= this
+					heir ?= {
+						has_template = mon_danilo_petrovic_njegos
+					}
+				}
+				is_ruler = yes
+				has_template = mon_petar_II_petrovic_njegos
+			}
+			trigger_event = { id = mon_state_formation.6 popup = yes }
+		}
+
+		if = { # In case Milan dies really quickly
+			limit = {
+				has_template = SER_milan_obrenovic
+				owner ?= {
+					c:SER ?= this
+					ruler ?= {
+						has_template = SER_milos_obrenovic
+					}
+				}
+			}
+			owner ?= {
+				create_character = {
+					template = SER_mihailo_obrenovic
+				}
+			}
+		}
+
+		if = { # Hijacks the deaths of colonial governors
+			limit = {
+				is_ruler = yes
+				has_variable = colonial_governor_term
+				owner ?= {
+					has_law = law_type:law_colonial_administration
+				}
+			}
+			save_scope_as = current_governor
+			owner ?= {
+				save_colonial_governor_generation_scopes = yes
+				generate_governor_of_same_type = yes
+			}
+		}
+	}
+}
+
+on_new_ruler = {
+	effect = {
+		if = {
+			limit = {
+				owner = { # Assigning a regent should never fire this on_action
+					has_gov_regency = no
+				}
+			}
+			if = {
+				limit = {
+					owner = {
+						NOT = {
+							has_variable = hide_ruler_change_notification
+						}
+					}
+					age >= define:NCharacters|ADULT_AGE
+				}
+				post_notification = new_ruler
+			}
+			if = {
+				limit = {
+					owner = {
+						has_law_or_variant = law_type:law_theocracy
+					}
+					NOT = { religion = owner.religion }
+				}
+				change_character_religion = owner.religion
+			}
+			if = {
+				limit = {
+					owner = {
+						has_law = law_type:law_monarchy
+						has_gov_regency = no
+					}
+					age < define:NCharacters|ADULT_AGE
+					NOT = { has_variable = regency_complete }
+				}
+				owner = {
+					trigger_event = {
+						id = regency.1
+						popup = yes
+					}
+				}
+			}
+			if = {
+				limit = {
+					owner = {
+						c:PAN ?= this
+						has_journal_entry = je_sikh_sovereignty
+					}
+				}
+				if = {
+					limit = {
+						NOT = {
+							has_variable = sikh_maharaja_enthroned
+						}
+					}
+					owner = {
+						je:je_sikh_sovereignty = {
+							set_bar_progress = { value = 0 name = sikh_empire_progress_bar }
+						}
+					}
+					set_variable = sikh_maharaja_enthroned
+					owner = {
+						change_variable = { name = sikh_dead_maharajas_var add = 1 }
+					}
+				}
+			}
+			if = { # Override to make the ruler of British India always an Industrialist
+				limit = {
+					is_ruler = yes
+					c:BIC ?= owner
+					NOT = {
+						is_interest_group_type = ig_industrialists
+					}
+				}
+				owner = {
+					ig:ig_industrialists ?= {
+						leader = {
+							set_character_as_ruler = yes
+						}
+					}
+					generate_new_eic_government_leader = yes
+				}
+			}
+			if = {
+				limit = {
+					owner = {
+						c:ZAN ?= this
+						any_primary_culture = {
+							cu:bedouin = this
+						}
+					}
+					culture = {
+						NOT = { cu:bedouin = this }
+					}
+					NOT = {
+						has_global_variable = decided_future_of_zanzibar
+					}
+				}
+				owner = {
+					trigger_event = { id = zanzibar.6 popup = yes }
+				}
+			}
+
+			### Monarchial succession - add all successions here.
+			if = {
+				limit = {
+					is_ruler = yes
+					owner ?= {
+						RRK_st_has_monarchy = yes
+					}
+				}
+				### Russian Monarchs
+				if = {
+					limit = {
+						owner ?= {
+							c:RUS ?= this
+						}
+					}
+					character_russia_ruler_succession_chain_effect = yes
+				}
+				### Swedish Monarchs
+				if = {
+					limit = {
+						owner = {
+							OR = {
+								c:SWE ?= this
+								was_formed_from = SWE
+							}
+						}
+					}
+					character_sweden_ruler_succession_chain_effect = yes
+				}
+				### Austrian Monarchs
+				if = {
+					limit = {
+						owner = {
+							OR = {
+								c:AUS ?= this
+								was_formed_from = AUS
+							}
+						}
+					}
+					character_austria_ruler_succession_chain_effect = yes
+				}
+				### Serbian Monarchs
+				if = {
+					limit = {
+						owner ?= {
+							OR = {
+								c:SER ?= this
+								was_formed_from = SER
+							}
+						}
+					}
+					character_serbia_ruler_succession_chain_effect = yes
+				}
+				### Ottoman Monarchs
+				if = {
+					limit = {
+						owner ?= {
+							c:TUR ?= this
+						}
+					}
+					character_ottoman_ruler_succession_chain_effect = yes
+				}
+				### French Monarchs
+				if = {
+					limit = {
+						owner ?= {
+							c:FRA ?= this
+						}
+					}
+					character_france_ruler_succession_chain_effect = yes
+				}
+				### Spanish Monarchs
+				if = {
+					limit = {
+						owner ?= {
+							OR = {
+								c:SPA ?= this
+								was_formed_from = SPA
+							}
+						}
+					}
+					character_spain_ruler_succession_chain_effect = yes
+				}
+				### Portuguese Monarchs
+				if = {
+					limit = {
+						owner ?= {
+							OR = {
+								c:POR ?= this
+								was_formed_from = POR
+							}
+						}
+					}
+					character_portugal_ruler_succession_chain_effect = yes
+				}
+				### Morocco Monarchs
+				if = {
+					limit = {
+						owner ?= {
+							OR = {
+								c:MOR ?= this
+								was_formed_from = MOR
+							}
+						}
+					}
+					character_morocco_ruler_succession_chain_effect = yes
+				}
+			}
+
+			if = { # For handling the Succession Rights treaty article in the case of ruler death
+				limit = {
+					exists = c:BRZ
+					exists = c:POR
+					owner = {
+						c:POR ?= this
+						NOT = {
+							has_diplomatic_pact = {
+								who = c:BRZ
+								type = personal_union
+							}
+						}
+						any_scope_treaty = {
+							binds = c:BRZ
+							any_scope_article = {
+								has_type = amend_succession
+								source_country = c:BRZ
+							}
+						}
+					}
+				}
+				save_temporary_scope_as = portuguese_monarch_scope
+				c:BRZ ?= {
+					heir ?= {
+						if = {
+							limit = {
+								is_character_alive = yes
+								NOT = { c:POR.ruler ?= this  }
+							}
+							kill_character = { hidden = yes }
+						}
+					}
+					set_heir = scope:portuguese_monarch_scope
+				}
+			}
+		}
+	}
+}
+
+on_country_released_as_own_subject = {
+	effect = {
+		scope:target = {
+			set_variable = { name = newly_released_country days = 90 } # Used for the Trialist Manifesto at the moment
+		}
+		if = {
+			limit = {
+				c:NEN ?= scope:target
+			}
+			scope:target ?= {
+				create_character = {
+					ig_leader = yes
+					interest_group = ig_rural_folk
+					ideology = ideology_luddite
+				}
+			}
+		}
+		if = {
+			limit = {
+				scope:target ?= {
+					country_has_primary_culture = cu:ashkenazi
+				}
+				NOT = {
+					s:STATE_PALESTINE = {
+						is_homeland = cu:ashkenazi
+					}
+				}
+			}
+			s:STATE_PALESTINE = {
+				add_homeland = cu:sephardic
+				add_homeland = cu:ashkenazi
+			}
+		}
+		if = {
+			limit = {
+				c:AUS ?= ROOT
+				RRK_st_has_monarchy = yes
+				scope:target ?= {
+					is_in_geographic_region = geographic_region_europe
+				}
+			}
+			scope:target ?= {
+				change_subject_type = subject_type_crown_land
+			}
+		}
+
+		if = {
+			limit = {
+				c:YUG ?= scope:target
+			}
+			scope:target = {
+				remove_primary_culture = cu:bulgarian
+			}
+		}
+		if = {
+			limit = {
+				has_journal_entry = je_springtime_of_the_peoples
+				NOT = {
+					is_involved_in_journal_entry = je_springtime_of_the_peoples
+				}
+			}
+			je:je_springtime_of_the_peoples ?= {
+				add_involved_country = ROOT
+			}
+		}
+	}
+}
+
+on_law_enactment_started = {
+	effect = {
+		#Montenegro events
+		if = {
+			limit = {
+				c:MON ?= THIS
+			}
+			if = {
+				limit = {
+					has_variable = danilo_dresses_like_a_prince
+					is_enacting_law = law_type:law_monarchy
+				}
+				trigger_event = {
+					ID = mon_state_formation.7
+				}
+			}
+			if = {
+				limit = {
+					OR = {
+						is_enacting_law = law_type:law_consumption_based_taxation
+						is_enacting_law = law_type:law_land_based_taxation
+						is_enacting_law = law_type:law_per_capita_based_taxation
+						is_enacting_law = law_type:law_proportional_taxation
+						is_enacting_law = law_type:law_graduated_taxation
+					}
+				}
+				trigger_event = {
+					ID = mon_state_formation.12
+				}
+			}
+		}
+		#Abolishing Monarchy
+		if = {
+			limit = {
+				has_law = law_type:law_monarchy
+				OR = {
+					is_enacting_law = law_type:law_presidential_republic
+					is_enacting_law = law_type:law_parliamentary_republic
+					is_enacting_law = law_type:law_council_republic
+				}
+			}
+			set_variable = {
+				name = abolishing_monarchy_var
+				value = 0
+			}
+			add_journal_entry = { type = je_abolish_monarchy }
+		}
+		# Negotiation achievement
+		if = {
+			limit = {
+				any_interest_group = {
+					law_enactment_stance = {
+						law = owner.currently_enacting_law.type
+						value < neutral
+					}
+					ig_counts_as_marginal = no
+					count >= 2
+				}
+			}
+			set_variable = unanimity_achievement_possible
+		}
+	}
+}
+
+on_revolution_start = {
+	effect = {
+		### Movement type variable setting
+		ROOT = {
+			random_civil_war = {
+				limit = {
+					is_civil_war_type = revolution
+				}
+				scope:target ?= {
+					set_variable = { name = civil_war_type_var value = prev.political_movement.type }
+				}
+			}
+		}
+		scope:target ?= {
+			if = {
+				limit = {
+					has_law_or_variant = law_type:law_single_party_state
+				}
+				handle_revolutionary_sps = yes
+			}
+			if = {
+				limit = {
+					has_law = law_type:law_colonial_administration
+				}
+				trigger_event = { id = independence.1 days = 7 popup = yes }
+			}
+		}
+		if = {
+			limit = {
+				RRK_st_has_monarchy = yes
+				scope:target ?= {
+					NOT = {
+						RRK_st_has_monarchy = yes
+					}
+				}
+			}
+			set_variable = anti_monarchist_revolution
+		}
+		if = {
+			limit = {
+				has_journal_entry = je_warlord_china
+				NOT = { has_variable = china_warlord_explosion_revolution }
+			}
+			chi_remove_1_fragile_unity = yes
+			set_variable = china_warlord_explosion_revolution
+		}
+		if = {
+			limit = {
+				OR = {
+					has_journal_entry = je_meiji_restoration
+					has_inactive_journal_entry = je_meiji_restoration
+				}
+				scope:target ?= {
+					ig:ig_landowners ?= {
+						is_in_government = yes
+					}
+				}
+			}
+			set_variable = anti_shogunate_civil_war
+		}
+		if = {
+			limit = {
+				has_journal_entry = je_the_paris_commune_france
+			}
+			c:FRA ?= {
+				trigger_event = { id = paris_commune.4 popup = yes }
+			}
+			random_scope_state = {
+				limit = {
+					state_region = s:STATE_ILE_DE_FRANCE
+				}
+				set_state_owner = c:PRC
+			}
+			c:PRC ?= {
+				annex = scope:target
+				create_diplomatic_play = {
+					type = dp_revolution
+					target_state = c:FRA.capital
+					annex_as_civil_war = yes
+				}
+			}
+		}
+		if = {
+			limit = {
+				has_dlc_feature = voice_of_the_people_content
+				c:KRA ?= root
+				c:AUS ?= {
+					any_subject_or_below = {
+						c:KRA ?= this
+					}
+				}
+			}
+			c:AUS ?= {
+				trigger_event = { id = krakow.1 days = 3 popup = yes }
+			}
+		}
+		if = {
+			limit = {
+				has_dlc_feature = voice_of_the_people_content
+				c:FRA ?= ROOT
+			}
+			if = {
+				limit = {
+					scope:target ?= {
+						is_secessionist = no
+						RRK_st_has_monarchy = yes
+						var:civil_war_type_var ?= movement_type:movement_orleanist
+					}
+				}
+				scope:target ?= {
+					if = {
+						limit = {
+							has_variable = bonapartist_restoration_var
+						}
+						remove_variable = bonapartist_restoration_var
+					}
+					if = {
+						limit = {
+							has_variable = legitimist_restoration_var
+						}
+						remove_variable = legitimist_restoration_var
+					}
+					set_variable = { name = orleanist_restoration_var }
+					if = {
+						limit = {
+							ROOT.ruler = {
+								has_ideology = ideology:ideology_orleanist
+							}
+						}
+						create_character = {
+							template = dynamic_orleanist_ruler_template
+						}
+					}
+					else = {
+						generate_french_monarch = yes
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					scope:target ?= {
+						is_secessionist = no
+						RRK_st_has_monarchy = yes
+						var:civil_war_type_var ?= movement_type:movement_legitimist
+					}
+				}
+				scope:target ?= {
+					if = {
+						limit = {
+							has_variable = bonapartist_restoration_var
+						}
+						remove_variable = bonapartist_restoration_var
+					}
+					if = {
+						limit = {
+							has_variable = orleanist_restoration_var
+						}
+						remove_variable = orleanist_restoration_var
+					}
+					set_variable = { name = legitimist_restoration_var }
+					if = {
+						limit = {
+							ROOT.ruler = {
+								has_ideology = ideology:ideology_legitimist
+							}
+						}
+						create_character = {
+							template = dynamic_legitimist_ruler_template
+						}
+					}
+					else = {
+						generate_french_monarch = yes
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					scope:target ?= {
+						is_secessionist = no
+						RRK_st_has_monarchy = yes
+						var:civil_war_type_var ?= movement_type:movement_bonapartist
+					}
+				}
+				scope:target ?= {
+					if = {
+						limit = {
+							has_variable = orleanist_restoration_var
+						}
+						remove_variable = orleanist_restoration_var
+					}
+					if = {
+						limit = {
+							has_variable = legitimist_restoration_var
+						}
+						remove_variable = legitimist_restoration_var
+					}
+					set_variable = { name = bonapartist_restoration_var }
+					if = {
+						limit = {
+							ROOT.ruler = {
+								has_ideology = ideology:ideology_bonapartist
+							}
+						}
+						create_character = {
+							template = dynamic_bonapartist_ruler_template
+						}
+					}
+					else = {
+						generate_french_monarch = yes
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				has_dlc_feature = ep1_content
+				c:KOR ?= ROOT
+				c:JAP ?= {
+					NOT = {
+						has_law_or_variant = law_type:law_isolationism
+					}
+					has_interest_marker_in_region = region_manchuria
+					has_technology_researched = electric_telegraph
+				}
+				any_country = {
+					OR = {
+						country_has_primary_culture = cu:han
+						country_has_primary_culture = cu:manchu
+					}
+					any_subject_or_below = {
+						c:KOR = this
+					}
+					has_technology_researched = electric_telegraph
+				}
+			}
+			c:JAP ?= {
+				trigger_event = { id = gg_korea.7 popup = yes }
+			}
+			random_country = {
+				limit = {
+					OR = {
+						country_has_primary_culture = cu:han
+						country_has_primary_culture = cu:manchu
+					}
+					any_subject_or_below = {
+						c:KOR = this
+					}
+				}
+				trigger_event = { id = gg_korea.7 popup = yes }
+			}
+		}
+		if = { # Script hack for Indian revolutions
+			limit = {
+				c:BIC ?= ROOT
+				ROOT = {
+					any_civil_war = {
+						is_civil_war_type = revolution
+						political_movement ?= {
+							NOR = {
+								is_political_movement_type = movement_religious_majority
+								is_political_movement_type = movement_cultural_majority
+								is_political_movement_type = movement_utilitarian
+								culture ?= {
+									has_discrimination_trait_group = heritage_group_european
+								}
+							}
+						}
+					}
+				}
+			}
+			scope:target ?= {
+				change_tag = BHT
+				remove_primary_culture = cu:british
+				grant_indian_cultures = yes
+				if = {
+					limit = {
+						NOT = {
+							has_law_or_variant = law_type:law_state_atheism
+						}
+					}
+					if = {
+						limit = {
+							religion_percent_country = {
+								target = rel:hindu
+								value >= 0.5
+							}
+						}
+						set_state_religion = rel:hindu
+					}
+					else_if = {
+						limit = {
+							religion_percent_country = {
+								target = rel:sunni
+								value >= 0.5
+							}
+						}
+						set_state_religion = rel:sunni
+					}
+					else = {
+						set_state_religion = rel:hindu
+					}
+				}
+				india_independence_ig_effects = yes
+				if = {
+					limit = {
+						has_modifier = modifier_india_crown_rule
+					}
+					remove_modifier = modifier_india_crown_rule
+				}
+				if = {
+					limit = {
+						has_modifier = modifier_india_company_rule
+					}
+					remove_modifier = modifier_india_company_rule
+				}
+				if = {
+					limit = {
+						has_modifier = modifier_india_company_rule_upgraded
+					}
+					remove_modifier = modifier_india_company_rule_upgraded
+				}
+				if = {
+					limit = {
+						has_modifier = modifier_indian_imperial_police
+					}
+					remove_modifier = modifier_indian_imperial_police
+				}
+				recalculate_pop_ig_support = yes
+				every_scope_character = {
+					limit = {
+						OR = {
+							culture = cu:british
+							culture = cu:scottish
+							culture = cu:irish
+						}
+						is_immortal = no
+					}
+					kill_character = yes
+				}
+			}
+		}
+		### Carlists and Miguelists
+		if = {
+			limit = {
+				scope:target ?= {
+					is_secessionist = no
+					RRK_st_has_monarchy = yes
+					OR = {
+						var:civil_war_type_var ?= movement_type:movement_carlist
+						var:civil_war_type_var ?= movement_type:movement_miguelist
+					}
+				}
+			}
+			scope:target ?= {
+				if = {
+					limit = {
+						var:civil_war_type_var ?= movement_type:movement_carlist
+					}
+					country_generate_carlist_spain_ruler = yes
+				}
+				if = {
+					limit = {
+						var:civil_war_type_var ?= movement_type:movement_miguelist
+					}
+					country_generate_miguelist_portugal_ruler = yes
+				}
+			}
+		}
+		set_variable = { name = recent_coup_or_revolution_var value = 0 }
+	}
+}
+
+on_civil_war_won = {
+	effect = {
+		if = {
+			limit = {
+				has_global_variable = achievement_revo_needed
+			}
+			set_global_variable = achievement_revolutionary
+		}
+		if = {
+			limit = {
+				has_journal_entry = je_meiji_restoration
+				has_variable = anti_shogunate_civil_war
+				has_variable = shogunate_var
+			}
+			change_variable = {
+				name = shogunate_var
+				add = 120
+			}
+			remove_variable = anti_shogunate_civil_war
+		}
+		if = {
+			limit = {
+				has_variable = anti_monarchist_revolution
+			}
+			if = {
+				limit = {
+					NOT = {
+						RRK_st_has_monarchy = yes
+					}
+				}
+				set_variable = {
+					name = abolishing_monarchy_var
+					value = 0
+				}
+				add_journal_entry = { type = je_abolish_monarchy }
+			}
+			remove_variable = anti_monarchist_revolution
+		}
+
+		##### FRENCH MONARCHISTS WHEN A CIVIL WAR IS WON #####
+
+		### Orleanists
+		if = {
+			limit = {
+				c:FRA ?= this
+				RRK_st_has_monarchy = yes
+				any_interest_group = {
+					is_in_government = yes
+					is_strongest_ig_in_government = yes
+					leader = {
+						has_ideology = ideology:ideology_orleanist
+					}
+				}
+				NOT = { has_variable = one_true_french_dynasty }
+			}
+
+			### Reset AI to support Orleanists. Players can continue to support any dynasty they like ###
+			if = {
+				limit = {
+					is_player = no
+					has_variable = supporting_bonapartist_var
+				}
+				remove_variable = supporting_bonapartist_var
+			}
+			if = {
+				limit = {
+					is_player = no
+					has_variable = supporting_legitimist_var
+				}
+				remove_variable = supporting_legitimist_var
+			}
+			if = {
+				limit = {
+					is_player = no
+					NOT = { has_variable = supporting_orleanist_var }
+				}
+				set_variable = {
+					name = supporting_orleanist_var
+				}
+			}
+			###
+
+			# Generate an Orleanist monarch if somehow there's not an Orleanist in charge and it's either the AI, or the player has set a restoration variable and something's just gotten buggy.
+			# If France is controlled by a player and a dynasty other than the Orleanists has been restored to the throne, nothing in this section applies.
+			if = {
+				limit = {
+					any_scope_character = {
+						is_ruler = yes
+						NOT = { has_variable = house_orleans }
+					}
+					OR = {
+						is_player = no
+						AND = {
+							is_player = yes
+							has_variable = orleanist_restoration_var
+						}
+					}
+				}
+				generate_french_monarch = yes
+				if = {
+					limit = {
+						has_variable = bonapartist_restoration_var
+					}
+					remove_variable = bonapartist_restoration_var
+				}
+				if = {
+					limit = {
+						has_variable = legitimist_restoration_var
+					}
+					remove_variable = legitimist_restoration_var
+				}
+				if = {
+					limit = {
+						NOT = { has_variable = orleanist_restoration_var }
+					}
+					set_variable = orleanist_restoration_var
+				}
+			}
+			###
+
+			# If France somehow doesn't have the monarchist JEs, it (re)gains them
+			if = {
+				limit = {
+					NOT = { has_journal_entry = je_divided_monarchists }
+					has_dlc_feature = voice_of_the_people_content
+				}
+				if = {
+					limit = {
+						has_variable = fra_divided_monarchists_freeze
+					}
+					remove_variable = fra_divided_monarchists_freeze
+				}
+				add_journal_entry = {
+					type = je_divided_monarchists
+				}
+			}
+
+			if = {
+				limit = {
+					has_variable = orleanist_restoration_var
+					NOT = { has_journal_entry = je_cement_the_rightful_dynasty }
+					has_dlc_feature = voice_of_the_people_content
+				}
+				add_journal_entry = {
+					type = je_cement_the_rightful_dynasty
+				}
+			}
+		}
+
+		### Bonapartists
+		else_if = {
+			limit = {
+				c:FRA ?= this
+				RRK_st_has_monarchy = yes
+				any_interest_group = {
+					is_in_government = yes
+					is_strongest_ig_in_government = yes
+					leader = {
+						has_ideology = ideology:ideology_bonapartist
+					}
+				}
+				NOT = { has_variable = one_true_french_dynasty }
+			}
+
+			### Reset AI to support Bonapartists. Players can continue to support any dynasty they like ###
+			if = {
+				limit = {
+					is_player = no
+					has_variable = supporting_orleanist_var
+				}
+				remove_variable = supporting_orleanist_var
+			}
+			if = {
+				limit = {
+					is_player = no
+					has_variable = supporting_legitimist_var
+				}
+				remove_variable = supporting_legitimist_var
+			}
+			if = {
+				limit = {
+					is_player = no
+					NOT = { has_variable = supporting_bonapartist_var }
+				}
+				set_variable = {
+					name = supporting_bonapartist_var
+				}
+			}
+			###
+
+			# Generate a Bonapartist monarch if somehow there's not an Bonapartist in charge and it's either the AI, or the player has set a restoration variable and something's just gotten buggy.
+			# If France is controlled by a player and a dynasty other than the glorious house of Bonaparte has been restored to the throne, nothing in this section applies.
+			if = {
+				limit = {
+					any_scope_character = {
+						is_ruler = yes
+						NOT = { has_variable = house_bonaparte }
+					}
+					OR = {
+						is_player = no
+						AND = {
+							is_player = yes
+							has_variable = bonapartist_restoration_var
+						}
+					}
+				}
+				generate_french_monarch = yes
+				if = {
+					limit = {
+						has_variable = orleanist_restoration_var
+					}
+					remove_variable = orleanist_restoration_var
+				}
+				if = {
+					limit = {
+						has_variable = legitimist_restoration_var
+					}
+					remove_variable = legitimist_restoration_var
+				}
+				if = {
+					limit = {
+						NOT = { has_variable = bonapartist_restoration_var }
+					}
+					set_variable = bonapartist_restoration_var
+				}
+			}
+			###
+
+			# If France somehow doesn't have the monarchist JEs, it (re)gains them
+			if = {
+				limit = {
+					NOT = { has_journal_entry = je_divided_monarchists }
+					has_dlc_feature = voice_of_the_people_content
+				}
+				if = {
+					limit = {
+						has_variable = fra_divided_monarchists_freeze
+					}
+					remove_variable = fra_divided_monarchists_freeze
+				}
+				add_journal_entry = {
+					type = je_divided_monarchists
+				}
+			}
+
+			if = {
+				limit = {
+					has_variable = bonapartist_restoration_var
+					NOT = { has_journal_entry = je_cement_the_rightful_dynasty }
+					has_dlc_feature = voice_of_the_people_content
+				}
+				add_journal_entry = {
+					type = je_cement_the_rightful_dynasty
+				}
+			}
+		}
+
+		### Legitimists
+		else_if = {
+			limit = {
+				c:FRA ?= this
+				RRK_st_has_monarchy = yes
+				any_interest_group = {
+					is_in_government = yes
+					is_strongest_ig_in_government = yes
+					leader = {
+						has_ideology = ideology:ideology_legitimist
+					}
+				}
+				NOT = { has_variable = one_true_french_dynasty }
+			}
+
+			### Reset AI to support Legitimists. Players can continue to support any dynasty they like ###
+			if = {
+				limit = {
+					is_player = no
+					has_variable = supporting_bonapartist_var
+				}
+				remove_variable = supporting_bonapartist_var
+			}
+			if = {
+				limit = {
+					is_player = no
+					has_variable = supporting_orleanist_var
+				}
+				remove_variable = supporting_orleanist_var
+			}
+			if = {
+				limit = {
+					is_player = no
+					NOT = { has_variable = supporting_legitimist_var }
+				}
+				set_variable = {
+					name = supporting_legitimist_var
+				}
+			}
+			###
+
+			# Generate a Legitimist monarch if somehow there's not an Legitimist in charge and it's either the AI, or the player has set a restoration variable and something's just gotten buggy.
+			# If France is controlled by a player and a dynasty other than the house of Bourbon has been restored to the throne, nothing in this section applies.
+			if = {
+				limit = {
+					any_scope_character = {
+						is_ruler = yes
+						NOT = { has_variable = legitimist_leader }
+					}
+					OR = {
+						is_player = no
+						AND = {
+							is_player = yes
+							has_variable = legitimist_restoration_var
+						}
+					}
+				}
+				generate_french_monarch = yes
+				if = {
+					limit = {
+						has_variable = orleanist_restoration_var
+					}
+					remove_variable = orleanist_restoration_var
+				}
+				if = {
+					limit = {
+						has_variable = bonapartist_restoration_var
+					}
+					remove_variable = bonapartist_restoration_var
+				}
+				if = {
+					limit = {
+						NOT = { has_variable = legitimist_restoration_var }
+					}
+					set_variable = legitimist_restoration_var
+				}
+			}
+			###
+
+			# If France somehow doesn't have the monarchist JEs, it (re)gains them
+			if = {
+				limit = {
+					NOT = { has_journal_entry = je_divided_monarchists }
+					has_dlc_feature = voice_of_the_people_content
+				}
+				if = {
+					limit = {
+						has_variable = fra_divided_monarchists_freeze
+					}
+					remove_variable = fra_divided_monarchists_freeze
+				}
+				add_journal_entry = {
+					type = je_divided_monarchists
+				}
+			}
+
+			if = {
+				limit = {
+					has_variable = legitimist_restoration_var
+					NOT = { has_journal_entry = je_cement_the_rightful_dynasty }
+					has_dlc_feature = voice_of_the_people_content
+				}
+				add_journal_entry = {
+					type = je_cement_the_rightful_dynasty
+				}
+			}
+		}
+
+		### Garbage collection
+		if = {
+			limit = {
+				has_variable = civil_war_type_var
+			}
+			remove_variable = civil_war_type_var
+		}
+	}
+}
+

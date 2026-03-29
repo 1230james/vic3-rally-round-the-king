@@ -1,314 +1,67 @@
 [
 {
   "confidence": "weak",
-  "info": "available names are brazil_scope, heir_scope, intelligentsia_ig, journal_entry, pedro_scope or target",
+  "info": null,
   "key": "strict-scopes",
   "locations": [
     {
-      "column": 51,
-      "from": "Vic3",
-      "fullpath": "C:\\Steam\\steamapps\\common\\Victoria 3\\game\\events\\brazil\\pedro_brazil_events.txt",
-      "length": 18,
-      "line": "\t\tadd_journal_entry = { type = je_isabel target = scope:isabel_scope }",
-      "linenr": 935,
-      "path": "events\\brazil\\pedro_brazil_events.txt",
+      "column": 42,
+      "from": "MOD",
+      "fullpath": ".\\events\\RRK_events.txt",
+      "length": 22,
+      "line": "                            multiplier = local_var:booster_mult",
+      "linenr": 700,
+      "path": "events\\RRK_events.txt",
+      "stage": null,
       "tag": null
     },
     {
-      "column": 9,
+      "column": 29,
       "from": "MOD",
-      "fullpath": ".\\common\\journal_entries\\RRK_02_pedro_brazil.txt",
-      "length": 8,
-      "line": "\t\t\t10 = pedro.12 # Death of Pedro's heirs",
-      "linenr": 24,
-      "path": "common\\journal_entries\\RRK_02_pedro_brazil.txt",
-      "tag": "triggered from here"
-    },
-    {
-      "column": 1,
-      "from": "MOD",
-      "fullpath": ".\\common\\journal_entries\\RRK_02_pedro_brazil.txt",
-      "length": 15,
-      "line": "je_pedro_brazil = {",
-      "linenr": 1,
-      "path": "common\\journal_entries\\RRK_02_pedro_brazil.txt",
+      "fullpath": ".\\events\\RRK_events.txt",
+      "length": 10,
+      "line": "                            multiplier = local_var:booster_mult",
+      "linenr": 700,
+      "path": "events\\RRK_events.txt",
+      "stage": null,
       "tag": "scopes initialized here"
     }
   ],
-  "message": "scope:isabel_scope might not be available here",
-  "severity": "error"
+  "message": "local_var:booster_mult might not be available here",
+  "severity": "error",
+  "wiki": null
 },
 {
-  "confidence": "reasonable",
+  "confidence": "weak",
   "info": null,
-  "key": "scopes",
+  "key": "strict-scopes",
   "locations": [
     {
-      "column": 5,
-      "from": "Vic3",
-      "fullpath": "C:\\Steam\\steamapps\\common\\Victoria 3\\game\\common\\customizable_localization\\99_ru_custom_loc.txt",
-      "length": 8,
-      "line": "\t\t\t\tis_ruler = yes",
-      "linenr": 4098,
-      "path": "common\\customizable_localization\\99_ru_custom_loc.txt",
-      "tag": null
-    },
-    {
-      "column": 5,
+      "column": 42,
       "from": "MOD",
-      "fullpath": ".\\common\\scripted_triggers\\01_RRK_coa_triggers.txt",
-      "length": 15,
-      "line": "\t\t\t\tis_country_type = decentralized",
-      "linenr": 24,
-      "path": "common\\scripted_triggers\\01_RRK_coa_triggers.txt",
-      "tag": "scope was deduced from `is_country_type` here"
-    }
-  ],
-  "message": "`is_ruler` is for character but scope seems to be country",
-  "severity": "warning"
-},
-{
-  "confidence": "reasonable",
-  "info": null,
-  "key": "scopes",
-  "locations": [
-    {
-      "column": 5,
-      "from": "Vic3",
-      "fullpath": "C:\\Steam\\steamapps\\common\\Victoria 3\\game\\common\\customizable_localization\\99_ru_custom_loc.txt",
-      "length": 12,
-      "line": "\t\t\t\thas_template = ARG_Juan_Manuel_de_Rosas",
-      "linenr": 4099,
-      "path": "common\\customizable_localization\\99_ru_custom_loc.txt",
-      "tag": null
-    },
-    {
-      "column": 5,
-      "from": "MOD",
-      "fullpath": ".\\common\\scripted_triggers\\01_RRK_coa_triggers.txt",
-      "length": 15,
-      "line": "\t\t\t\tis_country_type = decentralized",
-      "linenr": 24,
-      "path": "common\\scripted_triggers\\01_RRK_coa_triggers.txt",
-      "tag": "scope was deduced from `is_country_type` here"
-    }
-  ],
-  "message": "`has_template` is for character but scope seems to be country",
-  "severity": "warning"
-},
-{
-  "confidence": "reasonable",
-  "info": null,
-  "key": "scopes",
-  "locations": [
-    {
-      "column": 8,
-      "from": "Vic3",
-      "fullpath": "C:\\Steam\\steamapps\\common\\Victoria 3\\game\\common\\customizable_localization\\99_ru_custom_loc.txt",
-      "length": 20,
-      "line": "\t\t\t\t\t\t\tcoa_republic_trigger = yes\t\t\t\t\t\t\t",
-      "linenr": 6125,
-      "path": "common\\customizable_localization\\99_ru_custom_loc.txt",
-      "tag": null
-    },
-    {
-      "column": 3,
-      "from": "MOD",
-      "fullpath": ".\\common\\scripted_triggers\\01_RRK_coa_triggers.txt",
-      "length": 7,
-      "line": "\t\thas_law = law_type:law_corporate_state",
-      "linenr": 43,
-      "path": "common\\scripted_triggers\\01_RRK_coa_triggers.txt",
-      "tag": "expected scope was deduced from `has_law` here"
-    },
-    {
-      "column": 6,
-      "from": "Vic3",
-      "fullpath": "C:\\Steam\\steamapps\\common\\Victoria 3\\game\\common\\customizable_localization\\99_ru_custom_loc.txt",
-      "length": 19,
-      "line": "\t\t\t\t\tany_diplomatic_play = {",
-      "linenr": 6118,
-      "path": "common\\customizable_localization\\99_ru_custom_loc.txt",
-      "tag": "actual scope was deduced from `any_diplomatic_play` here"
-    }
-  ],
-  "message": "`coa_republic_trigger` expects scope to be country but scope seems to be diplomatic play",
-  "severity": "warning"
-},
-{
-  "confidence": "reasonable",
-  "info": null,
-  "key": "scopes",
-  "locations": [
-    {
-      "column": 8,
-      "from": "Vic3",
-      "fullpath": "C:\\Steam\\steamapps\\common\\Victoria 3\\game\\common\\customizable_localization\\99_ru_custom_loc.txt",
-      "length": 20,
-      "line": "\t\t\t\t\t\t\tcoa_republic_trigger = yes\t\t\t\t\t\t\t",
-      "linenr": 22944,
-      "path": "common\\customizable_localization\\99_ru_custom_loc.txt",
-      "tag": null
-    },
-    {
-      "column": 3,
-      "from": "MOD",
-      "fullpath": ".\\common\\scripted_triggers\\01_RRK_coa_triggers.txt",
-      "length": 7,
-      "line": "\t\thas_law = law_type:law_corporate_state",
-      "linenr": 43,
-      "path": "common\\scripted_triggers\\01_RRK_coa_triggers.txt",
-      "tag": "expected scope was deduced from `has_law` here"
-    },
-    {
-      "column": 6,
-      "from": "Vic3",
-      "fullpath": "C:\\Steam\\steamapps\\common\\Victoria 3\\game\\common\\customizable_localization\\99_ru_custom_loc.txt",
-      "length": 19,
-      "line": "\t\t\t\t\tany_diplomatic_play = {",
-      "linenr": 22937,
-      "path": "common\\customizable_localization\\99_ru_custom_loc.txt",
-      "tag": "actual scope was deduced from `any_diplomatic_play` here"
-    }
-  ],
-  "message": "`coa_republic_trigger` expects scope to be country but scope seems to be diplomatic play",
-  "severity": "warning"
-},
-{
-  "confidence": "reasonable",
-  "info": null,
-  "key": "scopes",
-  "locations": [
-    {
-      "column": 8,
-      "from": "Vic3",
-      "fullpath": "C:\\Steam\\steamapps\\common\\Victoria 3\\game\\common\\customizable_localization\\99_ru_custom_loc.txt",
-      "length": 20,
-      "line": "\t\t\t\t\t\t\tcoa_republic_trigger = yes\t\t\t\t\t\t\t",
-      "linenr": 40259,
-      "path": "common\\customizable_localization\\99_ru_custom_loc.txt",
-      "tag": null
-    },
-    {
-      "column": 3,
-      "from": "MOD",
-      "fullpath": ".\\common\\scripted_triggers\\01_RRK_coa_triggers.txt",
-      "length": 7,
-      "line": "\t\thas_law = law_type:law_corporate_state",
-      "linenr": 43,
-      "path": "common\\scripted_triggers\\01_RRK_coa_triggers.txt",
-      "tag": "expected scope was deduced from `has_law` here"
-    },
-    {
-      "column": 6,
-      "from": "Vic3",
-      "fullpath": "C:\\Steam\\steamapps\\common\\Victoria 3\\game\\common\\customizable_localization\\99_ru_custom_loc.txt",
-      "length": 19,
-      "line": "\t\t\t\t\tany_diplomatic_play = {",
-      "linenr": 40252,
-      "path": "common\\customizable_localization\\99_ru_custom_loc.txt",
-      "tag": "actual scope was deduced from `any_diplomatic_play` here"
-    }
-  ],
-  "message": "`coa_republic_trigger` expects scope to be country but scope seems to be diplomatic play",
-  "severity": "warning"
-},
-{
-  "confidence": "reasonable",
-  "info": null,
-  "key": "scopes",
-  "locations": [
-    {
-      "column": 8,
-      "from": "Vic3",
-      "fullpath": "C:\\Steam\\steamapps\\common\\Victoria 3\\game\\common\\customizable_localization\\99_ru_custom_loc.txt",
-      "length": 20,
-      "line": "\t\t\t\t\t\t\tcoa_republic_trigger = yes\t\t\t\t\t\t\t",
-      "linenr": 57520,
-      "path": "common\\customizable_localization\\99_ru_custom_loc.txt",
-      "tag": null
-    },
-    {
-      "column": 3,
-      "from": "MOD",
-      "fullpath": ".\\common\\scripted_triggers\\01_RRK_coa_triggers.txt",
-      "length": 7,
-      "line": "\t\thas_law = law_type:law_corporate_state",
-      "linenr": 43,
-      "path": "common\\scripted_triggers\\01_RRK_coa_triggers.txt",
-      "tag": "expected scope was deduced from `has_law` here"
-    },
-    {
-      "column": 6,
-      "from": "Vic3",
-      "fullpath": "C:\\Steam\\steamapps\\common\\Victoria 3\\game\\common\\customizable_localization\\99_ru_custom_loc.txt",
-      "length": 19,
-      "line": "\t\t\t\t\tany_diplomatic_play = {",
-      "linenr": 57513,
-      "path": "common\\customizable_localization\\99_ru_custom_loc.txt",
-      "tag": "actual scope was deduced from `any_diplomatic_play` here"
-    }
-  ],
-  "message": "`coa_republic_trigger` expects scope to be country but scope seems to be diplomatic play",
-  "severity": "warning"
-},
-{
-  "confidence": "reasonable",
-  "info": null,
-  "key": "scopes",
-  "locations": [
-    {
-      "column": 8,
-      "from": "Vic3",
-      "fullpath": "C:\\Steam\\steamapps\\common\\Victoria 3\\game\\common\\customizable_localization\\99_ru_custom_loc.txt",
-      "length": 20,
-      "line": "\t\t\t\t\t\t\tcoa_republic_trigger = yes\t\t\t\t\t\t\t",
-      "linenr": 74564,
-      "path": "common\\customizable_localization\\99_ru_custom_loc.txt",
-      "tag": null
-    },
-    {
-      "column": 3,
-      "from": "MOD",
-      "fullpath": ".\\common\\scripted_triggers\\01_RRK_coa_triggers.txt",
-      "length": 7,
-      "line": "\t\thas_law = law_type:law_corporate_state",
-      "linenr": 43,
-      "path": "common\\scripted_triggers\\01_RRK_coa_triggers.txt",
-      "tag": "expected scope was deduced from `has_law` here"
-    },
-    {
-      "column": 6,
-      "from": "Vic3",
-      "fullpath": "C:\\Steam\\steamapps\\common\\Victoria 3\\game\\common\\customizable_localization\\99_ru_custom_loc.txt",
-      "length": 19,
-      "line": "\t\t\t\t\tany_diplomatic_play = {",
-      "linenr": 74557,
-      "path": "common\\customizable_localization\\99_ru_custom_loc.txt",
-      "tag": "actual scope was deduced from `any_diplomatic_play` here"
-    }
-  ],
-  "message": "`coa_republic_trigger` expects scope to be country but scope seems to be diplomatic play",
-  "severity": "warning"
-},
-{
-  "confidence": "reasonable",
-  "info": null,
-  "key": "missing-localization",
-  "locations": [
-    {
-      "column": 15,
-      "from": "MOD",
-      "fullpath": ".\\common\\government_types\\00_RRK_gov_types.txt",
+      "fullpath": ".\\events\\RRK_events.txt",
       "length": 22,
-      "line": "\tmale_heir = \"RULER_TITLE_MUTASARRIF\"\t# Governor of a Vilayet's subunit, the Sanjak, who would assume command in the Vali's absence",
-      "linenr": 870,
-      "path": "common\\government_types\\00_RRK_gov_types.txt",
+      "line": "                            multiplier = local_var:booster_mult",
+      "linenr": 899,
+      "path": "events\\RRK_events.txt",
+      "stage": null,
       "tag": null
+    },
+    {
+      "column": 29,
+      "from": "MOD",
+      "fullpath": ".\\events\\RRK_events.txt",
+      "length": 10,
+      "line": "                            multiplier = local_var:booster_mult",
+      "linenr": 899,
+      "path": "events\\RRK_events.txt",
+      "stage": null,
+      "tag": "scopes initialized here"
     }
   ],
-  "message": "missing english, spanish, french, german, russian, korean, simp_chinese, braz_por, japanese, polish and turkish localization key RULER_TITLE_MUTASARRIF",
-  "severity": "warning"
+  "message": "local_var:booster_mult might not be available here",
+  "severity": "error",
+  "wiki": null
 },
 {
   "confidence": "reasonable",
@@ -323,11 +76,13 @@
       "line": "    concept_government_type_ingame_added: 3 \"\\n\\nThe $concept_government_type$ in [GetPlayer.GetNameNoFlag] is #tooltippable #tooltip:[GetPlayer.GetGovernment.GetTooltipTag],GOVERNMENT_TYPE_TOOLTIP_DESC [GetPlayer.GetGovernment.GetName]#!#!,[AddLocalizationIf(GetScriptedGui('RRK_sg_is_conmon').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End),'RRK_gov_type_head_of_gov')] for the following reasons:\\n[GetPlayer.GetGovernment.GetPossibleTriggerDesc(AccessPlayer)]\"",
       "linenr": 3,
       "path": "localization\\english\\replace\\RRK_replace_l_english.yml",
+      "stage": null,
       "tag": null
     }
   ],
   "message": "Unexpected character `3`, expected `\"`",
-  "severity": "warning"
+  "severity": "warning",
+  "wiki": null
 },
 {
   "confidence": "weak",
@@ -340,13 +95,15 @@
       "fullpath": ".\\common\\government_types\\00_RRK_gov_types.txt",
       "length": 1,
       "line": "\t\tOR = {",
-      "linenr": 83,
+      "linenr": 780,
       "path": "common\\government_types\\00_RRK_gov_types.txt",
+      "stage": null,
       "tag": null
     }
   ],
   "message": "OR with only one item inside is probably not what you intended",
-  "severity": "warning"
+  "severity": "warning",
+  "wiki": null
 },
 {
   "confidence": "weak",
@@ -359,70 +116,36 @@
       "fullpath": ".\\common\\government_types\\00_RRK_gov_types.txt",
       "length": 1,
       "line": "\t\tOR = {",
-      "linenr": 1219,
+      "linenr": 2184,
       "path": "common\\government_types\\00_RRK_gov_types.txt",
+      "stage": null,
       "tag": null
     }
   ],
   "message": "OR with only one item inside is probably not what you intended",
-  "severity": "warning"
+  "severity": "warning",
+  "wiki": null
 },
 {
   "confidence": "weak",
   "info": null,
-  "key": "logic",
+  "key": "scopes",
   "locations": [
     {
-      "column": 12,
+      "column": 24,
       "from": "MOD",
-      "fullpath": ".\\common\\journal_entries\\RRK_01_french_monarchism.txt",
-      "length": 1,
-      "line": "\t\t\t\t\t\tOR = {",
-      "linenr": 402,
-      "path": "common\\journal_entries\\RRK_01_french_monarchism.txt",
+      "fullpath": ".\\common\\scripted_effects\\RRK_scripted_effects.txt",
+      "length": 15,
+      "line": "        set_variable = RRK_head_of_gov",
+      "linenr": 24,
+      "path": "common\\scripted_effects\\RRK_scripted_effects.txt",
+      "stage": null,
       "tag": null
     }
   ],
-  "message": "OR with only one item inside is probably not what you intended",
-  "severity": "warning"
-},
-{
-  "confidence": "weak",
-  "info": null,
-  "key": "logic",
-  "locations": [
-    {
-      "column": 12,
-      "from": "MOD",
-      "fullpath": ".\\common\\journal_entries\\RRK_01_french_monarchism.txt",
-      "length": 1,
-      "line": "\t\t\t\t\t\tOR = {",
-      "linenr": 413,
-      "path": "common\\journal_entries\\RRK_01_french_monarchism.txt",
-      "tag": null
-    }
-  ],
-  "message": "OR with only one item inside is probably not what you intended",
-  "severity": "warning"
-},
-{
-  "confidence": "weak",
-  "info": null,
-  "key": "logic",
-  "locations": [
-    {
-      "column": 12,
-      "from": "MOD",
-      "fullpath": ".\\common\\journal_entries\\RRK_01_french_monarchism.txt",
-      "length": 1,
-      "line": "\t\t\t\t\t\tOR = {",
-      "linenr": 424,
-      "path": "common\\journal_entries\\RRK_01_french_monarchism.txt",
-      "tag": null
-    }
-  ],
-  "message": "OR with only one item inside is probably not what you intended",
-  "severity": "warning"
+  "message": "var:RRK_head_of_gov was deduced to be interest group but scope seems to be bool",
+  "severity": "warning",
+  "wiki": null
 },
 {
   "confidence": "weak",
@@ -435,297 +158,14 @@
       "fullpath": ".\\common\\scripted_triggers\\RRK_scripted_triggers.txt",
       "length": 1,
       "line": "    OR = {",
-      "linenr": 125,
+      "linenr": 128,
       "path": "common\\scripted_triggers\\RRK_scripted_triggers.txt",
+      "stage": null,
       "tag": null
     }
   ],
   "message": "OR with only one item inside is probably not what you intended",
-  "severity": "warning"
-},
-{
-  "confidence": "weak",
-  "info": null,
-  "key": "logic",
-  "locations": [
-    {
-      "column": 26,
-      "from": "MOD",
-      "fullpath": ".\\gfx\\portraits\\portrait_modifiers\\01_accessories.txt",
-      "length": 1,
-      "line": "                    OR = {",
-      "linenr": 413,
-      "path": "gfx\\portraits\\portrait_modifiers\\01_accessories.txt",
-      "tag": null
-    }
-  ],
-  "message": "OR with only one item inside is probably not what you intended",
-  "severity": "warning"
-},
-{
-  "confidence": "weak",
-  "info": null,
-  "key": "logic",
-  "locations": [
-    {
-      "column": 26,
-      "from": "MOD",
-      "fullpath": ".\\gfx\\portraits\\portrait_modifiers\\01_clothes.txt",
-      "length": 1,
-      "line": "                    OR = {",
-      "linenr": 5324,
-      "path": "gfx\\portraits\\portrait_modifiers\\01_clothes.txt",
-      "tag": null
-    }
-  ],
-  "message": "OR with only one item inside is probably not what you intended",
-  "severity": "warning"
-},
-{
-  "confidence": "weak",
-  "info": "This closing brace is at the start of the line but does not close a top-level block.",
-  "key": "brace-placement",
-  "locations": [
-    {
-      "column": 1,
-      "from": "MOD",
-      "fullpath": ".\\gfx\\portraits\\portrait_modifiers\\01_clothes.txt",
-      "length": 1,
-      "line": "}",
-      "linenr": 6926,
-      "path": "gfx\\portraits\\portrait_modifiers\\01_clothes.txt",
-      "tag": null
-    }
-  ],
-  "message": "possible brace error",
-  "severity": "warning"
-},
-{
-  "confidence": "weak",
-  "info": null,
-  "key": "logic",
-  "locations": [
-    {
-      "column": 26,
-      "from": "MOD",
-      "fullpath": ".\\gfx\\portraits\\portrait_modifiers\\01_headgear.txt",
-      "length": 1,
-      "line": "                    OR = {",
-      "linenr": 3054,
-      "path": "gfx\\portraits\\portrait_modifiers\\01_headgear.txt",
-      "tag": null
-    }
-  ],
-  "message": "OR with only one item inside is probably not what you intended",
-  "severity": "warning"
-},
-{
-  "confidence": "reasonable",
-  "info": "you can remove the AND and just have the item there",
-  "key": "performance",
-  "locations": [
-    {
-      "column": 10,
-      "from": "MOD",
-      "fullpath": ".\\common\\journal_entries\\RRK_01_french_monarchism.txt",
-      "length": 1,
-      "line": "\t\t\tAND = {",
-      "linenr": 228,
-      "path": "common\\journal_entries\\RRK_01_french_monarchism.txt",
-      "tag": null
-    }
-  ],
-  "message": "AND with only one item inside is useless",
-  "severity": "tips"
-},
-{
-  "confidence": "reasonable",
-  "info": "you can remove the AND and just have the item there",
-  "key": "performance",
-  "locations": [
-    {
-      "column": 31,
-      "from": "MOD",
-      "fullpath": ".\\gfx\\portraits\\portrait_modifiers\\01_accessories.txt",
-      "length": 1,
-      "line": "                        AND = {",
-      "linenr": 185,
-      "path": "gfx\\portraits\\portrait_modifiers\\01_accessories.txt",
-      "tag": null
-    }
-  ],
-  "message": "AND with only one item inside is useless",
-  "severity": "tips"
-},
-{
-  "confidence": "reasonable",
-  "info": "you can remove the AND and just have the item there",
-  "key": "performance",
-  "locations": [
-    {
-      "column": 27,
-      "from": "MOD",
-      "fullpath": ".\\gfx\\portraits\\portrait_modifiers\\01_clothes.txt",
-      "length": 1,
-      "line": "                    AND = {",
-      "linenr": 1977,
-      "path": "gfx\\portraits\\portrait_modifiers\\01_clothes.txt",
-      "tag": null
-    }
-  ],
-  "message": "AND with only one item inside is useless",
-  "severity": "tips"
-},
-{
-  "confidence": "reasonable",
-  "info": "you can remove the AND and just have the item there",
-  "key": "performance",
-  "locations": [
-    {
-      "column": 27,
-      "from": "MOD",
-      "fullpath": ".\\gfx\\portraits\\portrait_modifiers\\01_clothes.txt",
-      "length": 1,
-      "line": "                    AND = {",
-      "linenr": 4111,
-      "path": "gfx\\portraits\\portrait_modifiers\\01_clothes.txt",
-      "tag": null
-    }
-  ],
-  "message": "AND with only one item inside is useless",
-  "severity": "tips"
-},
-{
-  "confidence": "reasonable",
-  "info": "you can remove the AND and just have the item there",
-  "key": "performance",
-  "locations": [
-    {
-      "column": 27,
-      "from": "MOD",
-      "fullpath": ".\\gfx\\portraits\\portrait_modifiers\\01_clothes.txt",
-      "length": 1,
-      "line": "                    AND = {",
-      "linenr": 4927,
-      "path": "gfx\\portraits\\portrait_modifiers\\01_clothes.txt",
-      "tag": null
-    }
-  ],
-  "message": "AND with only one item inside is useless",
-  "severity": "tips"
-},
-{
-  "confidence": "reasonable",
-  "info": "you can remove the AND and just have the item there",
-  "key": "performance",
-  "locations": [
-    {
-      "column": 27,
-      "from": "MOD",
-      "fullpath": ".\\gfx\\portraits\\portrait_modifiers\\01_clothes.txt",
-      "length": 1,
-      "line": "                    AND = {",
-      "linenr": 7215,
-      "path": "gfx\\portraits\\portrait_modifiers\\01_clothes.txt",
-      "tag": null
-    }
-  ],
-  "message": "AND with only one item inside is useless",
-  "severity": "tips"
-},
-{
-  "confidence": "reasonable",
-  "info": "you can remove the AND and just have the item there",
-  "key": "performance",
-  "locations": [
-    {
-      "column": 27,
-      "from": "MOD",
-      "fullpath": ".\\gfx\\portraits\\portrait_modifiers\\01_clothes.txt",
-      "length": 1,
-      "line": "                    AND = {",
-      "linenr": 9155,
-      "path": "gfx\\portraits\\portrait_modifiers\\01_clothes.txt",
-      "tag": null
-    }
-  ],
-  "message": "AND with only one item inside is useless",
-  "severity": "tips"
-},
-{
-  "confidence": "reasonable",
-  "info": "you can remove the AND and just have the item there",
-  "key": "performance",
-  "locations": [
-    {
-      "column": 27,
-      "from": "MOD",
-      "fullpath": ".\\gfx\\portraits\\portrait_modifiers\\01_clothes.txt",
-      "length": 1,
-      "line": "                    AND = {",
-      "linenr": 9631,
-      "path": "gfx\\portraits\\portrait_modifiers\\01_clothes.txt",
-      "tag": null
-    }
-  ],
-  "message": "AND with only one item inside is useless",
-  "severity": "tips"
-},
-{
-  "confidence": "reasonable",
-  "info": "you can remove the AND and just have the item there",
-  "key": "performance",
-  "locations": [
-    {
-      "column": 23,
-      "from": "MOD",
-      "fullpath": ".\\gfx\\portraits\\portrait_modifiers\\01_headgear.txt",
-      "length": 1,
-      "line": "                AND = {",
-      "linenr": 2202,
-      "path": "gfx\\portraits\\portrait_modifiers\\01_headgear.txt",
-      "tag": null
-    }
-  ],
-  "message": "AND with only one item inside is useless",
-  "severity": "tips"
-},
-{
-  "confidence": "reasonable",
-  "info": "you can remove the AND and just have the item there",
-  "key": "performance",
-  "locations": [
-    {
-      "column": 27,
-      "from": "MOD",
-      "fullpath": ".\\gfx\\portraits\\portrait_modifiers\\01_headgear.txt",
-      "length": 1,
-      "line": "                    AND = {",
-      "linenr": 2247,
-      "path": "gfx\\portraits\\portrait_modifiers\\01_headgear.txt",
-      "tag": null
-    }
-  ],
-  "message": "AND with only one item inside is useless",
-  "severity": "tips"
-},
-{
-  "confidence": "reasonable",
-  "info": "you can remove the AND and just have the item there",
-  "key": "performance",
-  "locations": [
-    {
-      "column": 27,
-      "from": "MOD",
-      "fullpath": ".\\gfx\\portraits\\portrait_modifiers\\01_headgear.txt",
-      "length": 1,
-      "line": "                    AND = {",
-      "linenr": 2729,
-      "path": "gfx\\portraits\\portrait_modifiers\\01_headgear.txt",
-      "tag": null
-    }
-  ],
-  "message": "AND with only one item inside is useless",
-  "severity": "tips"
+  "severity": "warning",
+  "wiki": null
 }
 ]
