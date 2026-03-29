@@ -30,10 +30,12 @@ french_pretenders.6 = { # Second Republic
 			save_scope_as = old_ruler_scope
 		}
 		springtime_save_conservative_laws = yes
-        set_variable = { # RRK - Somewhat hacky way of preventing RRK fate of the monarch event
-            name = government_couped
-            days = 1
-        }
+		if = { # RRK - Somewhat hacky way of preventing RRK fate of the monarch event
+			limit = {
+				has_variable = RRK_preserve_monarchy
+			}
+			remove_variable = RRK_preserve_monarchy
+		}
 		if = {
 			limit = {
 				NOT = {

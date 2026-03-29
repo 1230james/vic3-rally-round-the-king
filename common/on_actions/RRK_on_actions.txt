@@ -201,7 +201,7 @@ RRK_oa_on_law_activated = {
                                 has_law = law_type:law_corporate_state
                             }
                             NOT = { # Abolish monarchy if it changed due to a coup
-                                has_variable = government_couped
+                                has_modifier = modifier_government_recently_couped
                             }
                             is_revolutionary = no # Revolutions by definition are abandoning the king
                             is_secessionist  = no
