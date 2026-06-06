@@ -2,6 +2,11 @@
 # Definitions generally should be clones of vanilla counterparts, except with `has_law = law_type:law_monarchy`
 # replaced with `RRK_st_is_crowned_republic = yes`
 
+# This is not to be used because we do not need a Crowned Republic for Domain Alliance, and the `is_domain_alliance_gov`
+# scripted trigger gets autoreplaced to already allow for Crowned Republic situations, so any Crowned Republic
+# Domain Alliance would fall under the base game's gov type anyways. Leaving this here to explicitly leave a note.
+# RRK_gov_domain_alliance = {}
+
 RRK_gov_united_kingdom_braz_por = {
 	transfer_of_power = hereditary
 
@@ -44,6 +49,7 @@ RRK_gov_united_kingdom_braz_por = {
 			}
 		}
 		has_gov_regency = no
+		is_domain_alliance_gov = no
 	}
 
 	on_government_type_change = {
@@ -94,6 +100,7 @@ RRK_gov_united_kingdom_braz_por_kingdom = {
 			has_variable = kingdom_var
 		}
 		has_gov_regency = no
+		is_domain_alliance_gov = no
 	}
 
 	on_government_type_change = {
@@ -141,6 +148,7 @@ RRK_gov_united_kingdom_por_spa = {
 			}
 		}
 		has_gov_regency = no
+		is_domain_alliance_gov = no
 	}
 
 	on_government_type_change = {
@@ -191,6 +199,7 @@ RRK_gov_united_kingdom_braz_por_spa = {
 			}
 		}
 		has_gov_regency = no
+		is_domain_alliance_gov = no
 	}
 
 	on_government_type_change = {
@@ -239,6 +248,7 @@ RRK_gov_united_kingdom_braz_por_spa_kingdom = {
 			has_variable = kingdom_var
 		}
 		has_gov_regency = no
+		is_domain_alliance_gov = no
 	}
 
 	on_government_type_change = {
@@ -262,6 +272,7 @@ RRK_gov_voivodeship = {
 		}
 		NOT = { is_subject_type = subject_type_crown_land }
 		has_gov_regency = no
+		is_domain_alliance_gov = no
 	}
 
 	on_government_type_change = {
@@ -286,6 +297,7 @@ RRK_gov_crown_land_voivode = {
 		}
 		is_subject_of = c:AUS
 		has_gov_regency = no
+		is_domain_alliance_gov = no
 	}
 
 	on_government_type_change = {
@@ -310,6 +322,7 @@ RRK_gov_crown_land_palatine = {
 		}
 		is_subject_of = c:AUS
 		has_gov_regency = no
+		is_domain_alliance_gov = no
 	}
 
 	on_government_type_change = {
@@ -334,6 +347,7 @@ RRK_gov_crown_land_ban = {
 		}
 		is_subject_of = c:AUS
 		has_gov_regency = no
+		is_domain_alliance_gov = no
 	}
 
 	on_government_type_change = {
@@ -356,6 +370,7 @@ RRK_gov_crown_land_governor_generic = {
 			RRK_st_is_crowned_republic = yes # has_law = law_type:law_monarchy
 		}
 		has_gov_regency = no
+		is_domain_alliance_gov = no
 	}
 
 	on_government_type_change = {
@@ -383,6 +398,7 @@ RRK_gov_guberniya = {
 			RRK_st_is_crowned_republic = yes # has_law = law_type:law_monarchy
 		}
 		has_gov_regency = no
+		is_domain_alliance_gov = no
 	}
 }
 
@@ -424,6 +440,7 @@ RRK_gov_triple_monarchy = {
 			}
 		}
 		has_gov_regency = no
+		is_domain_alliance_gov = no
 	}
 
 	on_government_type_change = {
@@ -483,6 +500,7 @@ RRK_gov_dual_monarchy = {
 			}
 		}
 		has_gov_regency = no
+		is_domain_alliance_gov = no
 	}
 
 	on_government_type_change = {
@@ -508,6 +526,7 @@ RRK_gov_danubian_federation = {
 		country_has_voting_franchise = yes
 		NOT = { is_subject_type = subject_type_crown_land }
 		has_gov_regency = no
+		is_domain_alliance_gov = no
 	}
 
 	on_government_type_change = {
@@ -533,6 +552,7 @@ RRK_gov_danubian_federation_technocratic = {
 		has_law_or_variant = law_type:law_technocracy
 		NOT = { is_subject_type = subject_type_crown_land }
 		has_gov_regency = no
+		is_domain_alliance_gov = no
 	}
 
 	on_government_type_change = {
@@ -561,6 +581,7 @@ RRK_gov_danubian_federation_absolutist = {
 		country_has_voting_franchise = no
 		NOT = { is_subject_type = subject_type_crown_land }
 		has_gov_regency = no
+		is_domain_alliance_gov = no
 	}
 
 	on_government_type_change = {
@@ -604,6 +625,7 @@ RRK_gov_ethiopia_empire = {
 		}
 		NOT = { is_subject_type = subject_type_crown_land }
 		has_gov_regency = no
+		is_domain_alliance_gov = no
 	}
 
 	on_government_type_change = {
@@ -631,6 +653,7 @@ RRK_gov_ethiopia_ras = {
 			c:QWR ?= this
 		}
 		has_gov_regency = no
+		is_domain_alliance_gov = no
 	}
 
 	on_government_type_change = {
@@ -661,6 +684,7 @@ RRK_gov_ethiopia_kingdom = {
 			country_has_state_religion = rel:ibadi
 		}
 		has_gov_regency = no
+		is_domain_alliance_gov = no
 	}
 
 	on_government_type_change = {
@@ -713,6 +737,7 @@ RRK_gov_princely_state_rawalate = {
 		exists = c:NAG
 		c:NAG = ROOT
 		has_gov_regency = no
+		is_domain_alliance_gov = no
 	}
 
 	on_government_type_change = {
@@ -751,6 +776,7 @@ RRK_gov_princely_state_maharaja = {
 		}
 		NOT = { is_subject_type = subject_type_crown_land }
 		has_gov_regency = no
+		is_domain_alliance_gov = no
 	}
 
 	on_government_type_change = {
@@ -782,6 +808,7 @@ RRK_gov_princely_state_diwanate = {
 		}
 		NOT = { is_subject_type = subject_type_crown_land }
 		has_gov_regency = no
+		is_domain_alliance_gov = no
 	}
 
 	on_government_type_change = {
@@ -814,6 +841,7 @@ RRK_gov_princely_state_khanate = {
 		}
 		NOT = { is_subject_type = subject_type_crown_land }
 		has_gov_regency = no
+		is_domain_alliance_gov = no
 	}
 
 	on_government_type_change = {
@@ -843,6 +871,7 @@ RRK_gov_princely_state_nizamate = {
 		AND = { exists = c:HYD c:HYD = ROOT }
 		NOT = { is_subject_type = subject_type_crown_land }
 		has_gov_regency = no
+		is_domain_alliance_gov = no
 	}
 
 	on_government_type_change = {
@@ -882,6 +911,7 @@ RRK_gov_princely_state_nawabate = {
 		}
 		NOT = { is_subject_type = subject_type_crown_land }
 		has_gov_regency = no
+		is_domain_alliance_gov = no
 	}
 
 	on_government_type_change = {
@@ -915,6 +945,7 @@ RRK_gov_princely_state_maratha_raja = {
 		country_has_state_religion = rel:hindu
 		NOT = { is_subject_type = subject_type_crown_land }
 		has_gov_regency = no
+		is_domain_alliance_gov = no
 	}
 
 	on_government_type_change = {
@@ -945,6 +976,7 @@ RRK_gov_princely_state_raja = {
 		country_has_state_religion = rel:hindu
 		NOT = { is_subject_type = subject_type_crown_land }
 		has_gov_regency = no
+		is_domain_alliance_gov = no
 	}
 
 	on_government_type_change = {
@@ -979,6 +1011,7 @@ RRK_gov_princely_state_sultan = {
 		}
 		NOT = { is_subject_type = subject_type_crown_land }
 		has_gov_regency = no
+		is_domain_alliance_gov = no
 	}
 
 	on_government_type_change = {
@@ -1006,6 +1039,7 @@ RRK_gov_enlightened_despotate = {
 		country_is_not_united_kingdom_subject = yes
 		NOT = { is_subject_type = subject_type_crown_land }
 		has_gov_regency = no
+		is_domain_alliance_gov = no
 	}
 
 	on_government_type_change = {
@@ -1022,16 +1056,16 @@ RRK_gov_shogunate = {
 	male_ruler = "RULER_TITLE_SHOGUN"
 	female_ruler = "RULER_TITLE_SHOGUN"
 
-	male_heir = "RULER_TITLE_HEIR_APPARENT"
-	female_heir = "RULER_TITLE_HEIR_APPARENT"
+	male_heir = "RULER_TITLE_KEISHI"
+	female_heir = "RULER_TITLE_KEISHI"
 
 	possible = {
-		exists = c:JAP
-		c:JAP = ROOT
+		country_has_primary_culture = cu:japanese
 		RRK_st_is_crowned_republic = yes
-		NOT = { has_variable = meiji_var }
+		has_law = law_type:law_bakufu
 		NOT = { is_subject_type = subject_type_crown_land }
 		has_gov_regency = no
+		is_domain_alliance_gov = no
 	}
 
 	on_government_type_change = {
@@ -1055,6 +1089,7 @@ RRK_gov_massina_empire = {
 			has_law_or_variant = law_type:law_state_religion
 		}
 		has_gov_regency = no
+		is_domain_alliance_gov = no
 	}
 
 	on_government_type_change = {
@@ -1081,6 +1116,7 @@ RRK_gov_hawaiian_monarchy_recognised = {
 		c:HAW = ROOT
 		NOT = { is_subject_type = subject_type_crown_land }
 		has_gov_regency = no
+		is_domain_alliance_gov = no
 	}
 
 	on_government_type_change = {
@@ -1107,6 +1143,7 @@ RRK_gov_hawaiian_monarchy = {
 		c:HAW = ROOT
 		NOT = { is_subject_type = subject_type_crown_land }
 		has_gov_regency = no
+		is_domain_alliance_gov = no
 	}
 
 	on_government_type_change = {
@@ -1137,6 +1174,7 @@ RRK_gov_malikdom = {
 		}
 		NOT = { is_subject_type = subject_type_crown_land }
 		has_gov_regency = no
+		is_domain_alliance_gov = no
 	}
 
 	on_government_type_change = {
@@ -1162,6 +1200,7 @@ RRK_gov_khalsa_state = {
 		c:PAN = ROOT
 		NOT = { is_subject_type = subject_type_crown_land }
 		has_gov_regency = no
+		is_domain_alliance_gov = no
 	}
 
 	on_government_type_change = {
@@ -1190,6 +1229,7 @@ RRK_gov_maratha_rajya = {
 		country_has_state_religion = rel:hindu
 		NOT = { is_subject_type = subject_type_crown_land }
 		has_gov_regency = no
+		is_domain_alliance_gov = no
 	}
 
 	on_government_type_change = {
@@ -1224,6 +1264,7 @@ RRK_gov_maharaja = {
 		}
 		NOT = { is_subject_type = subject_type_crown_land }
 		has_gov_regency = no
+		is_domain_alliance_gov = no
 	}
 
 	on_government_type_change = {
@@ -1251,6 +1292,7 @@ RRK_gov_rawalate = {
 			is_subject_type = subject_type_crown_land
 		}
 		has_gov_regency = no
+		is_domain_alliance_gov = no
 	}
 
 	on_government_type_change = {
@@ -1275,6 +1317,7 @@ RRK_gov_rajya = {
 		country_has_state_religion = rel:hindu
 		NOT = { is_subject_type = subject_type_crown_land }
 		has_gov_regency = no
+		is_domain_alliance_gov = no
 	}
 
 	on_government_type_change = {
@@ -1308,6 +1351,7 @@ RRK_gov_tsardom = {
 		}
 		NOT = { is_subject_type = subject_type_crown_land }
 		has_gov_regency = no
+		is_domain_alliance_gov = no
 	}
 
 	on_government_type_change = {
@@ -1330,6 +1374,7 @@ RRK_gov_dey = {
 		has_variable = algeria_deylik_restored
 		NOT = { is_subject_type = subject_type_crown_land }
 		has_gov_regency = no
+		is_domain_alliance_gov = no
 	}
 
 	on_government_type_change = {
@@ -1368,6 +1413,7 @@ RRK_gov_wilayah = {
 		}
 		NOT = { is_subject_type = subject_type_crown_land }
 		has_gov_regency = no
+		is_domain_alliance_gov = no
 	}
 
 	on_government_type_change = {
@@ -1396,6 +1442,7 @@ RRK_gov_swahili_sultanate = {
 		country_has_primary_culture = cu:swahili
 		NOT = { is_subject_type = subject_type_crown_land }
 		has_gov_regency = no
+		is_domain_alliance_gov = no
 	}
 
 	on_government_type_change = {
@@ -1455,6 +1502,7 @@ RRK_gov_sultanate = {
 		}
 		NOT = { is_subject_type = subject_type_crown_land }
 		has_gov_regency = no
+		is_domain_alliance_gov = no
 	}
 
 	on_government_type_change = {
@@ -1481,6 +1529,7 @@ RRK_gov_hakimate = {
 		c:BHN = ROOT
 		NOT = { is_subject_type = subject_type_crown_land }
 		has_gov_regency = no
+		is_domain_alliance_gov = no
 	}
 
 	on_government_type_change = {
@@ -1507,6 +1556,7 @@ RRK_gov_chitrali_monarchy = {
 		c:CHT = ROOT
 		NOT = { is_subject_type = subject_type_crown_land }
 		has_gov_regency = no
+		is_domain_alliance_gov = no
 	}
 
 	on_government_type_change = {
@@ -1535,6 +1585,7 @@ RRK_gov_sheikhdom = {
 		}
 		NOT = { is_subject_type = subject_type_crown_land }
 		has_gov_regency = no
+		is_domain_alliance_gov = no
 	}
 
 	on_government_type_change = {
@@ -1560,6 +1611,7 @@ RRK_gov_kongolese_kingdom = {
 		c:KON = ROOT
 		NOT = { is_subject_type = subject_type_crown_land }
 		has_gov_regency = no
+		is_domain_alliance_gov = no
 	}
 
 	on_government_type_change = {
@@ -1585,6 +1637,7 @@ RRK_gov_sunanate = {
 		c:SRK = ROOT
 		NOT = { is_subject_type = subject_type_crown_land }
 		has_gov_regency = no
+		is_domain_alliance_gov = no
 	}
 
 	on_government_type_change = {
@@ -1610,6 +1663,7 @@ RRK_gov_balinese_monarchy = {
 		c:BAL = ROOT
 		NOT = { is_subject_type = subject_type_crown_land }
 		has_gov_regency = no
+		is_domain_alliance_gov = no
 	}
 
 	on_government_type_change = {
@@ -1635,6 +1689,7 @@ RRK_gov_sikkimese_monarchy = {
 		c:SIK = ROOT
 		NOT = { is_subject_type = subject_type_crown_land }
 		has_gov_regency = no
+		is_domain_alliance_gov = no
 	}
 
 	on_government_type_change = {
@@ -1660,6 +1715,7 @@ RRK_gov_bhutanese_monarchy = {
 		c:BHU = ROOT
 		NOT = { is_subject_type = subject_type_crown_land }
 		has_gov_regency = no
+		is_domain_alliance_gov = no
 	}
 
 	on_government_type_change = {
@@ -1685,6 +1741,7 @@ RRK_gov_mughal_empire = {
 		c:MUG = ROOT
 		NOT = { is_subject_type = subject_type_crown_land }
 		has_gov_regency = no
+		is_domain_alliance_gov = no
 	}
 
 	on_government_type_change = {
@@ -1710,6 +1767,7 @@ RRK_gov_caliphate = {
 		c:SOK = ROOT
 		NOT = { is_subject_type = subject_type_crown_land }
 		has_gov_regency = no
+		is_domain_alliance_gov = no
 	}
 
 	on_government_type_change = {
@@ -1735,6 +1793,7 @@ RRK_gov_khedive = {
 		c:EGY = ROOT
 		NOT = { is_subject_type = subject_type_crown_land }
 		has_gov_regency = no
+		is_domain_alliance_gov = no
 	}
 
 	on_government_type_change = {
@@ -1762,6 +1821,7 @@ RRK_gov_vilayet = {
 		is_subject_of = c:TUR
 		NOT = { is_subject_type = subject_type_crown_land }
 		has_gov_regency = no
+		is_domain_alliance_gov = no
 	}
 
 	on_government_type_change = {
@@ -1825,6 +1885,7 @@ RRK_gov_prince = {
 		}
 		NOT = { is_subject_type = subject_type_crown_land }
 		has_gov_regency = no
+		is_domain_alliance_gov = no
 	}
 
 	on_government_type_change = {
@@ -1852,6 +1913,7 @@ RRK_gov_bey = {
 		}
 		NOT = { is_subject_type = subject_type_crown_land }
 		has_gov_regency = no
+		is_domain_alliance_gov = no
 	}
 
 	on_government_type_change = {
@@ -1877,6 +1939,7 @@ RRK_gov_sharif = {
 		c:HDJ = ROOT
 		NOT = { is_subject_type = subject_type_crown_land }
 		has_gov_regency = no
+		is_domain_alliance_gov = no
 	}
 
 	on_government_type_change = {
@@ -1924,6 +1987,7 @@ RRK_gov_kaiser = {
 		}
 		NOT = { is_subject_type = subject_type_crown_land }
 		has_gov_regency = no
+		is_domain_alliance_gov = no
 	}
 
 	on_government_type_change = {
@@ -1948,6 +2012,7 @@ RRK_gov_confederation_of_the_rhine = {
 		has_law = law_type:law_monarchy
 		NOT = { is_subject_type = subject_type_crown_land }
 		has_gov_regency = no
+		is_domain_alliance_gov = no
 	}
 
 	on_government_type_change = {
@@ -1976,6 +2041,7 @@ RRK_gov_decentralized_realm = {
 		#country_tier = principality
 		NOT = { is_subject_type = subject_type_crown_land }
 		has_gov_regency = no
+		is_domain_alliance_gov = no
 	}
 
 	on_government_type_change = {
@@ -2001,6 +2067,7 @@ RRK_gov_hm_gov = {
 		NOT = { has_global_variable = empire_of_great_britain }
 		NOT = { is_subject_type = subject_type_crown_land }
 		has_gov_regency = no
+		is_domain_alliance_gov = no
 	}
 
 	on_government_type_change = {
@@ -2026,6 +2093,7 @@ RRK_gov_hm_gov_empire = {
 		has_global_variable = empire_of_great_britain
 		NOT = { is_subject_type = subject_type_crown_land }
 		has_gov_regency = no
+		is_domain_alliance_gov = no
 	}
 
 	on_government_type_change = {
@@ -2054,6 +2122,7 @@ RRK_gov_fra_monarchy = {
 		country_has_primary_culture = cu:french
 		NOT = { is_subject_type = subject_type_crown_land }
 		has_gov_regency = no
+		is_domain_alliance_gov = no
 	}
 
 	on_government_type_change = {
@@ -2079,6 +2148,7 @@ RRK_gov_fra_monarchy_orleanist = {
 		country_has_primary_culture = cu:french
 		NOT = { is_subject_type = subject_type_crown_land }
 		has_gov_regency = no
+		is_domain_alliance_gov = no
 	}
 
 	on_government_type_change = {
@@ -2103,6 +2173,7 @@ RRK_gov_fra_monarchy_legitimist = {
 		has_variable = legitimist_restoration_var
 		country_has_primary_culture = cu:french
 		has_gov_regency = no
+		is_domain_alliance_gov = no
 	}
 
 	on_government_type_change = {
@@ -2136,6 +2207,7 @@ RRK_gov_nawabate = {
 		}
 		NOT = { is_subject_type = subject_type_crown_land }
 		has_gov_regency = no
+		is_domain_alliance_gov = no
 	}
 
 	on_government_type_change = {
@@ -2160,6 +2232,7 @@ RRK_gov_nizamate = {
 		AND = { exists = c:HYD c:HYD = ROOT }
 		NOT = { is_subject_type = subject_type_crown_land }
 		has_gov_regency = no
+		is_domain_alliance_gov = no
 	}
 
 	on_government_type_change = {
@@ -2186,6 +2259,7 @@ RRK_gov_diwanate = {
 		}
 		NOT = { is_subject_type = subject_type_crown_land }
 		has_gov_regency = no
+		is_domain_alliance_gov = no
 	}
 
 	on_government_type_change = {
@@ -2213,6 +2287,7 @@ RRK_gov_tibetan_kingdom = {
 		}
 		NOT = { is_subject_type = subject_type_crown_land }
 		has_gov_regency = no
+		is_domain_alliance_gov = no
 	}
 
 	on_government_type_change = {
@@ -2246,6 +2321,7 @@ RRK_gov_khanate = {
 		}
 		NOT = { is_subject_type = subject_type_crown_land }
 		has_gov_regency = no
+		is_domain_alliance_gov = no
 	}
 
 	on_government_type_change = {
@@ -2274,6 +2350,7 @@ RRK_gov_ilkhanate = {
 		AND = { exists = c:LUR c:LUR = ROOT }
 		NOT = { is_subject_type = subject_type_crown_land }
 		has_gov_regency = no
+		is_domain_alliance_gov = no
 	}
 
 	on_government_type_change = {
@@ -2302,6 +2379,7 @@ RRK_gov_zhuz = {
 		}
 		NOT = { is_subject_type = subject_type_crown_land }
 		has_gov_regency = no
+		is_domain_alliance_gov = no
 	}
 
 	on_government_type_change = {
@@ -2332,6 +2410,7 @@ RRK_gov_absolute_principality_muslim = {
 		}
 		NOT = { is_subject_type = subject_type_crown_land }
 		has_gov_regency = no
+		is_domain_alliance_gov = no
 	}
 
 	on_government_type_change = {
@@ -2353,6 +2432,9 @@ RRK_gov_empire = {
 
 	possible = {
 		RRK_st_is_crowned_republic = yes # has_law = law_type:law_monarchy
+		NOT = {
+			has_law = law_type:law_bakufu
+		}
 		OR = {
 			country_tier = hegemony
 			country_tier = empire
@@ -2363,11 +2445,13 @@ RRK_gov_empire = {
 			has_variable = legitimist_restoration_var
 			c:ITA ?= this
 			c:IBE ?= this
+			c:TPG ?= this
 		}
 		country_is_not_united_kingdom_overlord = yes
 		country_is_not_united_kingdom_subject = yes
 		NOT = { is_subject_type = subject_type_crown_land }
 		has_gov_regency = no
+		is_domain_alliance_gov = no
 	}
 
 	on_government_type_change = {
@@ -2394,6 +2478,7 @@ RRK_gov_kingdom = {
 			country_tier = kingdom
 			c:ITA ?= this
 			c:IBE ?= this
+			c:TPG ?= this
 			AND = {
 				c:MON ?= this
 				has_variable = king_sounds_better
@@ -2404,6 +2489,7 @@ RRK_gov_kingdom = {
 		country_is_not_united_kingdom_subject = yes
 		NOT = { is_subject_type = subject_type_crown_land }
 		has_gov_regency = no
+		is_domain_alliance_gov = no
 	}
 
 	on_government_type_change = {
@@ -2432,6 +2518,7 @@ RRK_gov_county = {
 		is_in_geographic_region = geographic_region_europe
 		NOT = { is_subject_type = subject_type_crown_land }
 		has_gov_regency = no
+		is_domain_alliance_gov = no
 	}
 
 	on_government_type_change = {
@@ -2464,6 +2551,7 @@ RRK_gov_duchy = {
 		}
 		NOT = { is_subject_type = subject_type_crown_land }
 		has_gov_regency = no
+		is_domain_alliance_gov = no
 	}
 
 	on_government_type_change = {
@@ -2491,6 +2579,7 @@ RRK_gov_principality = {
 		}
 		is_not_in_geographic_region = geographic_region_europe
 		has_gov_regency = no
+		is_domain_alliance_gov = no
 	}
 
 	on_government_type_change = {
@@ -2516,6 +2605,7 @@ RRK_gov_grand_duchy = {
 
 		is_in_geographic_region = geographic_region_europe
 		has_gov_regency = no
+		is_domain_alliance_gov = no
 	}
 
 	on_government_type_change = {
@@ -2540,6 +2630,7 @@ RRK_gov_grand_principality = {
 		country_tier = grand_principality
 		is_not_in_geographic_region = geographic_region_europe
 		has_gov_regency = no
+		is_domain_alliance_gov = no
 	}
 
 	on_government_type_change = {
