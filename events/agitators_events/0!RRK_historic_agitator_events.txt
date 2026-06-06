@@ -74,7 +74,6 @@ historical_agitators.6 = { #Charles Maurras
 		create_character = {
 			template = fra_maurras_character_template
 			on_created = {
-				set_variable = maurras_var
 				if = {
 					limit = {
 						owner = {
@@ -83,22 +82,6 @@ historical_agitators.6 = { #Charles Maurras
 					}
 					set_ideology = ideology:ideology_legitimist
 				}
-				else_if = {
-					limit = {
-						owner = {
-							RRK_st_has_monarchy = yes
-						}
-					}
-					set_ideology = ideology:ideology_fascist
-				}
-				else = {
-					set_ideology = ideology:ideology_traditionalist
-				}
-			}
-		}
-		random_scope_character = {
-			limit = {
-				has_variable = maurras_var
 			}
 			save_scope_as = historic_agitator_scope
 		}
@@ -221,14 +204,6 @@ historical_agitators.21 = { #Sun
 	immediate = {
 		create_character = {
 			template = chi_sun_yat_sen_character_template
-			on_created = {
-				set_variable = sun_yat_sen_var
-			}
-		}
-		random_scope_character = {
-			limit = {
-				has_variable = sun_yat_sen_var
-			}
 			save_scope_as = historic_agitator_scope
 		}
 		ruler = {

@@ -102,19 +102,12 @@ the_grand_collapse.5 = {
 			limit = {
 				NOT = {
 					has_law_or_variant = law_type:law_autocracy
-					has_law = law_type:law_parliamentary_republic
 				}
 				RRK_st_has_monarchy = yes
 			}
 			activate_law = law_type:law_parliamentary_republic
 		}
 		else = {
-			limit = {
-				NOT = {
-					has_law = law_type:law_presidential_republic
-				}
-				RRK_st_has_monarchy = yes
-			}
 			activate_law = law_type:law_presidential_republic
 		}
 		custom_tooltip = {

@@ -21,10 +21,8 @@ The following is a list of directories or specific files whose auto-generated co
 * `common/achievements`
 * `common/ai_strategies`
 * `common/government_types`
-  * Except for `01_colonial_administrations.txt`
+  * Don't accidentally delete the `00_RRK_gov_types.txt` file
 * `common/history`
-* `common/journal_entries`, but only the following:
-  * `00_autocracy.txt`
 * `common/on_actions`, but only the following:
   * `00_code_on_actions.txt`
     * Put normal law check back in `on_new_ruler` for regency-related content
@@ -33,6 +31,7 @@ The following is a list of directories or specific files whose auto-generated co
   * Nothing wrong on a design level, but this is a compatibility nuke, so we will not touch them
 * `common/political_movements`
   * Also a compatibility nuke
+* `events/brazil/vargas.txt`
 * `events/iberia_events/regency_events.txt`
 * `events/law_events`
 * `events/1848.txt`
@@ -40,6 +39,10 @@ The following is a list of directories or specific files whose auto-generated co
 ## Export Notes
 
 * Filename prefix changes to account for break from numeric prefixes:
-  * `common/character_templates` - Use `i!_` or later-loading prefix
-  * `common/decisions` - Use `l!_` or later-loading prefix
   * `common/script_values` - Use `j!_` or later-loading prefix
+* Hand-coded files that need manual maintenance or manual edits to auto-generated files:
+  * `common/on_actions/RRK_hand_coded_00_code_on_actions.txt` - see above
+  * `common/scripted_effects/RRK_hand_coded_00_victoria_ip4_scripted_effects.txt`
+    * Coups should not remove monarchs in Crowned Republics & only change the Head of Government
+  * `common/scripted_triggers/RRK_hand_coded_00_ep2_victoria_scripted_triggers.txt`
+    * `country_has_non_monarchy_law` needs to make sure the trigger is FALSE for Crowned Republics

@@ -93,7 +93,7 @@ clothes = {
                 add = 25000
                 european_clothes_trigger = yes
                 scope:character ?= {
-                    age < define:NCharacters|ADULT_AGE
+                    is_adult = no
                 }
             }
         }
@@ -410,10 +410,13 @@ clothes = {
             modifier = {
                 add = 100
                 scope:character ?= {
-                    culture = {
-                        OR = {
-                            this = cu:japanese
-                            this = cu:ainu
+                    OR = {
+                        culture = cu:japanese
+                        AND = {
+                            culture = cu:ainu
+                            home_country ?= {
+                                country_has_primary_culture = cu:japanese
+                            }
                         }
                     }
                 }
@@ -498,8 +501,8 @@ clothes = {
                 scope:character ?= {
                     has_template = rus_lenin_character_template
                     NOR = {
-                        has_role = general
-                        has_role = admiral
+                        has_role_of_type = general
+                        has_role_of_type = admiral
                     }
                 }
             }
@@ -540,8 +543,8 @@ clothes = {
                 scope:character ?= {
                     has_template = rus_mikhail_bakunin_character_template
                     NOR = {
-                        has_role = general
-                        has_role = admiral
+                        has_role_of_type = general
+                        has_role_of_type = admiral
                     }
                 }
             }
@@ -569,8 +572,8 @@ clothes = {
                 add = 90000
                 scope:character ?= {
                     NOR = {
-                        has_role = general
-                        has_role = admiral
+                        has_role_of_type = general
+                        has_role_of_type = admiral
                     }
                     OR = {
                         has_template = fra_blanqui_character_template
@@ -656,7 +659,7 @@ clothes = {
                 add = 95000
                 scope:character ?= {
                     has_template = gbr_william_hanover_template
-                    is_ruler = yes
+                    is_ruler_of_own_country = yes
                 }
             }
         }
@@ -690,8 +693,8 @@ clothes = {
                 scope:character ?= {
                     has_template = agitator_alexandru_bogdan_pitesti
                     NOR = {
-                        has_role = general
-                        has_role = admiral
+                        has_role_of_type = general
+                        has_role_of_type = admiral
                     }
                 }
             }
@@ -752,8 +755,8 @@ clothes = {
                 scope:character ?= {
                     has_template = fra_maurras_character_template
                     NOR = {
-                        has_role = general
-                        has_role = admiral
+                        has_role_of_type = general
+                        has_role_of_type = admiral
                     }
                 }
             }
@@ -788,8 +791,8 @@ clothes = {
                 scope:character ?= {
                     has_template = gbr_charles_dickens_character_template
                     NOR = {
-                        has_role = general
-                        has_role = admiral
+                        has_role_of_type = general
+                        has_role_of_type = admiral
                     }
                 }
             }
@@ -830,8 +833,8 @@ clothes = {
                 scope:character ?= {
                     has_template = agitator_frederick_douglass
                     NOR = {
-                        has_role = general
-                        has_role = admiral
+                        has_role_of_type = general
+                        has_role_of_type = admiral
                     }
                 }
             }
@@ -854,8 +857,8 @@ clothes = {
                 scope:character ?= {
                     has_template = gbr_pankhurst_character_template
                     NOR = {
-                        has_role = general
-                        has_role = admiral
+                        has_role_of_type = general
+                        has_role_of_type = admiral
                     }
                 }
             }
@@ -884,8 +887,8 @@ clothes = {
                 scope:character ?= {
                     has_template = usa_joshua_norton_character_template
                     NOR = {
-                        has_role = general
-                        has_role = admiral
+                        has_role_of_type = general
+                        has_role_of_type = admiral
                     }
                 }
             }
@@ -914,8 +917,8 @@ clothes = {
                 scope:character ?= {
                     has_template = agitator_francesc_pi_i_margall
                     NOR = {
-                        has_role = general
-                        has_role = admiral
+                        has_role_of_type = general
+                        has_role_of_type = admiral
                     }
                 }
             }
@@ -956,8 +959,8 @@ clothes = {
                 scope:character ?= {
                     has_template = agitator_francisco_madero
                     NOR = {
-                        has_role = general
-                        has_role = admiral
+                        has_role_of_type = general
+                        has_role_of_type = admiral
                     }
                 }
             }
@@ -992,8 +995,8 @@ clothes = {
                 scope:character ?= {
                     has_template = agitator_gabriele_d_annunzio
                     NOR = {
-                        has_role = general
-                        has_role = admiral
+                        has_role_of_type = general
+                        has_role_of_type = admiral
                     }
                 }
             }
@@ -1022,8 +1025,8 @@ clothes = {
                 scope:character ?= {
                     has_template = fra_georges_sorel_character_template
                     NOR = {
-                        has_role = general
-                        has_role = admiral
+                        has_role_of_type = general
+                        has_role_of_type = admiral
                     }
                 }
             }
@@ -1058,8 +1061,8 @@ clothes = {
                 scope:character ?= {
                     has_template = agitator_giovanni_gentile
                     NOR = {
-                        has_role = general
-                        has_role = admiral
+                        has_role_of_type = general
+                        has_role_of_type = admiral
                     }
                 }
             }
@@ -1088,8 +1091,8 @@ clothes = {
                 scope:character ?= {
                     has_template = rus_jaroslaw_dabrowski_character_template
                     NOR = {
-                        has_role = general
-                        has_role = admiral
+                        has_role_of_type = general
+                        has_role_of_type = admiral
                     }
                 }
             }
@@ -1118,8 +1121,8 @@ clothes = {
                 scope:character ?= {
                     has_template = usa_john_brown_character_template
                     NOR = {
-                        has_role = general
-                        has_role = admiral
+                        has_role_of_type = general
+                        has_role_of_type = admiral
                     }
                 }
             }
@@ -1149,8 +1152,8 @@ clothes = {
                 scope:character ?= {
                     has_template = agitator_john_stuart_mill
                     NOR = {
-                        has_role = general
-                        has_role = admiral
+                        has_role_of_type = general
+                        has_role_of_type = admiral
                     }
                 }
             }
@@ -1205,8 +1208,8 @@ clothes = {
                 scope:character ?= {
                     has_template = agitator_karl_liebknecht
                     NOR = {
-                        has_role = general
-                        has_role = admiral
+                        has_role_of_type = general
+                        has_role_of_type = admiral
                     }
                 }
             }
@@ -1241,8 +1244,8 @@ clothes = {
                 scope:character ?= {
                     has_template = rus_pyotr_kropotkin_character_template
                     NOR = {
-                        has_role = general
-                        has_role = admiral
+                        has_role_of_type = general
+                        has_role_of_type = admiral
                     }
                 }
             }
@@ -1272,8 +1275,8 @@ clothes = {
                 scope:character ?= {
                     has_template = pru_ferdinand_lassalle_character_template
                     NOR = {
-                        has_role = general
-                        has_role = admiral
+                        has_role_of_type = general
+                        has_role_of_type = admiral
                     }
                 }
             }
@@ -1302,8 +1305,8 @@ clothes = {
                 scope:character ?= {
                     has_template = fra_delescluze_character_template
                     NOR = {
-                        has_role = general
-                        has_role = admiral
+                        has_role_of_type = general
+                        has_role_of_type = admiral
                     }
                 }
             }
@@ -1354,8 +1357,8 @@ clothes = {
                 scope:character ?= {
                     has_template = brz_luis_gama_character_template
                     NOR = {
-                        has_role = general
-                        has_role = admiral
+                        has_role_of_type = general
+                        has_role_of_type = admiral
                     }
                 }
             }
@@ -1430,8 +1433,8 @@ clothes = {
                 scope:character ?= {
                     has_template = agitator_errico_malatesta
                     NOR = {
-                        has_role = general
-                        has_role = admiral
+                        has_role_of_type = general
+                        has_role_of_type = admiral
                     }
                 }
             }
@@ -1462,8 +1465,8 @@ clothes = {
                 scope:character ?= {
                     has_variable = is_stirner_var
                     NOR = {
-                        has_role = general
-                        has_role = admiral
+                        has_role_of_type = general
+                        has_role_of_type = admiral
                     }
                 }
             }
@@ -1494,8 +1497,8 @@ clothes = {
                 scope:character ?= {
                     has_variable = mazzini_var # uses variable rather than template
                     NOR = {
-                        has_role = general
-                        has_role = admiral
+                        has_role_of_type = general
+                        has_role_of_type = admiral
                     }
                 }
             }
@@ -1534,8 +1537,8 @@ clothes = {
                 scope:character ?= {
                     has_template = agitator_dmitry_ivanovich_pisarev
                     NOR = {
-                        has_role = general
-                        has_role = admiral
+                        has_role_of_type = general
+                        has_role_of_type = admiral
                     }
                 }
             }
@@ -1574,8 +1577,8 @@ clothes = {
                 scope:character ?= {
                     has_template = agitator_pierre_joseph_proudhon
                     NOR = {
-                        has_role = general
-                        has_role = admiral
+                        has_role_of_type = general
+                        has_role_of_type = admiral
                     }
                 }
             }
@@ -1606,8 +1609,8 @@ clothes = {
                 scope:character ?= {
                     has_template = chi_sun_yat_sen_character_template
                     NOR = {
-                        has_role = general
-                        has_role = admiral
+                        has_role_of_type = general
+                        has_role_of_type = admiral
                     }
                 }
             }
@@ -1688,8 +1691,8 @@ clothes = {
                 scope:character ?= {
                     has_template = fra_victor_hugo_character_template
                     NOR = {
-                        has_role = general
-                        has_role = admiral
+                        has_role_of_type = general
+                        has_role_of_type = admiral
                     }
                 }
             }
@@ -1762,8 +1765,8 @@ clothes = {
                 scope:character ?= {
                     has_template = agitator_manuel_ruiz_zorrilla
                     NOR = {
-                        has_role = general
-                        has_role = admiral
+                        has_role_of_type = general
+                        has_role_of_type = admiral
                     }
                 }
             }
@@ -1887,13 +1890,13 @@ clothes = {
                                 c:PER ?= this
                             }
                             OR = {
-                                has_role = general
+                                has_role_of_type = general
                                 AND = {
-                                    has_role = politician
+                                    has_role_of_type = politician
                                     is_interest_group_type = ig_armed_forces
                                 }
                                 AND = {
-                                    is_ruler = yes
+                                    is_ruler_of_own_country = yes
                                     home_country ?= { # Junta leaders get to wear the late uniform
                                         has_law_or_variant = law_type:law_presidential_republic
                                         country_has_voting_franchise = no
@@ -1956,7 +1959,7 @@ clothes = {
                 has_dlc_feature = ep1_cosmetics
                 scope:character ?= {
                     has_template = per_nasir_al_din_qajar_template
-                    age >= define:NCharacters|ADULT_AGE
+                    is_adult = yes
                 }
             }
         }
@@ -1991,7 +1994,7 @@ clothes = {
                 add = 10000
                 has_dlc_feature = ep1_cosmetics
                 scope:character ?= {
-                    is_ruler = yes
+                    is_ruler_of_own_country = yes
                     owner ?= {
                         NOT = { RRK_st_has_monarchy_or_variant = yes }
                         c:BIC ?= this
@@ -2060,8 +2063,8 @@ clothes = {
                         has_template = agitator_charlie_marx
                     }
                     NOR = {
-                        has_role = general
-                        has_role = admiral
+                        has_role_of_type = general
+                        has_role_of_type = admiral
                     }
                 }
             }
@@ -2083,8 +2086,8 @@ clothes = {
                 add = 90000
                 scope:character ?= {
                     NOR = {
-                        has_role = general
-                        has_role = admiral
+                        has_role_of_type = general
+                        has_role_of_type = admiral
                     }
                     has_template = BIC_amy_carmichael
                 }
@@ -2287,7 +2290,7 @@ clothes = {
             modifier = {
                 add = 90000
                 scope:character ?= {
-                    age >= define:NCharacters|ADULT_AGE
+                    is_adult = yes
                     has_template = pan_duleep_singh
                 }
             }
@@ -3348,11 +3351,11 @@ clothes = {
                     is_female = no
                     culture = { cu:rajput = this }
                     OR = {
-                        has_role = general
+                        has_role_of_type = general
                         AND = {
                             armed_forces_clothes_trigger = yes
                             politician_clothes_trigger = yes
-                            is_ruler = no
+                            is_ruler_of_own_country = no
                         }
                     }
                 }
@@ -3692,8 +3695,8 @@ clothes = {
                 add = 90000
                 scope:character ?= {
                     NOR = {
-                        has_role = general
-                        has_role = admiral
+                        has_role_of_type = general
+                        has_role_of_type = admiral
                     }
                     has_template = aus_klemens_von_metternich
                 }
@@ -4374,6 +4377,8 @@ clothes = {
                         has_template = SPA_praxedes_sagasta
                         has_template = PHI_jose_rizal
                         has_template = SPA_pablo_iglesias_posse
+                        has_template = GBR_thomas_ismay
+                        has_template = GBR_joseph_ismay
                     }
                 }
             }
@@ -4433,6 +4438,38 @@ clothes = {
                         has_template = CUB_maximo_gomez
                         has_template = CUB_antonio_maceo
                     }
+                }
+            }
+        }
+    }
+
+    historical_comte_clothes = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = civilian_coats
+                template = all_civilian_coats
+                accessory = male_civilian_coat_european_comte
+            }
+            accessory = {
+                mode = add
+                gene = waistcoats
+                template = comte_waistcoat
+                range = { 0 1 }
+            }
+            accessory = {
+                mode = add
+                gene = legwear
+                template = european_legwear_colors
+                accessory = male_legwear_european_01_black
+            }
+        }
+        weight = {
+            base = 0
+            modifier = {
+                add = 90000
+                scope:character ?= {
+                    has_template = fra_auguste_comte_character_template
                 }
             }
         }
@@ -4564,7 +4601,7 @@ clothes = {
                 mode = add
                 gene = props
                 template = cigar_and_pipes
-                range = { 0.9 1 } # For cigars only
+                accessory = male_prop_cigar_02
             }
             # headgear set in headgear file
         }
@@ -4576,7 +4613,7 @@ clothes = {
                 scope:character ?= {
                     AND = {
                         has_template = GBR_isambard_kingdom_brunel
-                        has_role = executive
+                        has_role_of_type = executive
                     }
                 }
             }
@@ -4740,8 +4777,8 @@ clothes = {
                 add = 1100
                 scope:character ?= {
                     OR = {
-                        is_ruler = yes
-                        is_heir = yes
+                        is_ruler_of_own_country = yes
+                        is_heir_of_own_country = yes
                     }
                     owner ?= {
                         RRK_st_has_monarchy_or_variant = yes
@@ -4854,7 +4891,7 @@ clothes = {
                         exists = scope:character
                         scope:character = {
                             is_female = yes
-                            is_ruler = yes
+                            is_ruler_of_own_country = yes
                         }
                     }
                 }
@@ -4899,7 +4936,7 @@ clothes = {
                 AND = {
                     monarchy_clothes_trigger = yes
                     scope:character ?= {
-                        age >= define:NCharacters|ADULT_AGE
+                        is_adult = yes
                         owner ?= {
                             NOT = {
                                 has_technology_researched = general_staff
@@ -4948,7 +4985,7 @@ clothes = {
                 AND = {
                     monarchy_clothes_trigger = yes
                     scope:character ?= {
-                        age >= define:NCharacters|ADULT_AGE
+                        is_adult = yes
                         owner ?= {
                             has_technology_researched = general_staff
                         }
@@ -4987,7 +5024,7 @@ clothes = {
                 scope:character ?= {
                     is_female = no
 
-                    age >= define:NCharacters|ADULT_AGE
+                    is_adult = yes
 
                     owner ?= {
                         OR = {
@@ -5125,7 +5162,6 @@ clothes = {
                 british_empire_clothes_trigger = no
                 french_empire_clothes_trigger = no
                 russian_empire_clothes_trigger = no
-                austrian_empire_clothes_trigger = no
                 OR = {
                     ruler_clothes_trigger = no
                     AND = {
@@ -5319,7 +5355,7 @@ clothes = {
                 }
                 OR = {
                     scope:character ?= {
-                        has_role = general
+                        has_role_of_type = general
                     }
                     AND = {
                         armed_forces_clothes_trigger = yes
@@ -5384,20 +5420,20 @@ clothes = {
                         NOT = { has_technology_researched = bolt_action_rifles }
                     }
                     OR = {
-                        has_role = general
-                        has_role = admiral
+                        has_role_of_type = general
+                        has_role_of_type = admiral
                         AND = {
                             is_interest_group_type = ig_armed_forces
-                            has_role = politician
+                            has_role_of_type = politician
                             OR = {  # A monarch shouldn't wear this, but a republican ruler can
                                 AND = {
-                                    is_ruler = no
+                                    is_ruler_of_own_country = no
                                     home_country ?= {
                                         RRK_st_has_monarchy_or_variant = yes
                                     }
                                 }
                                 AND = {
-                                    is_ruler = yes
+                                    is_ruler_of_own_country = yes
                                     home_country ?= {
                                         NOT = { RRK_st_has_monarchy_or_variant = yes }
                                     }
@@ -5405,7 +5441,7 @@ clothes = {
                             }
                         }
                         AND = {
-                            has_role = agitator
+                            has_role_of_type = agitator
                             is_interest_group_type = ig_armed_forces
                         }
                     }
@@ -5454,20 +5490,20 @@ clothes = {
                         has_technology_researched = bolt_action_rifles
                     }
                     OR = {
-                        has_role = general
-                        has_role = admiral
+                        has_role_of_type = general
+                        has_role_of_type = admiral
                         AND = {
                             is_interest_group_type = ig_armed_forces
-                            has_role = politician
+                            has_role_of_type = politician
                             OR = {  # A monarch shouldn't wear this, but a republican ruler can
                                 AND = {
-                                    is_ruler = no
+                                    is_ruler_of_own_country = no
                                     home_country ?= {
                                         RRK_st_has_monarchy_or_variant = yes
                                     }
                                 }
                                 AND = {
-                                    is_ruler = yes
+                                    is_ruler_of_own_country = yes
                                     home_country ?= {
                                         NOT = { RRK_st_has_monarchy_or_variant = yes }
                                     }
@@ -5475,7 +5511,7 @@ clothes = {
                             }
                         }
                         AND = {
-                            has_role = agitator
+                            has_role_of_type = agitator
                             is_interest_group_type = ig_armed_forces
                         }
                     }
@@ -5553,15 +5589,15 @@ clothes = {
                 add = 10000
                 american_clothes_trigger = yes
                 scope:character ?= {
-                    age >= define:NCharacters|ADULT_AGE
+                    is_adult = yes
                     is_female = no
                 }
                 OR = {
                     monarchy_clothes_trigger = yes
                     scope:character ?= {
                         OR = {
-                            has_role = general
-                            has_role = admiral
+                            has_role_of_type = general
+                            has_role_of_type = admiral
                         }
                     }
                     AND = {
@@ -5659,19 +5695,19 @@ clothes = {
                             home_country = c:USA
                             is_female = no
                             OR = {
-                                has_role = general
+                                has_role_of_type = general
                                 AND = {
                                     is_interest_group_type = ig_armed_forces
-                                    has_role = politician
+                                    has_role_of_type = politician
                                     OR = {  # A monarch shouldn't wear this, but a republican ruler can
                                         AND = {
-                                            is_ruler = no
+                                            is_ruler_of_own_country = no
                                             home_country ?= {
                                                 RRK_st_has_monarchy_or_variant = yes
                                             }
                                         }
                                         AND = {
-                                            is_ruler = yes
+                                            is_ruler_of_own_country = yes
                                             home_country ?= {
                                                 NOT = { RRK_st_has_monarchy_or_variant = yes }
                                             }
@@ -5679,7 +5715,7 @@ clothes = {
                                     }
                                 }
                                 AND = {
-                                    has_role = agitator
+                                    has_role_of_type = agitator
                                     is_interest_group_type = ig_armed_forces
                                 }
                             }
@@ -5720,11 +5756,11 @@ clothes = {
                     AND = {
                         exists = scope:character
                         scope:character = {
-                            age >= define:NCharacters|ADULT_AGE
+                            is_adult = yes
                             exists = home_country
                             home_country = c:CSA
                             OR = {
-                                has_role = general
+                                has_role_of_type = general
                                 monarchy_clothes_trigger = yes
                                 AND = {
                                     armed_forces_clothes_trigger = yes
@@ -5810,7 +5846,7 @@ clothes = {
             modifier = {
                 add = 10000
                 scope:character ?= {
-                    age >= define:NCharacters|ADULT_AGE
+                    is_adult = yes
                 }
                 OR = {
                     AND = {
@@ -5868,7 +5904,7 @@ clothes = {
             modifier = {
                 add = 10000
                 scope:character ?= {
-                    age >= define:NCharacters|ADULT_AGE
+                    is_adult = yes
                     owner ?= {
                         NOT = {
                             has_technology_researched = repeaters
@@ -5925,7 +5961,7 @@ clothes = {
                 OR = {
                     AND = {
                         scope:character ?= {
-                            age >= define:NCharacters|ADULT_AGE
+                            is_adult = yes
                             owner ?= {
                                 has_technology_researched = repeaters
                             }
@@ -5947,6 +5983,29 @@ clothes = {
                         french_empire_clothes_pop_trigger = yes
                         officers_clothes_pop_trigger = yes
                     }
+                }
+            }
+            modifier = {
+                add  = 10
+                scope:character ?= {
+                    is_adult = yes
+                    OR = {
+                        OR = {
+                            has_role_of_type = general
+                            has_role_of_type = admiral
+                        }
+                        AND = {
+                            armed_forces_clothes_trigger = yes
+                            OR = {
+                                politician_clothes_trigger = yes
+                                junta_clothes_trigger = yes
+                            }
+                        }
+                    }
+                    owner ?= {
+                        country_has_primary_culture = cu:japanese
+                    }
+                    japanese_restoration_trigger = no
                 }
             }
         }
@@ -5973,6 +6032,20 @@ clothes = {
             modifier = {
                 add = 10000
                 french_empire_clothes_pop_trigger = yes
+                OR = {
+                    soldier_clothes_pop_trigger = yes
+                    officers_clothes_pop_trigger = yes
+                }
+            }
+            modifier = {
+                add = 10
+                scope:pop ?= {
+                    culture = cu:japanese
+                    owner ?= {
+                        country_has_primary_culture = cu:japanese
+                    }
+                    japanese_restoration_trigger = yes
+                }
                 OR = {
                     soldier_clothes_pop_trigger = yes
                     officers_clothes_pop_trigger = yes
@@ -6028,13 +6101,13 @@ clothes = {
                 has_dlc_feature = ep1_cosmetics
                 has_dlc_feature = voice_of_the_people_content
                 scope:character ?= {
-                    age >= define:NCharacters|ADULT_AGE
+                    is_adult = yes
                     is_female = no
                 }
                 french_empire_clothes_trigger = yes
                 OR = {
                     scope:character ?= {
-                        has_role = general
+                        has_role_of_type = general
                     }
                     AND = {
                         armed_forces_clothes_trigger = yes
@@ -6208,11 +6281,11 @@ clothes = {
                             home_country ?= c:PER
                         }
                     }
-                    is_ruler = no
+                    is_ruler_of_own_country = no
                     OR = {
-                        has_role = general
+                        has_role_of_type = general
                         AND = {
-                            has_role = politician
+                            has_role_of_type = politician
                             is_interest_group_type = ig_armed_forces
                         }
                     }
@@ -6269,7 +6342,7 @@ clothes = {
                         c:EGY = this
                     }
                     OR = {
-                        has_role = general
+                        has_role_of_type = general
                         AND = {
                             armed_forces_clothes_trigger = yes
                             OR = {
@@ -6285,12 +6358,12 @@ clothes = {
                 exists = c:ZAN
                 scope:character ?= {
                     is_female = no
-                    is_ruler = no
+                    is_ruler_of_own_country = no
                     owner ?= {
                         c:ZAN = this
                     }
                     OR = {
-                        has_role = general
+                        has_role_of_type = general
                         AND = {
                             armed_forces_clothes_trigger = yes
                             OR = {
@@ -6310,12 +6383,12 @@ clothes = {
                     OR = {
                         AND = {
                             is_interest_group_type = ig_devout
-                            has_role = politician
-                            is_ruler = no
-                            is_heir = no
+                            has_role_of_type = politician
+                            is_ruler_of_own_country = no
+                            is_heir_of_own_country = no
                         }
                         AND = {
-                            is_ruler = yes
+                            is_ruler_of_own_country = yes
                             owner = {
                                 has_law_or_variant = law_type:law_theocracy
                             }
@@ -6362,7 +6435,7 @@ clothes = {
                         c:EGY = this
                     }
                     OR = {
-                        has_role = general
+                        has_role_of_type = general
                         AND = {
                             armed_forces_clothes_trigger = yes
                             OR = {
@@ -6432,7 +6505,7 @@ clothes = {
             modifier = {
                 add = 10000
                 scope:character ?= {
-                    age >= define:NCharacters|ADULT_AGE
+                    is_adult = yes
                     owner ?= {
                         NOT = {
                             has_technology_researched = general_staff # Changeover to the double-breasted uniform happened around the early 1850s
@@ -6495,7 +6568,7 @@ clothes = {
             modifier = {
                 add = 11000
                 scope:character ?= {
-                    age >= define:NCharacters|ADULT_AGE
+                    is_adult = yes
                     owner ?= {
                         has_technology_researched = general_staff # Changeover to the double-breasted uniform happened around the early 1850s
                     }
@@ -6562,7 +6635,7 @@ clothes = {
             modifier = {
                 add = 12000
                 scope:character ?= {
-                    age >= define:NCharacters|ADULT_AGE
+                    is_adult = yes
                     owner ?= {
                         has_technology_researched = bolt_action_rifles # Around the time of Tsar Nicholas II
                     }
@@ -6611,7 +6684,7 @@ clothes = {
             modifier = {
                 add = 10000
                 scope:character ?= {
-                    age >= define:NCharacters|ADULT_AGE
+                    is_adult = yes
                     owner ?= {
                         NOT = {
                             has_technology_researched = general_staff # Changeover to the double-breasted uniform happened around the early 1850s
@@ -6666,7 +6739,7 @@ clothes = {
             modifier = {
                 add = 10000
                 scope:character ?= {
-                    age >= define:NCharacters|ADULT_AGE
+                    is_adult = yes
                     owner ?= {
                         has_technology_researched = general_staff # Changeover to the double-breasted uniform happened around the early 1850s
                     }
@@ -6720,7 +6793,7 @@ clothes = {
                 add = 15000
                 has_dlc_feature = ep1_cosmetics
                 scope:character ?= {
-                    age >= define:NCharacters|ADULT_AGE
+                    is_adult = yes
                     culture = {
                         OR = {
                             has_discrimination_trait = heritage_caucasian
@@ -6730,7 +6803,7 @@ clothes = {
                 }
                 OR = {
                     scope:character ?= {
-                        is_ruler = yes
+                        is_ruler_of_own_country = yes
                         owner ?= {
                             RRK_st_has_monarchy_or_variant = yes
                         }
@@ -6791,20 +6864,20 @@ clothes = {
                 add = 20000
                 has_dlc_feature = ep1_cosmetics
                 scope:character ?= {
-                    age >= define:NCharacters|ADULT_AGE
+                    is_adult = yes
                     culture = {
                         has_discrimination_trait = heritage_east_slavic
                     }
                     owner ?= {
                         c:RUS ?= this
                     }
-                    is_ruler = no
-                    is_heir = no
+                    is_ruler_of_own_country = no
+                    is_heir_of_own_country = no
                     OR = {
                         has_trait = social_bandit
                         has_trait = bandit
                         AND = {
-                            has_role = general
+                            has_role_of_type = general
                             OR = {
                                 has_trait = celebrity_commander
                                 has_trait = pillager
@@ -7107,7 +7180,7 @@ clothes = {
                 OR = {
                     AND = {
                         scope:character ?= {
-                            age >= define:NCharacters|ADULT_AGE
+                            is_adult = yes
                             exists = c:BRZ
                             home_country ?= {
                                 OR = {
@@ -7232,7 +7305,7 @@ clothes = {
         }
     }
 
-    japanese_military_clothes = {
+    japanese_pre_restoration_military_clothes = {
         dna_modifiers = {
             accessory = {
                 mode = add
@@ -7256,55 +7329,20 @@ clothes = {
         weight = {
             base = 0
             modifier = {
-                add  = 1100
-                OR = {
-                    scope:pop ?= {
-                        OR = {
-                            owner ?= {
-                                c:JAP ?= this
-                                NOT = { has_variable = meiji_restoration_complete }
-                            }
-                            owner ?= {
-                                NOT = { c:JAP ?= this }
-                            }
-                        }
+                add = 11000
+                scope:pop ?= {
+                    culture = cu:japanese
+                    is_pop_type = soldiers
+                    owner ?= {
+                        country_has_primary_culture = cu:japanese
                     }
-                    scope:character ?= {
-                        OR = {
-                            owner ?= {
-                                c:JAP ?= this
-                                NOT = { has_variable = meiji_restoration_complete }
-                            }
-                            owner ?= {
-                                NOT = { c:JAP ?= this }
-                            }
-                        }
-                    }
-                }
-                OR = {
-                    AND = {
-                        exists = scope:pop
-                        scope:pop = {
-                            culture = cu:japanese
-                        }
-                        OR = {
-                            soldier_clothes_pop_trigger = yes
-                            officers_clothes_pop_trigger = yes
-                        }
-                    }
-                    AND = {
-                        exists = scope:character
-                        scope:character = {
-                            has_culture = cu:japanese
-                            monarchy_clothes_trigger = yes
-                        }
-                    }
+                    japanese_restoration_trigger = no
                 }
             }
         }
     }
 
-    japanese_officers_clothes = {
+    japanese_officers_clothes_old = {
         dna_modifiers = {
             accessory = {
                 mode = add
@@ -7328,23 +7366,33 @@ clothes = {
                 mode = add
                 gene = top_layer
                 template = japanese_top_layer
-                range = { 0 1 } # For the randomness to work correctly
+                range = { 0 0 } # For the randomness to work correctly
             }
         }
         weight = {
             base = 0
             modifier = {
-                add  = 1200
-                 AND = {
-                    japanese_clothes_trigger = yes
+                add = 11000
+                NOT = { has_dlc_feature = ep2_cosmetics }
+                scope:pop ?= {
+                    culture = cu:japanese
+                    is_pop_type = officers
+                    owner ?= {
+                        country_has_primary_culture = cu:japanese
+                    }
+                    japanese_restoration_trigger = no
+                }
+            }   
+
+            modifier = {
+                add = 1200
+                NOT = { has_dlc_feature = ep2_cosmetics }
+                scope:character ?= {
+                    is_adult = yes
                     OR = {
-                        AND = {
-                            military_clothes_trigger = yes
-                            scope:character ?= {
-                                owner ?= {
-                                    NOT = { has_variable = meiji_restoration_complete }
-                                }
-                            }
+                        OR = {
+                            has_role_of_type = general
+                            has_role_of_type = admiral
                         }
                         AND = {
                             armed_forces_clothes_trigger = yes
@@ -7352,10 +7400,945 @@ clothes = {
                                 politician_clothes_trigger = yes
                                 junta_clothes_trigger = yes
                             }
-                            scope:character ?= {
-                                NOT = { has_ideology = ideology:ideology_traditionalist }
-                                owner ?= {
-                                    NOT = { has_variable = meiji_restoration_complete }
+                        }
+                    }
+                    owner ?= {
+                        country_has_primary_culture = cu:japanese
+                    }
+                    japanese_restoration_trigger = no
+                }
+            }
+        }
+    }
+
+    japanese_pre_restoration_officers_clothes = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = outfits
+                template = japanese_common_outfits
+                range = { 0 1 } # For the randomness to work correctly
+            }
+            accessory = {
+                mode = add
+                gene = legwear
+                template = japanese_legwear
+                range = { 0 1 } # For the randomness to work correctly
+            }
+            accessory = {
+                mode = add
+                gene = belts
+                template = japanese_belts
+                range = { 0 1 } # For the randomness to work correctly
+            }
+            accessory = {
+                mode = add
+                gene = top_layer
+                template = ep2_character_top_layers
+                range = { 0 1 }
+            }
+        }
+        weight = {
+            base = 0
+            modifier = {
+                add  = 11000
+                has_dlc_feature = ep2_cosmetics
+                scope:pop ?= {
+                    culture = cu:japanese
+                    is_pop_type = officers
+                    owner ?= {
+                        country_has_primary_culture = cu:japanese
+                    }
+                    japanese_restoration_trigger = no
+                }
+            }   
+
+            modifier = {
+                add  = 1200
+                has_dlc_feature = ep2_cosmetics
+                scope:character ?= {
+                    is_adult = yes
+                    OR = {
+                        OR = {
+                            has_role_of_type = general
+                            has_role_of_type = admiral
+                        }
+                        AND = {
+                            armed_forces_clothes_trigger = yes
+                            OR = {
+                                politician_clothes_trigger = yes
+                                junta_clothes_trigger = yes
+                            }
+                        }
+                    }
+                    owner ?= {
+                        country_has_primary_culture = cu:japanese
+                    }
+                    japanese_restoration_trigger = no
+                }
+            }
+        }
+    }
+
+    # FREE FOR BASE GAME - NOT TO BE LOCKED BEHIND ANY DLC
+    japanese_meiji_1886_soldier_clothes = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = coats
+                template = japanese_meiji_1886_uniforms
+                range = { 0 0.5 }
+            }
+            accessory = {
+                mode = add
+                gene = legwear
+                template = european_legwear_colors
+                accessory = male_legwear_european_01_black
+            }
+            accessory = {
+                mode = add
+                gene = belts
+                template = generic_belts
+                accessory = male_belt_generic_01
+            }
+            accessory = {
+                mode = add
+                gene = epaulettes
+                template = all_epaulettes
+                accessory = male_epaulettes_02
+            }
+            accessory = {
+                mode = add
+                gene = sashes
+                template = soldier_bedroll_sash
+                accessory = male_sashes_md_jap_bedroll_white
+            }
+        }
+        weight = {
+            base = 0
+            modifier = {
+                add = 12000
+
+                scope:pop ?= {
+                    is_pop_type = soldiers
+                    owner ?= {
+                        country_has_primary_culture = cu:japanese
+                        has_technology_researched = rifling
+                    }
+                    japanese_restoration_trigger = yes
+                }
+            }
+        }
+    }
+
+    japanese_meiji_1886_officer_clothes = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = coats
+                template = japanese_meiji_1886_uniforms
+                range = { 0.5 1 }
+            }
+            accessory = {
+                mode = add
+                gene = legwear
+                template = european_legwear_colors
+                accessory = male_legwear_european_01_black
+            }
+            accessory = {
+                mode = add
+                gene = belts
+                template = generic_belts
+                accessory = male_belt_generic_01
+            }
+            accessory = {
+                mode = add
+                gene = epaulettes
+                template = all_epaulettes
+                accessory = male_epaulettes_02
+            }
+        }
+        weight = {
+            base = 0
+            modifier = {
+                add  = 12000
+
+                scope:pop ?= {
+                    is_pop_type = officers
+                    owner ?= {
+                        country_has_primary_culture = cu:japanese
+                        has_technology_researched = rifling
+                    }
+                    japanese_restoration_trigger = yes
+                }
+            }
+        }
+    }
+
+    # FREE FOR BASE GAME - NOT TO BE LOCKED BEHIND ANY DLC
+    japanese_meiji_1886_commander_clothes = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = coats
+                template = japanese_meiji_commander_uniforms
+                range = { 0 1 }
+            }
+            accessory = {
+                mode = add
+                gene = legwear
+                template = european_legwear_colors
+                accessory = male_legwear_european_01_black
+            }
+            accessory = {
+                mode = add
+                gene = belts
+                template = generic_belts
+                accessory = male_belt_generic_01
+            }
+            accessory = {
+                mode = add
+                gene = epaulettes
+                template = all_epaulettes
+                accessory = male_epaulettes_02
+            }
+            accessory = {
+                mode = add
+                gene = top_layer
+                template = gloves
+                accessory = male_prop_md_gloves_white
+            }
+            accessory = {
+                mode = add
+                gene = sashes
+                template = male_sashes_meiji_red
+                range = { 0 1 }
+            }
+        }
+        weight = {
+            base = 0
+            modifier = {
+                add  = 12000
+
+                scope:character ?= {
+                    is_adult = yes
+                    NAND = {
+                        has_role_of_type = ruler
+                        owner ?= { 
+                            RRK_st_has_monarchy = yes
+                            has_variable = japan_restoration_complete
+                        }
+                    }
+                    OR = {
+                        has_role_of_type = general
+                        AND = {
+                            armed_forces_clothes_trigger = yes
+                            politician_clothes_trigger = yes
+                        }
+                    }
+                    owner ?= {
+                        country_has_primary_culture = cu:japanese
+                        has_technology_researched = rifling
+                    }
+                    japanese_restoration_trigger = yes
+                }
+            }
+        }
+    }
+
+    # FREE FOR BASE GAME - NOT TO BE LOCKED BEHIND ANY DLC
+    japanese_meiji_1886_winter_military_clothes = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = coats
+                template = japanese_meiji_1886_winter_uniforms
+                range = { 0 1 }
+            }
+            accessory = {
+                mode = add
+                gene = legwear
+                template = european_legwear_colors
+                accessory = male_legwear_european_01_black
+            }
+            accessory = {
+                mode = add
+                gene = belts
+                template = generic_belts
+                accessory = male_belt_generic_01
+            }
+            accessory = {
+                mode = add
+                gene = epaulettes
+                template = no_epaulette
+                range = { 0 1 }
+            }
+            accessory = {
+                mode = add
+                gene = top_layer
+                template = gloves
+                range = { 0 1 }
+            }
+        }
+        weight = {
+            base = 0
+            modifier = {
+                add  = 12500
+
+                scope:character ?= {
+                    is_adult = yes
+                    NOT = { has_role_of_type = ruler }
+                    has_role_of_type = general
+                    OR = {
+                        is_in_cold_land_hq_trigger = yes
+                        AND = {
+                            is_in_hot_land_hq_trigger = no
+                            OR = {
+                                month < 3
+                                month > 10
+                            }
+                        }
+                    }
+                    owner ?= {
+                        country_has_primary_culture = cu:japanese
+                    }
+                    japanese_restoration_trigger = yes
+                }
+            }
+        }
+    }
+
+    # FREE FOR BASE GAME - NOT TO BE LOCKED BEHIND ANY DLC
+    japanese_meiji_1904_soldier_military_clothes = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = legwear
+                template = european_late_military_legwear
+                range = { 0 1 }
+            }
+            accessory = {
+                mode = add
+                gene = coats
+                template = japanese_meiji_1904_uniforms
+                accessory = male_coat_md_jap_coat_soldier_pink_khaki
+            }
+            accessory = {
+                mode = add
+                gene = belts
+                template = late_military_belts
+                range = { 0 1 }
+            }
+            accessory = {
+                mode = add
+                gene = epaulettes
+                template = no_epaulette
+                range = { 0 1 }
+            }
+            accessory = {
+                mode = add
+                gene = sashes
+                template = soldier_bedroll_sash
+                accessory = male_sashes_md_jap_bedroll_black
+            }
+        }
+        weight = {
+            base = 0
+            modifier = {
+                add = 13000
+
+                scope:pop ?= {
+                    is_pop_type = soldiers
+                    owner ?= {
+                        country_has_primary_culture = cu:japanese
+                        has_technology_researched = bolt_action_rifles
+                    }
+                    japanese_restoration_trigger = yes
+                }
+            }
+        }
+    }
+
+    # FREE FOR BASE GAME - NOT TO BE LOCKED BEHIND ANY DLC
+    japanese_meiji_1904_officer_military_clothes = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = coats
+                template = japanese_meiji_1904_uniforms
+                accessory = male_coat_md_jap_coat_officer_pink_khaki
+            }
+            accessory = {
+                mode = add
+                gene = legwear
+                template = european_late_military_legwear
+                range = { 0 1 }
+            }   
+            accessory = {
+                mode = add
+                gene = belts
+                template = late_military_belts
+                range = { 0 1 }
+            }
+            accessory = {
+                mode = add
+                gene = epaulettes
+                template = no_epaulette
+                range = { 0 1 }
+            }
+        }
+        weight = {
+            base = 0
+            modifier = {
+                add  = 13000
+
+                scope:pop ?= {
+                    is_pop_type = officers
+                    owner ?= {
+                        country_has_primary_culture = cu:japanese
+                        has_technology_researched = bolt_action_rifles
+                    }
+                    japanese_restoration_trigger = yes
+                }
+            }
+            modifier = {
+                add  = 13000
+
+                scope:character ?= {
+                    is_adult = yes
+                    NAND = { 
+                        has_role_of_type = ruler
+                        owner ?= { 
+                            RRK_st_has_monarchy = yes
+                            has_variable = japan_restoration_complete
+                        }
+                    }
+                    OR = {
+                        has_role_of_type = general
+                        AND = {
+                            armed_forces_clothes_trigger = yes
+                            politician_clothes_trigger = yes
+                        }
+                    }
+                    owner ?= {
+                        country_has_primary_culture = cu:japanese
+                        has_technology_researched = bolt_action_rifles
+                    }
+                    japanese_restoration_trigger = yes
+                }
+            }
+        }
+    }
+
+    # FREE FOR BASE GAME - NOT TO BE LOCKED BEHIND ANY DLC
+    japanese_meiji_1911_soldier_military_clothes = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = coats
+                template = japanese_meiji_1911_uniforms
+                accessory = male_coat_md_jap_coat_soldier_khaki
+            }
+            accessory = {
+                mode = add
+                gene = legwear
+                template = european_late_military_legwear
+                range = { 0 1 }
+            }
+            accessory = {
+                mode = add
+                gene = belts
+                template = late_military_belts
+                range = { 0 1 }
+            }
+            accessory = {
+                mode = add
+                gene = epaulettes
+                template = no_epaulette
+                range = { 0 1 }
+            }
+            accessory = {
+                mode = add
+                gene = sashes
+                template = soldier_bedroll_sash
+                accessory = male_sashes_md_jap_bedroll_khaki
+            }
+        }
+        weight = {
+            base = 0
+            modifier = {
+                add  = 13500
+
+                scope:pop ?= {
+                    is_pop_type = soldiers
+                    owner ?= {
+                        country_has_primary_culture = cu:japanese
+                        has_technology_researched = automatic_machine_guns
+                    }
+                    japanese_restoration_trigger = yes
+                }
+            }
+        }
+    }
+
+    # FREE FOR BASE GAME - NOT TO BE LOCKED BEHIND ANY DLC
+    japanese_meiji_1911_officer_military_clothes = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = coats
+                template = japanese_meiji_1911_uniforms
+                accessory = male_coat_md_jap_coat_officer_khaki
+            }
+            accessory = {
+                mode = add
+                gene = legwear
+                template = european_late_military_legwear
+                range = { 0 1 }
+            }
+            accessory = {
+                mode = add
+                gene = belts
+                template = late_military_belts
+                range = { 0 1 }
+            }
+            accessory = {
+                mode = add
+                gene = epaulettes
+                template = no_epaulette
+                range = { 0 1 }
+            }
+        }
+        weight = {
+            base = 0
+            modifier = {
+                add  = 13500
+
+                scope:pop ?= {
+                    culture = cu:japanese
+                    is_pop_type = officers
+                    owner ?= {
+                        country_has_primary_culture = cu:japanese
+                        has_technology_researched = automatic_machine_guns
+                    }
+                    japanese_restoration_trigger = yes
+                }
+            }
+            modifier = {
+                add  = 13500
+
+                scope:character ?= {
+                    is_adult = yes
+                    NAND = { 
+                        has_role_of_type = ruler
+                        owner ?= { 
+                            RRK_st_has_monarchy = yes
+                            has_variable = japan_restoration_complete
+                        }
+                    }
+                    OR = {
+                        has_role_of_type = general
+                        AND = {
+                            armed_forces_clothes_trigger = yes
+                            politician_clothes_trigger = yes
+                        }
+                    }
+                    owner ?= {
+                        country_has_primary_culture = cu:japanese
+                        has_technology_researched = automatic_machine_guns
+                    }
+                    japanese_restoration_trigger = yes
+                }
+            }
+        }
+    }
+
+    # FREE FOR BASE GAME - NOT TO BE LOCKED BEHIND ANY DLC
+    japanese_showa_1938_soldier_military_clothes = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = coats
+                template = japanese_showa_1938_uniforms
+                range = { 0 0.625 }
+            }
+            accessory = {
+                mode = add
+                gene = legwear
+                template = european_late_military_legwear
+                range = { 0 1 }
+            }   
+            accessory = {
+                mode = add
+                gene = belts
+                template = late_military_belts
+                range = { 0 1 }
+            }
+            accessory = {
+                mode = add
+                gene = epaulettes
+                template = all_epaulettes
+                accessory = male_epaulettes_08
+            }
+        }
+        weight = {
+            base = 0
+            modifier = {
+                add  = 14000
+
+                scope:pop ?= {
+                    is_pop_type = soldiers
+                    owner ?= {
+                        country_has_primary_culture = cu:japanese
+                        OR = {
+                            has_technology_researched = chemical_warfare
+                            has_technology_researched = concrete_fortifications
+                            has_technology_researched = military_aviation
+                            has_technology_researched = flamethrowers
+                            has_technology_researched = stormtroopers
+                            has_technology_researched = nco_training
+                        }
+                    }
+                    japanese_restoration_trigger = yes
+                }
+            }
+        }
+    }
+
+    # FREE FOR BASE GAME - NOT TO BE LOCKED BEHIND ANY DLC
+    japanese_showa_1938_officer_military_clothes = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = coats
+                template = japanese_showa_1938_uniforms
+                range = { 0.625 1 }
+            }
+            accessory = {
+                mode = add
+                gene = legwear
+                template = european_late_military_legwear
+                range = { 0 1 }
+            }   
+            accessory = {
+                mode = add
+                gene = belts
+                template = late_military_belts
+                range = { 0 1 }
+            }
+            accessory = {
+                mode = add
+                gene = epaulettes
+                template = all_epaulettes
+                accessory = male_epaulettes_08
+            }
+        }
+        weight = {
+            base = 0
+            modifier = {
+                add  = 14000
+
+                scope:pop ?= {
+                    is_pop_type = officers
+                    owner ?= {
+                        country_has_primary_culture = cu:japanese
+                        OR = {
+                            has_technology_researched = chemical_warfare
+                            has_technology_researched = concrete_fortifications
+                            has_technology_researched = military_aviation
+                            has_technology_researched = flamethrowers
+                            has_technology_researched = stormtroopers
+                            has_technology_researched = nco_training
+                        }
+                    }
+                    japanese_restoration_trigger = yes
+                }
+            }
+            modifier = {
+                add  = 14000
+
+                scope:character ?= {
+                    is_adult = yes
+                    NAND = { 
+                        has_role_of_type = ruler
+                        owner ?= { 
+                            RRK_st_has_monarchy = yes
+                            has_variable = japan_restoration_complete
+                        }
+                    }
+                    OR = {
+                        has_role_of_type = general
+                        AND = {
+                            armed_forces_clothes_trigger = yes
+                            politician_clothes_trigger = yes
+                        }
+                    }
+                    owner ?= {
+                        country_has_primary_culture = cu:japanese
+                        OR = {
+                            has_technology_researched = chemical_warfare
+                            has_technology_researched = concrete_fortifications
+                            has_technology_researched = military_aviation
+                            has_technology_researched = flamethrowers
+                            has_technology_researched = stormtroopers
+                            has_technology_researched = nco_training
+                        }
+                    }
+                    japanese_restoration_trigger = yes
+                }
+            }
+        }
+    }
+
+    # FREE FOR BASE GAME - NOT TO BE LOCKED BEHIND ANY DLC
+    japanese_meiji_admiral_rank1_clothes = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = coats
+                template = japanese_meiji_admiral
+                range = { 0 0.25 }
+            }
+            accessory = {
+                mode = add
+                gene = legwear
+                template = european_legwear_colors
+                accessory = male_legwear_european_01_black
+            }
+            accessory = {
+                mode = add
+                gene = belts
+                template = generic_belts
+                accessory = male_belt_generic_01
+            }
+            accessory = {
+                mode = add
+                gene = epaulettes
+                template = all_epaulettes
+                accessory = male_epaulettes_04
+            }
+        }
+        weight = {
+            base = 0
+            modifier = {
+                add  = 12000
+
+                scope:character ?= {
+                    is_adult = yes
+                    has_role_of_type = admiral
+                    NOR = { 
+                        has_role_of_type = ruler
+                        has_role_of_type = heir
+                        has_role_of_type = politician
+                    }
+                    owner ?= {
+                        country_has_primary_culture = cu:japanese
+                    }
+                    japanese_restoration_trigger = yes
+
+                    commander_rank = 1
+                }
+            }
+        }
+    }
+    # FREE FOR BASE GAME - NOT TO BE LOCKED BEHIND ANY DLC
+    japanese_meiji_admiral_rank2_clothes = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = coats
+                template = japanese_meiji_admiral
+                range = { 0.25 0.5 }
+            }
+            accessory = {
+                mode = add
+                gene = legwear
+                template = european_legwear_colors
+                accessory = male_legwear_european_01_black
+            }
+            accessory = {
+                mode = add
+                gene = belts
+                template = generic_belts
+                accessory = male_belt_generic_01
+            }
+            accessory = {
+                mode = add
+                gene = epaulettes
+                template = all_epaulettes
+                accessory = male_epaulettes_04
+            }
+        }
+        weight = {
+            base = 0
+            modifier = {
+                add  = 12000
+
+                scope:character ?= {
+                    is_adult = yes
+                    has_role_of_type = admiral
+                    NOR = { 
+                        has_role_of_type = ruler
+                        has_role_of_type = heir
+                        has_role_of_type = politician
+                    }
+                    owner ?= {
+                        country_has_primary_culture = cu:japanese
+                    }
+                    japanese_restoration_trigger = yes
+                    
+                    commander_rank = 2
+                }
+            }
+        }
+    }
+    # FREE FOR BASE GAME - NOT TO BE LOCKED BEHIND ANY DLC
+    japanese_meiji_admiral_rank3_clothes = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = coats
+                template = japanese_meiji_admiral
+                range = { 0.5 0.75 }
+            }
+            accessory = {
+                mode = add
+                gene = legwear
+                template = european_legwear_colors
+                accessory = male_legwear_european_01_black
+            }
+            accessory = {
+                mode = add
+                gene = belts
+                template = generic_belts
+                accessory = male_belt_generic_01
+            }
+            accessory = {
+                mode = add
+                gene = epaulettes
+                template = all_epaulettes
+                accessory = male_epaulettes_04
+            }
+        }
+        weight = {
+            base = 0
+            modifier = {
+                add  = 12000
+
+                scope:character ?= {
+                    is_adult = yes
+                    has_role_of_type = admiral
+                    NOR = { 
+                        has_role_of_type = ruler
+                        has_role_of_type = heir
+                        has_role_of_type = politician
+                    }
+                    owner ?= {
+                        country_has_primary_culture = cu:japanese
+                    }
+                    japanese_restoration_trigger = yes
+                    
+                    commander_rank = 3
+                }
+            }
+        }
+    }
+    # FREE FOR BASE GAME - NOT TO BE LOCKED BEHIND ANY DLC
+    japanese_meiji_admiral_rank4_clothes = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = coats
+                template = japanese_meiji_admiral
+                range = { 0.75 1 }
+            }
+            accessory = {
+                mode = add
+                gene = legwear
+                template = european_legwear_colors
+                accessory = male_legwear_european_01_black
+            }
+            accessory = {
+                mode = add
+                gene = belts
+                template = generic_belts
+                accessory = male_belt_generic_01
+            }
+            accessory = {
+                mode = add
+                gene = epaulettes
+                template = all_epaulettes
+                accessory = male_epaulettes_04
+            }
+        }
+        weight = {
+            base = 0
+            modifier = {
+                add  = 12000
+
+                scope:character ?= {
+                    is_adult = yes
+                    has_role_of_type = admiral
+                    NOR = { 
+                        has_role_of_type = ruler
+                        has_role_of_type = heir
+                        has_role_of_type = politician
+                    }
+                    owner ?= {
+                        country_has_primary_culture = cu:japanese
+                    }
+                    japanese_restoration_trigger = yes
+                    
+                    commander_rank = 4
+                }
+            }
+        }
+    }
+
+    salty_sailor_clothes = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = coats
+                template = EP2_coats
+                accessory = male_outfits_naval_01
+            }
+            accessory = {
+                mode = add
+                gene = legwear
+                template = male_legwear_navy
+                range = { 0 1 }
+            }
+        }
+        weight = {
+            base = 0
+            modifier = {
+                add  = 14000
+                has_dlc_feature = ep2_cosmetics
+                scope:pop ?= {
+                    OR = {
+                        is_pop_type = soldiers
+                        is_pop_type = laborers
+                    }
+                    workplace ?= {
+                        OR = {
+                            is_building_type = building_naval_fortification
+                            is_building_type = building_naval_administration
+                            is_building_type = building_naval_logistics_center
+                        }
+                    }
+                    OR = {
+                        AND = {
+                            owner ?= {
+                                country_has_primary_culture = cu:japanese
+                            }
+                            japanese_restoration_trigger = yes
+                        }
+                        owner ?= {
+                            any_primary_culture = {
+                                OR = {
+                                    has_discrimination_trait_group = heritage_group_european
+                                    has_discrimination_trait = heritage_african_diaspora
                                 }
                             }
                         }
@@ -7406,7 +8389,7 @@ clothes = {
                 add = 10000
                 has_dlc_feature = ip3_cosmetics
                 scope:character ?= {
-                    age >= define:NCharacters|ADULT_AGE
+                    is_adult = yes
                     home_country ?= {
                         NOT = {
                             has_technology_researched = general_staff
@@ -7472,7 +8455,7 @@ clothes = {
                 add = 10000
                 has_dlc_feature = ip3_cosmetics
                 scope:character ?= {
-                    age >= define:NCharacters|ADULT_AGE
+                    is_adult = yes
                     home_country ?= {
                         has_technology_researched = general_staff
                         NOT = {
@@ -7639,7 +8622,7 @@ clothes = {
                 add = 20000
                 has_dlc_feature = ip3_cosmetics
                 scope:character ?= {
-                    age >= define:NCharacters|ADULT_AGE
+                    is_adult = yes
                     home_country ?= {
                         has_technology_researched = automatic_machine_guns
                     }
@@ -7709,7 +8692,7 @@ clothes = {
                 add = 30000
                 has_dlc_feature = ip3_cosmetics
                 scope:character ?= {
-                    age >= define:NCharacters|ADULT_AGE
+                    is_adult = yes
                     home_country ?= {
                         has_technology_researched = automatic_machine_guns
                     }
@@ -7981,7 +8964,7 @@ clothes = {
                 add = 15000
                 has_dlc_feature = ip3_cosmetics
                 scope:character ?= {
-                    age >= define:NCharacters|ADULT_AGE
+                    is_adult = yes
                     OR = {
                         culture ?= { cu:hungarian ?= this }
                         home_country ?= { c:HUN ?= this }
@@ -8068,7 +9051,7 @@ clothes = {
                 add = 20000
                 has_dlc_feature = ip3_cosmetics
                 scope:character ?= {
-                    age >= define:NCharacters|ADULT_AGE
+                    is_adult = yes
                     home_country ?= {
                         has_technology_researched = automatic_machine_guns
                     }
@@ -8147,7 +9130,7 @@ clothes = {
                 add = 15000
                 has_dlc_feature = ip3_cosmetics
                 scope:character ?= {
-                    age >= define:NCharacters|ADULT_AGE
+                    is_adult = yes
                     home_country ?= {
                         NOT = {
                             has_technology_researched = automatic_machine_guns
@@ -8221,7 +9204,7 @@ clothes = {
                 add = 20000
                 has_dlc_feature = ip3_cosmetics
                 scope:character ?= {
-                    age >= define:NCharacters|ADULT_AGE
+                    is_adult = yes
                     home_country ?= {
                         has_technology_researched = automatic_machine_guns
                     }
@@ -8286,7 +9269,7 @@ clothes = {
                 add = 30000
                 has_dlc_feature = ip3_cosmetics
                 scope:character ?= {
-                    age >= define:NCharacters|ADULT_AGE
+                    is_adult = yes
                     home_country ?= {
                         has_technology_researched = automatic_machine_guns
                     }
@@ -8530,7 +9513,7 @@ clothes = {
             modifier = {
                 add = 10000
                 scope:character ?= {
-                    age >= define:NCharacters|ADULT_AGE
+                    is_adult = yes
                 }
                 bulgarian_clothes_trigger = yes
                 has_dlc_feature = ip3_cosmetics
@@ -8598,7 +9581,7 @@ clothes = {
             modifier = {
                 add = 10000
                 scope:character ?= {
-                    age >= define:NCharacters|ADULT_AGE
+                    is_adult = yes
                 }
                 bulgarian_clothes_trigger = yes
                 has_dlc_feature = ip3_cosmetics
@@ -8667,7 +9650,7 @@ clothes = {
             modifier = {
                 add = 11000
                 scope:character ?= {
-                    age >= define:NCharacters|ADULT_AGE
+                    is_adult = yes
                 }
                 bulgarian_clothes_trigger = yes
                 has_dlc_feature = ip3_cosmetics
@@ -8955,7 +9938,7 @@ clothes = {
             modifier = {
                 add = 10000
                 scope:character ?= {
-                    age >= define:NCharacters|ADULT_AGE
+                    is_adult = yes
                 }
                 OR = {
                     serbian_clothes_trigger = yes
@@ -8965,7 +9948,7 @@ clothes = {
                 scope:character ?= {
                     OR = {
                         AND = {
-                            has_role = politician
+                            has_role_of_type = politician
                             is_interest_group_type = ig_rural_folk
                             owner ?= {
                                 NOT = {
@@ -8974,7 +9957,7 @@ clothes = {
                             }
                         }
                         AND = {
-                            has_role = agitator
+                            has_role_of_type = agitator
                             OR = {
                                 has_ideology = ideology:ideology_traditionalist
                                 has_ideology = ideology:ideology_traditionalist_minoritarian
@@ -9071,7 +10054,7 @@ clothes = {
             modifier = {
                 add = 10000
                 scope:character ?= {
-                    age >= define:NCharacters|ADULT_AGE
+                    is_adult = yes
                 }
                 serbian_clothes_trigger = yes
                 has_dlc_feature = ip3_cosmetics
@@ -9143,7 +10126,7 @@ clothes = {
             modifier = {
                 add = 10000
                 scope:character ?= {
-                    age >= define:NCharacters|ADULT_AGE
+                    is_adult = yes
                 }
                 serbian_clothes_trigger = yes
                 has_dlc_feature = ip3_cosmetics
@@ -9214,14 +10197,14 @@ clothes = {
             modifier = {
                 add = 10000
                 scope:character ?= {
-                    age >= define:NCharacters|ADULT_AGE
+                    is_adult = yes
                 }
                 serbian_clothes_trigger = yes
                 has_dlc_feature = ip3_cosmetics
                 AND = {
                     OR = {
                         scope:character ?= {
-                            is_heir = yes
+                            is_heir_of_own_country = yes
                         }
                         military_clothes_trigger = yes
                         AND = {
@@ -9286,14 +10269,14 @@ clothes = {
             modifier = {
                 add = 11000
                 scope:character ?= {
-                    age >= define:NCharacters|ADULT_AGE
+                    is_adult = yes
                 }
                 serbian_clothes_trigger = yes
                 has_dlc_feature = ip3_cosmetics
                 AND = {
                     OR = {
                         scope:character ?= {
-                            is_heir = yes
+                            is_heir_of_own_country = yes
                         }
                         military_clothes_trigger = yes
                         AND = {
@@ -9368,7 +10351,7 @@ clothes = {
             modifier = {
                 add = 10000
                 scope:character ?= {
-                    age >= define:NCharacters|ADULT_AGE
+                    is_adult = yes
                 }
                 serbian_clothes_trigger = yes
                 has_dlc_feature = ip3_cosmetics
@@ -9697,7 +10680,7 @@ clothes = {
             modifier = {
                 add = 10000
                 scope:character ?= {
-                    age >= define:NCharacters|ADULT_AGE
+                    is_adult = yes
                 }
                 romanian_clothes_trigger = yes
                 scope:character ?= {
@@ -9909,7 +10892,7 @@ clothes = {
             modifier = {
                 add = 10000
                 scope:character ?= {
-                    age >= define:NCharacters|ADULT_AGE
+                    is_adult = yes
                 }
                 romanian_clothes_trigger = yes
                 scope:character ?= {
@@ -9989,7 +10972,7 @@ clothes = {
             modifier = {
                 add = 5000
                 scope:character ?= {
-                    age >= define:NCharacters|ADULT_AGE
+                    is_adult = yes
                 }
                 romanian_clothes_trigger = yes
                 has_dlc_feature = ip3_cosmetics
@@ -10093,7 +11076,7 @@ clothes = {
             modifier = {
                 add = 10000
                 scope:character ?= {
-                    age >= define:NCharacters|ADULT_AGE
+                    is_adult = yes
                 }
                 romanian_clothes_trigger = yes
                 has_dlc_feature = ip3_cosmetics
@@ -10161,7 +11144,7 @@ clothes = {
             modifier = {
                 add = 11000
                 scope:character ?= {
-                    age >= define:NCharacters|ADULT_AGE
+                    is_adult = yes
                 }
                 romanian_clothes_trigger = yes
                 has_dlc_feature = ip3_cosmetics
@@ -10328,7 +11311,7 @@ clothes = {
             modifier = {
                 add = 10000
                 scope:character ?= {
-                    age >= define:NCharacters|ADULT_AGE
+                    is_adult = yes
                 }
                 greek_clothes_trigger = yes
                 has_dlc_feature = ip3_cosmetics
@@ -10395,7 +11378,7 @@ clothes = {
             modifier = {
                 add = 10000
                 scope:character ?= {
-                    age >= define:NCharacters|ADULT_AGE
+                    is_adult = yes
                 }
                 greek_clothes_trigger = yes
                 has_dlc_feature = ip3_cosmetics
@@ -10465,14 +11448,14 @@ clothes = {
             modifier = {
                 add = 12000
                 scope:character ?= {
-                    age >= define:NCharacters|ADULT_AGE
+                    is_adult = yes
                 }
                 greek_clothes_trigger = yes
                 has_dlc_feature = ip3_cosmetics
                 AND = {
                     OR = {
                         scope:character ?= {
-                            is_heir = yes
+                            is_heir_of_own_country = yes
                         }
                         military_clothes_trigger = yes
                         AND = {
@@ -10531,7 +11514,7 @@ clothes = {
             modifier = {
                 add = 15000
                 scope:character ?= {
-                    age >= define:NCharacters|ADULT_AGE
+                    is_adult = yes
                 }
                 greek_clothes_trigger = yes
                 has_dlc_feature = ip3_cosmetics
@@ -10815,7 +11798,7 @@ clothes = {
             modifier = {
                 add = 10000
                 scope:character ?= {
-                    age >= define:NCharacters|ADULT_AGE
+                    is_adult = yes
                 }
                 montenegrin_clothes_trigger = yes
                 has_dlc_feature = ip3_cosmetics
@@ -10928,7 +11911,7 @@ clothes = {
                 mode = add
                 gene = sashes
                 template = male_sashes_montenegro
-                range = { 0 0 } # TODO - PRCAL-39839. Once this is done, restore to { 0 1 }.
+                range = { 0 1 }
             }
             accessory = {
                mode = add
@@ -10948,14 +11931,14 @@ clothes = {
             modifier = {
                 add = 12000
                 scope:character ?= {
-                    age >= define:NCharacters|ADULT_AGE
+                    is_adult = yes
                 }
                 montenegrin_clothes_trigger = yes
                 has_dlc_feature = ip3_cosmetics
                 AND = {
                     OR = {
                         scope:character ?= {
-                            is_heir = yes
+                            is_heir_of_own_country = yes
                         }
                         military_clothes_trigger = yes
                         AND = {
@@ -11104,7 +12087,7 @@ clothes = {
                 add = 10000
                 scope:character ?= {
                     is_female = no
-                    age >= define:NCharacters|ADULT_AGE
+                    is_adult = yes
                     owner ?= {
                         NOT = { has_technology_researched = general_staff }
                     }
@@ -11156,7 +12139,7 @@ clothes = {
                 add = 10000
                 scope:character ?= {
                     is_female = no
-                    age >= define:NCharacters|ADULT_AGE
+                    is_adult = yes
                     owner ?= {
                         has_technology_researched = general_staff
                     }
@@ -11213,7 +12196,7 @@ clothes = {
                 add = 10000
                 has_dlc_feature = ip4_cosmetics
                 scope:character ?= {
-                    age >= define:NCharacters|ADULT_AGE
+                    is_adult = yes
                     owner ?= {
                         NOT = {
                             has_technology_researched = general_staff
@@ -11280,7 +12263,7 @@ clothes = {
                 add = 10000
                 has_dlc_feature = ip4_cosmetics
                 scope:character ?= {
-                    age >= define:NCharacters|ADULT_AGE
+                    is_adult = yes
                     owner ?= {
                         has_technology_researched = general_staff
                     }
@@ -11345,7 +12328,7 @@ clothes = {
                 add = 11000
                 has_dlc_feature = ip4_cosmetics
                 scope:character ?= {
-                    age >= define:NCharacters|ADULT_AGE
+                    is_adult = yes
                     owner ?= {
                         has_technology_researched = bolt_action_rifles
                     }
@@ -11740,7 +12723,7 @@ clothes = {
                 add = 15000
                 has_dlc_feature = ip4_cosmetics
                 scope:character ?= {
-                    age >= define:NCharacters|ADULT_AGE
+                    is_adult = yes
                     owner ?= {
                         NOT = {
                             has_technology_researched = military_statistics
@@ -11799,7 +12782,7 @@ clothes = {
                 add = 10000
                 has_dlc_feature = ip4_cosmetics
                 scope:character ?= {
-                    age >= define:NCharacters|ADULT_AGE
+                    is_adult = yes
                 }
                 carlist_clothes_trigger = yes
                 OR = {
@@ -11861,7 +12844,7 @@ clothes = {
                 add = 10000
                 scope:character ?= {
                     is_female = no
-                    age >= define:NCharacters|ADULT_AGE
+                    is_adult = yes
                 }
                 spanish_clothes_trigger = yes
                 has_dlc_feature = ip4_cosmetics
@@ -11921,7 +12904,7 @@ clothes = {
                 add = 11000
                 scope:character ?= {
                     is_female = no
-                    age >= define:NCharacters|ADULT_AGE
+                    is_adult = yes
                     owner ?= {
                         has_technology_researched = military_statistics
                     }
@@ -11982,7 +12965,7 @@ clothes = {
                 add = 15000
                 has_dlc_feature = ip4_cosmetics
                 scope:character ?= {
-                    age >= define:NCharacters|ADULT_AGE
+                    is_adult = yes
                     owner ?= {
                         NOT = { has_technology_researched = repeaters }
                     }
@@ -12052,7 +13035,7 @@ clothes = {
                 add = 10000
                 has_dlc_feature = ip4_cosmetics
                 scope:character ?= {
-                    age >= define:NCharacters|ADULT_AGE
+                    is_adult = yes
                 }
                 spanish_empire_clothes_trigger = yes
                 OR = {
@@ -12115,7 +13098,7 @@ clothes = {
                 add = 11000
                 has_dlc_feature = ip4_cosmetics
                 scope:character ?= {
-                    age >= define:NCharacters|ADULT_AGE
+                    is_adult = yes
                     owner ?= {
                         has_technology_researched = repeaters
                     }
@@ -12180,7 +13163,7 @@ clothes = {
                 add = 11005
                 has_dlc_feature = ip4_cosmetics
                 scope:character ?= {
-                    age >= define:NCharacters|ADULT_AGE
+                    is_adult = yes
                     owner ?= {
                         has_technology_researched = general_staff
                     }
@@ -12245,7 +13228,7 @@ clothes = {
                 add = 12000
                 has_dlc_feature = ip4_cosmetics
                 scope:character ?= {
-                    age >= define:NCharacters|ADULT_AGE
+                    is_adult = yes
                     owner ?= {
                         has_technology_researched = bolt_action_rifles
                     }
@@ -12671,6 +13654,7 @@ clothes = {
                     }
                     OR = {
                         politician_clothes_trigger = yes
+                        magnate_clothes_trigger = yes
                         AND = {
                             executive_clothes_trigger = yes
                             NOT = {
@@ -12679,7 +13663,7 @@ clothes = {
                         }
                     }
                     scope:character ?= {
-                        age >= define:NCharacters|ADULT_AGE
+                        is_adult = yes
                         NOR = {
                             is_interest_group_type = ig_intelligentsia
                             is_interest_group_type = ig_rural_folk
@@ -12796,17 +13780,17 @@ clothes = {
                             was_formed_from = PRU
                         }
                     }
-                    age >= define:NCharacters|ADULT_AGE
+                    is_adult = yes
                     OR = {
                         AND = {
-                            is_ruler = yes
+                            is_ruler_of_own_country = yes
                             home_country = {
                                 RRK_st_has_monarchy_or_variant = yes
                             }
                         }
-                        has_role = general
+                        has_role_of_type = general
                         AND = {
-                            has_role = politician
+                            has_role_of_type = politician
                             is_interest_group_type = ig_armed_forces
                         }
                     }
@@ -12851,18 +13835,18 @@ clothes = {
                 add = 5000
                 scope:character ?= {
                     is_interest_group_type = ig_landowners
-                    age >= define:NCharacters|ADULT_AGE
+                    is_adult = yes
                     OR = {
-                        has_role = politician
+                        has_role_of_type = politician
                         AND = {
-                            has_role = executive
+                            has_role_of_type = executive
                             NOT = {
                                 has_dlc_feature = mp1_cosmetics
                             }
                         }
                     }
                     NAND = {    # monarchs wear other stuff
-                        is_ruler = yes
+                        is_ruler_of_own_country = yes
                         owner ?={
                             RRK_st_has_monarchy_or_variant = yes
                         }
@@ -12917,7 +13901,7 @@ clothes = {
                 add = 5000
                 has_dlc_feature = ep1_cosmetics
                 scope:character ?= {
-                    is_ruler = yes
+                    is_ruler_of_own_country = yes
                     is_female = no
                     owner ?= {
                         c:PER ?= this
@@ -12927,6 +13911,24 @@ clothes = {
                         has_discrimination_trait_group = language_group_iranic
                     }
                 }
+            }
+        }
+    }
+
+    japanese_shogun_clothes = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = outfits
+                template = japanese_shogun_outfits
+                range = { 0 1 } # For the randomness to work correctly
+            }
+        }
+        weight = {
+            base = 0
+            modifier = {
+                add = 2000
+                japanese_shogun_clothes_trigger = yes
             }
         }
     }
@@ -12946,9 +13948,7 @@ clothes = {
                 add = 2000
                 japanese_imperial_clothes_trigger = yes
                 scope:character ?= {
-                    owner ?= {
-                        NOT = { has_variable = meiji_restoration_complete }
-                    }
+                    japanese_restoration_trigger = no
                 }
             }
         }
@@ -12962,6 +13962,12 @@ clothes = {
                 template = japanese_low_outfits
                 range = { 0 1 } # For the randomness to work correctly
             }
+            accessory = {
+                mode = add
+                gene = top_layer
+                template = japanese_top_layer
+                range = { 0.67 1 } # For the randomness to work correctly
+            }
         }
         weight = {
             base = 0
@@ -12969,13 +13975,31 @@ clothes = {
                 add = 500
                 japanese_clothes_pop_trigger = yes
                 poor_clothes_pop_trigger = yes
-                #scope:pop ?= {
-                #    owner = {
-                #        NOT = {
-                #            has_variable = meiji_restoration_complete
-                #        }
-                #    }
-                #}
+            }
+        }
+    }
+
+    japanese_pop_low_clothes = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = outfits
+                template = japanese_common_outfits
+                range = { 0 1 } # For the randomness to work correctly
+            }
+            accessory = {
+                mode = add
+                gene = legwear
+                template = japanese_legwear
+                range = { 0 1 } # For the randomness to work correctly
+            }
+        }
+        weight = {
+            base = 0
+            modifier = {
+                add = 1000
+                japanese_clothes_pop_trigger = yes
+                clergy_clothes_pop_trigger = yes
             }
         }
     }
@@ -12998,46 +14022,47 @@ clothes = {
                 mode = add
                 gene = top_layer
                 template = japanese_top_layer
-                range = { 0 1 } # For the randomness to work correctly
+                range = { 0 0.66 } # For the randomness to work correctly
             }
         }
         weight = {
             base = 0
             modifier = {
                 add = 1000
+                japanese_clothes_pop_trigger = yes
                 OR = {
-                    AND = {
-                        japanese_clothes_pop_trigger = yes
-                        poor_clothes_pop_trigger = no
-                    }
-                    AND = {
-                        japanese_clothes_trigger = yes
-                        scope:character ?= {
-                            is_in_exile_pool = yes
-                        }
-                    }
+                    middle_clothes_pop_trigger = yes
+                    upper_clothes_pop_trigger = yes
                 }
-                NAND = {
-                    exists = scope:pop
-                    scope:pop = {
+                clergy_clothes_pop_trigger = no
+            }
+            modifier = {
+                add = 100
+
+                agitator_character_trigger = no
+                scope:character ?= {
+                    OR = {
                         AND = {
-                            culture = cu:japanese
-                            owner ?= {
-                                has_variable = meiji_restoration_complete
+                            has_culture = cu:japanese
+                            monarchy_clothes_trigger = no
+                        }
+                        OR = {
+                            AND = {
+                                culture = cu:ainu
+                                home_country ?= {
+                                    country_has_primary_culture = cu:japanese
+                                }
                             }
+                            has_culture = cu:ryukyuan
                         }
                     }
-                    OR = {
-                        middle_clothes_pop_trigger = yes
-                        upper_clothes_pop_trigger = yes
-                    }
-                    clergy_clothes_pop_trigger = no
+                    japanese_restoration_trigger = no
                 }
             }
         }
     }
 
-    japanese_common_clothes = {
+    japanese_common_clothes = { # Catch-all fallback for Japanese characters, should be overwritten by all other cases in Japan of Japanese characters
         dna_modifiers = {
             accessory = {
                 mode = add
@@ -13045,7 +14070,7 @@ clothes = {
                 template = japanese_common_outfits
                 range = { 0 1 } # For the randomness to work correctly
             }
-                accessory = {
+            accessory = {
                 mode = add
                 gene = legwear
                 template = japanese_legwear
@@ -13055,29 +14080,24 @@ clothes = {
                 mode = add
                 gene = top_layer
                 template = japanese_top_layer
-                range = { 0 1 } # For the randomness to work correctly
+                range = { 0 0.33 } # For the randomness to work correctly
             }
         }
-         weight = {
+        weight = {
             base = 0
             modifier = {
-                add = 100
-                AND = {
-                    agitator_character_trigger = no
-                    scope:character ?= {
-                        OR = {
-                            AND = {
-                                has_culture = cu:japanese
-                                monarchy_clothes_trigger = no
-                            }
-                            has_culture = cu:ainu
-                        }
-                        OR = {
-                            devout_clothes_trigger = yes
-                            owner ?= {
-                                NOT = { has_variable = meiji_restoration_complete }
+                add = 90
+
+                scope:character ?= {
+                    OR = {
+                        culture = cu:japanese
+                        AND = {
+                            culture = cu:ainu
+                            home_country ?= {
+                                country_has_primary_culture = cu:japanese
                             }
                         }
+                        culture = cu:ryukyuan
                     }
                 }
             }
@@ -13128,7 +14148,7 @@ clothes = {
                     AND = {
                         korean_clothes_trigger = yes
                         scope:character ?= {
-                            is_ruler = no
+                            is_ruler_of_own_country = no
                         }
                     }
                     AND = {
@@ -13161,9 +14181,9 @@ clothes = {
                 AND = {
                     korean_clothes_trigger = yes
                     scope:character ?= {
-                        is_ruler = yes
+                        is_ruler_of_own_country = yes
                         OR = {
-                            age < define:NCharacters|ADULT_AGE
+                            is_adult = no
                             NOT = {
                                 owner ?= {
                                     has_variable = KOR_korean_empire_declared
@@ -13279,8 +14299,8 @@ clothes = {
                         RRK_st_has_monarchy = yes
                     }
                     OR = {
-                        is_ruler = yes
-                        is_heir = yes
+                        is_ruler_of_own_country = yes
+                        is_heir_of_own_country = yes
                     }
                     is_female = no
                 }
@@ -13306,7 +14326,7 @@ clothes = {
                     is_female = no
 
                     NAND = {
-                        is_ruler = yes
+                        is_ruler_of_own_country = yes
                         OR = {
                             owner ?= {
                                 RRK_st_has_monarchy_or_variant = yes
@@ -13361,7 +14381,7 @@ clothes = {
                 add = 500
                 ethiopian_clothes_trigger = yes
                 scope:character ?= {
-                    is_ruler = yes
+                    is_ruler_of_own_country = yes
                     is_female = no
                     OR = {
                         owner ?= {
@@ -13466,18 +14486,18 @@ clothes = {
                     OR = {
                         AND = {
                             OR = {
-                                has_role = politician
-                                has_role = agitator
+                                has_role_of_type = politician
+                                has_role_of_type = agitator
                             }
-                            is_ruler = no
-                            is_heir = no
+                            is_ruler_of_own_country = no
+                            is_heir_of_own_country = no
                             OR = {
                                 has_ideology = ideology:ideology_theocrat
                                 is_interest_group_type = ig_devout
                             }
                         }
                         AND = {
-                            is_ruler = yes
+                            is_ruler_of_own_country = yes
                             owner = {
                                 NOT = { c:PAP ?= this }
                                 has_law_or_variant = law_type:law_theocracy
@@ -13514,7 +14534,7 @@ clothes = {
                         has_variable = cardinal_var
                         AND = {
                             is_interest_group_type = ig_devout
-                            has_role = politician
+                            has_role_of_type = politician
                             owner ?= {
                                 country_has_state_religion = rel:catholic
                                 OR = {
@@ -13626,18 +14646,18 @@ clothes = {
                     OR = {
                         AND = {
                             OR = {
-                                has_role = politician
-                                has_role = agitator
+                                has_role_of_type = politician
+                                has_role_of_type = agitator
                             }
-                            is_ruler = no
-                            is_heir = no
+                            is_ruler_of_own_country = no
+                            is_heir_of_own_country = no
                             OR = {
                                 has_ideology = ideology:ideology_theocrat
                                 is_interest_group_type = ig_devout
                             }
                         }
                         AND = {
-                            is_ruler = yes
+                            is_ruler_of_own_country = yes
                             owner = {
                                 has_law_or_variant = law_type:law_theocracy
                             }
@@ -13675,7 +14695,7 @@ clothes = {
             modifier = {
                 add = 10000
                 scope:character ?= {
-                    is_ruler = yes
+                    is_ruler_of_own_country = yes
                     is_female = no
                     religion = {
                         rel:catholic = this
@@ -13733,6 +14753,12 @@ clothes = {
                 exists = scope:character
                 scope:character = {
                     OR = {
+                        AND = {
+                            culture = cu:ainu
+                            home_country ?= {
+                                NOT = { country_has_primary_culture = cu:japanese }
+                            }
+                        }
                         culture = cu:inuit
                         culture = cu:siberian
                         culture = cu:yakut
@@ -13901,6 +14927,7 @@ indigenous_oceanic_pop_clothes = {
                         OR = {
                             ruler_clothes_trigger = yes
                             politician_clothes_trigger = yes
+                            magnate_clothes_trigger = yes
                             AND = {
                                 executive_clothes_trigger = yes
                                 NOT = {
@@ -13970,6 +14997,10 @@ indigenous_oceanic_pop_clothes = {
                         OR = {
                             AND = {
                                 politician_clothes_trigger = yes
+                                military_clothes_trigger = no
+                            }
+                            AND = {
+                                magnate_clothes_trigger = yes
                                 military_clothes_trigger = no
                             }
                             AND = {
@@ -14186,7 +15217,7 @@ indigenous_oceanic_pop_clothes = {
                 add = 5000
                 has_dlc_feature = ip2_cosmetics
                 scope:character ?= {
-                    is_ruler = yes
+                    is_ruler_of_own_country = yes
                     is_female = no
                     owner ?= {
                         c:MUG ?= this
@@ -14217,11 +15248,11 @@ indigenous_oceanic_pop_clothes = {
             modifier = {
                 add = 2000
                 scope:character ?= {
-                    age >= define:NCharacters|ADULT_AGE
+                    is_adult = yes
                     owner ?= {
                         c:MUG ?= this
                     }
-                    is_heir = yes
+                    is_heir_of_own_country = yes
                 }
             }
         }
@@ -14253,7 +15284,7 @@ indigenous_oceanic_pop_clothes = {
             modifier = {
                 add = 200
                 scope:character ?= {
-                    age >= define:NCharacters|ADULT_AGE
+                    is_adult = yes
                 }
                 indian_clothes_trigger = yes
                 monarchy_clothes_trigger = yes
@@ -14409,18 +15440,18 @@ indigenous_oceanic_pop_clothes = {
                     }
                     scope:character ?= { # Also used for Landowners IG leaders
                         is_interest_group_type = ig_landowners
-                        age >= define:NCharacters|ADULT_AGE
+                        is_adult = yes
                         OR = {
-                        has_role = politician
+                        has_role_of_type = politician
                             AND = {
-                                has_role = executive
+                                has_role_of_type = executive
                                 NOT = {
                                     has_dlc_feature = mp1_cosmetics
                                 }
                             }
                         }
                         NAND = {    # monarchs wear other stuff
-                            is_ruler = yes
+                            is_ruler_of_own_country = yes
                             owner ?={
                                 RRK_st_has_monarchy_or_variant = yes
                             }
@@ -14691,9 +15722,9 @@ indigenous_oceanic_pop_clothes = {
                                 AND = {
                                 japanese_clothes_pop_trigger = yes
                                 scope:pop ?= {
-                                    owner ?= { has_variable = meiji_restoration_complete }
-                                    }
+                                    japanese_restoration_trigger = yes
                                 }
+                            }
                             AND = {
                                 korean_clothes_pop_trigger = yes
                                 scope:pop ?= {
@@ -14989,8 +16020,8 @@ indigenous_oceanic_pop_clothes = {
                 has_dlc_feature = ep1_cosmetics
                 british_empire_clothes_trigger = yes
                 scope:character ?= {
-                    age >= define:NCharacters|ADULT_AGE
-                    has_role = general
+                    is_adult = yes
+                    has_role_of_type = general
                     owner ?= {
                         has_technology_researched = bolt_action_rifles
                     }
@@ -15100,6 +16131,12 @@ indigenous_oceanic_pop_clothes = {
             }
             accessory = {
                 mode = add
+                gene = belts
+                template = generic_belts
+                accessory = male_belt_generic_01
+            }
+            accessory = {
+                mode = add
                 gene = legwear
                 template = european_legwear_colors
                 range = { 0.21 0.59 } # Red and Blue
@@ -15117,11 +16154,8 @@ indigenous_oceanic_pop_clothes = {
                 add = 10000
                 AND = {
                     scope:character ?= {
-                        age >= define:NCharacters|ADULT_AGE
-                        culture = cu:japanese
-                        owner ?= {
-                            has_variable = meiji_restoration_complete
-                        }
+                        is_adult = yes
+                        japanese_restoration_trigger = yes
                     }
                     OR = {
                         military_clothes_trigger = yes
@@ -15139,13 +16173,144 @@ indigenous_oceanic_pop_clothes = {
         }
     }
 
+    japanese_meiji_emperor_clothes = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = coats
+                template = japanese_meiji_coats
+                accessory = male_coat_japanese_meiji_court_01
+            }
+            accessory = {
+                mode = add
+                gene = legwear
+                template = european_legwear_colors
+                accessory = male_legwear_european_01_white
+            }
+            accessory = {
+                mode = add
+                gene = aiguillettes
+                template = no_aiguillettes
+                range = { 0 1 }
+            }
+            accessory = {
+                mode = add
+                gene = epaulettes
+                template = all_epaulettes
+                accessory = male_epaulettes_04
+            }
+            accessory = {
+                mode = add
+                gene = sashes
+                template = male_sashes_meiji_red
+                range = { 0 1 }
+            }
+        }
+        weight = {
+            base = 0
+            modifier = {
+                add = 90000
+                has_dlc_feature = ep2_cosmetics
+                scope:character ?= {
+                    japanese_restoration_trigger = yes
+                    OR = {
+                        AND = {
+                            has_role_of_type = ruler
+                            owner ?= { has_variable = japan_restoration_complete }
+                        }
+                        AND = {
+                            has_role_of_type = heir
+                            owner ?= { has_variable = japan_restoration_complete }
+                        }
+                        has_role = character_role_emperor_of_japan
+                    }
+                    is_adult = yes
+                    is_female = no
+                    owner ?= {
+                        RRK_st_has_monarchy = yes
+                        NOT = { has_technology_researched = bolt_action_rifles }
+                        japanese_restoration_trigger = yes
+                    }
+                }
+            }
+        }
+    }
+
+    japanese_taisho_emperor_clothes = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = coats
+                template = japanese_meiji_commander_uniforms
+                accessory = male_coat_japanese_08_general
+            }
+            accessory = {
+                mode = add
+                gene = legwear
+                template = european_legwear_colors
+                accessory = male_legwear_european_01_black
+            }
+            accessory = {
+                mode = add
+                gene = epaulettes
+                template = all_epaulettes
+                accessory = male_epaulettes_03
+            }
+            accessory = {
+                mode = add
+                gene = aiguillettes
+                template = no_aiguillettes
+                range = { 0 1 }
+            }
+            accessory = {
+                mode = add
+                gene = belts
+                template = all_belts
+                accessory = male_belt_generic_02
+            }
+            accessory = {
+                mode = add
+                gene = sashes
+                template = male_sashes_meiji_red
+                range = { 0 1 }
+            }
+        }
+        weight = {
+            base = 0
+            modifier = {
+                add = 90000
+                
+                scope:character ?= {
+                    japanese_restoration_trigger = yes
+                    OR = {
+                        AND = {
+                            has_role_of_type = ruler
+                            owner ?= { has_variable = japan_restoration_complete }
+                        }
+                        AND = {
+                            has_role_of_type = heir
+                            owner ?= { has_variable = japan_restoration_complete }
+                        }
+                        has_role = character_role_emperor_of_japan
+                    }
+                    is_female = no
+                    owner ?= {
+                        RRK_st_has_monarchy = yes
+                        has_technology_researched = bolt_action_rifles
+                        japanese_restoration_trigger = yes
+                    }
+                }
+            }
+        }
+    }
+
     japanese_meiji_soldier_clothes = {
         dna_modifiers = {
             accessory = {
                 mode = add
                 gene = coats
                 template = japanese_meiji_coats
-                range = { 0 1 } # For the randomness to work correctly
+                range = { 0 0.66 } # For the randomness to work correctly
             }
             accessory = {
                 mode = add
@@ -15153,12 +16318,6 @@ indigenous_oceanic_pop_clothes = {
                 template = european_legwear_colors
                 range = { 0.21 0.59 } # There's five colors in the gene, the second being blue and the third being red.
             }
-            #accessory = {
-            #    mode = add
-            #    gene = epaulettes
-            #    template = all_epaulettes
-            #    range = { 0.5 0.8 } # For the randomness to work correctly
-            #}
         }
         weight = {
             base = 0
@@ -15167,9 +16326,7 @@ indigenous_oceanic_pop_clothes = {
                 AND = {
                     scope:pop ?= {
                         culture = cu:japanese
-                        owner ?= {
-                            has_variable = meiji_restoration_complete
-                        }
+                        japanese_restoration_trigger = yes
                     }
                     OR = {
                         soldier_clothes_pop_trigger = yes
@@ -15214,7 +16371,7 @@ indigenous_oceanic_pop_clothes = {
                 AND = {
                     korean_clothes_trigger = yes
                     scope:character ?= {
-                        age >= define:NCharacters|ADULT_AGE
+                        is_adult = yes
                         owner ?= {
                             has_variable = KOR_korean_empire_declared
                         }
@@ -15319,10 +16476,10 @@ indigenous_oceanic_pop_clothes = {
                     AND = {
                         exists = scope:character
                         scope:character = {
-                            age >= define:NCharacters|ADULT_AGE
+                            is_adult = yes
                             OR = {
-                                has_role = general
-                                has_role = admiral
+                                has_role_of_type = general
+                                has_role_of_type = admiral
                             }
                             exists = home_country
                             home_country = {
@@ -15533,7 +16690,7 @@ indigenous_oceanic_pop_clothes = {
                 add = 1000
                 has_dlc_feature = ep1_cosmetics
                 scope:character ?= {
-                    is_ruler = yes
+                    is_ruler_of_own_country = yes
                     is_female = no
                     OR = {
                         has_culture = cu:zulu
@@ -15561,7 +16718,7 @@ indigenous_oceanic_pop_clothes = {
                 add = 1000
                 has_dlc_feature = ep1_cosmetics
                 scope:character ?= {
-                    is_heir = yes
+                    is_heir_of_own_country = yes
                     is_female = no
                     OR = {
                         has_culture = cu:zulu
@@ -15609,8 +16766,8 @@ indigenous_oceanic_pop_clothes = {
                         }
                     }
                     scope:character ?={
-                        has_role = general
-                        is_ruler = no
+                        has_role_of_type = general
+                        is_ruler_of_own_country = no
                         OR = {
                             has_culture = cu:zulu
                             has_culture = cu:nguni
@@ -15824,7 +16981,7 @@ indigenous_oceanic_pop_clothes = {
                 add = 1000
                 native_american_clothes_trigger = yes
                 scope:character = {
-                    is_ruler = no
+                    is_ruler_of_own_country = no
                     NOT = {
                         OR = {
                             culture = cu:inuit
@@ -15933,18 +17090,18 @@ indigenous_oceanic_pop_clothes = {
                     OR = {
                         AND = {
                             OR = {
-                                has_role = politician
-                                has_role = agitator
+                                has_role_of_type = politician
+                                has_role_of_type = agitator
                             }
-                            is_ruler = no
-                            is_heir = no
+                            is_ruler_of_own_country = no
+                            is_heir_of_own_country = no
                             OR = {
                                 has_ideology = ideology:ideology_theocrat
                                 is_interest_group_type = ig_devout
                             }
                         }
                         AND = {
-                            is_ruler = yes
+                            is_ruler_of_own_country = yes
                             owner = {
                                 has_law_or_variant = law_type:law_theocracy
                             }
@@ -15981,36 +17138,33 @@ indigenous_oceanic_pop_clothes = {
             base = 0
             modifier = {
                 add = 1000
-                OR = {
-                    AND = {
-                        buddhist_clothes_pop_trigger = yes
-                        NOR = {
-                            indian_clothes_pop_trigger = yes
-                            japanese_clothes_pop_trigger = no
-                            scope:pop ?= {
-                                culture = {
-                                    has_discrimination_trait_group = heritage_group_southeast_asian
-                                }
-                            }
+                buddhist_clothes_pop_trigger = yes
+                NOR = {
+                    indian_clothes_pop_trigger = yes
+                    japanese_clothes_pop_trigger = yes
+                    scope:pop ?= {
+                        culture = {
+                            has_discrimination_trait_group = heritage_group_southeast_asian
                         }
-                        clergy_clothes_pop_trigger = yes
                     }
-                    AND = {
-                        exists = scope:character
-                        scope:character = {
-                            is_ruler = yes
-                            OR = {
-                                religion = {
-                                    has_discrimination_trait = heritage_dharmic
-                                }
-                                #religion = rel:sikh
-                                religion = rel:shinto
-                            }
-                            exists = home_country
-                            home_country = {
-                                has_law_or_variant = law_type:law_theocracy
-                            }
+                }
+                clergy_clothes_pop_trigger = yes
+            }
+            modifier = {
+                add = 1000
+
+                scope:character ?= {
+                    is_ruler_of_own_country = yes
+                    OR = {
+                        religion = {
+                            has_discrimination_trait = heritage_dharmic
                         }
+                        #religion = rel:sikh
+                        religion = rel:shinto
+                    }
+                    exists = home_country
+                    home_country = {
+                        has_law_or_variant = law_type:law_theocracy
                     }
                 }
             }
@@ -16065,8 +17219,8 @@ indigenous_oceanic_pop_clothes = {
                                         has_modifier = royal_marriage
                                         any_scope_character = {
                                             OR = {
-                                                is_ruler = yes
-                                                is_heir = yes
+                                                is_ruler_of_own_country = yes
+                                                is_heir_of_own_country = yes
                                             }
                                             has_modifier = marriage_popularity
                                         }
@@ -16236,15 +17390,15 @@ indigenous_oceanic_pop_clothes = {
                                 }
                             }
                         }
-                        has_role = politician
+                        has_role_of_type = politician
                         OR = {
                             is_interest_group_type = ig_rural_folk
                             is_interest_group_type = ig_trade_unions
                         }
                         OR = {
-                            is_ruler = no
+                            is_ruler_of_own_country = no
                             AND = {
-                                is_ruler = yes
+                                is_ruler_of_own_country = yes
                                 owner ?= {
                                     NOT = { RRK_st_has_monarchy_or_variant = yes}
                                 }
@@ -16340,6 +17494,11 @@ indigenous_oceanic_pop_clothes = {
                     AND = {
                         politician_clothes_trigger = yes
                         military_clothes_trigger = no
+                    }
+                    AND = {
+                        magnate_clothes_trigger = yes
+                        military_clothes_trigger = no
+                        monarchy_clothes_trigger = no
                     }
                     AND = {
                         executive_clothes_trigger = yes
@@ -16451,8 +17610,8 @@ indigenous_oceanic_pop_clothes = {
                     AND = {
                         exists = c:TUR
                         scope:character ?= {
-                            age >= define:NCharacters|ADULT_AGE
-                            is_ruler = no
+                            is_adult = yes
+                            is_ruler_of_own_country = no
                             owner ?= {
                                 c:TUR = this
                             }
@@ -16517,6 +17676,7 @@ indigenous_oceanic_pop_clothes = {
                 OR = {
                     politician_clothes_trigger = yes
                     executive_clothes_trigger = yes
+                    magnate_clothes_trigger = yes
                 }
                 NOR = {
                     military_clothes_trigger = yes
@@ -16530,16 +17690,16 @@ indigenous_oceanic_pop_clothes = {
                         is_interest_group_type = ig_petty_bourgeoisie
                     }
                     OR = {
-                        is_ruler = no
+                        is_ruler_of_own_country = no
                         AND = {
-                            is_ruler = yes
+                            is_ruler_of_own_country = yes
                             republic_clothes_trigger = yes
                             owner ?= {
                             is_in_power_bloc = no # I am NOT scripting exceptions to all those sashes to accomodate greatcoats
                         }
                     }
                     }
-                    is_heir = no
+                    is_heir_of_own_country = no
                     OR = {  # November to February
                         month < 3
                         month > 10
@@ -16589,6 +17749,10 @@ indigenous_oceanic_pop_clothes = {
                             OR = {
                                 culture = cu:cherokee
                                 culture = cu:muskogean
+                                AND = {
+                                    culture = cu:japanese
+                                    japanese_restoration_trigger = yes
+                                }
                             }
                         }
                         AND = {
@@ -16617,6 +17781,7 @@ indigenous_oceanic_pop_clothes = {
                             }
                         }
                         executive_clothes_trigger = yes
+                        magnate_clothes_trigger = yes
                     }
                 }
             }
@@ -16643,9 +17808,9 @@ indigenous_oceanic_pop_clothes = {
             modifier = {
                 add = 5000
                 scope:character ?= {
-                    is_ruler = yes
+                    is_ruler_of_own_country = yes
                     is_female = no
-                    age >= define:NCharacters|ADULT_AGE
+                    is_adult = yes
                     OR = {
                         AND = {
                             culture = {
@@ -16681,12 +17846,12 @@ indigenous_oceanic_pop_clothes = {
                     culture = {
                         cu:bedouin = this
                     }
-                    is_ruler = no
+                    is_ruler_of_own_country = no
                     NOR = {
-                        has_role = general
-                        has_role = admiral
+                        has_role_of_type = general
+                        has_role_of_type = admiral
                     }
-                    has_role = politician
+                    has_role_of_type = politician
                     NOR = {
                         is_interest_group_type = ig_rural_folk
                         is_interest_group_type = ig_devout
@@ -16716,12 +17881,12 @@ indigenous_oceanic_pop_clothes = {
                             has_discrimination_trait = heritage_islamic
                         }
                     }
-                    is_ruler = no
+                    is_ruler_of_own_country = no
                     NOR = {
-                        has_role = general
-                        has_role = admiral
+                        has_role_of_type = general
+                        has_role_of_type = admiral
                     }
-                    has_role = politician
+                    has_role_of_type = politician
                     OR = {
                         is_interest_group_type = ig_petty_bourgeoisie
                         is_interest_group_type = ig_intelligentsia
@@ -16757,9 +17922,8 @@ indigenous_oceanic_pop_clothes = {
         weight = {
             base = 0
             modifier = {
-                add = 4000
+                add = 400
                 scope:character ?= {
-                    is_ruler = no
                     culture = {
                         has_discrimination_trait = heritage_eastern_bantu
                         has_discrimination_trait_group = language_group_bantu
@@ -16873,14 +18037,14 @@ indigenous_oceanic_pop_clothes = {
                     }
                     OR = {
                         AND = {
-                            is_ruler = no
-                            has_role = general
+                            is_ruler_of_own_country = no
+                            has_role_of_type = general
                         }
                         AND = {
-                            is_ruler = no
+                            is_ruler_of_own_country = no
                             OR = {
-                                has_role = politician
-                                has_role = agitator
+                                has_role_of_type = politician
+                                has_role_of_type = agitator
                             }
                             OR = {
                                 is_interest_group_type = ig_armed_forces
@@ -16889,7 +18053,7 @@ indigenous_oceanic_pop_clothes = {
                         }
 
                         AND = {
-                            is_ruler = yes
+                            is_ruler_of_own_country = yes
                             home_country ?= {
                                 has_law_or_variant = law_type:law_presidential_republic
                                 country_has_voting_franchise = no
@@ -16936,7 +18100,7 @@ indigenous_oceanic_pop_clothes = {
                 add = 5000
 
                 scope:character ?= {
-                    has_role = politician
+                    has_role_of_type = politician
                     OR = {
                         has_culture = cu:zulu
                         has_culture = cu:nguni
@@ -16960,6 +18124,46 @@ indigenous_oceanic_pop_clothes = {
                             }
                         }
                     }
+                }
+            }
+        }
+    }
+
+    ### EP2 - Japan
+    aizawa_seishisai_clothes = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = top_layer
+                template = ep2_character_top_layers
+                accessory = male_top_layer_japanese_kataginu_01_seishisai
+            }
+            accessory = {
+                mode = add
+                gene = belts
+                template = japanese_belts
+                range = { 0 1 } # For the randomness to work correctly
+            }
+            accessory = {
+                mode = add
+                gene = outfits
+                template = ep2_character_outfits
+                accessory = male_outfit_japanese_common_01_seishisai
+            }
+            accessory = {
+                mode = add
+                gene = legwear
+                template = japanese_legwear
+                accessory = male_legwear_japanese_common_01_white
+            }
+        }
+        weight = {
+            base = 0
+            modifier = {
+                add = 90000
+                has_dlc_feature = ep2_cosmetics
+                scope:character ?= {
+                    has_template = JAP_aizawa_seishisai
                 }
             }
         }

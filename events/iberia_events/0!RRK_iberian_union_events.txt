@@ -57,7 +57,7 @@ iberia.2 = {
 
 	trigger = {
 		capital = {
-			is_in_geographic_region = geographic_region_iberia
+			is_in_geographic_region = geographic_region_iberia_old
 		}
 		has_technology_researched = pan-nationalism
 	}

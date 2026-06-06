@@ -59,7 +59,7 @@ congo_free_state_events.5 = { #Free State can be reintegrated
 		}
 		random_scope_character = {
 			limit = {
-				is_ruler = yes
+				is_ruler_of_own_country = yes
 			}
 			save_scope_as = free_state_monarch
 		}
