@@ -40,7 +40,6 @@ types politics_panel_types
 				using = tooltip_below
 				blockoverride "show_hat" {}
 				blockoverride "highlight" {}
-				blockoverride "commander_order_icon" {}
 			}
 
 			vbox = {
@@ -93,6 +92,7 @@ types politics_panel_types
 							icon = {
 								size = { 30 42 }
 								texture = "[CharacterTrait.GetTexture]"
+								alpha = "[TransparentIfTrue(CharacterTrait.IsDisabled)]"
 								using = tooltip_above
 
 								tooltipwidget = {
@@ -358,34 +358,19 @@ types politics_panel_types
 												widget = {
 													size = { 35 35 }
 													icon = {
-														visible = "[And(Character.IsPolitician,And(Not(Character.IsRuler),Not(Character.IsHeir)))]"
+														visible = "[Character.GetPrimaryRole.IsValid]"
 														size = { 100% 100% }
-														texture = "gfx/interface/icons/character_role_icons/politician.dds"
+														texture = "[Character.GetPrimaryRole.GetTexture]"
 													}
 													icon = {
-														visible = "[Character.IsRuler]"
+														visible = "[Not(Character.GetPrimaryRole.IsValid)]"
 														size = { 100% 100% }
-														texture = "gfx/interface/icons/character_role_icons/ruler.dds"
-													}
-													icon = {
-														visible = "[Character.IsHeir]"
-														size = { 100% 100% }
-														texture = "gfx/interface/icons/character_role_icons/heir.dds"
-													}
-													icon = {
-														visible = "[And(Not(Or(Character.IsPolitician, Or(Character.IsRuler, Character.IsHeir))), Character.IsGeneral)]"
-														size = { 100% 100% }
-														texture = "gfx/interface/icons/character_role_icons/general.dds"
-													}
-													icon = {
-														visible = "[And(Not(Or(Character.IsPolitician, Or(Character.IsRuler, Character.IsHeir))), Character.IsAdmiral)]"
-														size = { 100% 100% }
-														texture = "gfx/interface/icons/character_role_icons/admiral.dds"
+														texture = "gfx/interface/icons/generic_icons/undecided_icon.dds"
 													}
 												}
 											}
 											blockoverride "label" {
-												text = "[Concept('concept_ruler', Character.GetPrimaryRoleTitle)]"
+												text = "[Character.GetPrimaryRoleTitle]"
 											}
 											blockoverride "text" {
 												text = "[Character.GetFullName]"
@@ -802,7 +787,7 @@ types politics_panel_types
 							}
 							blockoverride "line_plotpoints" {
 								visible = "[Not(IsEmpty(LoyaltyType.GetCountryTrend(Country.Self)))]"
-								plotpoints = "[GetTrendPlotPointsNormalized(LoyaltyType.GetCountryTrend(Country.Self), '(CFixedPoint)0', Max_CFixedPoint(GetMax(Country.GetRadicalsTrend), GetMax(Country.GetLoyalistsTrend)))]"
+								plotpoints = "[GetTrendPlotPointsNormalized(LoyaltyType.GetCountryTrend(Country.Self), Min_CFixedPoint(GetMinPadded(Country.GetRadicalsTrend), GetMinPadded(Country.GetLoyalistsTrend)), Max_CFixedPoint(GetMaxPadded(Country.GetRadicalsTrend), GetMaxPadded(Country.GetLoyalistsTrend)))]"
 							}
 							blockoverride "tooltip" {
 								tooltip = "[LoyaltyType.GetCountryTooltip(Country.Self)]"
@@ -813,7 +798,7 @@ types politics_panel_types
 								text = "[Max_CFixedPoint(GetMax(Country.GetRadicalsTrend), GetMax(Country.GetLoyalistsTrend))|K]"
 							}
 							blockoverride "minvalue" {
-								raw_text = "0"
+								text = "[Min_CFixedPoint(GetMin(Country.GetRadicalsTrend), GetMin(Country.GetLoyalistsTrend))|K]"
 							}
 
 							# we can use either the radicals or loyalists trend for general values
@@ -1173,7 +1158,7 @@ types politics_panel_types
 													autoresize = yes
 													align = hcenter|nobaseline
 													alpha = "[TransparentIfZero_int32(GetExilePool.GetNumInviteableExiles)]"
-													raw_text = "#variable [GetExilePool.GetNumInviteableExiles]#! / [GetDataModelSize(GetExilePool.GetAllExiles)|v]"
+													raw_text = "[GetExilePool.GetNumInviteableExiles|v] / [GetExilePool.GetNumAllExiles|v]"
 													parentanchor = right|vcenter
 													margin = { 15 15 }
 													tooltip = "TOOLTIP_NUM_INVITEABLE_EXILES"
