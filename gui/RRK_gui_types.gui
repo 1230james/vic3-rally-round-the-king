@@ -8,15 +8,15 @@ types RRK_types {
     ####################
 
     type RRK_overview_head_of_gov_button = button_icon_round {
-		parentanchor = right
-		size = { 44 44 }
-		blockoverride "icon" {
-			texture = "gfx/interface/buttons/button_icons/reset.dds"
-		}
-		onclick = "[GetVariableSystem.Toggle('RRK_view_head_of_gov')]"
-		tooltip = "RRK_gui_toggle"
-		using = tooltip_above
-	}
+        parentanchor = right
+        size = { 44 44 }
+        blockoverride "icon" {
+            texture = "gfx/interface/buttons/button_icons/reset.dds"
+        }
+        onclick = "[GetVariableSystem.Toggle('RRK_view_head_of_gov')]"
+        tooltip = "RRK_gui_toggle"
+        using = tooltip_above
+    }
 
     # character_with_background - commander_panel.gui
     type RRK_character_widget = widget {
