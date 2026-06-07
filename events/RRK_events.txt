@@ -106,7 +106,11 @@ RRK_ev.2 = {
     on_opened_soundeffect  = "event:/SFX/Events/misc/2Characters"
 
     icon = "gfx/interface/icons/event_icons/event_portrait.dds"
-    
+
+    cancellation_trigger = {
+        RRK_st_is_crowned_republic = no
+    }
+
     option = {
         name = RRK_ev_2_a
         default_option = yes
@@ -245,7 +249,11 @@ RRK_ev.3 = {
     on_opened_soundeffect  = "event:/SFX/Events/misc/1Character_Banner"
 
     icon = "gfx/interface/icons/event_icons/event_portrait.dds"
-    
+
+    cancellation_trigger = {
+        RRK_st_is_crowned_republic = no
+    }
+
     option = {
         name = RRK_ev_3_a
         default_option = yes
