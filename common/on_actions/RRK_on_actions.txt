@@ -1,37 +1,4 @@
-﻿# Root = owner Country of the Law
-# Executed when an enacting law is passed by reaching the final enactment phase
-#
-# NOTE: at the point in time when this on-action is triggered, the law
-# is still considered being enacted, therefore the `currently_enacting_law` link
-# will work as expected, even though the enactment is _just_ about to end
-on_law_enactment_pass = {
-    on_actions = {
-        RRK_oa_on_monarchy_abolished
-    }
-}
-
-RRK_oa_on_monarchy_abolished = {
-    effect = {
-        if = {
-            limit = {
-                has_law = law_type:law_monarchy
-                currently_enacting_law.type = {
-                    is_same_law_group_as = law_type:law_monarchy
-                }
-                has_game_started = yes # Prevent weird behavior as a result of loading history when starting new game
-            }
-            # Set preserve monarchy variable (used by other on action for monarchy check - putting here as sort of failsafe)
-            set_variable = {
-                name  = RRK_preserve_monarchy
-                value = no
-            }
-        }
-    }
-}
-
-# ==================================================================================================================== #
-
-# Root = Country
+﻿# Root = Country
 RRK_oa_on_reform = {
     effect = {
         if = {
@@ -143,19 +110,29 @@ on_election_campaign_end = {
 # enacted. Therefore using the `currently_enacting_law` link will return the
 # null law
 RRK_oa_on_law_activated = {
+    trigger = {
+        has_game_started = yes # Prevent weird behavior as a result of loading history when starting new game
+    }
     effect = {
+        # Workaround for 1.8 bug causing false positives when trying to check law groups against `type` directly
+        type = {
+            save_temporary_scope_as = law_type
+        }
+        
         # Govt. Principles passed
         if = {
             limit = {
-                type = {
+                scope:law_type = {
                     is_same_law_group_as = law_type:law_monarchy
                 }
-                has_game_started = yes # Prevent weird behavior as a result of loading history when starting new game
             }
             # Monarchy passed
             if = {
                 limit = {
-                    type = law_type:law_monarchy
+                    OR = {
+                        scope:law_type = law_type:law_monarchy
+                        scope:law_type = law_type:law_social_monarchy
+                    }
                 }
                 owner = {
                     # Set default head of gov if we just turned into a conmon
@@ -176,13 +153,35 @@ RRK_oa_on_law_activated = {
                         remove_variable = RRK_head_of_gov
                     }
                     
-                    # Remove Head of Gov in government modifier (scripted effect handles removing)
+                    # Remove Head of Gov in government modifier (scripted effect also handles cases where it needs to be removed)
                     RRK_se_update_head_of_gov_modifier = yes
                     
                     # Set preserve monarchy variable (used to detect if we moved off from monarchy later)
                     set_variable = {
                         name  = RRK_preserve_monarchy
                         value = no
+                    }
+                    
+                    # Delete modifiers related to reserving & abolishing the monarchy
+                    every_interest_group = {
+                        limit = {
+                            OR = {
+                                has_modifier = RRK_md_monarchy_preserved
+                                has_modifier = RRK_md_monarchy_abolished
+                            }
+                        }
+                        if = {
+                            limit = {
+                                has_modifier = RRK_md_monarchy_preserved
+                            }
+                            remove_modifier = RRK_md_monarchy_preserved
+                        }
+                        if = {
+                            limit = {
+                                has_modifier = RRK_md_monarchy_abolished
+                            }
+                            remove_modifier = RRK_md_monarchy_abolished
+                        }
                     }
                 }
             }
@@ -226,10 +225,9 @@ RRK_oa_on_law_activated = {
         # Distr. of Power passed
         else_if = {
             limit = {
-                type = {
+                scope:law_type = {
                     is_same_law_group_as = law_type:law_universal_suffrage
                 }
-                has_game_started = yes
             }
             owner = {
                 # Set default head of gov if became conmon

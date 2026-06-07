@@ -35,7 +35,10 @@ REPLACE_OR_CREATE:RRK_st_is_parliamentary_monarchy = {
             }
         }
         AND = {
-            has_law = law_type:law_monarchy
+            OR = {
+                has_law = law_type:law_monarchy
+                has_law = law_type:law_social_monarchy
+            }
             RRK_st_has_voting = yes
         }
     }
@@ -159,6 +162,7 @@ REPLACE_OR_CREATE:RRK_st_cannot_be_crowned_republic = {
 REPLACE_OR_CREATE:RRK_st_has_monarchy = {
     OR = {
         has_law = law_type:law_monarchy
+        has_law = law_type:law_social_monarchy
         RRK_st_is_crowned_republic = yes
     }
 }
@@ -166,6 +170,7 @@ REPLACE_OR_CREATE:RRK_st_has_monarchy = {
 REPLACE_OR_CREATE:RRK_st_has_monarchy_or_variant = {
     OR = {
         has_law_or_variant = law_type:law_monarchy
+        has_law_or_variant = law_type:law_social_monarchy
         RRK_st_is_crowned_republic = yes
     }
 }
