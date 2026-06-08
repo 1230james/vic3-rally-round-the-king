@@ -99,6 +99,7 @@ on_election_campaign_end = {
 RRK_oa_on_new_ruler = {
     effect = {
         owner ?= {
+            # Control regency indicator var
             if = {
                 limit = {
                     has_gov_regency = yes
@@ -110,6 +111,18 @@ RRK_oa_on_new_ruler = {
             }
             else = {
                 remove_variable = RRK_has_regency
+            }
+            
+            # If ruler is changing because the Emperor is taking charge then Bakufu has by definition already been removed
+            # so we should delete the variable
+            if = {
+                limit = {
+                    has_variable = RRK_has_bakufu
+                    NOT = {
+                        has_law = law_type:law_bakufu
+                    }
+                }
+                remove_variable = RRK_has_bakufu
             }
         }
     }
@@ -307,6 +320,17 @@ RRK_oa_on_law_activated = {
                 
                 # Update Head of Gov modifier handler (always wanted)
                 RRK_se_update_head_of_gov_modifier = yes
+                
+                # Special case - [re]set Japan Bakufu indicator
+                if = {
+                    limit = {
+                        scope:law_type = law_type:law_bakufu
+                    }
+                    set_variable = {
+                        name  = RRK_has_bakufu
+                        value = yes
+                    }
+                }
             }
         }
     }

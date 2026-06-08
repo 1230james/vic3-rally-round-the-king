@@ -119,6 +119,15 @@ RRK_se_fire_monarch_fate_event = {
         set_local_variable = had_regency
     }
     
+    # Special case - delay event if Japanese Shogunate moving directly to a crowned republic to allow for ruler title to refresh
+    if = {
+        limit = {
+            has_variable = RRK_has_bakufu
+        }
+        remove_variable = RRK_has_bakufu
+        set_local_variable = had_regency # Re-use the variable
+    }
+    
     # Fire the event
     if = {
         limit = {

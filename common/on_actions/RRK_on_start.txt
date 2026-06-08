@@ -31,6 +31,17 @@
                     value = yes
                 }
             }
+            
+            # Special case - mark Japan with a variable flagging that they have Bakufu
+            if = {
+                limit = {
+                    has_law = law_type:law_bakufu
+                }
+                set_variable = {
+                    name  = RRK_has_bakufu
+                    value = yes
+                }
+            }
         }
     }
 }
