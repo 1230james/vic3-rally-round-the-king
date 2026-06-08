@@ -123,6 +123,35 @@ on_new_ruler = {
 
 # ==================================================================================================================== #
 
+RRK_oa_on_new_interest_group_leader = {
+    effect = {
+        if = {
+            limit = {
+                owner ?= {
+                    var:RRK_head_of_gov ?= PREV.interest_group
+                }
+            }
+            owner ?= {
+                random_scope_character = {
+                    limit = {
+                        has_role = RRK_character_role_head_of_gov
+                    }
+                    remove_character_role = RRK_character_role_head_of_gov
+                }
+            }
+            add_character_role = RRK_character_role_head_of_gov
+        }
+    }
+}
+
+on_new_interest_group_leader = {
+    on_actions = {
+        RRK_oa_on_new_interest_group_leader
+    }
+}
+
+# ==================================================================================================================== #
+
 # owner = owner country of the Law
 # root = law
 # executed when the law is activated for any reason. It's usually because it

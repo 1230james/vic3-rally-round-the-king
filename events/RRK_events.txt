@@ -682,6 +682,15 @@ RRK_ev.6 = {
                         value = scope:their_our_ruling_ig
                     }
                 }
+                random_scope_character = {
+                    limit = {
+                        has_role = RRK_character_role_head_of_gov
+                    }
+                    remove_character_role = RRK_character_role_head_of_gov
+                }
+                scope:their_our_ruling_ig.leader = {
+                    add_character_role = RRK_character_role_head_of_gov
+                }
                 add_liberty_desire = 5
                 add_modifier = {
                     name  = RRK_md_appointed_head_of_gov_country
@@ -788,6 +797,15 @@ RRK_ev.6 = {
                         value = scope:target_ruling_ig
                     }
                 }
+                random_scope_character = {
+                    limit = {
+                        has_role = RRK_character_role_head_of_gov
+                    }
+                    remove_character_role = RRK_character_role_head_of_gov
+                }
+                scope:target_ruling_ig.leader = {
+                    add_character_role = RRK_character_role_head_of_gov
+                }
                 add_modifier = {
                     name  = RRK_md_appointed_head_of_gov_country
                     years = 5
@@ -880,6 +898,15 @@ RRK_ev.6 = {
                         name  = RRK_head_of_gov
                         value = scope:target_popular_ig
                     }
+                }
+                random_scope_character = {
+                    limit = {
+                        has_role = RRK_character_role_head_of_gov
+                    }
+                    remove_character_role = RRK_character_role_head_of_gov
+                }
+                scope:target_popular_ig.leader = {
+                    add_character_role = RRK_character_role_head_of_gov
                 }
                 add_liberty_desire = -5
                 add_modifier = {

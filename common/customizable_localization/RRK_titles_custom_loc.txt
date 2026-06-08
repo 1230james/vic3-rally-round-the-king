@@ -24,7 +24,7 @@ RRK_cl_head_of_gov_title = {
     }
 }
 
-RRK_cl_head_of_gov_title_character = {
+RRK_character_role_head_of_gov_custom_loc = {
     type = character
     
     text = {

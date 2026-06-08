@@ -24,7 +24,7 @@ RRK_grant_premiership = {
             RRK_st_is_presidential_monarchy = yes
             country_has_voting_franchise = no
         }
-        has_role_of_type = politician
+        has_role = character_role_ig_leader
         is_ruler_of_own_country = no
         is_heir_of_own_country  = no
         NOT = {
@@ -62,6 +62,14 @@ RRK_grant_premiership = {
     effect = {
         custom_tooltip = {
 			text = RRK_tt_premiership
+            owner ?= {
+                random_scope_character = {
+                    limit = {
+                        has_role = RRK_character_role_head_of_gov
+                    }
+                    remove_character_role = RRK_character_role_head_of_gov
+                }
+            }
             interest_group = {
                 owner ?= {
                     set_variable = {
@@ -71,6 +79,7 @@ RRK_grant_premiership = {
                     RRK_se_update_head_of_gov_modifier = yes
                 }
             }
+            add_character_role = RRK_character_role_head_of_gov
 		}
     }
 

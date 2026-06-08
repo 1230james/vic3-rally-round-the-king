@@ -235,7 +235,7 @@ types RRK_types {
                     }
                 }
                 blockoverride "label" {
-                    # text = "[Concept('concept_RRK_head_of_gov', Character.GetCustom('RRK_cl_head_of_gov_title_character'))]"
+                    # text = "[Concept('concept_RRK_head_of_gov', Character.GetCustom('RRK_character_role_head_of_gov_custom_loc'))]"
                     text = "[Character.GetPrimaryRoleTitle]"
                 }
                 blockoverride "text" {

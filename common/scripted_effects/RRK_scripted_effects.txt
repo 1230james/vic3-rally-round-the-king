@@ -1,6 +1,12 @@
 ﻿# Prime Minister handling effects
 # Scope: Country
 RRK_se_set_prime_minister = {
+    random_scope_character = {
+        limit = {
+            has_role = RRK_character_role_head_of_gov
+        }
+        remove_character_role = RRK_character_role_head_of_gov
+    }
     random_interest_group = {
         limit = {
             is_in_government = yes
@@ -11,6 +17,9 @@ RRK_se_set_prime_minister = {
                 name  = RRK_head_of_gov
                 value = prev
             }
+        }
+        leader ?= {
+            add_character_role = RRK_character_role_head_of_gov
         }
     }
     if = { # Clear/reset variable if somehow nobody is in government
@@ -30,6 +39,12 @@ RRK_se_set_premier = {
         # max = 1
         # order_by = ig_clout
     # }
+    random_scope_character = {
+        limit = {
+            has_role = RRK_character_role_head_of_gov
+        }
+        remove_character_role = RRK_character_role_head_of_gov
+    }
     remove_variable = RRK_head_of_gov
     get_ruler_for:presidential_elective = {
         interest_group = {
@@ -40,6 +55,7 @@ RRK_se_set_premier = {
                 }
             }
         }
+        add_character_role = RRK_character_role_head_of_gov
     }
 }
 
