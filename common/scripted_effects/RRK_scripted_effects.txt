@@ -86,9 +86,9 @@ RRK_se_fire_monarch_fate_event = {
     # Clean up regencies
     if = {
         limit = {
-            has_gov_regency = yes
+            has_variable = RRK_has_regency
         }
-        remove_regency_modifier = yes
+        # remove_regency_modifier = yes
         ruler ?= {
             if = {
                 limit = {
@@ -100,6 +100,7 @@ RRK_se_fire_monarch_fate_event = {
         heir ?= {
             set_character_as_ruler = yes
         }
+        set_local_variable = had_regency
     }
     
     # Fire the event
@@ -115,10 +116,21 @@ RRK_se_fire_monarch_fate_event = {
             name  = RRK_heir
             value = heir
         }
-        trigger_event = {
-            id    = RRK_ev.2
-            popup = yes
-            days  = 1 # Delay 1 day to let ruler titles refresh in case we interrupted a regency
+        if = {
+            limit = {
+                NOT = { has_local_variable = had_regency }
+            }
+            trigger_event = {
+                id    = RRK_ev.2
+                popup = yes
+            }
+        }
+        else = {
+            trigger_event = {
+                id    = RRK_ev.2
+                popup = yes
+                days  = 1 # Delay 1 day to let ruler titles refresh if we interrupted a regency
+            }
         }
     }
     else = {
@@ -126,10 +138,21 @@ RRK_se_fire_monarch_fate_event = {
             name  = RRK_monarch
             value = ruler
         }
-        trigger_event = {
-            id    = RRK_ev.3
-            popup = yes
-            days  = 1
+        if = {
+            limit = {
+                NOT = { has_local_variable = had_regency }
+            }
+            trigger_event = {
+                id    = RRK_ev.3
+                popup = yes
+            }
+        }
+        else = {
+            trigger_event = {
+                id    = RRK_ev.3
+                popup = yes
+                days  = 1
+            }
         }
     }
 }

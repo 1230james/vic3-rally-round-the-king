@@ -96,6 +96,33 @@ on_election_campaign_end = {
 
 # ==================================================================================================================== #
 
+RRK_oa_on_new_ruler = {
+    effect = {
+        owner ?= {
+            if = {
+                limit = {
+                    has_gov_regency = yes
+                }
+                set_variable = {
+                    name  = RRK_has_regency
+                    value = yes
+                }
+            }
+            else = {
+                remove_variable = RRK_has_regency
+            }
+        }
+    }
+}
+
+on_new_ruler = {
+    on_actions = {
+        RRK_oa_on_new_ruler
+    }
+}
+
+# ==================================================================================================================== #
+
 # owner = owner country of the Law
 # root = law
 # executed when the law is activated for any reason. It's usually because it
