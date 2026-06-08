@@ -24,7 +24,7 @@ RRK_cl_head_of_gov_title = {
     }
 }
 
-RRK_cl_head_of_gov_title_character = {
+RRK_character_role_head_of_gov_custom_loc = {
     type = character
     
     text = {
@@ -85,6 +85,16 @@ RRK_cl_premier_title = {
             }
         }
     }
+    text = { # Japanese Taikun
+        localization_key = TAIKUN_TITLE
+        trigger = {
+            var:RRK_head_of_gov ?= {
+                leader = {
+                    character_is_taikun = yes
+                }
+            }
+        }
+    }
     text = {
         localization_key = RRK_premier
         trigger = {
@@ -123,6 +133,16 @@ RRK_cl_prime_minister_title = {
         trigger = {
             any_primary_culture = {
                 has_discrimination_trait = language_germanophone
+            }
+        }
+    }
+    text = { # Japanese Taikun
+        localization_key = TAIKUN_TITLE
+        trigger = {
+            var:RRK_head_of_gov ?= {
+                leader = {
+                    character_is_taikun = yes
+                }
             }
         }
     }

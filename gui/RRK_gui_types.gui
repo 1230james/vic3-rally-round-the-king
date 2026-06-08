@@ -8,15 +8,15 @@ types RRK_types {
     ####################
 
     type RRK_overview_head_of_gov_button = button_icon_round {
-		parentanchor = right
-		size = { 44 44 }
-		blockoverride "icon" {
-			texture = "gfx/interface/buttons/button_icons/reset.dds"
-		}
-		onclick = "[GetVariableSystem.Toggle('RRK_view_head_of_gov')]"
-		tooltip = "RRK_gui_toggle"
-		using = tooltip_above
-	}
+        parentanchor = right
+        size = { 44 44 }
+        blockoverride "icon" {
+            texture = "gfx/interface/buttons/button_icons/reset.dds"
+        }
+        onclick = "[GetVariableSystem.Toggle('RRK_view_head_of_gov')]"
+        tooltip = "RRK_gui_toggle"
+        using = tooltip_above
+    }
 
     # character_with_background - commander_panel.gui
     type RRK_character_widget = widget {
@@ -223,13 +223,20 @@ types RRK_types {
                     widget = {
                         size = { 35 35 }
                         icon = {
+                            visible = "[Character.GetPrimaryRole.IsValid]"
                             size = { 100% 100% }
-                            texture = "gfx/interface/icons/character_role_icons/politician.dds"
+                            texture = "[Character.GetPrimaryRole.GetTexture]"
+                        }
+                        icon = {
+                            visible = "[Not(Character.GetPrimaryRole.IsValid)]"
+                            size = { 100% 100% }
+                            texture = "gfx/interface/icons/generic_icons/undecided_icon.dds"
                         }
                     }
                 }
                 blockoverride "label" {
-                    text = "[Concept('concept_RRK_head_of_gov', Character.GetCustom('RRK_cl_head_of_gov_title_character'))]"
+                    # text = "[Concept('concept_RRK_head_of_gov', Character.GetCustom('RRK_character_role_head_of_gov_custom_loc'))]"
+                    text = "[Character.GetPrimaryRoleTitle]"
                 }
                 blockoverride "text" {
                     text = "[Character.GetCustom('GetUniversalFullName')]"
@@ -296,9 +303,9 @@ types RRK_types {
             widget = { size = { 5 5 }}
 
             ### TRAITS
-            # character_traits_no_label = {
-                # parentanchor = right
-            # }
+            character_traits_no_label = {
+                parentanchor = right
+            }
         }
     }
 
@@ -370,23 +377,22 @@ types RRK_types {
                 spacing = 10
 
                 ### TRAITS
-                # [RRK] As of 1.9 cannot keep this here due to const collision
-                # flowcontainer = {
-                    # datamodel = "[Character.AccessTraits]"
-                    # spacing = 2
+                flowcontainer = {
+                    datamodel = "[Character.AccessTraits]"
+                    spacing = 2
 
-                    # item = {
-                        # icon = {
-                            # size = { 30 42 }
-                            # texture = "[CharacterTrait.GetTexture]"
-                            # using = tooltip_above
+                    item = {
+                        icon = {
+                            size = { 30 42 }
+                            texture = "[CharacterTrait.GetTexture]"
+                            using = tooltip_above
 
-                            # tooltipwidget = {
-                                # FancyTooltip_CharacterTrait = {}
-                            # }
-                        # }
-                    # }
-                # }
+                            tooltipwidget = {
+                                FancyTooltip_CharacterTrait = {}
+                            }
+                        }
+                    }
+                }
 
                 ### IG ICON
                 character_ig_button = {

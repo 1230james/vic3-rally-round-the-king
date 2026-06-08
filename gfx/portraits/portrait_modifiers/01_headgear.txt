@@ -21,7 +21,7 @@ headgear = {
                 add = 90000
                 scope:character ?= {
                     OR = {
-                        has_role = agitator
+                        has_role_of_type = agitator
                         has_template = fra_delescluze_character_template # Never ever give Louis Delescluze a hat, any hat. His forehead is too powerful.
                         has_template = BRZ_getulio_vargas_character_template # Vargas is forbidden from wearing hats.
                         has_template = jhn_rani_of_jhansi # lakshmibai's hair is actually a hat
@@ -36,6 +36,8 @@ headgear = {
                         has_template = aus_klemens_von_metternich
                         has_template = mon_dordije_petrovic_njegos
                         has_template = PHI_manuel_blanco_ramos
+                        has_template = RUS_alexander_fyodorovich_kerensky # His forehead is also too powerful
+                        has_template = fra_auguste_comte_character_template
                     }
                     is_historical = yes
                     NOR = {
@@ -43,6 +45,8 @@ headgear = {
                         has_template = gbr_pankhurst_character_template
                         has_template = agitator_emiliano_zapata
                         has_template = ruler_karl_marx
+                        has_template = GBR_thomas_ismay
+                        has_template = GBR_joseph_ismay
                     }
                 }
             }
@@ -159,10 +163,10 @@ headgear = {
                             culture = cu:nordestino
                         }
                         OR = {
-                            has_role = agitator
+                            has_role_of_type = agitator
                             AND = { # Monarchs don't get to wear this hat, but republican rulers can
                                 NAND = {
-                                    is_ruler = yes
+                                    is_ruler_of_own_country = yes
                                     home_country ?= {
                                         RRK_st_has_monarchy_or_variant = yes
                                     }
@@ -242,9 +246,6 @@ headgear = {
                         politician_clothes_trigger = yes
                         armed_forces_clothes_trigger = yes
                         scope:character ?= {
-                            owner ?= {
-                                has_variable = meiji_restoration_complete
-                            }
                             has_ideology = ideology:ideology_traditionalist
                         }
                     }
@@ -365,7 +366,7 @@ headgear = {
                 scope:character ?= {
                     age > 12
                     has_template = per_nasir_al_din_qajar_template
-                    is_ruler = yes
+                    is_ruler_of_own_country = yes
                 }
             }
         }
@@ -434,7 +435,7 @@ headgear = {
 
                 scope:character ?= {
                     AND = {
-                        age >= define:NCharacters|ADULT_AGE
+                        is_adult = yes
                         has_template = pan_duleep_singh
                     }
                 }
@@ -491,13 +492,13 @@ headgear = {
                     is_female = no
                     culture = { cu:rajput = this }
                     OR = {
-                        has_role = general
+                        has_role_of_type = general
                         AND = {
                             armed_forces_clothes_trigger = yes
                             politician_clothes_trigger = yes
-                            is_ruler = no
+                            is_ruler_of_own_country = no
                         }
-                        is_ruler = yes
+                        is_ruler_of_own_country = yes
                     }
                 }
             }
@@ -545,13 +546,13 @@ headgear = {
                     is_female = no
                     culture = { cu:rajput = this }
                     OR = {
-                        has_role = general
+                        has_role_of_type = general
                         AND = {
                             armed_forces_clothes_trigger = yes
                             politician_clothes_trigger = yes
-                            is_ruler = no
+                            is_ruler_of_own_country = no
                         }
-                        is_ruler = yes
+                        is_ruler_of_own_country = yes
                     }
                     owner ?= {
                         OR = {
@@ -741,7 +742,7 @@ headgear = {
                 scope:character ?= {
                      AND = {
                         has_template = EGY_talaat_harb
-                        has_role = executive
+                        has_role_of_type = executive
                     }
                 }
             }
@@ -754,7 +755,7 @@ headgear = {
                 mode = add
                 gene = headgear
                 template = european_executive_hats
-                range = { 0 0.5 }
+                accessory = male_headgear_european_common_02
             }
         }
         weight = {
@@ -765,7 +766,7 @@ headgear = {
                 scope:character ?= {
                     AND = {
                         has_template = GBR_isambard_kingdom_brunel
-                        has_role = executive
+                        has_role_of_type = executive
                     }
                 }
             }
@@ -788,7 +789,7 @@ headgear = {
                 scope:character ?= {
                     AND = {
                         has_template = HBC_george_simpson
-                        has_role = executive
+                        has_role_of_type = executive
                     }
                 }
             }
@@ -811,7 +812,7 @@ headgear = {
                 scope:character ?= {
                     AND = {
                         has_template = BIC_george_eden
-                        has_role = executive
+                        has_role_of_type = executive
                     }
                 }
             }
@@ -834,7 +835,7 @@ headgear = {
                 scope:character ?= {
                     AND = {
                         has_template = usa_thomas_edison_character_template
-                        has_role = executive
+                        has_role_of_type = executive
                     }
                 }
             }
@@ -857,7 +858,7 @@ headgear = {
                 scope:character ?= {
                     AND = {
                         has_template = usa_robert_e_lee_wilson
-                        has_role = executive
+                        has_role_of_type = executive
                     }
                 }
             }
@@ -880,7 +881,7 @@ headgear = {
                 scope:character ?= {
                     AND = {
                         has_template = GBR_john_maple
-                        has_role = executive
+                        has_role_of_type = executive
                     }
                 }
             }
@@ -903,7 +904,7 @@ headgear = {
                 scope:character ?= {
                     AND = {
                         has_template = SAF_cecil_rhodes
-                        has_role = executive
+                        has_role_of_type = executive
                     }
                 }
             }
@@ -926,7 +927,7 @@ headgear = {
                 scope:character ?= {
                     AND = {
                         has_template = NOR_sam_eyde
-                        has_role = executive
+                        has_role_of_type = executive
                     }
                 }
             }
@@ -1031,7 +1032,13 @@ headgear = {
             base = 0
             modifier = {
                 add = 100
-                japanese_imperial_clothes_trigger = yes
+                OR = {
+                    japanese_imperial_clothes_trigger = yes
+                    japanese_shogun_clothes_trigger = yes
+                }
+                scope:character ?= {
+                    japanese_restoration_trigger = no
+                }
             }
         }
     }
@@ -1052,7 +1059,7 @@ headgear = {
                 european_clothes_trigger = yes
                 monarchy_clothes_trigger = yes
                 scope:character ?= {
-                    age >= define:NCharacters|ADULT_AGE
+                    is_adult = yes
                 }
             }
         }
@@ -1075,7 +1082,7 @@ headgear = {
                 politician_clothes_trigger = yes
                 armed_forces_clothes_trigger = no
                 scope:character ?= {
-                    age >= define:NCharacters|ADULT_AGE
+                    is_adult = yes
                 }
                 NAND = {
                     OR = {
@@ -1084,7 +1091,7 @@ headgear = {
                     }
                     scope:character ?= {
                         AND = {
-                            has_role = politician
+                            has_role_of_type = politician
                             is_interest_group_type = ig_rural_folk
                             owner ?= {
                                 NOT = {
@@ -1133,7 +1140,7 @@ headgear = {
                         scope:character = {
                             religion = rel:sikh
                             NAND = {
-                                is_ruler = yes
+                                is_ruler_of_own_country = yes
 								exists = home_country
                                 home_country = {
                                     RRK_st_has_monarchy_or_variant = yes
@@ -1209,14 +1216,14 @@ headgear = {
                             c:CSA ?= this
                             is_subject = no
                         }
-                        age >= define:NCharacters|ADULT_AGE
+                        is_adult = yes
                     }
                 }
                 agitator_character_trigger = no
                 OR = {
                     scope:character = {
-                        has_role = general
-                        is_ruler = no
+                        has_role_of_type = general
+                        is_ruler_of_own_country = no
                     }
                     AND = {
                         armed_forces_clothes_trigger = yes
@@ -1245,12 +1252,12 @@ headgear = {
                 agitator_character_trigger = no
                 OR = {
                     scope:character = {
-                       has_role = admiral
-                       age >= define:NCharacters|ADULT_AGE
+                       has_role_of_type = admiral
+                       is_adult = yes
                     }
                     scope:character = {
-                        has_role = general
-                        is_ruler = yes
+                        has_role_of_type = general
+                        is_ruler_of_own_country = yes
 						exists = home_country
                         home_country = {
                             NOT = { RRK_st_has_monarchy_or_variant = yes}
@@ -1288,23 +1295,23 @@ headgear = {
                 }
                 scope:character ?= {
                     is_female = yes
-                    age >= define:NCharacters|ADULT_AGE
+                    is_adult = yes
                     OR = {
-                        has_role = general
-                        has_role = admiral
+                        has_role_of_type = general
+                        has_role_of_type = admiral
                         AND = {
                             is_interest_group_type = ig_armed_forces
-                            has_role = politician
+                            has_role_of_type = politician
                             OR = {  # A monarch shouldn't wear this, but a republican ruler can
                                 AND = {
-                                    is_ruler = no
-                                    is_heir = no
+                                    is_ruler_of_own_country = no
+                                    is_heir_of_own_country = no
                                     home_country ?= {
                                         RRK_st_has_monarchy_or_variant = yes
                                     }
                                 }
                                 AND = {
-                                    is_ruler = yes
+                                    is_ruler_of_own_country = yes
                                     home_country ?= {
                                         NOT = { RRK_st_has_monarchy_or_variant = yes }
                                     }
@@ -1312,7 +1319,7 @@ headgear = {
                             }
                         }
                         AND = {
-                            has_role = agitator
+                            has_role_of_type = agitator
                             is_interest_group_type = ig_armed_forces
                         }
                     }
@@ -1351,23 +1358,23 @@ headgear = {
                 }
                 scope:character ?= {
                     is_female = yes
-                    age >= define:NCharacters|ADULT_AGE
+                    is_adult = yes
                     OR = {
-                        has_role = general
-                        has_role = admiral
+                        has_role_of_type = general
+                        has_role_of_type = admiral
                         AND = {
                             is_interest_group_type = ig_armed_forces
-                            has_role = politician
+                            has_role_of_type = politician
                             OR = {  # A monarch shouldn't wear this, but a republican ruler can
                                 AND = {
-                                    is_ruler = no
-                                    is_heir = no
+                                    is_ruler_of_own_country = no
+                                    is_heir_of_own_country = no
                                     home_country ?= {
                                         RRK_st_has_monarchy_or_variant = yes
                                     }
                                 }
                                 AND = {
-                                    is_ruler = yes
+                                    is_ruler_of_own_country = yes
                                     home_country ?= {
                                         NOT = { RRK_st_has_monarchy_or_variant = yes }
                                     }
@@ -1375,7 +1382,7 @@ headgear = {
                             }
                         }
                         AND = {
-                            has_role = agitator
+                            has_role_of_type = agitator
                             is_interest_group_type = ig_armed_forces
                         }
                     }
@@ -1445,8 +1452,8 @@ headgear = {
                         agitator_character_trigger = no
                         OR = {
                             scope:character ?= {
-                                has_role = general
-                                age >= define:NCharacters|ADULT_AGE
+                                has_role_of_type = general
+                                is_adult = yes
                                 is_female = no
                             }
                             AND = {
@@ -1454,7 +1461,7 @@ headgear = {
                                 armed_forces_clothes_trigger = yes
                                 scope:character ?= {
                                     is_female = no
-                                    age >= define:NCharacters|ADULT_AGE
+                                    is_adult = yes
                                 }
                             }
                         }
@@ -1493,8 +1500,8 @@ headgear = {
                         american_clothes_trigger = yes
                         agitator_character_trigger = no
                         scope:character = {
-                            has_role = general
-                            age >= define:NCharacters|ADULT_AGE
+                            has_role_of_type = general
+                            is_adult = yes
                             is_female = no
                         }
                     }
@@ -1522,8 +1529,8 @@ headgear = {
                     AND = {
                         exists = scope:character
                         scope:character = {
-                            age >= define:NCharacters|ADULT_AGE
-                            has_role = general
+                            is_adult = yes
+                            has_role_of_type = general
 							exists = home_country
                             home_country = c:CSA
                         }
@@ -1533,7 +1540,7 @@ headgear = {
                         politician_clothes_trigger = yes
                         armed_forces_clothes_trigger = yes
                         scope:character = {
-                            age >= define:NCharacters|ADULT_AGE
+                            is_adult = yes
 							exists = home_country
 							home_country = c:CSA
 						}
@@ -1571,14 +1578,14 @@ headgear = {
                 agitator_character_trigger = no
                 OR = {
                     scope:character = {
-                        has_role = general
-                        age >= define:NCharacters|ADULT_AGE
+                        has_role_of_type = general
+                        is_adult = yes
                     }
                     AND = {
                         politician_clothes_trigger = yes
                         armed_forces_clothes_trigger = yes
                         scope:character ?= {
-                            age >= define:NCharacters|ADULT_AGE
+                            is_adult = yes
                         }
                     }
                 }
@@ -1607,6 +1614,13 @@ headgear = {
                     }
                     owner = {
                         c:GBR ?= this
+                    }
+                    workplace ?= {
+                        OR = {
+                            is_building_type = building_barrack
+                            is_building_type = building_conscription_center
+                            is_building_type = building_land_logistics_center
+                        }
                     }
                 }
                 OR = {
@@ -1641,6 +1655,13 @@ headgear = {
                     }
                     owner = {
                         c:GBR ?= this
+                    }
+                    workplace ?= {
+                        OR = {
+                            is_building_type = building_barrack
+                            is_building_type = building_conscription_center
+                            is_building_type = building_land_logistics_center
+                        }
                     }
                 }
                 OR = {
@@ -1690,12 +1711,37 @@ headgear = {
                 british_empire_clothes_trigger = yes
 
                 scope:character ?= {
-                    age >= define:NCharacters|ADULT_AGE
-                    has_role = general
+                    is_adult = yes
+                    has_role_of_type = general
                 }
 
                 c:GBR ?= {
                     has_technology_researched = bolt_action_rifles
+                }
+            }
+        }
+    }
+
+    british_military_soldier_headgear_late = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = headgear
+                template = brodie_helmet
+                range = { 0 1 }
+            }
+        }
+        weight = {
+            base = 0
+            modifier = {
+                add = 20000
+                
+                scope:pop ?= {
+                    is_pop_type = soldiers
+                    owner ?= {
+                        c:GBR ?= this
+                        has_technology_researched = automatic_machine_guns
+                    }
                 }
             }
         }
@@ -1736,7 +1782,7 @@ headgear = {
                 french_empire_clothes_trigger = yes
                 OR = {
                     scope:character = {
-                        has_role = general
+                        has_role_of_type = general
                     }
                     AND = {
                         politician_clothes_trigger = yes
@@ -1745,7 +1791,7 @@ headgear = {
                 }
                 agitator_character_trigger = no
                 scope:character ?= {
-                    age >= define:NCharacters|ADULT_AGE
+                    is_adult = yes
                     owner = {
                         NOT = {
                             has_technology_researched = repeaters
@@ -1804,7 +1850,7 @@ headgear = {
                 french_empire_clothes_trigger = yes
                 OR = {
                     scope:character = {
-                        has_role = general
+                        has_role_of_type = general
                     }
                     AND = {
                         politician_clothes_trigger = yes
@@ -1813,7 +1859,7 @@ headgear = {
                 }
                 agitator_character_trigger = no
                 scope:character ?= {
-                    age >= define:NCharacters|ADULT_AGE
+                    is_adult = yes
                     owner ?= {
                         has_technology_researched = repeaters
                     }
@@ -1865,55 +1911,544 @@ headgear = {
         }
     }
 
-    japanese_meiji_military_headgear = {
+    japanese_eboshi_headgear = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = headgear
+                template = japanese_eboshi_hat
+                range = { 0 1 } # For the randomness to work correctly
+            }
+        }
+        weight = {
+            base = 0
+            modifier = {
+                add = 1000
+                has_dlc_feature = ep2_cosmetics
+                scope:character ?= {
+                    culture = cu:japanese
+                    NOR = {
+                        has_role_of_type = ruler
+                        has_role_of_type = heir
+                        has_role_of_type = general
+                        has_role_of_type = admiral
+                    }
+                    OR = {
+                        has_role_of_type = politician
+                        has_role_of_type = magnate
+                    }
+                    NOR = { 
+                        is_interest_group_type = ig_devout
+                        is_interest_group_type = ig_armed_forces
+                    }
+                    japanese_restoration_trigger = no
+                    japanese_modernizer_character_trigger = no
+                }
+            }
+        }
+    }
+
+    # FREE FOR BASE GAME - NOT TO BE LOCKED BEHIND ANY DLC
+    japanese_edo_soldier_military_headgear = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = headgear
+                template = japanese_edo_caps
+                range = { 0 0.66 }
+            }
+        }
+        weight = {
+            base = 0
+            modifier = {
+                add  = 11000
+
+                scope:pop ?= {
+                    culture = cu:japanese
+                    is_pop_type = soldiers
+                    owner ?= {
+                        country_has_primary_culture = cu:japanese
+                    }
+                    japanese_restoration_trigger = no
+                }
+            }
+        }
+    }
+
+    # FREE FOR BASE GAME - NOT TO BE LOCKED BEHIND ANY DLC
+    japanese_edo_officer_military_headgear = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = headgear
+                template = japanese_edo_caps
+                range = { 0.67 1 }
+            }
+        }
+        weight = {
+            base = 0
+            modifier = {
+                add  = 11000
+
+                scope:pop ?= {
+                    culture = cu:japanese
+                    is_pop_type = officers
+                    owner ?= {
+                        country_has_primary_culture = cu:japanese
+                    }
+                    japanese_restoration_trigger = no
+                }
+            }
+            modifier = {
+                add  = 11000
+
+                scope:character ?= {
+                    is_adult = yes
+                    NOT = { has_role_of_type = ruler }
+                    NOT = { has_role = character_role_emperor_of_japan }
+                    OR = {
+                        has_role_of_type = general
+                        AND = {
+                            armed_forces_clothes_trigger = yes
+                            politician_clothes_trigger = yes
+                        }
+                    }
+                    owner ?= {
+                        country_has_primary_culture = cu:japanese
+                    }
+                    japanese_restoration_trigger = no
+                }
+            }
+        }
+    }
+
+    # FREE FOR BASE GAME - NOT TO BE LOCKED BEHIND ANY DLC
+    japanese_meiji_1886_soldier_military_headgear = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = headgear
+                template = japanese_meiji_1886_caps
+                range = { 0 0.375 }
+            }
+        }
+        weight = {
+            base = 0
+            modifier = {
+                add  = 12000
+
+                scope:pop ?= {
+                    culture = cu:japanese
+                    is_pop_type = soldiers
+                    owner ?= {
+                        country_has_primary_culture = cu:japanese
+                        has_technology_researched = rifling
+                    }
+                    japanese_restoration_trigger = yes
+                }
+            }
+        }
+    }
+
+    # FREE FOR BASE GAME - NOT TO BE LOCKED BEHIND ANY DLC
+    japanese_meiji_1886_officer_military_headgear = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = headgear
+                template = japanese_meiji_1886_caps
+                range = { 0.625 1 }
+            }
+        }
+        weight = {
+            base = 0
+            modifier = {
+                add  = 12000
+
+                scope:pop ?= {
+                    culture = cu:japanese
+                    is_pop_type = officers
+                    owner ?= {
+                        country_has_primary_culture = cu:japanese
+                        has_technology_researched = rifling
+                    }
+                    japanese_restoration_trigger = yes
+                }
+            }
+        }
+    }
+
+    # technically this asset does not need to be DLC-locked, but the related outfit it pairs with /does/ need to be dlc-locked, so it makes sense to have this follow the same triggers
+    japanese_meiji_1886_emperor = {
         dna_modifiers = {
             accessory = {
                 mode = add
                 gene = headgear
                 template = european_military_02_colors
+                accessory = male_headgear_european_military_02_red
+            }
+        }
+        weight = {
+            base = 0
+            modifier = {
+                add  = 12000
+                has_dlc_feature = ep2_cosmetics
+                scope:character ?= {
+                    is_adult = yes
+                    has_role_of_type = ruler
+                    OR = {
+                        has_role_of_type = general
+                        owner ?= {
+                            is_at_war = yes
+                        }
+                    }
+                    owner ?= {
+                        country_has_primary_culture = cu:japanese
+                        has_technology_researched = rifling
+                        NOT = { has_technology_researched = trench_works }
+                    }
+                    japanese_restoration_trigger = yes
+                }
+            }
+        }
+    }
+
+    # FREE FOR BASE GAME - NOT TO BE LOCKED BEHIND ANY DLC
+    japanese_meiji_1886_general_rank1 = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = headgear
+                template = japanese_meiji_1886_commanders
+                range = { 0.25 1 }
+            }
+        }
+        weight = {
+            base = 0
+            modifier = {
+                add  = 12000
+
+                scope:character ?= {
+                    is_adult = yes
+                    NOT = { has_role_of_type = ruler }
+                    has_role_of_type = general
+                    owner ?= {
+                        country_has_primary_culture = cu:japanese
+                        has_technology_researched = rifling
+                        NOT = { has_technology_researched = bolt_action_rifles }
+                    }
+                    japanese_restoration_trigger = yes
+                }
+            }
+        }
+    }
+
+    # FREE FOR BASE GAME - NOT TO BE LOCKED BEHIND ANY DLC
+    japanese_meiji_1904_military_headgear = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = headgear
+                template = japanese_meiji_1904_caps
                 range = { 0 1 }
             }
         }
         weight = {
             base = 0
             modifier = {
-                add = 1200
+                add  = 13000
+
+                scope:pop ?= {
+                    culture = cu:japanese
+                    OR = {
+                        is_pop_type = soldiers
+                        is_pop_type = officers
+                    }
+                    owner ?= {
+                        country_has_primary_culture = cu:japanese
+                        has_technology_researched = bolt_action_rifles
+                    }
+                    japanese_restoration_trigger = yes
+                }
+            }
+            modifier = {
+                add  = 13000
+
+                scope:character ?= {
+                    is_adult = yes
+                    NAND = { 
+                        has_role_of_type = ruler
+                        owner ?= { 
+                            RRK_st_has_monarchy = yes
+                            has_variable = japan_restoration_complete
+                        }
+                    }
+                    OR = {
+                        has_role_of_type = general
+                        AND = {
+                            armed_forces_clothes_trigger = yes
+                            politician_clothes_trigger = yes
+                        }
+                    }
+                    owner ?= {
+                        country_has_primary_culture = cu:japanese
+                        has_technology_researched = bolt_action_rifles
+                    }
+                    japanese_restoration_trigger = yes
+                }
+            }
+        }
+    }
+
+    # FREE FOR BASE GAME - NOT TO BE LOCKED BEHIND ANY DLC
+    japanese_taisho_1922_soldier_military_headgear = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = headgear
+                template = japanese_taisho_1922_caps
+                range = { 0 1 }
+            }
+        }
+        weight = {
+            base = 0
+            modifier = {
+                add  = 14000
+
+                scope:pop ?= {
+                    culture = cu:japanese
+                    is_pop_type = soldiers
+                    owner ?= {
+                        country_has_primary_culture = cu:japanese
+                        has_technology_researched = automatic_machine_guns
+                    }
+                    japanese_restoration_trigger = yes
+                }
+            }
+        }
+    }
+
+    # FREE FOR BASE GAME - NOT TO BE LOCKED BEHIND ANY DLC
+    japanese_taisho_1922_officer_military_headgear = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = headgear
+                template = japanese_taisho_1922_caps
+                range = { 0 0.5 }
+            }
+        }
+        weight = {
+            base = 0
+            modifier = {
+                add  = 14000
+
+                scope:pop ?= {
+                    culture = cu:japanese
+                    is_pop_type = officers
+                    owner ?= {
+                        country_has_primary_culture = cu:japanese
+                        has_technology_researched = automatic_machine_guns
+                    }
+                    japanese_restoration_trigger = yes
+                }
+            }
+            modifier = {
+                add  = 14000
+
+                scope:character ?= {
+                    is_adult = yes
+                    NAND = { 
+                        has_role_of_type = ruler
+                        owner ?= { 
+                            RRK_st_has_monarchy = yes
+                            has_variable = japan_restoration_complete
+                        }
+                    }
+                    OR = {
+                        has_role_of_type = general
+                        AND = {
+                            armed_forces_clothes_trigger = yes
+                            politician_clothes_trigger = yes
+                        }
+                    }
+                    owner ?= {
+                        country_has_primary_culture = cu:japanese
+                        has_technology_researched = automatic_machine_guns
+                    }
+                    japanese_restoration_trigger = yes
+                }
+            }
+        }
+    }
+
+    # FREE FOR BASE GAME - NOT TO BE LOCKED BEHIND ANY DLC
+    japanese_showa_1938_soldier_military_headgear = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = headgear
+                template = japanese_showa_1938_caps
+                range = { 0 1 }
+            }
+        }
+        weight = {
+            base = 0
+            modifier = {
+                add  = 14000
+
+                scope:pop ?= {
+                    culture = cu:japanese
+                    is_pop_type = soldiers
+                    owner ?= {
+                        country_has_primary_culture = cu:japanese
+                        OR = {
+                            has_technology_researched = chemical_warfare
+                            has_technology_researched = concrete_fortifications
+                            has_technology_researched = military_aviation
+                            has_technology_researched = flamethrowers
+                            has_technology_researched = stormtroopers
+                            has_technology_researched = nco_training
+                        }
+                    }
+                    japanese_restoration_trigger = yes
+                }
+            }
+        }
+    }
+
+    # FREE FOR BASE GAME - NOT TO BE LOCKED BEHIND ANY DLC
+    japanese_showa_pith_military_headgear = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = headgear
+                template = japanese_pith_helmets
+                range = { 0 1 }
+            }
+        }
+        weight = {
+            base = 0
+            modifier = {
+                add  = 14000
+
+                scope:character ?= {
+                    is_adult = yes
+                    NOT = { has_role_of_type = ruler }
+                    has_role_of_type = general
+                    is_in_hot_land_hq_trigger = yes
+                    owner ?= {
+                        country_has_primary_culture = cu:japanese
+                        OR = {
+                            has_technology_researched = chemical_warfare
+                            has_technology_researched = concrete_fortifications
+                            has_technology_researched = military_aviation
+                            has_technology_researched = flamethrowers
+                            has_technology_researched = stormtroopers
+                            has_technology_researched = nco_training
+                        }
+                    }
+                    japanese_restoration_trigger = yes
+                }
+            }
+        }
+    }
+
+    # FREE FOR BASE GAME - NOT TO BE LOCKED BEHIND ANY DLC
+    japanese_meiji_civilian_headgear = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = headgear
+                template = japanese_meiji_civilian_caps
+                range = { 0 1 }
+            }
+        }
+        weight = {
+            base = 0
+            modifier = {
+                add  = 14000
+
+                japanese_clothes_pop_trigger = yes
                 OR = {
-                    AND = {
-                        scope:character ?= {
-                            age >= define:NCharacters|ADULT_AGE
-                            culture = cu:japanese
-                            owner ?= {
-                                has_variable = meiji_restoration_complete
-                            }
-                        }
-                        OR = {
-                            scope:character = {
-                                age >= define:NCharacters|ADULT_AGE
-                                has_role = general
-                            }
-                            AND = {
-                                politician_clothes_trigger = yes
-                                armed_forces_clothes_trigger = yes
-                                scope:character ?= {
-                                    NOT = { has_ideology = ideology:ideology_traditionalist }
-                                }
-                            }
-                        }
-                        agitator_character_trigger = no
+                    middle_clothes_pop_trigger = yes
+                    upper_clothes_pop_trigger = yes
+                }
+                scope:pop ?= {
+                    NOR = {
+                        is_pop_type = soldiers
+                        is_pop_type = officers
+                        is_pop_type = clergymen
                     }
-                    AND = {
-                        scope:pop ?= {
-                            culture = cu:japanese
-                            owner = {
-                                has_variable = meiji_restoration_complete
-                            }
-                        }
+                    japanese_restoration_trigger = yes
+                }
+            }
+        }
+    }
+
+    # FREE FOR BASE GAME - NOT TO BE LOCKED BEHIND ANY DLC
+    japanese_sailor_headgear = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = headgear
+                template = japanese_sailor_caps
+                range = { 0 0.5 }
+            }
+        }
+        weight = {
+            base = 0
+            modifier = {
+                add  = 14500
+
+                scope:pop ?= {
+                    OR = {
+                        is_pop_type = soldiers
+                        is_pop_type = laborers
+                    }
+                    workplace ?= {
                         OR = {
-                            soldier_clothes_pop_trigger = yes
-                            officers_clothes_pop_trigger = yes
+                            is_building_type = building_naval_fortification
+                            is_building_type = building_naval_administration
+                            is_building_type = building_naval_logistics_center
                         }
                     }
+                    owner ?= {
+                        country_has_primary_culture = cu:japanese
+                    }
+                    japanese_restoration_trigger = yes
+                }
+            }
+        }
+    }
+
+    # FREE FOR BASE GAME - NOT TO BE LOCKED BEHIND ANY DLC
+     japanese_admiral_headgear = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = headgear
+                template = japanese_sailor_caps
+                range = { 0.5 1 }
+            }
+        }
+        weight = {
+            base = 0   
+            modifier = {
+                add  = 12000
+
+                scope:character ?= {
+                    is_adult = yes
+                    has_role_of_type = admiral
+                    NOR = { 
+                        has_role_of_type = ruler
+                        has_role_of_type = heir
+                        has_role_of_type = politician
+                    }
+                    owner ?= {
+                        country_has_primary_culture = cu:japanese
+                    }
+                    japanese_restoration_trigger = yes
                 }
             }
         }
@@ -1935,7 +2470,7 @@ headgear = {
                 russian_empire_clothes_trigger = yes
                 OR = {
                     scope:character = {
-                        has_role = general
+                        has_role_of_type = general
                     }
                     AND = {
                         politician_clothes_trigger = yes
@@ -1943,7 +2478,7 @@ headgear = {
                     }
                 }
                 scope:character ?= {
-                    age >= define:NCharacters|ADULT_AGE
+                    is_adult = yes
                 }
                 agitator_character_trigger = no
             }
@@ -2021,8 +2556,8 @@ headgear = {
                     russian_empire_clothes_trigger = yes
                     agitator_character_trigger = no
                     scope:character ?= {
-                        has_role = general
-                        age >= define:NCharacters|ADULT_AGE
+                        has_role_of_type = general
+                        is_adult = yes
                     }
                 }
             }
@@ -2049,7 +2584,7 @@ headgear = {
                 austrian_empire_clothes_trigger = yes
                 OR = {
                     scope:character = {
-                        has_role = general
+                        has_role_of_type = general
                     }
                     AND = {
                         politician_clothes_trigger = yes
@@ -2057,7 +2592,7 @@ headgear = {
                     }
                 }
                 scope:character ?= {
-                    age >= define:NCharacters|ADULT_AGE
+                    is_adult = yes
                 }
                 agitator_character_trigger = no
             }
@@ -2127,7 +2662,7 @@ headgear = {
                 bulgarian_clothes_trigger = yes
                 monarchy_clothes_trigger = yes
                 scope:character ?= {
-                    age >= define:NCharacters|ADULT_AGE
+                    is_adult = yes
                 }
                 agitator_character_trigger = no
             }
@@ -2156,7 +2691,7 @@ headgear = {
                 }
                 OR = {
                     scope:character = {
-                        has_role = general
+                        has_role_of_type = general
                     }
                     AND = {
                         politician_clothes_trigger = yes
@@ -2164,7 +2699,7 @@ headgear = {
                     }
                 }
                 scope:character ?= {
-                    age >= define:NCharacters|ADULT_AGE
+                    is_adult = yes
                 }
                 agitator_character_trigger = no
             }
@@ -2193,7 +2728,7 @@ headgear = {
                 }
                 OR = {
                     scope:character = {
-                        has_role = general
+                        has_role_of_type = general
                     }
                     AND = {
                         politician_clothes_trigger = yes
@@ -2201,7 +2736,7 @@ headgear = {
                     }
                 }
                 scope:character ?= {
-                    age >= define:NCharacters|ADULT_AGE
+                    is_adult = yes
                 }
                 agitator_character_trigger = no
             }
@@ -2316,7 +2851,7 @@ headgear = {
                 }
                 OR = {
                     scope:character = {
-                        has_role = general
+                        has_role_of_type = general
                     }
                     AND = {
                         politician_clothes_trigger = yes
@@ -2324,7 +2859,7 @@ headgear = {
                     }
                 }
                 scope:character ?= {
-                    age >= define:NCharacters|ADULT_AGE
+                    is_adult = yes
                 }
                 agitator_character_trigger = no
             }
@@ -2382,7 +2917,7 @@ headgear = {
                 }
                 OR = {
                     scope:character = {
-                        has_role = general
+                        has_role_of_type = general
                     }
                     AND = {
                         politician_clothes_trigger = yes
@@ -2390,7 +2925,7 @@ headgear = {
                     }
                 }
                 scope:character ?= {
-                    age >= define:NCharacters|ADULT_AGE
+                    is_adult = yes
                 }
                 agitator_character_trigger = no
             }
@@ -2419,7 +2954,7 @@ headgear = {
                 }
                 OR = {
                     scope:character = {
-                        has_role = general
+                        has_role_of_type = general
                     }
                     AND = {
                         politician_clothes_trigger = yes
@@ -2427,7 +2962,7 @@ headgear = {
                     }
                 }
                 scope:character ?= {
-                    age >= define:NCharacters|ADULT_AGE
+                    is_adult = yes
                 }
                 agitator_character_trigger = no
             }
@@ -2530,7 +3065,7 @@ headgear = {
             modifier = {
                 add = 100
                 scope:character ?= {
-                    age >= define:NCharacters|ADULT_AGE
+                    is_adult = yes
                 }
                 montenegrin_clothes_trigger = yes
                 has_dlc_feature = ip3_cosmetics
@@ -2585,14 +3120,14 @@ headgear = {
             modifier = {
                 add = 110
                 scope:character ?= {
-                    age >= define:NCharacters|ADULT_AGE
+                    is_adult = yes
                 }
                 montenegrin_clothes_trigger = yes
                 has_dlc_feature = ip3_cosmetics
                 AND = {
                     OR = {
                         scope:character ?= {
-                            is_heir = yes
+                            is_heir_of_own_country = yes
                         }
                         military_clothes_trigger = yes
                         AND = {
@@ -2638,7 +3173,7 @@ headgear = {
                 }
                 OR = {
                     scope:character = {
-                        has_role = general
+                        has_role_of_type = general
                     }
                     AND = {
                         politician_clothes_trigger = yes
@@ -2646,7 +3181,7 @@ headgear = {
                     }
                 }
                 scope:character ?= {
-                    age >= define:NCharacters|ADULT_AGE
+                    is_adult = yes
                 }
                 agitator_character_trigger = no
             }
@@ -2712,7 +3247,7 @@ headgear = {
                 }
                 OR = {
                     scope:character = {
-                        has_role = general
+                        has_role_of_type = general
                     }
                     AND = {
                         politician_clothes_trigger = yes
@@ -2720,7 +3255,7 @@ headgear = {
                     }
                 }
                 scope:character ?= {
-                    age >= define:NCharacters|ADULT_AGE
+                    is_adult = yes
                 }
                 agitator_character_trigger = no
             }
@@ -2811,7 +3346,7 @@ headgear = {
                 }
                 OR = {
                     scope:character = {
-                        has_role = general
+                        has_role_of_type = general
                     }
                     AND = {
                         politician_clothes_trigger = yes
@@ -2819,7 +3354,7 @@ headgear = {
                     }
                 }
                 scope:character ?= {
-                    age >= define:NCharacters|ADULT_AGE
+                    is_adult = yes
                 }
                 agitator_character_trigger = no
             }
@@ -2848,7 +3383,7 @@ headgear = {
                 }
                 OR = {
                     scope:character = {
-                        has_role = general
+                        has_role_of_type = general
                     }
                     AND = {
                         politician_clothes_trigger = yes
@@ -2856,7 +3391,7 @@ headgear = {
                     }
                 }
                 scope:character ?= {
-                    age >= define:NCharacters|ADULT_AGE
+                    is_adult = yes
                 }
                 agitator_character_trigger = no
             }
@@ -2905,7 +3440,7 @@ headgear = {
             modifier = {
                 add = 15000
                 scope:character ?= {
-                    age >= define:NCharacters|ADULT_AGE
+                    is_adult = yes
                 }
                 greek_clothes_trigger = yes
                 has_dlc_feature = ip3_cosmetics
@@ -2960,7 +3495,7 @@ headgear = {
                 }
                 OR = {
                     scope:character = {
-                        has_role = general
+                        has_role_of_type = general
                     }
                     AND = {
                         politician_clothes_trigger = yes
@@ -2968,7 +3503,7 @@ headgear = {
                     }
                 }
                 scope:character ?= {
-                    age >= define:NCharacters|ADULT_AGE
+                    is_adult = yes
                 }
                 agitator_character_trigger = no
             }
@@ -2998,7 +3533,7 @@ headgear = {
                 }
                 OR = {
                     scope:character = {
-                        has_role = general
+                        has_role_of_type = general
                     }
                     AND = {
                         politician_clothes_trigger = yes
@@ -3006,7 +3541,7 @@ headgear = {
                     }
                 }
                 scope:character ?= {
-                    age >= define:NCharacters|ADULT_AGE
+                    is_adult = yes
                 }
                 agitator_character_trigger = no
             }
@@ -3064,7 +3599,7 @@ headgear = {
                 }
                 OR = {
                     scope:character = {
-                        has_role = general
+                        has_role_of_type = general
                     }
                     AND = {
                         politician_clothes_trigger = yes
@@ -3072,7 +3607,7 @@ headgear = {
                     }
                 }
                 scope:character ?= {
-                    age >= define:NCharacters|ADULT_AGE
+                    is_adult = yes
                 }
                 agitator_character_trigger = no
             }
@@ -3144,7 +3679,7 @@ headgear = {
                 add = 13000
                 has_dlc_feature = ip4_cosmetics
                 scope:character ?= {
-                    age >= define:NCharacters|ADULT_AGE
+                    is_adult = yes
                     owner ?= {
                         NOT = { has_technology_researched = repeaters }
                     }
@@ -3183,7 +3718,7 @@ headgear = {
                 add = 1000
                 has_dlc_feature = ip4_cosmetics
                 scope:character ?= {
-                    age >= define:NCharacters|ADULT_AGE
+                    is_adult = yes
                     owner ?= {
                         NOT = {
                             has_technology_researched = bolt_action_rifles
@@ -3284,7 +3819,7 @@ headgear = {
                 add = 12000
                 has_dlc_feature = ip4_cosmetics
                 scope:character ?= {
-                    age >= define:NCharacters|ADULT_AGE
+                    is_adult = yes
                     owner ?= {
                         has_technology_researched = bolt_action_rifles
                     }
@@ -3347,7 +3882,7 @@ headgear = {
                 add = 1000
                 has_dlc_feature = ip4_cosmetics
                 scope:character ?= {
-                    age >= define:NCharacters|ADULT_AGE
+                    is_adult = yes
                     owner ?= {
                         NOT = {
                             has_technology_researched = bolt_action_rifles
@@ -3445,7 +3980,7 @@ headgear = {
                 add = 12000
                 has_dlc_feature = ip4_cosmetics
                 scope:character ?= {
-                    age >= define:NCharacters|ADULT_AGE
+                    is_adult = yes
                     owner ?= {
                         has_technology_researched = bolt_action_rifles
                     }
@@ -3510,15 +4045,15 @@ headgear = {
                     AND = {
                         korean_clothes_trigger = yes
                         scope:character ?= {
-                            age >= define:NCharacters|ADULT_AGE
+                            is_adult = yes
                             owner ?= {
                                 has_variable = KOR_korean_empire_declared
                             }
                         }
                         OR = {
                             scope:character ?= {
-                                has_role = general
-                                age >= define:NCharacters|ADULT_AGE
+                                has_role_of_type = general
+                                is_adult = yes
                             }
                             AND = {
                                 politician_clothes_trigger = yes
@@ -3561,7 +4096,7 @@ headgear = {
             modifier = {
                 add = 1000
                 scope:character ?= {
-                    age >= define:NCharacters|ADULT_AGE
+                    is_adult = yes
                     exists = c:BRZ
                     home_country ?= {
                         OR = {
@@ -3573,10 +4108,10 @@ headgear = {
                         }
                     }
                     OR = {
-                        has_role = general
+                        has_role_of_type = general
                         AND = {
-                            has_role = politician
-                            is_ruler = no
+                            has_role_of_type = politician
+                            is_ruler_of_own_country = no
                             is_interest_group_type = ig_armed_forces
                         }
                     }
@@ -3675,7 +4210,7 @@ headgear = {
                 has_dlc_feature = ip4_cosmetics
                 scope:character ?= {
                     culture = cu:basque
-                    age >= define:NCharacters|ADULT_AGE
+                    is_adult = yes
                 }
                 carlist_clothes_trigger = yes
                 OR = {
@@ -3732,7 +4267,7 @@ headgear = {
                 add = 9000 # It is extremely important that this hat is worn
                 has_dlc_feature = ip4_cosmetics
                 scope:character ?= {
-                    age >= define:NCharacters|ADULT_AGE
+                    is_adult = yes
                 }
                 carlist_clothes_trigger = yes
                 OR = {
@@ -3802,8 +4337,8 @@ headgear = {
                 agitator_character_trigger = no
                 OR = {
                     scope:character = {
-                        has_role = general
-                        age >= define:NCharacters|ADULT_AGE
+                        has_role_of_type = general
+                        is_adult = yes
                     }
                     AND = {
                         politician_clothes_trigger = yes
@@ -3849,7 +4384,7 @@ headgear = {
                 ethiopian_clothes_trigger = yes
                 agitator_character_trigger = no
                 scope:character ?= {
-                    is_ruler = yes
+                    is_ruler_of_own_country = yes
                     is_female = no
                     OR = {
                         owner ?= {
@@ -3893,7 +4428,7 @@ headgear = {
                 indian_clothes_trigger = yes
                 agitator_character_trigger = no
                 scope:character = {
-                    is_ruler = yes
+                    is_ruler_of_own_country = yes
                 }
             }
             modifier = {
@@ -3924,8 +4459,8 @@ headgear = {
 
                 scope:character ?= {
                     OR = {
-                        is_ruler = yes
-                        is_heir = yes   # the heir also wore almost the exact same fancy crown
+                        is_ruler_of_own_country = yes
+                        is_heir_of_own_country = yes   # the heir also wore almost the exact same fancy crown
                     }
                     is_female = no
                     owner ?= {
@@ -3981,7 +4516,7 @@ headgear = {
                 add = 100
                 arabic_clothes_trigger = yes
                 scope:character ?= {
-                    age >= define:NCharacters|ADULT_AGE
+                    is_adult = yes
                 }
             }
 
@@ -4007,9 +4542,9 @@ headgear = {
                 add = 500
 
                 scope:character ?= {
-                    age >= define:NCharacters|ADULT_AGE
+                    is_adult = yes
 
-                    NOT = { has_role = agitator }
+                    NOT = { has_role_of_type = agitator }
 
                     religion = {
                         has_discrimination_trait = heritage_islamic
@@ -4053,11 +4588,11 @@ headgear = {
                 add = 6000
                 arabic_clothes_trigger = yes
                 scope:character ?= {
-                    age >= define:NCharacters|ADULT_AGE
+                    is_adult = yes
 
                     OR = {
-                        has_role = agitator
-                        is_ruler = yes
+                        has_role_of_type = agitator
+                        is_ruler_of_own_country = yes
                     }
                     OR = {
                         religion = rel:ibadi
@@ -4101,7 +4636,7 @@ headgear = {
                     religion = {
                         has_discrimination_trait = heritage_islamic
                     }
-                    age >= define:NCharacters|ADULT_AGE
+                    is_adult = yes
                 }
             }
 
@@ -4178,8 +4713,8 @@ headgear = {
                         RRK_st_has_monarchy = yes
                     }
                     OR = {
-                        is_ruler = yes
-                        is_heir = yes
+                        is_ruler_of_own_country = yes
+                        is_heir_of_own_country = yes
                     }
                     is_female = no
                 }
@@ -4247,11 +4782,11 @@ headgear = {
                         }
                     }
                     NOR = {
-                        is_ruler = yes
-                        is_heir = yes
+                        is_ruler_of_own_country = yes
+                        is_heir_of_own_country = yes
                     }
                     OR = {
-                        has_role = general
+                        has_role_of_type = general
                         AND = {
                             armed_forces_clothes_trigger = yes
                             politician_clothes_trigger = yes
@@ -4270,8 +4805,8 @@ headgear = {
                         }
                         OR = {
                             AND = {
-                                has_role = general
-                                is_ruler = no
+                                has_role_of_type = general
+                                is_ruler_of_own_country = no
                             }
                             monarchy_clothes_trigger = yes
                             AND = {
@@ -4448,9 +4983,7 @@ headgear = {
                         is_pop_type = laborers
                         AND = {
                             is_pop_type = machinists
-                            owner = {
-                                NOT = { has_variable = meiji_restoration_complete }
-                            }
+                            japanese_restoration_trigger = no
                         }
                     }
                 }
@@ -4490,20 +5023,20 @@ headgear = {
                 add = 1000
                 european_clothes_trigger = yes
                 scope:character ?= {
-                    age >= define:NCharacters|ADULT_AGE
+                    is_adult = yes
                     OR = {
                         AND = {
                             OR = {
                                 is_interest_group_type = ig_landowners
                                 is_interest_group_type = ig_industrialists
                             }
-                            has_role = politician
+                            has_role_of_type = politician
                             NOR = {
-                                has_role = general
-                                has_role = admiral
+                                has_role_of_type = general
+                                has_role_of_type = admiral
                             }
-                            is_ruler = no
-                            is_heir = no # Be dignified!
+                            is_ruler_of_own_country = no
+                            is_heir_of_own_country = no # Be dignified!
                         }
                         has_template = usa_lincoln_character_template
                     }
@@ -4574,7 +5107,7 @@ headgear = {
                 native_american_clothes_trigger = yes
                 ruler_clothes_trigger = yes
                 scope:character = {
-                    is_ruler = yes
+                    is_ruler_of_own_country = yes
                 }
             }
         }
@@ -4597,7 +5130,7 @@ headgear = {
                 native_north_american_clothes_trigger = yes
                 ruler_clothes_trigger = yes
                 scope:character = {
-                    is_ruler = yes
+                    is_ruler_of_own_country = yes
                     is_female = no
                 }
             }
@@ -4619,7 +5152,7 @@ headgear = {
                 add = 1000
                 ruler_clothes_trigger = yes
                 scope:character = {
-                    is_ruler = yes
+                    is_ruler_of_own_country = yes
                     OR = {
                         culture = cu:comanche
                         culture = cu:paiute
@@ -4736,8 +5269,8 @@ headgear = {
                                         has_modifier = royal_marriage
                                         any_scope_character = {
                                             OR = {
-                                                is_ruler = yes
-                                                is_heir = yes
+                                                is_ruler_of_own_country = yes
+                                                is_heir_of_own_country = yes
                                             }
                                             has_modifier = marriage_popularity
                                         }
@@ -4836,7 +5369,7 @@ headgear = {
                 OR = {
                     scope:character ?= {
                         culture = cu:afro_brazilian
-                        is_ruler = no
+                        is_ruler_of_own_country = no
                         is_interest_group_type = ig_rural_folk
                     }
                     scope:pop ?= {
@@ -4868,7 +5401,7 @@ headgear = {
                 add = 1000
 
                 scope:character ?= {
-                    is_ruler = yes
+                    is_ruler_of_own_country = yes
                     is_female = no
                     OR = {
                         has_culture = cu:zulu
@@ -4908,10 +5441,10 @@ headgear = {
                         }
                     }
                     scope:character ?={
-                        is_ruler = no
+                        is_ruler_of_own_country = no
                         OR = {
-                            is_heir = yes
-                            has_role = general
+                            is_heir_of_own_country = yes
+                            has_role_of_type = general
                         }
                         OR = {
                             has_culture = cu:zulu
@@ -4950,9 +5483,9 @@ headgear = {
                     scope:character ?= {
                         is_interest_group_type = ig_landowners
                         age > 12
-                        has_role = politician
+                        has_role_of_type = politician
                         NAND = {    # monarchs never wear this hat
-                            is_ruler = yes
+                            is_ruler_of_own_country = yes
                             owner ?={
                                 RRK_st_has_monarchy_or_variant = yes
                             }
@@ -4992,7 +5525,7 @@ headgear = {
                 has_dlc_feature = ep1_cosmetics
 
                 scope:character ?= {
-                    is_ruler = yes
+                    is_ruler_of_own_country = yes
                     owner ?= {
                         c:PER ?= this
                         RRK_st_has_monarchy_or_variant = yes
@@ -5038,11 +5571,11 @@ headgear = {
                             home_country ?= c:PER
                         }
                     }
-                    is_ruler = no
+                    is_ruler_of_own_country = no
                     OR = {
-                        has_role = general
+                        has_role_of_type = general
                         AND = {
-                            has_role = politician
+                            has_role_of_type = politician
                             is_interest_group_type = ig_armed_forces
                         }
                     }
@@ -5068,8 +5601,8 @@ headgear = {
                 has_dlc_feature = ep1_cosmetics
 
                 scope:character ?= {
-                    has_role = agitator
-                    is_ruler = no
+                    has_role_of_type = agitator
+                    is_ruler_of_own_country = no
                     culture = {
                         has_discrimination_trait_group = language_group_iranic
                     }
@@ -5095,7 +5628,7 @@ headgear = {
                 has_dlc_feature = ep1_cosmetics
 
                 scope:character ?= {
-                    is_ruler = yes
+                    is_ruler_of_own_country = yes
                     owner ?= {
                         RRK_st_has_monarchy_or_variant = yes
                         OR = {
@@ -5135,7 +5668,7 @@ headgear = {
                 }
                 OR = {
                     scope:character ?= {
-                        is_ruler = yes
+                        is_ruler_of_own_country = yes
                         owner ?= {
                             RRK_st_has_monarchy_or_variant = yes
                         }
@@ -5198,13 +5731,13 @@ headgear = {
                     owner ?= {
                         c:RUS ?= this
                     }
-                    is_ruler = no
-                    is_heir = no
+                    is_ruler_of_own_country = no
+                    is_heir_of_own_country = no
                     OR = {
                         has_trait = bandit
                         has_trait = social_bandit
                         AND = {
-                            has_role = general
+                            has_role_of_type = general
                             OR = {
                                 has_trait = celebrity_commander
                                 has_trait = pillager
@@ -5325,7 +5858,7 @@ headgear = {
                 }
                 monarchy_clothes_trigger = yes
                 scope:character ?= {
-                    is_ruler = yes
+                    is_ruler_of_own_country = yes
                     is_female = yes
 
                     owner ?= {
@@ -5356,7 +5889,7 @@ headgear = {
                         c:PAP ?= this
                         has_law_or_variant = law_type:law_theocracy
                     }
-                    is_ruler = yes
+                    is_ruler_of_own_country = yes
                 }
             }
             modifier = { # this actually works pretty well as a taqiya skullcap lmao
@@ -5372,9 +5905,9 @@ headgear = {
                             cu:somali = this
                         }
                     }
-                    is_ruler = no
-                    NOT = { has_role = agitator }
-                    has_role = politician
+                    is_ruler_of_own_country = no
+                    NOT = { has_role_of_type = agitator }
+                    has_role_of_type = politician
                     OR = {
                         is_interest_group_type = ig_devout
                         has_trait = pious
@@ -5485,7 +6018,7 @@ headgear = {
                         has_variable = cardinal_var
                         AND = {
                             is_interest_group_type = ig_devout
-                            has_role = politician
+                            has_role_of_type = politician
                             owner ?= {
                                 country_has_state_religion = rel:catholic
                                 OR = {
@@ -5579,7 +6112,7 @@ headgear = {
 
                 scope:character ?= {
                     NOT = { # not for kings
-                        is_ruler = yes
+                        is_ruler_of_own_country = yes
                         owner ?= {
                             RRK_st_has_monarchy_or_variant = yes
                         }
@@ -5822,7 +6355,7 @@ headgear = {
             modifier = {
                 add = 15000
                 scope:character ?= {
-                    age >= define:NCharacters|ADULT_AGE
+                    is_adult = yes
                     OR = {
                         culture ?= { cu:hungarian ?= this }
                         home_country ?= { c:HUN ?= this }
@@ -5883,7 +6416,7 @@ headgear = {
                             country_has_primary_culture = cu:griqua
                         }
                     }
-                    has_role = agitator
+                    has_role_of_type = agitator
                     OR = {
                         is_interest_group_type = ig_armed_forces
                         is_interest_group_type = ig_rural_folk
@@ -5945,12 +6478,12 @@ headgear = {
                     }
                     OR = {
                         AND = {
-                            is_ruler = no
-                            has_role = general
+                            is_ruler_of_own_country = no
+                            has_role_of_type = general
                         }
                         AND = {
-                            is_ruler = no
-                            has_role = politician
+                            is_ruler_of_own_country = no
+                            has_role_of_type = politician
                             OR = {
                                 is_interest_group_type = ig_armed_forces
                                 is_interest_group_type = ig_rural_folk
@@ -5958,7 +6491,7 @@ headgear = {
                         }
 
                         AND = {
-                            is_ruler = yes
+                            is_ruler_of_own_country = yes
                             home_country ?= {
                                 has_law_or_variant = law_type:law_presidential_republic
                                 country_has_voting_franchise = no
@@ -6002,7 +6535,7 @@ headgear = {
                 add = 5000
 
                 scope:character ?= {
-                    has_role = politician
+                    has_role_of_type = politician
                     OR = {
                         has_culture = cu:zulu
                         has_culture = cu:nguni

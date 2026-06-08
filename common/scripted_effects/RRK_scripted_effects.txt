@@ -1,6 +1,12 @@
 ﻿# Prime Minister handling effects
 # Scope: Country
 RRK_se_set_prime_minister = {
+    random_scope_character = {
+        limit = {
+            has_role = RRK_character_role_head_of_gov
+        }
+        remove_character_role = RRK_character_role_head_of_gov
+    }
     random_interest_group = {
         limit = {
             is_in_government = yes
@@ -11,6 +17,9 @@ RRK_se_set_prime_minister = {
                 name  = RRK_head_of_gov
                 value = prev
             }
+        }
+        leader ?= {
+            add_character_role = RRK_character_role_head_of_gov
         }
     }
     if = { # Clear/reset variable if somehow nobody is in government
@@ -30,6 +39,12 @@ RRK_se_set_premier = {
         # max = 1
         # order_by = ig_clout
     # }
+    random_scope_character = {
+        limit = {
+            has_role = RRK_character_role_head_of_gov
+        }
+        remove_character_role = RRK_character_role_head_of_gov
+    }
     remove_variable = RRK_head_of_gov
     get_ruler_for:presidential_elective = {
         interest_group = {
@@ -40,6 +55,7 @@ RRK_se_set_premier = {
                 }
             }
         }
+        add_character_role = RRK_character_role_head_of_gov
     }
 }
 
@@ -86,9 +102,9 @@ RRK_se_fire_monarch_fate_event = {
     # Clean up regencies
     if = {
         limit = {
-            has_gov_regency = yes
+            has_variable = RRK_has_regency
         }
-        remove_regency_modifier = yes
+        # remove_regency_modifier = yes
         ruler ?= {
             if = {
                 limit = {
@@ -100,6 +116,16 @@ RRK_se_fire_monarch_fate_event = {
         heir ?= {
             set_character_as_ruler = yes
         }
+        set_local_variable = had_regency
+    }
+    
+    # Special case - delay event if Japanese Shogunate moving directly to a crowned republic to allow for ruler title to refresh
+    if = {
+        limit = {
+            has_variable = RRK_has_bakufu
+        }
+        remove_variable = RRK_has_bakufu
+        set_local_variable = had_regency # Re-use the variable
     }
     
     # Fire the event
@@ -115,10 +141,21 @@ RRK_se_fire_monarch_fate_event = {
             name  = RRK_heir
             value = heir
         }
-        trigger_event = {
-            id    = RRK_ev.2
-            popup = yes
-            days  = 1 # Delay 1 day to let ruler titles refresh in case we interrupted a regency
+        if = {
+            limit = {
+                NOT = { has_local_variable = had_regency }
+            }
+            trigger_event = {
+                id    = RRK_ev.2
+                popup = yes
+            }
+        }
+        else = {
+            trigger_event = {
+                id    = RRK_ev.2
+                popup = yes
+                days  = 1 # Delay 1 day to let ruler titles refresh if we interrupted a regency
+            }
         }
     }
     else = {
@@ -126,10 +163,21 @@ RRK_se_fire_monarch_fate_event = {
             name  = RRK_monarch
             value = ruler
         }
-        trigger_event = {
-            id    = RRK_ev.3
-            popup = yes
-            days  = 1
+        if = {
+            limit = {
+                NOT = { has_local_variable = had_regency }
+            }
+            trigger_event = {
+                id    = RRK_ev.3
+                popup = yes
+            }
+        }
+        else = {
+            trigger_event = {
+                id    = RRK_ev.3
+                popup = yes
+                days  = 1
+            }
         }
     }
 }

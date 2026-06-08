@@ -84,6 +84,9 @@
     
     RRK_pres_mon_desc: "\n\nIn a [GetPlayer.GetGovernment.GetName] with [GetPlayer.GetActiveLawFromGroup('lawgroup_governance_principles').GetLawType.GetName] and [GetPlayer.GetActiveLawFromGroup('lawgroup_distribution_of_power').GetLawType.GetName] enacted, the [concept_government] is led by a $RRK_title_pres_mon_player$, who is typically the [concept_leader] of the [concept_interest_group] with the most [concept_clout] at the end of each [concept_election].\n\nThe [GetPlayer.GetAdjectiveNoFlag] $concept_RRK_head_of_gov$ is #yellow #tooltip:[GetPlayer.MakeScope.GetVariable('RRK_head_of_gov').GetInterestGroup.GetLeader.GetTooltipTag],DATA_CHARACTER_NAME_TOOLTIP,CharacterTooltip $RRK_title_pres_mon_player$ #!#![GetPlayer.MakeScope.GetVariable('RRK_head_of_gov').GetInterestGroup.GetLeader.GetCustom('GetUniversalFullName')]."
     
+    # Roles
+    RRK_character_role_head_of_gov: "[concept_RRK_head_of_gov]"
+    
     # Titles
     # These just call custom locs - see RRK_titles loc file for localization of actual titles
     RRK_title_pres_mon:        "[Country.GetCustom('RRK_cl_premier_title')]"

@@ -1,0 +1,16 @@
+﻿RRK_character_role_head_of_gov = {
+	texture = "gfx/interface/icons/character_role_icons/ruler.dds"
+
+	priority = 75 # Anything higher than politician & military but lower than ruler & heir
+
+	should_use_title_in_name = yes
+    title_format = custom
+	title_preposition = PREP_IN
+
+	auto_assigned = no
+
+    character_modifier = {
+        character_prominence_add = 25
+        character_loyalty_add = 25
+    }
+}

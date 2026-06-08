@@ -38,7 +38,7 @@ accessories = {
                 add = 90000
                 scope:character ?= {
                     has_template = PER_reza_pahlavi
-                    is_ruler = no
+                    is_ruler_of_own_country = no
                 }
             }
         }
@@ -69,7 +69,7 @@ accessories = {
                 add = 90000
                 scope:character ?= {
                     has_template = PER_reza_pahlavi
-                    is_ruler = yes
+                    is_ruler_of_own_country = yes
                     owner ?= {
                         NOT = { RRK_st_has_monarchy_or_variant = yes }
                     }
@@ -112,7 +112,7 @@ accessories = {
                 add = 90000
                 scope:character ?= {
                     has_template = PER_reza_pahlavi
-                    is_ruler = yes
+                    is_ruler_of_own_country = yes
                     owner ?= {
                         RRK_st_has_monarchy_or_variant = yes
                     }
@@ -143,7 +143,7 @@ accessories = {
                 add = 95000
                 scope:character ?= {
                     has_template = gbr_william_hanover_template
-                    is_ruler = yes
+                    is_ruler_of_own_country = yes
                 }
             }
         }
@@ -249,7 +249,7 @@ accessories = {
                 add = 10001
                 european_clothes_trigger = yes
     			scope:character = {
-                    age >= define:NCharacters|ADULT_AGE
+                    is_adult = yes
                     commander_rank <= 1
     			}
     		}
@@ -279,14 +279,14 @@ accessories = {
                 }
                 generic_military_uniform_clothes_trigger = yes
     			scope:character = {
-                    age >= define:NCharacters|ADULT_AGE
+                    is_adult = yes
                     OR = {
                         AND = {
                             commander_rank >= 2
                             commander_rank < 5
                         }
                         AND = {
-                            is_ruler = yes
+                            is_ruler_of_own_country = yes
                             NOT = { # Monarchy and marshals use blue-white-blue sashes instead
                                 owner = {
                                     RRK_st_has_monarchy = yes
@@ -320,7 +320,7 @@ accessories = {
     			brazilian_clothes_trigger = yes
                 generic_military_uniform_clothes_trigger = yes
     			scope:character = {
-                    age >= define:NCharacters|ADULT_AGE
+                    is_adult = yes
                     OR = {
                         commander_rank >= 5
                         has_variable = golpista_var
@@ -364,10 +364,10 @@ accessories = {
                 }
                 generic_military_uniform_clothes_trigger = yes
     			scope:character = {
-                    age >= define:NCharacters|ADULT_AGE
+                    is_adult = yes
                     OR = {
                         commander_rank >= 5
-                        is_ruler = yes
+                        is_ruler_of_own_country = yes
                         has_variable = golpista_var
                     }
     			}
@@ -395,10 +395,10 @@ accessories = {
     			peruvian_clothes_trigger = yes
                 generic_military_uniform_clothes_trigger = yes
     			scope:character = {
-                    age >= define:NCharacters|ADULT_AGE
+                    is_adult = yes
                     OR = {
                         commander_rank >= 5
-                        is_ruler = yes
+                        is_ruler_of_own_country = yes
                         has_variable = golpista_var
                     }
     			}
@@ -426,10 +426,10 @@ accessories = {
     			central_american_clothes_trigger = yes
                 generic_military_uniform_clothes_trigger = yes
     			scope:character = {
-                    age >= define:NCharacters|ADULT_AGE
+                    is_adult = yes
                     OR = {
                         commander_rank >= 5
-                        is_ruler = yes
+                        is_ruler_of_own_country = yes
                         has_variable = golpista_var
                     }
     			}
@@ -457,10 +457,10 @@ accessories = {
     			uruguayan_clothes_trigger = yes
                 generic_military_uniform_clothes_trigger = yes
     			scope:character = {
-                    age >= define:NCharacters|ADULT_AGE
+                    is_adult = yes
                     OR = {
                         commander_rank >= 5
-                        is_ruler = yes
+                        is_ruler_of_own_country = yes
                         has_variable = golpista_var
                     }
     			}
@@ -489,10 +489,10 @@ accessories = {
                 generic_military_uniform_clothes_trigger = yes
                 republic_clothes_trigger = yes
     			scope:character = {
-                    age >= define:NCharacters|ADULT_AGE
+                    is_adult = yes
                     OR = {
                         commander_rank >= 5
-                        is_ruler = yes
+                        is_ruler_of_own_country = yes
                         has_variable = golpista_var
                     }
     			}
@@ -521,10 +521,10 @@ accessories = {
                 generic_military_uniform_clothes_trigger = yes
                 republic_clothes_trigger = yes
     			scope:character = {
-                    age >= define:NCharacters|ADULT_AGE
+                    is_adult = yes
                     OR = {
                         commander_rank >= 5
-                        is_ruler = yes
+                        is_ruler_of_own_country = yes
                         has_variable = golpista_var
                     }
     			}
@@ -552,10 +552,10 @@ accessories = {
     			portuguese_clothes_trigger = yes
                 generic_military_uniform_clothes_trigger = yes
     			scope:character = {
-                    age >= define:NCharacters|ADULT_AGE
+                    is_adult = yes
                     OR = {
                         commander_rank >= 5
-                        is_ruler = yes
+                        is_ruler_of_own_country = yes
                         has_variable = golpista_var
                     }
     			}
@@ -583,10 +583,10 @@ accessories = {
     			gran_colombian_clothes_trigger = yes
                 generic_military_uniform_clothes_trigger = yes
     			scope:character = {
-                    age >= define:NCharacters|ADULT_AGE
+                    is_adult = yes
                     OR = {
                         commander_rank >= 5
-                        is_ruler = yes
+                        is_ruler_of_own_country = yes
                         has_variable = golpista_var
                     }
     			}
@@ -614,10 +614,10 @@ accessories = {
     			bolivian_clothes_trigger = yes
                 generic_military_uniform_clothes_trigger = yes
     			scope:character = {
-                    age >= define:NCharacters|ADULT_AGE
+                    is_adult = yes
                     OR = {
                         commander_rank >= 5
-                        is_ruler = yes
+                        is_ruler_of_own_country = yes
                         has_variable = golpista_var
                     }
     			}
@@ -645,10 +645,10 @@ accessories = {
     			peru_bolivian_clothes_trigger = yes
                 generic_military_uniform_clothes_trigger = yes
     			scope:character = {
-                    age >= define:NCharacters|ADULT_AGE
+                    is_adult = yes
                     OR = {
                         commander_rank >= 5
-                        is_ruler = yes
+                        is_ruler_of_own_country = yes
                         has_variable = golpista_var
                     }
     			}
@@ -676,10 +676,10 @@ accessories = {
     			chilean_clothes_trigger = yes
                 generic_military_uniform_clothes_trigger = yes
     			scope:character = {
-                    age >= define:NCharacters|ADULT_AGE
+                    is_adult = yes
                     OR = {
                         commander_rank >= 5
-                        is_ruler = yes
+                        is_ruler_of_own_country = yes
                         has_variable = golpista_var
                     }
     			}
@@ -707,10 +707,10 @@ accessories = {
     			paraguayan_clothes_trigger = yes
                 generic_military_uniform_clothes_trigger = yes
     			scope:character = {
-                    age >= define:NCharacters|ADULT_AGE
+                    is_adult = yes
                     OR = {
                         commander_rank >= 5
-                        is_ruler = yes
+                        is_ruler_of_own_country = yes
                         has_variable = golpista_var
                     }
     			}
@@ -738,10 +738,10 @@ accessories = {
     			mexican_clothes_trigger = yes
                 generic_military_uniform_clothes_trigger = yes
     			scope:character = {
-                    age >= define:NCharacters|ADULT_AGE
+                    is_adult = yes
                     OR = {
                         commander_rank >= 5
-                        is_ruler = yes
+                        is_ruler_of_own_country = yes
                         has_variable = golpista_var
                     }
     			}
@@ -769,10 +769,10 @@ accessories = {
     			riograndese_clothes_trigger = yes
                 generic_military_uniform_clothes_trigger = yes
     			scope:character = {
-                    age >= define:NCharacters|ADULT_AGE
+                    is_adult = yes
                     OR = {
                         commander_rank >= 5
-                        is_ruler = yes
+                        is_ruler_of_own_country = yes
                         has_variable = golpista_var
                     }
     			}
@@ -800,10 +800,10 @@ accessories = {
     			federation_clothes_trigger = yes
                 generic_military_uniform_clothes_trigger = yes
     			scope:character = {
-                    age >= define:NCharacters|ADULT_AGE
+                    is_adult = yes
                     OR = {
                         commander_rank >= 5
-                        is_ruler = yes
+                        is_ruler_of_own_country = yes
                         has_variable = golpista_var
                     }
     			}
@@ -836,10 +836,10 @@ accessories = {
     			communist_clothes_trigger = yes
                 generic_military_uniform_clothes_trigger = yes
     			scope:character = {
-                    age >= define:NCharacters|ADULT_AGE
+                    is_adult = yes
                     OR = {
                         commander_rank >= 5
-                        is_ruler = yes
+                        is_ruler_of_own_country = yes
                         has_variable = golpista_var
                     }
     			}
@@ -869,7 +869,7 @@ accessories = {
                 ruler_clothes_trigger = yes
                 generic_civilian_clothes_trigger = yes
     			scope:character = {
-                    age >= define:NCharacters|ADULT_AGE
+                    is_adult = yes
     			}
     		}
         }
@@ -899,7 +899,7 @@ accessories = {
                 }
                 generic_civilian_clothes_trigger = yes
     			scope:character = {
-                    age >= define:NCharacters|ADULT_AGE
+                    is_adult = yes
     			}
     		}
         }
@@ -938,7 +938,7 @@ accessories = {
                 republic_clothes_trigger = yes
                 generic_civilian_clothes_trigger = yes
     			scope:character = {
-                    age >= define:NCharacters|ADULT_AGE
+                    is_adult = yes
     			}
     		}
         }
@@ -977,7 +977,7 @@ accessories = {
                 republic_clothes_trigger = yes
                 generic_civilian_clothes_trigger = yes
     			scope:character = {
-                    age >= define:NCharacters|ADULT_AGE
+                    is_adult = yes
     			}
     		}
         }
@@ -1008,7 +1008,7 @@ accessories = {
                 republic_clothes_trigger = yes
                 generic_civilian_clothes_trigger = yes
     			scope:character = {
-                    age >= define:NCharacters|ADULT_AGE
+                    is_adult = yes
     			}
     		}
         }
@@ -1039,7 +1039,7 @@ accessories = {
                 republic_clothes_trigger = yes
                 generic_civilian_clothes_trigger = yes
     			scope:character = {
-                    age >= define:NCharacters|ADULT_AGE
+                    is_adult = yes
     			}
     		}
         }
@@ -1078,7 +1078,7 @@ accessories = {
                 republic_clothes_trigger = yes
                 generic_civilian_clothes_trigger = yes
     			scope:character = {
-                    age >= define:NCharacters|ADULT_AGE
+                    is_adult = yes
     			}
     		}
         }
@@ -1109,7 +1109,7 @@ accessories = {
                 republic_clothes_trigger = yes
                 generic_civilian_clothes_trigger = yes
     			scope:character = {
-                    age >= define:NCharacters|ADULT_AGE
+                    is_adult = yes
     			}
     		}
         }
@@ -1140,7 +1140,7 @@ accessories = {
                 republic_clothes_trigger = yes
                 generic_civilian_clothes_trigger = yes
     			scope:character = {
-                    age >= define:NCharacters|ADULT_AGE
+                    is_adult = yes
     			}
     		}
         }
@@ -1171,7 +1171,7 @@ accessories = {
                 republic_clothes_trigger = yes
                 generic_civilian_clothes_trigger = yes
     			scope:character = {
-                    age >= define:NCharacters|ADULT_AGE
+                    is_adult = yes
     			}
     		}
         }
@@ -1202,7 +1202,7 @@ accessories = {
                 republic_clothes_trigger = yes
                 generic_civilian_clothes_trigger = yes
     			scope:character = {
-                    age >= define:NCharacters|ADULT_AGE
+                    is_adult = yes
     			}
     		}
         }
@@ -1233,7 +1233,7 @@ accessories = {
                 republic_clothes_trigger = yes
                 generic_civilian_clothes_trigger = yes
     			scope:character = {
-                    age >= define:NCharacters|ADULT_AGE
+                    is_adult = yes
     			}
     		}
         }
@@ -1264,7 +1264,7 @@ accessories = {
                 republic_clothes_trigger = yes
                 generic_civilian_clothes_trigger = yes
     			scope:character = {
-                    age >= define:NCharacters|ADULT_AGE
+                    is_adult = yes
     			}
     		}
         }
@@ -1295,7 +1295,7 @@ accessories = {
                 republic_clothes_trigger = yes
                 generic_civilian_clothes_trigger = yes
     			scope:character = {
-                    age >= define:NCharacters|ADULT_AGE
+                    is_adult = yes
     			}
     		}
         }
@@ -1326,7 +1326,7 @@ accessories = {
                 republic_clothes_trigger = yes
                 generic_civilian_clothes_trigger = yes
     			scope:character = {
-                    age >= define:NCharacters|ADULT_AGE
+                    is_adult = yes
     			}
     		}
         }
@@ -1357,7 +1357,7 @@ accessories = {
                 republic_clothes_trigger = yes
                 generic_civilian_clothes_trigger = yes
     			scope:character = {
-                    age >= define:NCharacters|ADULT_AGE
+                    is_adult = yes
     			}
     		}
         }
@@ -1388,7 +1388,7 @@ accessories = {
                 republic_clothes_trigger = yes
                 generic_civilian_clothes_trigger = yes
     			scope:character = {
-                    age >= define:NCharacters|ADULT_AGE
+                    is_adult = yes
     			}
     		}
         }
@@ -1423,7 +1423,7 @@ accessories = {
                 }
                 generic_civilian_clothes_trigger = yes
     			scope:character = {
-                    age >= define:NCharacters|ADULT_AGE
+                    is_adult = yes
     			}
     		}
         }
@@ -1445,7 +1445,7 @@ accessories = {
                 add = 12000
                 scope:character ?= {
                     is_female = no
-                    age >= define:NCharacters|ADULT_AGE
+                    is_adult = yes
                 }
                 portuguese_clothes_trigger = yes
                 has_dlc_feature = ip4_cosmetics
@@ -1483,7 +1483,7 @@ accessories = {
                 add = 15000
                 scope:character ?= {
                     is_female = no
-                    age >= define:NCharacters|ADULT_AGE
+                    is_adult = yes
                 }
                 portuguese_clothes_trigger = yes
                 has_dlc_feature = ip4_cosmetics
@@ -1551,7 +1551,7 @@ accessories = {
                             was_formed_from = PRU
                         }
                     }
-                    age >= define:NCharacters|ADULT_AGE
+                    is_adult = yes
                     NOR = {
                         has_template = agitator_jules_brunet
                         has_template = rus_leon_trotsky_character_template
@@ -1623,7 +1623,7 @@ accessories = {
                     monarchy_clothes_trigger = yes
                 }
                 scope:character ?= {
-                    age >= define:NCharacters|ADULT_AGE
+                    is_adult = yes
                     NOR = {
                         has_template = agitator_jules_brunet
                         has_template = rus_leon_trotsky_character_template
@@ -1658,7 +1658,7 @@ accessories = {
 
                 scope:character ?= {
                     has_template = per_nasir_al_din_qajar_template
-                    age >= define:NCharacters|ADULT_AGE
+                    is_adult = yes
                 }
             }
         }
@@ -1696,11 +1696,11 @@ accessories = {
                             home_country ?= c:PER
                         } 
                     }
-                    is_ruler = no
+                    is_ruler_of_own_country = no
                     OR = {
-                        has_role = general
+                        has_role_of_type = general
                         AND = {
-                            has_role = politician
+                            has_role_of_type = politician
                             is_interest_group_type = ig_armed_forces
                         }
                     }
@@ -1724,8 +1724,8 @@ accessories = {
                 scope:character ?= {
                     has_template = usa_joshua_norton_character_template
                     NOR = {
-                        has_role = general
-                        has_role = admiral
+                        has_role_of_type = general
+                        has_role_of_type = admiral
                     }
                 }
             }
@@ -1777,7 +1777,7 @@ accessories = {
                     military_clothes_trigger = no
                 }
                 scope:character = {
-                    age >= define:NCharacters|ADULT_AGE
+                    is_adult = yes
                     NOR = {
                         has_template = agitator_jules_brunet
                         has_template = rus_leon_trotsky_character_template
@@ -1848,8 +1848,8 @@ accessories = {
 
                 scope:character ?= {
                     owner ?= c:USA
-                    has_role = general
-                    is_ruler = no
+                    has_role_of_type = general
+                    is_ruler_of_own_country = no
                 }
             }
         }
@@ -1888,7 +1888,7 @@ accessories = {
                         c:EGY = this
                     }
                     OR = {
-                        has_role = general
+                        has_role_of_type = general
                         AND = {
                             armed_forces_clothes_trigger = yes
                             politician_clothes_trigger = yes
@@ -1917,14 +1917,14 @@ accessories = {
                 has_dlc_feature = voice_of_the_people_content
 
                 scope:character ?= {
-                    age >= define:NCharacters|ADULT_AGE
+                    is_adult = yes
                     is_female = no
                 }
                 french_empire_clothes_trigger = yes
                 OR = {
                     monarchy_clothes_trigger = yes
                     scope:character ?= {
-                        has_role = general
+                        has_role_of_type = general
                     }
                     AND = {
                         armed_forces_clothes_trigger = yes
@@ -1934,7 +1934,7 @@ accessories = {
                 scope:character ?= {
                     OR = {
                         has_trait = ambitious # Dress for the job you want
-                        is_ruler = yes
+                        is_ruler_of_own_country = yes
                         commander_rank >= 5
                     }
                 }
@@ -1956,7 +1956,7 @@ accessories = {
             modifier = {
                 add = 20000
                 scope:character ?= {
-                    age >= define:NCharacters|ADULT_AGE
+                    is_adult = yes
                 }
                 greek_clothes_trigger = yes
                 has_dlc_feature = ip3_cosmetics
@@ -1989,7 +1989,7 @@ accessories = {
                 add = 20000
                 has_dlc_feature = ip3_cosmetics
                 scope:character ?= {
-                    age >= define:NCharacters|ADULT_AGE
+                    is_adult = yes
                     home_country ?= {
                         NOT = {
                             has_technology_researched = automatic_machine_guns
@@ -2029,7 +2029,7 @@ accessories = {
             modifier = {
                 add = 40000
                 scope:character ?= {
-                    age >= define:NCharacters|ADULT_AGE
+                    is_adult = yes
                 }
                 austrian_empire_clothes_trigger = yes
                 has_dlc_feature = ip3_cosmetics
@@ -2076,7 +2076,7 @@ accessories = {
             modifier = {
                 add = 1000
                 scope:character ?= {
-                    is_ruler = yes
+                    is_ruler_of_own_country = yes
                     owner ?= {
                         c:CHI ?= this
                         RRK_st_has_monarchy_or_variant = yes
@@ -2135,7 +2135,7 @@ accessories = {
                     african_diaspora_clothes_trigger = yes
                 }
                 scope:character ?= {
-                    age >= define:NCharacters|ADULT_AGE
+                    is_adult = yes
                 }
             }
         }
@@ -2174,10 +2174,10 @@ accessories = {
                 has_dlc_feature = ep1_cosmetics
 
                 scope:character ?= {
-                    is_ruler = yes
+                    is_ruler_of_own_country = yes
                     is_historical = no
 
-                    age >= define:NCharacters|ADULT_AGE
+                    is_adult = yes
 
                     owner ?= {
                         is_in_power_bloc = yes
@@ -2218,10 +2218,10 @@ accessories = {
                 has_dlc_feature = ep1_cosmetics
 
                 scope:character ?= {
-                    is_ruler = yes
+                    is_ruler_of_own_country = yes
                     is_historical = no
 
-                    age >= define:NCharacters|ADULT_AGE
+                    is_adult = yes
 
                     owner ?= {
                         is_in_power_bloc = yes
@@ -2262,10 +2262,10 @@ accessories = {
                 has_dlc_feature = ep1_cosmetics
 
                 scope:character ?= {
-                    is_ruler = yes
+                    is_ruler_of_own_country = yes
                     is_historical = no
 
-                    age >= define:NCharacters|ADULT_AGE
+                    is_adult = yes
 
                     owner ?= {
                         is_in_power_bloc = yes
@@ -2306,10 +2306,10 @@ accessories = {
                 has_dlc_feature = ep1_cosmetics
 
                 scope:character ?= {
-                    is_ruler = yes
+                    is_ruler_of_own_country = yes
                     is_historical = no
 
-                    age >= define:NCharacters|ADULT_AGE
+                    is_adult = yes
 
                     owner ?= {
                         is_in_power_bloc = yes
@@ -2375,9 +2375,9 @@ accessories = {
                 }
 
                 scope:character ?= {
-                    is_ruler = yes
+                    is_ruler_of_own_country = yes
 
-                    age >= define:NCharacters|ADULT_AGE
+                    is_adult = yes
 
                     owner ?= {
                         is_in_power_bloc = yes
@@ -2422,10 +2422,10 @@ accessories = {
                 }
 
                 scope:character ?= {
-                    is_ruler = yes
+                    is_ruler_of_own_country = yes
                     is_historical = yes
 
-                    age >= define:NCharacters|ADULT_AGE
+                    is_adult = yes
 
                     owner ?= {
                         is_in_power_bloc = yes
@@ -2479,10 +2479,10 @@ accessories = {
                 has_dlc_feature = ep1_cosmetics
 
                 scope:character ?= {
-                    is_ruler = yes
+                    is_ruler_of_own_country = yes
                     is_historical = no
 
-                    age >= define:NCharacters|ADULT_AGE
+                    is_adult = yes
 
                     owner ?= {
                         is_in_power_bloc = yes
@@ -2537,9 +2537,9 @@ accessories = {
                 has_dlc_feature = ep1_cosmetics
 
                 scope:character ?= {
-                    is_ruler = yes
+                    is_ruler_of_own_country = yes
 
-                    age >= define:NCharacters|ADULT_AGE
+                    is_adult = yes
 
                     owner ?= {
                         is_in_power_bloc = yes
@@ -2596,10 +2596,10 @@ accessories = {
                 has_dlc_feature = ep1_cosmetics
 
                 scope:character ?= {
-                    is_ruler = yes
+                    is_ruler_of_own_country = yes
                     is_historical = no
 
-                    age >= define:NCharacters|ADULT_AGE
+                    is_adult = yes
 
                     owner ?= {
                         is_in_power_bloc = yes
@@ -2652,9 +2652,9 @@ accessories = {
                 has_dlc_feature = ep1_cosmetics
 
                 scope:character ?= {
-                    is_ruler = yes
+                    is_ruler_of_own_country = yes
 
-                    age >= define:NCharacters|ADULT_AGE
+                    is_adult = yes
 
                     owner ?= {
                         is_in_power_bloc = yes
@@ -2711,10 +2711,10 @@ accessories = {
                 has_dlc_feature = ep1_cosmetics
 
                 scope:character ?= {
-                    is_ruler = yes
+                    is_ruler_of_own_country = yes
                     is_historical = no
 
-                    age >= define:NCharacters|ADULT_AGE
+                    is_adult = yes
 
                     owner ?= {
                         is_in_power_bloc = yes
@@ -2767,9 +2767,9 @@ accessories = {
                 has_dlc_feature = ep1_cosmetics
 
                 scope:character ?= {
-                    is_ruler = yes
+                    is_ruler_of_own_country = yes
 
-                    age >= define:NCharacters|ADULT_AGE
+                    is_adult = yes
 
                     owner ?= {
                         is_in_power_bloc = yes
@@ -2826,10 +2826,10 @@ accessories = {
                 has_dlc_feature = ep1_cosmetics
 
                 scope:character ?= {
-                    is_ruler = yes
+                    is_ruler_of_own_country = yes
                     is_historical = no
 
-                    age >= define:NCharacters|ADULT_AGE
+                    is_adult = yes
 
                     owner ?= {
                         is_in_power_bloc = yes
@@ -2881,9 +2881,9 @@ accessories = {
                 has_dlc_feature = ep1_cosmetics
 
                 scope:character ?= {
-                    is_ruler = yes
+                    is_ruler_of_own_country = yes
 
-                    age >= define:NCharacters|ADULT_AGE
+                    is_adult = yes
 
                     owner ?= {
                         is_in_power_bloc = yes
@@ -2939,10 +2939,10 @@ accessories = {
                 has_dlc_feature = ep1_cosmetics
 
                 scope:character ?= {
-                    is_ruler = yes
+                    is_ruler_of_own_country = yes
                     is_historical = no
 
-                    age >= define:NCharacters|ADULT_AGE
+                    is_adult = yes
 
                     owner ?= {
                         is_in_power_bloc = yes
@@ -2988,9 +2988,9 @@ accessories = {
                 has_dlc_feature = ep1_cosmetics
 
                 scope:character ?= {
-                    is_ruler = yes
+                    is_ruler_of_own_country = yes
 
-                    age >= define:NCharacters|ADULT_AGE
+                    is_adult = yes
 
                     owner ?= {
                         is_in_power_bloc = yes
@@ -3046,7 +3046,7 @@ accessories = {
                 }
                 NOR = {
                     scope:character ?= {
-                        is_ruler = yes
+                        is_ruler_of_own_country = yes
                         is_female = no
                         owner ?= {
                             c:MUG ?= this
@@ -3054,7 +3054,7 @@ accessories = {
                         }
                     }
                     scope:character ?= {
-                        is_ruler = yes
+                        is_ruler_of_own_country = yes
                         is_female = no
                         owner ?= {
                             c:PER ?= this
@@ -3087,9 +3087,9 @@ accessories = {
                 has_dlc_feature = ep1_cosmetics
 
                 scope:character ?= {
-                    is_ruler = yes
+                    is_ruler_of_own_country = yes
 
-                    age >= define:NCharacters|ADULT_AGE
+                    is_adult = yes
 
                     owner ?= {
                         is_in_power_bloc = yes
@@ -3145,7 +3145,7 @@ accessories = {
                 }
                 NOR = {
                     scope:character ?= {
-                        is_ruler = yes
+                        is_ruler_of_own_country = yes
                         is_female = no
                         owner ?= {
                             c:MUG ?= this
@@ -3153,7 +3153,7 @@ accessories = {
                         }
                     }
                     scope:character ?= {
-                        is_ruler = yes
+                        is_ruler_of_own_country = yes
                         is_female = no
                         owner ?= {
                             c:PER ?= this
@@ -3186,9 +3186,9 @@ accessories = {
                 has_dlc_feature = ep1_cosmetics
 
                 scope:character ?= {
-                    is_ruler = yes
+                    is_ruler_of_own_country = yes
 
-                    age >= define:NCharacters|ADULT_AGE
+                    is_adult = yes
 
                     owner ?= {
                         is_in_power_bloc = yes
@@ -3244,7 +3244,7 @@ accessories = {
                 }
                 NOR = {
                     scope:character ?= {
-                        is_ruler = yes
+                        is_ruler_of_own_country = yes
                         is_female = no
                         owner ?= {
                             c:MUG ?= this
@@ -3252,7 +3252,7 @@ accessories = {
                         }
                     }
                     scope:character ?= {
-                        is_ruler = yes
+                        is_ruler_of_own_country = yes
                         is_female = no
                         owner ?= {
                             c:PER ?= this
@@ -3285,9 +3285,9 @@ accessories = {
                 has_dlc_feature = ep1_cosmetics
 
                 scope:character ?= {
-                    is_ruler = yes
+                    is_ruler_of_own_country = yes
 
-                    age >= define:NCharacters|ADULT_AGE
+                    is_adult = yes
 
                     owner ?= {
                         is_in_power_bloc = yes
@@ -3343,7 +3343,7 @@ accessories = {
                 }
                 NOR = {
                     scope:character ?= {
-                        is_ruler = yes
+                        is_ruler_of_own_country = yes
                         is_female = no
                         owner ?= {
                             c:MUG ?= this
@@ -3351,7 +3351,7 @@ accessories = {
                         }
                     }
                     scope:character ?= {
-                        is_ruler = yes
+                        is_ruler_of_own_country = yes
                         is_female = no
                         owner ?= {
                             c:PER ?= this
@@ -3384,9 +3384,9 @@ accessories = {
                 has_dlc_feature = ep1_cosmetics
 
                 scope:character ?= {
-                    is_ruler = yes
+                    is_ruler_of_own_country = yes
 
-                    age >= define:NCharacters|ADULT_AGE
+                    is_adult = yes
 
                     owner ?= {
                         is_in_power_bloc = yes
@@ -3442,7 +3442,7 @@ accessories = {
                 }
                 NOR = {
                     scope:character ?= {
-                        is_ruler = yes
+                        is_ruler_of_own_country = yes
                         is_female = no
                         owner ?= {
                             c:MUG ?= this
@@ -3450,7 +3450,7 @@ accessories = {
                         }
                     }
                     scope:character ?= {
-                        is_ruler = yes
+                        is_ruler_of_own_country = yes
                         is_female = no
                         owner ?= {
                             c:PER ?= this
@@ -3483,7 +3483,7 @@ accessories = {
                 scope:character ?= {
                     is_female = yes
 
-                    age >= define:NCharacters|ADULT_AGE
+                    is_adult = yes
 
                     OR = {
                         AND = {
@@ -3510,7 +3510,7 @@ accessories = {
                                 has_trait = master_bureaucrat
                                 has_trait = engineer
                             }
-                            is_ruler = yes
+                            is_ruler_of_own_country = yes
                             owner ?= {
                                 is_in_power_bloc = yes
                                 power_bloc ?= {
@@ -3562,7 +3562,7 @@ accessories = {
                 has_dlc_feature = ep1_cosmetics
 
                 scope:character ?= {
-                    is_ruler = yes
+                    is_ruler_of_own_country = yes
                     OR = {
                         european_clothes_trigger = yes
                         AND = {
@@ -3582,7 +3582,7 @@ accessories = {
                         monarchy_clothes_trigger = yes
                         army_traits_trigger = yes
                     }
-                    age >= define:NCharacters|ADULT_AGE
+                    is_adult = yes
 
                     owner ?= {
                         is_in_power_bloc = yes
@@ -3649,10 +3649,10 @@ accessories = {
                 monarchy_clothes_trigger = yes
 
                 scope:character ?= {
-                    is_ruler = yes
+                    is_ruler_of_own_country = yes
                     is_female = no
 
-                    age >= define:NCharacters|ADULT_AGE
+                    is_adult = yes
 
                     owner ?= {
                         is_in_power_bloc = yes
@@ -3697,10 +3697,10 @@ accessories = {
                 monarchy_clothes_trigger = no
 
                 scope:character ?= {
-                    is_ruler = yes
+                    is_ruler_of_own_country = yes
                     is_female = no
 
-                    age >= define:NCharacters|ADULT_AGE
+                    is_adult = yes
 
                     owner ?= {
                         is_in_power_bloc = yes
@@ -3745,10 +3745,10 @@ accessories = {
                 monarchy_clothes_trigger = no
 
                 scope:character ?= {
-                    is_ruler = yes
+                    is_ruler_of_own_country = yes
                     is_female = no
 
-                    age >= define:NCharacters|ADULT_AGE
+                    is_adult = yes
 
                     owner ?= {
                         is_in_power_bloc = yes
@@ -3793,10 +3793,10 @@ accessories = {
                 monarchy_clothes_trigger = no
 
                 scope:character ?= {
-                    is_ruler = yes
+                    is_ruler_of_own_country = yes
                     is_female = no
 
-                    age >= define:NCharacters|ADULT_AGE
+                    is_adult = yes
 
                     owner ?= {
                         is_in_power_bloc = yes
@@ -3841,10 +3841,10 @@ accessories = {
                 monarchy_clothes_trigger = no
 
                 scope:character ?= {
-                    is_ruler = yes
+                    is_ruler_of_own_country = yes
                     is_female = no
 
-                    age >= define:NCharacters|ADULT_AGE
+                    is_adult = yes
 
                     owner ?= {
                         is_in_power_bloc = yes
@@ -3889,10 +3889,10 @@ accessories = {
                 monarchy_clothes_trigger = no
 
                 scope:character ?= {
-                    is_ruler = yes
+                    is_ruler_of_own_country = yes
                     is_female = no
 
-                    age >= define:NCharacters|ADULT_AGE
+                    is_adult = yes
 
                     owner ?= {
                         is_in_power_bloc = yes
@@ -3923,6 +3923,7 @@ accessories = {
                     OR = {
                         has_template = BIC_mohandas_karamchand_gandhi
                         has_template = BIC_gopal_gokhale
+                        has_template = JAP_showa_yamato
                     }
                 }
             }

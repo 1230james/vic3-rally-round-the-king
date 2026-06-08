@@ -85,6 +85,9 @@
     
     RRK_pres_mon_desc: "\n\n在拥有[GetPlayer.GetActiveLawFromGroup('lawgroup_governance_principles').GetLawType.GetName] 和 [GetPlayer.GetActiveLawFromGroup('lawgroup_distribution_of_power').GetLawType.GetName] 的 [GetPlayer.GetGovernment.GetName] 中，[concept_government] 通常由 $RRK_title_pres_mon_player$ 领导，该角色通常是每次[concept_election]结束时拥有最多 [concept_clout] 的 [concept_interest_group] 的[concept_leader]。\n\n[GetPlayer.GetAdjectiveNoFlag] 的 $concept_RRK_head_of_gov$ 是 #yellow #tooltip:[GetPlayer.MakeScope.GetVariable('RRK_head_of_gov').GetInterestGroup.GetLeader.GetTooltipTag],DATA_CHARACTER_NAME_TOOLTIP,CharacterTooltip $RRK_title_pres_mon_player$ #!#![GetPlayer.MakeScope.GetVariable('RRK_head_of_gov').GetInterestGroup.GetLeader.GetCustom('GetUniversalFullName')]."
     
+    # Roles
+    RRK_character_role_head_of_gov: "[concept_RRK_head_of_gov]"
+    
     # Titles
     # These just call custom locs - see RRK_titles loc file for localization of actual titles
     RRK_title_pres_mon:        "[Country.GetCustom('RRK_cl_premier_title')]"

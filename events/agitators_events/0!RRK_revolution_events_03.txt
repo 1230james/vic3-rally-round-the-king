@@ -25,6 +25,7 @@ revolution_pulse2_events.3 = {
 	cooldown = { days = normal_modifier_time }
 
 	trigger = {
+		NOT = { has_variable = revolution_event_cooldown }
 		any_civil_war = {
 			OR = {
 				civil_war_is_socialist_revolution = yes
@@ -162,6 +163,7 @@ revolution_pulse2_events.3 = {
 				}
 			}
 		}
+		set_variable = { name = revolution_event_cooldown days = 30 }
 	}
 
 	option = {

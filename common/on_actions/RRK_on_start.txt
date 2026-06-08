@@ -10,14 +10,36 @@
                 RRK_se_update_head_of_gov_modifier = yes
             }
             
-            # Mark all monarchies with the variable
+            # Mark all monarchies with the preservation variable
             if = {
                 limit = {
-                    has_law = law_type:law_monarchy
+                    country_has_monarchy_law = yes
                 }
                 set_variable = {
                     name  = RRK_preserve_monarchy
                     value = no
+                }
+            }
+            
+            # Mark all regencies with the regency variable for tracking
+            if = {
+                limit = {
+                    has_gov_regency = yes
+                }
+                set_variable = {
+                    name  = RRK_has_regency
+                    value = yes
+                }
+            }
+            
+            # Special case - mark Japan with a variable flagging that they have Bakufu
+            if = {
+                limit = {
+                    has_law = law_type:law_bakufu
+                }
+                set_variable = {
+                    name  = RRK_has_bakufu
+                    value = yes
                 }
             }
         }

@@ -25,6 +25,7 @@ revolution_pulse_events.7 = {
 	cooldown = { days = very_long_modifier_time }
 
 	trigger = {
+		NOT = { has_variable = revolution_event_cooldown }
 		has_ruling_interest_group_count >= 2
 		any_interest_group = {
 			is_in_government = yes
@@ -70,6 +71,7 @@ revolution_pulse_events.7 = {
 		ruler = {
 			save_scope_as = petition_march_ruler
 		}
+		set_variable = { name = revolution_event_cooldown days = 30 }
 	}
 
 	option = {
@@ -118,9 +120,8 @@ revolution_pulse_events.7 = {
 				limit = {
 					ROOT = {
 						 any_civil_war = {
-         civil_war_is_socialist_revolution = yes
-   }
-
+							civil_war_is_socialist_revolution = yes
+						}
 					}
 				}
 				set_ideology = ideology:ideology_communist
@@ -129,9 +130,8 @@ revolution_pulse_events.7 = {
 				limit = {
 					ROOT = {
 						 any_civil_war = {
-         civil_war_is_liberal_revolution = yes
-   }
-
+							civil_war_is_liberal_revolution = yes
+						}
 					}
 				}
 				set_ideology = ideology:ideology_radical
@@ -139,10 +139,9 @@ revolution_pulse_events.7 = {
 			else_if = {
 				limit = {
 					ROOT = {
-						 any_civil_war = {
-         civil_war_is_reactionary_revolution = yes
-   }
-
+						any_civil_war = {
+							civil_war_is_reactionary_revolution = yes
+						}
 					}
 				}
 				set_ideology = ideology:ideology_traditionalist
@@ -220,6 +219,7 @@ revolution_pulse_events.21 = {
 	cooldown = { days = very_long_modifier_time }
 
 	trigger = {
+		NOT = { has_variable = revolution_event_cooldown }
 		any_civil_war = {
 			OR = {
 				civil_war_is_liberal_revolution = yes
@@ -284,6 +284,7 @@ revolution_pulse_events.21 = {
 		ig:ig_landowners ?= {
 			save_scope_as = royal_ig
 		}
+		set_variable = { name = revolution_event_cooldown days = 30 }
 	}
 
 	option = {
@@ -359,6 +360,7 @@ revolution_pulse_events.22 = {
 	cooldown = { days = very_long_modifier_time }
 
 	trigger = {
+		NOT = { has_variable = revolution_event_cooldown }
 		any_civil_war = {
 			OR = {
 				civil_war_is_liberal_revolution = yes
@@ -429,6 +431,7 @@ revolution_pulse_events.22 = {
 				save_scope_as = hostage_char
 			}
 		}
+		set_variable = { name = revolution_event_cooldown days = 30 }
 	}
 
 	option = {
@@ -547,6 +550,7 @@ revolution_pulse_events.23 = {
 	cooldown = { days = very_long_modifier_time }
 
 	trigger = {
+		NOT = { has_variable = revolution_event_cooldown }
 		any_civil_war = {
 			OR = {
 				civil_war_is_liberal_revolution = yes
@@ -614,6 +618,7 @@ revolution_pulse_events.23 = {
 				save_scope_as = university_terror_building
 			}
 		}
+		set_variable = { name = revolution_event_cooldown days = 30 }
 	}
 
 	option = {
@@ -671,6 +676,7 @@ revolution_pulse_events.24 = {
 	cooldown = { days = very_long_modifier_time }
 
 	trigger = {
+		NOT = { has_variable = revolution_event_cooldown }
 		any_civil_war = {
 			OR = {
 				civil_war_is_liberal_revolution = yes
@@ -715,6 +721,7 @@ revolution_pulse_events.24 = {
 		capital = {
 			save_scope_as = capital_scope
 		}
+		set_variable = { name = revolution_event_cooldown days = 30 }
 	}
 
 	option = {
@@ -862,6 +869,7 @@ revolution_pulse_events.25 = {
 	cooldown = { days = very_long_modifier_time }
 
 	trigger = {
+		NOT = { has_variable = revolution_event_cooldown }
 		any_civil_war = {
 			OR = {
 				civil_war_is_liberal_revolution = yes
@@ -882,7 +890,7 @@ revolution_pulse_events.25 = {
 			is_immortal = no
 		}
 		any_scope_character = {
-			is_heir = yes
+			is_heir_of_own_country = yes
 		}
 	}
 
@@ -911,7 +919,7 @@ revolution_pulse_events.25 = {
 		}
 		random_scope_character = {
 			limit = {
-				is_heir = yes
+				is_heir_of_own_country = yes
 			}
 			save_scope_as = heir_scope
 		}
@@ -929,6 +937,7 @@ revolution_pulse_events.25 = {
 		capital = {
 			save_scope_as = capital_scope
 		}
+		set_variable = { name = revolution_event_cooldown days = 30 }
 	}
 
 	option = {
@@ -1149,7 +1158,7 @@ revolution_pulse_events.25 = {
 		}
 		random_scope_character = {
 			limit = {
-				is_heir = yes
+				is_heir_of_own_country = yes
 			}
 			random_list = {
 				50 = {

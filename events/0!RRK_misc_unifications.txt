@@ -147,7 +147,10 @@ formation.18 = {
 		first_valid = {
 			triggered_desc = {
 				trigger = {
-					RRK_st_has_monarchy = yes
+					OR = {
+						RRK_st_has_monarchy = yes
+						has_law_or_variant = law_type:law_social_monarchy
+					}
 				}
 				desc = formation.18.d_1
 			}

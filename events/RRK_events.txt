@@ -106,7 +106,11 @@ RRK_ev.2 = {
     on_opened_soundeffect  = "event:/SFX/Events/misc/2Characters"
 
     icon = "gfx/interface/icons/event_icons/event_portrait.dds"
-    
+
+    cancellation_trigger = {
+        RRK_st_is_crowned_republic = no
+    }
+
     option = {
         name = RRK_ev_2_a
         default_option = yes
@@ -245,7 +249,11 @@ RRK_ev.3 = {
     on_opened_soundeffect  = "event:/SFX/Events/misc/1Character_Banner"
 
     icon = "gfx/interface/icons/event_icons/event_portrait.dds"
-    
+
+    cancellation_trigger = {
+        RRK_st_is_crowned_republic = no
+    }
+
     option = {
         name = RRK_ev_3_a
         default_option = yes
@@ -674,6 +682,15 @@ RRK_ev.6 = {
                         value = scope:their_our_ruling_ig
                     }
                 }
+                random_scope_character = {
+                    limit = {
+                        has_role = RRK_character_role_head_of_gov
+                    }
+                    remove_character_role = RRK_character_role_head_of_gov
+                }
+                scope:their_our_ruling_ig.leader = {
+                    add_character_role = RRK_character_role_head_of_gov
+                }
                 add_liberty_desire = 5
                 add_modifier = {
                     name  = RRK_md_appointed_head_of_gov_country
@@ -780,6 +797,15 @@ RRK_ev.6 = {
                         value = scope:target_ruling_ig
                     }
                 }
+                random_scope_character = {
+                    limit = {
+                        has_role = RRK_character_role_head_of_gov
+                    }
+                    remove_character_role = RRK_character_role_head_of_gov
+                }
+                scope:target_ruling_ig.leader = {
+                    add_character_role = RRK_character_role_head_of_gov
+                }
                 add_modifier = {
                     name  = RRK_md_appointed_head_of_gov_country
                     years = 5
@@ -872,6 +898,15 @@ RRK_ev.6 = {
                         name  = RRK_head_of_gov
                         value = scope:target_popular_ig
                     }
+                }
+                random_scope_character = {
+                    limit = {
+                        has_role = RRK_character_role_head_of_gov
+                    }
+                    remove_character_role = RRK_character_role_head_of_gov
+                }
+                scope:target_popular_ig.leader = {
+                    add_character_role = RRK_character_role_head_of_gov
                 }
                 add_liberty_desire = -5
                 add_modifier = {

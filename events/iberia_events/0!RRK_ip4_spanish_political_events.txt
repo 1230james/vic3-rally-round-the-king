@@ -86,7 +86,7 @@ spain_provisional_government.1 = { # For Portugal
 		if = {
 			limit = {
 				NOT = {
-					any_country_in_iberia = {
+					any_country_in_iberia_old = {
 						has_technology_researched = pan-nationalism
 					}
 				}
@@ -96,11 +96,11 @@ spain_provisional_government.1 = { # For Portugal
 		}
 		else_if = {
 			limit = {
-				any_country_in_iberia = {
+				any_country_in_iberia_old = {
 					has_technology_researched = pan-nationalism
 				}
 				NOT = {
-					any_country_in_iberia = {
+					any_country_in_iberia_old = {
 						has_variable = pursued_iberian_unification
 					}
 				}
@@ -262,7 +262,7 @@ spain_provisional_government.11 = { # For Spain
 		if = {
 			limit = {
 				NOT = {
-					any_country_in_iberia = {
+					any_country_in_iberia_old = {
 						has_technology_researched = pan-nationalism
 					}
 				}
@@ -272,11 +272,11 @@ spain_provisional_government.11 = { # For Spain
 		}
 		else_if = {
 			limit = {
-				any_country_in_iberia = {
+				any_country_in_iberia_old = {
 					has_technology_researched = pan-nationalism
 				}
 				NOT = {
-					any_country_in_iberia = {
+					any_country_in_iberia_old = {
 						has_variable = pursued_iberian_unification
 					}
 				}
@@ -408,9 +408,9 @@ spain_provisional_government.2 = { # Espartero
 				}
 				transfer_character = ROOT
 				set_variable = exile_to_ruler_var
-				set_variable = {
-					name = memento_mori_immunity
-					months = 60
+				add_career_length = {
+					years = 5
+					random_range = { 1.0 1.5 }
 				}
 				hidden_effect = {
 					free_from_exile_effect = yes
@@ -426,7 +426,7 @@ spain_provisional_government.2 = { # Espartero
 			if = {
 				limit = {
 					owner = ROOT
-					is_ruler = yes
+					is_ruler_of_own_country = yes
 				}
                 custom_tooltip = espartero_becomes_monarch_tt
 			}

@@ -84,7 +84,7 @@ hawaii_events.2 = { #JE success
 					}
 				}
 				leader = {
-					kill_character = yes
+					retire_character = yes
 				}
 			}
 		}
@@ -100,7 +100,7 @@ hawaii_events.2 = { #JE success
 					}
 				}
 				leader = {
-					kill_character = yes
+					retire_character = yes
 				}
 			}
 		}
