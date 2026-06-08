@@ -303,9 +303,9 @@ types RRK_types {
             widget = { size = { 5 5 }}
 
             ### TRAITS
-            # character_traits_no_label = {
-                # parentanchor = right
-            # }
+            character_traits_no_label = {
+                parentanchor = right
+            }
         }
     }
 
@@ -377,23 +377,22 @@ types RRK_types {
                 spacing = 10
 
                 ### TRAITS
-                # [RRK] As of 1.9 cannot keep this here due to const collision
-                # flowcontainer = {
-                    # datamodel = "[Character.AccessTraits]"
-                    # spacing = 2
+                flowcontainer = {
+                    datamodel = "[Character.AccessTraits]"
+                    spacing = 2
 
-                    # item = {
-                        # icon = {
-                            # size = { 30 42 }
-                            # texture = "[CharacterTrait.GetTexture]"
-                            # using = tooltip_above
+                    item = {
+                        icon = {
+                            size = { 30 42 }
+                            texture = "[CharacterTrait.GetTexture]"
+                            using = tooltip_above
 
-                            # tooltipwidget = {
-                                # FancyTooltip_CharacterTrait = {}
-                            # }
-                        # }
-                    # }
-                # }
+                            tooltipwidget = {
+                                FancyTooltip_CharacterTrait = {}
+                            }
+                        }
+                    }
+                }
 
                 ### IG ICON
                 character_ig_button = {
