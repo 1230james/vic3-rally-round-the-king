@@ -10,7 +10,7 @@
       "fullpath": ".\\events\\RRK_events.txt",
       "length": 22,
       "line": "                            multiplier = local_var:booster_mult",
-      "linenr": 700,
+      "linenr": 718,
       "path": "events\\RRK_events.txt",
       "stage": null,
       "tag": null
@@ -21,7 +21,7 @@
       "fullpath": ".\\events\\RRK_events.txt",
       "length": 10,
       "line": "                            multiplier = local_var:booster_mult",
-      "linenr": 700,
+      "linenr": 718,
       "path": "events\\RRK_events.txt",
       "stage": null,
       "tag": "scopes initialized here"
@@ -42,7 +42,7 @@
       "fullpath": ".\\events\\RRK_events.txt",
       "length": 22,
       "line": "                            multiplier = local_var:booster_mult",
-      "linenr": 899,
+      "linenr": 935,
       "path": "events\\RRK_events.txt",
       "stage": null,
       "tag": null
@@ -53,7 +53,7 @@
       "fullpath": ".\\events\\RRK_events.txt",
       "length": 10,
       "line": "                            multiplier = local_var:booster_mult",
-      "linenr": 899,
+      "linenr": 935,
       "path": "events\\RRK_events.txt",
       "stage": null,
       "tag": "scopes initialized here"
@@ -61,6 +61,59 @@
   ],
   "message": "local_var:booster_mult might not be available here",
   "severity": "error",
+  "wiki": null
+},
+{
+  "confidence": "reasonable",
+  "info": null,
+  "key": "missing-localization",
+  "locations": [
+    {
+      "column": 1,
+      "from": "MOD",
+      "fullpath": ".\\common\\character_roles\\RRK_character_roles.txt",
+      "length": 30,
+      "line": "RRK_character_role_head_of_gov = {",
+      "linenr": 1,
+      "path": "common\\character_roles\\RRK_character_roles.txt",
+      "stage": null,
+      "tag": null
+    }
+  ],
+  "message": "missing english, spanish, french, german, russian, korean, simp_chinese, braz_por, japanese, polish and turkish localization key RRK_character_role_head_of_gov_custom_loc",
+  "severity": "warning",
+  "wiki": null
+},
+{
+  "confidence": "reasonable",
+  "info": null,
+  "key": "scopes",
+  "locations": [
+    {
+      "column": 27,
+      "from": "MOD",
+      "fullpath": ".\\common\\on_actions\\RRK_hand_coded_00_code_on_actions.txt",
+      "length": 21,
+      "line": "\t\t\ttrigger_event = { id = mon_state_formation.6 popup = yes }",
+      "linenr": 168,
+      "path": "common\\on_actions\\RRK_hand_coded_00_code_on_actions.txt",
+      "stage": null,
+      "tag": null
+    },
+    {
+      "column": 1,
+      "from": "MOD",
+      "fullpath": ".\\common\\on_actions\\RRK_hand_coded_00_code_on_actions.txt",
+      "length": 18,
+      "line": "on_character_death = {",
+      "linenr": 4,
+      "path": "common\\on_actions\\RRK_hand_coded_00_code_on_actions.txt",
+      "stage": null,
+      "tag": "scope was supplied by the game engine"
+    }
+  ],
+  "message": "`mon_state_formation.6` is for country but scope seems to be character",
+  "severity": "warning",
   "wiki": null
 },
 {
@@ -95,7 +148,7 @@
       "fullpath": ".\\common\\government_types\\00_RRK_gov_types.txt",
       "length": 1,
       "line": "\t\tOR = {",
-      "linenr": 780,
+      "linenr": 806,
       "path": "common\\government_types\\00_RRK_gov_types.txt",
       "stage": null,
       "tag": null
@@ -116,7 +169,7 @@
       "fullpath": ".\\common\\government_types\\00_RRK_gov_types.txt",
       "length": 1,
       "line": "\t\tOR = {",
-      "linenr": 2184,
+      "linenr": 2257,
       "path": "common\\government_types\\00_RRK_gov_types.txt",
       "stage": null,
       "tag": null
@@ -137,34 +190,13 @@
       "fullpath": ".\\common\\scripted_effects\\RRK_scripted_effects.txt",
       "length": 15,
       "line": "        set_variable = RRK_head_of_gov",
-      "linenr": 24,
+      "linenr": 33,
       "path": "common\\scripted_effects\\RRK_scripted_effects.txt",
       "stage": null,
       "tag": null
     }
   ],
   "message": "var:RRK_head_of_gov was deduced to be interest group but scope seems to be bool",
-  "severity": "warning",
-  "wiki": null
-},
-{
-  "confidence": "weak",
-  "info": null,
-  "key": "logic",
-  "locations": [
-    {
-      "column": 10,
-      "from": "MOD",
-      "fullpath": ".\\common\\scripted_triggers\\RRK_scripted_triggers.txt",
-      "length": 1,
-      "line": "    OR = {",
-      "linenr": 128,
-      "path": "common\\scripted_triggers\\RRK_scripted_triggers.txt",
-      "stage": null,
-      "tag": null
-    }
-  ],
-  "message": "OR with only one item inside is probably not what you intended",
   "severity": "warning",
   "wiki": null
 }
